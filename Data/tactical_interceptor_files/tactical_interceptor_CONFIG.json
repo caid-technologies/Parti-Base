@@ -1,0 +1,1605 @@
+{
+  "plan": "- Microcontroller (e.g., ESP32 or STM32) with a custom firmware for signal processing and UI.\n- Wideband Software Defined Radio (SDR) module (e.g., HackRF One or LimeSDR) for broad spectrum intercept and transmission.\n- Ruggedized external antenna array (e.g., discone or log-periodic) with filtering and amplification stages.\n- Power management system featuring high-capacity LiPo batteries, buck/boost converters, and solar charging capability.\n- Military-grade, IP67-rated enclosure with integrated display, keypad, and durable audio components.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main System Controller",
+      "pins": [
+        "GPIO",
+        "SPI",
+        "I2C",
+        "USB",
+        "UART",
+        "ADC",
+        "DAC",
+        "Ethernet",
+        "PWM",
+        "I2S"
+      ],
+      "type": "mcu",
+      "partId": "59136ad2-2782-4d32-88d2-637d21077c2b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=STM32H743ZI2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/512g4nvqsLL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0F28RDHB6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$31.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-stm32h743zi2.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F28RDHB6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "14x14x1.6mm",
+      "description": "Manages phase shifter settings, LNA gain control, and other low-level beamforming operations for the phased array modules.",
+      "productName": "STM32H743ZI2",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/stmicroelectronics/STM32H743ZI2TR/12061400",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3icvmcD",
+      "estimatedCost": 25
+    },
+    {
+      "id": "wideband_sdr",
+      "name": "Wideband SDR Transceiver",
+      "pins": [
+        "USB",
+        "SMA_RX",
+        "SMA_TX",
+        "Clock_In/Out"
+      ],
+      "type": "module",
+      "partId": "5e62346b-89a6-4d31-91a4-8e1b94c883e3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HackRF+One&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51tZ9WhoOGL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "USB2.0,SMA_Antenna"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FJF8JSNY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$250",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006468909990.html?pdp_npi=6%40dis%21USD%2114.77%2114.77%21%21%2199.85%2199.85%21%4021013cc017793916350032888e0e0e%2112000037307767542%21affd%21%21%21%211%210%21",
+            "price": "$14.77",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FJF8JSNY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "125x80x25mm",
+      "description": "Compact Software-Defined Radio for Electronic Intelligence (ELINT) gathering.",
+      "productName": "HackRF One",
+      "purchaseUrl": "https://www.sparkfun.com/products/14498",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaCJWejdUWzS6n26p4tC0yIkzbNhSEt5VofWqwyfAzEUdnJdh51PIS4h9jKpLDOesiB5OxlvU6ObR3iKDSMDaXdA6QUY6Kqb2HUurWkZskK0ndEyMVHOVd9TR72xTjCIIArtWj6zL93A5Em6Vz79mpDLgNZLodeduoxAhNYAUVY8O5XwaCTbiXsMZs1PJ8MbcdMlwAxhESxxbrXzf556S2zJuEzvw4dkt0K54kbY9Yr2bGDYx2M7S8yee8KJARVBKKLYRTBO6FmGHgyArNlEtrCbjH5gQrYW81bNDEqd4bolRlKRUPvOi7peKRLj3s3Ypb6k6ApL3nMrTQkq039G2nSWD9ueepbJnatmikrHjCDG6FUFbvtHN2pQXqD7zqXXdUu3zDaMsXkJk0WVWhK5aP6ohTbelAkAyqqDmO6aNRqfZ0a8MQEtfIBpaXMFiT8FjpwXwRyZgKQWrTuWQASPzhzfixLWn22qntIJvu2Dunj7I6qdAWDeGoODvqcjQFw4Ev203HgGL3Ii0gXXJJtiuTEgV61fXbnIcL4QvZrDIkX18WOts8AUjXbtyYfBLxvLs7gINnJvMYwDPOe9uECihV0vuLq9LtSvQteH925sXC0RLVzPD6ZWhSrAiS3HcrjMuLbK1lRKTX4b92fA94MsIpkr",
+      "estimatedCost": 350
+    },
+    {
+      "id": "power_management_ic",
+      "name": "Power Management IC",
+      "pins": [
+        "VIN",
+        "VBUS",
+        "SYS",
+        "BAT",
+        "I2C",
+        "EN"
+      ],
+      "type": "power",
+      "partId": "aa520181-83ba-483e-9663-68aca4a93349",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BQ25798&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/S5da726beae894bbabca33cddf413867eh.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005010050853593.html?pdp_npi=6%40dis%21USD%217.30%216.57%21%21%217.30%216.57%21%4021013cc617794589206741741e101d%2112000050952150752%21affd%21%21%21%211%210%21",
+            "price": "$6.57",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "4x4x0.75mm",
+      "description": "High-efficiency USB-C PD compatible battery charger for LiPo.",
+      "productName": "BQ25798",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/texas-instruments/BQ25798RGER/16550787",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxI5Qo8UOSIzKt6miiC8hh6JHYCxQ6A1qnzDGPcSDXFepGxEJuKFlkfZc7k8qUsaAL0GoYk1XF9yfv5qwnmlydHTeMFmfH2S2zj0EjZSLNqzzXpBCxh97Tu5vHDjIHPmS8DbpICLxTNVEaWLlc2SdTDRnN6VgkayS1ndbqLBqGpBhuVPiVxJbTDiAJWtK0OFBQCtMAAYz53tkwXmmAvyCufZY4HhiQoRULLwllLW6nurO7KPGKdx5Ns3upeF0jPukGmil1q7XXo2O80o6V2uNaAwMO9CUACIoKaGTrllAOecsqjwUh1ATC7qAUlikOG2JvOaDFFBCUEtb8cBvTNodj2HEKivXD7ozzIohy1BfxZm9H8Sedd5Wz2RRvmrrnpB4F7F7RdXnD73LFYwJLICqErB7dX8jryhLDepOxuRAbZ4hpbFyovISTNrKGEnxT8G7YvbMKMHtXVEHZbXaSDDHbZSMV8s2eTtYpfIuGxsiPxV16Ogq8nZtNI52I616RTeNW90zugcToHJggNauHXbFV8WrnhJMHySwWqmYhy8f6L8Stz7gSiid3ymUcWKB17krMDeApSBi3eOvKmU7wdkrW7NpxjAlALgWzZLU34sJGvYLC6lkH8n2Xa1wMaC0tmoQW1W5FooZth3wZjGUIRjwKX6L",
+      "estimatedCost": 6.5
+    },
+    {
+      "id": "lipo_battery",
+      "name": "High-Capacity LiPo Battery",
+      "pins": [
+        "Positive",
+        "Negative",
+        "Thermistor"
+      ],
+      "type": "power",
+      "partId": "19426918-cd6d-4f80-9fe5-3d2e5862b758",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LiPo+3.7V+5000mAh&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41g-xbHjNQL._SL500_.jpg",
+      "quantity": 2,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FFM8P3L9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-lipo-3-7v-5000mah.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FFM8P3L9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x60x10mm",
+      "description": "High capacity rechargeable Lithium Polymer battery for Pachołek unit.",
+      "productName": "LiPo 3.7V 5000mAh",
+      "purchaseUrl": "https://www.adafruit.com/product/328",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3vcx2eN",
+      "estimatedCost": 30
+    },
+    {
+      "id": "boost_converter",
+      "name": "High-Efficiency Boost Converter",
+      "pins": [
+        "VIN",
+        "VOUT",
+        "GND",
+        "FB",
+        "EN"
+      ],
+      "type": "power",
+      "partId": "a6b74bd1-bb51-4fc3-910f-0fb1182320e4",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TPS61088RNR&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/21FwKGs4vQL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B09KM16Y86?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.84",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09KM16Y86?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x3x0.75mm",
+      "productName": "TPS61088RNR",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/texas-instruments/TPS61088RNRR/5488106",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHXe3mMrc6SnML1mH22IbDNsM5LewkqWAhhRODgh0UONsgqnc5YJmcdRJlOXC08aPZadFIn8gXuYUbBA4XyMVre2lyA0ZcBfmhxfHx9dZJXXtrcP6KtATNtlIHmEY0elxSEb5bbGWecdflkg3AT9PGW7frqf8ZfsBuTxBKYjYgSjWmt5F8oQDyEwkyRRH79pi8EAkJ8Oh03rasO1ke0EmPDuk3Dfs3suuvUpI7XluYJJay1J3AbTXLzb9b7BLKk3J4e8ik9sA2nt461R0pA72fOnWZiL6jOkEdUsogaKkzZ1KOEQnK4sGawAulgXXla4KF5HUGeKZLI5qFR1dWuwsSUZqsETQZ1Izt8FKKfaRN8j9IdoWjWnc79VjCaIOIqKbVUd3LmZuSDNyzPVddhlACWlr8N0wOKH1jhCVgwoKanwpxh5V5UTOQiIL0hivtUxM3UCQbiyZMahCE7qvbF1vk6yTt6oRJ2amSa9wR4DlwcCG8lVCoZE63y92jeQhW1Ai2Iy49Yv3JxCGrBIG4sNfjDpFg6BQAqYuk5vLmvLAL2S8aEfjjkeHQpCEpHn7CL9aUpmeVnxFJx24cMbSnJX0b7wzg7AdPpWrGpZHVR0O0qk9jlocQB8lF823d94Zl7wRmdUOkdfDCDAU4hQu6B3kghd",
+      "estimatedCost": 4.5
+    },
+    {
+      "id": "solar_charge_controller",
+      "name": "Solar Charge Controller Module",
+      "pins": [
+        "Solar_IN",
+        "Battery_OUT",
+        "Load_OUT",
+        "Status_LEDs",
+        "GND"
+      ],
+      "type": "power",
+      "partId": "a0f0e3da-b2e2-47a4-9fb0-4d9df5c85a8c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=CN3791+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/qiQ_zpNOEkS7b-oZQzzLOkclRCCVvX5L-vOK_xOWSqY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaG9r/aXRlY2guY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIzLzEx/LzcyMy0zMDB4MzAw/LnBuZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D8JVBN94?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x20x10mm",
+      "productName": "CN3791 Module",
+      "purchaseUrl": "https://www.amazon.com/dp/B07R4R1W2M",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw5CCfNZHbkRViGUC8WQKKOiPpxfeq940MzXBuCwxTh0xllbyraAtKuRvp7T1QLqFaBXne5hQCUiqn0oM2JfUVvHN3n1FSi0K4lin2Pb11xoMfXNXcdF9T2pLeEYkKq93yMZIY3ENYnRC7mnTL6fOeAP7DUTHAQ7LgqCyI8YaHcE1b0sDNIamrasRc9JKycGSUQkQuCDCQx9G9vEzjCn8UpoyRmwMgJ2ju2B8334AJ5NkqEBLgeecdnrkY7onUp68KRm4xZ964ylD8PYJA91egQ8k9v59LUyGGsIsDg4C3XckrIDoyjBZnjuSc1OaTgnk6VKaLyANRX74odGy5s6MEjurQd3Qu4bQSPhfp6q8H9gmrqxiZho13JEpzW7mfZVQu4nOIwQxMx0bDFoWVAnBhxVijRQ6P5kygv7tp41UVuOUDqb7jdMdkq8DVs0lpxkydvt926Q0L62RZ6gqU9qLH5hyYaWcHhPPdGCADjtRxQ0TEeMeVxUVGI2NHLSL2YJRfbDcQrpr3dwRRtFi7fQvlomBxu85ERptrkKF55HeOT8cDlxSkvNcEQ56GM7b6ndOV4aru0nRSPCyyk3QwkgckR9SAOkS4e7o2oYRBbZno7ZauKcxs9aOJ0tuRuP7qk1Yz0xR6sisM5DGqNsnuIuoDNZ",
+      "estimatedCost": 15
+    },
+    {
+      "id": "color_display",
+      "name": "IPS TFT Color Display",
+      "pins": [
+        "VCC",
+        "GND",
+        "CS",
+        "DC",
+        "MOSI",
+        "SCK",
+        "BL",
+        "MISO"
+      ],
+      "type": "display",
+      "partId": "4972eb13-e661-4c21-8eea-9a1e46246cfd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2.8+inch+SPI+TFT+LCD+ILI9341&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/513rRFJY7dL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0BNQBKFCT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$11.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/33015586094.html?pdp_npi=6%40dis%21USD%212.15%211.61%21%21%212.15%211.61%21%402151fce817796429790756381e0f14%2112000026583382486%21affd%21%21%21%211%210%21",
+            "price": "$1.61",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BNQBKFCT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x69.2x4.5mm",
+      "description": "Full color graphic display for detailed target identification, depth estimation, discrimination, and a user-friendly menu interface.",
+      "productName": "2.8 inch SPI TFT LCD ILI9341",
+      "purchaseUrl": "https://www.adafruit.com/product/1770",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdW0g44dzekw056SMCWWsNIxQB5fvR4mcpiYzdt9LADhsYDP37yrViGr4cSQwveXx8DjJBV7eVxziJZeSkYvbaXkAziKTSvmaPmd5QPKc0LwGIbemVzmuqbiI7CVTcapWcGFzSoAd8QJydWlWVRkaQKjkvEWeSS1mBrls3l8JG806lDscAzOWsybM3DRyBt7nqsLXcfbejofGm0lCp8B7fJNAwiq4BQUt61VGoxAPbQa5IB3gQ4LXHo9SnqBmfBLuXc7TAr5dxNGMsIOwODIgbcpHeZzIz6kyOUvmyTmJfltltXLIxalGJuN4RMUeaU9qaehb0UHhZmoadfnW1pQdnIL0uqLQqlRS1N568gU3M7ZTa6KBtJ1XAUWcNQUsUgyHFQ2pGE1aHlmHWsGcnMMvqrOk4jgJLJBODO0qWHhSiYzOdngK8ticfRi2HEM9IVcW3rUWyN9DtfNrRgZohp1f9DuP509WBRlOcR0xA4mBAwYYPtxBw4bdZgY3voIPXGhsf5TK1onDSvb91RpKJnjRyonoGrLHEi3QfANZYHYEpsnnxTt7Kszf5fSocBoYTSUxAzndfnkTi7G1OBUBos5lvQWnTM4Hitolxf3LPq8qEWAYEYN43OlWHWfU4kqyouFIyrHgVnJS5sHLr0UglsI8",
+      "estimatedCost": 20
+    },
+    {
+      "id": "keypad_matrix",
+      "name": "Miniature Tactile Keypad",
+      "pins": [
+        "Row0",
+        "Row1",
+        "Row2",
+        "Row3",
+        "Col0",
+        "Col1",
+        "Col2",
+        "Col3"
+      ],
+      "type": "module",
+      "partId": "0ab76cd0-bb75-4134-932f-d5bf3bd2bc08",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=4x4+Membrane+Keypad&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/510Asp5NbHL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "R1,R2,R3,R4,C1,C2,C3,C4"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07RB47RM1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$10.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-4x4-membrane-keypad.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07RB47RM1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "69x63x1mm",
+      "description": "4x4 matrix membrane keypad for numerical input.",
+      "productName": "4x4 Membrane Keypad",
+      "purchaseUrl": "https://www.adafruit.com/product/419",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3CazbMD",
+      "estimatedCost": 5
+    },
+    {
+      "id": "audio_codec",
+      "name": "Audio Codec IC",
+      "pins": [
+        "I2S",
+        "I2C",
+        "Analog_IN",
+        "Analog_OUT",
+        "MCLK",
+        "LRCLK",
+        "BCLK"
+      ],
+      "type": "module",
+      "partId": "f84cc9f8-a858-47c8-8faa-6cd12935e1f8",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PCM3168A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/413uRqeUKeL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005008719523073.html?pdp_npi=6%40dis%21USD%2121.00%2110.50%21%21%2121.00%2110.50%21%402140d33617794300153353370e114b%2112000046380600849%21affd%21%21%21%211%210%21",
+            "price": "$10.5",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B09C5QX228?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.88",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09C5QX228?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x1.5mm",
+      "description": "High-performance multi-channel audio codec for digital input and 4-channel analog output.",
+      "productName": "PCM3168A",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/texas-instruments/PCM3168APWPR/1000673",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQzO5tEshJMwuVk6qlGyIZBAVNmWtjditTIEfxU2LMcNeFm6YfvODxjmzluIX04A6rUKLOeQXHTv50J1NLZmfxOxwmRJgIMOFjkXNZMbGDoVJk4a1qxy5CFHRwgvfVW9ATopR0WFXF7rQTYJHsg0kPR53458JOhlV64tXga1UJy93kUoC8yOautBDiYRfbQ25kuyIjKW5ouyZlJHoVv9Er38o2rHlfS8KxSZnL1wgzxmHgTRW2VxNR82UHrp0SF7nQgVJR7DF4ZVLevMbBuumWmVbKCl5P91o6SU4z3WoLMjscEhGUAaM2tgnQemI4gsRHYeZwONecTmY8WxPqHYUlktlOe6183kbLxaq1wpe567ouOdRUtsQ0nE9BcUiKIfaNDD1pX4eLF1TYvwTnq9VDTnosXuB63P0pBblhP36anrbnaZjpqzFy5VHtP5KbO8DM1pEVegIgNuZsY1kbMz6hEWqAAeOSHivEx1QS7EzKVrlL9cukhnDH696r2LLFxoo5kS1WIr4ZDY6kflANJP0I0Qadx5hbVx2GdHEWyCg7UFpJRX1ytRmNiZQHiTjQzfCsaFC5Mk6GZiXK92oaGLw7kHbtdXk5JMvw3RPHnFTpUUtsBfOcdD59vSksURqa2DmVHQmh7quUT3XHG3DrGK2FcP",
+      "estimatedCost": 12
+    },
+    {
+      "id": "microphone",
+      "name": "Noise-Cancelling Microphone",
+      "pins": [
+        "VDD",
+        "GND",
+        "SCLK",
+        "DOUT"
+      ],
+      "type": "sensor",
+      "partId": "f49a5eae-e51f-4006-a16e-9ebd929d98bd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SPH0645LM4H-B&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41QU6E+F-4L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VDD,GND,SD,WS,SCK"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0BBLW362R?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$14.95",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008437809629.html?pdp_npi=6%40dis%21USD%212.42%212.42%21%21%2116.35%2116.35%21%402140da8b17794380238573546e11e0%2112000045130341766%21affd%21%21%21%211%210%21",
+            "price": "$2.42",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BBLW362R?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3.35x2.5x0.98mm",
+      "description": "MEMS microphone for voice command capture and spatial audio.",
+      "productName": "SPH0645LM4H-B",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/knowles/SPH0645LM4H-B/5186989",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwsGrnBrGOU3Gi0l9m4HhK2TUFJVHdOTUXFSg4AZeUzeDSV5AeBKZlXMljbOLsyQhAmtAniVutPqq3QZhfoX6izsbXhrVgxRYsEP0JsLpAkTnRzAdfu8jnKRRYXERoM3ufjuM5wItuO0NnOonovJFkDT0SuEwB8SZFicRvrlTcjAAePxUZSZ9JrryheYRoSeckOg2wOXeKc2iyFqVAwxMmZK8Lcm3tg3CS7rdTQzzDxGDtUgkfJwhUQpIOgXYf9sudCRG8H9MS28Ll03LCefSypMjx9LQbkRRXenlEtHf3lqkcIRoehiFJ13SdEUf7cYjOQ4Hzo4eBmrDfEDo91LuLw6U8TTKJWkgF5VaPKI5XJhnRfMvjOT48n4cqzp7wrwFhFsiKagEJ326dGBpx6zs3fXkrFk89p4bFapCRiHFsxxnTpeQkb27NaJNkO9vGYhyl5JwsFrjz0obd9h450E0vdjJ9tLTLk7wdnhWEbqmR2BqYyPpCVnY5m6NvEcqv1pzFuU7kIDzxbKvC1c21l4ytdRnWDjYsoCAOUhkJB78UgE2HB6lbhbpxWCUkOAHFGPpYyMZOIGfUwYQTrzX6gZVZ65joGAk7Ks1jBGm5TjVY1MVs4wTxFqo0cn5NCMVPE5P9X7PbyHS3PBXW0xiftvJ9vt",
+      "estimatedCost": 2.5
+    },
+    {
+      "id": "speaker",
+      "name": "Rugged Miniature Speaker",
+      "pins": [
+        "Positive",
+        "Negative"
+      ],
+      "type": "actuator",
+      "partId": "a01438ed-dfb5-42c6-9d87-98994452592e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PJ032-15R-35&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Zw0ivyqq13emBFdQd7R_slTibvfRIP2KtULwFuG9KA0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/d2F2ZXNoYXJlLmNv/bS9pbWcvZGV2a2l0/L2FjY2Vzc29yaWVz/L1BELTAzMEItVVMv/UEQtMDMwQi1VUy1k/ZXRhaWxzLTcuanBn",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-pj-030b.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "32x32x10mm",
+      "productName": "PJ032-15R-35",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/cui-devices/PJ032-15R-35/980649",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3a8GTt3",
+      "estimatedCost": 8
+    },
+    {
+      "id": "rugged_enclosure_main",
+      "name": "Main Enclosure Housing",
+      "type": "enclosure",
+      "partId": "073c0d3d-2917-494d-bd98-aff4c3badebe",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Hammond+1550Z107BK+IP67+Aluminum+Enclosure&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x80x50mm",
+      "description": "Durable, waterproof aluminum enclosure to house all internal components, providing military-grade protection.",
+      "productName": "Hammond 1550Z107BK IP67 Aluminum Enclosure",
+      "purchaseUrl": "https://www.amazon.com/s?k=Hammond+1550Z107BK+IP67+Aluminum+Enclosure",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4PNfhln",
+      "estimatedCost": 45
+    },
+    {
+      "id": "enclosure_gasket_seal",
+      "name": "Enclosure Sealing Gasket",
+      "type": "misc",
+      "partId": "f649059a-7302-4eb3-9ac4-69dbc3a95f22",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=IP67+Rubber+Sealing+Gasket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x80mm",
+      "description": "Ensures a watertight seal for the main enclosure housing, preventing water and dust ingress.",
+      "productName": "IP67 Rubber Sealing Gasket",
+      "purchaseUrl": "https://www.amazon.com/s?k=IP67+rubber+gasket+150x80",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR5BSd5Gwuz1F3wmtcK5KTcSVwIuMsAAGH4INtGX0LGBPWxznp1sEfQitJMoqRKzzX3HpszSviAkCbH7XcBoONn9btCv9uwEo1Sg0RWVdgV2NS1ONBPyYg2CjGutjD7OHqrz3a9PWyLtzPrlYzijm1ctvXsKcBVCGv4hxkT1HvJVk9C1SxXPpq7LNExxGJalSrttgOKsVcsStJWXFXUgDtHr7ummwMIbaNXo6fdPL4iVkljLq6tBXS4sbp4P5Lmv7aVOjMb7F1VfR5lTlV3g5J9IGGWDbj8NRyES4HhH9inSqGWey0EgOc1wGVzhtM9XvvtY7Uxe3ZHYJS4N9I0qdlSfvJpQuQOfWbWUFCPk6JitNOYhzIWjAuRWNjJSveNfE7u5opM2NeyvNfb4yVXXusYXeN0iOjYzvqI6Bx9wLFXyIvwsA3eeDziJZGzCmc6nGt3KvO2NUFi0otvpnqWIOXBV7OJdA6e0zFzZUjdVKUtEQ7zuAwYkPkCrRgJn0WZeCDoPu2QF0xDUGVj96Wc59AWK5aS6znO2YlIm6x9YzJdtHNvVOvl8jX5hxay5LURLwwk0fpSTNhnpjmqXSas57j70n0npVo6b49OHdEg5DRxLpF5CiG74JwjPoAGXsX9aonBsPar6ErZE7lOOU05ywagL",
+      "estimatedCost": 5
+    },
+    {
+      "id": "internal_mounting_plate",
+      "name": "Internal Component Mounting Plate",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "140x70x5mm",
+      "description": "3D printed internal plate with standoffs and cutouts for securely mounting PCBs and modules inside the enclosure.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 3.5,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "front_bezel_display_cutout",
+      "name": "Front Bezel with Display Cutout",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "dimensions": "145x75x8mm",
+      "description": "Custom 3D printed bezel for the front of the enclosure, providing a clean mount for the display and keypad.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 4,
+      "printSettings": "40% infill, 0.2mm layer"
+    },
+    {
+      "id": "keypad_frame_mount",
+      "name": "Keypad Frame Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "mountsFor": "keypad_matrix",
+      "dimensions": "60x60x3mm",
+      "description": "3D printed frame to securely hold the miniature tactile keypad in position on the front bezel.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 0.8,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "mcu_mount_standoffs",
+      "name": "MCU Mounting Standoffs",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "main_mcu",
+      "dimensions": "20x15x10mm",
+      "description": "Small 3D printed standoffs to elevate and secure the main microcontroller board to the internal mounting plate.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "sdr_module_mount",
+      "name": "SDR Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "wideband_sdr",
+      "dimensions": "50x30x10mm",
+      "description": "Custom 3D printed bracket to securely hold the wideband SDR module onto the internal mounting plate.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.75,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "battery_holder",
+      "name": "LiPo Battery Holder",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "mountsFor": "lipo_battery",
+      "dimensions": "100x60x20mm",
+      "description": "Rugged 3D printed cradle to securely hold the high-capacity LiPo battery, preventing movement and impacts.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "speaker_grille_cover",
+      "name": "Speaker Grille Cover",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "mountsFor": "speaker",
+      "dimensions": "30x30x5mm",
+      "description": "Protective 3D printed grille for the rugged speaker, integrated into the enclosure for durability.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 0.6,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "microphone_port_seal",
+      "name": "Microphone Port Seal",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "microphone",
+      "dimensions": "15x15x8mm",
+      "description": "Small 3D printed waterproof seal and mounting for the noise-cancelling microphone, maintaining IP67 rating.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.4,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "antenna_connector_mount",
+      "name": "Antenna Connector Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "dimensions": "25x25x15mm",
+      "description": "Reinforced 3D printed mount for the external antenna connector, providing structural support and sealing.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 0.7,
+      "printSettings": "50% infill, 0.2mm layer"
+    },
+    {
+      "id": "usb_c_port_cover",
+      "name": "USB-C Port Weather Cover",
+      "type": "misc",
+      "partId": "3983bcb4-a900-472c-bbcf-5fa03ae11f48",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Silicone+USB-C+Dust+Cover&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/65cK4i4lxozzTqVLpqsSP1fcNkk2X7ovT9UdtGzHeSc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5tYWRlLWluLWNo/aW5hLmNvbS8yMDNm/MGowMEdUcmN1a0xs/UmV6WS9TaWxpY29u/ZS1VU0ItVHlwZS1D/LUR1c3QtUGx1Zy1S/dWJiZXItUHJvdGVj/dG9yLUFudGktRHVz/dC1DYXAtQ292ZXIt/Zm9yLUNvbXB1dGVy/LndlYnA",
+      "material": "Silicone",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D3GFJBJ2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x5x5mm",
+      "description": "Rubber/silicone plug to seal the USB-C charging/data port when not in use, maintaining waterproof integrity.",
+      "productName": "Silicone USB-C Dust Cover",
+      "purchaseUrl": "https://www.amazon.com/s?k=USB-C+port+dust+cover+silicone",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHHgBZEMbadu8vl7G1tQiT3psO2Q6bLKgKBIvXUd2GzyL8IRm99Drfcvc5B2KfxCQrcGdlzU0hi5ZSvRd49DuDTTefrAHTcSmXhHDWsZ6jvbsTWAgpIuhiIMWnp11h4IsOFOfegFKNHN27BPC40I0FFQ1QJr9BxKVHzHZSLeKnnaAF1Qa1D3raqQsc6QXJWioknkPFU4p62p8U4ikeupDouHbGMwYe0ExtoFJlNuBOr4IP1LXUGgqyu62MyZxP4TKSTgA1F5L9fWWSCXmfAxvKfEztZ5DM0ulKCuxw9DUvlfYxBlnNm5d1mKwvAM39r2U9OlQEICLcpfqWknxwSeThyPqB1KiV3EqjTRf5wqIYsMm29YpcvxaZ8SCkObyVlD7jjOJ5StJga7ldff9mJEEUxmz1E2jlNjTgPU9Eh88W3MMmDxSb0pXZGrYA7tnY3WVmDK4mT1PNUUIKhXTxwCmhBualkQX2hhvPLrJON08LClhImaZ5xqOp0hBxTzmLCgp3erAplNdQ1hbGATjtsMfhK8f1A89B9jFKnme9q53vpHPrhjZsJ1QlsxXjgf5ClqsUk4wptTWXHIRoD6ljrkVBkyTxlfjCgxOZds9KoGoeZUfoumOcn7Mj47rkHMWxRdOpEL7NGspfyCMIlDbkYs3HsB",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "m3_mounting_screws",
+      "name": "M3 Mounting Screws",
+      "type": "misc",
+      "partId": "c64bb085-4e45-4b03-93eb-9ed800e0d222",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Stainless+Steel+Pan+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31kfgV1t0ZL._SL500_.jpg",
+      "quantity": 20,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07MPJVW4W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.79",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-m3x6mm-stainless-steel-pan-head-screws.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MPJVW4W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "Standard M3 screws for securing internal PCBs and modules to 3D printed standoffs and internal plates.",
+      "productName": "M3x6mm Stainless Steel Pan Head Screws",
+      "purchaseUrl": "https://www.amazon.com/dp/B07MPJVW4W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3SXbwGz",
+      "estimatedCost": 0.08
+    },
+    {
+      "id": "m3_nuts",
+      "name": "M3 Nuts",
+      "type": "misc",
+      "partId": "d2d0f821-8876-46bb-9ba1-98cdd29f81e5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Stainless+Steel+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41pX1SHnmpL._SL500_.jpg",
+      "quantity": 10,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08N68W9SP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$4.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006863843530.html?pdp_npi=6%40dis%21USD%2117.66%218.83%21%21%21119.40%2159.70%21%4021013cc617793484210075774e105f%2112000038553282001%21affd%21%21%21%211%210%21",
+            "price": "$8.83",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08N68W9SP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "Standard M3 nuts for securing various components with M3 screws, often used with standoffs.",
+      "productName": "M3 Stainless Steel Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/dp/B08N68W9SP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGJmOrxlMpDubYQYtLNRkBdFEJOK3mI6BO6T0MS7MxRIrPQPAly6lJw0dyItkwyiVNyfC4J6d9ViNmKebAbKFlGeqJaV5C3fT2oSvowjAJGp9au12oHRy0biKjpP6LiBBikjM65l3S5hL1RpBDwYCT2abZJqgsLQYPyZjdBQV1k9or8XqGxmugXqSl4NrMhUf8QCflFv2ksQXuSgW507PfTJu8iGdBzuPy4mKblM9FUNDHdMjSMPoewUKrbAkD3G0EIVfkGJrWm65PFBlHiT3XK7jj2eEayMpJdiWd9XnXHUZGo9GPq9iKtEtee4ABjVZkvuTBF7VjEE9MAZPfmWvEXfb8ud1vHaEpQBDS574qkI4JwvigBFnwcBOjYC8tXip7CWf7h1TVLAnu8HTWhG4UmfYLS6rniI7MuY04bLp1Be4340bL9OxcFdhgmIX4CDMaCoysGqpwqqVCdw6ilk9Edy94rlyYGMl3shVTURNjtZjxNlFhu0p0jtjC3Ob35aK2cFsX5ZUFiI06Qzta3Y6wQT8ciNj5R7tVy1C5gAXfHs0qAleazxnDk6we953KCYKw9TtoUJf1PXI8KRcjXASOLZeFFhF98fFrcooiIzlleA8NNyouNEYwBNyn2yvYzrRWXfHQnaHvf7J5pgW3FYa9jH",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "m4_enclosure_screws",
+      "name": "M4 Enclosure Lid Screws",
+      "type": "misc",
+      "partId": "8386908c-c798-423c-a28e-5e233b78c648",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M4x12mm+Stainless+Steel+Countersunk+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "Stainless Steel",
+      "quantity": 6,
+      "amazonUrl": "https://www.amazon.com/dp/B09Y5NT2PC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M4x12mm",
+      "description": "Stainless steel screws for securely fastening the enclosure lid, ensuring weather sealing.",
+      "productName": "M4x12mm Stainless Steel Countersunk Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M4x12mm+stainless+steel+countersunk+screws",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4mAuHmv",
+      "estimatedCost": 0.15
+    },
+    {
+      "id": "lanyard_attachment_point",
+      "name": "Lanyard Attachment Point",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "dimensions": "20x15x10mm",
+      "description": "Robust 3D printed loop integrated into the enclosure design for attaching a lanyard or strap.",
+      "productName": null,
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 0.9,
+      "printSettings": "100% infill, 0.2mm layer"
+    },
+    {
+      "id": "rubber_feet",
+      "name": "Anti-Slip Rubber Feet",
+      "type": "misc",
+      "partId": "181c332d-ee04-44bd-8b0e-2f7b801d67b9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Self-Adhesive+Rubber+Bumper+Feet&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51r26Uy+bLL._SL500_.jpg",
+      "quantity": 4,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B085DMB1XV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$6.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005005315398342.html?pdp_npi=6%40dis%21USD%212.19%212.07%21%21%212.19%212.07%21%402151fce817793271851237599e0e10%2112000032599811961%21affd%21%21%21%211%210%21",
+            "price": "$2.07",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B085DMB1XV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x3mm",
+      "description": "Small self-adhesive rubber feet to prevent the device from slipping on surfaces and provide minor impact absorption.",
+      "productName": "Self-Adhesive Rubber Bumper Feet",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHZXMZopPmSvuqx09bNpnRx4M1WoHQMnaxBJrg96RYXkzKivyqp37jjhw2LqPCRfozqKzXSjinhYABV5791txWZllMRKarKmyFWUIgUHxZae8qzsIz4nBXeyXaVCyOXtQVYVlvBLX9E94A6E1U0qHSI1IGYNGjouIWlnxz2wXhxQCHfKVtKIsXwbAztRIj6UELxy6wmQpRREMELXhxr1P4mLTiy9JEIl6kKrXVVvomkbmFrMCjuvmX5XusIxqSD8GaDSjfSTiEC8EKCBsWRAcmpwMhapC5PGntydWzEU24w7Vc9J7jDL0jEfaz1NnOHjMboQBAE7KGr212ebdaP3WW8S4iCm1nlRYpAxQHBJ30OkDf6R3Rg2MDaMyvVPQTrYkwGxM6A2skHdhUYlnEgkZ3xbKxuqDBXxpvEpsBZkAZ6Rnb7SxtyQZDE7EkmNpzM2pncXKiihzPZbFS4ITyAjooDUUGOPNmIL7U6x1YM8uqAuzCZqquI4VrusVOvqcp28saUevvd3zOFmgM1aouVgfB4HmJdoU4UbQLemhDEPk6ZZRdZW5rikCiHbHMyj7A3TrWxTVd267usKxJ3oVyednFSBBRQLGkiBFJcqgGWpQikJAPztwfJ43NOpy4URt5eAfoRQoIbPupExoNIcQ0CvnY6f",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHZXMZopPmSvuqx09bNpnRx4M1WoHQMnaxBJrg96RYXkzKivyqp37jjhw2LqPCRfozqKzXSjinhYABV5791txWZllMRKarKmyFWUIgUHxZae8qzsIz4nBXeyXaVCyOXtQVYVlvBLX9E94A6E1U0qHSI1IGYNGjouIWlnxz2wXhxQCHfKVtKIsXwbAztRIj6UELxy6wmQpRREMELXhxr1P4mLTiy9JEIl6kKrXVVvomkbmFrMCjuvmX5XusIxqSD8GaDSjfSTiEC8EKCBsWRAcmpwMhapC5PGntydWzEU24w7Vc9J7jDL0jEfaz1NnOHjMboQBAE7KGr212ebdaP3WW8S4iCm1nlRYpAxQHBJ30OkDf6R3Rg2MDaMyvVPQTrYkwGxM6A2skHdhUYlnEgkZ3xbKxuqDBXxpvEpsBZkAZ6Rnb7SxtyQZDE7EkmNpzM2pncXKiihzPZbFS4ITyAjooDUUGOPNmIL7U6x1YM8uqAuzCZqquI4VrusVOvqcp28saUevvd3zOFmgM1aouVgfB4HmJdoU4UbQLemhDEPk6ZZRdZW5rikCiHbHMyj7A3TrWxTVd267usKxJ3oVyednFSBBRQLGkiBFJcqgGWpQikJAPztwfJ43NOpy4URt5eAfoRQoIbPupExoNIcQ0CvnY6f",
+      "estimatedCost": 0.2
+    },
+    {
+      "id": "color_display_mount",
+      "name": "IPS TFT Color Display Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "color_display",
+      "dimensions": "90x60x10mm",
+      "description": "Front-bezel mount for the IPS TFT Color Display with a flush face and rear standoffs for the PCB. Cable relief on the bottom.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "audio_codec_mount",
+      "name": "Audio Codec IC Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "audio_codec",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the Audio Codec IC that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "solar_panel",
+      "name": "Compact Solar Panel",
+      "pins": [
+        "Positive",
+        "Negative"
+      ],
+      "type": "power",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5V+2W+Monocrystalline+Solar+Panel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/Sd1c69e7217f043058e48f9bb4c896a3f0.jpeg",
+      "quantity": 1,
+      "description": "Compact monocrystalline solar panel for renewable energy input to the charge controller.",
+      "productName": "5V 2W Monocrystalline Solar Panel",
+      "purchaseUrl": "https://www.adafruit.com/product/387",
+      "estimatedCost": 25
+    },
+    {
+      "id": "solar_panel_mount",
+      "name": "Solar Panel Mounting Bracket",
+      "pins": [],
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "3D printed bracket to securely mount the solar panel to the exterior of the rugged enclosure.",
+      "productName": "null",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.5
+    }
+  ],
+  "notes": [
+    "Handheld communication",
+    "Rugged enclosure",
+    "Wideband scanning",
+    "Military-grade",
+    "Intercept capability"
+  ],
+  "projectName": "Tactical Interceptor",
+  "originalPrompt": "make me a talkie walkie army level that can intercept everything",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all mechanical mounting and enclosure parts",
+          "partIds": [
+            "internal_mounting_plate",
+            "front_bezel_display_cutout",
+            "keypad_frame_mount",
+            "mcu_mount_standoffs",
+            "sdr_module_mount",
+            "battery_holder",
+            "speaker_grille_cover",
+            "microphone_port_seal",
+            "antenna_connector_mount",
+            "lanyard_attachment_point",
+            "color_display_mount",
+            "audio_codec_mount",
+            "solar_panel_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Clean and deburr 3D printed parts, ensure fitment",
+          "partIds": [
+            "internal_mounting_plate",
+            "front_bezel_display_cutout",
+            "keypad_frame_mount",
+            "mcu_mount_standoffs",
+            "sdr_module_mount",
+            "battery_holder",
+            "speaker_grille_cover",
+            "microphone_port_seal",
+            "antenna_connector_mount",
+            "lanyard_attachment_point",
+            "color_display_mount",
+            "audio_codec_mount",
+            "solar_panel_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Prepare main enclosure housing for component installation (e.g., drill holes, clean surfaces)",
+          "partIds": [
+            "rugged_enclosure_main"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test fit the enclosure gasket seal into the rugged enclosure main body",
+          "partIds": [
+            "rugged_enclosure_main",
+            "enclosure_gasket_seal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder power and data headers to Main System Controller (MCU)",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder wires for power management IC, boost converter, and solar charge controller",
+          "partIds": [
+            "power_management_ic",
+            "boost_converter",
+            "solar_charge_controller"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect LiPo battery to power management IC and solar charge controller",
+          "partIds": [
+            "lipo_battery",
+            "power_management_ic",
+            "solar_charge_controller"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Wire MCU to color display, keypad matrix, and audio codec",
+          "partIds": [
+            "main_mcu",
+            "color_display",
+            "keypad_matrix",
+            "audio_codec"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect microphone to audio codec and speaker to audio codec",
+          "partIds": [
+            "microphone",
+            "audio_codec",
+            "speaker"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect Wideband SDR Transceiver to MCU (USB) and boost converter (power)",
+          "partIds": [
+            "wideband_sdr",
+            "main_mcu",
+            "boost_converter"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Wire solar panel to solar charge controller",
+          "partIds": [
+            "solar_panel",
+            "solar_charge_controller"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Perform continuity checks on all soldered connections and power rails",
+          "partIds": [
+            "main_mcu",
+            "wideband_sdr",
+            "power_management_ic",
+            "lipo_battery",
+            "boost_converter",
+            "solar_charge_controller",
+            "color_display",
+            "keypad_matrix",
+            "audio_codec",
+            "microphone",
+            "speaker",
+            "solar_panel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Apply initial power to the main MCU and verify boot-up sequence",
+          "partIds": [
+            "main_mcu",
+            "power_management_ic"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Flash initial firmware to the MCU",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test and calibrate the display (color_display)",
+          "partIds": [
+            "main_mcu",
+            "color_display"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify keypad matrix input functionality",
+          "partIds": [
+            "main_mcu",
+            "keypad_matrix"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test audio codec, microphone input, and speaker output",
+          "partIds": [
+            "audio_codec",
+            "microphone",
+            "speaker"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Verify Wideband SDR Transceiver detection and basic scanning functionality via USB",
+          "partIds": [
+            "main_mcu",
+            "wideband_sdr"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Test solar charging circuit and battery management functionality",
+          "partIds": [
+            "solar_panel",
+            "solar_charge_controller",
+            "power_management_ic",
+            "lipo_battery"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the MCU to its standoffs on the internal mounting plate",
+          "partIds": [
+            "main_mcu",
+            "mcu_mount_standoffs",
+            "internal_mounting_plate",
+            "m3_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount the SDR module, battery holder, and audio codec to the internal mounting plate",
+          "partIds": [
+            "wideband_sdr",
+            "sdr_module_mount",
+            "lipo_battery",
+            "battery_holder",
+            "audio_codec",
+            "audio_codec_mount",
+            "internal_mounting_plate",
+            "m3_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Secure the internal mounting plate assembly into the rugged enclosure main housing",
+          "partIds": [
+            "internal_mounting_plate",
+            "rugged_enclosure_main",
+            "m3_mounting_screws",
+            "m3_nuts"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount the display, keypad, speaker, and microphone to the front bezel",
+          "partIds": [
+            "color_display",
+            "color_display_mount",
+            "keypad_matrix",
+            "keypad_frame_mount",
+            "speaker",
+            "speaker_grille_cover",
+            "microphone",
+            "microphone_port_seal",
+            "front_bezel_display_cutout",
+            "m3_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Route all internal wiring, ensure strain relief, and connect to respective components",
+          "partIds": [
+            "main_mcu",
+            "wideband_sdr",
+            "power_management_ic",
+            "lipo_battery",
+            "boost_converter",
+            "solar_charge_controller",
+            "color_display",
+            "keypad_matrix",
+            "audio_codec",
+            "microphone",
+            "speaker",
+            "solar_panel"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount the solar panel to its bracket and then to the enclosure, connect wiring",
+          "partIds": [
+            "solar_panel",
+            "solar_panel_mount",
+            "rugged_enclosure_main",
+            "solar_charge_controller"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Attach the front bezel assembly to the rugged enclosure main body, ensuring gasket seal",
+          "partIds": [
+            "front_bezel_display_cutout",
+            "rugged_enclosure_main",
+            "enclosure_gasket_seal",
+            "m4_enclosure_screws"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Install USB-C port cover, anti-slip rubber feet, and lanyard attachment point",
+          "partIds": [
+            "usb_c_port_cover",
+            "rubber_feet",
+            "lanyard_attachment_point",
+            "rugged_enclosure_main",
+            "m3_mounting_screws"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "The Tactical Interceptor is a rugged, military-grade handheld device for wideband signal interception and communication. It integrates a wideband SDR transceiver, powerful MCU, and comprehensive power management, including solar charging, within a durable, sealed enclosure. A display, keypad, mic, and speaker facilitate user interaction and audio capabilities.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "Handheld communication",
+      "Rugged enclosure",
+      "Wideband scanning",
+      "Military-grade",
+      "Intercept capability"
+    ],
+    "description": "make me a talkie walkie army level that can intercept everything",
+    "technicalDescription": "This handheld tactical communication device integrates a wideband SDR transceiver for comprehensive signal interception and transmission. Encased in a rugged, military-grade enclosure, it is powered by a high-capacity LiPo battery with solar charging capabilities."
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG and ABS capable)",
+      "Soldering iron with fine tip",
+      "Solder (lead-free recommended)",
+      "Wire strippers and cutters",
+      "Heat gun (for heat shrink tubing)",
+      "Multimeter (for continuity and voltage checks)",
+      "M3 hex key",
+      "M4 hex key",
+      "Precision screwdriver set (Phillips and flathead)",
+      "Hobby knife or deburring tool",
+      "Tweezers (fine-tip)",
+      "Magnifying lamp or loupe",
+      "Isopropyl alcohol and lint-free wipes"
+    ],
+    "assumptions": [
+      "Basic soldering experience with SMD components",
+      "Familiarity with 3D printing and post-processing parts",
+      "Understanding of basic electronics safety (e.g., LiPo handling)",
+      "Access to a computer for firmware flashing and testing",
+      "Knowledge of basic Linux/Windows command line for driver installation (if applicable)"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Battery to PMIC",
+      "source": "lipo_battery",
+      "target": "power_management_ic",
+      "current": "2A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "PMIC to Battery (Charging)",
+      "source": "power_management_ic",
+      "target": "lipo_battery",
+      "current": "1A",
+      "voltage": "4.2V"
+    },
+    {
+      "type": "power",
+      "label": "Solar to Battery",
+      "source": "solar_charge_controller",
+      "target": "lipo_battery",
+      "current": "500mA",
+      "voltage": "4.2V"
+    },
+    {
+      "type": "power",
+      "label": "System Power to MCU",
+      "source": "power_management_ic",
+      "target": "main_mcu",
+      "current": "1.5A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "PMIC SYS to Boost VIN",
+      "source": "power_management_ic",
+      "target": "boost_converter",
+      "current": "1A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "Boost to SDR",
+      "source": "boost_converter",
+      "target": "wideband_sdr",
+      "current": "1A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "MCU Power to Display",
+      "source": "main_mcu",
+      "target": "color_display",
+      "current": "100mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "MCU Power to Audio Codec",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "current": "50mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "MCU Power to Mic",
+      "source": "main_mcu",
+      "target": "microphone",
+      "current": "10mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "label": "MCU to PMIC I2C",
+      "source": "main_mcu",
+      "target": "power_management_ic",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "MCU to SDR USB",
+      "source": "main_mcu",
+      "target": "wideband_sdr",
+      "protocol": "usb",
+      "sourcePin": "USB",
+      "targetPin": "USB"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Display SCK",
+      "source": "main_mcu",
+      "target": "color_display",
+      "protocol": "spi",
+      "sourcePin": "SPI",
+      "targetPin": "SCK"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Display MOSI",
+      "source": "main_mcu",
+      "target": "color_display",
+      "protocol": "spi",
+      "sourcePin": "SPI",
+      "targetPin": "MOSI"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Display CS",
+      "source": "main_mcu",
+      "target": "color_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "CS"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Display DC",
+      "source": "main_mcu",
+      "target": "color_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "DC"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Display Backlight",
+      "source": "main_mcu",
+      "target": "color_display",
+      "protocol": "gpio",
+      "sourcePin": "PWM",
+      "targetPin": "BL"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Keypad Row0",
+      "source": "main_mcu",
+      "target": "keypad_matrix",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Row0"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Keypad Row1",
+      "source": "main_mcu",
+      "target": "keypad_matrix",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Row1"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Keypad Row2",
+      "source": "main_mcu",
+      "target": "keypad_matrix",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Row2"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Keypad Row3",
+      "source": "main_mcu",
+      "target": "keypad_matrix",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Row3"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Keypad Col0",
+      "source": "main_mcu",
+      "target": "keypad_matrix",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Col0"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Keypad Col1",
+      "source": "main_mcu",
+      "target": "keypad_matrix",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Col1"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Keypad Col2",
+      "source": "main_mcu",
+      "target": "keypad_matrix",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Col2"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Keypad Col3",
+      "source": "main_mcu",
+      "target": "keypad_matrix",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Col3"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Codec MCLK",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "I2S",
+      "targetPin": "MCLK"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Codec LRCLK",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "I2S",
+      "targetPin": "LRCLK"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Codec BCLK",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "I2S",
+      "targetPin": "BCLK"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Codec I2S Data",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "I2S",
+      "targetPin": "I2S"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Codec Control I2C",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "Mic to Codec Audio In",
+      "source": "audio_codec",
+      "target": "microphone",
+      "protocol": "pdm",
+      "sourcePin": "Analog_IN",
+      "targetPin": "DOUT"
+    },
+    {
+      "type": "data",
+      "label": "Codec to Mic Clock",
+      "source": "audio_codec",
+      "target": "microphone",
+      "protocol": "gpio",
+      "sourcePin": "BCLK",
+      "targetPin": "SCLK"
+    },
+    {
+      "type": "data",
+      "label": "Codec to Speaker",
+      "source": "audio_codec",
+      "target": "speaker",
+      "protocol": "analog",
+      "sourcePin": "Analog_OUT",
+      "targetPin": "Positive"
+    },
+    {
+      "type": "data",
+      "label": "SDR to MCU USB",
+      "source": "wideband_sdr",
+      "target": "main_mcu",
+      "protocol": "usb",
+      "sourcePin": "USB",
+      "targetPin": "USB"
+    },
+    {
+      "type": "power",
+      "label": "Solar to PMIC VBUS",
+      "source": "solar_charge_controller",
+      "target": "power_management_ic",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Boost Enable",
+      "source": "main_mcu",
+      "target": "boost_converter",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "EN"
+    },
+    {
+      "type": "data",
+      "label": "Boost Feedback to MCU (Voltage Monitoring)",
+      "source": "main_mcu",
+      "target": "boost_converter",
+      "protocol": "adc",
+      "sourcePin": "ADC",
+      "targetPin": "FB"
+    },
+    {
+      "type": "power",
+      "label": "Solar Panel to Charge Controller Input",
+      "source": "solar_panel",
+      "target": "solar_charge_controller",
+      "voltage": "5V",
+      "sourcePin": "Positive",
+      "targetPin": "Solar_IN"
+    },
+    {
+      "type": "power",
+      "label": "Solar Panel Ground",
+      "source": "solar_panel",
+      "target": "solar_charge_controller",
+      "voltage": "0V",
+      "sourcePin": "Negative",
+      "targetPin": "GND"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "sealed against",
+      "source": "rugged_enclosure_main",
+      "target": "enclosure_gasket_seal"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "rugged_enclosure_main",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "M4 enclosure screws",
+      "source": "rugged_enclosure_main",
+      "target": "front_bezel_display_cutout"
+    },
+    {
+      "label": "inserted into port cutout",
+      "source": "rugged_enclosure_main",
+      "target": "usb_c_port_cover"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "rugged_enclosure_main",
+      "target": "lanyard_attachment_point"
+    },
+    {
+      "label": "adhesive",
+      "source": "rugged_enclosure_main",
+      "target": "rubber_feet"
+    },
+    {
+      "label": "M3 mounting screws",
+      "source": "front_bezel_display_cutout",
+      "target": "keypad_frame_mount"
+    },
+    {
+      "label": "M3 mounting screws",
+      "source": "front_bezel_display_cutout",
+      "target": "speaker_grille_cover"
+    },
+    {
+      "label": "press fit",
+      "source": "front_bezel_display_cutout",
+      "target": "microphone_port_seal"
+    },
+    {
+      "label": "M3 mounting screws",
+      "source": "front_bezel_display_cutout",
+      "target": "color_display_mount"
+    },
+    {
+      "label": "M3 mounting screws",
+      "source": "internal_mounting_plate",
+      "target": "mcu_mount_standoffs"
+    },
+    {
+      "label": "M3 mounting screws",
+      "source": "internal_mounting_plate",
+      "target": "sdr_module_mount"
+    },
+    {
+      "label": "M3 mounting screws",
+      "source": "internal_mounting_plate",
+      "target": "battery_holder"
+    },
+    {
+      "label": "M3 mounting screws",
+      "source": "internal_mounting_plate",
+      "target": "antenna_connector_mount"
+    },
+    {
+      "label": "M3 mounting screws",
+      "source": "internal_mounting_plate",
+      "target": "audio_codec_mount"
+    },
+    {
+      "label": "fastens with",
+      "source": "m3_mounting_screws",
+      "target": "m3_nuts"
+    },
+    {
+      "label": "mount",
+      "source": "keypad_frame_mount",
+      "target": "keypad_matrix"
+    },
+    {
+      "label": "mount",
+      "source": "mcu_mount_standoffs",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "sdr_module_mount",
+      "target": "wideband_sdr"
+    },
+    {
+      "label": "mount",
+      "source": "battery_holder",
+      "target": "lipo_battery"
+    },
+    {
+      "label": "mount",
+      "source": "speaker_grille_cover",
+      "target": "speaker"
+    },
+    {
+      "label": "mount",
+      "source": "microphone_port_seal",
+      "target": "microphone"
+    },
+    {
+      "label": "mount",
+      "source": "color_display_mount",
+      "target": "color_display"
+    },
+    {
+      "label": "mount",
+      "source": "audio_codec_mount",
+      "target": "audio_codec"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "rugged_enclosure_main",
+      "target": "solar_panel_mount"
+    },
+    {
+      "label": "adhesive + M2 screws",
+      "source": "solar_panel_mount",
+      "target": "solar_panel"
+    }
+  ],
+  "projectId": "2e426ca6-33b5-40aa-82d7-2f136c767726"
+}

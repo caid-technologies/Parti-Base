@@ -1,0 +1,232 @@
+[
+  {
+    "label": "M3 bolts",
+    "source": "internal_mounting_plate",
+    "target": "boat_hull"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "debris_scoop_front",
+    "target": "boat_hull"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "debris_storage_bin",
+    "target": "boat_hull"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "solar_panel_mount_frame",
+    "target": "boat_hull"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "electronics_enclosure_base",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "seated",
+    "source": "electronics_enclosure_gasket",
+    "target": "electronics_enclosure_base"
+  },
+  {
+    "label": "M3 screws",
+    "source": "electronics_enclosure_lid",
+    "target": "electronics_enclosure_base"
+  },
+  {
+    "label": "threaded connection",
+    "source": "cable_glands_waterproof_3x",
+    "target": "electronics_enclosure_base"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "propulsion_motor_mount_left",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "propulsion_motor_mount_right",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "set screws",
+    "source": "left_propeller_shaft_coupling",
+    "target": "left_propeller_shaft"
+  },
+  {
+    "label": "set screws",
+    "source": "right_propeller_shaft_coupling",
+    "target": "right_propeller_shaft"
+  },
+  {
+    "label": "threaded connection",
+    "source": "left_propeller",
+    "target": "left_propeller_shaft"
+  },
+  {
+    "label": "threaded connection",
+    "source": "right_propeller",
+    "target": "right_propeller_shaft"
+  },
+  {
+    "label": "pressed fit/M3 bolts",
+    "source": "left_propeller_bearing",
+    "target": "boat_hull"
+  },
+  {
+    "label": "pressed fit/M3 bolts",
+    "source": "right_propeller_bearing",
+    "target": "boat_hull"
+  },
+  {
+    "label": "seated",
+    "source": "left_propeller_shaft",
+    "target": "left_propeller_bearing"
+  },
+  {
+    "label": "seated",
+    "source": "right_propeller_shaft",
+    "target": "right_propeller_bearing"
+  },
+  {
+    "label": "seated/adhesive",
+    "source": "shaft_seal_ring_propeller_2x",
+    "target": "boat_hull"
+  },
+  {
+    "label": "sealed against",
+    "source": "left_propeller_shaft",
+    "target": "shaft_seal_ring_propeller_2x"
+  },
+  {
+    "label": "sealed against",
+    "source": "right_propeller_shaft",
+    "target": "shaft_seal_ring_propeller_2x"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "conveyor_belt_frame_front",
+    "target": "boat_hull"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "conveyor_belt_frame_rear",
+    "target": "boat_hull"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "conveyor_belt_frame_front",
+    "target": "conveyor_belt_frame_rear"
+  },
+  {
+    "label": "bearings/shafts",
+    "source": "conveyor_belt_rollers_2x",
+    "target": "conveyor_belt_frame_front"
+  },
+  {
+    "label": "bearings/shafts",
+    "source": "conveyor_belt_rollers_2x",
+    "target": "conveyor_belt_frame_rear"
+  },
+  {
+    "label": "wrapped around",
+    "source": "conveyor_belt_material",
+    "target": "conveyor_belt_rollers_2x"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "conveyor_motor_mount",
+    "target": "conveyor_belt_frame_rear"
+  },
+  {
+    "label": "press fit/set screw (roller side)",
+    "source": "conveyor_gear_motor_side",
+    "target": "conveyor_belt_rollers_2x"
+  },
+  {
+    "label": "meshed",
+    "source": "conveyor_gear_motor_side",
+    "target": "conveyor_gear_roller_side"
+  },
+  {
+    "label": "press fit/set screw (motor side)",
+    "source": "conveyor_gear_roller_side",
+    "target": "conveyor_belt_rollers_2x"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "esc_mount_left",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "esc_mount_right",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "main_mcu_mount",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "rc_receiver_mount",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "conveyor_motor_driver_mount",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "mount",
+    "source": "propulsion_motor_mount_left",
+    "target": "propulsion_motor_left"
+  },
+  {
+    "label": "mount",
+    "source": "propulsion_motor_mount_right",
+    "target": "propulsion_motor_right"
+  },
+  {
+    "label": "mount",
+    "source": "conveyor_motor_mount",
+    "target": "conveyor_motor"
+  },
+  {
+    "label": "mount",
+    "source": "solar_panel_mount_frame",
+    "target": "solar_panel"
+  },
+  {
+    "label": "mount",
+    "source": "lipo_battery_strap",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_left",
+    "target": "esc_left"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_right",
+    "target": "esc_right"
+  },
+  {
+    "label": "mount",
+    "source": "main_mcu_mount",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "rc_receiver_mount",
+    "target": "rc_receiver"
+  },
+  {
+    "label": "mount",
+    "source": "conveyor_motor_driver_mount",
+    "target": "conveyor_motor_driver"
+  }
+]

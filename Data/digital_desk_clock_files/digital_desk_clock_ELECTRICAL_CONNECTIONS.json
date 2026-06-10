@@ -1,0 +1,70 @@
+[
+  {
+    "type": "power",
+    "label": "3.3V to MCU",
+    "source": "voltage_regulator_3v3",
+    "target": "esp32_s3_mcu",
+    "current": "300mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "label": "Data to LED Matrix",
+    "source": "esp32_s3_mcu",
+    "target": "led_matrix_display",
+    "protocol": "NeoPixel",
+    "sourcePin": "GPIO4",
+    "targetPin": "DIN"
+  },
+  {
+    "type": "power",
+    "source": "tp4056_charger",
+    "target": "voltage_regulator_3v3",
+    "voltage": "3.7V-4.2V"
+  },
+  {
+    "type": "power",
+    "source": "tp4056_charger",
+    "target": "led_matrix_display",
+    "voltage": "3.7V-4.2V"
+  },
+  {
+    "type": "power",
+    "label": "3.7V-4.2V",
+    "source": "lipo_battery_2500mah",
+    "target": "tp4056_charger",
+    "voltage": "3.7V-4.2V"
+  },
+  {
+    "type": "data",
+    "source": "esp32_s3_mcu",
+    "target": "ds3231_rtc",
+    "protocol": "I2C",
+    "sourcePin": "GPIO8",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "source": "esp32_s3_mcu",
+    "target": "ds3231_rtc",
+    "protocol": "I2C",
+    "sourcePin": "GPIO9",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "power",
+    "label": "3.3V Power",
+    "source": "voltage_regulator_3v3",
+    "target": "ds3231_rtc",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "esp32_s3_mcu",
+    "target": "piezo_speaker",
+    "voltage": "3.3V",
+    "protocol": "PWM",
+    "sourcePin": "GPIO10",
+    "targetPin": "+"
+  }
+]

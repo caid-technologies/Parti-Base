@@ -1,0 +1,2333 @@
+{
+  "plan": "- MCU: Arduino Uno or ESP32 with GRBL firmware- Actuators: NEMA 17 stepper motors (3x), corresponding stepper drivers (e.g., A4988 or DRV8825)- Power: 12-24V power supply, wiring, end-stop switches- Mechanical: Aluminum extrusion frame (2020 or 2040), lead screws or ball screws, linear rails/bearings, spindle motor with ER11 collet- Custom 3D prints: Motor mounts, lead screw nuts, spindle mount, tool holder- Enclosure: Optional acrylic or wood dust enclosure",
+  "nodes": [
+    {
+      "id": "esp32_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "3V3",
+        "GND",
+        "D2",
+        "D4",
+        "D5",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D18",
+        "D19",
+        "D21",
+        "D22",
+        "D23",
+        "D25",
+        "D26",
+        "D27",
+        "D32",
+        "D33"
+      ],
+      "type": "mcu",
+      "partId": "adae0166-a040-4ad7-879e-aa03207d2856",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/MQCWWrlFRzyNHN__5qHN76SiNjCp68n9oLyu6uVmEco/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZGl5bW9yZS5jYy9j/ZG4vc2hvcC9wcm9k/dWN0cy84XzMxOGZi/ZTU2LWUwYzAtNGE4/OC1hYWE1LWE0MWJi/MzgxNjc0Y18xMDI0/eDEwMjQuanBnP3Y9/MTYyNjE1MDAzNg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Processor Clock Speed",
+            "value": "240 MHz"
+          },
+          {
+            "label": "Integrated Wi-Fi",
+            "value": "802.11 b/g/n"
+          },
+          {
+            "label": "Integrated Bluetooth",
+            "value": "Bluetooth v4.2 BR/EDR & BLE"
+          },
+          {
+            "label": "Flash Memory",
+            "value": "4 MB"
+          },
+          {
+            "label": "SRAM",
+            "value": "520 KB"
+          },
+          {
+            "label": "Operating Voltage",
+            "value": "3.3 V"
+          },
+          {
+            "label": "GPIO Pins",
+            "value": "Approx. 30-36 usable"
+          },
+          {
+            "label": "ADC Resolution",
+            "value": "12-bit (up to 18 channels)"
+          },
+          {
+            "label": "UART Interfaces",
+            "value": "3"
+          },
+          {
+            "label": "SPI Interfaces",
+            "value": "4"
+          }
+        ],
+        "summary": "The ESP32 Dev Kit C V4 is a powerful development board built around the ESP32-WROOM-32 module, offering integrated Wi-Fi and Bluetooth for versatile connectivity. It features a dual-core processor, substantial flash and SRAM, and numerous GPIOs, making it excellent for IoT applications and demanding embedded tasks. Its robust capabilities are particularly well-suited for running GRBL firmware to control CNC axes and spindles, providing a cost-effective and high-performance solution for the Desktop CNC Mill project.",
+        "sourcing": []
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x28x10mm",
+      "position3d": {
+        "x": 180,
+        "y": 70,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 28,
+        "width": 55,
+        "height": 10
+      },
+      "description": "Microcontroller running GRBL firmware to control CNC axes and spindle.",
+      "productName": "ESP32 Dev Kit C V4",
+      "purchaseUrl": "https://www.amazon.com/s?k=ESP32+Dev+Kit+C",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwYLyE5siav8bjgEx7RHJI3ajaV5OLPfvyDYhtqKp7R9P4XsquepxYqSritlSYmg1mszAQWjXj5LydQPCvFskUdTIXfQGTEjrJRhE8BWfY47JLOOq3wOXwY22UReeHOzEPAAzm3obbUy72NaE7UK8TWIZxFEjE55vwAL0sASSOqZS5zLaRTK0oFz8kpnMubK2CdnRsBiuoNKo79Ydyp9CMAuk8EG5rWaMxkvyKwtZ0irbb00jRjHM8BsC8g94bSvJMSezn7z7T8ynRRaiC2yM77cF9KODQW27dXtdBLmje49MWzl4FVhyuMS4dKcrdgMaV0Yuf9NETkeDey1UhgMXlBPv34k4B3Y498DYMMnUbYJ8jtc2ETPlOfVOiGJ0tgz7HQsSczkNmpxJlMdOP5qfLLsMKJaWOdiLm5nZZx1WQpCFoD50O5M0VOTetvSRanoCEp7YywebH0gZkxuvcrq590UYsrFSaS4fBfISmd9SxmMdgrOSeunt26kLjOzGPc0iMIwuyfXahazhVyPg7VQCGoSsAA0OF7FT4UsvRPHlJTeDsY1MHY3OKFPawH3ZkTMtpd1OeQUlj8oorVUolDOfIv308Lf6oYcrHxdAEDZwNpoAwcNkZTrbTMuLefupMrEAf89M2BCI0KjgwShtJt5BwkF",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32+Dev+Kit+C+V4&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_power_supply",
+      "name": "Main 24V Power Supply",
+      "pins": [
+        "AC_L",
+        "AC_N",
+        "GND",
+        "V+",
+        "V-"
+      ],
+      "type": "power",
+      "partId": "10b60d8a-8cc9-4ace-a135-18a227e007be",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/bSziTnc9ekjLNA6Fctur8EYNONObKcgr5F8RKdhdI4I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF3cjFxdll0Mkwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "AC_IN,DC_OUT+,DC_OUT-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BZVPWTB3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "160x98x42mm",
+      "position3d": {
+        "x": 80,
+        "y": 70,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 98,
+        "width": 160,
+        "height": 42
+      },
+      "description": "Provides 24V DC power for stepper motors and spindle driver.",
+      "productName": "24V 10A Switching Power Supply",
+      "purchaseUrl": "https://www.amazon.com/s?k=24V+10A+power+supply",
+      "estimatedCost": 30,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRMK6iUDVoYKaCXAO79sr1oWgoi0dMNUwhZvliUEvOVQlaB7Cr4dAHbgKmOwgsZ65ZuXSJCX8FvHTZpDpwjSSyW2XUN3gS1l8zJjxJ338obl0lagM3sBFI0hOpxUgTZrLORLNpAB7fEr8DeoXmgF3Nvx1kuVCtwI13N6ZpYjdXbdP2VCxAHpexQoykIr4MnhkNxQKPAHk05kB4tyUGCbaqmytmm9oy93x3xd8N6eo2zr3FfT1Opw4aPshSzOrUkFxT4vVeGdj3ZbCOG6FUaMht9G0ga3FurqX8Chwu0gu2w4uHcEcR4VweHZiSBRbz4fXOwbZoRyCWUgh4IxtaW4JxzJpJHLiqQfInx203pLiVLj7b3EeKJBQRc7bjDcGb9W8mtqFXzB6BcSOhGQegZXzWrWcgqT8UPKHQuhV6KLrNpxnnJzegPbJzbUYdCR8BdUom6R7LeQXz0nKw5TkFkpiumUY7pkphFpWbK0H30WLMZ0pCW0cKJhQM86Rkn6VcDMaDLNu7XIh6NhqE8fR0cAIv64FSI9c4uhnWf0NCvzX1siwS4keTC2R04nu6YBCO2Knd2MfPMEuq02rgcPNmcB7VHlwglfq6hnmZjZ8nVS4HC26Fj3HGIVu7WxxqhLMKI7cfsspNJRxFS1uPT9V9mqjjKj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=24V+10A+Switching+Power+Supply&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "buck_converter_5v",
+      "name": "24V to 5V Converter",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "power",
+      "partId": "9df5a46e-e68a-476a-b8ec-df4768161756",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fW4_GDBeL2rT8mg2Zb_Vxj_7Yepyy9vnmAidOfdgKg0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0ZDY0FB/ZVN3ZHBacFRZWDIv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN+,VIN-,VOUT+,VOUT-"
+          },
+          {
+            "label": "efficiency",
+            "value": "Up to 92%"
+          },
+          {
+            "label": "regulator_type",
+            "value": "Step Down (Buck Converter, Non-Isolated)"
+          },
+          {
+            "label": "dropout_voltage",
+            "value": "2VDC minimum (input voltage must be at least 1.5V-2V higher than output)"
+          },
+          {
+            "label": "load_regulation",
+            "value": "+/- 0.5%"
+          },
+          {
+            "label": "module_dimensions",
+            "value": "43.6mm L x 21mm W x 14mm H (typical module size)"
+          },
+          {
+            "label": "voltage_regulation",
+            "value": "+/- 2.5%"
+          },
+          {
+            "label": "input_voltage_range",
+            "value": "DC 4V to 40V (module input can be as low as 3V)"
+          },
+          {
+            "label": "switching_frequency",
+            "value": "150 kHz"
+          },
+          {
+            "label": "output_voltage_range",
+            "value": "Adjustable DC 1.23V to 35V"
+          },
+          {
+            "label": "operating_temperature",
+            "value": "-40 to +85 deg C (for output power less than 10W)"
+          },
+          {
+            "label": "maximum_output_current",
+            "value": "3A (with heatsink recommended for sustained 3A)"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://www.instructables.com/How-to-Use-DC-to-DC-Buck-Converter-LM2596/",
+            "title": "How to Use DC to DC Buck Converter LM2596",
+            "description": "This tutorial shows how to connect and adjust the LM2596 buck converter to power various devices, including tips on battery usage and multiple outputs."
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/how-to-use-dc-to-dc-buck-converter-lm2596",
+            "title": "LM2596 Buck Converter for Arduino Boards, LED Strips, and Small Motors",
+            "description": "This guide demonstrates the LM2596's use in various DIY electronics applications, highlighting its adjustable output for different voltage requirements."
+          },
+          {
+            "url": "https://forums.adafruit.com/viewtopic.php?t=151449",
+            "title": "Powering ESP8266 & Motor Controller with 24V-5V Step-down Converter",
+            "description": "A forum discussion illustrating the application of a 24V to 5V step-down converter, relevant for powering microcontrollers like ESP32 from a higher voltage supply."
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.3dcontentcentral.com/download-model.aspx?catalogid=171&id=2815158",
+            "label": "STEP File"
+          },
+          {
+            "url": "https://grabcad.com/library/lm2596-dc-dc-buck-converter-module-1",
+            "label": "GrabCAD 3D Model"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/lm2596-dc-dc-buck-converter/",
+            "label": "STLFinder 3D Models"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "Adafruit Mini DC/DC Step-Down (Buck) Converter - 5V @ 1A output - TSR12450",
+            "reason": "A smaller, fixed 5V output alternative, suitable for lower current needs (1A)."
+          },
+          {
+            "name": "eBoot Mini MP1584EN DC-DC Buck Converter",
+            "reason": "Another compact and often cheaper alternative for general step-down applications, typically with lower current ratings."
+          },
+          {
+            "name": "Alternative buck converters for >5A applications",
+            "reason": "The LM2596 is rated for 3A (with heatsink); for applications requiring more than 5A, a different buck converter chip or module designed for higher current would be necessary."
+          }
+        ],
+        "datasheetUrl": "https://www.ti.com/lit/ds/symlink/lm2596.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://www.ti.com/lit/ds/symlink/lm2596.pdf",
+            "title": "LM2596 Datasheet (Texas Instruments)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/how-to-use-dc-to-dc-buck-converter-lm2596",
+            "title": "LM2596 Buck Converter – Working, Wiring & Usage Guide"
+          },
+          {
+            "url": "https://componentslibrary.com/lm2596-dc-dc-buck-converter-datasheet.html",
+            "title": "LM2596 DC-DC Buck Converter Datasheet: Specifications, Features, and Application Guide (Components Library)"
+          },
+          {
+            "url": "https://www.scribd.com/document/424165576/20150123144301750-pdf",
+            "title": "LM2596 DC-DC Buck Converter Specs (Scribd)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DBVYP91F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x21x14mm",
+      "position3d": {
+        "x": 180,
+        "y": 85,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 21,
+        "width": 45,
+        "height": 14
+      },
+      "description": "Steps down 24V to 5V for the ESP32 and stepper driver logic.",
+      "productName": "LM2596 DC-DC Buck Converter",
+      "purchaseUrl": "https://www.amazon.com/s?k=LM2596+buck+converter",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfxyvZuXFg7GymQIiWhjuNtVTPqj3Lo4XOZwXfyPinxUunYhcnzsECmhQXvQMwBZFO7y8k7xoMt4iHjuv8bTZiSwN9PdOaJjeEstgI5aHcGyrbRTjMrq76aa3rCOGKKow9ilh4RN26OW5032Q8A2ovdeUBL8On7LAmb3PpqilGVbgAqyzJUf4vUSlpGbWyNwnHJQC59F7HXQwNQbTPXg0lunfZT3PMLwG0hy5wjCEVC0T1LMVwbxB9xRrTN2tbaX2U07tx98wlQ8p86LAwpA9Vi8eKeA1zSOErslZvHV99NyrMqsCRaLo8Q0YZxwy3CvOGuEc4mKXo0I7HXh2k3GzbJaToF5ggRx9E0xIgYBZuDPyEXbHHwhZWPaqMjh3YwRmEa48Nr3abLMcQ0iG0B0rSFRq4kTRXKTN28j1GihjXnqxxHkSEtX9tTMqVFcLhf3QvISsseO5I9RxIWf98Aadguqk3Ofed9sX6Ehg3rgOjHPNDr7CRa8kUw8uAhmcRFTkj0Cxp3cY3cIktoNAXwDUHeldXlfoL4VGcSgbFwk7iHm8WLkQWsDfrYI9TBZ3ETDkKexRpuEIo7PCW2eGGYPRM8HWYqm5FNcE90xMP5fQORQMbJa5DosaCigh9EcVvy2ePt57wmrRLjmL3kds9psDDXV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM2596+DC-DC+Buck+Converter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_stepper_driver",
+      "name": "X-Axis Stepper Driver",
+      "pins": [
+        "VMOT",
+        "GND",
+        "VCC",
+        "STEP",
+        "DIR",
+        "EN",
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "type": "module",
+      "partId": "450cca2e-acd0-4f66-8227-89cd9f38e819",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/tuZ_z4VrhmNMdD822NauYbSXwnb7zKeOfjus_9c0K9g/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0x0SUFB/T1N3d3B0ZE1jVFYv/cy1sMTQwLndlYnA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "DIR,STEP,ENABLE,MS1,MS2,MS3,VMOT,GND,VDD,OUT_A1,OUT_A2,OUT_B1,OUT_B2"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CP92T4QR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x10mm",
+      "position3d": {
+        "x": 200,
+        "y": 70,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 20,
+        "height": 10
+      },
+      "description": "Controls the X-axis NEMA 17 stepper motor.",
+      "productName": "DRV8825 Stepper Motor Driver Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=DRV8825+driver+module",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGJqZlLBPF4EEmEx82BKj9sVpnAWSCzLExkh3YISXnkAcqGUdtWPPQSn1ILnWk4AHDWxL1bnh0wye4dRe9kL1c4lFq2a6CCqtFd6jIeZ10XioMrvdVV10EvKg9vOKjUHqo94ENOKWGS3W5bHRRQi4MkIGCXqMmx5JS13ycmnqcTO1ZXQJrjxQSg1ey5QLYhuLU048dtMb9ZI9Y4YMvXp47yJ46bFhrL124GRC3M25sE4MCJ9sbqd0weKMdW6pRmQqoZKcXPAIG3DRsltt2giro2t3jcwUSm8t9OnSqkDxeUbZohJbckYpEvUfjiczFvLfnViZ9UVvdaHqtOXASzMr0luFw1F2yHsneujEAVUZ6yj6otYCUfMduoBXTsIDz6AlxrWTV46Vewz1JtV1T9ozlYbKhFCO0zEM1nT9cGWaREOa1aogvdSyIj31pm2CcH2vYQDO5X9JgL6i1lxunje5P3PXRl9Lm3sAdesUPQy7ighR14DptoEXi3nAK4doNlrQLojWvgz050zr8WvikbUtmRvSiAizQrEJjEKGGZIliJ2GW9CBa6VeYyB9cQipRVe6wBXOAEguNSGYqi3H5JMuTDvY7bVYjpYFq4ukn3qcKCsHYMfTW2YaqDBt5rait9TxeGARty39dio9UtoNJLc7DZv",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DRV8825+Stepper+Motor+Driver+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_stepper_driver",
+      "name": "Y-Axis Stepper Driver",
+      "pins": [
+        "VMOT",
+        "GND",
+        "VCC",
+        "STEP",
+        "DIR",
+        "EN",
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "type": "module",
+      "partId": "450cca2e-acd0-4f66-8227-89cd9f38e819",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/tuZ_z4VrhmNMdD822NauYbSXwnb7zKeOfjus_9c0K9g/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0x0SUFB/T1N3d3B0ZE1jVFYv/cy1sMTQwLndlYnA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "DIR,STEP,ENABLE,MS1,MS2,MS3,VMOT,GND,VDD,OUT_A1,OUT_A2,OUT_B1,OUT_B2"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CP92T4QR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x10mm",
+      "position3d": {
+        "x": 220,
+        "y": 70,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 20,
+        "height": 10
+      },
+      "description": "Controls the Y-axis NEMA 17 stepper motor.",
+      "productName": "DRV8825 Stepper Motor Driver Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=DRV8825+driver+module",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGJqZlLBPF4EEmEx82BKj9sVpnAWSCzLExkh3YISXnkAcqGUdtWPPQSn1ILnWk4AHDWxL1bnh0wye4dRe9kL1c4lFq2a6CCqtFd6jIeZ10XioMrvdVV10EvKg9vOKjUHqo94ENOKWGS3W5bHRRQi4MkIGCXqMmx5JS13ycmnqcTO1ZXQJrjxQSg1ey5QLYhuLU048dtMb9ZI9Y4YMvXp47yJ46bFhrL124GRC3M25sE4MCJ9sbqd0weKMdW6pRmQqoZKcXPAIG3DRsltt2giro2t3jcwUSm8t9OnSqkDxeUbZohJbckYpEvUfjiczFvLfnViZ9UVvdaHqtOXASzMr0luFw1F2yHsneujEAVUZ6yj6otYCUfMduoBXTsIDz6AlxrWTV46Vewz1JtV1T9ozlYbKhFCO0zEM1nT9cGWaREOa1aogvdSyIj31pm2CcH2vYQDO5X9JgL6i1lxunje5P3PXRl9Lm3sAdesUPQy7ighR14DptoEXi3nAK4doNlrQLojWvgz050zr8WvikbUtmRvSiAizQrEJjEKGGZIliJ2GW9CBa6VeYyB9cQipRVe6wBXOAEguNSGYqi3H5JMuTDvY7bVYjpYFq4ukn3qcKCsHYMfTW2YaqDBt5rait9TxeGARty39dio9UtoNJLc7DZv",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DRV8825+Stepper+Motor+Driver+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_stepper_driver",
+      "name": "Z-Axis Stepper Driver",
+      "pins": [
+        "VMOT",
+        "GND",
+        "VCC",
+        "STEP",
+        "DIR",
+        "EN",
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "type": "module",
+      "partId": "450cca2e-acd0-4f66-8227-89cd9f38e819",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/tuZ_z4VrhmNMdD822NauYbSXwnb7zKeOfjus_9c0K9g/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0x0SUFB/T1N3d3B0ZE1jVFYv/cy1sMTQwLndlYnA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "DIR,STEP,ENABLE,MS1,MS2,MS3,VMOT,GND,VDD,OUT_A1,OUT_A2,OUT_B1,OUT_B2"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CP92T4QR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x10mm",
+      "position3d": {
+        "x": 240,
+        "y": 70,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 20,
+        "height": 10
+      },
+      "description": "Controls the Z-axis NEMA 17 stepper motor.",
+      "productName": "DRV8825 Stepper Motor Driver Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=DRV8825+driver+module",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGJqZlLBPF4EEmEx82BKj9sVpnAWSCzLExkh3YISXnkAcqGUdtWPPQSn1ILnWk4AHDWxL1bnh0wye4dRe9kL1c4lFq2a6CCqtFd6jIeZ10XioMrvdVV10EvKg9vOKjUHqo94ENOKWGS3W5bHRRQi4MkIGCXqMmx5JS13ycmnqcTO1ZXQJrjxQSg1ey5QLYhuLU048dtMb9ZI9Y4YMvXp47yJ46bFhrL124GRC3M25sE4MCJ9sbqd0weKMdW6pRmQqoZKcXPAIG3DRsltt2giro2t3jcwUSm8t9OnSqkDxeUbZohJbckYpEvUfjiczFvLfnViZ9UVvdaHqtOXASzMr0luFw1F2yHsneujEAVUZ6yj6otYCUfMduoBXTsIDz6AlxrWTV46Vewz1JtV1T9ozlYbKhFCO0zEM1nT9cGWaREOa1aogvdSyIj31pm2CcH2vYQDO5X9JgL6i1lxunje5P3PXRl9Lm3sAdesUPQy7ighR14DptoEXi3nAK4doNlrQLojWvgz050zr8WvikbUtmRvSiAizQrEJjEKGGZIliJ2GW9CBa6VeYyB9cQipRVe6wBXOAEguNSGYqi3H5JMuTDvY7bVYjpYFq4ukn3qcKCsHYMfTW2YaqDBt5rait9TxeGARty39dio9UtoNJLc7DZv",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DRV8825+Stepper+Motor+Driver+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_stepper_motor",
+      "name": "X-Axis Stepper Motor",
+      "pins": [
+        "A+",
+        "A-",
+        "B+",
+        "B-"
+      ],
+      "type": "actuator",
+      "partId": "6e3e0e4f-4c31-4c0c-a11f-9e841ae11801",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/1297-00.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/1297",
+            "price": "$8.95",
+            "vendor": "Adafruit"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B00PNEQKC0?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x40mm",
+      "position3d": {
+        "x": 20,
+        "y": 165,
+        "z": 250
+      },
+      "boundingBox": {
+        "depth": 42,
+        "width": 42,
+        "height": 40
+      },
+      "description": "Provides motion for the X-axis.",
+      "productName": "NEMA 17 Stepper Motor",
+      "purchaseUrl": "https://www.adafruit.com/product/1297",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHVzeuimCilT5gxWNPJMBFCFzroG30H1FBEHoWh6sSwxNxEKgH7DGotWHZ7S1FxwWYkpbCLRLA4QkJz8ipLsjkBoLtJFWGz0Ss80hMkqiBBbMx8UKgTdIBpH1wZZQ2FiueHGMMEe3wyHkuQw2cwh2351l5ANKfeYCuWkK4bwd8uui6LO9TFJy6I2OUTTzvuRsSU9jHYveOr3E0gMceIpG7B51GmE6VJBUeUnuw32BrbGU1ZgOEkluxQmUG28vJ0HUNtSpcFSiKa1RYl6o9Kwt21kQiwWnpbWjfmZG5BMi6Nfmm1a0Njytp3fDGIliTjA6rMyytU1j1lEwChcglC3PSPoVzKuXuv3J6u2x8DUiIWOqynKvGtBXvscHatnRSnHrjsL3nRHjA9gUO9jTH8HHZcz9pCIKjkxbwwL3ghqa3ZTKVkrHkulnoRqJvRucVNEpFQmEtfOsNthLDqD8U6NuF29a4WxVd0AIVfadKXbGn8o0ccEsD1gfgJfDVS7EVZuVzISRWZbGJC6mmrWLyzHbeLKMF7zHW2FSji07BmVYU9aeehXKuYcHEpvESk1fhleEZhS91fqWcFUs2JV8PYIqLqfLzY7XTBZKX32T1Vw0ULE3tFeTjdkElZDMtBzchJPM7BksJgVigyzbM422320YdPz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+17+Stepper+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_stepper_motor",
+      "name": "Y-Axis Stepper Motor",
+      "pins": [
+        "A+",
+        "A-",
+        "B+",
+        "B-"
+      ],
+      "type": "actuator",
+      "partId": "6e3e0e4f-4c31-4c0c-a11f-9e841ae11801",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/1297-00.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/1297",
+            "price": "$8.95",
+            "vendor": "Adafruit"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B00PNEQKC0?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x40mm",
+      "position3d": {
+        "x": 20,
+        "y": 95,
+        "z": 400
+      },
+      "boundingBox": {
+        "depth": 42,
+        "width": 42,
+        "height": 40
+      },
+      "description": "Provides motion for the Y-axis.",
+      "productName": "NEMA 17 Stepper Motor",
+      "purchaseUrl": "https://www.adafruit.com/product/1297",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHVzeuimCilT5gxWNPJMBFCFzroG30H1FBEHoWh6sSwxNxEKgH7DGotWHZ7S1FxwWYkpbCLRLA4QkJz8ipLsjkBoLtJFWGz0Ss80hMkqiBBbMx8UKgTdIBpH1wZZQ2FiueHGMMEe3wyHkuQw2cwh2351l5ANKfeYCuWkK4bwd8uui6LO9TFJy6I2OUTTzvuRsSU9jHYveOr3E0gMceIpG7B51GmE6VJBUeUnuw32BrbGU1ZgOEkluxQmUG28vJ0HUNtSpcFSiKa1RYl6o9Kwt21kQiwWnpbWjfmZG5BMi6Nfmm1a0Njytp3fDGIliTjA6rMyytU1j1lEwChcglC3PSPoVzKuXuv3J6u2x8DUiIWOqynKvGtBXvscHatnRSnHrjsL3nRHjA9gUO9jTH8HHZcz9pCIKjkxbwwL3ghqa3ZTKVkrHkulnoRqJvRucVNEpFQmEtfOsNthLDqD8U6NuF29a4WxVd0AIVfadKXbGn8o0ccEsD1gfgJfDVS7EVZuVzISRWZbGJC6mmrWLyzHbeLKMF7zHW2FSji07BmVYU9aeehXKuYcHEpvESk1fhleEZhS91fqWcFUs2JV8PYIqLqfLzY7XTBZKX32T1Vw0ULE3tFeTjdkElZDMtBzchJPM7BksJgVigyzbM422320YdPz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+17+Stepper+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_stepper_motor",
+      "name": "Z-Axis Stepper Motor",
+      "pins": [
+        "A+",
+        "A-",
+        "B+",
+        "B-"
+      ],
+      "type": "actuator",
+      "partId": "6e3e0e4f-4c31-4c0c-a11f-9e841ae11801",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/1297-00.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/1297",
+            "price": "$8.95",
+            "vendor": "Adafruit"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B00PNEQKC0?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x40mm",
+      "position3d": {
+        "x": 250,
+        "y": 455,
+        "z": 270
+      },
+      "boundingBox": {
+        "depth": 42,
+        "width": 42,
+        "height": 40
+      },
+      "description": "Provides motion for the Z-axis.",
+      "productName": "NEMA 17 Stepper Motor",
+      "purchaseUrl": "https://www.adafruit.com/product/1297",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHVzeuimCilT5gxWNPJMBFCFzroG30H1FBEHoWh6sSwxNxEKgH7DGotWHZ7S1FxwWYkpbCLRLA4QkJz8ipLsjkBoLtJFWGz0Ss80hMkqiBBbMx8UKgTdIBpH1wZZQ2FiueHGMMEe3wyHkuQw2cwh2351l5ANKfeYCuWkK4bwd8uui6LO9TFJy6I2OUTTzvuRsSU9jHYveOr3E0gMceIpG7B51GmE6VJBUeUnuw32BrbGU1ZgOEkluxQmUG28vJ0HUNtSpcFSiKa1RYl6o9Kwt21kQiwWnpbWjfmZG5BMi6Nfmm1a0Njytp3fDGIliTjA6rMyytU1j1lEwChcglC3PSPoVzKuXuv3J6u2x8DUiIWOqynKvGtBXvscHatnRSnHrjsL3nRHjA9gUO9jTH8HHZcz9pCIKjkxbwwL3ghqa3ZTKVkrHkulnoRqJvRucVNEpFQmEtfOsNthLDqD8U6NuF29a4WxVd0AIVfadKXbGn8o0ccEsD1gfgJfDVS7EVZuVzISRWZbGJC6mmrWLyzHbeLKMF7zHW2FSji07BmVYU9aeehXKuYcHEpvESk1fhleEZhS91fqWcFUs2JV8PYIqLqfLzY7XTBZKX32T1Vw0ULE3tFeTjdkElZDMtBzchJPM7BksJgVigyzbM422320YdPz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+17+Stepper+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "spindle_motor_driver",
+      "name": "Spindle Motor Driver",
+      "pins": [
+        "Vin+",
+        "Vin-",
+        "PWM_in",
+        "GND_in",
+        "Motor+",
+        "Motor-"
+      ],
+      "type": "module",
+      "partId": "99bc845a-d9b7-44db-9dd8-ff9f95d1a303",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/DjQ42ve3bX3dZRFaCIPQ87LLKkPj8ce8GMsU75Jyyzk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWFrZXJmYWJzLmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNTA4MjYx/OWU4M2FmNTAyYjFj/ZjI4NTcyNzMzNTc2/YTAvZC9jL2RjX21v/dG9yX3B3bV9zcGVl/ZF9jb250cm9sbGVy/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "V_IN+,V_IN-,MOTOR+,MOTOR-,PWM,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B071NQ5G71?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x40x25mm",
+      "position3d": {
+        "x": 190,
+        "y": 70,
+        "z": -50
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 70,
+        "height": 25
+      },
+      "description": "Controls the speed and on/off state of the DC spindle motor using a PWM signal.",
+      "productName": "PWM DC Motor Speed Controller",
+      "purchaseUrl": "https://www.amazon.com/s?k=PWM+DC+motor+speed+controller",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgRKdJIiueJPsIjSaaSpoMSsUFIY2FC7UufzanEFdJAkO1Bxu5t2iLJ8vuvA9sKDkoR2QoT52rpiuTiDnM6AJhVv1LeMEc9Ha562tAuyJKjnDXHPuj00zPGgddfNS1n899V5F8pOv6RnrsDslU0LiP7xe4fgQWHyJlf23L5DtKVsdZjC4YY6YpcAKpkJPPsjItgG3R8MYmxfNbRFrtWcJpHZr5qTL7Jfc5tgNoGABcMriiSUsTsE10f28LxuH9xTsri1Ud4sGN0I3r5E1ZAwQcJVHjGnLSZmayz7k8dJ2STRNPx2En3yenvY0npBo1Luwds8PXl3YxaOXfh0PlSuRsnrrW79pbwhYYMhtavtSOjF7TxNWKwxT4jbZtYIKbDSPIPr3WbjZWBGhxmtPgfxcD4c0QoLIvsYO0ZFZcH3HgAWztF8gFUMjcRICRti17rB4rAUBAxKnTpblGqwZ8LcdeoUZl1gcZiyD9cEYnjPc9FeIlpHQMcurv31GGmZVJGa4U4wRKa1qtQ32xetaa7TghvEFbp3YsGbTl5gq8ucOJnoEM3UPyAfUXr3EeyIEW4sxjwVNXrjunIYF7fcikiyZ3cINidkmlWfDLeHcWTIGEZ9ZE5VE9EYbAUWgOYWN94xP9Vn7f0vell0bjpczJ2tDwU7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PWM+DC+Motor+Speed+Controller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "spindle_motor",
+      "name": "Spindle Motor",
+      "pins": [
+        "Motor+",
+        "Motor-"
+      ],
+      "type": "actuator",
+      "partId": "a35d7a3c-b432-4fc7-9822-e207fddd4a8a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/1wmcvd1sZ5X9AGHY-ViAQXG_1G1HySWb4VG-bRWSjxg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFYczlENFdlSEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09X2Y63XQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "52x52x170mm",
+      "position3d": {
+        "x": 250,
+        "y": 280,
+        "z": 295
+      },
+      "boundingBox": {
+        "depth": 52,
+        "width": 52,
+        "height": 170
+      },
+      "description": "The tool head responsible for material removal.",
+      "productName": "500W DC Spindle Motor ER11",
+      "purchaseUrl": "https://www.amazon.com/s?k=500w+dc+spindle+motor+ER11",
+      "estimatedCost": 50,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwQKvGdIFtb2VzF6PC8qD7JXI2mJeNku6kY5WqjmwUph6K69XWDJ1qUk7juJMU3geGBuAtZylcZThueSZvJgB9HiPLLZ7NOwm7AminAhTFVnt0RBimqwTQS4TX5YYTkNn0PsXRiuTZGfqVazF7ZjPh2zWDcF3Fb9UB9uFmfqymmBeXcUczH6RR7jwrrAW1fbzNypLVDEoyhkG28llYxeC7l0NCnfWdcYRHR3LFmYpS4hsxHCohFoRAi1lHyqJAFwihyqFHNf277WeThepI7eM1uZEjFa5W6pC0YkKIrmbVyvXHlzRgrz5On2miJTZdrOKiKdbEnb92g6JwqYXcFo7Q7rI927w9wShDcvWwnzjSlw196DbEmAr8iS53xCvniW5fniuATfCZh06xXei7Wb9x7lv7vAqMYEi0Rbyx2Hi8YhAtdcOc9k9BaJwizl2YuQmBEQgX4J2W37TnggNaVN0tgouvVs70GLcgINeTYevZTGRjBoZ4bKiOkm1fpd19WU1EHd5ETiQHWHqbDDuLV2ZPENhV1aJDqPqlDELqq2rhNwgAGc7YIzMqmAUOt5hvLxslX5aUNgCXJamOxIKXqxjorE4Slr8ldbQFZZdTMeAK412ooXknvkkAmLILfxIJu5dJDXkdjw0HMZqAzcpAW3F5ej",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=500W+DC+Spindle+Motor+ER11&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_end_stop",
+      "name": "X-Axis End-stop",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "sensor",
+      "partId": "4c0b6a60-0d93-41f9-8b03-4400d2acda59",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Mt6q_ZIZfWCB8PzUvaKRouE2R4Zzb9VecVkzwSEigZU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuYmFsbHVmZi5j/b20vcHJvZHVjdF9k/ZXRhaWxfMTI4MHgx/MjgwLzI3MTgwMjMu/cG5n",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,OUT"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07X142VGC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x10x5mm",
+      "position3d": {
+        "x": 480,
+        "y": 70,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 20,
+        "height": 5
+      },
+      "description": "Detects the physical limit of the X-axis travel.",
+      "productName": "Mechanical Limit Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=mechanical+limit+switch+3pin",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIodW5aYCfyN34PneYtyNmyNfyAqLHY1HnY7M8cTU1rpJqFGTaA8WN0doCTj6CU2JcS3lwgHAc5K1rshI0nH3sg9zwSjvmcdlK399F5ybol1EBXdvYEV3ewpSrDG0GSLbMDio2yxpO6fSS4wtxZhpuH3yG7o8m5yflvSSiatQZF3DmT7EqilsJyLBi1BlqqzWxT0b89uQ8o8Ci3gKXwJDxpqHIT9oMnA1avRQWP7zyoi5OTCgCu1TaADRpe2Z95588FsLGWSrmSknVjKWDSlf2bbnJWV9wg5ff6QEbCTcv8U97ZmEwlqcwOKsWbktj3FXvbhxpM1QCkitLVH8iZmD0pSBsV6siR7P1Qtg1VWZjW5yFHPCxvorc7iDtaTb4EuiDCzRAqxqkrlYQJEO2rJ4pJVgdWh54MXUhR0xuEtmgVz13DFvW43K1vIUSkhXIVC1xTOxunaFibPkwC8mhEQC1JWBeh3H61zGyUkJ5FzkJmd62QtFD2W5b5sR7b8yNykf5ArFrzOUS6hU2ZRsr6Wu9Al9NYgPXsz5TiXOo2ecX7rAT835CkfeZYDZceromOx5LDf4j4SJpX64auiNTVx5iZrYzD7A0y2ji6aZWIFUmKT6r25fm9N3SdgVtmZTLv4i6b7FOdGCsTx4OV8oLnmcKV5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mechanical+Limit+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_end_stop",
+      "name": "Y-Axis End-stop",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "sensor",
+      "partId": "4c0b6a60-0d93-41f9-8b03-4400d2acda59",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Mt6q_ZIZfWCB8PzUvaKRouE2R4Zzb9VecVkzwSEigZU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuYmFsbHVmZi5j/b20vcHJvZHVjdF9k/ZXRhaWxfMTI4MHgx/MjgwLzI3MTgwMjMu/cG5n",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,OUT"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07X142VGC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x10x5mm",
+      "position3d": {
+        "x": 20,
+        "y": 70,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 20,
+        "height": 5
+      },
+      "description": "Detects the physical limit of the Y-axis travel.",
+      "productName": "Mechanical Limit Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=mechanical+limit+switch+3pin",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIodW5aYCfyN34PneYtyNmyNfyAqLHY1HnY7M8cTU1rpJqFGTaA8WN0doCTj6CU2JcS3lwgHAc5K1rshI0nH3sg9zwSjvmcdlK399F5ybol1EBXdvYEV3ewpSrDG0GSLbMDio2yxpO6fSS4wtxZhpuH3yG7o8m5yflvSSiatQZF3DmT7EqilsJyLBi1BlqqzWxT0b89uQ8o8Ci3gKXwJDxpqHIT9oMnA1avRQWP7zyoi5OTCgCu1TaADRpe2Z95588FsLGWSrmSknVjKWDSlf2bbnJWV9wg5ff6QEbCTcv8U97ZmEwlqcwOKsWbktj3FXvbhxpM1QCkitLVH8iZmD0pSBsV6siR7P1Qtg1VWZjW5yFHPCxvorc7iDtaTb4EuiDCzRAqxqkrlYQJEO2rJ4pJVgdWh54MXUhR0xuEtmgVz13DFvW43K1vIUSkhXIVC1xTOxunaFibPkwC8mhEQC1JWBeh3H61zGyUkJ5FzkJmd62QtFD2W5b5sR7b8yNykf5ArFrzOUS6hU2ZRsr6Wu9Al9NYgPXsz5TiXOo2ecX7rAT835CkfeZYDZceromOx5LDf4j4SJpX64auiNTVx5iZrYzD7A0y2ji6aZWIFUmKT6r25fm9N3SdgVtmZTLv4i6b7FOdGCsTx4OV8oLnmcKV5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mechanical+Limit+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_end_stop",
+      "name": "Z-Axis End-stop",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "sensor",
+      "partId": "4c0b6a60-0d93-41f9-8b03-4400d2acda59",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Mt6q_ZIZfWCB8PzUvaKRouE2R4Zzb9VecVkzwSEigZU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuYmFsbHVmZi5j/b20vcHJvZHVjdF9k/ZXRhaWxfMTI4MHgx/MjgwLzI3MTgwMjMu/cG5n",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,OUT"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07X142VGC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x10x5mm",
+      "position3d": {
+        "x": 250,
+        "y": 150,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 20,
+        "height": 5
+      },
+      "description": "Detects the physical limit of the Z-axis travel.",
+      "productName": "Mechanical Limit Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=mechanical+limit+switch+3pin",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIodW5aYCfyN34PneYtyNmyNfyAqLHY1HnY7M8cTU1rpJqFGTaA8WN0doCTj6CU2JcS3lwgHAc5K1rshI0nH3sg9zwSjvmcdlK399F5ybol1EBXdvYEV3ewpSrDG0GSLbMDio2yxpO6fSS4wtxZhpuH3yG7o8m5yflvSSiatQZF3DmT7EqilsJyLBi1BlqqzWxT0b89uQ8o8Ci3gKXwJDxpqHIT9oMnA1avRQWP7zyoi5OTCgCu1TaADRpe2Z95588FsLGWSrmSknVjKWDSlf2bbnJWV9wg5ff6QEbCTcv8U97ZmEwlqcwOKsWbktj3FXvbhxpM1QCkitLVH8iZmD0pSBsV6siR7P1Qtg1VWZjW5yFHPCxvorc7iDtaTb4EuiDCzRAqxqkrlYQJEO2rJ4pJVgdWh54MXUhR0xuEtmgVz13DFvW43K1vIUSkhXIVC1xTOxunaFibPkwC8mhEQC1JWBeh3H61zGyUkJ5FzkJmd62QtFD2W5b5sR7b8yNykf5ArFrzOUS6hU2ZRsr6Wu9Al9NYgPXsz5TiXOo2ecX7rAT835CkfeZYDZceromOx5LDf4j4SJpX64auiNTVx5iZrYzD7A0y2ji6aZWIFUmKT6r25fm9N3SdgVtmZTLv4i6b7FOdGCsTx4OV8oLnmcKV5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mechanical+Limit+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "base_frame_x_front_back",
+      "name": "Base Frame X (Front/Back)",
+      "type": "structural",
+      "partId": "7b077a86-836b-4a0f-b1b2-4b49cc0ac5a2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/hyeYgd-AaI9F2rcY_FreVpv4JsVDRFIVgaYWO8p7L-w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly84MDIw/Lm5ldC9tZWRpYS9j/YXRhbG9nL3Byb2R1/Y3QvY2FjaGUvOWQ4/NmEwMDhlOTVkZGE4/NTEwY2IxNDFhMGQz/OWRhNTEvOC8wLzgw/MjBfYWx1bWludW1f/dC1zbG90X3Byb2Zp/bGVfMjA0MC5qcGc",
+      "material": "Aluminum",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0F4823SDV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "500x20x40mm",
+      "position3d": {
+        "x": 250,
+        "y": 10,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 500,
+        "height": 20
+      },
+      "description": "Forms the front and back of the machine's base frame.",
+      "productName": "2040 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2040+aluminum+extrusion+500mm",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRHA9iliBdZ5m52rzg1LNBEUJrvTe2xm9SD77OwO5lxJo4E9s7MVKQsUKN4s0eBqjmi673VCayBdtkF4El5LKSHw2OUukkBWpjSg1YWvhVZ8etJQ67pgVC1cQ5baou6MxXDoSenHqoMPHUEK9uYlHjpbhLpMcTgimNFG1wnIVfbXPyHqNWmNPLzun1ahJ6I7nJ8TYOrOp3ohCHXru13Y5HtznOCv85h7tjdQw61EPQgn2cAOm3xgtWRS53JpeT7KUshY1S5EU0xCsqQF52jtwIq2UnQLaYRpwzJXohm65jip1wZmVtm5tBkJ95q7ElGaIOngWedVkyiyHbzVq4MJ3ambnwKPrzuiHecUIRTVDB01Il4FOBfNGlT0O4juUtPGwEI1lt8g0cY0wS8IV8vhQkoUhSSwL90CRiRNSNgIBdgvbSAyPMV7xz6lBZ3w3npxoaGuxSaVZ9ZWNVgz8x106pSOGZaspGUl204AcFdXYbcdbyzUJsL3ryyW77ddircQrruYbujuYSwEV331toVbXayc0YHBAsL91Vuc6n9EUNIY9nDn57U4QFdVAaobcZjEaaTLh3RGUq014sgAxFRlA3pVCSaWIq4RzRKZoWRH6ejxN5JHzEcZx87pszbt6m1Txvc0NMTtTuaya34hgYdCx9d1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2040+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "base_frame_y_side",
+      "name": "Base Frame Y (Sides)",
+      "type": "structural",
+      "partId": "7b077a86-836b-4a0f-b1b2-4b49cc0ac5a2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/hyeYgd-AaI9F2rcY_FreVpv4JsVDRFIVgaYWO8p7L-w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly84MDIw/Lm5ldC9tZWRpYS9j/YXRhbG9nL3Byb2R1/Y3QvY2FjaGUvOWQ4/NmEwMDhlOTVkZGE4/NTEwY2IxNDFhMGQz/OWRhNTEvOC8wLzgw/MjBfYWx1bWludW1f/dC1zbG90X3Byb2Zp/bGVfMjA0MC5qcGc",
+      "material": "Aluminum",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0F4823SDV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x20x40mm",
+      "position3d": {
+        "x": 20,
+        "y": 10,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 400,
+        "height": 20
+      },
+      "description": "Forms the sides of the machine's base frame.",
+      "productName": "2040 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2040+aluminum+extrusion+400mm",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRHA9iliBdZ5m52rzg1LNBEUJrvTe2xm9SD77OwO5lxJo4E9s7MVKQsUKN4s0eBqjmi673VCayBdtkF4El5LKSHw2OUukkBWpjSg1YWvhVZ8etJQ67pgVC1cQ5baou6MxXDoSenHqoMPHUEK9uYlHjpbhLpMcTgimNFG1wnIVfbXPyHqNWmNPLzun1ahJ6I7nJ8TYOrOp3ohCHXru13Y5HtznOCv85h7tjdQw61EPQgn2cAOm3xgtWRS53JpeT7KUshY1S5EU0xCsqQF52jtwIq2UnQLaYRpwzJXohm65jip1wZmVtm5tBkJ95q7ElGaIOngWedVkyiyHbzVq4MJ3ambnwKPrzuiHecUIRTVDB01Il4FOBfNGlT0O4juUtPGwEI1lt8g0cY0wS8IV8vhQkoUhSSwL90CRiRNSNgIBdgvbSAyPMV7xz6lBZ3w3npxoaGuxSaVZ9ZWNVgz8x106pSOGZaspGUl204AcFdXYbcdbyzUJsL3ryyW77ddircQrruYbujuYSwEV331toVbXayc0YHBAsL91Vuc6n9EUNIY9nDn57U4QFdVAaobcZjEaaTLh3RGUq014sgAxFRlA3pVCSaWIq4RzRKZoWRH6ejxN5JHzEcZx87pszbt6m1Txvc0NMTtTuaya34hgYdCx9d1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2040+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_gantry_beam",
+      "name": "Y-Axis Gantry Beam",
+      "type": "structural",
+      "partId": "7b077a86-836b-4a0f-b1b2-4b49cc0ac5a2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/hyeYgd-AaI9F2rcY_FreVpv4JsVDRFIVgaYWO8p7L-w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly84MDIw/Lm5ldC9tZWRpYS9j/YXRhbG9nL3Byb2R1/Y3QvY2FjaGUvOWQ4/NmEwMDhlOTVkZGE4/NTEwY2IxNDFhMGQz/OWRhNTEvOC8wLzgw/MjBfYWx1bWludW1f/dC1zbG90X3Byb2Zp/bGVfMjA0MC5qcGc",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F4823SDV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "500x20x40mm",
+      "position3d": {
+        "x": 250,
+        "y": 90,
+        "z": 250
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 500,
+        "height": 20
+      },
+      "description": "Main beam for the Y-axis gantry, spanning across the base.",
+      "productName": "2040 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2040+aluminum+extrusion+500mm",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRHA9iliBdZ5m52rzg1LNBEUJrvTe2xm9SD77OwO5lxJo4E9s7MVKQsUKN4s0eBqjmi673VCayBdtkF4El5LKSHw2OUukkBWpjSg1YWvhVZ8etJQ67pgVC1cQ5baou6MxXDoSenHqoMPHUEK9uYlHjpbhLpMcTgimNFG1wnIVfbXPyHqNWmNPLzun1ahJ6I7nJ8TYOrOp3ohCHXru13Y5HtznOCv85h7tjdQw61EPQgn2cAOm3xgtWRS53JpeT7KUshY1S5EU0xCsqQF52jtwIq2UnQLaYRpwzJXohm65jip1wZmVtm5tBkJ95q7ElGaIOngWedVkyiyHbzVq4MJ3ambnwKPrzuiHecUIRTVDB01Il4FOBfNGlT0O4juUtPGwEI1lt8g0cY0wS8IV8vhQkoUhSSwL90CRiRNSNgIBdgvbSAyPMV7xz6lBZ3w3npxoaGuxSaVZ9ZWNVgz8x106pSOGZaspGUl204AcFdXYbcdbyzUJsL3ryyW77ddircQrruYbujuYSwEV331toVbXayc0YHBAsL91Vuc6n9EUNIY9nDn57U4QFdVAaobcZjEaaTLh3RGUq014sgAxFRlA3pVCSaWIq4RzRKZoWRH6ejxN5JHzEcZx87pszbt6m1Txvc0NMTtTuaya34hgYdCx9d1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2040+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_axis_vertical_extrusions",
+      "name": "Z-Axis Vertical Extrusions",
+      "type": "structural",
+      "partId": "d7c64375-fe6c-4511-82a2-d4343d0c686a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HBpLNt7U8seeZZU_Ljqy0h6Et31bF48y10eKbIwUo1E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/dmV2b3JzdGF0aWMu/Y29tL3VzLzIwMjBP/QkxYQzEwSjdGRFpH/MDAxVjAvb3JpZ2lu/YWxfaW1nLXYyL2V4/dHJ1c2lvbi1saW5l/YXItcmFpbC1tMTAw/LTEuMi5qcGc_dGlt/ZXN0YW1wPTE3NDEy/MjcwMTQwMDAmZm9y/bWF0PXdlYnAmZm9y/bWF0PXdlYnA",
+      "material": "Aluminum",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x20x20mm",
+      "description": "Vertical extrusions for the Z-axis linear motion.",
+      "productName": "2020 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+extrusion+300mm",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLkDB6gB8oJrbpmJyaw75E2dohZn6ruj2eU7ti7sgEabzWMPRuhlmRyDeJE4NAKsFdr7FieZZDsX4ZXvtvA7eFy09QUUAVPzJCplPWGe9PtekFMrTlKzfuu3up2UCTxL3H1N7hc8nzWxfVnrhGr1FbgGbdpXhc3VeBKunhCLSSuUol9hw0vzjXstBsiIGC7taXJPhLrEE5p14RvOFG05BF96IHbBjbjdLJfh1uQ0feb1X1vbBm96gFKLZwVBPJnhJd8Rpzgm0w7Y99ybAYu2goYhhpoEQsVo4JbXPFRMfxBeL6F0Y4Et22mpCR9x4x1XU0Q5K3yEk1oonWtPhGRsHSPGhLiSvBQBGYsfBhsFr0aMxJ642bMxznQO1lY8dX1HH1vvvSOQKPQln9eN5NzANkggImOLLYCj5cLq3qNIg4O0Ru5xh6bR5Y1AaMiTsndCa28aRL3Iel66k12WP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_axis_lead_screw",
+      "name": "X-Axis Lead Screw",
+      "type": "mechanism",
+      "partId": "e3e19576-ff30-436d-a890-65719b5c4857",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HUOU2_-hULrAsNaYSZYwV5P11APn2bGIUuhX5owSAm0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF2OUgxNW5hY0wu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B079HQ386R?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "500x8x8mm",
+      "description": "Provides linear motion for the X-axis.",
+      "productName": "T8 Lead Screw with Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=T8+lead+screw+500mm",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3PnGBzT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T8+Lead+Screw+with+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_axis_lead_screw",
+      "name": "Y-Axis Lead Screw",
+      "type": "mechanism",
+      "partId": "e3e19576-ff30-436d-a890-65719b5c4857",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HUOU2_-hULrAsNaYSZYwV5P11APn2bGIUuhX5owSAm0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF2OUgxNW5hY0wu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B079HQ386R?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x8x8mm",
+      "description": "Provides linear motion for the Y-axis.",
+      "productName": "T8 Lead Screw with Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=T8+lead+screw+400mm",
+      "estimatedCost": 7,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3PnGBzT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T8+Lead+Screw+with+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_axis_lead_screw",
+      "name": "Z-Axis Lead Screw",
+      "type": "mechanism",
+      "partId": "e3e19576-ff30-436d-a890-65719b5c4857",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HUOU2_-hULrAsNaYSZYwV5P11APn2bGIUuhX5owSAm0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF2OUgxNW5hY0wu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B079HQ386R?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x8x8mm",
+      "description": "Provides linear motion for the Z-axis.",
+      "productName": "T8 Lead Screw with Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=T8+lead+screw+300mm",
+      "estimatedCost": 6,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3PnGBzT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T8+Lead+Screw+with+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_linear_rods",
+      "name": "X-Axis Linear Rods",
+      "type": "mechanism",
+      "partId": "aef0ece1-152a-4c82-85a9-3daf24e2ad72",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/-aLN702pf-I5BR7pBlPRMTwblIZsRX5TGpZBnICli3s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly92eGIu/Y29tL2Nkbi9zaG9w/L2ZpbGVzLzUxNkEw/N3hwczNMX2NhMzY4/MTdiLWI2NTktNDE4/ZS05MzcwLTM2NGFi/NWU2NDUxOC5qcGc_/dj0xNzcyOTg1MDc1/JndpZHRoPTQ4MA",
+      "material": "Stainless Steel",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0BNLDZ6Y5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "500x8x8mm",
+      "description": "Guide rails for X-axis movement.",
+      "productName": "8mm Linear Motion Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=8mm+linear+rod+500mm",
+      "estimatedCost": 6,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxgmyz2qXnQsbqtPBOKiVlbXKOE9fJmTS1EwZJBY0lGdGHOQl3wr5C6i9BiVkcE2U1taHQwrGbJnUMLSTdFPVyl6LFm9CflwTdt7TubuF3NZv0ET9ycJveDhN3XhyZId1BciTpmVQK6UDFyjy9gZHODULSf6OmnTno7t1uLZgcI9yoUn5Zof5jPZ77ns4jnkbAVIJKlvyedNASK4ppOdqpY6QuYanFMfE5xbvr8xHKuUeCkbHtmIt5B0Ask0geiT0HlTRLQDmRQhEYoOiADMVPvy1IEiOviDHipaLAErZHiKQZix3tLzBffKrdvMOj1moT1VA6TiTM7NPi4SLyc6DGIp4O0TCUj9GBCWZz31KJsCTqwawNvCkd1obpR56GF1Nue0QABQHF24in0zpYGGnuZVg1KX2UThi1elC2GqQ3GV4c2sYBe1EANXbAPVHon0ewd5wvttao5jNxaVKP2R4upECsmhLKhA9Kb6cUgcAWR2fU9xrXTgNQTgKKKm5G0mUlfJDKXVtst82clHAGfp4N45IqpjBvV8izGVF5y4OFNSw2MlH1wBu2AU1HkBLAvYwS2Xquwf8cQSf7CjvOqFFNaT07oCGDnylEwwMqBi7CVBioYmtPYcb80RvLZWyEDT7ClLowIc8qb2DI9NrLATJFaxD",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8mm+Linear+Motion+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_linear_rods",
+      "name": "Y-Axis Linear Rods",
+      "type": "mechanism",
+      "partId": "aef0ece1-152a-4c82-85a9-3daf24e2ad72",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/-aLN702pf-I5BR7pBlPRMTwblIZsRX5TGpZBnICli3s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly92eGIu/Y29tL2Nkbi9zaG9w/L2ZpbGVzLzUxNkEw/N3hwczNMX2NhMzY4/MTdiLWI2NTktNDE4/ZS05MzcwLTM2NGFi/NWU2NDUxOC5qcGc_/dj0xNzcyOTg1MDc1/JndpZHRoPTQ4MA",
+      "material": "Stainless Steel",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0BNLDZ6Y5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x8x8mm",
+      "description": "Guide rails for Y-axis movement.",
+      "productName": "8mm Linear Motion Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=8mm+linear+rod+400mm",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxgmyz2qXnQsbqtPBOKiVlbXKOE9fJmTS1EwZJBY0lGdGHOQl3wr5C6i9BiVkcE2U1taHQwrGbJnUMLSTdFPVyl6LFm9CflwTdt7TubuF3NZv0ET9ycJveDhN3XhyZId1BciTpmVQK6UDFyjy9gZHODULSf6OmnTno7t1uLZgcI9yoUn5Zof5jPZ77ns4jnkbAVIJKlvyedNASK4ppOdqpY6QuYanFMfE5xbvr8xHKuUeCkbHtmIt5B0Ask0geiT0HlTRLQDmRQhEYoOiADMVPvy1IEiOviDHipaLAErZHiKQZix3tLzBffKrdvMOj1moT1VA6TiTM7NPi4SLyc6DGIp4O0TCUj9GBCWZz31KJsCTqwawNvCkd1obpR56GF1Nue0QABQHF24in0zpYGGnuZVg1KX2UThi1elC2GqQ3GV4c2sYBe1EANXbAPVHon0ewd5wvttao5jNxaVKP2R4upECsmhLKhA9Kb6cUgcAWR2fU9xrXTgNQTgKKKm5G0mUlfJDKXVtst82clHAGfp4N45IqpjBvV8izGVF5y4OFNSw2MlH1wBu2AU1HkBLAvYwS2Xquwf8cQSf7CjvOqFFNaT07oCGDnylEwwMqBi7CVBioYmtPYcb80RvLZWyEDT7ClLowIc8qb2DI9NrLATJFaxD",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8mm+Linear+Motion+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_linear_rods",
+      "name": "Z-Axis Linear Rods",
+      "type": "mechanism",
+      "partId": "aef0ece1-152a-4c82-85a9-3daf24e2ad72",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/-aLN702pf-I5BR7pBlPRMTwblIZsRX5TGpZBnICli3s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly92eGIu/Y29tL2Nkbi9zaG9w/L2ZpbGVzLzUxNkEw/N3hwczNMX2NhMzY4/MTdiLWI2NTktNDE4/ZS05MzcwLTM2NGFi/NWU2NDUxOC5qcGc_/dj0xNzcyOTg1MDc1/JndpZHRoPTQ4MA",
+      "material": "Stainless Steel",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0BNLDZ6Y5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x8x8mm",
+      "description": "Guide rails for Z-axis movement.",
+      "productName": "8mm Linear Motion Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=8mm+linear+rod+300mm",
+      "estimatedCost": 4,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxgmyz2qXnQsbqtPBOKiVlbXKOE9fJmTS1EwZJBY0lGdGHOQl3wr5C6i9BiVkcE2U1taHQwrGbJnUMLSTdFPVyl6LFm9CflwTdt7TubuF3NZv0ET9ycJveDhN3XhyZId1BciTpmVQK6UDFyjy9gZHODULSf6OmnTno7t1uLZgcI9yoUn5Zof5jPZ77ns4jnkbAVIJKlvyedNASK4ppOdqpY6QuYanFMfE5xbvr8xHKuUeCkbHtmIt5B0Ask0geiT0HlTRLQDmRQhEYoOiADMVPvy1IEiOviDHipaLAErZHiKQZix3tLzBffKrdvMOj1moT1VA6TiTM7NPi4SLyc6DGIp4O0TCUj9GBCWZz31KJsCTqwawNvCkd1obpR56GF1Nue0QABQHF24in0zpYGGnuZVg1KX2UThi1elC2GqQ3GV4c2sYBe1EANXbAPVHon0ewd5wvttao5jNxaVKP2R4upECsmhLKhA9Kb6cUgcAWR2fU9xrXTgNQTgKKKm5G0mUlfJDKXVtst82clHAGfp4N45IqpjBvV8izGVF5y4OFNSw2MlH1wBu2AU1HkBLAvYwS2Xquwf8cQSf7CjvOqFFNaT07oCGDnylEwwMqBi7CVBioYmtPYcb80RvLZWyEDT7ClLowIc8qb2DI9NrLATJFaxD",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8mm+Linear+Motion+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lm8uu_bearings",
+      "name": "LM8UU Linear Bearings",
+      "type": "mechanism",
+      "partId": "7d0f6e63-1e33-4722-8119-f526612f8b22",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/o6hSRi4SRHxKLUongMCLjX2UvxDtLAw5n6FnQOUAzOQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjEzOTJvRW1zakwu/anBn",
+      "material": "Steel",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B087WPGQ8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x24x24mm",
+      "description": "Allow smooth sliding motion on 8mm linear rods.",
+      "productName": "LM8UU Linear Ball Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=LM8UU+linear+bearing",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHUyvZ6u7ii8i1rrqAd0nXo0Q4IempHhamLwaoacOd4sTS6mtBhrEWGKQuELhUrUFanwP8ZoezkrJQtqCf424Z3YUAgRdQgeLHzaqyNgr3akU9jmM20IV0EsEUKIgnYxNc97AZmotLR7TdBV1NrHkw1hajE18O6RvwoExFMG3v04xpbrtS89HFOaABkZr9k2zgcSz0vkYm2CsGWlkxKB5ge4SXf9G15BcqtzkTX43ThrkBnVx6FyudSaWaWDwst8Gh5iwWbZjDv9KPvU93s7mDl2IGb5NFQ4zCl18W8nI8PmZrnXjBhd4QdsYzr3sLSf09dp1rsVshy4n26hAIe7PW5XC8jFVjHlcn4mqvDaY3tSwDolKmEYnszRPdDwsJI6XM8ASZ6ZNizGENBNq8VszJUrQt7nkpLty7TkXkOXYXAKGrWxBZ1sgRQXEhoWgD76ua3P3mMTZ5aR1261bfuzfdN3qdQSFaxAw6ghAB1E4NZzOVYaQWIueBUkCJ2X96cRyZkyrtvhzsJfgQcz1OMLKRp6Wfk3mrbXq2QiSr0OOJYKwmDW0yfFqFHy55p8IYrifAIO8viYWRQtzBoOvZ91pzeIT0Jzorg3LtfS37VNfdC59ecyBIKHzpkGohlC7p4LNezuJuxG9HLKkHwiS62TiNgP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM8UU+Linear+Ball+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "shaft_couplers",
+      "name": "Shaft Couplers (5x8mm)",
+      "type": "mechanism",
+      "partId": "84bb386b-34bb-47a8-933b-32bbb8451441",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CZd5_YoHdbkMlBks9kYmAvI5AjJd-wP1wzcN-ehoVis/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxUHJUMm1heHRM/LmpwZw",
+      "material": "Aluminum Alloy",
+      "quantity": 3,
+      "amazonUrl": "https://www.amazon.com/dp/B07JL1QYLS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "19x25x25mm",
+      "description": "Connects NEMA 17 motor shafts (5mm) to T8 lead screws (8mm).",
+      "productName": "Flexible Shaft Coupler 5x8mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=5x8mm+shaft+coupler",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIBN0Pu6D4FeuTqFDMy9ZPIdexnRKKM6zVVbl21LAHPAAyG2lwMZyZmBvWcuhiVCaXNsQkVHhFZY253GFxYxAAhialzsPvja4WTQgivvkw32TVlyTmJONCujbLDGXebnjixGfEZ5imbjBPzMunKGLT6k7ZuHL1oRL5sXB3CgGCwTHiT1YET2fh4B053eel7ttFzJBsoKDaUBGehAtD9Agl8QsK5fN7nugkxtmhpumoGzcKyL3fTLAkxsb631b2LKwhbC2LMIRgonaepuFKejEaA04yUSKRVwrtfivu1SZk2xPmRrL2bIau2cKbVvFRURZGWXPPG2O2da06IDi6odjXDjWZptUtTj8iHF2iC7qV5NhXJ6bqMcL07vraR4130k52veH46VbQJc9sVv84drLoFhieJ6FgFlXA2ODr42kY28eTZSx7uFO27A5Y12r5kRk3OqJ062RFSqHZlYRDS0jD54yaPYMbx0MHVl4ToJV7Uc4i9xu8petGWr41ZrZ4SWTg4xfzUOi2jzEvYgci4DehImWUqq694NYY1Mu9iwZDisJOuOVWh1VaOr9txOSbdivCfL5Ygsxm78yhrre2vI9soEzaRuHXuonfejXThFACjL3J6pJjQTVpbIFFnqAEEBTVhMbNPRYVm4ddTT7LSqtVYJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Flexible+Shaft+Coupler+5x8mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "kp08_pillow_block_bearings",
+      "name": "KP08 Pillow Block Bearings",
+      "type": "mechanism",
+      "partId": "77fe921a-7f4e-49e6-898c-7d7735e1da96",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/7GliwrbLgpIZYQkHtIV0S73cCy6OMJgcRTujK44-HTw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFGQWF4Vm4rUkwu/anBn",
+      "material": "Zinc Alloy",
+      "quantity": 6,
+      "amazonUrl": "https://www.amazon.com/dp/B0D2L8M4QR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x13x30mm",
+      "description": "Supports the ends of the T8 lead screws.",
+      "productName": "KP08 Pillow Block Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=KP08+pillow+block+bearing",
+      "estimatedCost": 4,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgHwaf4BWmaUhFgqZouG00PErucID9c5u0UenFd2khzMG5aO7Ck63WgJzJb52Jih2PcoIvvXz5iFldAUnkWc9vJVQZupolP4IHVcWYyeqsfZgWsKMl7qeEVWWseC9mtDhAqD8jdUig95vIe1fNvzHRvKS39V9KBQEgW86RIjlRqowJ3r6bfZvo6yI7PNKyqZLccQbPIckw57Pcd9yV5S1fSysJQEKed1pL0zJyWKb4jCVeokppmAnn7zZ59QiIfzzEfypzeWPKeaopQdlL6J1r6uNuxWb1LaBnwnkShnS7zWQXs0FojbzyhE90rM7LOdXdQ7z8lAp8jw3nB5ZISemkjQvgfcgTKJ777c4f2J8o6erHN9emYdnKSpjwL0RQd3Jji6vlYA0iTEh8PAFDWHezrJjeYR7yIMHpvsHwyagZ5Id22iQzYf3SELYUHIOm5FUc2fDPpbReQqtiM29jSNPOlxCbbBY5CTcWXDsaWsXWn9DjNpEhZyZ6upb2eTTVeA00FBa2PQUSBcKhlPa7NFj8nUTem7xvPct2tkH7hupWOTFLKgp9ErbqWubiU3Xk4McdvY5xaURIL8XaTrb0pbaxEFynCJPZBhExLUz36hmBHWA09gpbgbfyTU1GLmiOW4GYsPit1ZdKC0mANbJQAvHq2J",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=KP08+Pillow+Block+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "spoilboard",
+      "name": "Spoilboard",
+      "type": "structural",
+      "partId": "7b38b024-bc83-4838-b90b-b357338c811e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HHrd95wI7agt_ZqJee5gYp8WXg4KoAnSsPtsFRTWpKg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Y3V0bXkuY28udWsv/bWVkaWEvY2F0YWxv/Zy92YXJpYW50LzMv/bS8zbW1fc3RhbmRh/cmRfbWRmX3NoZWV0/LmpwZw",
+      "material": "MDF",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F1TR57C9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "450x450x12mm",
+      "position3d": {
+        "x": 250,
+        "y": 26,
+        "z": 250
+      },
+      "boundingBox": {
+        "depth": 450,
+        "width": 450,
+        "height": 12
+      },
+      "description": "Sacrificial work surface for material mounting.",
+      "productName": "MDF Sheet",
+      "purchaseUrl": "https://www.homedepot.com/s/MDF%20board",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2v4sTE5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MDF+Sheet&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m5_t_nuts",
+      "name": "M5 T-Nuts",
+      "type": "misc",
+      "partId": "ab1c859b-9167-469c-b9f0-e3ea096a6797",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/h_3MFKjskrzUIBB6FzLf1F2wQ5wDF5sRWueMR5dm5Fg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODF5NnFtc1oyTkwu/anBn",
+      "material": "Carbon Steel",
+      "quantity": 50,
+      "amazonUrl": "https://www.amazon.com/dp/B0BK75LJNF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x6x5mm",
+      "description": "Used to fasten components to aluminum extrusions.",
+      "productName": "M5 T-Slot Nuts",
+      "purchaseUrl": "https://www.amazon.com/s?k=m5+t+slot+nuts",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLklMIVcrxVvkhkssbqJTuBqVfZTEcXN2wkHMgG0S8JQbxOX4VRSw43d6HlXh8LtVwYerLIgDNXgAMP1izX0uxDE3AsjQhBbQsOvOVhiq5slnMRDZkWKROXHk99tolpIIWp8LLlQSJzasfNI9i6beALaNpNCVAkEyEr7Bf1mHJQClnoobamN1W6OdyQsSX1hw0hBnLEEOmI4Lkq7UsuxYUsnr0wMV4nB9YVEvvL2MHVV1QQl2j3SOUUpcr94XwgD4SPoWlVH50bXtc1fuK51flta8gwbaGK32xFUmone2f9bPGmpGwyDdFDE8JpAM172iDl2aY4bb5nq19tMGRimTQrW93tqPI7HbI5PKS73RKbrALiU2tapjja1jNYTE8VwqU1MBIMjhIjVxZtj5fBkU0uouUv8sJ8hBymLB3vIwW1wjekQX8LvErdjK7fred93sePOiskQ1fOIkWszN",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+T-Slot+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m5_screws_various",
+      "name": "M5 Screws (various lengths)",
+      "type": "misc",
+      "partId": "27701d38-3aab-438a-bdef-b6da5e870e6f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/aeoCAfHXOqOsleGmYqYna5ggOM00ms8B1e6lN-mJ4ss/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3l3QUFB/ZVN3bmR0b0JmTFUv/cy1sNTAwLmpwZw",
+      "material": "Stainless Steel",
+      "quantity": 50,
+      "amazonUrl": "https://www.amazon.com/dp/B0FGV561HZ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5x10-25mm",
+      "description": "Fasteners for assembling the aluminum frame and mounting components.",
+      "productName": "M5 Hex Socket Cap Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m5+socket+cap+screws+assortment",
+      "estimatedCost": 0.15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9d9uZBgEo7jjoRDkXgG8znPt9rYtuoGlBgEz6pruv4kd0CsyScZj97MaWFMOVfl07kUtXeSv5JGWNIpPq5GNkQcD3Qc5zG3MV0jmHvpNbITEanE0k15iw8KQ95olSFsilctt09adEvFQCVPnlxn1tm0NXiR38oc5HweWyAIa8B7H2iHm6ebKzim10vkS68JHtSj4IjeMmOJ6cPUd6Rx5Jnt2dLd53Ag4YYMkj1RyPpFTwi2bXRiX6LUKoDQk1C179gs5nntC9HpAXHq4xshr3qKescItbe1IiBGq7vbSnMO3y1ux45O3j9Gq6Av1Ug9hbEDvYBPfluDGtPSaB6Y1dEAdQlgQU9LLmEvfBqx6t9nmjN2iojIRj2kPSmGHkfcr7FddwzT3g92dS02SweVLHTojuAccA93DbNQqXDVwfj3bCBbILo6fNUtx9HNgEb4SOyJhMjsOIEHQ7lmONk5bD2y9wJC1kzkHDvwJ97oSocyffTGA318IcTGDERIANWQ5U38s5WvSuxGKyMzPg9gmNQAZhYRyYKMQtnx4yGzzfy0IhRfsSjaCA5I7nujZp7SHTDoxPS9cL5ZN2SvvfttfP5CWIXq9bN1O1dFTByV97i8MQEURhl82RIdNZctHCQ9SVzin2wrVGz2fBxcibTDEx9xW7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+Hex+Socket+Cap+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screws_various",
+      "name": "M3 Screws (various lengths)",
+      "type": "misc",
+      "partId": "da0c9813-b918-479e-8906-e8c95fd2f610",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/zvugk5liarxYi1CNJfav4hl35OnInStZMgVge4oFm7Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxekdJYkJSYVRM/LmpwZw",
+      "material": "Stainless Steel",
+      "quantity": 30,
+      "amazonUrl": "https://www.amazon.com/dp/B0FG2BRXL3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6-12mm",
+      "description": "Fasteners for mounting stepper motors, drivers, and other small electrical components.",
+      "productName": "M3 Hex Socket Cap Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+socket+cap+screws+assortment",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9d9uZBgEo7jjoRDkXgG8znPt9rYtuoGlBgEz6pruv4kd0CsyScZj97MaWFMOVfl07kUtXeSv5JGWNIpPq5GNkQcD3Qc5zG3MV0jmHvpNbITEanE0k15iw8KQ95olSFsilctt09adEvFQCVPnlxn1tm0NXiR38oc5HweWyAIa8B7H2iHm6ebKzim10vkS68JHtSj4IjeMmOJk5Uwl4xsCYBoNUSZT86ORiURsfuuuLr9XiXyCxf7qEbo76sPytbhItE0JE7CGS9PeLNQyiRQhLpjYSbz55WYHbVAOl1jvBn8LM3IdbTqzUCO0YlojBNcMhaNS8JZimwRhewaXrBBr4kiJfl8T3DQrJ5rwqcoHR1YFlfX1x7u6tsI6zccEchjPgJHtdqkP2nHRaYfFsmSqLjbS5jyhOL9iajqiczo5geWIq6n0pejEJk7oqsmHP6kyGMGq6as8aPNNVA2tCUrUDRdpEamzuveWwMhyYnESsW7DwyJ8Ac5EiEsAVA5VX7FL3SCPC3izXhQ1Hekb2xS501TG6RejiPuGrlg4DZ7vWdZ3r0VN8OmbRagGGmDYgmPr6yUn6uDDSQZ4uLtlRI8A1LMUGgbUPUGOmamKHgtx5VOJCGZjzArDsaHpmJJ6iAEJzO9U5xsjlnC0cklKmmezN3A59",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Socket+Cap+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "corner_brackets",
+      "name": "90-Degree Corner Brackets",
+      "type": "misc",
+      "partId": "6439ab7f-07f1-4a43-8308-4d5a608367d4",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CDNM8sA7O3TEMJO6qrDpxeSCALHZRcF4JyIzEWTSrUQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2VZQUFB/T1N3cjRwblNWdTkv/cy1sNDAwLndlYnA",
+      "material": "Aluminum",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B0BBGBXWVT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x17mm",
+      "description": "Reinforces connections between aluminum extrusions.",
+      "productName": "2020/2040 Aluminum Corner Brackets",
+      "purchaseUrl": "https://www.amazon.com/s?k=2040+corner+bracket",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHY2EDkJbYmTMPZSkL2ZQhyKS3erK1oZjWUYAiI7ihBfcgJ4O170BbiYq6sEWF9VsVaxKHdKidjXrn4kAPoRbfODCmo4xz3jHhtaGtaQXJvpzVlnY0caz74XDkty0B8gvXmBBjz41vNl09fS8CekmAEEBq65Xx6nH7Wn7IAJffl88Xnlgggz1rFurLCihNcLwqvw2siCAOPyOrY0080oDrU0GZLsfjIPBQunjKqX4YFFEjkAM8Wgq4YCddihdJ34KiNuZvwXnW2EU5Vitt4spXZImu6o1LbT6EIeKXrpuHGnf94VT8oP2brr6CBWs9Ol5vDORpq1CwhGRBp1clnmjPoF8bSBnM9wf2PMN7Abg3nuJx9nNLxsxlp9FoEU8xZZrwuQ6Zb1B6KtCv1ro7Hwx8aSSMRv1AU06pyckwS8QZFV6h2xopVzp0S5Z88KEmsgcsNy276yX0960a0SStLuGXSRmzypOTBcJpFKC3kPW0ztBuWF0eR9HcyuOwxqDQMRX20qoiA393vtrf99awGBLw7aurkiPqS40phsUjV8jpbk9F3BELTbGG3hwSWo4mOBdfCji1KCcOX4j41FXJuHi2SaKTjHVUjYUl4TLXwRLcjykMwOGAIKhZ86RuTLufETfXMdiK6kBLhWVDYnLbLiRiAP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020%2F2040+Aluminum+Corner+Brackets&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_motor_mount",
+      "name": "X-Axis Motor Mount",
+      "type": "3d_printed",
+      "partId": "92f80232-34c9-4180-8ed0-f84b428215ab",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/fbrY6cVIEquxL0pCj3yvye0j2lFVZeUo-K_vNs3-LAA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFLbUFFLTgyUUwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "65x65x30mm",
+      "position3d": {
+        "x": 20,
+        "y": 130,
+        "z": 250
+      },
+      "boundingBox": {
+        "depth": 65,
+        "width": 65,
+        "height": 30
+      },
+      "description": "Mounts the X-axis stepper motor to the frame.",
+      "productName": "X-Axis Motor Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=nema+17+2040+mount",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_motor_mount",
+      "name": "Y-Axis Motor Mount",
+      "type": "3d_printed",
+      "partId": "4dbdcfeb-b126-47ff-919f-e7efca7f6403",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HRA_f8fc4O2oig5J2JNDQhKaSJYa6c21SDtq0cnzADw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFVWkNiZ1pGaEwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "65x65x30mm",
+      "position3d": {
+        "x": 20,
+        "y": 60,
+        "z": 400
+      },
+      "boundingBox": {
+        "depth": 65,
+        "width": 65,
+        "height": 30
+      },
+      "description": "Mounts the Y-axis stepper motor to the frame.",
+      "productName": "Y-Axis Motor Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=nema+17+2040+mount",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "z_motor_mount",
+      "name": "Z-Axis Motor Mount",
+      "type": "3d_printed",
+      "partId": "f226b949-ef62-44f6-973c-2ff500635e61",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/TFnx6nfSYIu0dIbB2zVaOYPbkS0vAWT2tcsjcmpHYos/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFxMzRSUlYzREwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "55x55x25mm",
+      "position3d": {
+        "x": 250,
+        "y": 420,
+        "z": 270
+      },
+      "boundingBox": {
+        "depth": 55,
+        "width": 55,
+        "height": 25
+      },
+      "description": "Mounts the Z-axis stepper motor to the Z-axis carriage.",
+      "productName": "Z-Axis Motor Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=nema+17+2020+mount",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "x_lead_screw_nut_block",
+      "name": "X-Axis Lead Screw Nut Block",
+      "type": "3d_printed",
+      "partId": "96d88c5d-1542-45ef-8252-cf45aa46ade7",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "40x30x20mm",
+      "description": "Holds the T8 lead screw nut for X-axis motion.",
+      "productName": "X-Axis Lead Screw Nut Block",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=t8+lead+screw+nut+block+2040",
+      "estimatedCost": 0.8,
+      "printSettings": "0.2mm layer, 40% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_lead_screw_nut_block",
+      "name": "Y-Axis Lead Screw Nut Block",
+      "type": "3d_printed",
+      "partId": "91e380f3-ff00-49a5-9b0a-737ba6eb0408",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "40x30x20mm",
+      "description": "Holds the T8 lead screw nut for Y-axis motion.",
+      "productName": "Y-Axis Lead Screw Nut Block",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=t8+lead+screw+nut+block+2040",
+      "estimatedCost": 0.8,
+      "printSettings": "0.2mm layer, 40% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "z_lead_screw_nut_block",
+      "name": "Z-Axis Lead Screw Nut Block",
+      "type": "3d_printed",
+      "partId": "161d70e6-6ef6-4e18-b587-557be0e4f6f4",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5GVYSKA7UgS5bM1gNjairmB0Z_LquyECna9eB3MmPyA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tbGhv/YmV2YXVjeWYuaS5v/cHRpbW9sZS5jb20v/dzoxMjAwL2g6NzQy/L3E6bWF1dG8vZjpi/ZXN0L2h0dHBzOi8v/bm92bzNkLmluL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIyLzEy/L05EMTAzNF8zLmpw/Zw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 50% infill, no supports"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "35x25x18mm",
+      "description": "Holds the T8 lead screw nut for Z-axis motion.",
+      "productName": "Z-Axis Lead Screw Nut Block",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=t8+lead+screw+nut+block+2020",
+      "estimatedCost": 0.7,
+      "printSettings": "0.2mm layer, 40% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "spindle_mount",
+      "name": "Spindle Mount (52mm)",
+      "type": "3d_printed",
+      "partId": "012caf2d-95bf-4339-874b-c3cc1329a93a",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "70x70x60mm",
+      "position3d": {
+        "x": 250,
+        "y": 280,
+        "z": 295
+      },
+      "boundingBox": {
+        "depth": 70,
+        "width": 70,
+        "height": 60
+      },
+      "description": "Securely holds the 52mm diameter spindle motor.",
+      "productName": "Spindle Mount (52mm)",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=52mm+spindle+mount+2020",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "tool_holder_rack",
+      "name": "Tool Holder Rack",
+      "type": "3d_printed",
+      "partId": "ddf7929c-2ac5-4b25-9de8-486a72cd07bc",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "100x40x20mm",
+      "position3d": {
+        "x": 400,
+        "y": 70,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 100,
+        "height": 20
+      },
+      "description": "Rack to store ER11 collets and milling bits.",
+      "productName": "",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=er11+tool+holder",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "x_end_stop_mount",
+      "name": "X-Axis End-stop Mount",
+      "type": "3d_printed",
+      "partId": "6690fd89-efe0-43c8-97b3-d0b40a4a5eb9",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "30x15x10mm",
+      "position3d": {
+        "x": 480,
+        "y": 60,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 30,
+        "height": 10
+      },
+      "description": "Mounts the X-axis limit switch to the frame.",
+      "productName": "X-Axis End-stop Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=limit+switch+mount+2040",
+      "estimatedCost": 0.2,
+      "printSettings": "0.2mm layer, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_end_stop_mount",
+      "name": "Y-Axis End-stop Mount",
+      "type": "3d_printed",
+      "partId": "0112ddca-0c24-4a8d-a522-16174a8f8e33",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "30x15x10mm",
+      "position3d": {
+        "x": 20,
+        "y": 60,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 30,
+        "height": 10
+      },
+      "description": "Mounts the Y-axis limit switch to the frame.",
+      "productName": "Y-Axis End-stop Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=limit+switch+mount+2040",
+      "estimatedCost": 0.2,
+      "printSettings": "0.2mm layer, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "z_end_stop_mount",
+      "name": "Z-Axis End-stop Mount",
+      "type": "3d_printed",
+      "partId": "15cfbe67-5385-419a-be32-2621955703fd",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "25x15x10mm",
+      "position3d": {
+        "x": 250,
+        "y": 140,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 25,
+        "height": 10
+      },
+      "description": "Mounts the Z-axis limit switch to the Z-axis.",
+      "productName": "Z-Axis End-stop Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=limit+switch+mount+2020",
+      "estimatedCost": 0.2,
+      "printSettings": "0.2mm layer, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "x_carriage_plate",
+      "name": "X-Axis Carriage Plate",
+      "type": "3d_printed",
+      "partId": "f2528f66-5e25-4e40-9188-77f130f45a7d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5dV-lCc3OjCjEmPFDmauyU_ijZliL8oOPg26b4gkF94/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9rYi0z/ZC5jb20vc3RvcmUv/NTk4Ny1ob21lX2Rl/ZmF1bHQvdG9vbC1o/ZWFkLWhvdC1lbmQt/eC1heGlzLWNhcnJp/YWdlLW1vdW50LXBs/YXRlLWZvci1lbmRl/ci0zLWNyMTAuanBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x80x10mm",
+      "position3d": {
+        "x": 250,
+        "y": 130,
+        "z": 250
+      },
+      "boundingBox": {
+        "depth": 80,
+        "width": 150,
+        "height": 10
+      },
+      "description": "Connects X-axis linear bearings and lead screw nut to the Z-axis assembly.",
+      "productName": "X-Axis Carriage Plate",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=lm8uu+x+carriage+plate",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer, 40% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_gantry_plates",
+      "name": "Y-Axis Gantry Plates",
+      "type": "3d_printed",
+      "partId": "81408bcb-7bc5-457e-8e12-b28c2e2b7b39",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 2,
+      "amazonUrl": null,
+      "dimensions": "120x100x12mm",
+      "description": "Connects Y-axis linear bearings and lead screw nut to the Y-axis gantry beam.",
+      "productName": "",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=lm8uu+y+gantry+plate+2040",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer, 40% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "z_carriage_plate",
+      "name": "Z-Axis Carriage Plate",
+      "type": "3d_printed",
+      "partId": "e2baed38-a0c4-49f4-bffd-4fdba72308cc",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/bY37T-F6gvpONqy1Ex12i196kzTuw7TjoxRoa7IO0f8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFJejlqTm1KSEwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 30% infill, 4 perimeters"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "80x60x10mm",
+      "position3d": {
+        "x": 250,
+        "y": 280,
+        "z": 260
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 80,
+        "height": 10
+      },
+      "description": "Connects Z-axis linear bearings and lead screw nut to the spindle mount.",
+      "productName": "Z-Axis Carriage Plate",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=lm8uu+z+carriage+plate+2020",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer, 40% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "controller_enclosure",
+      "name": "Controller Enclosure",
+      "type": "enclosure",
+      "partId": "9c086647-02bd-4c7f-b9c9-d1b0fb23827f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/PwL6LdUi9OZTyJ8GdE0TCbfFGL6iHu_YEFEwBaexQHQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5tYWRlLWluLWNo/aW5hLmNvbS8yMDJm/MGowMG9HZnFNUnBE/T0VrbS9BQlMtUGxh/c3RpYy1IYW5kaGVs/ZC1JbnN0cnVtZW50/LUhvdXNpbmctSGFu/ZHktQ29udHJvbGxl/ci1FbmNsb3N1cmUt/UmVtb3RlLUNvbnRy/b2wud2VicA",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x100x40mm",
+      "position3d": {
+        "x": 200,
+        "y": 60,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 150,
+        "height": 40
+      },
+      "description": "Encloses the ESP32 and stepper drivers.",
+      "productName": "Controller Enclosure",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=esp32+drv8825+enclosure",
+      "estimatedCost": 3,
+      "printSettings": "0.2mm layer, 15% infill",
+      "aliexpressUrl": null,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Controller+Enclosure&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "desktop CNC",
+    "precision milling",
+    "GRBL compatible",
+    "modular design"
+  ],
+  "projectName": "Desktop CNC Mill",
+  "originalPrompt": "CNC",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all custom parts (motor mounts, lead screw nut blocks, spindle mount, carriage plates, end-stop mounts, controller enclosure, tool holder)",
+          "partIds": [
+            "x_motor_mount",
+            "y_motor_mount",
+            "z_motor_mount",
+            "x_lead_screw_nut_block",
+            "y_lead_screw_nut_block",
+            "z_lead_screw_nut_block",
+            "spindle_mount",
+            "tool_holder_rack",
+            "x_end_stop_mount",
+            "y_end_stop_mount",
+            "z_end_stop_mount",
+            "x_carriage_plate",
+            "y_gantry_plates",
+            "z_carriage_plate",
+            "controller_enclosure"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Cut or prepare MDF spoilboard to size",
+          "partIds": [
+            "spoilboard"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Deburr and clean all 3D printed parts for smooth operation and fit",
+          "partIds": [
+            "x_motor_mount",
+            "y_motor_mount",
+            "z_motor_mount",
+            "x_lead_screw_nut_block",
+            "y_lead_screw_nut_block",
+            "z_lead_screw_nut_block",
+            "spindle_mount",
+            "x_end_stop_mount",
+            "y_end_stop_mount",
+            "z_end_stop_mount",
+            "x_carriage_plate",
+            "y_gantry_plates",
+            "z_carriage_plate",
+            "controller_enclosure"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test fit linear bearings (LM8UU) onto linear rods (8mm)",
+          "partIds": [
+            "lm8uu_bearings",
+            "x_linear_rods",
+            "y_linear_rods",
+            "z_linear_rods"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Wire the main 24V power supply to the buck converter, all stepper drivers, and the spindle motor driver",
+          "detail": {
+            "tip": "Ensure correct polarity for all 24V connections. Use appropriate wire gauge (e.g., 18-22 AWG) for power distribution to prevent voltage drop and overheating.",
+            "steps": [
+              "Connect the V+ output of the Main 24V Power Supply to the VIN+ input of the 24V to 5V Converter.",
+              "Connect the V- (GND) output of the Main 24V Power Supply to the VIN- input of the 24V to 5V Converter.",
+              "Wire the V+ output of the Main 24V Power Supply to the VMOT pins of the X-Axis Stepper Driver, Y-Axis Stepper Driver, and Z-Axis Stepper Driver.",
+              "Wire the V- (GND) output of the Main 24V Power Supply to the GND pins of the X-Axis Stepper Driver, Y-Axis Stepper Driver, and Z-Axis Stepper Driver.",
+              "Connect the V+ output of the Main 24V Power Supply to the Vin+ input of the Spindle Motor Driver.",
+              "Connect the V- (GND) output of the Main 24V Power Supply to the Vin- input of the Spindle Motor Driver."
+            ],
+            "summary": "Wire 24V power from the main supply to the buck converter, stepper drivers, and spindle driver."
+          },
+          "partIds": [
+            "main_power_supply",
+            "buck_converter_5v",
+            "x_stepper_driver",
+            "y_stepper_driver",
+            "z_stepper_driver",
+            "spindle_motor_driver"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect the 5V output from the buck converter to the ESP32, logic VCC for all stepper drivers, and all end-stop switches",
+          "partIds": [
+            "buck_converter_5v",
+            "esp32_mcu",
+            "x_stepper_driver",
+            "y_stepper_driver",
+            "z_stepper_driver",
+            "x_end_stop",
+            "y_end_stop",
+            "z_end_stop"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect stepper motors to their respective stepper drivers",
+          "partIds": [
+            "x_stepper_driver",
+            "y_stepper_driver",
+            "z_stepper_driver",
+            "x_stepper_motor",
+            "y_stepper_motor",
+            "z_stepper_motor"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect the spindle motor to the spindle motor driver",
+          "partIds": [
+            "spindle_motor_driver",
+            "spindle_motor"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Wire ESP32 GPIO pins to stepper driver STEP, DIR, EN pins (D14/D12/D13 for X, D27/D26/D25 for Y, D33/D32/D16 for Z)",
+          "partIds": [
+            "esp32_mcu",
+            "x_stepper_driver",
+            "y_stepper_driver",
+            "z_stepper_driver"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect ESP32 PWM pin (D4) to the spindle motor driver PWM input",
+          "partIds": [
+            "esp32_mcu",
+            "spindle_motor_driver"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Connect end-stop switch signal pins to ESP32 GPIO pins (D19 for X, D18 for Y, D5 for Z)",
+          "partIds": [
+            "esp32_mcu",
+            "x_end_stop",
+            "y_end_stop",
+            "z_end_stop"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Perform continuity checks on all power and signal lines to verify correct wiring",
+          "partIds": [
+            "main_power_supply",
+            "buck_converter_5v",
+            "x_stepper_driver",
+            "y_stepper_driver",
+            "z_stepper_driver",
+            "spindle_motor_driver",
+            "esp32_mcu",
+            "x_stepper_motor",
+            "y_stepper_motor",
+            "z_stepper_motor",
+            "spindle_motor",
+            "x_end_stop",
+            "y_end_stop",
+            "z_end_stop"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Flash GRBL firmware onto the ESP32 microcontroller",
+          "partIds": [
+            "esp32_mcu"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Configure GRBL settings for stepper motor steps/mm, max feedrates, and acceleration",
+          "partIds": [
+            "esp32_mcu",
+            "x_stepper_motor",
+            "y_stepper_motor",
+            "z_stepper_motor"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test individual stepper motor movement and verify correct direction for X, Y, and Z axes",
+          "partIds": [
+            "esp32_mcu",
+            "x_stepper_motor",
+            "y_stepper_motor",
+            "z_stepper_motor"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify end-stop switch functionality and homing sequence in GRBL",
+          "partIds": [
+            "esp32_mcu",
+            "x_end_stop",
+            "y_end_stop",
+            "z_end_stop"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test spindle motor ON/OFF and speed control via GRBL commands",
+          "partIds": [
+            "esp32_mcu",
+            "spindle_motor_driver",
+            "spindle_motor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Assemble the base frame using aluminum extrusions (base_frame_x_front_back, base_frame_y_side) and corner brackets with M5 hardware",
+          "partIds": [
+            "base_frame_x_front_back",
+            "base_frame_y_side",
+            "corner_brackets",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount Y-axis linear rods (y_linear_rods) to the base frame and install Y-axis lead screw (y_axis_lead_screw) with KP08 pillow block bearings",
+          "partIds": [
+            "y_linear_rods",
+            "base_frame_x_front_back",
+            "y_axis_lead_screw",
+            "kp08_pillow_block_bearings",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Assemble the Y-axis gantry (y_gantry_beam, y_gantry_plates) with LM8UU bearings and attach to the Y-axis lead screw via the printed nut block (y_lead_screw_nut_block)",
+          "partIds": [
+            "y_gantry_beam",
+            "y_gantry_plates",
+            "lm8uu_bearings",
+            "y_lead_screw_nut_block",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount the Y-axis stepper motor (y_stepper_motor) to its mount (y_motor_mount) and connect to the lead screw with a shaft coupler",
+          "partIds": [
+            "y_stepper_motor",
+            "y_motor_mount",
+            "shaft_couplers",
+            "m3_screws_various",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Assemble the X-axis carriage (x_carriage_plate), linear rods, lead screw, and bearings, then mount it to the Y-axis gantry beam",
+          "partIds": [
+            "x_carriage_plate",
+            "x_linear_rods",
+            "x_axis_lead_screw",
+            "lm8uu_bearings",
+            "kp08_pillow_block_bearings",
+            "x_lead_screw_nut_block",
+            "y_gantry_beam",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount the X-axis stepper motor (x_stepper_motor) and connect to its lead screw",
+          "partIds": [
+            "x_stepper_motor",
+            "x_motor_mount",
+            "shaft_couplers",
+            "m3_screws_various",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Assemble the Z-axis (z_axis_vertical_extrusions, z_carriage_plate, z_linear_rods, z_axis_lead_screw, z_stepper_motor) and mount to the X-axis carriage plate; attach the spindle motor (spindle_motor) to the printed spindle mount (spindle_mount)",
+          "partIds": [
+            "z_axis_vertical_extrusions",
+            "z_carriage_plate",
+            "z_linear_rods",
+            "z_axis_lead_screw",
+            "z_stepper_motor",
+            "x_carriage_plate",
+            "lm8uu_bearings",
+            "kp08_pillow_block_bearings",
+            "z_lead_screw_nut_block",
+            "z_motor_mount",
+            "spindle_motor",
+            "spindle_mount",
+            "shaft_couplers",
+            "m3_screws_various",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Install all end-stop switches onto their 3D printed mounts and attach mounts to the frame/axes at travel limits",
+          "partIds": [
+            "x_end_stop",
+            "y_end_stop",
+            "z_end_stop",
+            "x_end_stop_mount",
+            "y_end_stop_mount",
+            "z_end_stop_mount",
+            "base_frame_x_front_back",
+            "base_frame_y_side",
+            "z_axis_vertical_extrusions",
+            "m3_screws_various",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        },
+        {
+          "id": "assemble_9",
+          "title": "Mount the spoilboard to the base frame and perform final cable management and routing",
+          "partIds": [
+            "spoilboard",
+            "base_frame_y_side",
+            "m5_t_nuts",
+            "m5_screws_various"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A desktop CNC mill utilizing an ESP32 with GRBL firmware controls NEMA 17 stepper motors for precise XYZ motion. Linear rods and lead screws guide the ER11 spindle motor, all powered by a 24V supply and housed within an aluminum extrusion frame. End-stops ensure accurate homing and limit detection.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG/PLA capable)",
+      "M3 hex key",
+      "M5 hex key",
+      "Wire strippers",
+      "Small flathead screwdriver",
+      "Soldering iron (optional, for custom wiring)",
+      "Multimeter",
+      "Measuring tape/ruler",
+      "Deburring tool (for 3D prints)",
+      "Lubricant/grease (for linear motion components)",
+      "Safety glasses"
+    ],
+    "assumptions": [
+      "Familiarity with 3D printing processes",
+      "Basic understanding of electronics wiring",
+      "Computer with USB port and Arduino IDE/PlatformIO installed",
+      "Basic knowledge of GRBL firmware flashing and configuration",
+      "Access to appropriate CAD software for 3D print file preparation if modifications are needed"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "main_power_supply",
+      "target": "buck_converter_5v",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "main_power_supply",
+      "target": "x_stepper_driver",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "main_power_supply",
+      "target": "y_stepper_driver",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "main_power_supply",
+      "target": "z_stepper_driver",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "main_power_supply",
+      "target": "spindle_motor_driver",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "esp32_mcu",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "x_stepper_driver",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "y_stepper_driver",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "z_stepper_driver",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "x_end_stop",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "y_end_stop",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "z_end_stop",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "x_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D14",
+      "targetPin": "STEP"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "x_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D12",
+      "targetPin": "DIR"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "x_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D13",
+      "targetPin": "EN"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "y_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D27",
+      "targetPin": "STEP"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "y_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D26",
+      "targetPin": "DIR"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "y_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D25",
+      "targetPin": "EN"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "z_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D33",
+      "targetPin": "STEP"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "z_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D32",
+      "targetPin": "DIR"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "z_stepper_driver",
+      "protocol": "GPIO",
+      "sourcePin": "D16",
+      "targetPin": "EN"
+    },
+    {
+      "type": "power",
+      "source": "x_stepper_driver",
+      "target": "x_stepper_motor",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "y_stepper_driver",
+      "target": "y_stepper_motor",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "z_stepper_driver",
+      "target": "z_stepper_motor",
+      "voltage": "24V"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "spindle_motor_driver",
+      "protocol": "PWM",
+      "sourcePin": "D4",
+      "targetPin": "PWM_in"
+    },
+    {
+      "type": "power",
+      "source": "spindle_motor_driver",
+      "target": "spindle_motor",
+      "voltage": "24V"
+    },
+    {
+      "type": "data",
+      "source": "x_end_stop",
+      "target": "esp32_mcu",
+      "protocol": "GPIO",
+      "sourcePin": "SIGNAL",
+      "targetPin": "D19"
+    },
+    {
+      "type": "data",
+      "source": "y_end_stop",
+      "target": "esp32_mcu",
+      "protocol": "GPIO",
+      "sourcePin": "SIGNAL",
+      "targetPin": "D18"
+    },
+    {
+      "type": "data",
+      "source": "z_end_stop",
+      "target": "esp32_mcu",
+      "protocol": "GPIO",
+      "sourcePin": "SIGNAL",
+      "targetPin": "D5"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "Assembled with corner_brackets and m5_screws_various",
+      "source": "base_frame_x_front_back",
+      "target": "base_frame_y_side"
+    },
+    {
+      "label": "Fastens with m5_t_nuts and m5_screws_various",
+      "source": "base_frame_x_front_back",
+      "target": "corner_brackets"
+    },
+    {
+      "label": "Fastens with m5_t_nuts and m5_screws_various",
+      "source": "base_frame_y_side",
+      "target": "corner_brackets"
+    },
+    {
+      "label": "Mounts to",
+      "source": "y_gantry_beam",
+      "target": "y_gantry_plates"
+    },
+    {
+      "label": "Slides along via lm8uu_bearings and y_linear_rods",
+      "source": "y_gantry_plates",
+      "target": "base_frame_y_side"
+    },
+    {
+      "label": "Fixed at ends to",
+      "source": "y_linear_rods",
+      "target": "base_frame_x_front_back"
+    },
+    {
+      "label": "Connected via y_lead_screw_nut_block",
+      "source": "y_gantry_plates",
+      "target": "y_axis_lead_screw"
+    },
+    {
+      "label": "Supported by",
+      "source": "y_axis_lead_screw",
+      "target": "kp08_pillow_block_bearings"
+    },
+    {
+      "label": "Mounts to",
+      "source": "kp08_pillow_block_bearings",
+      "target": "base_frame_x_front_back"
+    },
+    {
+      "label": "Mounts to with m3_screws_various",
+      "source": "y_stepper_motor",
+      "target": "y_motor_mount"
+    },
+    {
+      "label": "Mounts to with m5_t_nuts and m5_screws_various",
+      "source": "y_motor_mount",
+      "target": "base_frame_x_front_back"
+    },
+    {
+      "label": "Connects via shaft_couplers",
+      "source": "y_stepper_motor",
+      "target": "y_axis_lead_screw"
+    },
+    {
+      "label": "Slides along via lm8uu_bearings",
+      "source": "x_carriage_plate",
+      "target": "x_linear_rods"
+    },
+    {
+      "label": "Fixed at ends to",
+      "source": "x_linear_rods",
+      "target": "y_gantry_beam"
+    },
+    {
+      "label": "Connected via x_lead_screw_nut_block",
+      "source": "x_carriage_plate",
+      "target": "x_axis_lead_screw"
+    },
+    {
+      "label": "Supported by",
+      "source": "x_axis_lead_screw",
+      "target": "kp08_pillow_block_bearings"
+    },
+    {
+      "label": "Mounts to",
+      "source": "kp08_pillow_block_bearings",
+      "target": "y_gantry_beam"
+    },
+    {
+      "label": "Mounts to with m3_screws_various",
+      "source": "x_stepper_motor",
+      "target": "x_motor_mount"
+    },
+    {
+      "label": "Mounts to with m5_t_nuts and m5_screws_various",
+      "source": "x_motor_mount",
+      "target": "y_gantry_beam"
+    },
+    {
+      "label": "Connects via shaft_couplers",
+      "source": "x_stepper_motor",
+      "target": "x_axis_lead_screw"
+    },
+    {
+      "label": "Mounts to with m5_t_nuts and m5_screws_various",
+      "source": "z_axis_vertical_extrusions",
+      "target": "x_carriage_plate"
+    },
+    {
+      "label": "Slides along via lm8uu_bearings",
+      "source": "z_carriage_plate",
+      "target": "z_linear_rods"
+    },
+    {
+      "label": "Fixed at ends to",
+      "source": "z_linear_rods",
+      "target": "z_axis_vertical_extrusions"
+    },
+    {
+      "label": "Connected via z_lead_screw_nut_block",
+      "source": "z_carriage_plate",
+      "target": "z_axis_lead_screw"
+    },
+    {
+      "label": "Supported by",
+      "source": "z_axis_lead_screw",
+      "target": "kp08_pillow_block_bearings"
+    },
+    {
+      "label": "Mounts to",
+      "source": "kp08_pillow_block_bearings",
+      "target": "z_axis_vertical_extrusions"
+    },
+    {
+      "label": "Mounts to with m3_screws_various",
+      "source": "z_stepper_motor",
+      "target": "z_motor_mount"
+    },
+    {
+      "label": "Mounts to with m5_t_nuts and m5_screws_various",
+      "source": "z_motor_mount",
+      "target": "z_axis_vertical_extrusions"
+    },
+    {
+      "label": "Connects via shaft_couplers",
+      "source": "z_stepper_motor",
+      "target": "z_axis_lead_screw"
+    },
+    {
+      "label": "Clamps into",
+      "source": "spindle_motor",
+      "target": "spindle_mount"
+    },
+    {
+      "label": "Mounts to with m3_screws_various",
+      "source": "spindle_mount",
+      "target": "z_carriage_plate"
+    },
+    {
+      "label": "Mounts to with m5_t_nuts and m5_screws_various",
+      "source": "spoilboard",
+      "target": "base_frame_y_side"
+    },
+    {
+      "label": "Mounts to with m3_screws_various",
+      "source": "x_end_stop",
+      "target": "x_end_stop_mount"
+    },
+    {
+      "label": "Mounts to with m5_t_nuts and m5_screws_various",
+      "source": "x_end_stop_mount",
+      "target": "base_frame_x_front_back"
+    },
+    {
+      "label": "Mounts to with m3_screws_various",
+      "source": "y_end_stop",
+      "target": "y_end_stop_mount"
+    },
+    {
+      "label": "Mounts to with m5_t_nuts and m5_screws_various",
+      "source": "y_end_stop_mount",
+      "target": "base_frame_y_side"
+    },
+    {
+      "label": "Mounts to with m3_screws_various",
+      "source": "z_end_stop",
+      "target": "z_end_stop_mount"
+    },
+    {
+      "label": "Mounts to with m5_t_nuts and m5_screws_various",
+      "source": "z_end_stop_mount",
+      "target": "z_axis_vertical_extrusions"
+    },
+    {
+      "label": "Housed within",
+      "source": "esp32_mcu",
+      "target": "controller_enclosure"
+    },
+    {
+      "label": "Housed within",
+      "source": "x_stepper_driver",
+      "target": "controller_enclosure"
+    },
+    {
+      "label": "Housed within",
+      "source": "y_stepper_driver",
+      "target": "controller_enclosure"
+    },
+    {
+      "label": "Housed within",
+      "source": "z_stepper_driver",
+      "target": "controller_enclosure"
+    },
+    {
+      "label": "Housed within",
+      "source": "spindle_motor_driver",
+      "target": "controller_enclosure"
+    },
+    {
+      "label": "Housed within",
+      "source": "buck_converter_5v",
+      "target": "controller_enclosure"
+    }
+  ],
+  "projectId": "59fa7212-0b49-46f7-ab32-d9b813dc4e4c"
+}

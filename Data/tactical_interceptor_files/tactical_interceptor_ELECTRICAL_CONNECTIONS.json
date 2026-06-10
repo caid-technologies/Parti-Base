@@ -1,0 +1,334 @@
+[
+  {
+    "type": "power",
+    "label": "Battery to PMIC",
+    "source": "lipo_battery",
+    "target": "power_management_ic",
+    "current": "2A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "PMIC to Battery (Charging)",
+    "source": "power_management_ic",
+    "target": "lipo_battery",
+    "current": "1A",
+    "voltage": "4.2V"
+  },
+  {
+    "type": "power",
+    "label": "Solar to Battery",
+    "source": "solar_charge_controller",
+    "target": "lipo_battery",
+    "current": "500mA",
+    "voltage": "4.2V"
+  },
+  {
+    "type": "power",
+    "label": "System Power to MCU",
+    "source": "power_management_ic",
+    "target": "main_mcu",
+    "current": "1.5A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "PMIC SYS to Boost VIN",
+    "source": "power_management_ic",
+    "target": "boost_converter",
+    "current": "1A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Boost to SDR",
+    "source": "boost_converter",
+    "target": "wideband_sdr",
+    "current": "1A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "MCU Power to Display",
+    "source": "main_mcu",
+    "target": "color_display",
+    "current": "100mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "MCU Power to Audio Codec",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "current": "50mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "MCU Power to Mic",
+    "source": "main_mcu",
+    "target": "microphone",
+    "current": "10mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "label": "MCU to PMIC I2C",
+    "source": "main_mcu",
+    "target": "power_management_ic",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "MCU to SDR USB",
+    "source": "main_mcu",
+    "target": "wideband_sdr",
+    "protocol": "usb",
+    "sourcePin": "USB",
+    "targetPin": "USB"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Display SCK",
+    "source": "main_mcu",
+    "target": "color_display",
+    "protocol": "spi",
+    "sourcePin": "SPI",
+    "targetPin": "SCK"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Display MOSI",
+    "source": "main_mcu",
+    "target": "color_display",
+    "protocol": "spi",
+    "sourcePin": "SPI",
+    "targetPin": "MOSI"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Display CS",
+    "source": "main_mcu",
+    "target": "color_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "CS"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Display DC",
+    "source": "main_mcu",
+    "target": "color_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "DC"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Display Backlight",
+    "source": "main_mcu",
+    "target": "color_display",
+    "protocol": "gpio",
+    "sourcePin": "PWM",
+    "targetPin": "BL"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Keypad Row0",
+    "source": "main_mcu",
+    "target": "keypad_matrix",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Row0"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Keypad Row1",
+    "source": "main_mcu",
+    "target": "keypad_matrix",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Row1"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Keypad Row2",
+    "source": "main_mcu",
+    "target": "keypad_matrix",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Row2"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Keypad Row3",
+    "source": "main_mcu",
+    "target": "keypad_matrix",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Row3"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Keypad Col0",
+    "source": "main_mcu",
+    "target": "keypad_matrix",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Col0"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Keypad Col1",
+    "source": "main_mcu",
+    "target": "keypad_matrix",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Col1"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Keypad Col2",
+    "source": "main_mcu",
+    "target": "keypad_matrix",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Col2"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Keypad Col3",
+    "source": "main_mcu",
+    "target": "keypad_matrix",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Col3"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Codec MCLK",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "I2S",
+    "targetPin": "MCLK"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Codec LRCLK",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "I2S",
+    "targetPin": "LRCLK"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Codec BCLK",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "I2S",
+    "targetPin": "BCLK"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Codec I2S Data",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "I2S",
+    "targetPin": "I2S"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Codec Control I2C",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "Mic to Codec Audio In",
+    "source": "audio_codec",
+    "target": "microphone",
+    "protocol": "pdm",
+    "sourcePin": "Analog_IN",
+    "targetPin": "DOUT"
+  },
+  {
+    "type": "data",
+    "label": "Codec to Mic Clock",
+    "source": "audio_codec",
+    "target": "microphone",
+    "protocol": "gpio",
+    "sourcePin": "BCLK",
+    "targetPin": "SCLK"
+  },
+  {
+    "type": "data",
+    "label": "Codec to Speaker",
+    "source": "audio_codec",
+    "target": "speaker",
+    "protocol": "analog",
+    "sourcePin": "Analog_OUT",
+    "targetPin": "Positive"
+  },
+  {
+    "type": "data",
+    "label": "SDR to MCU USB",
+    "source": "wideband_sdr",
+    "target": "main_mcu",
+    "protocol": "usb",
+    "sourcePin": "USB",
+    "targetPin": "USB"
+  },
+  {
+    "type": "power",
+    "label": "Solar to PMIC VBUS",
+    "source": "solar_charge_controller",
+    "target": "power_management_ic",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Boost Enable",
+    "source": "main_mcu",
+    "target": "boost_converter",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "EN"
+  },
+  {
+    "type": "data",
+    "label": "Boost Feedback to MCU (Voltage Monitoring)",
+    "source": "main_mcu",
+    "target": "boost_converter",
+    "protocol": "adc",
+    "sourcePin": "ADC",
+    "targetPin": "FB"
+  },
+  {
+    "type": "power",
+    "label": "Solar Panel to Charge Controller Input",
+    "source": "solar_panel",
+    "target": "solar_charge_controller",
+    "voltage": "5V",
+    "sourcePin": "Positive",
+    "targetPin": "Solar_IN"
+  },
+  {
+    "type": "power",
+    "label": "Solar Panel Ground",
+    "source": "solar_panel",
+    "target": "solar_charge_controller",
+    "voltage": "0V",
+    "sourcePin": "Negative",
+    "targetPin": "GND"
+  }
+]

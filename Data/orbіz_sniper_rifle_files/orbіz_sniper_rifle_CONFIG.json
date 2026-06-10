@@ -1,0 +1,1293 @@
+{
+  "plan": "- Electrical: ESP32 or Arduino Nano, high-torque DC motor, LiPo battery (e.g., 7.4V/11.1V), trigger switch, optional MOSFET.- Mechanical: PVC or aluminum frame, springs, screws, nuts, washers, gears.- 3D Printed: Receiver, stock, handle, gel ball hopper/magazine, barrel, internal firing mechanism parts.- Mechanism: Motorized or spring-piston firing, gel ball feeding system, power distribution for components.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "GPIO",
+        "3.3V",
+        "GND",
+        "UART",
+        "SPI",
+        "I2C"
+      ],
+      "type": "mcu",
+      "partId": "abab37bb-d5cc-4e9b-99cb-fdb29eb128c9",
+      "category": "electrical",
+      "imageUrl": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/778/ESP32-DEVKITC-32D.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Type",
+            "value": "Transceiver; 802.11 b/g/n (Wi-Fi, WiFi, WLAN), Bluetooth® Smart Ready 4.x Dual Mode (BLE)"
+          },
+          {
+            "label": "pins",
+            "value": "GPIO16,GPIO17,GPIO18,GPIO19,GPIO21,GPIO22,GPIO23,GPIO25,GPIO26,GPIO27,3V3,5V,GND"
+          },
+          {
+            "label": "Contents",
+            "value": "Board(s)"
+          },
+          {
+            "label": "Frequency",
+            "value": "2.4GHz"
+          },
+          {
+            "label": "Antenna Type",
+            "value": "-"
+          },
+          {
+            "label": "Utilized IC / Part",
+            "value": "ESP-WROOM-32"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/5029",
+            "price": "$18.5",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32D/9356990",
+            "price": "$15",
+            "vendor": "DigiKey"
+          }
+        ],
+        "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x28x10mm",
+      "description": "EVAL BOARD FOR ESP-WROOM-32",
+      "productName": "ESP32-WROOM-32D Development Board",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32D/9356990",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR6vbyXY2ppL9ObRmYh4w4AK032f6bBm9NDrp62dnlrDQlnlop8wQc5bP4qXfeJ276Yek60BQaZDYxId5Ukphk7sJJODgS1isRhZwKXDxwwiDFyENTPU35PqQK8lkODm1HaTad4RY4cP1wl45WTeh4RlPsVUHy4VlZIc1wB2PtjlQuLRD9hen7MaRbZW4t6zXUfC9bGHFbOF2gFiVJefzCXxYaTVzAVLAUvLSHkbqyQnqrFk1uqwOrOEbNP1LnoiHms9bNBTW9BnmuZ44dVxgrvfnPRrtF1DzjkV2MH7aZGrCLMYBexygMLfan7wIJiUJp4eIOAU63ETQxHQnhQQvMDIqXUQpIHv7ZeJ0RbYR4h6ZSCgjbqlf53uzTimPSlFbe9eC1rCOfbX7oPNipLwACODeOTiaCIO3enuw0oxwosWlviDGwFcQqVRTXhsNeyocPqKgRBrbSMdVuP2Ge1Q2IaEEkhh50Eg8BKvlCGSy32SrGjbmQcul0fMiQX1jWAuMkblVsvgxVG3UGecyBxwSKIQHPNhkDKAt2fnBrwReTsvwTT4maM3YA81857bt5dxvTzGWY6rbUnKbimW7cicOckKZZCq98HTyBfP4F2eHEUDXULYIyGjYr3bIldY9Oj4JLz05rZ5bvXrjNOlBdrQhrjV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D+Development+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "trigger_switch",
+      "name": "Trigger Micro Switch",
+      "pins": [
+        "COM",
+        "NO",
+        "NC"
+      ],
+      "type": "sensor",
+      "partId": "e8a6e87e-9f8d-479d-bafe-bdda6fe1b29b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/W3tjQPwWT3OUejT-A6RjdHSB5fMAYm_WrcaHIgy-lIE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MTE4MVpqWEtlTkwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07FZBZGZD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x10x6mm",
+      "productName": "Omron SS-5GL Microswitch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=omron+ss-5gl",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaF3HmmRoWrPfjkLzNka9UHl9uchsZzaCN7bZI3hwES5d0NnOB91BEXMWOLOWKlA2O5gVQll04DwwjHQ7nm8yCowL4LHqxCcQocwcNX67Bygurl8gbHgb38i7eAZaFb3WoQDqNCsUV9mWRv1Dst0Q45GwNjy53PPLExpYWRCk0JVRzDC3nNMzTVjtT2Za4SOVF2OiKlHofl1VB2642v8VqtfOQJAattZZL1d0ktCff2geBe9LVE46aIdv4aFxaiCJ5T0TvJLPrxnKEiI4gFaGqwgpVijPA21E1SDTDtmNRD0htbZiP5fPinRTe1WywGe5drHMgolKzdlTiDFXlPYVv12e9ZKy9bUoiS8XSuKZpBJxBDAZqCT2URGhlOy9VbE6YOU18qBac0osSxSHAEGtHrOyb6o0HXoFmZBMdshrhIQDRxmoca6nzxJYVPH14dPo4Bc59ONUgkWgkeJnmwg8AkGAG3vxzqVN729q05cfPH2Uz0j98VYL2CdI6cbH7auGvkbvQ4KAkTXTeTcgqjfTpynIRHYIeMG4HINSCXQ3TeAa8wc9xFPsaQQqSiy1lHE9G5yYfynUTIivg9vbGhDVXEcDryp0c7mcYlAhBzlggzHcnhzjxnfFXstqMvHOTOJZwJy5k1AanBDBOnD1fiCqsHl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Omron+SS-5GL+Microswitch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "battery_pack",
+      "name": "Main LiPo Battery",
+      "pins": [
+        "BAT+",
+        "BAT-",
+        "Balance Port"
+      ],
+      "type": "power",
+      "partId": "487f6b1c-ad58-4ee9-8e1d-bbb0772eaa69",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/1Vmpbcp5ABgey8jTFcqzEHEZnW7H5IuJ964FIO5oJyI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zLmFs/aWNkbi5jb20vQHNj/MDQva2YvSDJmYzky/MGJkMjYxYjQ0MTg5/ZGU5YjAyMmU1ZmQx/OTZmaS5qcGdfMzAw/eDMwMC5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07Y1Q2629?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "105x34x24mm",
+      "description": "Primary power source for the right boot's actuators and electronics.",
+      "productName": "4S 14.8V 2200mAh LiPo Battery",
+      "purchaseUrl": "https://www.amazon.com/s?k=4s+14.8v+lipo+battery+2200mah",
+      "estimatedCost": 35,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRvTgdYHM22mxL7XfUbfAqQe6cGuzBAFdZatuGXXrzVyPBGi2EXNApn92AyvtHwXBtDuNOqZ9Gwek2BbOmWW1AQFN4x7RrSMGEgtvXQzIAiWH6wObj7tscVdezCGmqquEa02gJPfH8hJaMq3jhCHu60i2uKeHHrcJQ17PORBOgBFAWMTOZjMse7uYnpPlDQbkK0oyatqBCM7R0zqEjoPD8Bn0TSBMY1BXz4xl0SiYRvvdqIgA2UctVQscPqkuBNMOoeRiFAGmb42YZwnZI0OJrLpT1jWdKzieMZ4Kdb5Kd6KApIqShAZldBDtRYtJM7AUIw5S1Ffh58OmR061PwO2Dil5lcg9bN2nfI8eTYcFgNcrDg9lPX2BleuUinQ46H1E8qP9q6vFpjAyBkhNrzivQI6wJ7QrKM0wuOkSOYDqaDMFY0wU3guCCwUU1LPLuyjLOLjcgpQgcqOZGysgA9H713rY3OoSQUllZJJnsvYyApjYeupg7jeQRB75VREhP3WDCsaXW4DtWABSSdh3SjcY5unEYIWTov9SoNXE6fI1GPG1Wtaa6BkIWJCkN6gbi1A8Wna6zAs5E2tmA9YemRrEyVLdQyv8ENEv90l4qvE624eK4nO7XRnR6oqrP0PO48nILs5dsQkq2hMjS2t67ZGsZlZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=4S+14.8V+2200mAh+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "buck_converter",
+      "name": "5V Step-Down Converter",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "power",
+      "partId": "bfc13bb2-cdcd-45ba-9387-4cffe44f6357",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fW4_GDBeL2rT8mg2Zb_Vxj_7Yepyy9vnmAidOfdgKg0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0ZDY0FB/ZVN3ZHBacFRZWDIv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN+,VIN-,VOUT+,VOUT-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01MQGMOKI?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x17x4mm",
+      "description": "Steps down 12V to 5V for powering the MCU and sensors.",
+      "productName": "MP1584EN DC-DC Buck Converter Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=MP1584EN+buck+converter",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHNSBmwrWAucJktiEiF7T0GrENZ2N7RQ8V7BzbnqVxsrMEtflOJAoWeKe8mUiCgYFPVMDIxu8NTz8jXT1itEaiw2BrvgnZAqoOdAQLXgy2xDI4IYHyjpfL1PV4yQQtYDMvEqzJqDLvhVGKAiCSoNBbLpErJsRrHybXqL0l95P6DX7YO2HSjDGZzgHtn95FpQWrCBaeHi8mwXRA392HGThUeR8kfMrad7zxJNs4Wg2T0t7wuWV5V0ENI4OHd1jio8uYGElxlSpMPYc58Rtneb6dVnW6HAoFjjbVTkbzE6wIaQO0p0dDdUMAz8L6voip9VmrtE2XEr72WJTQJfiPKq6SAonms8loTMoOZV9KO5vcSD3HDG5nUV35sivjQO2PqCTqp8QQB90S4pLGollmOTcjGuKYlWqZvfexTRMaa83ZWF1JFb8TO0pbHfuChtgvbsW8irolSiE8AZeCNB4sqPZEzMUkLSNi0kGsEUN0wrrxbn4CrgqeGbU0nDn1VvtED8DF3Re4CnzBgI9nPtR6WTQtEmUixcOYFGVsJEQLQS0kyvhcJNTdVBEBBlgPGhkho7fKPKL0JRD9HHJtuIZgNimr4thVY5Wd8sigUcUR7Mdn7Dkqua3w3GWm9txX9RP9JBhZiedF0vpmUtMMmD3KV0uGaX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MP1584EN+DC-DC+Buck+Converter+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "safety_switch",
+      "name": "Safety Selector Switch",
+      "pins": [
+        "COM",
+        "POS1",
+        "POS2"
+      ],
+      "type": "sensor",
+      "partId": "7c927f40-8a7d-4961-8f4a-a394e68e0b1b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/VZvJGWhNV-3loL8rGlKZgFD7KaQGjoyVRPheMlJIMcw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9saWdo/dGhvdXNlbGVkcy5j/b20vbWVkaWEvY2F0/YWxvZy9wcm9kdWN0/L2NhY2hlL2ExZTY2/Zjg4YmU1NGExYjk5/YjM1Y2I4NjhkOTk4/MmUxL20vaS9taW5p/LXNsaWRlLXN3aXRj/aC1vbi1vZmYtc3Bk/dC5qcGc",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "IN,OUT_A,OUT_B"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FNK8B1YV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "13x7x6mm",
+      "description": "Slide switch for overall device power control.",
+      "productName": "SPDT Slide Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=SPDT+slide+switch",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIpaI0DF2juEy3sJzRsLZHEXW4iUoe6bVnts14DbxlNOaB88TbJpQFdXDJgZhEJzF4v3GK8SNJVTa0GhpALRCXYHVp4yebpoQaBBN1Um7sAwqhxq5xvv06zWonrMHLdY9odf2xESds8TifPKHF09dX2ALbzsHynacKpFXgaVI0VKI8B5znFBbZMm26Rr1RiYFAYIKinLG9iStVQ9VvWBEec6wdR8GCBJwnQUlFF110ZM2Qo2OR6oigfzfi6LeU3j7ALeldefVb9Y6ZlFcvbex2NnCIYxOCHOH1tAwkpSvbUErwDYe7mHDqmY5EzUNG6vPU67RFrAhI0rHw0SQgrrvsZTWxK1lRLI4ImEaqUYS2yH6MsdODp5emSjyeWjsRkkKlQycV4yJMPMRw3zRfNKnwmZZSO3I9zDf5pNdPConQwfVLBX4RvRho9KgEV1IJ9ZYmu0MC7dSqQbKcf3Df5hrAN9x9zg3icxSCddWUIs88OaEL5kaB4SfDyPdhcIoxc6XwaE1gS5mTTcc7WWyjeDi0Hl4Z6BwbiTTeA2MQnPzeBabQb1cQjn5rFRCxJSWf0H6PzoxNT5LBk8pKlE79xCwNqwBG3V11pTSYtXRHBa2zVtq3os8i31qoCTFgJIjh8DnQdJKuilqQg4OqFwDNHam7mj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SPDT+Slide+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_receiver_body",
+      "name": "Main Receiver Body",
+      "type": "3d_printed",
+      "partId": "661870f7-9c49-4fe2-bfdb-b980f458c11f",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "450x80x150mm",
+      "description": "Main housing for the internal mechanism, connecting stock, barrel, and magazine. Designed for spring-piston system.",
+      "productName": "Main Receiver Body",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 15,
+      "printSettings": "30% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "buttstock",
+      "name": "Buttstock",
+      "type": "3d_printed",
+      "partId": "b1d71568-b938-4859-9b4c-6dc7a5568cab",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "250x40x120mm",
+      "description": "Ergonomic buttstock for shoulder support, attaches to the main receiver.",
+      "productName": "Buttstock",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 7.5,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "handguard",
+      "name": "Handguard",
+      "type": "3d_printed",
+      "partId": "08d3e433-5005-4bc1-a746-8d4681acca8b",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "300x50x50mm",
+      "description": "Protects the barrel and provides a grip area for the forward hand.",
+      "productName": "Handguard",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 8,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "outer_barrel",
+      "name": "Outer Barrel",
+      "type": "structural",
+      "partId": "89e253b5-f483-45a1-924a-57383bd4f51d",
+      "category": "mechanical",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BNQ5BDFK?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "500x20x20mm",
+      "description": "Structural outer barrel housing for the inner barrel, contributes to rifle aesthetic.",
+      "productName": "Aluminum Pipe",
+      "purchaseUrl": "https://www.amazon.com/s?k=20mm+aluminum+pipe+500mm",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR14vEyaWJ4hGcRBdOu9xm26bqILSLmyyn870GzHuUMzzqjbQ2zFuIa2Slw6u6jJXxaDDKLFhNkxUIV2qc4FhRnkys97qSrtmxGsZ53VF4o0V3dvrtVBi596I61Uuf3vli6ua8dzkT8TDkvq4BLQP8kY4tqStbfLI0CnqGhWxDeJs9VZzPsBf24OJ4XUs5QNNbMZMGgjnulx28TCaQN3aMF4iDRaNyAyZCl3Uq2ZfMNDaXpAUBv35GDL8d5ueyOmCDITjuO8JoiCt0M02VjPEATJwg6tSCPeriXzYM4HOKyJ0cxq4Li0lMbcyz8LcJDvca2nVccviyGT4aN05NVecUwhFTDzidmSvvYapfJoPI4H3VbwQ7SVgpXzKhphlVfbZFBEyto584HXUuva1Vgt5m1TVqi8lSGNNy2y6WZMgPGdpXjqL5wsqIcCYEaYPxqHMxlFCHZuxEtrZEm6JyCKUBavFPSy4IM6LGcPGgDkOffMSQf0sT5Gg5eJLsLUDeG5JoHPJl4nuFTm6QWlosQ4dK1TMH4N7eKb6vWRbMeNl3nqZEbIsjtQLLJOjRQhMp0RpsjzVQwnUxlffmRds28P95pI11VeAvywg7Yb2ssWwxcvbL82taCcLdTvRYOe1O50UEpsInADoUcMKpqWmu42cF6x",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Pipe&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "inner_barrel",
+      "name": "Inner Barrel",
+      "type": "structural",
+      "partId": "f2fb6c99-34e2-4034-a931-6c10e8f06daa",
+      "category": "mechanical",
+      "material": "Brass",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DD7KPBQW?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "480x7.5x7.5mm",
+      "description": "Smooth bore inner barrel for projectile guidance and accuracy. Critical for gel ball flight.",
+      "productName": "Brass Tube",
+      "purchaseUrl": "https://www.amazon.com/s?k=7.5mm+brass+tube+480mm",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgmvDfP6B9fn5hne7KYpI7y7MNwPEA7YgHLzlN8gPIarWDYou7FaT3cnjFKgeHgVGTLOfh9jJvtHKmS4hRgIfyczahBy0vID8xdkwMQjyS1siIMu8uWUPVesliWnkPR7PMMF3mSrB5cqQNVPrhbVd1DCrph1hbmoDD1vL4t19fGZFzXnPApLustgJOM7eOTkRmaG8we90tK6YYREFWUUj0VTqB3A80OYFVUDvZ2FNq3AfEzMIDaLGrEhcRwuqyf5jpNN8A4YQ8EBK8jxBinVhsgKpWgm8Q7OBcxGOzN7qXaV64avT4nuE3os7ZxHmP7yah29uJbshDTZbtH9qmq0z4zAZufzOViKaC1IGruy773NH9nNZsI92vfpRj79yzcXBgC2KcdGBev8qJXxTtQCYaFpxevicig9HjrJOehnKwuz8r4H4dMwWP9pYxWvVO43M6ceMB6BVKgh7FscnSoiKARljeUifJEK0087sSCQjcPGtErHmSqFp5CIW32Whbs5F4wUf8gb15TpuBPhO9NmJ1Xxc8iRNdoWkku2gJ6y2O5VYRQSqwP3GJmGpd0QHR3LURHCjYYN7M03aSpZbsSOx0Jcs8G6hetmTx1HLTxop69SP9PfviGiWIIiWVePRW4rZeEYqAaOKS4dxk9N1x0IHCcb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Brass+Tube&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "pistol_grip",
+      "name": "Pistol Grip",
+      "type": "3d_printed",
+      "partId": "9cc30606-d615-42dc-a1d2-548027ac755b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/A_3PmFL8JY-ecYE2VlqZ8Yw5BMbtfjgQbQkoGjsoC3Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hdDN0YWN0aWNh/bC5jb20vd3AtY29u/dGVudC91cGxvYWRz/L2ltYWdlcy9wcm9k/dWN0cy9wcm9kdWN0/cy1mZGUtZl9kODMz/NzllMi00NDY2LTRm/ZWYtOTA3YS1mMzUw/NTk5ODdkODQtMzAw/eDMwMC5qcGc",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "Layer height: 0.2mm, Infill: 80%, Supports: Yes"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BXTCCPJB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "35x70x100mm",
+      "description": "Ergonomic grip for the primary firing hand, attaches to the receiver.",
+      "productName": "Pistol Grip",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 4,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR3wnWBliYgl2nUI5EAUnq8jWHC0zvRYrAFDqMAZVqIPgt91p3FUaOLZ1NQ3MEutbX7WukABOmCDKKiIXVcXWmdwI76lKEoPU9jTPSfrzlt3XzdFHMo2si5kh6yEMaqCibaVrscbpYh4t5XTHe35EKfSmOJDnKckTxG2ZKPgNXPolAasDPPCZZPL1xERY2iQNCXt4uXQGj3wYUCkmfL0jDJUAosQSmXZUsvG5syWyZRDQnYcFhlPxbIAE7qcFMbI2IqLxIfdVtoLddPAACuOf16VX6IAatf9lVmU0UEKll6bNyFoPzCwDdTqFSvsJ4LorUug2dg0rIfNli1vmH9I9mM5N1K6XK1FprCM0iFefjbNDvVCYH609rZjVStqeg4tZSBglxNJQcrFe1ASXtQSxEiYQOjKYY7HwggMiq8h3oFLRrMf9zWosEBcTJBItrwUbYg65aECiELmKaMEAChEUcRaYWPiQN7u6tkUMetPKtnFF1L6JBygLL39tqEKVJy6b0rlKjl3QpPQ2XRhT97AQroiD9ClW9Xd43gycmOrJe2LuyOojOyumAcSbIz7NeHCF04RGnVRFE4DjCQmXdQ36XUFJYOMOfM6pMQowe7Wf3pqNRu2mGvt8X41OuUNmsDyftEKZsOnyMNTaL8mMK7cUoEX"
+    },
+    {
+      "id": "trigger_box",
+      "name": "Trigger Box Housing",
+      "type": "3d_printed",
+      "partId": "e9dfa3c0-216a-41ca-acc3-6663a55bcac1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/7RGZUuQbNDvVlrsxotdX6egb7rrxXdZFZN0lvzSF8uk/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9kOGc4/bjJyNy5kZWxpdmVy/eS5yb2NrZXRjZG4u/bWUvd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMTEvcHJvZHVj/dF9nX2xfZ2xvY2st/c3AwMDMyMjItMTQw/eDE0MC5qcGcud2Vi/cA",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill, supports"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "trigger_switch",
+      "dimensions": "40x20x30mm",
+      "description": "Internal housing for the trigger mechanism components and switch.",
+      "productName": "Trigger Housing",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "30% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "trigger_component",
+      "name": "Trigger Component",
+      "type": "3d_printed",
+      "partId": "670e0c46-f0de-4301-8ad8-eedb46d87a28",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/uIGl9fH4wtzoRW_LxvUeJnxI9tc3UbqfNptrVorcWh0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9ndW5t/YWd3YXJlaG91c2Uu/Y29tL21lZGlhL2Nh/dGFsb2cvcHJvZHVj/dC9jYWNoZS80MWE4/ZTgyOTViZDA0NDQz/OGQ3NzZiOTdmYzFi/ZWUyMi9jL20vY21j/LXRyaWdnZXJzLWNv/bXBvbmVudC1zaW5n/bGUtc3RhZ2UtMy01/bGItYXItMTUtdHJp/Z2dlci1jdXJ2ZWQu/cG5n",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B096Z2X2D5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x10x50mm",
+      "description": "User-actuated trigger lever, designed to activate the trigger switch and firing pin mechanism.",
+      "productName": "Trigger Component",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.8,
+      "printSettings": "50% infill, 0.15mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRd4ocFuEdHIjTQC3l6E9o2YKTsFC5O8Jfh65b0DxPUa4IYwjXiFWj2wGGkZ7FdwenUCiWIPesHxZhzD33avVPv3TfN0l2670uqaomrQEpWod48FMytrFSWLYC7MXozRBsXPuz9RPlTAPAj5lo8DG2Hm1myjXpULv2cXpqeFkLjXQNTKmQ6VbjVH2tNTQMEw1yEHLhaJGLCVkXQIj1eIRdHpcs3qbAUOhJoip6g7dWZmXr9f2y22IjR9azrZ8gf8106kRu12Kmm6sBlZBX6k7dy258VnoD6cRp3lRm4vdMAXQW0cWEhIuPL6cbczMDAOth2wvOiCD5jRfCvE7DAauceFzsWkv7nlMUprh3yD4Fh8N5i6gtMo0CS8SEv90loKxzwcaz0KjMi1gsRBEd1XhGBHqWZHBxM2JQylsuDffIAilSUFe3wyMpXQxZur6JhnsNsPvc2QuJO9raFO03fm31szVNXcCOVxCAQ8zNSd6dAvzUI8DfO982CICYnpwMHmRLXmlpSPn6N0VZ3Z74pBQmmHXZRSYIK9HsAxJNVnUp8GGY893O6QVQb38Ey8cWEZpNHxlIksuHM9MQYv3A5Yy2hI2GY6sqLBg7ytTYmtJFl6B1ATvjsC4CH0FZg6r6mFSswAIOI6TdfemBuHOtKbJ7bH"
+    },
+    {
+      "id": "spring_guide",
+      "name": "Main Spring Guide",
+      "type": "3d_printed",
+      "partId": "3c1c433b-67af-4ba9-915c-6e37ae515b54",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "12x12x80mm",
+      "description": "Guides the main spring during compression and decompression within the piston assembly.",
+      "productName": "Spring Guide",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.9,
+      "printSettings": "100% infill, 0.15mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "piston_head",
+      "name": "Piston Head",
+      "type": "3d_printed",
+      "partId": "c98723d1-fb5c-42f3-8b9e-61490d4bcf4f",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "20x20x15mm",
+      "description": "Seals the air cylinder and pushes air to propel the gel ball. Designed for high impact.",
+      "productName": "Piston Head",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 0.75,
+      "printSettings": "100% infill, 0.1mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "piston_body",
+      "name": "Piston Body",
+      "type": "3d_printed",
+      "partId": "bddb6ddd-c11c-4e03-b223-037698e485a5",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "20x20x80mm",
+      "description": "Houses the piston head and connects to the sear mechanism.",
+      "productName": "Piston Body",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 1.2,
+      "printSettings": "80% infill, 0.15mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "cylinder_sleeve",
+      "name": "Air Cylinder Sleeve",
+      "type": "structural",
+      "partId": "6aadf6ec-faab-4ce0-92f0-7acf0d66f063",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/87n-Zf44QsrNFQORzD3a1SYZpVMNvUOhcJDz_otyetk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cHZjZml0dGluZ3Nv/bmxpbmUuY29tL2Nk/bi9zaG9wL2ZpbGVz/L3BpcGUtZXh0ZW5k/ZXJfMy5qcGc_dj0x/NzQ3OTY2MTA5Jndp/ZHRoPTQ2MA",
+      "material": "PVC",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DWSFXG31?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x22x22mm",
+      "description": "Forms the air compression chamber for the piston, providing smooth movement.",
+      "productName": "PVC Pipe",
+      "purchaseUrl": "https://www.homedepot.com/s/22mm+PVC+pipe",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR14vEyaWJ4hGcRBdOu9xm26bqILSLmyyn870GzHuUMzzqjbQ2zFuIa2Slw6u6jJXxaDDKLFhNkxUIV2qc4FhRnkys97qSrtmxGsZ53VF4o0V3dvrtVBi596I61Uuf3vli6ua8dzkT8TDkvq4BLQP8kY4tqStbfLI0CnqGhWxDeJs9VZzPsBf24OJ4XUs5QNNbMZMGgjnuUEoTmhzP7DIz4pvAcUPPiiv9iPT4N8oWdCfpPA5zCPflbu5C4twcIkgNdPisvdVNYh0KkZqpH9Z0mj2joPsal36pYUH1QGHoRKQ9sxK1i5jdIRrtNpMbRpHnENudc6mrvkyWG9sM5WwUelxzRuwH32Fi1RMmD4B2j0LFIqwWihPEe2aZeLtt2Fqhsd5VzwUfnsIn0LitkPvQMDbBU7DULr0ceaHxt0GvF9twlVdNurtoJ7bRDotnigovdIbU914F68KSVn8Ld58o4wqV9EKWC2BPyqKgsPbXEvxkAeZRhCW8LK9eQISlUcJwrSoxrRE25vEL5Gyimgszqboklk1aizAWBviEcSFzKWX1R6HsF8BMaHJBkrcAMQ4QGtJFBf5pVpMlWWIVycDCy0Zms6QyCXKa37Yh1SSyJKj0LwcUEOb83UK1O2dWrDx2vdLWXiHHfD2MeF2G6cp3WL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PVC+Pipe&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_spring",
+      "name": "Main Firing Spring",
+      "type": "mechanism",
+      "partId": "b1b2ff98-a00a-4725-9fd4-c8ce88d08211",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/ytqDYIjDyTB2Eo7aSRH-f2zVU_ckEDAB-72L8NbWZE4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/d2VzdGVybnNwcmlu/Zy5jb20vbWVkaWEv/bG9nby9XZXN0ZXJu/LVNwcmluZy1NYW51/ZmFjdHVyaW5nLUJy/YW5kTWFyay5zdmc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BVTDP29W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "18x18x120mm",
+      "description": "High-power compression spring to drive the piston for gel ball propulsion.",
+      "productName": "Compression Spring",
+      "purchaseUrl": "https://www.amazon.com/s?k=high+power+compression+spring+18x120mm",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxxBqouw1KSkxPctEXvXYhB2BpJOTSIUSV8LchHcnLFcE9Spuv4RwyOJ2ShVkHu7pz8RboTeXjxINF7uGTXO9ls1KvTfb6zwxETmByxRNgnTf4zaWHwWoLipk2nLSJ3SWcXHKmIpOJdV0OEGpOf8m0VytaiR6FxpeT91Q7K23FJKCdfdGIw4tyyVo6iCl2nYJZF7RiYfXMGfUAHomCaE2QdSXZ60tATXMarCMEMVNu190qNHhKKuLMbb1QoGcC48brpzqWCSE8ZOb8ZBpFeeA03ZT4pxqx1yh9ReCO7oNvQ7Gfg92gMN6MOUQ7Bmo6QGqqFjAoM31Kk5h269QhpcPpoWNayQcptSYgUPT7jwFbmgSlXEx9tLvD9caY3JOPVheuJR1O1eLhqmp3VeSKvRFT6BUHDcPdv3uLlMuDYg0KqnoOhSJL89cvahVd2aF9hPKYMR0WnWJ4ZSzo5P0wHf6WIewIqqMijduz3jfmybtokyfmiw8AU4vQTvn7vrF1ujqasiYCyzQi0RxhCiEgpqKhYcRtDm266Tq2g6560QCK3Sssy2TXoS10evHWUc8cP0vS2VqI19lq1QX86S8z5ZFLkQIKboJn1vpMV2ls0e35f5iSic7dIjDZQg7WinKrj9gah3zTcKKljLTjQG42kPOvzBH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Compression+Spring&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "magazine_body",
+      "name": "Magazine Body",
+      "type": "3d_printed",
+      "partId": "409d3233-27cf-47f9-b814-b41053594c46",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/EoM7u-pz-nIt_z0P7_QvYE0-YSI74K3XNUGppborKNQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFVR3NKc3Mrc0wu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x25x60mm",
+      "description": "Holds the gel balls and internal feeding mechanism for bottom-fed magazine.",
+      "productName": "Magazine Body",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 5,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "magazine_follower",
+      "name": "Magazine Follower",
+      "type": "3d_printed",
+      "partId": "11e17562-521b-4ab0-807f-5a5c958c7a68",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/qa1oGGwmyp3-C2qTQIESGQHqs44LxOwhqrK3kGxXdfE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZWhvYmJ5YXNpYS5j/b20vY2RuL3Nob3Av/ZmlsZXMvS1RQLUtB/MjQzLTQ1QS0yTF84/MDB4NTMzLmpwZz92/PTE3MTU5Mzc1NDA",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FCG8WF22?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x20mm",
+      "description": "Pushes gel balls up the magazine channel towards the feeding mechanism.",
+      "productName": "Magazine Follower",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.6,
+      "printSettings": "50% infill, 0.15mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4s9vPh7"
+    },
+    {
+      "id": "magazine_spring",
+      "name": "Magazine Spring",
+      "type": "mechanism",
+      "partId": "2ed999bf-9e92-4267-85c2-c6013f6940e9",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/OADcufCNAA68eJ4Vt0O7KoKGnpbygZvHM3YN3Q3yAKQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy02Z2Y2/cWY4a3IyL2ltYWdl/cy9zdGVuY2lsLzUw/MHg2NTkvcHJvZHVj/dHMvNTU1MC84MjIx/L1Byb2R1Y3RfR3Jl/ZW5TcHJpbmdzX19f/MDM2NDEuMTcyMTMx/Nzc3OS5qcGc_Yz0x",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FBT4JG1Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x100mm",
+      "description": "Compression spring for the magazine follower, ensuring consistent gel ball feeding.",
+      "productName": "Magazine Spring",
+      "purchaseUrl": "https://www.amazon.com/s?k=gel+blaster+magazine+spring",
+      "estimatedCost": 2.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGwjqvr9d3Q6HmqeLQLdSOEcLl8g12ze187Pe05NHX247xAceAqKlGbQlRxfiW7KFZ9E40SVQeaT4BUplJDV1z4yStRBuIWVmpQzCxvG8drJ2sZbgkoTZsc5LPwXdH3Sw264QNKRDCvdRDpuA7VtRmrsnCUL0Q5zbzp4sGR9ZVm5d7X9SCF120drG1M4hGLv87IqXEGUiiPvMIsFKxUKP1XTRft1EYkzoSOO5ySN0SRpSXM5HzgN8Jk5Hblgs5KaR1NFR8iAOtkmRQQLurdZzzIBrohScdhC5nZyhro8s2nRyXzzYoTvwRbhupp7SxoN3DVVoIH5Yj9HezvVjm5QsIpvkWWwmDUFJzMnnZOcwZEBD9WfXK8giMpfgK3TfBaOeptcxKRvtHjZhkgFNumATTiAWRaloxmMnwsou4WA9L40vNXPsvs15UOsASKfnVDf8xvJWB7GgdQQVPzwdnas6i5SFJWl2tvt4VroOlqxynKAIyEUomBTY3qF3iY3hphRusTIiZYEzQfFQJYuchODdnJXyqgoqgEj6MmOouyAHOj9FJB0zsmyO2zbnxETfjwMFaXPi5zct8w6SkQPbYpbhPn2qBAOLbLfMksXELA4qe8KQzeW8wwEyLzF3H7BZYSNwfuJgZjnLMU8lZccrVgFUIbh",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Magazine+Spring&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "charging_handle",
+      "name": "Charging Handle",
+      "type": "3d_printed",
+      "partId": "15b9a03c-9bc8-4115-b7d5-b6515047a902",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/g6lEGZQ3u6zFXJwxJHQojyjz-hKdE_aOcMEdH9zYMG4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hdDN0YWN0aWNh/bC5jb20vd3AtY29u/dGVudC91cGxvYWRz/L2ltYWdlcy9wcm9k/dWN0cy9wcm9kdWN0/cy1yYWRpYW4td2Vh/cG9ucy1yYXB0b3It/bHQtZmRlLTMwMHgz/MDAucG5n",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "80x20x15mm",
+      "description": "User interface to manually cock the spring-piston mechanism.",
+      "productName": "Charging Handle (FDM)",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "50% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "hop_up_unit",
+      "name": "Hop-Up Unit",
+      "type": "3d_printed",
+      "partId": "b76b5bd6-21e5-41b1-ae87-c68c176faa4c",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "30x20x20mm",
+      "description": "Applies backspin to gel balls for increased range and accuracy. Attaches to the inner barrel.",
+      "productName": "Hop-Up Unit",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2,
+      "printSettings": "80% infill, 0.15mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "barrel_stabilizer",
+      "name": "Barrel Stabilizer Ring",
+      "type": "3d_printed",
+      "partId": "90fc11ab-55d0-4aff-9aa8-71e76d8fdfd2",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "amazonUrl": null,
+      "dimensions": "20x20x10mm",
+      "description": "Keeps the inner barrel centered within the outer barrel to reduce wobble and improve accuracy.",
+      "productName": "Barrel Stabilizer Ring",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "50% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "m3_mounting_screws",
+      "name": "M3 Mounting Screws",
+      "type": "misc",
+      "partId": "e784ac3c-3386-43f6-ad97-a635cb207e4e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HRTJqCrd9l4W5z4QZqOdmNIjBcRGSI_wdCSb1H8DEfU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFqVGRVQkFuMFMu/anBn",
+      "material": "Steel",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/dp/B01E6EIC2S?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x12mm",
+      "description": "General purpose M3 screws for assembling 3D printed and off-the-shelf components.",
+      "productName": "M3x12mm Hex Socket Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3x12mm+hex+socket+screws",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGviXIKRh9daXPcyNQr6UsWL4YYgdKawDu5eiOW4UpifaXRkPDdBBMXK5tH3Q45AKRsBJXozGXtT6iWNrQ9gbibn9p4p01EIDSdNrWZ76m0BPuTZlpwJ4SSWpImyOJnuC2UaAmuLsCc9tgPfgPtksaUa6jYVE8FvTX7OORS2oc3au4GYW4ZVBBIF3bxz62qq7oCc4IQxKpNguzmNX7zTq7xsIYQtZbPvkdAc2C0ZlWETDZJzodyrkXdfjH8tSNWjVCgs3CA34qEloqCjSrnttbfdBVcAklia7CNkRODzDehFHuQabJMFV8uwgnuDC2osQZVu4ojF8NvVaTUfwzECvvdXFo61UIKRNi9BjVFh22P2RQWkYixyRmMqfbdL34XFX9u1YX9W9zcn9h2dppn0DXfII3tlkE81fGYddDE79CpiQtlzHZSxATEorvmQHd5Yvs8sRx1eZdt1Hx5EpcmBCSk4OXuCiifDrrbxsHr6dmLalz8OXrX3cH0Dfry00uhZKxpY5HEqwlvRRFOvYoNfuPFHq64FkYHmnSRNvOrxGsHnZT8H9Xzw3Osmzn72lEhgh9PLUSsm2ydOCxGj26PBH41sT3E2S7NAjH5AFnF4nDdEay6sJcF7oNDgOCGrajFMJEF0HWIMetEWAsCUVadcVGzd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x12mm+Hex+Socket+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_nuts",
+      "name": "M3 Nuts",
+      "type": "misc",
+      "partId": "c3dca189-2353-43a1-b760-66b6cefe0032",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/vg1gs-21zLYE55jjgSzVvS2M2zNf5sIsOioavDODdsY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzF3LVNkcmlRdkwu/anBn",
+      "quantity": 20,
+      "research": {
+        "specs": [
+          {
+            "label": "Material",
+            "value": "18-8 Stainless Steel"
+          },
+          {
+            "label": "Standard",
+            "value": "DIN 934"
+          },
+          {
+            "label": "Thread Size",
+            "value": "M3"
+          },
+          {
+            "label": "Thickness_mm",
+            "value": "2.4"
+          },
+          {
+            "label": "mcmaster_url",
+            "value": "https://www.mcmaster.com/90591A121"
+          },
+          {
+            "label": "Thread Pitch_mm",
+            "value": "0.5"
+          },
+          {
+            "label": "mcmaster_part_number",
+            "value": "90591A121"
+          },
+          {
+            "label": "Width Across Flats_mm",
+            "value": "5.5"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/binifiMux-M1-6-Stainless-Steel-200pcs/dp/B08N68W9SP",
+            "note": "binifiMux 150 pcs M3 Hex Nuts, Stainless Steel. Thickness 2mm, fits 6mm hex spanner (slight variations from specified dimensions).",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.mcmaster.com/90591A121",
+            "note": "Part number confirmed via eBay listings referencing McMaster-Carr.",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "https://accu-components.com/us/hexagon-nuts/7888-HPN-M3-A2",
+            "note": "M3 Hex Nuts (DIN 934) - Stainless Steel (18-8 / 304) with matching specifications.",
+            "vendor": "Accu"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "MonsterBolts M3 Hex Nuts (A4/316 Stainless Steel)",
+            "reason": "Uses A4 (316) marine-grade stainless steel, which offers higher corrosion resistance than 18-8 (304) stainless steel, but is not the specified material."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F9FC4563?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "Standard M3 nuts for securing bolted connections.",
+      "productName": "M3 Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+hex+nuts",
+      "estimatedCost": 0.02,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxheLVocLOesSj3YW9HVKSsjAuk0dhY8YT34rvUc5SPCcgI4QR7M5m7vL2CF1qaBN4YJaX2QCpde3asIqUTPZ7VH9jKyimAosVWo9rG6TlCDaJUGpnvxlaPEscouM2pHiy6Zxvpv1xT7pzOx6Fyo1keQHGdNb57GbSrrLl71Nratjl21Ld7kva7BOr6PkrmoRWaWh55AYomtd8Z3yTq04PvrqlY5YBlai14Zqqm1nwp3TV2K5uxs0EGrCrPfu4GYI7jNaPISs01eXJf41jhf0QpknTJxW8qBL9GcWbb9hfTnLyftpwrbKqPnF8dvx4RHQkb8ZP8BSR81V5Fu45b5wJbrDhRnyjz0RXWL5BXkBaEs3ZSp7WOwJEtZ1t3tvABpapsuJRrQbLqHwt6h8T28IiiGvsb55OJKTAhaiBPwnBWGJ74IpYm6mf32wB3kuuhALc6jRTSWG3Df4XHqSsoXkfwwzvcYwbVm6PDdgzJw7MEBaWEkQwFos1EuzSOsU3IDiG7r2kJf7eV9aInWlTwQ977gk6Q27AfFEY984k1lgT40XJlTIWPlMvK7GlvY7giUmMRlsr4ETykxB2EQ9k6wlIDNTUesgVotiHHythHgqnxfbJyf5h6w0WqBMIGaF0R88Tm1iWPDGAkRtRFuY5ke41QIn",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_heat_set_inserts",
+      "name": "M3 Heat-Set Inserts",
+      "type": "misc",
+      "partId": "188c8012-742d-43a4-943b-4b393ed67077",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/vBHyTN_dtLBTQuLnPxDueDx1S61IMNdpQOlQqDsYASk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFHVkZRbTI1Ukwu/anBn",
+      "quantity": 15,
+      "amazonUrl": "https://www.amazon.com/dp/B08BCRZZS3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x5mm",
+      "description": "Brass inserts for durable threaded connections in 3D printed parts.",
+      "productName": "M3 Threaded Heat Set Inserts",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+heat+set+inserts",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgNN69lIIDIECscgtgGU9UYxef4BRiw7YumAEEqwxfnfC3Yg67nOYI4dFlZCGwoomZsjoNu8orcnDAMD7B9ug5ljEl8J2qRKQrspZ0SYqxZIHKBRoDD5m0MTsX2TX0DyPj7M2IMyGVVlZVrhtqSl2m9AbLDTVdocvmpCeVWuVvBJFKYM4sacYEtD8eojrkr2NpnME7qmuS0iu3kt8yVCVBSssjNhjYJ4f7p5DvpeOCeTFdplbJgJgThrYxnuyaFPjS6kqqWTWIMbNsw8TJAAYHi4Wi6tWYUnPbeS9POAYYHeTxnvuyAldVyUqAPZPPSuteE376AA2jwf6HSrlblluRYwhrI5v0hvtZ2nYHmcSleaTgHqLXCIxKceB8qZOx9nCDasvErdqGP9QrK67hjzuPVibu8Tz1ld1oOiQ6zeO8xB8qWy9yO75kZu2R2etvClAp5raDjB9zqcY5xmfMei6ZfesfrNCXT4Ct4FQRJaY5GAlGDQTEZDlSEs3HFFw69btfyUty4OfU00wDh2zMr49gDt1joKLwAcJB2qM1G7zyLGOVNrh9e1wtni4CrJpuhPkfqsU22t70Zqx9aPVW0V3U3vp0zrMP4ilrUvPz9ensK0oUBjTpYepQKjMLZwkBW0TpxUxeJfbUb1buYIxaAxUNBN",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Threaded+Heat+Set+Inserts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "battery_tray",
+      "name": "Battery Tray",
+      "type": "3d_printed",
+      "partId": "21c5e2a0-fbaf-4c96-86b7-fd6d91a25628",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/nhhmKVnR7J9PP_WFRlYTvTKBev2fEKKY76TiZI1wKm8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFQbGdpTTA5MEwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "battery_pack",
+      "dimensions": "70x30x25mm",
+      "description": "Secures the LiPo battery pack within the stock or receiver, preventing movement.",
+      "productName": "Battery Tray",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "mcu_mount",
+      "name": "MCU Mount",
+      "type": "3d_printed",
+      "partId": "6044455c-0726-46ea-8a2e-90f7685905e6",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/zyrYNQuQvCpR-XgAumnmjUk8xELzUhCvxHGRv0Vy-78/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly92aWJy/YWNvdXN0aWMuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzAyL01DVS1Ub3At/TW91bnRzLWhhbGYt/Y29tcGxldGUuanBn",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "main_mcu",
+      "dimensions": "60x40x5mm",
+      "description": "Mounting plate for the main microcontroller board inside the receiver.",
+      "productName": "MCU Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.7,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "buck_converter_mount",
+      "name": "Buck Converter Mount",
+      "type": "3d_printed",
+      "partId": "33ca8c09-e7fb-48c4-a747-72bcf369e39a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/TZoB5fxiIsJ6EZH2uIwiXM9WKevoPAO-Y75sZeFnKPE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tLzAw/L3MvTVRJd01GZ3hO/akF3L3ovR0JzQUFP/U3doNVJlODZuMS8k/XzMyLkpQRz9zZXRf/aWQ9ODgwMDAwNTAw/Rg",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "buck_converter",
+      "dimensions": "30x20x5mm",
+      "description": "Small mount for securing the buck converter.",
+      "productName": "Buck Converter Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "safety_switch_mount",
+      "name": "Safety Switch Mount",
+      "type": "3d_printed",
+      "partId": "18381e5e-f4d7-4cc6-9703-ea6d317f591e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/jox5FGFvelc9tcKZwDApNgX8O90QycLyPSW0lfD8SvQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wYXJ0/cy5zYW50YWNsYXJh/c3lzdGVtcy5jb20v/aW1hZ2VzL3RfY2F0/YWxvZyxmX2F1dG8s/ZHByX2F1dG8vc2lj/ay1pMTAtZTAyMzMt/MDMvZWxlY3Ryby1t/ZWNoYW5pY2FsLXNh/ZmV0eS1zd2l0Y2gt/bG9ja2luZy1kZXZp/Y2UtNjAyMjU4NS5q/cGc",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "safety_switch",
+      "dimensions": "25x15x15mm",
+      "description": "Housing for the safety selector switch, integrated into the receiver side.",
+      "productName": "Safety Switch Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.4,
+      "printSettings": "30% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    }
+  ],
+  "notes": [
+    "sniper rifle form factor",
+    "Orbeez projectile type",
+    "gel ball blaster",
+    "propulsion mechanism"
+  ],
+  "projectName": "Orbіz Sniper Rifle",
+  "originalPrompt": "снайперская винтовка на орбиз",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all mechanical components (receiver, stock, grip, etc.)",
+          "partIds": [
+            "main_receiver_body",
+            "buttstock",
+            "handguard",
+            "pistol_grip",
+            "trigger_box",
+            "trigger_component",
+            "spring_guide",
+            "piston_head",
+            "piston_body",
+            "magazine_body",
+            "magazine_follower",
+            "charging_handle",
+            "hop_up_unit",
+            "barrel_stabilizer",
+            "battery_tray",
+            "mcu_mount",
+            "buck_converter_mount",
+            "safety_switch_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Install M3 heat-set inserts into designated mounting points on 3D printed parts",
+          "partIds": [
+            "main_receiver_body",
+            "buttstock",
+            "handguard",
+            "pistol_grip",
+            "trigger_box",
+            "battery_tray",
+            "mcu_mount",
+            "buck_converter_mount",
+            "safety_switch_mount",
+            "m3_heat_set_inserts"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Cut and deburr outer barrel, inner barrel, and cylinder sleeve to final dimensions",
+          "partIds": [
+            "outer_barrel",
+            "inner_barrel",
+            "cylinder_sleeve"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test-fit trigger component into trigger box and piston assembly into cylinder sleeve",
+          "partIds": [
+            "trigger_component",
+            "trigger_box",
+            "piston_body",
+            "piston_head",
+            "cylinder_sleeve"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder power leads (VIN+, VIN-) from battery pack to 5V step-down converter",
+          "partIds": [
+            "battery_pack",
+            "buck_converter"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder regulated 5V output (VOUT+, VOUT-) from buck converter to main MCU's power inputs",
+          "partIds": [
+            "buck_converter",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Solder wires to the Trigger Micro Switch (COM and NO terminals)",
+          "partIds": [
+            "trigger_switch"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder wires to the Safety Selector Switch (COM, POS1, and POS2 terminals)",
+          "partIds": [
+            "safety_switch"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect trigger switch and safety switch to main MCU's GPIO and 3.3V/GND pins",
+          "partIds": [
+            "main_mcu",
+            "trigger_switch",
+            "safety_switch"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Perform continuity checks on all soldered connections to prevent shorts",
+          "partIds": [
+            "main_mcu",
+            "trigger_switch",
+            "safety_switch",
+            "buck_converter",
+            "battery_pack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Power on buck converter and verify 5V output using a multimeter",
+          "partIds": [
+            "buck_converter",
+            "battery_pack"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Connect main MCU to computer and upload initial firmware",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test trigger switch input by observing serial output on main MCU",
+          "partIds": [
+            "main_mcu",
+            "trigger_switch"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test safety switch input (POS1/POS2) by observing serial output on main MCU",
+          "partIds": [
+            "main_mcu",
+            "safety_switch"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Verify basic power delivery and data communication between all electrical components",
+          "partIds": [
+            "main_mcu",
+            "buck_converter",
+            "trigger_switch",
+            "safety_switch",
+            "battery_pack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Assemble magazine: insert magazine spring and magazine follower into magazine body",
+          "partIds": [
+            "magazine_body",
+            "magazine_follower",
+            "magazine_spring"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Assemble piston: attach piston head to piston body and insert main spring",
+          "partIds": [
+            "piston_body",
+            "piston_head",
+            "main_spring"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount Trigger Micro Switch into Trigger Box Housing and install trigger component",
+          "partIds": [
+            "trigger_box",
+            "trigger_switch",
+            "trigger_component"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Install Inner Barrel into Hop-Up Unit, then seat Inner Barrel concentrically within Outer Barrel with Stabilizer Ring",
+          "partIds": [
+            "inner_barrel",
+            "outer_barrel",
+            "hop_up_unit",
+            "barrel_stabilizer"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount main MCU, buck converter, and safety switch into their respective 3D printed mounts",
+          "partIds": [
+            "mcu_mount",
+            "main_mcu",
+            "buck_converter_mount",
+            "buck_converter",
+            "safety_switch_mount",
+            "safety_switch",
+            "m3_mounting_screws",
+            "m3_nuts"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Assemble the main receiver body with buttstock, handguard, pistol grip, trigger box, barrel assembly, and internal mechanism components",
+          "partIds": [
+            "main_receiver_body",
+            "buttstock",
+            "handguard",
+            "outer_barrel",
+            "pistol_grip",
+            "trigger_box",
+            "cylinder_sleeve",
+            "spring_guide",
+            "charging_handle",
+            "hop_up_unit",
+            "battery_tray",
+            "mcu_mount",
+            "buck_converter_mount",
+            "safety_switch_mount",
+            "m3_mounting_screws",
+            "m3_nuts"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Route all electrical wiring, secure with zip ties or clips, and connect battery pack to battery tray",
+          "partIds": [
+            "main_receiver_body",
+            "battery_tray",
+            "battery_pack"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Perform final system test, checking trigger response, safety function, and mechanical action",
+          "partIds": [
+            "main_mcu",
+            "trigger_switch",
+            "safety_switch",
+            "battery_pack",
+            "piston_body",
+            "main_spring",
+            "inner_barrel"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "An Orbeez sniper rifle, featuring a spring",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG and ABS capable)",
+      "M3 hex key",
+      "Wire strippers",
+      "Soldering iron with fine tip",
+      "Solder",
+      "Heat shrink tubing",
+      "Heat gun (for heat-set inserts and heat shrink)",
+      "Multimeter",
+      "Small pliers/tweezers",
+      "Deburring tool/fine file",
+      "Hobby knife"
+    ],
+    "assumptions": [
+      "Basic 3D printing knowledge and experience with PETG/ABS",
+      "Proficiency in soldering small gauge wires",
+      "Familiarity with microcontroller firmware uploading (e.g., using Arduino IDE or similar)",
+      "Basic understanding of electrical safety, especially with LiPo batteries",
+      "Access to a computer for firmware development and testing"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main power in for buck",
+      "source": "battery_pack",
+      "target": "buck_converter",
+      "current": "5A",
+      "voltage": "14.8V"
+    },
+    {
+      "type": "power",
+      "label": "Main ground in for buck",
+      "source": "battery_pack",
+      "target": "buck_converter",
+      "current": "5A",
+      "voltage": "14.8V"
+    },
+    {
+      "type": "power",
+      "label": "5V power to MCU",
+      "source": "buck_converter",
+      "target": "main_mcu",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Ground to MCU",
+      "source": "buck_converter",
+      "target": "main_mcu",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "Trigger signal",
+      "source": "main_mcu",
+      "target": "trigger_switch",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "NO"
+    },
+    {
+      "type": "data",
+      "label": "Safety position 1",
+      "source": "main_mcu",
+      "target": "safety_switch",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "POS1"
+    },
+    {
+      "type": "data",
+      "label": "Safety position 2",
+      "source": "main_mcu",
+      "target": "safety_switch",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "POS2"
+    },
+    {
+      "type": "power",
+      "label": "Trigger switch VCC",
+      "source": "main_mcu",
+      "target": "trigger_switch",
+      "current": "1mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Trigger switch GND",
+      "source": "main_mcu",
+      "target": "trigger_switch",
+      "current": "1mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Safety switch VCC",
+      "source": "main_mcu",
+      "target": "safety_switch",
+      "current": "1mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Safety switch GND",
+      "source": "main_mcu",
+      "target": "safety_switch",
+      "current": "1mA",
+      "voltage": "3.3V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M3 bolts and heat-set inserts",
+      "source": "main_receiver_body",
+      "target": "buttstock"
+    },
+    {
+      "label": "M3 bolts and heat-set inserts",
+      "source": "main_receiver_body",
+      "target": "handguard"
+    },
+    {
+      "label": "Threaded or M3 bolted connection",
+      "source": "main_receiver_body",
+      "target": "outer_barrel"
+    },
+    {
+      "label": "M3 bolts and heat-set inserts",
+      "source": "main_receiver_body",
+      "target": "pistol_grip"
+    },
+    {
+      "label": "M3 bolts and heat-set inserts",
+      "source": "main_receiver_body",
+      "target": "trigger_box"
+    },
+    {
+      "label": "Press fit or M3 bolted",
+      "source": "main_receiver_body",
+      "target": "cylinder_sleeve"
+    },
+    {
+      "label": "Retained by slot or M3 bolts",
+      "source": "main_receiver_body",
+      "target": "spring_guide"
+    },
+    {
+      "label": "Sliding rail and linkage",
+      "source": "main_receiver_body",
+      "target": "charging_handle"
+    },
+    {
+      "label": "M3 bolts or snap fit",
+      "source": "main_receiver_body",
+      "target": "hop_up_unit"
+    },
+    {
+      "label": "M3 bolts and heat-set inserts",
+      "source": "main_receiver_body",
+      "target": "battery_tray"
+    },
+    {
+      "label": "M3 bolts and heat-set inserts",
+      "source": "main_receiver_body",
+      "target": "mcu_mount"
+    },
+    {
+      "label": "M3 bolts and heat-set inserts",
+      "source": "main_receiver_body",
+      "target": "buck_converter_mount"
+    },
+    {
+      "label": "M3 bolts and heat-set inserts",
+      "source": "main_receiver_body",
+      "target": "safety_switch_mount"
+    },
+    {
+      "label": "Concentric fit",
+      "source": "outer_barrel",
+      "target": "inner_barrel"
+    },
+    {
+      "label": "Internal fit",
+      "source": "outer_barrel",
+      "target": "barrel_stabilizer"
+    },
+    {
+      "label": "Seated/retained",
+      "source": "inner_barrel",
+      "target": "hop_up_unit"
+    },
+    {
+      "label": "Concentric fit",
+      "source": "barrel_stabilizer",
+      "target": "inner_barrel"
+    },
+    {
+      "label": "Pivot pin",
+      "source": "trigger_box",
+      "target": "trigger_component"
+    },
+    {
+      "label": "Sliding fit",
+      "source": "cylinder_sleeve",
+      "target": "piston_body"
+    },
+    {
+      "label": "M3 bolts or threaded",
+      "source": "piston_body",
+      "target": "piston_head"
+    },
+    {
+      "label": "Internal compression",
+      "source": "piston_body",
+      "target": "main_spring"
+    },
+    {
+      "label": "Linkage or direct attachment",
+      "source": "piston_body",
+      "target": "charging_handle"
+    },
+    {
+      "label": "Guides spring",
+      "source": "spring_guide",
+      "target": "main_spring"
+    },
+    {
+      "label": "Sliding rail",
+      "source": "magazine_body",
+      "target": "magazine_follower"
+    },
+    {
+      "label": "Retained within body",
+      "source": "magazine_body",
+      "target": "magazine_spring"
+    },
+    {
+      "label": "Compresses spring",
+      "source": "magazine_follower",
+      "target": "magazine_spring"
+    },
+    {
+      "label": "mount",
+      "source": "trigger_box",
+      "target": "trigger_switch"
+    },
+    {
+      "label": "mount",
+      "source": "battery_tray",
+      "target": "battery_pack"
+    },
+    {
+      "label": "mount",
+      "source": "mcu_mount",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "buck_converter_mount",
+      "target": "buck_converter"
+    },
+    {
+      "label": "mount",
+      "source": "safety_switch_mount",
+      "target": "safety_switch"
+    }
+  ],
+  "projectId": "83badea1-c136-41b7-a52f-35b37d2c733d"
+}

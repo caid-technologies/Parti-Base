@@ -1,0 +1,132 @@
+[
+  {
+    "label": "sealed against",
+    "source": "rugged_enclosure_main",
+    "target": "enclosure_gasket_seal"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "rugged_enclosure_main",
+    "target": "internal_mounting_plate"
+  },
+  {
+    "label": "M4 enclosure screws",
+    "source": "rugged_enclosure_main",
+    "target": "front_bezel_display_cutout"
+  },
+  {
+    "label": "inserted into port cutout",
+    "source": "rugged_enclosure_main",
+    "target": "usb_c_port_cover"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "rugged_enclosure_main",
+    "target": "lanyard_attachment_point"
+  },
+  {
+    "label": "adhesive",
+    "source": "rugged_enclosure_main",
+    "target": "rubber_feet"
+  },
+  {
+    "label": "M3 mounting screws",
+    "source": "front_bezel_display_cutout",
+    "target": "keypad_frame_mount"
+  },
+  {
+    "label": "M3 mounting screws",
+    "source": "front_bezel_display_cutout",
+    "target": "speaker_grille_cover"
+  },
+  {
+    "label": "press fit",
+    "source": "front_bezel_display_cutout",
+    "target": "microphone_port_seal"
+  },
+  {
+    "label": "M3 mounting screws",
+    "source": "front_bezel_display_cutout",
+    "target": "color_display_mount"
+  },
+  {
+    "label": "M3 mounting screws",
+    "source": "internal_mounting_plate",
+    "target": "mcu_mount_standoffs"
+  },
+  {
+    "label": "M3 mounting screws",
+    "source": "internal_mounting_plate",
+    "target": "sdr_module_mount"
+  },
+  {
+    "label": "M3 mounting screws",
+    "source": "internal_mounting_plate",
+    "target": "battery_holder"
+  },
+  {
+    "label": "M3 mounting screws",
+    "source": "internal_mounting_plate",
+    "target": "antenna_connector_mount"
+  },
+  {
+    "label": "M3 mounting screws",
+    "source": "internal_mounting_plate",
+    "target": "audio_codec_mount"
+  },
+  {
+    "label": "fastens with",
+    "source": "m3_mounting_screws",
+    "target": "m3_nuts"
+  },
+  {
+    "label": "mount",
+    "source": "keypad_frame_mount",
+    "target": "keypad_matrix"
+  },
+  {
+    "label": "mount",
+    "source": "mcu_mount_standoffs",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "sdr_module_mount",
+    "target": "wideband_sdr"
+  },
+  {
+    "label": "mount",
+    "source": "battery_holder",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mount",
+    "source": "speaker_grille_cover",
+    "target": "speaker"
+  },
+  {
+    "label": "mount",
+    "source": "microphone_port_seal",
+    "target": "microphone"
+  },
+  {
+    "label": "mount",
+    "source": "color_display_mount",
+    "target": "color_display"
+  },
+  {
+    "label": "mount",
+    "source": "audio_codec_mount",
+    "target": "audio_codec"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "rugged_enclosure_main",
+    "target": "solar_panel_mount"
+  },
+  {
+    "label": "adhesive + M2 screws",
+    "source": "solar_panel_mount",
+    "target": "solar_panel"
+  }
+]

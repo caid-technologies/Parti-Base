@@ -1,0 +1,292 @@
+[
+  {
+    "label": "neck joint/servo connection",
+    "source": "robot_torso_chassis",
+    "target": "robot_head_shell"
+  },
+  {
+    "label": "torso yaw joint/servo connection",
+    "source": "robot_torso_chassis",
+    "target": "robot_pelvis_base"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_head_shell",
+    "target": "imu_mount_head"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_head_shell",
+    "target": "head_tilt_servo_mount"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "head_tilt_servo_mount",
+    "target": "head_pan_servo_mount"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_torso_chassis",
+    "target": "mcu_mount_torso"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_torso_chassis",
+    "target": "battery_holder_torso"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_torso_chassis",
+    "target": "charging_module_mount_torso"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_torso_chassis",
+    "target": "voltage_regulator_mount_torso"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_torso_chassis",
+    "target": "servo_driver_mount_torso"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_pelvis_base",
+    "target": "torso_yaw_servo_mount"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_torso_chassis",
+    "target": "right_shoulder_pitch_servo_mount"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "right_shoulder_pitch_servo_mount",
+    "target": "right_shoulder_roll_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "right_shoulder_roll_servo_mount",
+    "target": "right_upper_arm_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "right_upper_arm_segment",
+    "target": "right_elbow_pitch_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "right_elbow_pitch_servo_mount",
+    "target": "right_forearm_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_torso_chassis",
+    "target": "left_shoulder_pitch_servo_mount"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "left_shoulder_pitch_servo_mount",
+    "target": "left_shoulder_roll_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "left_shoulder_roll_servo_mount",
+    "target": "left_upper_arm_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "left_upper_arm_segment",
+    "target": "left_elbow_pitch_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "left_elbow_pitch_servo_mount",
+    "target": "left_forearm_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_pelvis_base",
+    "target": "right_hip_pitch_servo_mount"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "right_hip_pitch_servo_mount",
+    "target": "right_hip_roll_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "right_hip_roll_servo_mount",
+    "target": "right_upper_leg_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "right_upper_leg_segment",
+    "target": "right_knee_pitch_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "right_knee_pitch_servo_mount",
+    "target": "right_lower_leg_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "right_lower_leg_segment",
+    "target": "right_ankle_pitch_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "right_ankle_pitch_servo_mount",
+    "target": "right_foot_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "robot_pelvis_base",
+    "target": "left_hip_pitch_servo_mount"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "left_hip_pitch_servo_mount",
+    "target": "left_hip_roll_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "left_hip_roll_servo_mount",
+    "target": "left_upper_leg_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "left_upper_leg_segment",
+    "target": "left_knee_pitch_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "left_knee_pitch_servo_mount",
+    "target": "left_lower_leg_segment"
+  },
+  {
+    "label": "M2x6mm screws",
+    "source": "left_lower_leg_segment",
+    "target": "left_ankle_pitch_servo_mount"
+  },
+  {
+    "label": "micro servo horns",
+    "source": "left_ankle_pitch_servo_mount",
+    "target": "left_foot_segment"
+  },
+  {
+    "label": "mount",
+    "source": "mcu_mount_torso",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "imu_mount_head",
+    "target": "imu_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "battery_holder_torso",
+    "target": "battery_lipo"
+  },
+  {
+    "label": "mount",
+    "source": "charging_module_mount_torso",
+    "target": "charging_module"
+  },
+  {
+    "label": "mount",
+    "source": "voltage_regulator_mount_torso",
+    "target": "voltage_regulator"
+  },
+  {
+    "label": "mount",
+    "source": "servo_driver_mount_torso",
+    "target": "servo_driver"
+  },
+  {
+    "label": "mount",
+    "source": "head_pan_servo_mount",
+    "target": "head_pan_servo"
+  },
+  {
+    "label": "mount",
+    "source": "head_tilt_servo_mount",
+    "target": "head_tilt_servo"
+  },
+  {
+    "label": "mount",
+    "source": "torso_yaw_servo_mount",
+    "target": "torso_yaw_servo"
+  },
+  {
+    "label": "mount",
+    "source": "right_shoulder_pitch_servo_mount",
+    "target": "right_shoulder_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "right_shoulder_roll_servo_mount",
+    "target": "right_shoulder_roll_servo"
+  },
+  {
+    "label": "mount",
+    "source": "right_elbow_pitch_servo_mount",
+    "target": "right_elbow_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "left_shoulder_pitch_servo_mount",
+    "target": "left_shoulder_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "left_shoulder_roll_servo_mount",
+    "target": "left_shoulder_roll_servo"
+  },
+  {
+    "label": "mount",
+    "source": "left_elbow_pitch_servo_mount",
+    "target": "left_elbow_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "right_hip_pitch_servo_mount",
+    "target": "right_hip_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "right_hip_roll_servo_mount",
+    "target": "right_hip_roll_servo"
+  },
+  {
+    "label": "mount",
+    "source": "right_knee_pitch_servo_mount",
+    "target": "right_knee_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "right_ankle_pitch_servo_mount",
+    "target": "right_ankle_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "left_hip_pitch_servo_mount",
+    "target": "left_hip_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "left_hip_roll_servo_mount",
+    "target": "left_hip_roll_servo"
+  },
+  {
+    "label": "mount",
+    "source": "left_knee_pitch_servo_mount",
+    "target": "left_knee_pitch_servo"
+  },
+  {
+    "label": "mount",
+    "source": "left_ankle_pitch_servo_mount",
+    "target": "left_ankle_pitch_servo"
+  }
+]

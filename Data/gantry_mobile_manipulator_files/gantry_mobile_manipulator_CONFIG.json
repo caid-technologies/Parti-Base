@@ -1,0 +1,2236 @@
+{
+  "plan": "- Microcontroller or SBC like Raspberry Pi 4 with a dedicated motor controller shield for drive and gantry systems.\n- Motion system utilizing a vertical lead screw or belt-driven linear rail gantry and dual 6-DOF robotic arms with servo actuators.\n- Navigation stack comprising a 2D/3D LiDAR sensor, rotary encoders on DC gear motors, and an IMU for SLAM.\n- Structural frame built from aluminum T-slot extrusions to support three tiered trays and a mobile chassis base.\n- Power distribution system featuring a 12V or 24V LiFePO4 battery pack, buck converters for 5V logic, and high-current relay modules.\n- Custom 3D-printed components including LiDAR mounts, arm brackets, end-effectors, and tray spacers.",
+  "nodes": [
+    {
+      "id": "main_computer",
+      "name": "Main Navigation Controller",
+      "pins": [
+        "GPIO",
+        "USB-C",
+        "HDMI",
+        "Ethernet",
+        "CSI",
+        "DSI",
+        "GPIO25",
+        "MOSI",
+        "MISO",
+        "SCK",
+        "CE0"
+      ],
+      "type": "mcu",
+      "partId": "b7ac4a2c-dfa8-4900-af09-8056441edb59",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Raspberry+Pi+4+Model+B+%288GB%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/4027-02.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GPIO,5V,3.3V,GND,I2C,SPI,UART,USB,Ethernet,HDMI"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0899VXM8F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$179.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007254431950.html?pdp_npi=6%40dis%21USD%21275.26%21151.39%21%21%211861.13%211023.62%21%4021013cc017794141412951298e0f57%2112000039961912196%21affd%21%21%21%211%210%21",
+            "price": "$151.39",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/4027",
+            "price": "$25",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/4027",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0899VXM8F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "85x56x17mm",
+      "position3d": {
+        "x": -100,
+        "y": 40,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 56,
+        "width": 85,
+        "height": 17
+      },
+      "description": "Main processing unit for robot control, navigation (SLAM), and sensor data aggregation. Chosen for higher processing power required by Lidar SLAM and potential future vision tasks.",
+      "productName": "Raspberry Pi 4 Model B (8GB)",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/raspberry-pi/RASPBERRY-PI-4-8GB/12447477",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZeS4Xo5xh2CIBTuxL9EULIPpNe37FKFzoMwFIQA5tPEtBOmt0BtrlLcAb1775N7B1PXf1XD2G5OJRCGTxVO9zgTZyU1P5JvnikJ968q0Yg92U40xvfolK7k0cxhyLFvLLGeDkK27QTXUlEwNR1xhwZil0an0roWs6F41ffRuOtR3xIeA1GfmL7jctAL6iUtX9eICgedR7DGqBzb6eyqErj3M5R0M7BIzOoOQ19XxE3JADWELdfCoo5ECOlvq69gMbr5ebzuCa9wDIvsFUt6Y5v0gBEVCEsGS6tYM7Cdnh3dFFl2y8jHswOGNCMgU3wmNkqZGUhJuRNqwh6rJdWOKdejkkaEdxEE2wwLffakZtLMvXhOvEXp5WWpMwOBVw5cVRuehArLRHbLvj7yZVxsmKHh2s8eKpQsff0gUQxVp3jQhTTLjy7c6fdj6m5ffrtEf0L7WAai9pXbaN1AqNwx8GvKdgGA5c5TYzi38djcVQEdW7b38FAQoyuaBxJh1gyTYAwmihFRYg61IddV5V8EdBE5BO119HLunJt8SBuemh9vPCmas5zwuK2XXYrzZ9kwQjGKKBSyWwMtQkaNWm3Uc92LD0xhp8cU7G3O6Md4VZ3LZiJ5IMYhSzVVigx38OqWVhHwK9ceAUniYL1TE8NANkWTJq9wk1mv3UZKTZhOC4qhxvB4za3v",
+      "estimatedCost": 75
+    },
+    {
+      "id": "motor_controller_hat",
+      "name": "Drive & Gantry Motor Shield",
+      "pins": [
+        "I2C",
+        "VIN",
+        "MA1",
+        "MA2",
+        "MB1",
+        "MB2"
+      ],
+      "type": "module",
+      "partId": "8d44fce6-3d3a-43ca-bcdf-fffe3f20af1b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Waveshare+Motor+Control+HAT&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41GrHzScvfL._SL500_.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07K7NP7C9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x30x12mm",
+      "position3d": {
+        "x": -100,
+        "y": 60,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 65,
+        "height": 12
+      },
+      "productName": "Waveshare Motor Control HAT",
+      "purchaseUrl": "https://www.amazon.com/s?k=Waveshare+Motor+Control+HAT+Raspberry+Pi",
+      "estimatedCost": 22,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4LHdoFP"
+    },
+    {
+      "id": "lidar_sensor",
+      "name": "Navigation LiDAR",
+      "pins": [
+        "TX",
+        "RX",
+        "VCC",
+        "GND",
+        "PWM"
+      ],
+      "type": "sensor",
+      "partId": "374f5cfe-5619-4c0b-918d-e57ef441e770",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RPLIDAR+A1M8&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31rkiprES1L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "RX,TX,5V,GND,M_EN"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005004805621244.html?pdp_npi=6%40dis%21USD%217.90%217.90%21%21%217.90%217.90%21%402140da8b17793329708575613e1168%2112000030561191824%21affd%21%21%21%211%210%21",
+            "price": "$7.9",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07TJW5SXF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07TJW5SXF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "98.5x70x60mm",
+      "position3d": {
+        "x": 0,
+        "y": 656,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 70,
+        "width": 98.5,
+        "height": 60
+      },
+      "description": "2D LIDAR for environmental mapping, obstacle detection, and localization.",
+      "productName": "RPLIDAR A1M8",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIl8eqQEDvTRDby5goo87JMo0ZVWVKEC1dSI2cCt5m3tzXXEhA1hc9j4F4vGJvQuB944YUJRINZcAq6PwoCnY41jRS4PHIInw0CbANFRYPGvaRGREZNb64dazKb6xOpmh1ykrLpelPP6ftr9QFQk42FYMFU8CF8VQL8L8mvTSGzAKfnc48e9rae1EXpErkkHBiWqe1FVRUC8N2XbPInRN6C4FVdM7LiJJvVbEfhjAiJeJ5kLP9KVIRKO10XzTp0t40NqB5vhoHLB7o2VdQT4ukzLWIBVrf1EMUxomytOGCCZt9obzM9ewn3r2CObSURX6a7txaU0MRkAZYH0q4SOPJHhRFtoZ3MG2EJQsrsDOImIshZnsSWuqftzFKmeflVGdztARtJFKjRNKtjGRbjfdA5wzuRQ6xsE1yAPM4rXXCfZ879WiXBZUJ5nV8gr6LN08LdurxdBtxuSZBOhvddKqmVqegpeMubui64zAlGfVXbh1DakKZm16vKl4Kne7bFd3NWJgWjNK7J4HF7FfUWIlum6mCnkZK73Nc25Vlxxq4i9ifZiYhyJD7MWDW50UC8rwd0Kzb5def505ebVxf67PLTRiehsMcefuOB2DxmtG3halYTYEHwJTuAL2PnnYilor6nmawHoZ7jjldYTYCtQULHh",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIl8eqQEDvTRDby5goo87JMo0ZVWVKEC1dSI2cCt5m3tzXXEhA1hc9j4F4vGJvQuB944YUJRINZcAq6PwoCnY41jRS4PHIInw0CbANFRYPGvaRGREZNb64dazKb6xOpmh1ykrLpelPP6ftr9QFQk42FYMFU8CF8VQL8L8mvTSGzAKfnc48e9rae1EXpErkkHBiWqe1FVRUC8N2XbPInRN6C4FVdM7LiJJvVbEfhjAiJeJ5kLP9KVIRKO10XzTp0t40NqB5vhoHLB7o2VdQT4ukzLWIBVrf1EMUxomytOGCCZt9obzM9ewn3r2CObSURX6a7txaU0MRkAZYH0q4SOPJHhRFtoZ3MG2EJQsrsDOImIshZnsSWuqftzFKmeflVGdztARtJFKjRNKtjGRbjfdA5wzuRQ6xsE1yAPM4rXXCfZ879WiXBZUJ5nV8gr6LN08LdurxdBtxuSZBOhvddKqmVqegpeMubui64zAlGfVXbh1DakKZm16vKl4Kne7bFd3NWJgWjNK7J4HF7FfUWIlum6mCnkZK73Nc25Vlxxq4i9ifZiYhyJD7MWDW50UC8rwd0Kzb5def505ebVxf67PLTRiehsMcefuOB2DxmtG3halYTYEHwJTuAL2PnnYilor6nmawHoZ7jjldYTYCtQULHh",
+      "estimatedCost": 99
+    },
+    {
+      "id": "drive_motor_left",
+      "name": "Left Drive Motor",
+      "pins": [
+        "Motor+",
+        "Motor-",
+        "EncA",
+        "EncB",
+        "EncVCC",
+        "EncGND"
+      ],
+      "type": "actuator",
+      "partId": "1fd38bb6-8166-4809-8cbc-7dc507db97a3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+DC+Gear+Motor+with+Encoder&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41rwTk7kweL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,A,B,M+,M-"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FFMK7CLT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$36.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010658998446.html?pdp_npi=6%40dis%21USD%2131.48%2115.11%21%21%21212.98%21102.23%21%40214114e317794333706765754e0eba%2112000053105446942%21affd%21%21%21%211%210%21",
+            "price": "$15.11",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FFMK7CLT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "37x37x70mm",
+      "position3d": {
+        "x": -220,
+        "y": 35,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 70,
+        "width": 37,
+        "height": 37
+      },
+      "description": "DC motor for front-left omnidirectional wheel with integrated encoder.",
+      "productName": "12V DC Gear Motor with Encoder",
+      "purchaseUrl": "https://www.pololu.com/category/116/37d-mm-gearmotors",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQJLPk9zSJH1Wbp6YEL7FuGZDtUBJcfc6vqm2ck6433IlGQnAFEHBJzVwF1WbKZkfHnzVojMfAtvCUZGjnlNQLToSeRPGxClZu2HwJxmCOQc12G16dfh28ym8dAY8CFEq5R97e3wOsyH5VynmQikvQev66Np70Ia8OQJVI7fbbUVSRiTidVQ1kqJFw6f9HYRI6VAOvn21CyRE6mBvWNWENvKiB9mjlIklDudb5eloLRcn1Tatgh1mlrnTzzjtQM50uBD9EZwmfG2aWr1182qwsETdf65ul6OnQGKSGtroHOoLtg15jlclC5iDxaCotZQ6GEmpxglPA9QoacPOS64zQb7rlwyTl8RDF79C7SuxATqFnGrDAC2sLflm4JDdNOTC9fc0OBAZHlP0iAQDDYFbHvkQoouGebUQVo4rhkSxfP5NRMFeXUQk6azZwI9RUYTQJdfEv2GawF1nhEl3NgGa1CeGszeodwnyyBfBtrmCiYMyGkBz2hskG77SdZz0nMk1WYyh23e0rSPIH56YgeDZCnYXkKCqjV8RwctGgw8WqHmZnWvXPIDEje1nEXWciREed4dIyEpYCHdQe5YP5QYtZNs1QEPNN923wYfJNvQoJMcB6Dv9xE8DFvCk4weoMOZ1DCoxdYsJHECqGRlOMGUoQY7",
+      "estimatedCost": 25
+    },
+    {
+      "id": "drive_motor_right",
+      "name": "Right Drive Motor",
+      "pins": [
+        "Motor+",
+        "Motor-",
+        "EncA",
+        "EncB",
+        "EncVCC",
+        "EncGND"
+      ],
+      "type": "actuator",
+      "partId": "1fd38bb6-8166-4809-8cbc-7dc507db97a3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+DC+Gear+Motor+with+Encoder&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41rwTk7kweL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,A,B,M+,M-"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FFMK7CLT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$36.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010658998446.html?pdp_npi=6%40dis%21USD%2131.48%2115.11%21%21%21212.98%21102.23%21%40214114e317794333706765754e0eba%2112000053105446942%21affd%21%21%21%211%210%21",
+            "price": "$15.11",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FFMK7CLT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "37x37x70mm",
+      "position3d": {
+        "x": 220,
+        "y": 35,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 70,
+        "width": 37,
+        "height": 37
+      },
+      "description": "DC motor for front-left omnidirectional wheel with integrated encoder.",
+      "productName": "12V DC Gear Motor with Encoder",
+      "purchaseUrl": "https://www.pololu.com/category/116/37d-mm-gearmotors",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQJLPk9zSJH1Wbp6YEL7FuGZDtUBJcfc6vqm2ck6433IlGQnAFEHBJzVwF1WbKZkfHnzVojMfAtvCUZGjnlNQLToSeRPGxClZu2HwJxmCOQc12G16dfh28ym8dAY8CFEq5R97e3wOsyH5VynmQikvQev66Np70Ia8OQJVI7fbbUVSRiTidVQ1kqJFw6f9HYRI6VAOvn21CyRE6mBvWNWENvKiB9mjlIklDudb5eloLRcn1Tatgh1mlrnTzzjtQM50uBD9EZwmfG2aWr1182qwsETdf65ul6OnQGKSGtroHOoLtg15jlclC5iDxaCotZQ6GEmpxglPA9QoacPOS64zQb7rlwyTl8RDF79C7SuxATqFnGrDAC2sLflm4JDdNOTC9fc0OBAZHlP0iAQDDYFbHvkQoouGebUQVo4rhkSxfP5NRMFeXUQk6azZwI9RUYTQJdfEv2GawF1nhEl3NgGa1CeGszeodwnyyBfBtrmCiYMyGkBz2hskG77SdZz0nMk1WYyh23e0rSPIH56YgeDZCnYXkKCqjV8RwctGgw8WqHmZnWvXPIDEje1nEXWciREed4dIyEpYCHdQe5YP5QYtZNs1QEPNN923wYfJNvQoJMcB6Dv9xE8DFvCk4weoMOZ1DCoxdYsJHECqGRlOMGUoQY7",
+      "estimatedCost": 25
+    },
+    {
+      "id": "gantry_stepper",
+      "name": "Vertical Gantry Motor",
+      "pins": [
+        "A+",
+        "A-",
+        "B+",
+        "B-"
+      ],
+      "type": "actuator",
+      "partId": "207b717b-f0a6-44c6-b528-e69490f95166",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+23+Stepper+Motor+%28High+Torque%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51P9jxFc1oL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B00PNEPW4C?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$39.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B00PNEPW4C?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "57x57x76mm",
+      "position3d": {
+        "x": 0,
+        "y": 868,
+        "z": -190
+      },
+      "boundingBox": {
+        "depth": 57,
+        "width": 57,
+        "height": 76
+      },
+      "description": "Grinds frozen fruit puree blocks.",
+      "productName": "NEMA 23 Stepper Motor (High Torque)",
+      "purchaseUrl": "https://www.digikey.com/en/products/filter/stepper-motors/163",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvzDNt045vWsxDqoI1ejALHoZnj4g7acGL5qXXFNml8azo8XeC7uUCM2H2mmL0OkEm1hLd7K31f7v8jqJrnXjlNDVVDlgPSEzOid0jjgNWUCbKf9bLlQSUb9cjLDB0PA2DjEPV9cXR2ALI7JSF8V3gjcrJb2s5pQcleEeFrGjHrZS3R9XXB9adbSfLj7STRxyMmqaEsf4yH6kUvA6CPcNhkioBSGEsUfahOiYyGS97rbq0EDG6lBHvGFI1NMj2aC0XiwQhxM9KFvelyNYiY3WucPXudJI4OubdVLguy1h8lJihUFHxjGtxAkEQsTh5bsER0KaaIqutJ6Q82iySUrMskTKrNmQyROjhXLjJl4d5GVpj9be27G8odRnoQydnIPwY3V4PToDEqZKLGsYiRxsygFisL7gBS7TsvYPXNQcNqzeboXXEQHc5AGe4H3wjPFzWoo23NkkVUvEvmGPhtkD3PxmQcsPvNfGtBcFEs71m4nBHxtnrGd8t1LlnOt6fUvhAzb7z3tYAB3XAm9IlSdi56FBussrJ0vrcdfAnlcaPhldgPkrxW3QK4ceOgIirDKxYqcAVWgewxAeU3Gd2K19SsD1dbTvqtg6NJaD5s5b27tLf0IWwcCnkh4OI1TqknkBIzPvPMjacXPzNhOarKAyT91",
+      "estimatedCost": 45
+    },
+    {
+      "id": "arm_1_joint_1",
+      "name": "Arm 1 Base Brushless Motor",
+      "pins": [
+        "PhaseA",
+        "PhaseB",
+        "PhaseC",
+        "HallVCC",
+        "HallGND",
+        "HallA",
+        "HallB",
+        "HallC",
+        "CAN_H",
+        "CAN_L"
+      ],
+      "type": "actuator",
+      "partId": "01af55ce-da3f-4739-b69e-5097d53f9f17",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Planetary+Geared+Brushless+DC+Motor+%2824V%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/Se377535bf1ce402fbef94d20b8043aa94.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005010159206078.html?pdp_npi=6%40dis%21USD%21270.01%21202.51%21%21%211825.60%211369.20%21%402151fd2c17794033283531241e11e6%2112000051357032404%21affd%21%21%21%211%210%21",
+            "price": "$202.51",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0GF7X4PM9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$19.98",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GF7X4PM9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x110mm",
+      "position3d": {
+        "x": -60,
+        "y": 475,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 42,
+        "width": 42,
+        "height": 110
+      },
+      "productName": "Planetary Geared Brushless DC Motor (24V)",
+      "purchaseUrl": "https://www.amazon.com/dp/B0GF7X4PM9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZDS01nXfhDa31rBSU0B8ngayGH88eKpK9ioIwArlHL8sG4y9L1NIVPYwK1U1Ddvxt3nYRV01oC0Rh6ExxaXR0CPo7o3Zkt5cWMTEwlISdwobV4A8QJjaQubwKn9eI43Xgg4ZkgsOwr7kDJHvGxwWUDOtWhIPR2DZTnKDTvqhR1F7ti9HaP9Mlm1GTVlrubSQ5qmYc1T1ySDJJdh5DVcR8KEXEjKFy3qJJPfb2ePlvIWqt9nFRpwZJjhqR1eWCIf8wBBzBKKXUluv6xzlqFCGRAoQHK6yzkpR9Hnb1ElD0s8aoyMXf2ytTMSUePILZ38kaKk2aKiqhQIg1TYZGtlEMhhZc7FHZoSqqtkBvd0aQ4Yz7WMQlzeb6eoZ6MHv76lZh4qu2l2kSbWHir8k9vwgNvkplStOOY99ByDZ19lQu1Hw1gXole1fd0uyS1Wv95E90TaCSkl3BO8ztBPEPTJOc730TjoamkMvCO3xIisCW9SyXc2OBCFM4avTszntB8yg2YXYlSWx4JsSHb2wZN9uDdq19PFDoStQovH1aldmb1qCTL7fR0a6F1MF3FAaI883m16GLaCdLEvOVUbt4gqJD3EW72nokhnPeExpxWRcT7tnjFhUCLBChxaAv7cnbWR2Gdi9l7dfRTA6tf5tE8JTCry2oCzu3Mk824uwT07fKjedALbXDSL",
+      "estimatedCost": 120
+    },
+    {
+      "id": "arm_2_joint_1",
+      "name": "Arm 2 Base Brushless Motor",
+      "pins": [
+        "PhaseA",
+        "PhaseB",
+        "PhaseC",
+        "HallVCC",
+        "HallGND",
+        "HallA",
+        "HallB",
+        "HallC",
+        "CAN_H",
+        "CAN_L"
+      ],
+      "type": "actuator",
+      "partId": "01af55ce-da3f-4739-b69e-5097d53f9f17",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Planetary+Geared+Brushless+DC+Motor+%2824V%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/Se377535bf1ce402fbef94d20b8043aa94.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005010159206078.html?pdp_npi=6%40dis%21USD%21270.01%21202.51%21%21%211825.60%211369.20%21%402151fd2c17794033283531241e11e6%2112000051357032404%21affd%21%21%21%211%210%21",
+            "price": "$202.51",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0GF7X4PM9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$19.98",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GF7X4PM9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x110mm",
+      "position3d": {
+        "x": 60,
+        "y": 475,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 42,
+        "width": 42,
+        "height": 110
+      },
+      "productName": "Planetary Geared Brushless DC Motor (24V)",
+      "purchaseUrl": "https://www.amazon.com/dp/B0GF7X4PM9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZDS01nXfhDa31rBSU0B8ngayGH88eKpK9ioIwArlHL8sG4y9L1NIVPYwK1U1Ddvxt3nYRV01oC0Rh6ExxaXR0CPo7o3Zkt5cWMTEwlISdwobV4A8QJjaQubwKn9eI43Xgg4ZkgsOwr7kDJHvGxwWUDOtWhIPR2DZTnKDTvqhR1F7ti9HaP9Mlm1GTVlrubSQ5qmYc1T1ySDJJdh5DVcR8KEXEjKFy3qJJPfb2ePlvIWqt9nFRpwZJjhqR1eWCIf8wBBzBKKXUluv6xzlqFCGRAoQHK6yzkpR9Hnb1ElD0s8aoyMXf2ytTMSUePILZ38kaKk2aKiqhQIg1TYZGtlEMhhZc7FHZoSqqtkBvd0aQ4Yz7WMQlzeb6eoZ6MHv76lZh4qu2l2kSbWHir8k9vwgNvkplStOOY99ByDZ19lQu1Hw1gXole1fd0uyS1Wv95E90TaCSkl3BO8ztBPEPTJOc730TjoamkMvCO3xIisCW9SyXc2OBCFM4avTszntB8yg2YXYlSWx4JsSHb2wZN9uDdq19PFDoStQovH1aldmb1qCTL7fR0a6F1MF3FAaI883m16GLaCdLEvOVUbt4gqJD3EW72nokhnPeExpxWRcT7tnjFhUCLBChxaAv7cnbWR2Gdi9l7dfRTA6tf5tE8JTCry2oCzu3Mk824uwT07fKjedALbXDSL",
+      "estimatedCost": 120
+    },
+    {
+      "id": "imu_module",
+      "name": "Inertial Measurement Unit",
+      "pins": [
+        "VIN",
+        "GND",
+        "SDA",
+        "SCL",
+        "INT"
+      ],
+      "type": "sensor",
+      "partId": "ced7bf8d-8e05-4a96-ad3e-5a033d1c0f80",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BNO055+9-DOF+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31zqCtQc3hL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B017PEIGIG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$40.31",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010338212815.html?pdp_npi=6%40dis%21USD%2124.32%2111.92%21%21%21164.53%2180.62%21%402151fce817795424212833031e0eb4%2112000052373635626%21affd%21%21%21%211%210%21",
+            "price": "$11.92",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B017PEIGIG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x27x4mm",
+      "position3d": {
+        "x": 100,
+        "y": 30,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 27,
+        "width": 20,
+        "height": 4
+      },
+      "productName": "BNO055 9-DOF Sensor",
+      "purchaseUrl": "https://www.adafruit.com/product/2472",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRvLla8zXlvcUSAvAkTf0FTocjoFRfmVloSNptYCVpZvf7LBxPPA1ZLjU1ZW21NYrYfWgNfGzWWvKbIBtqMhKoNrHwrulmAsz5s13nUa5KzaaTMvyOEDvFV303Nb40jiXNPd2zAWWcx6qNm4G68icIxKgShXvC7ibAtQcKzjQ1Js6a9DWCGa4wurwV1NA5LhEZrYyXQkDxGC7d9MI71lTA7kFgls7Tjh8Ny2OZFEmvZaBasGQsWARxwheVr6e5hMzip3JHSEV8c2aWf5nrdA5aiJ95SeXiXGqNy1Do9E1nRJ7us6rwBa1rZZEk1Ncx87pm4Wm4jEiUQD4eFYLwuDeH0PCNiPeOi5a39fNJik8hOR0DxBPECx5KxRGEqOEkwRvZJW20BaErcBmj9hy77md84zxo6azrmlEgCDsfjM3W75K17lhOJKjw7egMMvT4qRXBSb9MShSGLT2dNO7gjm4MZ1R87gQwUic7pr31cTM7qRCmoxctVJUONda6xeeTIjHrKjZyYcJxMRUZPG4TALP9dlPc3sq32zJ57WH97lmSrpgqIC8XuTZna3n2qDM9e4ELbLjGQq06Eb8TXUr40rWO1cAeRBvIRxSSsKk1q56wjJ9EI5oWXB1iDnjk20APoJvzApRU2F4OIvRs0ulJ5ma6Vd",
+      "estimatedCost": 34
+    },
+    {
+      "id": "battery_pack",
+      "name": "Main Power Source",
+      "pins": [
+        "V+",
+        "V-"
+      ],
+      "type": "power",
+      "partId": "b019372d-e68b-4976-9937-480300cf79fa",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=24V+20Ah+LiFePO4+Battery+Pack&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41yQu5ayZwL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "POS,NEG"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0D7ZL6XK9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$89.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007255255358.html?pdp_npi=6%40dis%21USD%21164.38%2182.19%21%21%211111.46%21555.73%21%402140da8b17793451577251161e119f%2112000039963704037%21affd%21%21%21%211%210%21",
+            "price": "$82.19",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D7ZL6XK9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x150x100mm",
+      "position3d": {
+        "x": 0,
+        "y": 70,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 200,
+        "height": 100
+      },
+      "description": "Primary power source for the go-kart.",
+      "productName": "24V 20Ah LiFePO4 Battery Pack",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRzpCES6StZPUyEKIIp5oXYInhDnbpWZDeZNFqgXt2h8RnJbSZA9IytLpvAwcTKqWV0rXw0hT0T4utP2oFWwvKO9yyHBzQWNBxDyTJE5mYC61aOGE5SKZqQYF86UeNYilh1tUssm2PY1vungkK1LgGYfZiSLbaON6KONBWkFFumaQAOG2WACZsnHkg4t7fr2aNq9OWpDbRFgeTHPIHjybq0pPM5Mq1NCfJoWPnwnXNMFRzqgPgDerNxjMRMKPWGnWdAClUpfQiK75dV9T2jY8CJ2PZUgfqJZbOrETNGzsY1B0ITNOiByMJY1NNBdTrAafvSE8oGwMI6aTL2UWRU199iIXEpQFMZPbr3UppbkOyxqXDE70UrJv8DFUZsfsFY31dMgEDDXAaoTB9LYOUdl6iC7DCCLZ685iAwkTkE0mlZFCEiDop9m8ILYDl9N0ZMsOeAgLXlWl9vQuSZnqMhuvbvOrJOdJVOhGuP3B1WDZqiHHw4LjR4F77ECMvgsUOeD3uBXWxKWbfKW8WGe0p7tH3icGiCdoAJp3XlMsaBVIo05M03Y1TwNyu5EEVlLWznlRLspwrVt5T8Mjqh5d9TsvQrylRiBp9OKkQS22PQP0krxn0OXLich6a0MM27GpWu7LxvIwGdH9RNReas68ql99gZN",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRzpCES6StZPUyEKIIp5oXYInhDnbpWZDeZNFqgXt2h8RnJbSZA9IytLpvAwcTKqWV0rXw0hT0T4utP2oFWwvKO9yyHBzQWNBxDyTJE5mYC61aOGE5SKZqQYF86UeNYilh1tUssm2PY1vungkK1LgGYfZiSLbaON6KONBWkFFumaQAOG2WACZsnHkg4t7fr2aNq9OWpDbRFgeTHPIHjybq0pPM5Mq1NCfJoWPnwnXNMFRzqgPgDerNxjMRMKPWGnWdAClUpfQiK75dV9T2jY8CJ2PZUgfqJZbOrETNGzsY1B0ITNOiByMJY1NNBdTrAafvSE8oGwMI6aTL2UWRU199iIXEpQFMZPbr3UppbkOyxqXDE70UrJv8DFUZsfsFY31dMgEDDXAaoTB9LYOUdl6iC7DCCLZ685iAwkTkE0mlZFCEiDop9m8ILYDl9N0ZMsOeAgLXlWl9vQuSZnqMhuvbvOrJOdJVOhGuP3B1WDZqiHHw4LjR4F77ECMvgsUOeD3uBXWxKWbfKW8WGe0p7tH3icGiCdoAJp3XlMsaBVIo05M03Y1TwNyu5EEVlLWznlRLspwrVt5T8Mjqh5d9TsvQrylRiBp9OKkQS22PQP0krxn0OXLich6a0MM27GpWu7LxvIwGdH9RNReas68ql99gZN",
+      "estimatedCost": 180
+    },
+    {
+      "id": "step_down_converter",
+      "name": "Logic Power Regulator",
+      "pins": [
+        "IN+",
+        "IN-",
+        "OUT+",
+        "OUT-"
+      ],
+      "type": "power",
+      "partId": "2bef9e67-2f42-4cb5-9087-365a95275228",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DC-DC+Buck+Converter+24V+to+5V+10A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/417Xp3TvA-L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B09SD7P92Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$12.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007025522625.html?pdp_npi=6%40dis%21USD%213.65%213.65%21%21%2124.71%2124.71%21%402151fca717796756491394471e0fe0%2112000039127811078%21affd%21%21%21%211%210%21",
+            "price": "$3.65",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09SD7P92Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x32x18mm",
+      "position3d": {
+        "x": -50,
+        "y": 45,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 32,
+        "width": 45,
+        "height": 18
+      },
+      "description": "Powers the high-brightness LED matrix.",
+      "productName": "DC-DC Buck Converter 24V to 5V 10A",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgwVkaGHbrxOtCcrsMn5Uu3fkQLfFbEwZ53bcSHhDCXd0LpwpOcAlRAi41KdzzVyy2Z7uO1VADhnqYHmI5hXsxA9EXwTYc3PqP1blRXV8dl4haFgrQc1Zui44O3xT5rWvZv1eU3xiD1d5KWq4FCVm5i3mzciCziQoBcBiRTYmZ5p6qzucZ4iPE9CTNM89Xb9wpMHO8iqakRit4AzjhU6ZLEwbbbIvou0ZokZZ5bPbmusEsbEhHm4JFuCm0GqfKH14hAITNniSks9zFAjw7klex0romWvZq17JLarPKPm7qZxXOAIUuo1BB2EkP5IrQ64DK6TN7EMdn6e8JlQcdhmzxeffl6FFS2A5Cnu5EeuwbuQNtiXOQJxoCfxak947AxE3st3qgplCv3T00tBJzZoSbbqUVTy5KA4GWYv1NHdA5gRE6b03GCfJA4o3yZ2uD0yYm2LyPbMQwyKCxqrd6MTqlvagg1Ru4GgO6BpfERaE3IbWxko80tNc9rn6iYW3NCC7PnB0LSNXgiAtZdJc2zEHnDib57165myAGrBENXrGCv5qLY882D81Za6e7fMXuxQxfWPP65b369wbFUQdfirhXhWMuWDkWjTnVCk8evWtjqLBIf6uqpe2A1bUGZvdKUDUSJWxRSfa312i6NgjMuT6Cfh",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgwVkaGHbrxOtCcrsMn5Uu3fkQLfFbEwZ53bcSHhDCXd0LpwpOcAlRAi41KdzzVyy2Z7uO1VADhnqYHmI5hXsxA9EXwTYc3PqP1blRXV8dl4haFgrQc1Zui44O3xT5rWvZv1eU3xiD1d5KWq4FCVm5i3mzciCziQoBcBiRTYmZ5p6qzucZ4iPE9CTNM89Xb9wpMHO8iqakRit4AzjhU6ZLEwbbbIvou0ZokZZ5bPbmusEsbEhHm4JFuCm0GqfKH14hAITNniSks9zFAjw7klex0romWvZq17JLarPKPm7qZxXOAIUuo1BB2EkP5IrQ64DK6TN7EMdn6e8JlQcdhmzxeffl6FFS2A5Cnu5EeuwbuQNtiXOQJxoCfxak947AxE3st3qgplCv3T00tBJzZoSbbqUVTy5KA4GWYv1NHdA5gRE6b03GCfJA4o3yZ2uD0yYm2LyPbMQwyKCxqrd6MTqlvagg1Ru4GgO6BpfERaE3IbWxko80tNc9rn6iYW3NCC7PnB0LSNXgiAtZdJc2zEHnDib57165myAGrBENXrGCv5qLY882D81Za6e7fMXuxQxfWPP65b369wbFUQdfirhXhWMuWDkWjTnVCk8evWtjqLBIf6uqpe2A1bUGZvdKUDUSJWxRSfa312i6NgjMuT6Cfh",
+      "estimatedCost": 15
+    },
+    {
+      "id": "main_chassis_frame",
+      "name": "Chassis Base Frame",
+      "type": "structural",
+      "partId": "bf44ee92-d31a-45a9-af50-544c386f7e46",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion+T-Slot&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51Na-bNGEnL._SL500_.jpg",
+      "material": "Aluminum",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005007342221792.html?pdp_npi=6%40dis%21USD%218.55%214.79%21%21%2157.94%2132.45%21%402101611117793314283694779e10b0%2112000040344397854%21affd%21%21%21%211%210%21",
+            "price": "$4.79",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0CNKSJYB7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$75.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CNKSJYB7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x400x20mm",
+      "position3d": {
+        "x": 0,
+        "y": 10,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 400,
+        "width": 400,
+        "height": 20
+      },
+      "description": "Lower rectangular frame to support the drive wheels and battery weight.",
+      "productName": "2020 Aluminum Extrusion T-Slot",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFWWB9v3IaQb1LeTXHl7zMUdy9E2cY6esVyXmcWEmpe2DK4FgTmuvzecUZK6kn6WbVk0YQGkMsJOX34UYijLeEnYfsUIvV85RWztnHTG0h0fnluzRIft1KVppQagraIJayRG2d03KCDdFDWhssG0Pt6sdc0pXCq7tQsOKGGU7MNGgloqEb0rt5c2x0C6kval8UYMBs8MtloL87RyT02cAyAYEEpktsYae6DrAhCA8cZntoKwPDwceizNoiXsrgVgKfwIxfh4RL6rgLmJT2o4wSJTNcAxHjI17BCe5S6Qibk2rt0Bmg1gHsSh4Zc2miNx50gRJW1W1kU5XnHq29PccpJPDhvjSQyRWCuEMASFvqpCMSo9a9z6yuDHFLQDYh7UYhXMlt6iZYla3ZogATE3YOhYaKsXhEFJyyc3lyYmnN6bJrozGtx8mAEfqFS4NJ1wwHj7EPjKqNHKiy7D",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFWWB9v3IaQb1LeTXHl7zMUdy9E2cY6esVyXmcWEmpe2DK4FgTmuvzecUZK6kn6WbVk0YQGkMsJOX34UYijLeEnYfsUIvV85RWztnHTG0h0fnluzRIft1KVppQagraIJayRG2d03KCDdFDWhssG0Pt6sdc0pXCq7tQsOKGGU7MNGgloqEb0rt5c2x0C6kval8UYMBs8MtloL87RyT02cAyAYEEpktsYae6DrAhCA8cZntoKwPDwceizNoiXsrgVgKfwIxfh4RL6rgLmJT2o4wSJTNcAxHjI17BCe5S6Qibk2rt0Bmg1gHsSh4Zc2miNx50gRJW1W1kU5XnHq29PccpJPDhvjSQyRWCuEMASFvqpCMSo9a9z6yuDHFLQDYh7UYhXMlt6iZYla3ZogATE3YOhYaKsXhEFJyyc3lyYmnN6bJrozGtx8mAEfqFS4NJ1wwHj7EPjKqNHKiy7D",
+      "estimatedCost": 25
+    },
+    {
+      "id": "gantry_vertical_pillar",
+      "name": "Vertical Gantry Pillar",
+      "type": "structural",
+      "partId": "5d7da6cc-d3ef-4cd8-8b85-47f9941fee62",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2040+Aluminum+Extrusion+T-Slot&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41jGYR7x4qL._SL500_.jpg",
+      "material": "Aluminum",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0F47VZ318?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$35.14",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006684589565.html?pdp_npi=6%40dis%21USD%219.35%214.68%21%21%2163.26%2131.63%21%402101611117795543770313298e0dfa%2112000038007379330%21affd%21%21%21%211%210%21",
+            "price": "$4.68",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F47VZ318?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x800x20mm",
+      "position3d": {
+        "x": 0,
+        "y": 410,
+        "z": -190
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 800
+      },
+      "description": "Main vertical support beam for the lead screw gantry system.",
+      "productName": "2040 Aluminum Extrusion T-Slot",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxxEbOQwH9B9BQ1ebrQAtbeIPOvYFG0eK008jdVuHdyUb9mxSYUTJn8rvLgCrxjXBPxgkMk00Td6lL1fjtwlSmdRf3lPM9l59zxjFPfCWSsUSf3s71Xhqc5R7YwyMm2HanGN5qVafjJleMT8RBpGnaE0q3HHjaBGc7UZvhKSS86ui1FbW0xq02eALHz0QRwVq7li3T7MjCsR9lJ7JaDvChCJxkicpd1HRe4G5fEEBXXgfmzzvpoInrp9fFuOMTrXLt8ngJcLAmwq7CF7iyYHKfxcHpPaQkFDQ9EU6Nzz6ADjoe7MzOy3xK2OCXrokWr7R5esqyUFvikV3V39fA8b0ld5EibFNhhyBRE2a3nbroHJSwTlArNC2egokuFUrptMdo3oFPkcuyM4a9SKP9s76ooHQzlZREpw9bA3FK4S2SFA9UOfksDW4rcUkXNKUnMzE88Kz1PSMHdT8AEmCdeLx7yJmhBLj7Abrc0IqBIS9RuwvPEyh67EE3McshlqEprF6gk5dBmeOK4KtWWNMBCxSDfenyU6XD6F5YIfFGlk5gjUODmGkl7LxriDYj1krUf5sgfzsRrpaga4DLJjRA9W3utKX64g08qiW5Z5mfWUMVyMUqpajgXGGHXzHs2zWP2Hr738donFyrV9kQfpRP03q3EoT",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxxEbOQwH9B9BQ1ebrQAtbeIPOvYFG0eK008jdVuHdyUb9mxSYUTJn8rvLgCrxjXBPxgkMk00Td6lL1fjtwlSmdRf3lPM9l59zxjFPfCWSsUSf3s71Xhqc5R7YwyMm2HanGN5qVafjJleMT8RBpGnaE0q3HHjaBGc7UZvhKSS86ui1FbW0xq02eALHz0QRwVq7li3T7MjCsR9lJ7JaDvChCJxkicpd1HRe4G5fEEBXXgfmzzvpoInrp9fFuOMTrXLt8ngJcLAmwq7CF7iyYHKfxcHpPaQkFDQ9EU6Nzz6ADjoe7MzOy3xK2OCXrokWr7R5esqyUFvikV3V39fA8b0ld5EibFNhhyBRE2a3nbroHJSwTlArNC2egokuFUrptMdo3oFPkcuyM4a9SKP9s76ooHQzlZREpw9bA3FK4S2SFA9UOfksDW4rcUkXNKUnMzE88Kz1PSMHdT8AEmCdeLx7yJmhBLj7Abrc0IqBIS9RuwvPEyh67EE3McshlqEprF6gk5dBmeOK4KtWWNMBCxSDfenyU6XD6F5YIfFGlk5gjUODmGkl7LxriDYj1krUf5sgfzsRrpaga4DLJjRA9W3utKX64g08qiW5Z5mfWUMVyMUqpajgXGGHXzHs2zWP2Hr738donFyrV9kQfpRP03q3EoT",
+      "estimatedCost": 35
+    },
+    {
+      "id": "lead_screw_assembly",
+      "name": "Gantry Lead Screw",
+      "type": "mechanism",
+      "partId": "447858f7-5916-4537-8ab6-72b6875a72e7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T8+Lead+Screw+with+Brass+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41pkD9xVv0L._SL500_.jpg",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B079HQ386R?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$4.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005003312523975.html?pdp_npi=6%40dis%21USD%213.44%212.37%21%21%213.44%212.37%21%402141149b17794513505761338e0f49%2112000025154812453%21affd%21%21%21%211%210%21",
+            "price": "$2.37",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B079HQ386R?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "8x800x8mm",
+      "description": "High precision screw for vertical movement of the dual arm carriage.",
+      "productName": "T8 Lead Screw with Brass Nut",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH0efrpkamijWInjYQLSyjIx42QEvzlwAq1U8YG16i5QQCYxjFYZFgemuwed1A54vbknzCoMMCymIQpin6abNLrKA4bj6pF0ntGSyfsUHuRSfWTdp5hH3hP7nm0CKM3jRW8PPSmJR6wnWrnmyGpiZFTow4yrEuLX3d99yicVhKn43eq889SRy2S54SdUrC2cXViYR6AZeqMEGdM6WKYxfGXUVEYnDszqjSexSS9yE307mS2myhz4SHy7G3xbJBlP9nSp1hJsdqgbA3G5NOm2qq9bL5MAd0n8QweRi7l1WL9b2zfaGDjuAYUyVs0vyG6CBKxoKPk9F9Do7tgGortY5JjyBF7lHYaYJuGEydBu1cRiw34oBzgRWPz3jpyhZS3d98dqYweY9cTgMuf3o6uLI3Pb6cOYI20OVmrL6DnFnZXsqde2g13hXW8bVgVlPSqwaIHQI4mY6QVWQyUCIpMGmexPazK1m0ZO5tsJJUGFKQuxSLI3vwfAnzEcXarlQNhV1arQCWituyij52CPfPF1Jx5Heo7LMgpVXPGqU4OEEQFVum6PaTEr98t6GIsZbIYAppoimelCEcUM9350EXRXo1yRn66ywCopW6XgTT0U6RYVkgtckAlwWbHEJIkTJ7r5S2IxvLNuoxPwmbtYSkS27Anh",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH0efrpkamijWInjYQLSyjIx42QEvzlwAq1U8YG16i5QQCYxjFYZFgemuwed1A54vbknzCoMMCymIQpin6abNLrKA4bj6pF0ntGSyfsUHuRSfWTdp5hH3hP7nm0CKM3jRW8PPSmJR6wnWrnmyGpiZFTow4yrEuLX3d99yicVhKn43eq889SRy2S54SdUrC2cXViYR6AZeqMEGdM6WKYxfGXUVEYnDszqjSexSS9yE307mS2myhz4SHy7G3xbJBlP9nSp1hJsdqgbA3G5NOm2qq9bL5MAd0n8QweRi7l1WL9b2zfaGDjuAYUyVs0vyG6CBKxoKPk9F9Do7tgGortY5JjyBF7lHYaYJuGEydBu1cRiw34oBzgRWPz3jpyhZS3d98dqYweY9cTgMuf3o6uLI3Pb6cOYI20OVmrL6DnFnZXsqde2g13hXW8bVgVlPSqwaIHQI4mY6QVWQyUCIpMGmexPazK1m0ZO5tsJJUGFKQuxSLI3vwfAnzEcXarlQNhV1arQCWituyij52CPfPF1Jx5Heo7LMgpVXPGqU4OEEQFVum6PaTEr98t6GIsZbIYAppoimelCEcUM9350EXRXo1yRn66ywCopW6XgTT0U6RYVkgtckAlwWbHEJIkTJ7r5S2IxvLNuoxPwmbtYSkS27Anh",
+      "estimatedCost": 18
+    },
+    {
+      "id": "tray_bottom",
+      "name": "Storage Tray Bottom",
+      "type": "structural",
+      "partId": "34cbfd5a-f086-4299-8105-19eeab0abab1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Plate+3mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/1220-03.jpg",
+      "material": "Aluminum",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0C33D6VK1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.69",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010781576808.html?pdp_npi=6%40dis%21USD%219.44%214.63%21%21%2163.80%2131.26%21%400b8ded7b17793360256664598e1040%2112000053493013628%21affd%21%21%21%211%210%21",
+            "price": "$4.63",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/1220",
+            "price": "$4.95",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/1220",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0C33D6VK1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "350x350x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 21,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 350,
+        "width": 350,
+        "height": 3
+      },
+      "description": "Lowest storage tray for heavy items.",
+      "productName": "Aluminum Plate 3mm",
+      "purchaseUrl": "https://www.adafruit.com/product/1220",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwclVDGoGf9OME7L6jfu3DH37bZ66dhbuEX1cjODk28tlZKfjdCUM8UEGkCJCjsHaY3y1YHfV1t5P7b9CQcDl52K10PdRHgrDgA1PidGgxpmRiNeHNaqxrIy46USjVD5znxe4tGwmiMKOhAxR82fEuSBfufhrO1pe2SH7UdYVTrGq2fzrOq8j9aq6IRyvkC2HGD8WVY2vrqP8J008jC4tqZzX9KTzcZSy9PKSEVWM17NkhwDRHex0N9o7fziCfXCzbgevBNt7MvATIk5iEkAA61aPcxg3hFz8Kej54IWVJCB2p7yiK1XDcq6BhX2q2U0ZHM6NpMqnvqwkCPlZIod1XwOKz4WYegWha2rWyiUev8RblqYDVaPiWT2MkKdp6NsJUqGhUGOHENPdAV2QkyJp83cOqFD2CMrc9HVUk47an4edmb2k8yJCaUEJzq29GzhTGsRaKgLNyWMbpntTNAAwDj0v3QYJuo7oPuZ8IBXy5NiVj5i7t2XwRWOaDLPMg0q8DMuQvxRftxBADywTsb8fm9vFTAcyNidybTuaOMjcF9DOnH2FEQ8BJU0SfKbadatHgtcs3HMDfsu6R7xr4d57eD0kfd0oIEgvxXX4aeTIHjsW91bBzhDAFO0ZaoeIz7BV4uyLOI2aFIWo56IFqR9NqYb",
+      "estimatedCost": 15
+    },
+    {
+      "id": "tray_middle",
+      "name": "Storage Tray Middle",
+      "type": "structural",
+      "partId": "34cbfd5a-f086-4299-8105-19eeab0abab1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Plate+3mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/1220-03.jpg",
+      "material": "Aluminum",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0C33D6VK1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.69",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010781576808.html?pdp_npi=6%40dis%21USD%219.44%214.63%21%21%2163.80%2131.26%21%400b8ded7b17793360256664598e1040%2112000053493013628%21affd%21%21%21%211%210%21",
+            "price": "$4.63",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/1220",
+            "price": "$4.95",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/1220",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0C33D6VK1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "350x350x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 300,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 350,
+        "width": 350,
+        "height": 3
+      },
+      "description": "Intermediate storage tray.",
+      "productName": "Aluminum Plate 3mm",
+      "purchaseUrl": "https://www.adafruit.com/product/1220",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwclVDGoGf9OME7L6jfu3DH37bZ66dhbuEX1cjODk28tlZKfjdCUM8UEGkCJCjsHaY3y1YHfV1t5P7b9CQcDl52K10PdRHgrDgA1PidGgxpmRiNeHNaqxrIy46USjVD5znxe4tGwmiMKOhAxR82fEuSBfufhrO1pe2SH7UdYVTrGq2fzrOq8j9aq6IRyvkC2HGD8WVY2vrqP8J008jC4tqZzX9KTzcZSy9PKSEVWM17NkhwDRHex0N9o7fziCfXCzbgevBNt7MvATIk5iEkAA61aPcxg3hFz8Kej54IWVJCB2p7yiK1XDcq6BhX2q2U0ZHM6NpMqnvqwkCPlZIod1XwOKz4WYegWha2rWyiUev8RblqYDVaPiWT2MkKdp6NsJUqGhUGOHENPdAV2QkyJp83cOqFD2CMrc9HVUk47an4edmb2k8yJCaUEJzq29GzhTGsRaKgLNyWMbpntTNAAwDj0v3QYJuo7oPuZ8IBXy5NiVj5i7t2XwRWOaDLPMg0q8DMuQvxRftxBADywTsb8fm9vFTAcyNidybTuaOMjcF9DOnH2FEQ8BJU0SfKbadatHgtcs3HMDfsu6R7xr4d57eD0kfd0oIEgvxXX4aeTIHjsW91bBzhDAFO0ZaoeIz7BV4uyLOI2aFIWo56IFqR9NqYb",
+      "estimatedCost": 15
+    },
+    {
+      "id": "tray_top",
+      "name": "Storage Tray Top",
+      "type": "structural",
+      "partId": "34cbfd5a-f086-4299-8105-19eeab0abab1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Plate+3mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/1220-03.jpg",
+      "material": "Aluminum",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0C33D6VK1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.69",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010781576808.html?pdp_npi=6%40dis%21USD%219.44%214.63%21%21%2163.80%2131.26%21%400b8ded7b17793360256664598e1040%2112000053493013628%21affd%21%21%21%211%210%21",
+            "price": "$4.63",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/1220",
+            "price": "$4.95",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/1220",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0C33D6VK1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "350x350x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 600,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 350,
+        "width": 350,
+        "height": 3
+      },
+      "description": "Top storage tray for lightweight items and sensors.",
+      "productName": "Aluminum Plate 3mm",
+      "purchaseUrl": "https://www.adafruit.com/product/1220",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwclVDGoGf9OME7L6jfu3DH37bZ66dhbuEX1cjODk28tlZKfjdCUM8UEGkCJCjsHaY3y1YHfV1t5P7b9CQcDl52K10PdRHgrDgA1PidGgxpmRiNeHNaqxrIy46USjVD5znxe4tGwmiMKOhAxR82fEuSBfufhrO1pe2SH7UdYVTrGq2fzrOq8j9aq6IRyvkC2HGD8WVY2vrqP8J008jC4tqZzX9KTzcZSy9PKSEVWM17NkhwDRHex0N9o7fziCfXCzbgevBNt7MvATIk5iEkAA61aPcxg3hFz8Kej54IWVJCB2p7yiK1XDcq6BhX2q2U0ZHM6NpMqnvqwkCPlZIod1XwOKz4WYegWha2rWyiUev8RblqYDVaPiWT2MkKdp6NsJUqGhUGOHENPdAV2QkyJp83cOqFD2CMrc9HVUk47an4edmb2k8yJCaUEJzq29GzhTGsRaKgLNyWMbpntTNAAwDj0v3QYJuo7oPuZ8IBXy5NiVj5i7t2XwRWOaDLPMg0q8DMuQvxRftxBADywTsb8fm9vFTAcyNidybTuaOMjcF9DOnH2FEQ8BJU0SfKbadatHgtcs3HMDfsu6R7xr4d57eD0kfd0oIEgvxXX4aeTIHjsW91bBzhDAFO0ZaoeIz7BV4uyLOI2aFIWo56IFqR9NqYb",
+      "estimatedCost": 15
+    },
+    {
+      "id": "drive_wheel_left",
+      "name": "Left Drive Wheel",
+      "type": "mechanism",
+      "partId": "d072ce8a-7045-45ed-b551-fad163f29c00",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6-inch+Rubber+Drive+Wheel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41o8HL64RlL._SL500_.jpg",
+      "material": "Rubber/Steel",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005009253779596.html?pdp_npi=6%40dis%21USD%2120.00%2116.40%21%21%2120.00%2116.40%21%40214114e317795464248008037e11a1%2112000048487206229%21affd%21%21%21%211%210%21",
+            "price": "$16.4",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0CC5C47SC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$16.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CC5C47SC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x150x40mm",
+      "position3d": {
+        "x": -260,
+        "y": 75,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 40,
+        "height": 150
+      },
+      "description": "High traction wheel for the main drive system.",
+      "productName": "6-inch Rubber Drive Wheel",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhmvLYzrhnqLjaXmdgrChXjeUkBdBf7Lcxmvacu8QI4BgW4ucsZz2dlST7p4g5VNa9xi3KNG0HRULRpyHoKkFkEgBE5rKpRiCn3HGKXjjSMbtFFB41M6IuXMt2Ha3uY78HwqGUnPupUjpu0EcYjRE38AzKB2AkUmnXwsvGPfvMWeL4kGQLZydreEzIK9zU7fE9tFmUB70JXBt13yWOAJg43o66LjE4HfzDJ0DPj0yFKG2MSSeLr7tphDzbncNno9u15yemsDDtVobyWrbvjmGPR0wBtsjXKwuJOjZvK2HkRK6Ztb7Ssr4UThSk9kF5JHXX1iwttBO7xmoDl0DL4Yy5qZgmaBgHrvhBsS8nv4RaxHn8No8oigIgiAKzxXC9NDE9DcijXn7bBLs5fvehLWxStJdxVoRmE3GleEDr69fliiCpDTmWGEMjFeLKNkqCuG8XisOJ0bnLjrgvYf8LCU4osO9JGclAu7x5Jtr67vJLtPflyUcUAzgyZUrwjDZFNGMOJ7Ai6eyamuEH6rJhCr0Kx5JmzBWPYtFsACP2ZqLiNmkNIcqzcInxx6beaw0w2gpfHi1uOudU8i7FBpg3ovpey6AqwSs8TLmHFd8ZFzxqRleiqHznOMhVvYIaDGOv7bFfm1WReZ5kK7wOALifNEKNnl",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhmvLYzrhnqLjaXmdgrChXjeUkBdBf7Lcxmvacu8QI4BgW4ucsZz2dlST7p4g5VNa9xi3KNG0HRULRpyHoKkFkEgBE5rKpRiCn3HGKXjjSMbtFFB41M6IuXMt2Ha3uY78HwqGUnPupUjpu0EcYjRE38AzKB2AkUmnXwsvGPfvMWeL4kGQLZydreEzIK9zU7fE9tFmUB70JXBt13yWOAJg43o66LjE4HfzDJ0DPj0yFKG2MSSeLr7tphDzbncNno9u15yemsDDtVobyWrbvjmGPR0wBtsjXKwuJOjZvK2HkRK6Ztb7Ssr4UThSk9kF5JHXX1iwttBO7xmoDl0DL4Yy5qZgmaBgHrvhBsS8nv4RaxHn8No8oigIgiAKzxXC9NDE9DcijXn7bBLs5fvehLWxStJdxVoRmE3GleEDr69fliiCpDTmWGEMjFeLKNkqCuG8XisOJ0bnLjrgvYf8LCU4osO9JGclAu7x5Jtr67vJLtPflyUcUAzgyZUrwjDZFNGMOJ7Ai6eyamuEH6rJhCr0Kx5JmzBWPYtFsACP2ZqLiNmkNIcqzcInxx6beaw0w2gpfHi1uOudU8i7FBpg3ovpey6AqwSs8TLmHFd8ZFzxqRleiqHznOMhVvYIaDGOv7bFfm1WReZ5kK7wOALifNEKNnl",
+      "estimatedCost": 12
+    },
+    {
+      "id": "drive_wheel_right",
+      "name": "Right Drive Wheel",
+      "type": "mechanism",
+      "partId": "d072ce8a-7045-45ed-b551-fad163f29c00",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6-inch+Rubber+Drive+Wheel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41o8HL64RlL._SL500_.jpg",
+      "material": "Rubber/Steel",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005009253779596.html?pdp_npi=6%40dis%21USD%2120.00%2116.40%21%21%2120.00%2116.40%21%40214114e317795464248008037e11a1%2112000048487206229%21affd%21%21%21%211%210%21",
+            "price": "$16.4",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0CC5C47SC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$16.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CC5C47SC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x150x40mm",
+      "position3d": {
+        "x": 260,
+        "y": 75,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 40,
+        "height": 150
+      },
+      "description": "High traction wheel for the main drive system.",
+      "productName": "6-inch Rubber Drive Wheel",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhmvLYzrhnqLjaXmdgrChXjeUkBdBf7Lcxmvacu8QI4BgW4ucsZz2dlST7p4g5VNa9xi3KNG0HRULRpyHoKkFkEgBE5rKpRiCn3HGKXjjSMbtFFB41M6IuXMt2Ha3uY78HwqGUnPupUjpu0EcYjRE38AzKB2AkUmnXwsvGPfvMWeL4kGQLZydreEzIK9zU7fE9tFmUB70JXBt13yWOAJg43o66LjE4HfzDJ0DPj0yFKG2MSSeLr7tphDzbncNno9u15yemsDDtVobyWrbvjmGPR0wBtsjXKwuJOjZvK2HkRK6Ztb7Ssr4UThSk9kF5JHXX1iwttBO7xmoDl0DL4Yy5qZgmaBgHrvhBsS8nv4RaxHn8No8oigIgiAKzxXC9NDE9DcijXn7bBLs5fvehLWxStJdxVoRmE3GleEDr69fliiCpDTmWGEMjFeLKNkqCuG8XisOJ0bnLjrgvYf8LCU4osO9JGclAu7x5Jtr67vJLtPflyUcUAzgyZUrwjDZFNGMOJ7Ai6eyamuEH6rJhCr0Kx5JmzBWPYtFsACP2ZqLiNmkNIcqzcInxx6beaw0w2gpfHi1uOudU8i7FBpg3ovpey6AqwSs8TLmHFd8ZFzxqRleiqHznOMhVvYIaDGOv7bFfm1WReZ5kK7wOALifNEKNnl",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhmvLYzrhnqLjaXmdgrChXjeUkBdBf7Lcxmvacu8QI4BgW4ucsZz2dlST7p4g5VNa9xi3KNG0HRULRpyHoKkFkEgBE5rKpRiCn3HGKXjjSMbtFFB41M6IuXMt2Ha3uY78HwqGUnPupUjpu0EcYjRE38AzKB2AkUmnXwsvGPfvMWeL4kGQLZydreEzIK9zU7fE9tFmUB70JXBt13yWOAJg43o66LjE4HfzDJ0DPj0yFKG2MSSeLr7tphDzbncNno9u15yemsDDtVobyWrbvjmGPR0wBtsjXKwuJOjZvK2HkRK6Ztb7Ssr4UThSk9kF5JHXX1iwttBO7xmoDl0DL4Yy5qZgmaBgHrvhBsS8nv4RaxHn8No8oigIgiAKzxXC9NDE9DcijXn7bBLs5fvehLWxStJdxVoRmE3GleEDr69fliiCpDTmWGEMjFeLKNkqCuG8XisOJ0bnLjrgvYf8LCU4osO9JGclAu7x5Jtr67vJLtPflyUcUAzgyZUrwjDZFNGMOJ7Ai6eyamuEH6rJhCr0Kx5JmzBWPYtFsACP2ZqLiNmkNIcqzcInxx6beaw0w2gpfHi1uOudU8i7FBpg3ovpey6AqwSs8TLmHFd8ZFzxqRleiqHznOMhVvYIaDGOv7bFfm1WReZ5kK7wOALifNEKNnl",
+      "estimatedCost": 12
+    },
+    {
+      "id": "castor_fl",
+      "name": "Front Left Support Castor",
+      "type": "mechanism",
+      "partId": "c1aabdeb-f619-49f8-b9bf-e83550fd1c9d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Swivel+Ball+Castor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07HC3Z56Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x50x60mm",
+      "position3d": {
+        "x": -150,
+        "y": 30,
+        "z": -150
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 60
+      },
+      "description": "Support castor for stability.",
+      "productName": "Swivel Ball Castor",
+      "purchaseUrl": "https://www.amazon.com/s?k=swivel+castor+wheel",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfwyRaQ1QKBNh5x8aW4ZbP2yQi4FbjazZ48NDpFxxJL4hTRWLhLWrhKYi3qN9LjLd8iqqzSp9kr8vaDvo8ZQUobUO87H4BtGHUks94BnfwMa3EVPEhnhYLXn7NxJZMTNaRw6vpYY7gEKyoJqS13NqAvlzO8MYEF1KLoA2WHqqzjto2axlQV3pDHkAvKev5hG9iSxj2HAazALyQLc01o1qfBBF60TnELyiHwRsm6VV7SctX5VGi3boJpG0OqYYneTV5V7Yqthtan0wLm603XV8BNdKfhfkbHZufeI0e3RaPtKdW8kM8k0qWIFnz7WgMBBQhe6cRK6TEFTtb0C3S8Rr3htTWfpoO3sgpp3Fsh1QG0F8UFimq8brF7QKg6tJkrQGVFgE4PoskYppFYSvuGsCfsQIJH83v3y3LyXPa6ftUFmaDWgqnZPi6Hard9GZboZ4HAfYAO1ccDfUU4co8YJodhHMX3uz0k5uW9AZDlhfU886DEMbc7G2qEq9Gio2t2hkOvvLlGXBYcCyF8L8frqD9zLu6bhfupEQfA5f3mXOx1ATxrgIY7hzZucuZvfLbRFIDwF9HZAO96pTZuWPo83Bib1rskFUoRGvXs0xeSPGxwWqTRUqSv8WSTaFUvH9IhbLbIL9pbNwzOZSXgcTSWMejm3",
+      "estimatedCost": 5
+    },
+    {
+      "id": "castor_fr",
+      "name": "Front Right Support Castor",
+      "type": "mechanism",
+      "partId": "c1aabdeb-f619-49f8-b9bf-e83550fd1c9d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Swivel+Ball+Castor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07HC3Z56Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x50x60mm",
+      "position3d": {
+        "x": 150,
+        "y": 30,
+        "z": -150
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 60
+      },
+      "description": "Support castor for stability.",
+      "productName": "Swivel Ball Castor",
+      "purchaseUrl": "https://www.amazon.com/s?k=swivel+castor+wheel",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfwyRaQ1QKBNh5x8aW4ZbP2yQi4FbjazZ48NDpFxxJL4hTRWLhLWrhKYi3qN9LjLd8iqqzSp9kr8vaDvo8ZQUobUO87H4BtGHUks94BnfwMa3EVPEhnhYLXn7NxJZMTNaRw6vpYY7gEKyoJqS13NqAvlzO8MYEF1KLoA2WHqqzjto2axlQV3pDHkAvKev5hG9iSxj2HAazALyQLc01o1qfBBF60TnELyiHwRsm6VV7SctX5VGi3boJpG0OqYYneTV5V7Yqthtan0wLm603XV8BNdKfhfkbHZufeI0e3RaPtKdW8kM8k0qWIFnz7WgMBBQhe6cRK6TEFTtb0C3S8Rr3htTWfpoO3sgpp3Fsh1QG0F8UFimq8brF7QKg6tJkrQGVFgE4PoskYppFYSvuGsCfsQIJH83v3y3LyXPa6ftUFmaDWgqnZPi6Hard9GZboZ4HAfYAO1ccDfUU4co8YJodhHMX3uz0k5uW9AZDlhfU886DEMbc7G2qEq9Gio2t2hkOvvLlGXBYcCyF8L8frqD9zLu6bhfupEQfA5f3mXOx1ATxrgIY7hzZucuZvfLbRFIDwF9HZAO96pTZuWPo83Bib1rskFUoRGvXs0xeSPGxwWqTRUqSv8WSTaFUvH9IhbLbIL9pbNwzOZSXgcTSWMejm3",
+      "estimatedCost": 5
+    },
+    {
+      "id": "castor_rl",
+      "name": "Rear Left Support Castor",
+      "type": "mechanism",
+      "partId": "c1aabdeb-f619-49f8-b9bf-e83550fd1c9d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Swivel+Ball+Castor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07HC3Z56Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x50x60mm",
+      "position3d": {
+        "x": -150,
+        "y": 30,
+        "z": 150
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 60
+      },
+      "description": "Support castor for stability.",
+      "productName": "Swivel Ball Castor",
+      "purchaseUrl": "https://www.amazon.com/s?k=swivel+castor+wheel",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfwyRaQ1QKBNh5x8aW4ZbP2yQi4FbjazZ48NDpFxxJL4hTRWLhLWrhKYi3qN9LjLd8iqqzSp9kr8vaDvo8ZQUobUO87H4BtGHUks94BnfwMa3EVPEhnhYLXn7NxJZMTNaRw6vpYY7gEKyoJqS13NqAvlzO8MYEF1KLoA2WHqqzjto2axlQV3pDHkAvKev5hG9iSxj2HAazALyQLc01o1qfBBF60TnELyiHwRsm6VV7SctX5VGi3boJpG0OqYYneTV5V7Yqthtan0wLm603XV8BNdKfhfkbHZufeI0e3RaPtKdW8kM8k0qWIFnz7WgMBBQhe6cRK6TEFTtb0C3S8Rr3htTWfpoO3sgpp3Fsh1QG0F8UFimq8brF7QKg6tJkrQGVFgE4PoskYppFYSvuGsCfsQIJH83v3y3LyXPa6ftUFmaDWgqnZPi6Hard9GZboZ4HAfYAO1ccDfUU4co8YJodhHMX3uz0k5uW9AZDlhfU886DEMbc7G2qEq9Gio2t2hkOvvLlGXBYcCyF8L8frqD9zLu6bhfupEQfA5f3mXOx1ATxrgIY7hzZucuZvfLbRFIDwF9HZAO96pTZuWPo83Bib1rskFUoRGvXs0xeSPGxwWqTRUqSv8WSTaFUvH9IhbLbIL9pbNwzOZSXgcTSWMejm3",
+      "estimatedCost": 5
+    },
+    {
+      "id": "castor_rr",
+      "name": "Rear Right Support Castor",
+      "type": "mechanism",
+      "partId": "c1aabdeb-f619-49f8-b9bf-e83550fd1c9d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Swivel+Ball+Castor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07HC3Z56Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x50x60mm",
+      "position3d": {
+        "x": 150,
+        "y": 30,
+        "z": 150
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 60
+      },
+      "description": "Support castor for stability.",
+      "productName": "Swivel Ball Castor",
+      "purchaseUrl": "https://www.amazon.com/s?k=swivel+castor+wheel",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfwyRaQ1QKBNh5x8aW4ZbP2yQi4FbjazZ48NDpFxxJL4hTRWLhLWrhKYi3qN9LjLd8iqqzSp9kr8vaDvo8ZQUobUO87H4BtGHUks94BnfwMa3EVPEhnhYLXn7NxJZMTNaRw6vpYY7gEKyoJqS13NqAvlzO8MYEF1KLoA2WHqqzjto2axlQV3pDHkAvKev5hG9iSxj2HAazALyQLc01o1qfBBF60TnELyiHwRsm6VV7SctX5VGi3boJpG0OqYYneTV5V7Yqthtan0wLm603XV8BNdKfhfkbHZufeI0e3RaPtKdW8kM8k0qWIFnz7WgMBBQhe6cRK6TEFTtb0C3S8Rr3htTWfpoO3sgpp3Fsh1QG0F8UFimq8brF7QKg6tJkrQGVFgE4PoskYppFYSvuGsCfsQIJH83v3y3LyXPa6ftUFmaDWgqnZPi6Hard9GZboZ4HAfYAO1ccDfUU4co8YJodhHMX3uz0k5uW9AZDlhfU886DEMbc7G2qEq9Gio2t2hkOvvLlGXBYcCyF8L8frqD9zLu6bhfupEQfA5f3mXOx1ATxrgIY7hzZucuZvfLbRFIDwF9HZAO96pTZuWPo83Bib1rskFUoRGvXs0xeSPGxwWqTRUqSv8WSTaFUvH9IhbLbIL9pbNwzOZSXgcTSWMejm3",
+      "estimatedCost": 5
+    },
+    {
+      "id": "lidar_mount_3d",
+      "name": "LiDAR Vibration Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "lidar_sensor",
+      "dimensions": "80x80x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 614,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 80,
+        "width": 80,
+        "height": 25
+      },
+      "description": "Custom dampening mount for the LiDAR sensor.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 3,
+      "printSettings": "40% infill, 0.2mm layer"
+    },
+    {
+      "id": "arm_carriage_mount",
+      "name": "Dual Arm Gantry Carriage",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "dimensions": "200x120x60mm",
+      "position3d": {
+        "x": 0,
+        "y": 400,
+        "z": -150
+      },
+      "boundingBox": {
+        "depth": 120,
+        "width": 200,
+        "height": 60
+      },
+      "description": "Heavy-duty carriage that slides on the vertical pillar and holds both arm bases.",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 12,
+      "printSettings": "80% infill, 0.2mm layer"
+    },
+    {
+      "id": "arm_1_base_adapter",
+      "name": "Arm 1 Motor Bracket",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "mountsFor": "arm_1_joint_1",
+      "dimensions": "90x90x40mm",
+      "position3d": {
+        "x": -60,
+        "y": 400,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 90,
+        "width": 90,
+        "height": 40
+      },
+      "description": "Structural interface between the brushless motor and the carriage.",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 5,
+      "printSettings": "60% infill, 0.2mm layer"
+    },
+    {
+      "id": "arm_2_base_adapter",
+      "name": "Arm 2 Motor Bracket",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "mountsFor": "arm_2_joint_1",
+      "dimensions": "90x90x40mm",
+      "position3d": {
+        "x": 60,
+        "y": 400,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 90,
+        "width": 90,
+        "height": 40
+      },
+      "description": "Structural interface between the brushless motor and the carriage.",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 5,
+      "printSettings": "60% infill, 0.2mm layer"
+    },
+    {
+      "id": "main_mcu_enclosure",
+      "name": "Electronics Housing",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "main_computer",
+      "dimensions": "120x100x50mm",
+      "position3d": {
+        "x": -100,
+        "y": 45,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 120,
+        "height": 50
+      },
+      "description": "Protective case for the Raspberry Pi and motor controller.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 4.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "m3_screw_pack",
+      "name": "M3 Hardware Kit",
+      "type": "misc",
+      "partId": "7e97e595-149d-47cd-b96f-19cf8c4c637e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Socket+Head+Screws+Assortment&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51h8pgI4CDL._SL500_.jpg",
+      "material": "Alloy Steel",
+      "quantity": 50,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FGV5FCBN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FGV5FCBN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x12mm",
+      "description": "General fasteners for mounting electronics and 3D parts.",
+      "productName": "M3 Socket Head Screws Assortment",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FGV5FCBN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaDxyFwYUQLXe3R7bQTJgcIfzNTpVhrBXoyHjRpVHcA6P1M7ZWCLauqBh1A7NLidZb37tJ5kzluxM5551x3JgAFIDtFdFfc4ylm29YuvmXOOT5KMOzfwlAEKYgisax0bl1FWyhSC0QXfJelowUWjAEqm9PIi06mrpZupLxKMw4Kh2eGi2BVM7a8LJdbdl43g57CGaXNRQ5Dwh4dZvKi1xBNmY5Zcw7HJp7opsk8CYcAVYHwwhm4WZzWE23axY0zf99B9n1sAmyE3Ans8KZcDV5s07z5tch0eDF4zCU7Cuze7yIkJFOPwU9u8cwwq47G2f6fqDgwOky9GBi5ggwXIHzh87KpXfzkrq5WCJI7PBgnvzBvdypDqSiVogrnVb1tmyycfKiaLMJVxnbqtbQOH90Up3kPpZhoY7nNLdUGvdK2DlEHwJO7rgVQt36NdbldE4RFv7Hcwc6jMs9LwkIUOxVKUY0kfhCwtAU02Bw04MV3WUmm4d7tdkFQbEjyQMYd8R3vCkq1Bqv3mQflIAdQd5QnZBB2wOk9k8dvaVPi0zqZIBSaRpcg0r8VUV2lHjtuuhB15WzgkaJTbz4EZn0Vuhu1GnazEi5gbWjKk3ZzpLEQGuAbnE2eM11m1t5xwmBnhMTM6wn2b0PXT5Ov3EJsgu4Ft",
+      "estimatedCost": 0.15
+    },
+    {
+      "id": "m5_bolt_pack",
+      "name": "M5 Extrusion Bolts",
+      "type": "misc",
+      "partId": "0f5a07bb-61a6-417e-8b0b-8b8bc4faf33b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+T-Slot+Bolts+and+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51-PQFYU8oL._SL500_.jpg",
+      "material": "Steel",
+      "quantity": 30,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FGJK1HFL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010354192095.html?pdp_npi=6%40dis%21USD%2124.47%2112.24%21%21%21165.56%2182.78%21%402101611117795286820593893e0e7f%2112000052096334881%21affd%21%21%21%211%210%21",
+            "price": "$12.24",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FGJK1HFL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5x10mm",
+      "description": "Fasteners for securing components to the aluminum profile.",
+      "productName": "M5 T-Slot Bolts and Nuts",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx2tDjprV0yvuNYSFAWuLlJqTxVx44qHHaqUaCZ9AAdS3k5liwEAHanpe9b6YCznc2nVA0tLi733Byw01xGJpf1hZ6jNdbpwMKZiY0xapYpWjNA5ygvCtz6vxFO0VXcDq9KB3UuSeLzpg3OUtVs0FI2UvKNETRlVaaRbLO1CiUkgfOQor34omYlNNKBI87b6Ri9y81crwsvSL2x3Y3llDTe80mPS8abPIbZrqe4rfPvxneyFvak7KJscKIZbh3IBqtX27B9aNC3FWxqh9u6bCmrP9P40kbCSaMxOzCT6RcCJNp12MA4r75VC12M3b2cw42EXPSQPwmcGlARju5y0v5NlFsb3RQe869hFJKUA8dPFNIKVo8ds7cd0o2xPZvdAhNrZnjp1cegLEpY9TCu1sO1EVAkAxKFQrrLaUjTjPXQRUrB9lfq6HT1Oq60WbNOGzzmrNrPaxXgOn99jW6TE4TDbTWtp1qalSTBnHXc1i2qYptqkFHLum5C5d13Jl63qRCV9iBFq0yNxwk8odhBdGV36lTGfyzU8u3qELnQ8NLkhrwAz4cMBmxJZCVNqRx26U7nitVaSOe241293yoMDnBEI2cseKc8w003rLk4D5aENlcjoWbzAqbcRWBm6Q5n7tIPtluyK9DeL6wEm9xR0Xo8b",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx2tDjprV0yvuNYSFAWuLlJqTxVx44qHHaqUaCZ9AAdS3k5liwEAHanpe9b6YCznc2nVA0tLi733Byw01xGJpf1hZ6jNdbpwMKZiY0xapYpWjNA5ygvCtz6vxFO0VXcDq9KB3UuSeLzpg3OUtVs0FI2UvKNETRlVaaRbLO1CiUkgfOQor34omYlNNKBI87b6Ri9y81crwsvSL2x3Y3llDTe80mPS8abPIbZrqe4rfPvxneyFvak7KJscKIZbh3IBqtX27B9aNC3FWxqh9u6bCmrP9P40kbCSaMxOzCT6RcCJNp12MA4r75VC12M3b2cw42EXPSQPwmcGlARju5y0v5NlFsb3RQe869hFJKUA8dPFNIKVo8ds7cd0o2xPZvdAhNrZnjp1cegLEpY9TCu1sO1EVAkAxKFQrrLaUjTjPXQRUrB9lfq6HT1Oq60WbNOGzzmrNrPaxXgOn99jW6TE4TDbTWtp1qalSTBnHXc1i2qYptqkFHLum5C5d13Jl63qRCV9iBFq0yNxwk8odhBdGV36lTGfyzU8u3qELnQ8NLkhrwAz4cMBmxJZCVNqRx26U7nitVaSOe241293yoMDnBEI2cseKc8w003rLk4D5aENlcjoWbzAqbcRWBm6Q5n7tIPtluyK9DeL6wEm9xR0Xo8b",
+      "estimatedCost": 0.25
+    },
+    {
+      "id": "motor_controller_hat_mount",
+      "name": "Drive & Gantry Motor Shield Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "motor_controller_hat",
+      "dimensions": "50x40x12mm",
+      "position3d": {
+        "x": -100,
+        "y": 60,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 50,
+        "height": 12
+      },
+      "description": "Adapter plate for the Drive & Gantry Motor Shield that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "drive_motor_left_mount",
+      "name": "Left Drive Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "drive_motor_left",
+      "dimensions": "50x50x20mm",
+      "position3d": {
+        "x": -180,
+        "y": 35,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 50,
+        "height": 50
+      },
+      "description": "Per-position bracket for the Left Drive Motor with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "drive_motor_right_mount",
+      "name": "Right Drive Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "drive_motor_right",
+      "dimensions": "50x50x20mm",
+      "position3d": {
+        "x": 180,
+        "y": 35,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 50,
+        "height": 50
+      },
+      "description": "Per-position bracket for the Right Drive Motor with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "gantry_stepper_mount",
+      "name": "Vertical Gantry Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "gantry_stepper",
+      "dimensions": "50x50x20mm",
+      "position3d": {
+        "x": 0,
+        "y": 820,
+        "z": -190
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 20
+      },
+      "description": "Per-position bracket for the Vertical Gantry Motor with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "imu_module_mount",
+      "name": "Inertial Measurement Unit Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "imu_module",
+      "dimensions": "30x30x15mm",
+      "position3d": {
+        "x": 100,
+        "y": 27,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 30,
+        "height": 15
+      },
+      "description": "Form-fitting cradle for the Inertial Measurement Unit that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "can_transceiver",
+      "name": "CAN Bus Transceiver HAT",
+      "pins": [
+        "VCC",
+        "GND",
+        "CAN_H",
+        "CAN_L",
+        "GPIO25",
+        "MOSI",
+        "MISO",
+        "SCK",
+        "CE0"
+      ],
+      "type": "module",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Waveshare+2-CH+CAN+FD+HAT&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41M-rYsVfxL._SL500_.jpg",
+      "quantity": 1,
+      "position3d": {
+        "x": -100,
+        "y": 25,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 65,
+        "height": 15
+      },
+      "description": "Enables the Raspberry Pi to communicate with multiple brushless actuators via high-speed CAN FD bus.",
+      "productName": "Waveshare 2-CH CAN FD HAT",
+      "purchaseUrl": "https://www.waveshare.com/2-ch-can-fd-hat.htm",
+      "estimatedCost": 32
+    },
+    {
+      "id": "arm_1_joint_2_6",
+      "name": "Arm 1 Upper DOFs",
+      "pins": [
+        "CAN_H",
+        "CAN_L",
+        "V+",
+        "V-"
+      ],
+      "type": "actuator",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Brushless+Integrated+Actuator+Kit+%285+pcs%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31yPJyPEEAL._SL500_.jpg",
+      "quantity": 1,
+      "position3d": {
+        "x": -150,
+        "y": 550,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 40,
+        "height": 100
+      },
+      "description": "Set of 5 integrated BLDC actuators with encoders and CAN controllers to complete the first 6-DOF arm.",
+      "productName": "Brushless Integrated Actuator Kit (5 pcs)",
+      "purchaseUrl": "https://www.myactuator.com/",
+      "estimatedCost": 1200
+    },
+    {
+      "id": "arm_2_joint_2_6",
+      "name": "Arm 2 Upper DOFs",
+      "pins": [
+        "CAN_H",
+        "CAN_L",
+        "V+",
+        "V-"
+      ],
+      "type": "actuator",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Brushless+Integrated+Actuator+Kit+%285+pcs%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31yPJyPEEAL._SL500_.jpg",
+      "quantity": 1,
+      "position3d": {
+        "x": 150,
+        "y": 550,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 40,
+        "height": 100
+      },
+      "description": "Set of 5 integrated BLDC actuators with encoders and CAN controllers to complete the second 6-DOF arm.",
+      "productName": "Brushless Integrated Actuator Kit (5 pcs)",
+      "purchaseUrl": "https://www.myactuator.com/",
+      "estimatedCost": 1200
+    },
+    {
+      "id": "bldc_bus_bar",
+      "name": "Power Distribution Bus",
+      "pins": [
+        "IN+",
+        "IN-",
+        "OUT+",
+        "OUT-"
+      ],
+      "type": "power",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=XT60+Parallel+Power+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/GiVioouL2OAJJ9koIA7yVOn29KTQert21xhhVMQoW4c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFOcFhNNEV4UUwu/anBn",
+      "quantity": 1,
+      "position3d": {
+        "x": 0,
+        "y": 25,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 100,
+        "height": 10
+      },
+      "description": "Distributes 24V power from the battery to all 12 arm actuators.",
+      "productName": "XT60 Parallel Power Board",
+      "purchaseUrl": "https://www.amazon.com/s?k=XT60+parallel+board",
+      "estimatedCost": 15
+    },
+    {
+      "id": "arm_structure_kit",
+      "name": "6-DOF Carbon Fiber Links",
+      "type": "structural",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Robot+Arm+Linkage+Set&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 2,
+      "position3d": {
+        "x": 0,
+        "y": 550,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 300,
+        "height": 20
+      },
+      "description": "Structural carbon fiber and aluminum tubes to connect the brushless joints.",
+      "productName": "Custom Robot Arm Linkage Set",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/example",
+      "estimatedCost": 350
+    },
+    {
+      "id": "arm_1_joint_7",
+      "name": "Arm 1 Joint 7 Motor",
+      "pins": [
+        "PhaseA",
+        "PhaseB",
+        "PhaseC",
+        "HallVCC",
+        "HallGND",
+        "HallA",
+        "HallB",
+        "HallC",
+        "CAN_H",
+        "CAN_L",
+        "V+",
+        "V-"
+      ],
+      "type": "actuator",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Planetary+Geared+Brushless+DC+Motor+%2824V%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/Se377535bf1ce402fbef94d20b8043aa94.jpg",
+      "quantity": 1,
+      "position3d": {
+        "x": -200,
+        "y": 550,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 42,
+        "width": 42,
+        "height": 110
+      },
+      "description": "Additional 7th degree of freedom for the first robotic arm.",
+      "productName": "Planetary Geared Brushless DC Motor (24V)",
+      "purchaseUrl": "https://www.amazon.com/dp/B0GF7X4PM9",
+      "estimatedCost": 120
+    },
+    {
+      "id": "arm_2_joint_7",
+      "name": "Arm 2 Joint 7 Motor",
+      "pins": [
+        "PhaseA",
+        "PhaseB",
+        "PhaseC",
+        "HallVCC",
+        "HallGND",
+        "HallA",
+        "HallB",
+        "HallC",
+        "CAN_H",
+        "CAN_L",
+        "V+",
+        "V-"
+      ],
+      "type": "actuator",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Planetary+Geared+Brushless+DC+Motor+%2824V%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "quantity": 1,
+      "position3d": {
+        "x": 200,
+        "y": 550,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 42,
+        "width": 42,
+        "height": 110
+      },
+      "description": "Additional 7th degree of freedom for the second robotic arm.",
+      "productName": "Planetary Geared Brushless DC Motor (24V)",
+      "purchaseUrl": "https://www.amazon.com/dp/B0GF7X4PM9",
+      "estimatedCost": 120
+    }
+  ],
+  "notes": [
+    "2-arm robot",
+    "vertical gantry",
+    "wheeled base",
+    "lidar navigation",
+    "3 trays",
+    "industrial storage"
+  ],
+  "projectName": "Gantry Mobile Manipulator",
+  "originalPrompt": "It should be a square base with a 3-piece extrusion frame down in the middle with the treys fixed in the middle. Each arm should be able to go along with the side frame piece",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Print high-strength carriage and motor mounts in ABS/PETG",
+          "partIds": [
+            "arm_carriage_mount",
+            "arm_1_base_adapter",
+            "arm_2_base_adapter",
+            "drive_motor_left_mount",
+            "drive_motor_right_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Print electronics housing and sensor mounts in PLA/PETG",
+          "partIds": [
+            "main_mcu_enclosure",
+            "motor_controller_hat_mount",
+            "lidar_mount_3d",
+            "imu_module_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Cut and deburr aluminum extrusions for gantry pillar",
+          "partIds": [
+            "gantry_vertical_pillar"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Install heat-set inserts into 3D printed arm carriage",
+          "partIds": [
+            "arm_carriage_mount",
+            "m3_screw_pack"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Test fit lead screw assembly with stepper motor mount",
+          "partIds": [
+            "lead_screw_assembly",
+            "gantry_stepper_mount"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder high-current leads to BLDC bus bar",
+          "partIds": [
+            "bldc_bus_bar",
+            "battery_pack"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Construct CAN bus daisy chain for robotic arms",
+          "partIds": [
+            "can_transceiver",
+            "arm_1_joint_1",
+            "arm_1_joint_2_6",
+            "arm_1_joint_7",
+            "arm_2_joint_1",
+            "arm_2_joint_2_6",
+            "arm_2_joint_7"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire drive motors and encoders to motor controller HAT",
+          "partIds": [
+            "motor_controller_hat",
+            "drive_motor_left",
+            "drive_motor_right"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect power step-down converter and main computer",
+          "partIds": [
+            "step_down_converter",
+            "main_computer",
+            "battery_pack"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Wire I2C and UART sensors to main computer GPIO",
+          "partIds": [
+            "main_computer",
+            "lidar_sensor",
+            "imu_module"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Verify 5V and 3.3V logic rails with multimeter",
+          "partIds": [
+            "step_down_converter",
+            "main_computer"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Flash motor controller firmware and test drive motor rotation",
+          "partIds": [
+            "motor_controller_hat",
+            "drive_motor_left",
+            "drive_motor_right"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Configure CAN interface and ping arm motor IDs",
+          "partIds": [
+            "can_transceiver",
+            "arm_1_joint_1",
+            "arm_2_joint_1"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Initialize LiDAR and visualize point cloud in ROS/Rviz",
+          "partIds": [
+            "lidar_sensor",
+            "main_computer"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Calibrate IMU and verify orientation data",
+          "partIds": [
+            "imu_module",
+            "main_computer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Secure drive motors and castors to main chassis frame",
+          "partIds": [
+            "main_chassis_frame",
+            "drive_motor_left_mount",
+            "drive_motor_right_mount",
+            "castor_fl",
+            "castor_fr",
+            "castor_rl",
+            "castor_rr"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Erect gantry pillar and install lead screw assembly",
+          "partIds": [
+            "gantry_vertical_pillar",
+            "lead_screw_assembly",
+            "gantry_stepper"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount storage trays to chassis and gantry pillar",
+          "partIds": [
+            "tray_bottom",
+            "tray_middle",
+            "tray_top"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Attach arm carriage and dual robotic arm assemblies",
+          "partIds": [
+            "arm_carriage_mount",
+            "arm_structure_kit",
+            "arm_1_joint_1",
+            "arm_2_joint_1"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Install electronics enclosure and route cable harnesses",
+          "partIds": [
+            "main_mcu_enclosure",
+            "main_computer",
+            "bldc_bus_bar"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Perform final movement test for gantry and drive base",
+          "partIds": [
+            "gantry_stepper",
+            "drive_wheel_left",
+            "drive_wheel_right"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "This dual-arm mobile manipulator utilizes a wheeled base and LiDAR-guided SLAM for autonomous navigation between industrial storage racks. A lead-screw gantry elevates two 7-DOF brushless arms to access parts across three vertically stacked trays, managed by a Raspberry Pi and CAN-linked motor controllers.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "2-arm robot",
+      "vertical gantry",
+      "wheeled base",
+      "lidar navigation",
+      "3 trays",
+      "industrial storage"
+    ],
+    "description": "It should be a square base with a 3-piece extrusion frame down in the middle with the treys fixed in the middle. Each arm should be able to go along with the side frame piece",
+    "technicalDescription": "This dual-arm mobile manipulator utilizes a wheeled base and LiDAR-guided SLAM for autonomous navigation between industrial storage racks. A lead-screw gantry elevates two 7-DOF brushless arms to access parts across three vertically stacked trays, managed by a Raspberry Pi and CAN-linked motor controllers."
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (ABS and PETG capable)",
+      "M3 and M5 hex key set",
+      "Soldering iron and lead-free solder",
+      "Wire strippers and crimping tool",
+      "Multimeter",
+      "USB-C cable",
+      "Heat gun (for heat shrink)",
+      "Velcro adhesive strips"
+    ],
+    "assumptions": [
+      "Linux-based OS (Ubuntu/ROS) experience",
+      "Familiarity with CAN bus protocols",
+      "3D models for brackets and mounts are pre-sliced",
+      "Stable 24V DC battery charging setup available"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "battery_pack",
+      "target": "step_down_converter",
+      "current": "10A",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "battery_pack",
+      "target": "motor_controller_hat",
+      "current": "8A",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "step_down_converter",
+      "target": "main_computer",
+      "current": "3A",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "main_computer",
+      "target": "motor_controller_hat",
+      "protocol": "i2c",
+      "sourcePin": "GPIO",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "power",
+      "label": "Motor Drive",
+      "source": "motor_controller_hat",
+      "target": "drive_motor_left",
+      "current": "2A",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "label": "Motor Drive",
+      "source": "motor_controller_hat",
+      "target": "drive_motor_right",
+      "current": "2A",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "motor_controller_hat",
+      "target": "gantry_stepper",
+      "current": "1.5A",
+      "voltage": "24V"
+    },
+    {
+      "type": "data",
+      "source": "main_computer",
+      "target": "lidar_sensor",
+      "protocol": "uart",
+      "sourcePin": "GPIO",
+      "targetPin": "TX"
+    },
+    {
+      "type": "power",
+      "source": "main_computer",
+      "target": "lidar_sensor",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "main_computer",
+      "target": "imu_module",
+      "protocol": "i2c",
+      "sourcePin": "GPIO",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "power",
+      "source": "main_computer",
+      "target": "imu_module",
+      "current": "100mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "drive_motor_left",
+      "target": "main_computer",
+      "protocol": "gpio",
+      "sourcePin": "EncA",
+      "targetPin": "GPIO"
+    },
+    {
+      "type": "data",
+      "source": "drive_motor_right",
+      "target": "main_computer",
+      "protocol": "gpio",
+      "sourcePin": "EncA",
+      "targetPin": "GPIO"
+    },
+    {
+      "type": "data",
+      "source": "can_transceiver",
+      "target": "arm_1_joint_1",
+      "voltage": "5V",
+      "protocol": "can",
+      "sourcePin": "CAN_H",
+      "targetPin": "HallA"
+    },
+    {
+      "type": "data",
+      "source": "arm_1_joint_1",
+      "target": "arm_1_joint_2_6",
+      "protocol": "can",
+      "sourcePin": "HallA",
+      "targetPin": "CAN_H"
+    },
+    {
+      "type": "data",
+      "source": "can_transceiver",
+      "target": "arm_2_joint_1",
+      "voltage": "5V",
+      "protocol": "can",
+      "sourcePin": "CAN_L",
+      "targetPin": "HallA"
+    },
+    {
+      "type": "data",
+      "source": "arm_2_joint_1",
+      "target": "arm_2_joint_2_6",
+      "protocol": "can",
+      "sourcePin": "HallA",
+      "targetPin": "CAN_L"
+    },
+    {
+      "type": "power",
+      "source": "battery_pack",
+      "target": "bldc_bus_bar",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "bldc_bus_bar",
+      "target": "arm_1_joint_1",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "bldc_bus_bar",
+      "target": "arm_2_joint_1",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "bldc_bus_bar",
+      "target": "arm_1_joint_2_6",
+      "voltage": "24V"
+    },
+    {
+      "type": "power",
+      "source": "bldc_bus_bar",
+      "target": "arm_2_joint_2_6",
+      "voltage": "24V"
+    },
+    {
+      "type": "data",
+      "source": "main_computer",
+      "target": "can_transceiver",
+      "voltage": "3.3V",
+      "sourcePin": "GPIO25",
+      "targetPin": "GPIO25"
+    },
+    {
+      "type": "data",
+      "source": "main_computer",
+      "target": "can_transceiver",
+      "voltage": "3.3V",
+      "sourcePin": "MOSI",
+      "targetPin": "MOSI"
+    },
+    {
+      "type": "data",
+      "source": "main_computer",
+      "target": "can_transceiver",
+      "voltage": "3.3V",
+      "sourcePin": "MISO",
+      "targetPin": "MISO"
+    },
+    {
+      "type": "data",
+      "source": "main_computer",
+      "target": "can_transceiver",
+      "voltage": "3.3V",
+      "sourcePin": "SCK",
+      "targetPin": "SCK"
+    },
+    {
+      "type": "data",
+      "source": "main_computer",
+      "target": "can_transceiver",
+      "voltage": "3.3V",
+      "sourcePin": "CE0",
+      "targetPin": "CE0"
+    },
+    {
+      "type": "data",
+      "source": "arm_1_joint_2_6",
+      "target": "arm_1_joint_7",
+      "voltage": "5V/CAN FD",
+      "sourcePin": "CAN_H",
+      "targetPin": "CAN_H"
+    },
+    {
+      "type": "data",
+      "source": "arm_2_joint_2_6",
+      "target": "arm_2_joint_7",
+      "voltage": "5V/CAN FD",
+      "sourcePin": "CAN_H",
+      "targetPin": "CAN_H"
+    },
+    {
+      "type": "power",
+      "source": "bldc_bus_bar",
+      "target": "arm_1_joint_7",
+      "voltage": "24V",
+      "sourcePin": "OUT+",
+      "targetPin": "V+"
+    },
+    {
+      "type": "power",
+      "source": "bldc_bus_bar",
+      "target": "arm_2_joint_7",
+      "voltage": "24V",
+      "sourcePin": "OUT-",
+      "targetPin": "V-"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M5 Extrusion Bolts",
+      "source": "gantry_vertical_pillar",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M5 Extrusion Bolts",
+      "source": "tray_bottom",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M5 Extrusion Bolts",
+      "source": "tray_middle",
+      "target": "gantry_vertical_pillar"
+    },
+    {
+      "label": "M5 Extrusion Bolts",
+      "source": "tray_top",
+      "target": "gantry_vertical_pillar"
+    },
+    {
+      "label": "M5 Extrusion Bolts",
+      "source": "drive_motor_left_mount",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M5 Extrusion Bolts",
+      "source": "drive_motor_right_mount",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "Coupled to motor shaft via M3 set screw",
+      "source": "drive_wheel_left",
+      "target": "drive_motor_left_mount"
+    },
+    {
+      "label": "Coupled to motor shaft via M3 set screw",
+      "source": "drive_wheel_right",
+      "target": "drive_motor_right_mount"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "castor_fl",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "castor_fr",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "castor_rl",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "castor_rr",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "lidar_mount_3d",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M5 Extrusion Bolts",
+      "source": "gantry_stepper_mount",
+      "target": "gantry_vertical_pillar"
+    },
+    {
+      "label": "Shaft coupling",
+      "source": "lead_screw_assembly",
+      "target": "gantry_stepper_mount"
+    },
+    {
+      "label": "Lead screw brass nut M3 bolts",
+      "source": "arm_carriage_mount",
+      "target": "lead_screw_assembly"
+    },
+    {
+      "label": "Linear rail slider carriage",
+      "source": "arm_carriage_mount",
+      "target": "gantry_vertical_pillar"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "arm_1_base_adapter",
+      "target": "arm_carriage_mount"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "arm_2_base_adapter",
+      "target": "arm_carriage_mount"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "main_mcu_enclosure",
+      "target": "tray_bottom"
+    },
+    {
+      "label": "M3 standoffs",
+      "source": "motor_controller_hat_mount",
+      "target": "main_mcu_enclosure"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "imu_module_mount",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "mount",
+      "source": "lidar_mount_3d",
+      "target": "lidar_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "arm_1_base_adapter",
+      "target": "arm_1_joint_1"
+    },
+    {
+      "label": "mount",
+      "source": "arm_2_base_adapter",
+      "target": "arm_2_joint_1"
+    },
+    {
+      "label": "mount",
+      "source": "main_mcu_enclosure",
+      "target": "main_computer"
+    },
+    {
+      "label": "mount",
+      "source": "motor_controller_hat_mount",
+      "target": "motor_controller_hat"
+    },
+    {
+      "label": "mount",
+      "source": "drive_motor_left_mount",
+      "target": "drive_motor_left"
+    },
+    {
+      "label": "mount",
+      "source": "drive_motor_right_mount",
+      "target": "drive_motor_right"
+    },
+    {
+      "label": "mount",
+      "source": "gantry_stepper_mount",
+      "target": "gantry_stepper"
+    },
+    {
+      "label": "mount",
+      "source": "imu_module_mount",
+      "target": "imu_module"
+    },
+    {
+      "label": "M4 Bolts",
+      "source": "arm_structure_kit",
+      "target": "arm_1_joint_1"
+    },
+    {
+      "label": "M4 Bolts",
+      "source": "arm_structure_kit",
+      "target": "arm_2_joint_1"
+    },
+    {
+      "label": "Joint Coupling",
+      "source": "arm_1_joint_2_6",
+      "target": "arm_structure_kit"
+    },
+    {
+      "label": "Joint Coupling",
+      "source": "arm_2_joint_2_6",
+      "target": "arm_structure_kit"
+    },
+    {
+      "label": "GPIO Header Plug",
+      "source": "can_transceiver",
+      "target": "main_computer"
+    },
+    {
+      "label": "Velcro",
+      "source": "bldc_bus_bar",
+      "target": "main_chassis_frame"
+    },
+    {
+      "label": "M4 Bolts",
+      "source": "arm_1_joint_7",
+      "target": "arm_structure_kit"
+    },
+    {
+      "label": "M4 Bolts",
+      "source": "arm_2_joint_7",
+      "target": "arm_structure_kit"
+    }
+  ],
+  "projectId": "0fe90498-5bca-4b24-843e-51cfc1b838af"
+}

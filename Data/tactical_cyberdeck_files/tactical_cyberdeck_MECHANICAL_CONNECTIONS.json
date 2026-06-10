@@ -1,0 +1,222 @@
+[
+  {
+    "label": "connected by",
+    "source": "cyberdeck_base_chassis",
+    "target": "cyberdeck_lid_chassis"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "rugged_hinge_set"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_lid_chassis",
+    "target": "rugged_hinge_set"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "rugged_latch_set"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_lid_chassis",
+    "target": "rugged_latch_set"
+  },
+  {
+    "label": "seals against",
+    "source": "cyberdeck_base_chassis",
+    "target": "chassis_sealing_gasket"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "rpi_mount"
+  },
+  {
+    "label": "holds with M2 standoffs",
+    "source": "rpi_mount",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "battery_tray"
+  },
+  {
+    "label": "holds",
+    "source": "battery_tray",
+    "target": "main_battery_pack"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "power_board_mount_plate"
+  },
+  {
+    "label": "holds with M2 standoffs",
+    "source": "power_board_mount_plate",
+    "target": "battery_charger_module"
+  },
+  {
+    "label": "holds with M2 standoffs",
+    "source": "power_board_mount_plate",
+    "target": "main_5v_buck"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_lid_chassis",
+    "target": "primary_display_frame"
+  },
+  {
+    "label": "frames and secures",
+    "source": "primary_display_frame",
+    "target": "primary_display"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "secondary_display_frame"
+  },
+  {
+    "label": "frames and secures",
+    "source": "secondary_display_frame",
+    "target": "secondary_display"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_lid_chassis",
+    "target": "tertiary_display_mount"
+  },
+  {
+    "label": "holds",
+    "source": "tertiary_display_mount",
+    "target": "tertiary_display"
+  },
+  {
+    "label": "integrates",
+    "source": "cyberdeck_base_chassis",
+    "target": "control_panel"
+  },
+  {
+    "label": "mounts",
+    "source": "control_panel",
+    "target": "rotary_encoder"
+  },
+  {
+    "label": "attaches to shaft of",
+    "source": "rotary_encoder_knob_machined",
+    "target": "rotary_encoder"
+  },
+  {
+    "label": "mounts",
+    "source": "control_panel",
+    "target": "power_toggle_main"
+  },
+  {
+    "label": "mounts",
+    "source": "control_panel",
+    "target": "power_toggle_leds"
+  },
+  {
+    "label": "receives",
+    "source": "power_toggle_main",
+    "target": "toggle_switch_safety_cover"
+  },
+  {
+    "label": "receives",
+    "source": "power_toggle_leds",
+    "target": "toggle_switch_safety_cover"
+  },
+  {
+    "label": "integrates",
+    "source": "cyberdeck_base_chassis",
+    "target": "radio_bay_insert"
+  },
+  {
+    "label": "holds",
+    "source": "radio_bay_insert",
+    "target": "baofeng_radio"
+  },
+  {
+    "label": "integrates",
+    "source": "cyberdeck_base_chassis",
+    "target": "port_panel_insert"
+  },
+  {
+    "label": "mounts",
+    "source": "port_panel_insert",
+    "target": "external_power_input"
+  },
+  {
+    "label": "mounts (internal to ruggedized ports)",
+    "source": "port_panel_insert",
+    "target": "rugged_usb_hub"
+  },
+  {
+    "label": "mounts",
+    "source": "port_panel_insert",
+    "target": "led_array_housing"
+  },
+  {
+    "label": "houses",
+    "source": "led_array_housing",
+    "target": "high_power_led_array"
+  },
+  {
+    "label": "attaches to",
+    "source": "led_array_housing",
+    "target": "led_array_heatsink"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_lid_chassis",
+    "target": "gps_dome_shroud"
+  },
+  {
+    "label": "protects and houses",
+    "source": "gps_dome_shroud",
+    "target": "gps_module"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "sensor_window_mount"
+  },
+  {
+    "label": "holds",
+    "source": "sensor_window_mount",
+    "target": "waterproof_clear_window"
+  },
+  {
+    "label": "positions behind window",
+    "source": "sensor_window_mount",
+    "target": "environmental_sensor"
+  },
+  {
+    "label": "positions behind window",
+    "source": "sensor_window_mount",
+    "target": "imu_sensor"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "status_led_panel_frame"
+  },
+  {
+    "label": "frames and secures",
+    "source": "status_led_panel_frame",
+    "target": "charge_status_leds"
+  },
+  {
+    "label": "mounts",
+    "source": "cyberdeck_base_chassis",
+    "target": "rtl_sdr_antenna_port"
+  },
+  {
+    "label": "provides external access for",
+    "source": "rtl_sdr_antenna_port",
+    "target": "rtl_sdr_dongle"
+  }
+]

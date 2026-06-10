@@ -1,0 +1,1496 @@
+{
+  "plan": "Identify a suitable 7-inch 6S quadcopter frame kit to support the 1.5kg takeoff weight and specified components.\nIntegrate Holybro Pixhawk 6C Mini flight controller, Holybro M10 GPS, Holybro PM07 Power Module, and Benewake TFmini Plus for flight control and basic sensing.\nMount Raspberry Pi 5 and Luxonis OAK-D S2, ensuring proper vibration isolation and power supply via Matek BEC12S-PRO.\nSelect appropriate motors and ESCs to achieve a thrust-to-weight ratio of approximately 2 with GNB 6S batteries.\nDesign and 3D print custom mounts/enclosures for the Raspberry Pi 5, OAK-D S2, TFmini Plus, and analog FPV system.\nImplement both analog FPV for remote control and develop ROS/MAVLink interface for Raspberry Pi 5 autonomous control and target tracking.",
+  "nodes": [
+    {
+      "id": "fc_pixhawk",
+      "name": "Flight Controller",
+      "pins": [
+        "PWM Out 1-8",
+        "UART",
+        "I2C",
+        "CAN",
+        "ADC",
+        "RC In",
+        "Power In"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/evWjrZc8q5EongXkfHCD_pan08_GWqaoGkASJ4Z0D1Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91bm1h/bm5lZHJjLmNvbS9j/ZG4vc2hvcC9maWxl/cy8yMDI1MDQxMjE3/MDI1OS5wbmc_dj0x/NzQ0NDQ4Nzc3",
+      "quantity": 1,
+      "dimensions": "35x35x18mm",
+      "position3d": {
+        "x": -30,
+        "y": 49,
+        "z": -10
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 35,
+        "height": 18
+      },
+      "description": "Main flight control unit for autonomous and manual flight.",
+      "productName": "Holybro Pixhawk 6C Mini",
+      "purchaseUrl": "https://holybro.com/products/pixhawk-6c-mini",
+      "estimatedCost": 169.99,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Holybro+Pixhawk+6C+Mini&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "comp_rpi5",
+      "name": "Companion Computer",
+      "pins": [
+        "GPIO",
+        "USB 3.0",
+        "USB 2.0",
+        "Gigabit Ethernet",
+        "CSI/DSI",
+        "PCIe",
+        "UART",
+        "I2C",
+        "SPI",
+        "5V Power In",
+        "GND"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/vx3yw5DvFN2zLkI5VGUoSqUvaBKlbhWHxzs0c0MVBrM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVw/aWh1dC5jb20vY2Ru/L3Nob3AvZmlsZXMv/b2ZmaWNpYWxfcmFz/cGJlcnJ5X3BpX3By/b2R1Y3RzLnBuZz92/PTE3MTg5NzE2NDYm/d2lkdGg9NTEy",
+      "quantity": 1,
+      "dimensions": "85x56x17mm",
+      "position3d": {
+        "x": 0,
+        "y": 60.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 56,
+        "width": 85,
+        "height": 17
+      },
+      "description": "High-performance SBC for AI, target tracking, and autonomous navigation.",
+      "productName": "Raspberry Pi 5",
+      "purchaseUrl": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+      "estimatedCost": 80,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Raspberry+Pi+5&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cam_oakd_s2",
+      "name": "Depth Camera",
+      "pins": [
+        "USB-C (Data/Power)"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/imOTYId3KrSZyzCbp6I7BgtNV3t09f8r2YFN_81-ukM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcnNp/dGVpbWFnZXMuYmxv/Yi5jb3JlLndpbmRv/d3MubmV0L3N0cmVh/a3dhdmUvMDAzNzQ0/N19sdXhvbmlzLW9h/ay1kLXMyLWF1dG8t/Zm9jdXMtMTJtcC1p/bXgzNzgtYXV0by0y/eC1vdjkyODJfNjI1/LmpwZWc",
+      "quantity": 1,
+      "dimensions": "97x29.5x16mm",
+      "position3d": {
+        "x": 40,
+        "y": 107,
+        "z": -80
+      },
+      "boundingBox": {
+        "depth": 29.5,
+        "width": 97,
+        "height": 16
+      },
+      "description": "Dual-camera depth sensor for perception and object tracking.",
+      "productName": "Luxonis OAK-D S2",
+      "purchaseUrl": "https://luxonis.com/products/oak-d-s2",
+      "estimatedCost": 249,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Luxonis+OAK-D+S2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gps_m10",
+      "name": "GPS/Compass Module",
+      "pins": [
+        "UART TX",
+        "UART RX",
+        "I2C SDA",
+        "I2C SCL",
+        "VCC",
+        "GND"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/W6ztoLgkoxcB10K_oh1vvorC5jc4lgT29tJgi4kl6Fs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91ZWVz/aG9wLmx5MjAwLWNk/bi5jb20vdV9maWxl/L1VQQkUvVVBCRTMy/NS8yNTA2LzE3L3By/b2R1Y3RzL00xMEdQ/UzExLTU2YjMud2Vi/cD94LW9zcy1wcm9j/ZXNzPWltYWdlL3F1/YWxpdHkscV8xMDAv/cmVzaXplLG1fbGZp/dCxoXzI0MCx3XzI0/MA",
+      "quantity": 1,
+      "dimensions": "53x53x14mm",
+      "position3d": {
+        "x": -50,
+        "y": 117,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 53,
+        "width": 53,
+        "height": 14
+      },
+      "description": "Provides precise positioning and heading information for flight control.",
+      "productName": "Holybro M10 GPS",
+      "purchaseUrl": "https://holybro.com/products/holybro-m10-gps-module",
+      "estimatedCost": 69.9,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Holybro+M10+GPS&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "range_tfmini",
+      "name": "Forward Range Sensor",
+      "pins": [
+        "UART TX",
+        "UART RX",
+        "I2C SDA",
+        "I2C SCL",
+        "VCC",
+        "GND"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/_wek8So5qjPVSvsDmHWG2x5R7FPSjPEaJkDc9NeF41c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzE2SHlYRWhKa0wu/anBn",
+      "quantity": 1,
+      "dimensions": "35x18x16mm",
+      "position3d": {
+        "x": 120,
+        "y": 65,
+        "z": -80
+      },
+      "boundingBox": {
+        "depth": 18,
+        "width": 35,
+        "height": 16
+      },
+      "description": "Simple forward-facing LiDAR for altitude or obstacle detection.",
+      "productName": "Benewake TFmini Plus",
+      "purchaseUrl": "https://www.benewake.com/tfmini-plus",
+      "estimatedCost": 29.99,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Benewake+TFmini+Plus&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "pm_pm07",
+      "name": "FC Power Module",
+      "pins": [
+        "Battery In",
+        "ESC Power Out",
+        "FC Power Out (VCC, GND)",
+        "Current Sense",
+        "Voltage Sense"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/hwDwmmDYSK473bJL8V4IT2zlM_ui0vJrX4eDrQ9LgNo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yY2Ry/b25lLnRvcC9jZG4v/c2hvcC9maWxlcy9T/ZWU3ODY4ZWE0MDk1/NDA3OWJiODMxMWNi/ODFlODAwMTM1Lmpw/Zz92PTE3MTI1OTUw/MDEmd2lkdGg9MTk0/Ng",
+      "quantity": 1,
+      "dimensions": "68x35x10mm",
+      "position3d": {
+        "x": -30,
+        "y": 40,
+        "z": -40
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 68,
+        "height": 10
+      },
+      "description": "Provides regulated power to the flight controller and measures battery voltage/current.",
+      "productName": "Holybro PM07 Power Module",
+      "purchaseUrl": "https://holybro.com/products/holybro-pm07-power-module",
+      "estimatedCost": 39.9,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Holybro+PM07+Power+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "bec_rpi5",
+      "name": "RPi5 Power Supply",
+      "pins": [
+        "Battery In",
+        "5V Out",
+        "GND"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8x7nQOoEvLCHzAbpk4vt31FUXxMYCDNdyDPuw6mnMF4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4y/Lm1hbnRpc2Zwdi5j/b20uYXUvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDMvbWF0/ZWstYmVjMTJzLXBy/by05LTU1di10by01/di04di0xMnYtNWEt/bWFudGlzZnB2LWF1/c3RyYWxpYS1wcm9k/dWN0LXdpcmluZy1k/aXNwbGF5LXNob3dj/YXNlLWUxNzIwNzQ4/ODU0OTgxLmpwZz9z/dHJpcD1hbGw",
+      "quantity": 1,
+      "dimensions": "30x16x7mm",
+      "position3d": {
+        "x": -40,
+        "y": 60.5,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 16,
+        "width": 30,
+        "height": 7
+      },
+      "description": "Regulates battery voltage to 5V for Raspberry Pi 5.",
+      "productName": "Matek BEC12S-PRO",
+      "purchaseUrl": "https://www.mateksys.com/?portfolio=bec12s-pro",
+      "estimatedCost": 19.9,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Matek+BEC12S-PRO&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "bec_oakd_s2",
+      "name": "OAK-D S2 Power Supply",
+      "pins": [
+        "Battery In",
+        "5V Out",
+        "GND"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8x7nQOoEvLCHzAbpk4vt31FUXxMYCDNdyDPuw6mnMF4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4y/Lm1hbnRpc2Zwdi5j/b20uYXUvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDMvbWF0/ZWstYmVjMTJzLXBy/by05LTU1di10by01/di04di0xMnYtNWEt/bWFudGlzZnB2LWF1/c3RyYWxpYS1wcm9k/dWN0LXdpcmluZy1k/aXNwbGF5LXNob3dj/YXNlLWUxNzIwNzQ4/ODU0OTgxLmpwZz9z/dHJpcD1hbGw",
+      "quantity": 1,
+      "dimensions": "30x16x7mm",
+      "position3d": {
+        "x": 0,
+        "y": 60.5,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 16,
+        "width": 30,
+        "height": 7
+      },
+      "description": "Regulates battery voltage to 5V for OAK-D S2 camera.",
+      "productName": "Matek BEC12S-PRO",
+      "purchaseUrl": "https://www.mateksys.com/?portfolio=bec12s-pro",
+      "estimatedCost": 19.9,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Matek+BEC12S-PRO&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_1",
+      "name": "ESC Front Left",
+      "pins": [
+        "Signal In",
+        "Power In",
+        "Motor Out"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Pj8bbug-Dk6UjySzfbbKrgY5rGxbQIsjlengUJWs1J8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFHNHUwNGkwUkwu/anBn",
+      "quantity": 1,
+      "dimensions": "15x25x5mm",
+      "position3d": {
+        "x": 110,
+        "y": 22.5,
+        "z": -70
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 15,
+        "height": 5
+      },
+      "description": "Electronic Speed Controller for Front Left motor.",
+      "productName": "6S BLHeli_32 ESC",
+      "purchaseUrl": "https://www.racedayquads.com/collections/6s-escs",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6S+BLHeli_32+ESC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_2",
+      "name": "ESC Front Right",
+      "pins": [
+        "Signal In",
+        "Power In",
+        "Motor Out"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Pj8bbug-Dk6UjySzfbbKrgY5rGxbQIsjlengUJWs1J8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFHNHUwNGkwUkwu/anBn",
+      "quantity": 1,
+      "dimensions": "15x25x5mm",
+      "position3d": {
+        "x": 110,
+        "y": 22.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 15,
+        "height": 5
+      },
+      "description": "Electronic Speed Controller for Front Right motor.",
+      "productName": "6S BLHeli_32 ESC",
+      "purchaseUrl": "https://www.racedayquads.com/collections/6s-escs",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6S+BLHeli_32+ESC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_3",
+      "name": "ESC Rear Left",
+      "pins": [
+        "Signal In",
+        "Power In",
+        "Motor Out"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Pj8bbug-Dk6UjySzfbbKrgY5rGxbQIsjlengUJWs1J8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFHNHUwNGkwUkwu/anBn",
+      "quantity": 1,
+      "dimensions": "15x25x5mm",
+      "position3d": {
+        "x": -110,
+        "y": 22.5,
+        "z": -70
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 15,
+        "height": 5
+      },
+      "description": "Electronic Speed Controller for Rear Left motor.",
+      "productName": "6S BLHeli_32 ESC",
+      "purchaseUrl": "https://www.racedayquads.com/collections/6s-escs",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6S+BLHeli_32+ESC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_4",
+      "name": "ESC Rear Right",
+      "pins": [
+        "Signal In",
+        "Power In",
+        "Motor Out"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Pj8bbug-Dk6UjySzfbbKrgY5rGxbQIsjlengUJWs1J8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFHNHUwNGkwUkwu/anBn",
+      "quantity": 1,
+      "dimensions": "15x25x5mm",
+      "position3d": {
+        "x": -110,
+        "y": 22.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 15,
+        "height": 5
+      },
+      "description": "Electronic Speed Controller for Rear Right motor.",
+      "productName": "6S BLHeli_32 ESC",
+      "purchaseUrl": "https://www.racedayquads.com/collections/6s-escs",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6S+BLHeli_32+ESC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_1",
+      "name": "Motor Front Left",
+      "pins": [
+        "3-phase Wires"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Iks-l4CGETQU9SFk8ODQI2mBFmaNZfviSguwwEWZDHY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yY2Ry/b25lLnRvcC9jZG4v/c2hvcC9maWxlcy9I/YmQ5YjgyYWUxNzEy/NDAxOGJjMWNjNTdl/Y2NiNmE3ZTFILndl/YnA_dj0xNzQ0OTQ3/NDAxJndpZHRoPTE5/NDY",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Motor Type",
+            "value": "Brushless DC (BLDC)"
+          },
+          {
+            "label": "kV Rating",
+            "value": "1400kV"
+          },
+          {
+            "label": "Typical Operating Voltage",
+            "value": "4-6S LiPo (14.8V-22.2V)"
+          },
+          {
+            "label": "Max No-Load Speed (at 22.2V)",
+            "value": "31080 RPM"
+          },
+          {
+            "label": "Max Continuous Current",
+            "value": "30-45A (estimated)"
+          },
+          {
+            "label": "Shaft Diameter",
+            "value": "5mm"
+          },
+          {
+            "label": "Weight",
+            "value": "80-95g (estimated)"
+          },
+          {
+            "label": "Recommended Propeller Size",
+            "value": "7-inch"
+          }
+        ],
+        "summary": "This 7-inch 1400kV brushless motor is an electrical actuator designed for high-performance drone applications, typically paired with 7-inch propellers. Its 1400kV rating indicates approximately 1400 RPM per volt, offering significant power output suitable for the front-left rotor position of a 7-inch drone. It operates efficiently on 4-6S LiPo batteries, providing strong thrust for agile flight characteristics.",
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/detail/seeed-technology/108990010/6810118",
+            "note": "Emax XA2212 12V DC 1400KV Brushless Motor, suitable for 4-rotor helicopters and fixed-wing aircraft.",
+            "price": "$16.50",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.amazon.com/s?k=1400kv+brushless+motor+7inch",
+            "note": "Constructed search URL for similar 1400kV brushless motors, often found from various brands for RC applications.",
+            "price": "Varies",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20240722105156&SearchText=1400kv+brushless+motor+7inch",
+            "note": "Constructed search URL for similar 1400kV brushless motors, often available from various manufacturers for drone parts.",
+            "price": "Varies",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "dimensions": "28x15x15mm",
+      "position3d": {
+        "x": 135,
+        "y": 27.5,
+        "z": -70
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 28,
+        "height": 15
+      },
+      "description": "Brushless motor for Front Left rotor.",
+      "productName": "7inch 1400kV Brushless Motor",
+      "purchaseUrl": "https://www.racedayquads.com/collections/7-inch-drone-motors",
+      "estimatedCost": 35,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7inch+1400kV+Brushless+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_2",
+      "name": "Motor Front Right",
+      "pins": [
+        "3-phase Wires"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Iks-l4CGETQU9SFk8ODQI2mBFmaNZfviSguwwEWZDHY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yY2Ry/b25lLnRvcC9jZG4v/c2hvcC9maWxlcy9I/YmQ5YjgyYWUxNzEy/NDAxOGJjMWNjNTdl/Y2NiNmE3ZTFILndl/YnA_dj0xNzQ0OTQ3/NDAxJndpZHRoPTE5/NDY",
+      "quantity": 1,
+      "dimensions": "28x15x15mm",
+      "position3d": {
+        "x": 135,
+        "y": 27.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 28,
+        "height": 15
+      },
+      "description": "Brushless motor for Front Right rotor.",
+      "productName": "7inch 1400kV Brushless Motor",
+      "purchaseUrl": "https://www.racedayquads.com/collections/7-inch-drone-motors",
+      "estimatedCost": 35,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7inch+1400kV+Brushless+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_3",
+      "name": "Motor Rear Left",
+      "pins": [
+        "3-phase Wires"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Iks-l4CGETQU9SFk8ODQI2mBFmaNZfviSguwwEWZDHY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yY2Ry/b25lLnRvcC9jZG4v/c2hvcC9maWxlcy9I/YmQ5YjgyYWUxNzEy/NDAxOGJjMWNjNTdl/Y2NiNmE3ZTFILndl/YnA_dj0xNzQ0OTQ3/NDAxJndpZHRoPTE5/NDY",
+      "quantity": 1,
+      "dimensions": "28x15x15mm",
+      "position3d": {
+        "x": -135,
+        "y": 27.5,
+        "z": -70
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 28,
+        "height": 15
+      },
+      "description": "Brushless motor for Rear Left rotor.",
+      "productName": "7inch 1400kV Brushless Motor",
+      "purchaseUrl": "https://www.racedayquads.com/collections/7-inch-drone-motors",
+      "estimatedCost": 35,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7inch+1400kV+Brushless+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_4",
+      "name": "Motor Rear Right",
+      "pins": [
+        "3-phase Wires"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Iks-l4CGETQU9SFk8ODQI2mBFmaNZfviSguwwEWZDHY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yY2Ry/b25lLnRvcC9jZG4v/c2hvcC9maWxlcy9I/YmQ5YjgyYWUxNzEy/NDAxOGJjMWNjNTdl/Y2NiNmE3ZTFILndl/YnA_dj0xNzQ0OTQ3/NDAxJndpZHRoPTE5/NDY",
+      "quantity": 1,
+      "dimensions": "28x15x15mm",
+      "position3d": {
+        "x": -135,
+        "y": 27.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 28,
+        "height": 15
+      },
+      "description": "Brushless motor for Rear Right rotor.",
+      "productName": "7inch 1400kV Brushless Motor",
+      "purchaseUrl": "https://www.racedayquads.com/collections/7-inch-drone-motors",
+      "estimatedCost": 35,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7inch+1400kV+Brushless+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rx_elrs",
+      "name": "RC Receiver",
+      "pins": [
+        "UART TX",
+        "UART RX",
+        "VCC",
+        "GND"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fBsZ86cvYREiNCzTQxAW_MQsKxyMDBLCdEH94cvdfjg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzA2/MDkvODMyNC83MDc5/L2ZpbGVzL1JQMy1E/ZXRhaWwtUGFnZS1F/Ti1QQ18wNV80ODB4/NDgwLmpwZz92PTE2/OTI4NzEyNzE",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "sourcing": [],
+        "datasheetUrl": "https://manuals.plus/radiomaster/ep1-expresslrs-nano-receiver-2-4ghz-manual.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/radiomaster/ep1-expresslrs-nano-receiver-2-4ghz-manual.pdf",
+            "type": "guide",
+            "title": "Radiomaster",
+            "description": "EP1 receiver user manual"
+          },
+          {
+            "url": "https://manuals.plus/radiomaster/ep2-expresslrs-receiver-nano-for-zorro-manual",
+            "type": "guide",
+            "title": "Radiomaster",
+            "description": "EP2 receiver user manual"
+          },
+          {
+            "url": "https://www.expresslrs.org/software/elrs-configurator/",
+            "type": "docs",
+            "title": "ExpressLRS",
+            "description": "ExpressLRS Configurator guide"
+          },
+          {
+            "url": "https://www.expresslrs.org/quick-start/binding/",
+            "type": "guide",
+            "title": "ExpressLRS",
+            "description": "Binding procedure documentation"
+          },
+          {
+            "url": "https://github.com/ExpressLRS/ExpressLRS",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "ExpressLRS firmware source code"
+          }
+        ]
+      },
+      "dimensions": "15x10x3mm",
+      "position3d": {
+        "x": -60,
+        "y": 41.5,
+        "z": -10
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 15,
+        "height": 3
+      },
+      "description": "Receives control signals from the remote controller.",
+      "productName": "ExpressLRS Nano Receiver",
+      "purchaseUrl": "https://www.expresslrs.org/",
+      "estimatedCost": 20,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ExpressLRS+Nano+Receiver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "vtx_analog",
+      "name": "Analog Video Transmitter",
+      "pins": [
+        "Video In",
+        "Power In",
+        "Antenna Out"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Osg7NSkaDEJI6nz5x3htYXoJxKsWflmIzQdGzUcQMNg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YXJpZXNyYy5nci8y/ODAzNy1ob21lX2Rl/ZmF1bHQvbmFuby12/My12dHgtNThnaHot/NDBjaC0yNTEwMDIw/MDQwMG13LXN3aXRj/aGFibGUtZnB2LXRy/YW5zbWl0dGVyLWJ1/aWx0LWluLW1pY3Jv/cGhvbmUtc3VwcG9y/dC1vc2RwaXRtb2Rl/aXJjLXRyYW1wLmpw/Zw",
+      "quantity": 1,
+      "dimensions": "20x20x4mm",
+      "position3d": {
+        "x": 20,
+        "y": 42,
+        "z": -10
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 4
+      },
+      "description": "Transmits analog video signal from FPV camera to ground station.",
+      "productName": "FPV 5.8GHz VTX",
+      "purchaseUrl": "https://www.racedayquads.com/collections/fpv-video-transmitters",
+      "estimatedCost": 30,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=FPV+5.8GHz+VTX&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cam_fpv",
+      "name": "Analog FPV Camera",
+      "pins": [
+        "Video Out",
+        "Power In",
+        "GND"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/9YbxD-YeUK2iBU2wM8w5XS9731avP4zEO-QwCUP5Qoo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdG9y/ZS1tOG81MnAubXli/aWdjb21tZXJjZS5j/b20vcHJvZHVjdF9p/bWFnZXMvaW1nX3Bo/b2VuaXgyL1BIT0VO/SVgyXzAuanBn",
+      "quantity": 1,
+      "dimensions": "19x19x18mm",
+      "position3d": {
+        "x": 120,
+        "y": 65,
+        "z": -50
+      },
+      "boundingBox": {
+        "depth": 19,
+        "width": 19,
+        "height": 18
+      },
+      "description": "Provides live analog video feed for manual piloting.",
+      "productName": "RunCam Phoenix 2",
+      "purchaseUrl": "https://www.racedayquads.com/collections/fpv-cameras",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RunCam+Phoenix+2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "batt_main",
+      "name": "Main Battery",
+      "pins": [
+        "XT60 Connector",
+        "Balance Lead"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/vcEyjPWfW8GKQbIdA1rsPySVFlIrLHJO4gTJE3mTcI0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91ZWVz/aG9wLmx5MjAwLWNk/bi5jb20vdV9maWxl/L1VQQVovVVBBWjEw/MS8yMzExLzA4L3By/b2R1Y3RzLzYxZWYz/NjAyZTEud2VicD94/LW9zcy1wcm9jZXNz/PWltYWdlL3F1YWxp/dHkscV84MC9yZXNp/emUsbV9sZml0LGhf/NTAwLHdfNTAw",
+      "quantity": 1,
+      "dimensions": "120x40x50mm",
+      "position3d": {
+        "x": 0,
+        "y": 25,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 120,
+        "height": 50
+      },
+      "description": "Primary power source for the entire drone system.",
+      "productName": "GNB 6S LiPo Battery",
+      "purchaseUrl": "https://www.chinahobbyline.com/6s-lipo-battery",
+      "estimatedCost": 80,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GNB+6S+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "7_inch_dead_cat_frame_kit",
+      "name": "7-inch Dead Cat Frame Kit",
+      "type": "structural",
+      "category": "mechanical",
+      "material": "Carbon Fiber",
+      "quantity": 1,
+      "dimensions": "290x200x40mm",
+      "position3d": {
+        "x": 0,
+        "y": 20,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 200,
+        "width": 290,
+        "height": 40
+      },
+      "description": "Carbon fiber frame kit designed for 7-inch propellers, dead cat style for wide front view, suitable for heavy-lift applications with 6S battery setups.",
+      "productName": "Generic 7-inch Dead Cat Quadcopter Frame Kit",
+      "purchaseUrl": "https://www.amazon.com/s?k=7+inch+dead+cat+drone+frame",
+      "estimatedCost": 75,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Generic+7-inch+Dead+Cat+Quadcopter+Frame+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_nylon_standoff_kit",
+      "name": "M3 Nylon Standoff Kit",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 10,
+      "dimensions": "M3x6mm to M3x30mm",
+      "description": "Assorted M3 nylon standoffs and screws for mounting flight controllers and other electronics.",
+      "productName": "M3 Nylon Hex Standoff Spacer Screw Nut Assortment",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+nylon+standoff+kit",
+      "estimatedCost": 0.2,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Nylon+Hex+Standoff+Spacer+Screw+Nut+Assortment&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_hex_screw_assortment",
+      "name": "M3 Hex Screw Assortment",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "Alloy Steel",
+      "quantity": 20,
+      "dimensions": "M3x6mm",
+      "description": "Various lengths of M3 hex head screws for general assembly.",
+      "productName": "M3 Alloy Steel Hex Head Cap Screw Kit",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+hex+screw+kit",
+      "estimatedCost": 0.05,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Alloy+Steel+Hex+Head+Cap+Screw+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "battery_strap_250mm",
+      "name": "Lipo Battery Strap",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "Nylon Hook & Loop",
+      "quantity": 2,
+      "dimensions": "250x20mm",
+      "description": "Non-slip battery strap for securing the GNB 6S battery to the frame.",
+      "productName": "Lipo Battery Strap 250mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=lipo+battery+strap+250mm",
+      "estimatedCost": 3.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Lipo+Battery+Strap+250mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_battery_pad",
+      "name": "Lipo Battery Pad",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "Silicone",
+      "quantity": 1,
+      "dimensions": "100x50x3mm",
+      "description": "Non-slip silicone pad to cushion and secure the battery, preventing movement during flight.",
+      "productName": "Silicone Non-Slip Lipo Battery Pad",
+      "purchaseUrl": "https://www.amazon.com/s?k=lipo+battery+pad+non+slip",
+      "estimatedCost": 2,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Silicone+Non-Slip+Lipo+Battery+Pad&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "raspberry_pi_5_vibration_isolated_mount",
+      "name": "Raspberry Pi 5 Vibration Isolated Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "90x60x20mm",
+      "position3d": {
+        "x": 0,
+        "y": 50,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 90,
+        "height": 20
+      },
+      "description": "Custom 3D-printed mount designed to secure the Raspberry Pi 5 to the frame, incorporating soft TPU grommets (not included in cost/node) for vibration isolation.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 3,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "oak_d_s2_camera_mount",
+      "name": "OAK-D S2 Camera Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "100x30x40mm",
+      "position3d": {
+        "x": 40,
+        "y": 80,
+        "z": -80
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 100,
+        "height": 40
+      },
+      "description": "Custom 3D-printed mount for the Luxonis OAK-D S2 camera, allowing for adjustable angle.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "tfmini_plus_front_sensor_mount",
+      "name": "TFmini Plus Front Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "40x25x20mm",
+      "position3d": {
+        "x": 120,
+        "y": 50,
+        "z": -80
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 40,
+        "height": 20
+      },
+      "description": "Small, custom 3D-printed mount to position the Benewake TFmini Plus forward-facing for accurate ranging.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "gps_mast_mount",
+      "name": "GPS Mast Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "30x30x60mm",
+      "position3d": {
+        "x": -50,
+        "y": 80,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 30,
+        "height": 60
+      },
+      "description": "3D-printed mast and mount to elevate and securely hold the Holybro M10 GPS, reducing interference.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "analog_fpv_camera_mount",
+      "name": "Analog FPV Camera Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "TPU",
+      "quantity": 1,
+      "dimensions": "30x30x30mm",
+      "position3d": {
+        "x": 120,
+        "y": 50,
+        "z": -50
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 30,
+        "height": 30
+      },
+      "description": "Flexible 3D-printed mount for a standard analog FPV camera, providing vibration damping and angle adjustment.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1.8,
+      "printSettings": "0.2mm layer height, 100% infill"
+    }
+  ],
+  "notes": [
+    "7-inch quadcopter",
+    "1.5kg takeoff weight",
+    "Thrust-to-weight ~2",
+    "Raspberry Pi 5",
+    "OAK-D S2 camera",
+    "Analog FPV",
+    "Autonomous flight",
+    "Target tracking"
+  ],
+  "projectName": "7inch Drone AI",
+  "originalPrompt": "我想要搭建一款7寸6S的通用四旋翼，起飞重量约1.5kg，推重比在2左右，飞控选用Holybro Pixhawk 6C Mini，并且能够搭载一台树莓派5以及OAK-D S2双目深度相机，通过双目相机及简单前向测距模块作为输入，结合飞行姿态参数，由树莓派5给出目标跟踪的输出指令。四旋翼能够实现基于模拟信号摄像头及图传系统的遥控飞行，也可以实现由树莓派5控制的自主飞行。相关的硬件推荐使用如下：电池：GNB 6S电池；飞控：Holybro Pixhawk 6C Mini；伴飞计算机：Raspberry Pi 5；飞控电源模块：Holybro PM07 Power Module；深度视觉主相机：Luxonis OAK-D S2；GPS/罗盘：Holybro M10 GPS；简单前向测距模块：Benewake TFmini Plus；树莓派独立供电：Matek BEC12S-PRO",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print the Raspberry Pi 5 Vibration Isolated Mount",
+          "partIds": [
+            "raspberry_pi_5_vibration_isolated_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D print the OAK-D S2 Camera Mount",
+          "partIds": [
+            "oak_d_s2_camera_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "3D print the TFmini Plus Front Sensor Mount",
+          "partIds": [
+            "tfmini_plus_front_sensor_mount"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "3D print the GPS Mast Mount",
+          "partIds": [
+            "gps_mast_mount"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "3D print the Analog FPV Camera Mount (TPU)",
+          "partIds": [
+            "analog_fpv_camera_mount"
+          ]
+        },
+        {
+          "id": "fabricate_6",
+          "title": "Test fit all 3D printed parts with their respective electrical components",
+          "partIds": [
+            "raspberry_pi_5_vibration_isolated_mount",
+            "comp_rpi5",
+            "oak_d_s2_camera_mount",
+            "cam_oakd_s2",
+            "tfmini_plus_front_sensor_mount",
+            "range_tfmini",
+            "gps_mast_mount",
+            "gps_m10",
+            "analog_fpv_camera_mount",
+            "cam_fpv"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder ESC power wires to the Power Module and motor wires to ESCs",
+          "partIds": [
+            "pm_pm07",
+            "esc_1",
+            "esc_2",
+            "esc_3",
+            "esc_4",
+            "motor_1",
+            "motor_2",
+            "motor_3",
+            "motor_4"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder main battery connector to the Power Module, RPi5 BEC, and OAK-D S2 BEC inputs",
+          "partIds": [
+            "batt_main",
+            "pm_pm07",
+            "bec_rpi5",
+            "bec_oakd_s2"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect Power Module to Flight Controller power input and ESC signal wires to FC PWM outputs",
+          "partIds": [
+            "pm_pm07",
+            "fc_pixhawk",
+            "esc_1",
+            "esc_2",
+            "esc_3",
+            "esc_4"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect GPS/Compass module to Flight Controller UART and I2C ports",
+          "partIds": [
+            "fc_pixhawk",
+            "gps_m10"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect Forward Range Sensor to Flight Controller UART",
+          "partIds": [
+            "fc_pixhawk",
+            "range_tfmini"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect RC Receiver to Flight Controller UART",
+          "partIds": [
+            "fc_pixhawk",
+            "rx_elrs"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Connect RPi5 BEC to Companion Computer power and OAK-D S2 BEC to Depth Camera power",
+          "partIds": [
+            "bec_rpi5",
+            "comp_rpi5",
+            "bec_oakd_s2",
+            "cam_oakd_s2"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Connect Analog FPV Camera to Video Transmitter and both to Power Module for power",
+          "partIds": [
+            "cam_fpv",
+            "vtx_analog",
+            "pm_pm07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Flash Flight Controller firmware (e.g., ArduPilot/PX4) and perform initial setup",
+          "partIds": [
+            "fc_pixhawk"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Verify GPS and Compass sensor recognition and calibration within FC software",
+          "partIds": [
+            "fc_pixhawk",
+            "gps_m10"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Verify Forward Range Sensor recognition and functionality with Flight Controller",
+          "partIds": [
+            "fc_pixhawk",
+            "range_tfmini"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Configure RC Receiver with Flight Controller and calibrate radio sticks",
+          "partIds": [
+            "fc_pixhawk",
+            "rx_elrs"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Install Raspberry Pi OS on Companion Computer and update software packages",
+          "partIds": [
+            "comp_rpi5"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Test OAK-D S2 Depth Camera connection to Companion Computer via USB 3.0",
+          "partIds": [
+            "comp_rpi5",
+            "cam_oakd_s2"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Confirm Analog FPV Camera and Video Transmitter operation with FPV goggles (not in BOM)",
+          "partIds": [
+            "cam_fpv",
+            "vtx_analog"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Assemble the 7-inch Dead Cat Frame Kit using M3 screws and standoffs",
+          "partIds": [
+            "7_inch_dead_cat_frame_kit",
+            "m3_hex_screw_assortment",
+            "m3_nylon_standoff_kit"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount the Flight Controller and Power Module to the frame using M3 nylon standoffs",
+          "partIds": [
+            "fc_pixhawk",
+            "pm_pm07",
+            "7_inch_dead_cat_frame_kit",
+            "m3_nylon_standoff_kit"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount the Raspberry Pi 5 Vibration Isolated Mount to the frame and secure the Companion Computer",
+          "partIds": [
+            "raspberry_pi_5_vibration_isolated_mount",
+            "comp_rpi5",
+            "7_inch_dead_cat_frame_kit"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Attach the OAK-D S2 Camera Mount to the frame (or RPi5 mount) and secure the Depth Camera",
+          "partIds": [
+            "oak_d_s2_camera_mount",
+            "cam_oakd_s2",
+            "7_inch_dead_cat_frame_kit",
+            "raspberry_pi_5_vibration_isolated_mount"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount the TFmini Plus Front Sensor Mount to the front of the frame and secure the Forward Range Sensor",
+          "partIds": [
+            "tfmini_plus_front_sensor_mount",
+            "range_tfmini",
+            "7_inch_dead_cat_frame_kit"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Attach the GPS Mast Mount to the top plate and secure the GPS/Compass module",
+          "partIds": [
+            "gps_mast_mount",
+            "gps_m10",
+            "7_inch_dead_cat_frame_kit"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Mount the Analog FPV Camera using its mount to the front of the frame and position the Video Transmitter",
+          "partIds": [
+            "analog_fpv_camera_mount",
+            "cam_fpv",
+            "vtx_analog",
+            "7_inch_dead_cat_frame_kit"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Secure the Main Battery to the frame using the Lipo Battery Pad and Strap, and perform final cable routing",
+          "partIds": [
+            "batt_main",
+            "lipo_battery_pad",
+            "battery_strap_250mm",
+            "7_inch_dead_cat_frame_kit"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "This 7-inch quadcopter, with a 1.5kg takeoff weight and ~2 thrust-to-weight ratio, achieves autonomous flight and target tracking using a Raspberry Pi 5 companion computer and an OAK-D S2 depth camera. It integrates a flight controller for stable control and analog FPV for real-time video transmission.",
+  "instructionPreamble": {
+    "tools": [
+      "Soldering iron with fine tip",
+      "M3 hex key set",
+      "Wire strippers and cutters",
+      "3D printer (PETG and TPU capable)",
+      "Multimeter",
+      "Precision screwdriver set (M2.5, M3)",
+      "Heat gun or lighter"
+    ],
+    "assumptions": [
+      "Basic soldering experience is assumed for electrical connections.",
+      "Familiarity with assembling FPV drone frames and components.",
+      "Basic understanding of Raspberry Pi OS setup and configuration."
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main Battery to FC Power Module",
+      "source": "batt_main",
+      "target": "pm_pm07",
+      "current": "60A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "FC Power",
+      "source": "pm_pm07",
+      "target": "fc_pixhawk",
+      "current": "2A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "ESC 1 Power",
+      "source": "pm_pm07",
+      "target": "esc_1",
+      "current": "45A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "ESC 2 Power",
+      "source": "pm_pm07",
+      "target": "esc_2",
+      "current": "45A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "ESC 3 Power",
+      "source": "pm_pm07",
+      "target": "esc_3",
+      "current": "45A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "ESC 4 Power",
+      "source": "pm_pm07",
+      "target": "esc_4",
+      "current": "45A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "data",
+      "source": "fc_pixhawk",
+      "target": "esc_1",
+      "protocol": "DShot600",
+      "sourcePin": "PWM Out 1",
+      "targetPin": "Signal In"
+    },
+    {
+      "type": "data",
+      "source": "fc_pixhawk",
+      "target": "esc_2",
+      "protocol": "DShot600",
+      "sourcePin": "PWM Out 2",
+      "targetPin": "Signal In"
+    },
+    {
+      "type": "data",
+      "source": "fc_pixhawk",
+      "target": "esc_3",
+      "protocol": "DShot600",
+      "sourcePin": "PWM Out 3",
+      "targetPin": "Signal In"
+    },
+    {
+      "type": "data",
+      "source": "fc_pixhawk",
+      "target": "esc_4",
+      "protocol": "DShot600",
+      "sourcePin": "PWM Out 4",
+      "targetPin": "Signal In"
+    },
+    {
+      "type": "power",
+      "label": "Motor 1 Power",
+      "source": "esc_1",
+      "target": "motor_1",
+      "current": "45A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "Motor 2 Power",
+      "source": "esc_2",
+      "target": "motor_2",
+      "current": "45A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "Motor 3 Power",
+      "source": "esc_3",
+      "target": "motor_3",
+      "current": "45A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "Motor 4 Power",
+      "source": "esc_4",
+      "target": "motor_4",
+      "current": "45A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "data",
+      "source": "fc_pixhawk",
+      "target": "gps_m10",
+      "protocol": "UART",
+      "sourcePin": "UART",
+      "targetPin": "UART TX/RX"
+    },
+    {
+      "type": "data",
+      "source": "fc_pixhawk",
+      "target": "gps_m10",
+      "protocol": "I2C",
+      "sourcePin": "I2C",
+      "targetPin": "I2C SDA/SCL"
+    },
+    {
+      "type": "data",
+      "source": "fc_pixhawk",
+      "target": "range_tfmini",
+      "protocol": "UART",
+      "sourcePin": "UART",
+      "targetPin": "UART TX/RX"
+    },
+    {
+      "type": "data",
+      "source": "fc_pixhawk",
+      "target": "rx_elrs",
+      "protocol": "CRSF",
+      "sourcePin": "UART",
+      "targetPin": "UART TX/RX"
+    },
+    {
+      "type": "power",
+      "label": "RPi5 Power",
+      "source": "bec_rpi5",
+      "target": "comp_rpi5",
+      "current": "3A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "OAK-D S2 Power",
+      "source": "bec_oakd_s2",
+      "target": "cam_oakd_s2",
+      "current": "1.5A",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "comp_rpi5",
+      "target": "cam_oakd_s2",
+      "protocol": "USB 3.0",
+      "sourcePin": "USB 3.0",
+      "targetPin": "USB-C"
+    },
+    {
+      "type": "data",
+      "source": "comp_rpi5",
+      "target": "fc_pixhawk",
+      "protocol": "MAVLink (UART)",
+      "sourcePin": "GPIO UART",
+      "targetPin": "UART"
+    },
+    {
+      "type": "data",
+      "source": "comp_rpi5",
+      "target": "fc_pixhawk",
+      "protocol": "MAVLink (USB)",
+      "sourcePin": "USB 2.0",
+      "targetPin": "USB"
+    },
+    {
+      "type": "data",
+      "source": "cam_fpv",
+      "target": "vtx_analog",
+      "protocol": "Analog Video",
+      "sourcePin": "Video Out",
+      "targetPin": "Video In"
+    },
+    {
+      "type": "power",
+      "label": "VTX Power",
+      "source": "pm_pm07",
+      "target": "vtx_analog",
+      "current": "500mA",
+      "voltage": "9V"
+    },
+    {
+      "type": "power",
+      "label": "FPV Camera Power",
+      "source": "pm_pm07",
+      "target": "cam_fpv",
+      "current": "200mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Battery to RPi5 BEC",
+      "source": "batt_main",
+      "target": "bec_rpi5",
+      "current": "3A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "Battery to OAK-D S2 BEC",
+      "source": "batt_main",
+      "target": "bec_oakd_s2",
+      "current": "1.5A",
+      "voltage": "22.2V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounted with M3 nylon standoffs",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "holybro_pixhawk_6c_mini"
+    },
+    {
+      "label": "fastened to",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "m3_nylon_standoff_kit"
+    },
+    {
+      "label": "assembled with",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "m3_hex_screw_assortment"
+    },
+    {
+      "label": "secures",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "battery_strap_250mm"
+    },
+    {
+      "label": "placed on",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "lipo_battery_pad"
+    },
+    {
+      "label": "mounted to frame with M3 screws",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "raspberry_pi_5_vibration_isolated_mount"
+    },
+    {
+      "label": "secures with M2.5/M3 screws",
+      "source": "raspberry_pi_5_vibration_isolated_mount",
+      "target": "raspberry_pi_5"
+    },
+    {
+      "label": "attached to (optional, can be separate)",
+      "source": "raspberry_pi_5_vibration_isolated_mount",
+      "target": "oak_d_s2_camera_mount"
+    },
+    {
+      "label": "holds securely",
+      "source": "oak_d_s2_camera_mount",
+      "target": "luxonis_oak_d_s2"
+    },
+    {
+      "label": "mounted to front section",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "tfmini_plus_front_sensor_mount"
+    },
+    {
+      "label": "secures",
+      "source": "tfmini_plus_front_sensor_mount",
+      "target": "benewake_tfmini_plus"
+    },
+    {
+      "label": "attached to top plate",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "gps_mast_mount"
+    },
+    {
+      "label": "holds elevated",
+      "source": "gps_mast_mount",
+      "target": "holybro_m10_gps"
+    },
+    {
+      "label": "mounted to front (optional)",
+      "source": "7_inch_dead_cat_frame_kit",
+      "target": "cam_fpv"
+    }
+  ],
+  "projectId": "e37828b9-a0d0-4334-8a10-845bcd6934d4"
+}

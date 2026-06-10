@@ -1,0 +1,226 @@
+[
+  {
+    "type": "power",
+    "label": "Main Battery to FC Power Module",
+    "source": "batt_main",
+    "target": "pm_pm07",
+    "current": "60A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "FC Power",
+    "source": "pm_pm07",
+    "target": "fc_pixhawk",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "ESC 1 Power",
+    "source": "pm_pm07",
+    "target": "esc_1",
+    "current": "45A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "ESC 2 Power",
+    "source": "pm_pm07",
+    "target": "esc_2",
+    "current": "45A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "ESC 3 Power",
+    "source": "pm_pm07",
+    "target": "esc_3",
+    "current": "45A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "ESC 4 Power",
+    "source": "pm_pm07",
+    "target": "esc_4",
+    "current": "45A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "data",
+    "source": "fc_pixhawk",
+    "target": "esc_1",
+    "protocol": "DShot600",
+    "sourcePin": "PWM Out 1",
+    "targetPin": "Signal In"
+  },
+  {
+    "type": "data",
+    "source": "fc_pixhawk",
+    "target": "esc_2",
+    "protocol": "DShot600",
+    "sourcePin": "PWM Out 2",
+    "targetPin": "Signal In"
+  },
+  {
+    "type": "data",
+    "source": "fc_pixhawk",
+    "target": "esc_3",
+    "protocol": "DShot600",
+    "sourcePin": "PWM Out 3",
+    "targetPin": "Signal In"
+  },
+  {
+    "type": "data",
+    "source": "fc_pixhawk",
+    "target": "esc_4",
+    "protocol": "DShot600",
+    "sourcePin": "PWM Out 4",
+    "targetPin": "Signal In"
+  },
+  {
+    "type": "power",
+    "label": "Motor 1 Power",
+    "source": "esc_1",
+    "target": "motor_1",
+    "current": "45A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "Motor 2 Power",
+    "source": "esc_2",
+    "target": "motor_2",
+    "current": "45A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "Motor 3 Power",
+    "source": "esc_3",
+    "target": "motor_3",
+    "current": "45A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "Motor 4 Power",
+    "source": "esc_4",
+    "target": "motor_4",
+    "current": "45A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "data",
+    "source": "fc_pixhawk",
+    "target": "gps_m10",
+    "protocol": "UART",
+    "sourcePin": "UART",
+    "targetPin": "UART TX/RX"
+  },
+  {
+    "type": "data",
+    "source": "fc_pixhawk",
+    "target": "gps_m10",
+    "protocol": "I2C",
+    "sourcePin": "I2C",
+    "targetPin": "I2C SDA/SCL"
+  },
+  {
+    "type": "data",
+    "source": "fc_pixhawk",
+    "target": "range_tfmini",
+    "protocol": "UART",
+    "sourcePin": "UART",
+    "targetPin": "UART TX/RX"
+  },
+  {
+    "type": "data",
+    "source": "fc_pixhawk",
+    "target": "rx_elrs",
+    "protocol": "CRSF",
+    "sourcePin": "UART",
+    "targetPin": "UART TX/RX"
+  },
+  {
+    "type": "power",
+    "label": "RPi5 Power",
+    "source": "bec_rpi5",
+    "target": "comp_rpi5",
+    "current": "3A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "OAK-D S2 Power",
+    "source": "bec_oakd_s2",
+    "target": "cam_oakd_s2",
+    "current": "1.5A",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "comp_rpi5",
+    "target": "cam_oakd_s2",
+    "protocol": "USB 3.0",
+    "sourcePin": "USB 3.0",
+    "targetPin": "USB-C"
+  },
+  {
+    "type": "data",
+    "source": "comp_rpi5",
+    "target": "fc_pixhawk",
+    "protocol": "MAVLink (UART)",
+    "sourcePin": "GPIO UART",
+    "targetPin": "UART"
+  },
+  {
+    "type": "data",
+    "source": "comp_rpi5",
+    "target": "fc_pixhawk",
+    "protocol": "MAVLink (USB)",
+    "sourcePin": "USB 2.0",
+    "targetPin": "USB"
+  },
+  {
+    "type": "data",
+    "source": "cam_fpv",
+    "target": "vtx_analog",
+    "protocol": "Analog Video",
+    "sourcePin": "Video Out",
+    "targetPin": "Video In"
+  },
+  {
+    "type": "power",
+    "label": "VTX Power",
+    "source": "pm_pm07",
+    "target": "vtx_analog",
+    "current": "500mA",
+    "voltage": "9V"
+  },
+  {
+    "type": "power",
+    "label": "FPV Camera Power",
+    "source": "pm_pm07",
+    "target": "cam_fpv",
+    "current": "200mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Battery to RPi5 BEC",
+    "source": "batt_main",
+    "target": "bec_rpi5",
+    "current": "3A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "Battery to OAK-D S2 BEC",
+    "source": "batt_main",
+    "target": "bec_oakd_s2",
+    "current": "1.5A",
+    "voltage": "22.2V"
+  }
+]

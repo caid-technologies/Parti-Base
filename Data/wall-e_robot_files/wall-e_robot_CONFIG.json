@@ -1,0 +1,1495 @@
+{
+  "plan": "LicheeRV-Nano for AI and vision, ESP32 for real-time motor and sensor control.\nTB6612FNG motor driver for tracks, PCA9685 servo driver for head and arms.\nUltrasonic, IR sensors, MIPI CSI camera, mic, and speaker for environmental awareness and interaction.\n3D-printed chassis, head, arms, mounts, tracks, sprockets, and idlers for mechanical structure and mobility.\nLiPo battery with BMS and 5V buck converter for power management.\nUART communication between LicheeRV-Nano and ESP32, I2C for servo driver.",
+  "nodes": [
+    {
+      "id": "lipo_battery",
+      "name": "Main LiPo Battery",
+      "pins": [
+        "BAT+",
+        "BAT-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Dbt2z56tWtUQmCzoBreA7WRjFNziteHfsWcQub7c1gw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFuUXlWa2JqcEwu/anBn",
+      "quantity": 1,
+      "dimensions": "70x35x20mm",
+      "description": "Primary power source for the robot (2S/3S LiPo).",
+      "productName": "2S/3S LiPo Battery",
+      "purchaseUrl": "https://www.amazon.com/s?k=2s+lipo+battery",
+      "estimatedCost": 15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2S%2F3S+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "bms_module",
+      "name": "LiPo Battery Management System",
+      "pins": [
+        "BAT+",
+        "BAT-",
+        "P+",
+        "P-"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/hIKXHaUGzQM3NeX07b5PrZ91vO5Pds3nfWXXXc6X4pQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lYmhv/b3QuaW4vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjMvMDgvMTIt/NnYtYm1zLTNzLTIw/YS0xODY1MC1saXRo/aXVtLWJhdHRlcnkt/bWFuYWdlbWVudC1i/b2FyZC01MDB4NTAw/LTEud2VicA",
+      "quantity": 1,
+      "dimensions": "40x20x5mm",
+      "description": "Protects LiPo battery from overcharge, over-discharge, and overcurrent.",
+      "productName": "2S/3S BMS Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=2s+3s+bms+module",
+      "estimatedCost": 5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2S%2F3S+BMS+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "buck_converter_5v",
+      "name": "5V Step-Down Converter (Main)",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/z2pZBeDme_qpkDs5iaZtBhtyH2_VXQm-9V7qyxT8tYI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjF5TUVQY2tXWkwu/anBn",
+      "quantity": 1,
+      "dimensions": "20x15x5mm",
+      "description": "Provides stable 5V for LicheeRV-Nano and ESP32.",
+      "productName": "LM2596 DC-DC Buck Converter",
+      "purchaseUrl": "https://www.amazon.com/s?k=lm2596+buck+converter",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM2596+DC-DC+Buck+Converter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "licheerv_nano_main",
+      "name": "LicheeRV-Nano AI Brain",
+      "pins": [
+        "5V",
+        "GND",
+        "UART_TX",
+        "UART_RX",
+        "MIPI_CSI",
+        "USB_HOST"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/NkWkaepq-mMo-jmRbM33UL7LtjCb1jI52AodLthOzE4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbGVj/dHJvbmlrei5jb20v/aW1hZ2VzL3NpcGVl/ZC1saWNoZWVydi1u/YW5vLWJvYXJkXzMu/anBn",
+      "quantity": 1,
+      "dimensions": "25x25x3mm",
+      "description": "Main AI processing unit, runs Linux, handles vision and high-level AI.",
+      "productName": "LicheeRV-Nano",
+      "purchaseUrl": "https://www.amazon.com/s?k=licheerv+nano",
+      "estimatedCost": 20,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LicheeRV-Nano&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esp32_controller",
+      "name": "ESP32 Real-time Controller",
+      "pins": [
+        "VIN",
+        "GND",
+        "UART_RX",
+        "UART_TX",
+        "GPIO16 (Motor1_PWM)",
+        "GPIO17 (Motor1_DIR)",
+        "GPIO18 (Motor2_PWM)",
+        "GPIO19 (Motor2_DIR)",
+        "GPIO21 (I2C_SDA)",
+        "GPIO22 (I2C_SCL)",
+        "GPIO5 (US_Trig_Front)",
+        "GPIO4 (US_Echo_Front)",
+        "GPIO2 (US_Trig_Rear)",
+        "GPIO0 (US_Echo_Rear)",
+        "GPIO34 (IR_Front)",
+        "GPIO35 (IR_Rear)"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/-eUJ0vgFIi5r3dX4gZxgVI-2hUytldu6ze7Y5Mb2x7I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFpRTNYR3dGREwu/anBn",
+      "quantity": 1,
+      "dimensions": "50x25x10mm",
+      "description": "Handles motor control, sensor readings, and communicates with LicheeRV-Nano.",
+      "productName": "ESP32-WROOM-32 Development Board",
+      "purchaseUrl": "https://www.amazon.com/s?k=esp32+devkit",
+      "estimatedCost": 7,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32+Development+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_driver_tracks",
+      "name": "TB6612FNG Motor Driver",
+      "pins": [
+        "VM",
+        "GND",
+        "VCC",
+        "AIN1",
+        "AIN2",
+        "BIN1",
+        "BIN2",
+        "PWMA",
+        "PWMB",
+        "STBY",
+        "AO1",
+        "AO2",
+        "BO1",
+        "BO2"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/N9b2eMKp5Sa8JeJdEFK2qb-gKlRHBdPvmAiOfzVIYGs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFwbjhwcU16Mkwu/anBn",
+      "quantity": 1,
+      "dimensions": "20x20x5mm",
+      "description": "Dual DC motor driver for controlling tracks.",
+      "productName": "TB6612FNG Motor Driver",
+      "purchaseUrl": "https://www.amazon.com/s?k=tb6612fng+motor+driver",
+      "estimatedCost": 4,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TB6612FNG+Motor+Driver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "left_track_motor",
+      "name": "Left Track DC Motor",
+      "pins": [
+        "Motor+",
+        "Motor-"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/baD9LYiFShdsxIj64CO2NZRYkQ_of1OZzqkhFSNjKbA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaGFy/dmllbGVjdHJvbmlj/cy5iLWNkbi5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjEv/MDQvTjIwLTZWLTYw/MC1ScG0tTWljcm8t/TWV0YWwtR2Vhci1N/b3Rvcl9TaGFydmll/bGVjdHJvbmljcy0z/MDB4Mjk3LmpwZw",
+      "quantity": 1,
+      "dimensions": "30x10x10mm",
+      "description": "DC motor for driving the left track.",
+      "productName": "N20 Gear Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=n20+gearmotor+6v",
+      "estimatedCost": 6,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=N20+Gear+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "right_track_motor",
+      "name": "Right Track DC Motor",
+      "pins": [
+        "Motor+",
+        "Motor-"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/baD9LYiFShdsxIj64CO2NZRYkQ_of1OZzqkhFSNjKbA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaGFy/dmllbGVjdHJvbmlj/cy5iLWNkbi5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjEv/MDQvTjIwLTZWLTYw/MC1ScG0tTWljcm8t/TWV0YWwtR2Vhci1N/b3Rvcl9TaGFydmll/bGVjdHJvbmljcy0z/MDB4Mjk3LmpwZw",
+      "quantity": 1,
+      "dimensions": "30x10x10mm",
+      "description": "DC motor for driving the right track.",
+      "productName": "N20 Gear Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=n20+gearmotor+6v",
+      "estimatedCost": 6,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=N20+Gear+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "head_pan_servo",
+      "name": "Head Pan Servo",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Wgdz4aTjC5S3Xqm_JZhD_t7yzeh1isF6i2kM0BbD2IE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dHdpbnNjaGlwLmNv/bS9pbWFnZS9jYWNo/ZS9jYXRhbG9nL1By/b2R1Y3RzJTIwVHdp/bnMlMjBDaGlwJTIw/U3RvcmUlMjAyMDIw/L1NoaWVsZCUyME1v/ZHVsZXMvTW90b3Jz/JTIwRHJpdmVycy9T/RzkwJTIwTWljcm8l/MjBTbWFsbCUyMFNl/cnZvJTIwTW90b3Il/MjBQcm9kdWN0L1NH/OTAlMjBNaWNybyUy/MFNtYWxsJTIwU2Vy/dm8lMjBNb3RvciUy/MFR3aW5zJTIwQ2hp/cCUyMDQtNTUweDU1/MC5qcGc",
+      "quantity": 1,
+      "dimensions": "23x12x29mm",
+      "description": "Micro servo for horizontal head movement.",
+      "productName": "SG90 Micro Servo",
+      "purchaseUrl": "https://www.amazon.com/s?k=sg90+micro+servo",
+      "estimatedCost": 4,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "head_tilt_servo",
+      "name": "Head Tilt Servo",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Wgdz4aTjC5S3Xqm_JZhD_t7yzeh1isF6i2kM0BbD2IE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dHdpbnNjaGlwLmNv/bS9pbWFnZS9jYWNo/ZS9jYXRhbG9nL1By/b2R1Y3RzJTIwVHdp/bnMlMjBDaGlwJTIw/U3RvcmUlMjAyMDIw/L1NoaWVsZCUyME1v/ZHVsZXMvTW90b3Jz/JTIwRHJpdmVycy9T/RzkwJTIwTWljcm8l/MjBTbWFsbCUyMFNl/cnZvJTIwTW90b3Il/MjBQcm9kdWN0L1NH/OTAlMjBNaWNybyUy/MFNtYWxsJTIwU2Vy/dm8lMjBNb3RvciUy/MFR3aW5zJTIwQ2hp/cCUyMDQtNTUweDU1/MC5qcGc",
+      "quantity": 1,
+      "dimensions": "23x12x29mm",
+      "description": "Micro servo for vertical head movement.",
+      "productName": "SG90 Micro Servo",
+      "purchaseUrl": "https://www.amazon.com/s?k=sg90+micro+servo",
+      "estimatedCost": 4,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "left_arm_servo",
+      "name": "Left Arm Servo",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Wgdz4aTjC5S3Xqm_JZhD_t7yzeh1isF6i2kM0BbD2IE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dHdpbnNjaGlwLmNv/bS9pbWFnZS9jYWNo/ZS9jYXRhbG9nL1By/b2R1Y3RzJTIwVHdp/bnMlMjBDaGlwJTIw/U3RvcmUlMjAyMDIw/L1NoaWVsZCUyME1v/ZHVsZXMvTW90b3Jz/JTIwRHJpdmVycy9T/RzkwJTIwTWljcm8l/MjBTbWFsbCUyMFNl/cnZvJTIwTW90b3Il/MjBQcm9kdWN0L1NH/OTAlMjBNaWNybyUy/MFNtYWxsJTIwU2Vy/dm8lMjBNb3RvciUy/MFR3aW5zJTIwQ2hp/cCUyMDQtNTUweDU1/MC5qcGc",
+      "quantity": 1,
+      "dimensions": "23x12x29mm",
+      "description": "Micro servo for left arm articulation.",
+      "productName": "SG90 Micro Servo",
+      "purchaseUrl": "https://www.amazon.com/s?k=sg90+micro+servo",
+      "estimatedCost": 4,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "right_arm_servo",
+      "name": "Right Arm Servo",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Wgdz4aTjC5S3Xqm_JZhD_t7yzeh1isF6i2kM0BbD2IE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dHdpbnNjaGlwLmNv/bS9pbWFnZS9jYWNo/ZS9jYXRhbG9nL1By/b2R1Y3RzJTIwVHdp/bnMlMjBDaGlwJTIw/U3RvcmUlMjAyMDIw/L1NoaWVsZCUyME1v/ZHVsZXMvTW90b3Jz/JTIwRHJpdmVycy9T/RzkwJTIwTWljcm8l/MjBTbWFsbCUyMFNl/cnZvJTIwTW90b3Il/MjBQcm9kdWN0L1NH/OTAlMjBNaWNybyUy/MFNtYWxsJTIwU2Vy/dm8lMjBNb3RvciUy/MFR3aW5zJTIwQ2hp/cCUyMDQtNTUweDU1/MC5qcGc",
+      "quantity": 1,
+      "dimensions": "23x12x29mm",
+      "description": "Micro servo for right arm articulation.",
+      "productName": "SG90 Micro Servo",
+      "purchaseUrl": "https://www.amazon.com/s?k=sg90+micro+servo",
+      "estimatedCost": 4,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ultrasonic_front",
+      "name": "Front Ultrasonic Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "TRIG",
+        "ECHO"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/7EwKqI21B7boffxTNZVfhR7sVdOebP_NXAThRs-MRZE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dHdpbnNjaGlwLmNv/bS9pbWFnZS9jYWNo/ZS9jYXRhbG9nL1By/b2R1Y3RzJTIwVHdp/bnMlMjBDaGlwJTIw/U3RvcmUlMjAyMDIw/L0hDLVNSMDQlMjBV/bHRyYXNvbmljJTIw/TW91bnRpbmclMjBC/cmFja2V0L0hDLVNS/MDQlMjBVbHRyYXNv/bmljJTIwU2Vuc29y/JTIwTW91bnRpbmcl/MjBCcmFja2V0JTIw/LSUyMFR3aW5zJTIw/Q2hpcCUyMDMtMjUw/eDI1MC5qcGc",
+      "quantity": 1,
+      "dimensions": "45x20x15mm",
+      "description": "Measures distance for obstacle avoidance (front).",
+      "productName": "HC-SR04 Ultrasonic Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=hc-sr04+ultrasonic",
+      "estimatedCost": 2,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HC-SR04+Ultrasonic+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ultrasonic_rear",
+      "name": "Rear Ultrasonic Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "TRIG",
+        "ECHO"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/7EwKqI21B7boffxTNZVfhR7sVdOebP_NXAThRs-MRZE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dHdpbnNjaGlwLmNv/bS9pbWFnZS9jYWNo/ZS9jYXRhbG9nL1By/b2R1Y3RzJTIwVHdp/bnMlMjBDaGlwJTIw/U3RvcmUlMjAyMDIw/L0hDLVNSMDQlMjBV/bHRyYXNvbmljJTIw/TW91bnRpbmclMjBC/cmFja2V0L0hDLVNS/MDQlMjBVbHRyYXNv/bmljJTIwU2Vuc29y/JTIwTW91bnRpbmcl/MjBCcmFja2V0JTIw/LSUyMFR3aW5zJTIw/Q2hpcCUyMDMtMjUw/eDI1MC5qcGc",
+      "quantity": 1,
+      "dimensions": "45x20x15mm",
+      "description": "Measures distance for obstacle avoidance (rear).",
+      "productName": "HC-SR04 Ultrasonic Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=hc-sr04+ultrasonic",
+      "estimatedCost": 2,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HC-SR04+Ultrasonic+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ir_sensor_front",
+      "name": "Front IR Obstacle Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "OUT"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/-TnBZ4Vvuv_owhr10IhwtCVDPX7PgwwZZdbWkIIIDs8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9raXRz/Z3VydS5jb20vY2Ru/L3Nob3AvcHJvZHVj/dHMvcHJvZHVjdHMt/MS0yMF9kYTFlNzJi/MC1lNjYyLTQ3MmQt/OTA5Ni1kNmI0MWJi/MTBiMWVfNDIweC5q/cGc_dj0xNjQxMzgz/NDUw",
+      "quantity": 1,
+      "dimensions": "32x14x7mm",
+      "description": "Detects nearby obstacles using infrared (front).",
+      "productName": "IR Obstacle Avoidance Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=ir+obstacle+sensor",
+      "estimatedCost": 1.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=IR+Obstacle+Avoidance+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ir_sensor_rear",
+      "name": "Rear IR Obstacle Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "OUT"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/-TnBZ4Vvuv_owhr10IhwtCVDPX7PgwwZZdbWkIIIDs8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9raXRz/Z3VydS5jb20vY2Ru/L3Nob3AvcHJvZHVj/dHMvcHJvZHVjdHMt/MS0yMF9kYTFlNzJi/MC1lNjYyLTQ3MmQt/OTA5Ni1kNmI0MWJi/MTBiMWVfNDIweC5q/cGc_dj0xNjQxMzgz/NDUw",
+      "quantity": 1,
+      "dimensions": "32x14x7mm",
+      "description": "Detects nearby obstacles using infrared (rear).",
+      "productName": "IR Obstacle Avoidance Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=ir+obstacle+sensor",
+      "estimatedCost": 1.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=IR+Obstacle+Avoidance+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mic_module_usb",
+      "name": "USB Microphone Module",
+      "pins": [
+        "USB_DP",
+        "USB_DM",
+        "VCC",
+        "GND"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/W5i5Uj0-yqfIBgfbSGjIW_KKgGZklRXOMZEvLr45a7w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bW92b3Bob3RvLmNv/bS9jZG4vc2hvcC9m/aWxlcy9Qb3J0YWJs/ZV9NaW5pX01pY3Jv/cGhvbmVzX01pbmlf/VVNCX01pY3JvcGhv/bmVzXzEyMDB4MTAw/MF81YTZkNWI1Ny0z/NTM4LTQ3NTItYmMx/Yy05MGU4NDVmOWJm/M2FfMTYwMHguanBn/P3Y9MTY2MjY1OTgz/Mg",
+      "quantity": 1,
+      "dimensions": "20x15x5mm",
+      "description": "Microphone for voice interaction, connected via USB to LicheeRV-Nano.",
+      "productName": "Mini USB Microphone",
+      "purchaseUrl": "https://www.amazon.com/s?k=usb+microphone+module",
+      "estimatedCost": 8,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+USB+Microphone&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "speaker_module_amp",
+      "name": "Speaker with Amplifier",
+      "pins": [
+        "VCC",
+        "GND",
+        "L_IN",
+        "R_IN",
+        "SPK_L+",
+        "SPK_L-",
+        "SPK_R+",
+        "SPK_R-"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/PdoY6qlUsYI3krjuc6rbfAFUzdVc7yc1u8oGqDTOCvU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aWNzdGF0aW9uLmNv/bS9pbWFnZXMvbWlk/ZGxlL3Byb2R1Y3Rz/LzExODgwXzdfNjYz/OS5qcGc",
+      "quantity": 1,
+      "dimensions": "25x20x10mm",
+      "description": "Speaker for audio output, driven by an amplifier.",
+      "productName": "PAM8403 Audio Amplifier with Speaker",
+      "purchaseUrl": "https://www.amazon.com/s?k=pam8403+speaker+module",
+      "estimatedCost": 7,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PAM8403+Audio+Amplifier+with+Speaker&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "chassis",
+      "name": "Main Chassis",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "150x120x60mm",
+      "description": "Base structure holding motors, electronics, and providing mounting points for tracks, arms, and head.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 5,
+      "printSettings": "0.2mm layer height, 25% infill"
+    },
+    {
+      "id": "track_motor_left",
+      "name": "Left Track Motor",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "metal, plastic",
+      "quantity": 1,
+      "dimensions": "37x22x18mm",
+      "description": "Small DC gear motor for driving the left track.",
+      "productName": "N20 DC Gear Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=N20+DC+gear+motor+6V",
+      "estimatedCost": 6,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=N20+DC+Gear+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "track_motor_right",
+      "name": "Right Track Motor",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "metal, plastic",
+      "quantity": 1,
+      "dimensions": "37x22x18mm",
+      "description": "Small DC gear motor for driving the right track.",
+      "productName": "N20 DC Gear Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=N20+DC+gear+motor+6V",
+      "estimatedCost": 6,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=N20+DC+Gear+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "track_motor_mount",
+      "name": "Track Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "dimensions": "40x25x15mm",
+      "description": "Mounts for N20 gear motors to the chassis.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "left_track",
+      "name": "Left Rubber Track",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "rubber",
+      "quantity": 1,
+      "dimensions": "200x20x5mm",
+      "description": "Rubber track band for mobility.",
+      "productName": "Mini Robot Rubber Track",
+      "purchaseUrl": "https://www.amazon.com/s?k=mini+robot+rubber+track",
+      "estimatedCost": 5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Robot+Rubber+Track&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "right_track",
+      "name": "Right Rubber Track",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "rubber",
+      "quantity": 1,
+      "dimensions": "200x20x5mm",
+      "description": "Rubber track band for mobility.",
+      "productName": "Mini Robot Rubber Track",
+      "purchaseUrl": "https://www.amazon.com/s?k=mini+robot+rubber+track",
+      "estimatedCost": 5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Robot+Rubber+Track&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "drive_sprocket",
+      "name": "Drive Sprocket",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "dimensions": "25x25x10mm",
+      "description": "Cogged wheel to engage with the track and be driven by the motor.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "0.2mm layer height, 100% infill"
+    },
+    {
+      "id": "idler_wheel",
+      "name": "Idler Wheel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "dimensions": "25x25x10mm",
+      "description": "Smooth wheel to guide the track on the opposite end of the drive sprocket.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "0.2mm layer height, 100% infill"
+    },
+    {
+      "id": "idler_mount",
+      "name": "Idler Wheel Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "dimensions": "30x20x15mm",
+      "description": "Bracket to mount the idler wheels to the chassis.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.2,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "head_assembly",
+      "name": "Robot Head Assembly",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "50x70x60mm",
+      "description": "Main housing for the camera, mic, and supporting pan/tilt servos.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "head_pan_servo_mount",
+      "name": "Head Pan Servo Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "35x20x20mm",
+      "description": "Bracket for the head's pan servo.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "head_tilt_servo_mount",
+      "name": "Head Tilt Servo Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "35x20x20mm",
+      "description": "Bracket for the head's tilt servo.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "left_arm_assembly",
+      "name": "Left Arm Assembly",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "80x30x20mm",
+      "description": "Articulated arm structure for expressive movement.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "right_arm_assembly",
+      "name": "Right Arm Assembly",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "80x30x20mm",
+      "description": "Articulated arm structure for expressive movement.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "arm_servo_mount",
+      "name": "Arm Servo Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "dimensions": "35x20x20mm",
+      "description": "Mounting bracket for arm servos.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "camera_mipi_mount",
+      "name": "Camera MIPI Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "25x25x10mm",
+      "description": "Mount to secure the MIPI CSI camera inside the robot head.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.2,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "ultrasonic_sensor_mount",
+      "name": "Ultrasonic Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "45x25x15mm",
+      "description": "Housing/mount for the ultrasonic sensor on the chassis front.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.2,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "ir_sensor_mount",
+      "name": "IR Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "dimensions": "20x10x8mm",
+      "description": "Small mounts for IR sensors on the chassis.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "mic_module_mount",
+      "name": "Mic Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "15x15x5mm",
+      "description": "Small mount for the microphone module in the head.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.05,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "speaker_mount",
+      "name": "Speaker Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "30x30x10mm",
+      "description": "Mount for the small speaker in the head or chassis.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.15,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "lipo_battery_tray",
+      "name": "LiPo Battery Tray",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "70x40x25mm",
+      "description": "Tray to securely hold the LiPo battery within the chassis.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 25% infill"
+    },
+    {
+      "id": "bms_module_mount",
+      "name": "BMS Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "35x25x8mm",
+      "description": "Mount for the BMS module.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "buck_5v_mount",
+      "name": "Buck 5V Converter Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "25x20x8mm",
+      "description": "Mount for the 5V buck converter.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "servo_mg90s_head_pan",
+      "name": "Head Pan Servo",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "metal, plastic",
+      "quantity": 1,
+      "dimensions": "23x12x29mm",
+      "description": "Metal gear servo for head pan movement.",
+      "productName": "TowerPro MG90S",
+      "purchaseUrl": "https://www.amazon.com/s?k=MG90S+servo",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TowerPro+MG90S&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "servo_mg90s_head_tilt",
+      "name": "Head Tilt Servo",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "metal, plastic",
+      "quantity": 1,
+      "dimensions": "23x12x29mm",
+      "description": "Metal gear servo for head tilt movement.",
+      "productName": "TowerPro MG90S",
+      "purchaseUrl": "https://www.amazon.com/s?k=MG90S+servo",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TowerPro+MG90S&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "servo_mg90s_arm_left",
+      "name": "Left Arm Servo",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "metal, plastic",
+      "quantity": 1,
+      "dimensions": "23x12x29mm",
+      "description": "Metal gear servo for left arm movement.",
+      "productName": "TowerPro MG90S",
+      "purchaseUrl": "https://www.amazon.com/s?k=MG90S+servo",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TowerPro+MG90S&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "servo_mg90s_arm_right",
+      "name": "Right Arm Servo",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "metal, plastic",
+      "quantity": 1,
+      "dimensions": "23x12x29mm",
+      "description": "Metal gear servo for right arm movement.",
+      "productName": "TowerPro MG90S",
+      "purchaseUrl": "https://www.amazon.com/s?k=MG90S+servo",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TowerPro+MG90S&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_bolt_short",
+      "name": "M3x6mm Bolt",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "steel",
+      "quantity": 30,
+      "dimensions": "M3x6mm",
+      "description": "Used for general component mounting.",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+bolts",
+      "estimatedCost": 0.05,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Bolt&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_bolt_long",
+      "name": "M3x12mm Bolt",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "steel",
+      "quantity": 10,
+      "dimensions": "M3x12mm",
+      "description": "Used for chassis assembly and structural connections.",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x12mm+bolts",
+      "estimatedCost": 0.06,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x12mm+Bolt&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_nut",
+      "name": "M3 Nut",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "steel",
+      "quantity": 40,
+      "dimensions": "M3",
+      "description": "Used with M3 bolts.",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+nuts",
+      "estimatedCost": 0.03,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_bolt",
+      "name": "M2x8mm Bolt",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "steel",
+      "quantity": 10,
+      "dimensions": "M2x8mm",
+      "description": "Used for mounting smaller PCBs like LicheeRV-Nano, ESP32.",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2x8mm+bolts",
+      "estimatedCost": 0.04,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x8mm+Bolt&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_nut",
+      "name": "M2 Nut",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "steel",
+      "quantity": 10,
+      "dimensions": "M2",
+      "description": "Used with M2 bolts.",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2+nuts",
+      "estimatedCost": 0.02,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_standoff_short",
+      "name": "M3x10mm Standoff",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "brass",
+      "quantity": 8,
+      "dimensions": "M3x10mm",
+      "description": "Female-female standoff for PCB mounting.",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x10mm+standoff",
+      "estimatedCost": 0.15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Standoff&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_standoff_long",
+      "name": "M3x20mm Standoff",
+      "type": "misc",
+      "category": "mechanical",
+      "material": "brass",
+      "quantity": 4,
+      "dimensions": "M3x20mm",
+      "description": "Female-female standoff for stacking components or supporting the chassis.",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x20mm+standoff",
+      "estimatedCost": 0.2,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x20mm+Standoff&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "display_st7789",
+      "name": "Wall-E Face Display",
+      "type": "display",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/qSnOXcHgzrwbgIh1RFGgBfxDGLisi81bY_su5x7sYKo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzEtTlBkejlYNEwu/anBn",
+      "quantity": 1,
+      "dimensions": "27.7mm x 39.2mm x 7.2mm",
+      "description": "A 1.3-inch color IPS TFT display with a resolution of 240x240, used to show Wall-E's facial expressions.",
+      "productName": "1.3\" 240x240 Color IPS TFT Display with ST7789 Driver - SPI Interface",
+      "purchaseUrl": "https://www.adafruit.com/product/4313",
+      "estimatedCost": 7.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1.3%22+240x240+Color+IPS+TFT+Display+with+ST7789+Driver+-+SPI+Interface&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "display_mount",
+      "name": "Face Display Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "description": "A custom 3D printed mount to securely attach the ST7789 display to the head assembly.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 0.45,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "watchdog_timer",
+      "name": "System Watchdog Timer",
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/IztUcRwoMKpaWPK1U7iJYv9OX0PzaeZ71zCj9OYniWI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVw/aWh1dC5jb20vY2Ru/L3Nob3AvcHJvZHVj/dHMvc3BhcmtmdW4t/bmFuby1wb3dlci10/aW1lci10cGw1MTEw/LXNwYXJrZnVuLXBy/dC0xNTM1My00MDIw/MzIxNjAyNzg0M182/MDB4LmpwZz92PTE2/NzcyNTg0Mzk",
+      "quantity": 1,
+      "description": "External hardware watchdog timer to monitor and reset the LicheeRV-Nano and ESP32 if they become unresponsive.",
+      "productName": "TPL5110 Nano Power Timer",
+      "purchaseUrl": "https://www.sparkfun.com/products/14352",
+      "estimatedCost": 3.95,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TPL5110+Nano+Power+Timer&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "watchdog_mount",
+      "name": "Watchdog Timer Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "description": "A small 3D printed bracket to mount the watchdog timer module inside the main chassis.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 0.15,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "combined_controller_mount",
+      "name": "Combined Controller & Driver Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "description": "A single 3D-printed part to mount the LicheeRV-Nano, ESP32, and the TB6612FNG motor driver, reducing print time and material.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "camera_mipi_csi_ov5647",
+      "name": "Cost-Effective MIPI CSI Camera",
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Go3j8rgPayvygWRHCUqUjcQGjJUj3YzJxOOU9e_RrtE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGhlZW5naW5lZXJz/dG9yZS5pbi9jZG4v/c2hvcC9wcm9kdWN0/cy9BcmR1Y2FtLU1J/TkktT1Y1NjQ3LVdp/ZGUtYW5nbGUtY2Ft/ZXJhLW1vZHVsZS1m/b3ItUmFzcGJlcnJ5/LVBpLTQzMy1CLWFu/ZC1Nb3JlLTEtMzE0/eDI1Mi5qcGc_dj0x/NzAzODU1NTQ4Jndp/ZHRoPTMyMA",
+      "quantity": 1,
+      "productName": "OV5647 MIPI CSI Camera Module",
+      "purchaseUrl": "https://www.example.com/ov5647-camera",
+      "estimatedCost": 8.99,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=OV5647+MIPI+CSI+Camera+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "compact size",
+    "low cost",
+    "real-time responsiveness",
+    "expandable AI",
+    "indoor environment",
+    "expressive movement"
+  ],
+  "approach": "# Project: Wall-E Robot\n\n## Overview\nThis project details the construction of a compact, low-cost \"Wall-E\" inspired robot. It features real-time motor and sensor control via an ESP32, enhanced with an expandable AI brain (LicheeRV-Nano) for complex tasks like vision and audio processing, all housed within a 3D-printed chassis for indoor environments and expressive movement.\n\n## Assumptions\n*  **Power Source:** 7.4-12.6V LiPo Battery.\n*  **Environment:** Indoor, dry, level surfaces.\n*  **Skill Level:** Intermediate hardware assembly and basic embedded programming knowledge.\n*  **Tools:** 3D printer, soldering iron, basic hand tools (screwdrivers, wire strippers).\n\n## Action Items\n- [ ] Print all 3D mechanical components (chassis, mounts, head, arms, tracks).\n- [ ] Mount motors (left_track_motor, right_track_motor) and attach tracks (left_track, right_track).\n- [ ] Install power management (lipo_battery, bms_module, buck_converter_5v).\n- [ ] Mount main controllers (licheerv_nano_main, esp32_controller) and motor driver (motor_driver_tracks) to combined_controller_mount.\n- [ ] Connect track motors to motor_driver_tracks and motor driver to esp32_controller.\n- [ ] Mount and wire head assembly servos (head_pan_servo, head_tilt_servo) and arm servos (left_arm_servo, right_arm_servo) to esp32_controller.\n- [ ] Integrate all sensors (ultrasonic_front, ultrasonic_rear, ir_sensor_front, ir_sensor_rear, mic_module_usb, camera_mipi_csi_ov5647) with their respective MCUs.\n- [ ] Connect display (display_st7789) and speaker (speaker_module_amp) to licheerv_nano_main.\n- [ ] Establish inter-MCU communication (licheerv_nano_main ↔ esp32_controller via UART).\n- [ ] Implement watchdog timer (watchdog_timer) for system reliability.\n- [ ] Finalize wiring, ensuring all power and data connections are secure.\n- [ ] Load initial firmware onto both MCUs.\n\n## Assembly Key Points\n\n| Component A           | Component B             | Key Considerations                                                                                                 |\n| :-------------------- | :---------------------- | :----------------------------------------------------------------------------------------------------------------- |\n| lipo_battery          | bms_module              | Connect BAT+ and BAT- for power.                                                                                   |\n| bms_module            | buck_converter_5v       | Power input P+ and P- of BMS to VIN+ and VIN- of buck converter.                                                   |\n| bms_module            | motor_driver_tracks     | Power P+ and P- of BMS to VM and GND of motor driver.                                                              |\n| buck_converter_5v     | licheerv_nano_main      | VOUT+ to 5V, VOUT- to GND.                                                                                         |\n| buck_converter_5v     | esp32_controller        | VOUT+ to VIN, VOUT- to GND.                                                                                        |\n| licheerv_nano_main    | esp32_controller        | UART_TX (LicheeRV) to UART_RX (ESP32), UART_RX (LicheeRV) to UART_TX (ESP32).                                      |\n| esp32_controller      | motor_driver_tracks     | GPIO16 (Motor1_PWM) to PWMA, GPIO17 (Motor1_DIR) to AIN1/AIN2; GPIO18 (Motor2_PWM) to PWMB, GPIO19 (Motor2_DIR) to BIN1/BIN2. |\n| motor_driver_tracks   | left_track_motor/right_track_motor | AO1/AO2 for left, BO1/BO2 for right.                                                                               |\n| esp32_controller      | ultrasonic_front/rear   | Front: GPIO5 (US_Trig_Front) to TRIG, ECHO to GPIO4 (US_Echo_Front). Rear: GPIO2 (US_Trig_Rear) to TRIG, ECHO to GPIO0 (US_Echo_Rear). |\n| esp32_controller      | ir_sensor_front/rear    | GPIO34 (IR_Front) to OUT, GPIO35 (IR_Rear) to OUT.                                                                 |\n| licheerv_nano_main    | mic_module_usb          | USB_HOST for data and 5V for power.                                                                                |\n| licheerv_nano_main    | speaker_module_amp      | I2S_OUT for data, 5V for power.                                                                                    |\n| licheerv_nano_main    | display_st7789          | SPI for data, 3.3V to VIN for power.                                                                               |\n| watchdog_timer        | licheerv_nano_main      | DRV to RESET; GPIO_A (LicheeRV) to DONE.                                                                           |\n| watchdog_timer        | esp32_controller        | DRV_ALT to EN; GPIO_B (ESP32) to DONE_ALT.                                                                         |\n| bms_module            | esp32_controller        | LOW_BATT_OUT to GPIO_C for battery monitoring.                                                                     |\n| esp32_controller      | head_pan_servo/tilt_servo/left_arm_servo/right_arm_servo | PWM pins GPIO12-GPIO15 to Signal. Power from buck_converter_5v.                                                    |\n| licheerv_nano_main    | camera_mipi_csi_ov5647  | MIPI_CSI for data. Power from buck_converter_5v.                                                                   |\n| chassis               | track_motor_mount       | M3x12mm bolts for secure mounting.                                                                                 |\n| track_motor_mount     | left_track_motor/right_track_motor | M2x8mm bolts for secure mounting.                                                                                  |\n| left/right_track_motor | drive_sprocket          | Ensure tight shaft coupling for reliable track movement.                                                           |\n| head_assembly         | head_pan_servo/head_tilt_servo | Servo horns attach to mounts for smooth articulation.                                                              |\n| chassis               | combined_controller_mount | Mount with M3 bolts; ensure proper orientation for component access.                                               |\n| combined_controller_mount | licheerv_nano_main/esp32_controller/motor_driver_tracks | Use M2 bolts for secure attachment. Ensure clearance for wiring.                                                   |\n| head_assembly         | camera_mipi_mount       | M3x6mm bolts, ensuring camera lens is clear.                                                                       |\n| display_mount         | display_st7789          | M2x8mm bolts, careful not to overtighten and damage display.                                                       |",
+  "projectName": "Wall-E Robot",
+  "originalPrompt": "Autonomous Wall-E Robot (LicheeRV-Nano Edition)\n\nOverview\n\nThis project builds a compact, cost-effective autonomous Wall-E robot using a LicheeRV-Nano as the AI brain and an ESP32 for real-time control.\n\nThe robot supports:\n\nObstacle avoidance (ultrasonic + IR)\n\nObject & face tracking (camera + NPU)\n\nVoice interaction (mic + speaker)\n\nExpressive movement (head + arms with servos)\n\nAgent-based behavior (local + optional cloud AI)\n\nThe architecture is optimized for:\n\n✅ Small size\n\n✅ Low cost\n\n✅ Real-time responsiveness\n\n✅ Expandable AI capabilities\n\nSystem Architecture\n\n🧠 High-Level Design\n\n+----------------------+\n\n| LicheeRV-Nano |\n\n| (Vision + AI Agent) |\n\n+----------+-----------+\n\n|\n\nUART / WiFi\n\n|\n\n+----------v-----------+\n\n| ESP32 |\n\n| (Motor + Sensors) |\n\n+----+-----------+-----+\n\n| |\n\nMotors/Tracks Sensors\n\n|\n\nServos\n\nAssumptions\n\nPower Source: 2S/3S LiPo (7.4V–12.6V)\n\nEnvironment: Indoor / controlled lighting\n\nSkill Level: Intermediate embedded + robotics\n\nSoftware:\n\nLicheeRV: Linux (Buildroot/Debian)\n\nESP32: Arduino / ESP-IDF\n\nAction Items\n\n🔧 Mechanical\n\n[ ] 3D print chassis, head, arms, mounts\n\n[ ] Assemble tracks (motors, sprockets, idlers)\n\n[ ] Install head pan/tilt mechanism\n\n[ ] Mount arm servos\n\n⚡ Electronics\n\n[ ] Mount LicheeRV-Nano\n\n[ ] Mount ESP32\n\n[ ] Install motor driver (TB6612FNG or BTS7960)\n\n[ ] Install servo driver (PCA9685)\n\n[ ] Install camera (MIPI CSI)\n\n[ ] Install mic + speaker\n\n[ ] Install ultrasonic + IR sensors\n\n🔌 Wiring\n\n[ ] Power distribution setup\n\n[ ] UART between LicheeRV ↔ ESP32\n\n[ ] I2C for servo driver\n\n[ ] Motor driver connections\n\n[ ] Sensor wiring\n\n🧪 Testing\n\n[ ] Power test (no load)\n\n[ ] Motor test\n\n[ ] Servo calibration\n\n[ ] Sensor readings\n\n[ ] Camera + AI test\n\n[ ] Full integration\n\nAssembly Key Points\n\nComponent A\n\nComponent B\n\nKey Considerations\n\nlipo_battery\n\nbms_module\n\nProtect battery, correct polarity\n\nbms_module\n\nbuck_5v\n\nStable 5V output\n\nbuck_5v\n\nlicheerv_nano\n\nNeeds stable 5V (check current rating)\n\nbuck_5v\n\nesp32\n\nPower via VIN/5V pin\n\nlicheerv_nano\n\ncamera_mipi\n\nSecure ribbon cable\n\nlicheerv_nano\n\nesp32\n\nUART TX/RX cross connection\n\nesp32\n\nmotor_driver\n\nPWM + direction pins\n\nmotor_driver\n\ntrack_motors\n\nEnsure correct polarity\n\nesp32\n\npca9685\n\nI2C (SDA/SCL)\n\npca9685\n\nservos\n\nExternal power required (important!)\n\nesp32\n\nultrasonic_sensors\n\nSeparate trig/echo pins\n\nesp32\n\nir_sensors\n\nADC inputs\n\nlicheerv_nano\n\nmic_module\n\nUSB/I2S audio input\n\nlicheerv_nano\n\nspeaker\n\nAudio output\n\nPower Architecture\n\nLiPo Battery\n\n|\n\nBMS\n\n|\n\n+--------+--------+\n\n| |\n\nBuck 5V Motor Driver\n\n| |\n\n+---+---+ Motors\n\n| |\n\nLichee ESP32\n\n|\n\n3.3V Reg (if needed)\n\nSystem_Plan\n—\nLicheeRV-Nano for AI, ESP32 for real-time control, with a TB6612FNG/BTS7960 motor driver and PCA9685 servo driver. - Ultrasonic, IR sensors, MIPI CSI camera, microphone, and speaker for perception and interaction. - 3D-printed chassis, head, arms, and mounts for the robot's structure and articulation. - Tracks, motors, sprockets, and idlers for mobility. - LiPo battery with BMS, buck 5V converter for power management. - UART for LicheeRV-Nano to ESP32 communication, I2C for servo driver.\nGeneration_Status\nPlanning architecture...\nClarifying design choices...\nGenerating electrical design...\nGenerating mechanical design...\nDesign ready\n> Smart Home Display, Custom Keypad, Mini Robotic Arm etc...\n\n3E8 Blueprint\nRefine Your Design\nAnswer to customize the hardware architecture, or skip to use defaults.\n\n1.Which motor driver suits power and size needs?\n\nTB6612FNG (low current, compact)\nBTS7960 (high current, larger)\nCustom H-bridge (specific current)\nIntegrated driver IC (tiny, limited power)\nOther...\n2.How will servos be powered efficiently?\n\nDedicated 5V BEC from LiPo\nESP32 5V output\nLicheeRV 5V output\nAnother buck converter on ESP32\nOther...\n3.What audio solution fits size and function?\n\nUSB microphone/speaker\nI2S mic, PAM8403 amp\nAnalog mic, small speaker\nIntegrated audio codec\nOther...",
+  "projectDescription": "This project details the construction of a compact, low-cost \"Wall-E\" inspired robot. It features real-time motor and sensor control via an ESP32, enhanced with an expandable AI brain (LicheeRV-Nano) for complex tasks like vision and audio processing, all housed within a 3D-printed chassis for indoor environments and expressive movement.",
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "bms_module",
+      "voltage": "7.4-12.6V"
+    },
+    {
+      "type": "power",
+      "source": "bms_module",
+      "target": "buck_converter_5v",
+      "voltage": "7.4-12.6V"
+    },
+    {
+      "type": "power",
+      "source": "bms_module",
+      "target": "motor_driver_tracks",
+      "voltage": "7.4-12.6V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "licheerv_nano_main",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "esp32_controller",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "licheerv_nano_main",
+      "target": "esp32_controller",
+      "protocol": "UART",
+      "sourcePin": "UART_TX",
+      "targetPin": "UART_RX"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "licheerv_nano_main",
+      "protocol": "UART",
+      "sourcePin": "UART_TX",
+      "targetPin": "UART_RX"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "motor_driver_tracks",
+      "protocol": "PWM",
+      "sourcePin": "GPIO16 (Motor1_PWM)",
+      "targetPin": "PWMA"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "motor_driver_tracks",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO17 (Motor1_DIR)",
+      "targetPin": "AIN1"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "motor_driver_tracks",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO17 (Motor1_DIR)",
+      "targetPin": "AIN2"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "motor_driver_tracks",
+      "protocol": "PWM",
+      "sourcePin": "GPIO18 (Motor2_PWM)",
+      "targetPin": "PWMB"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "motor_driver_tracks",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO19 (Motor2_DIR)",
+      "targetPin": "BIN1"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "motor_driver_tracks",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO19 (Motor2_DIR)",
+      "targetPin": "BIN2"
+    },
+    {
+      "type": "power",
+      "source": "motor_driver_tracks",
+      "target": "left_track_motor",
+      "voltage": "7.4-12.6V"
+    },
+    {
+      "type": "power",
+      "source": "motor_driver_tracks",
+      "target": "right_track_motor",
+      "voltage": "7.4-12.6V"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "ultrasonic_front",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO5 (US_Trig_Front)",
+      "targetPin": "TRIG"
+    },
+    {
+      "type": "data",
+      "source": "ultrasonic_front",
+      "target": "esp32_controller",
+      "protocol": "GPIO",
+      "sourcePin": "ECHO",
+      "targetPin": "GPIO4 (US_Echo_Front)"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "ultrasonic_rear",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO2 (US_Trig_Rear)",
+      "targetPin": "TRIG"
+    },
+    {
+      "type": "data",
+      "source": "ultrasonic_rear",
+      "target": "esp32_controller",
+      "protocol": "GPIO",
+      "sourcePin": "ECHO",
+      "targetPin": "GPIO0 (US_Echo_Rear)"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "ir_sensor_front",
+      "protocol": "ADC",
+      "sourcePin": "GPIO34 (IR_Front)",
+      "targetPin": "OUT"
+    },
+    {
+      "type": "data",
+      "source": "esp32_controller",
+      "target": "ir_sensor_rear",
+      "protocol": "ADC",
+      "sourcePin": "GPIO35 (IR_Rear)",
+      "targetPin": "OUT"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "ultrasonic_front",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "ultrasonic_rear",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "ir_sensor_front",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "ir_sensor_rear",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "licheerv_nano_main",
+      "target": "mic_module_usb",
+      "protocol": "USB",
+      "sourcePin": "USB_HOST",
+      "targetPin": "USB_DP/DM"
+    },
+    {
+      "type": "power",
+      "source": "licheerv_nano_main",
+      "target": "mic_module_usb",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "licheerv_nano_main",
+      "target": "speaker_module_amp",
+      "protocol": "I2S",
+      "sourcePin": "I2S_OUT",
+      "targetPin": "L_IN"
+    },
+    {
+      "type": "power",
+      "source": "licheerv_nano_main",
+      "target": "speaker_module_amp",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "3.3V Power",
+      "source": "licheerv_nano_main",
+      "target": "display_st7789",
+      "voltage": "3.3V",
+      "sourcePin": "3.3V",
+      "targetPin": "VIN"
+    },
+    {
+      "type": "data",
+      "label": "SPI Interface",
+      "source": "licheerv_nano_main",
+      "target": "display_st7789",
+      "protocol": "SPI"
+    },
+    {
+      "type": "power",
+      "label": "5V Power",
+      "source": "buck_converter_5v",
+      "target": "watchdog_timer",
+      "voltage": "5V",
+      "sourcePin": "VOUT+",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "data",
+      "label": "Watchdog Reset",
+      "source": "watchdog_timer",
+      "target": "licheerv_nano_main",
+      "sourcePin": "DRV",
+      "targetPin": "RESET"
+    },
+    {
+      "type": "data",
+      "label": "Watchdog Reset",
+      "source": "watchdog_timer",
+      "target": "esp32_controller",
+      "sourcePin": "DRV_ALT",
+      "targetPin": "EN"
+    },
+    {
+      "type": "data",
+      "label": "Watchdog Keep-alive",
+      "source": "licheerv_nano_main",
+      "target": "watchdog_timer",
+      "voltage": "3.3V",
+      "sourcePin": "GPIO_A",
+      "targetPin": "DONE"
+    },
+    {
+      "type": "data",
+      "label": "Watchdog Keep-alive",
+      "source": "esp32_controller",
+      "target": "watchdog_timer",
+      "voltage": "3.3V",
+      "sourcePin": "GPIO_B",
+      "targetPin": "DONE_ALT"
+    },
+    {
+      "type": "data",
+      "label": "Low Battery Signal",
+      "source": "bms_module",
+      "target": "esp32_controller",
+      "voltage": "3.3V",
+      "sourcePin": "LOW_BATT_OUT",
+      "targetPin": "GPIO_C"
+    },
+    {
+      "type": "data",
+      "label": "PWM Signal",
+      "source": "esp32_controller",
+      "target": "head_pan_servo",
+      "protocol": "PWM",
+      "sourcePin": "GPIO12",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "label": "PWM Signal",
+      "source": "esp32_controller",
+      "target": "head_tilt_servo",
+      "protocol": "PWM",
+      "sourcePin": "GPIO13",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "label": "PWM Signal",
+      "source": "esp32_controller",
+      "target": "left_arm_servo",
+      "protocol": "PWM",
+      "sourcePin": "GPIO14",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "label": "PWM Signal",
+      "source": "esp32_controller",
+      "target": "right_arm_servo",
+      "protocol": "PWM",
+      "sourcePin": "GPIO15",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "head_pan_servo",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "head_tilt_servo",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "left_arm_servo",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "right_arm_servo",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "MIPI CSI",
+      "source": "licheerv_nano_main",
+      "target": "camera_mipi_csi_ov5647",
+      "protocol": "MIPI CSI"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter_5v",
+      "target": "camera_mipi_csi_ov5647",
+      "voltage": "5V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounts two track_motor_mounts with M3x12mm bolts",
+      "source": "chassis",
+      "target": "track_motor_mount"
+    },
+    {
+      "label": "secures track_motor_left with M2x8mm bolts",
+      "source": "track_motor_mount",
+      "target": "left_track_motor"
+    },
+    {
+      "label": "secures track_motor_right with M2x8mm bolts",
+      "source": "track_motor_mount",
+      "target": "right_track_motor"
+    },
+    {
+      "label": "shaft mounts to drive_sprocket",
+      "source": "left_track_motor",
+      "target": "drive_sprocket"
+    },
+    {
+      "label": "shaft mounts to drive_sprocket",
+      "source": "right_track_motor",
+      "target": "drive_sprocket"
+    },
+    {
+      "label": "drives left_track",
+      "source": "drive_sprocket",
+      "target": "left_track_motor"
+    },
+    {
+      "label": "drives right_track",
+      "source": "drive_sprocket",
+      "target": "right_track_motor"
+    },
+    {
+      "label": "mounts two idler_mounts with M3x12mm bolts",
+      "source": "chassis",
+      "target": "idler_mount"
+    },
+    {
+      "label": "secures idler_wheel",
+      "source": "idler_mount",
+      "target": "idler_wheel"
+    },
+    {
+      "label": "guides left_track",
+      "source": "idler_wheel",
+      "target": "left_track_motor"
+    },
+    {
+      "label": "guides right_track",
+      "source": "idler_wheel",
+      "target": "right_track_motor"
+    },
+    {
+      "label": "mounts head_pan_servo_mount with M3x6mm bolts",
+      "source": "chassis",
+      "target": "head_pan_servo"
+    },
+    {
+      "label": "secures servo_mg90s_head_pan with included servo screws",
+      "source": "head_pan_servo",
+      "target": "head_pan_servo"
+    },
+    {
+      "label": "servo horn attaches to head_tilt_servo_mount",
+      "source": "head_pan_servo",
+      "target": "head_tilt_servo"
+    },
+    {
+      "label": "secures servo_mg90s_head_tilt with included servo screws",
+      "source": "head_tilt_servo",
+      "target": "head_tilt_servo"
+    },
+    {
+      "label": "servo horn attaches to head_assembly",
+      "source": "head_tilt_servo",
+      "target": "head_assembly"
+    },
+    {
+      "label": "mounts two arm_servo_mounts with M3x6mm bolts",
+      "source": "chassis",
+      "target": "arm_servo_mount"
+    },
+    {
+      "label": "secures servo_mg90s_arm_left with included servo screws",
+      "source": "arm_servo_mount",
+      "target": "left_arm_servo"
+    },
+    {
+      "label": "secures servo_mg90s_arm_right with included servo screws",
+      "source": "arm_servo_mount",
+      "target": "right_arm_servo"
+    },
+    {
+      "label": "servo horn attaches to left_arm_assembly",
+      "source": "left_arm_servo",
+      "target": "left_arm_assembly"
+    },
+    {
+      "label": "servo horn attaches to right_arm_assembly",
+      "source": "right_arm_servo",
+      "target": "right_arm_assembly"
+    },
+    {
+      "label": "secures camera_mipi_mount with M3x6mm bolts",
+      "source": "head_assembly",
+      "target": "camera_mipi_mount"
+    },
+    {
+      "label": "mounts ultrasonic_sensor_mount with M3x6mm bolts",
+      "source": "chassis",
+      "target": "ultrasonic_sensor_mount"
+    },
+    {
+      "label": "mounts ultrasonic sensor with M2x8mm bolts and M2 nuts",
+      "source": "ultrasonic_sensor_mount",
+      "target": "ultrasonic_sensors"
+    },
+    {
+      "label": "mounts two ir_sensor_mounts with M3x6mm bolts",
+      "source": "chassis",
+      "target": "ir_sensor_mount"
+    },
+    {
+      "label": "mounts IR sensor with M2x8mm bolts and M2 nuts",
+      "source": "ir_sensor_mount",
+      "target": "ir_sensors"
+    },
+    {
+      "label": "mounts mic_module_mount with M3x6mm bolts",
+      "source": "head_assembly",
+      "target": "mic_module_mount"
+    },
+    {
+      "label": "mounts microphone module with M2x8mm bolts and M2 nuts",
+      "source": "mic_module_mount",
+      "target": "mic_module"
+    },
+    {
+      "label": "mounts speaker_mount with M3x6mm bolts",
+      "source": "head_assembly",
+      "target": "speaker_mount"
+    },
+    {
+      "label": "mounts speaker",
+      "source": "speaker_mount",
+      "target": "speaker_module_amp"
+    },
+    {
+      "label": "mounts lipo_battery_tray with M3x12mm bolts",
+      "source": "chassis",
+      "target": "lipo_battery_tray"
+    },
+    {
+      "label": "holds LiPo battery with strap or adhesive",
+      "source": "lipo_battery_tray",
+      "target": "lipo_battery"
+    },
+    {
+      "label": "mounts bms_module_mount with M3x6mm bolts",
+      "source": "chassis",
+      "target": "bms_module_mount"
+    },
+    {
+      "label": "mounts BMS module with M2x8mm bolts and M2 nuts",
+      "source": "bms_module_mount",
+      "target": "bms_module"
+    },
+    {
+      "label": "mounts buck_5v_mount with M3x6mm bolts",
+      "source": "chassis",
+      "target": "buck_5v_mount"
+    },
+    {
+      "label": "mounts 5V buck converter with M2x8mm bolts and M2 nuts",
+      "source": "buck_5v_mount",
+      "target": "buck_5v"
+    },
+    {
+      "label": "M2x8mm Bolt",
+      "source": "display_mount",
+      "target": "display_st7789"
+    },
+    {
+      "label": "M3x6mm Bolt",
+      "source": "head_assembly",
+      "target": "display_mount"
+    },
+    {
+      "label": "M3x6mm Bolt",
+      "source": "chassis",
+      "target": "watchdog_mount"
+    },
+    {
+      "label": "M2x8mm Bolt",
+      "source": "watchdog_mount",
+      "target": "watchdog_timer"
+    },
+    {
+      "label": "Mounts with M3 bolts",
+      "source": "combined_controller_mount",
+      "target": "chassis"
+    },
+    {
+      "label": "Secured with M2 bolts",
+      "source": "licheerv_nano_main",
+      "target": "combined_controller_mount"
+    },
+    {
+      "label": "Secured with M2 bolts",
+      "source": "esp32_controller",
+      "target": "combined_controller_mount"
+    },
+    {
+      "label": "Secured with M2 bolts",
+      "source": "motor_driver_tracks",
+      "target": "combined_controller_mount"
+    },
+    {
+      "label": "Mounted to camera bracket",
+      "source": "camera_mipi_csi_ov5647",
+      "target": "camera_mipi_mount"
+    }
+  ],
+  "projectId": "3b468f7e-6fd0-4277-8808-abeb2afbbe4d"
+}

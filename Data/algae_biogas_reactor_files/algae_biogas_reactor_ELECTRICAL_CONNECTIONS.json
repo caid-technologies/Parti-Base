@@ -1,0 +1,255 @@
+[
+  {
+    "type": "power",
+    "label": "12V to Buck Converter",
+    "source": "power_supply",
+    "target": "dc_dc_buck_converter",
+    "current": "2A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Relay Module 12V Power",
+    "source": "power_supply",
+    "target": "4_channel_relay",
+    "current": "100mA",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "MCU 5V Power",
+    "source": "dc_dc_buck_converter",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "pH Sensor Power",
+    "source": "dc_dc_buck_converter",
+    "target": "ph_sensor",
+    "current": "50mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Temp Sensor Power",
+    "source": "dc_dc_buck_converter",
+    "target": "temp_sensor_bioreactor",
+    "current": "20mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "CH4 Sensor Power",
+    "source": "dc_dc_buck_converter",
+    "target": "ch4_sensor",
+    "current": "150mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "CO2 Sensor Power",
+    "source": "dc_dc_buck_converter",
+    "target": "co2_sensor",
+    "current": "100mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Gas Flow Sensor Power",
+    "source": "dc_dc_buck_converter",
+    "target": "gas_flow_sensor",
+    "current": "30mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Gas Level Sensor Power",
+    "source": "dc_dc_buck_converter",
+    "target": "gas_level_sensor",
+    "current": "20mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "pH Sensor Analog Read",
+    "source": "main_mcu",
+    "target": "ph_sensor",
+    "protocol": "analog",
+    "sourcePin": "GPIO_36",
+    "targetPin": "Analog_OUT"
+  },
+  {
+    "type": "data",
+    "label": "Temperature Sensor Data",
+    "source": "main_mcu",
+    "target": "temp_sensor_bioreactor",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_4",
+    "targetPin": "Data"
+  },
+  {
+    "type": "data",
+    "label": "CH4 Sensor Analog Read",
+    "source": "main_mcu",
+    "target": "ch4_sensor",
+    "protocol": "analog",
+    "sourcePin": "GPIO_39",
+    "targetPin": "AO"
+  },
+  {
+    "type": "data",
+    "label": "CH4 Sensor Digital Read",
+    "source": "main_mcu",
+    "target": "ch4_sensor",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_35",
+    "targetPin": "DO"
+  },
+  {
+    "type": "data",
+    "label": "CO2 Sensor TX",
+    "source": "main_mcu",
+    "target": "co2_sensor",
+    "protocol": "uart",
+    "sourcePin": "RX",
+    "targetPin": "TX"
+  },
+  {
+    "type": "data",
+    "label": "CO2 Sensor RX",
+    "source": "main_mcu",
+    "target": "co2_sensor",
+    "protocol": "uart",
+    "sourcePin": "TX",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "label": "Gas Flow Sensor Pulse",
+    "source": "main_mcu",
+    "target": "gas_flow_sensor",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_27",
+    "targetPin": "Pulse_OUT"
+  },
+  {
+    "type": "data",
+    "label": "Gas Level Sensor Trig",
+    "source": "main_mcu",
+    "target": "gas_level_sensor",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_26",
+    "targetPin": "Trig"
+  },
+  {
+    "type": "data",
+    "label": "Gas Level Sensor Echo",
+    "source": "main_mcu",
+    "target": "gas_level_sensor",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_25",
+    "targetPin": "Echo"
+  },
+  {
+    "type": "data",
+    "label": "Relay 1 Control (Nutrient Pump)",
+    "source": "main_mcu",
+    "target": "4_channel_relay",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_12",
+    "targetPin": "IN1"
+  },
+  {
+    "type": "data",
+    "label": "Relay 2 Control (Algae Circulation Pump)",
+    "source": "main_mcu",
+    "target": "4_channel_relay",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_13",
+    "targetPin": "IN2"
+  },
+  {
+    "type": "data",
+    "label": "Relay 3 Control (Heating Element)",
+    "source": "main_mcu",
+    "target": "4_channel_relay",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_14",
+    "targetPin": "IN3"
+  },
+  {
+    "type": "data",
+    "label": "Relay 4 Control (Cooling Fan)",
+    "source": "main_mcu",
+    "target": "4_channel_relay",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_15",
+    "targetPin": "IN4"
+  },
+  {
+    "type": "power",
+    "label": "Nutrient Pump 12V Power",
+    "source": "power_supply",
+    "target": "nutrient_pump",
+    "current": "500mA",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Nutrient Pump Switched Power",
+    "source": "4_channel_relay",
+    "target": "nutrient_pump",
+    "current": "500mA",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Algae Circulation Pump 12V Power",
+    "source": "power_supply",
+    "target": "algae_circulation_pump",
+    "current": "1A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Algae Circulation Pump Switched Power",
+    "source": "4_channel_relay",
+    "target": "algae_circulation_pump",
+    "current": "1A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Heating Element 12V Power",
+    "source": "power_supply",
+    "target": "heating_element",
+    "current": "2A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Heating Element Switched Power",
+    "source": "4_channel_relay",
+    "target": "heating_element",
+    "current": "2A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Cooling Fan 12V Power",
+    "source": "power_supply",
+    "target": "cooling_fan",
+    "current": "300mA",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Cooling Fan Switched Power",
+    "source": "4_channel_relay",
+    "target": "cooling_fan",
+    "current": "300mA",
+    "voltage": "12V"
+  }
+]

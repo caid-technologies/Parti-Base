@@ -1,0 +1,32 @@
+[
+  {
+    "label": "mounts_via_m2_5_screws",
+    "source": "esp32_s3_mount",
+    "target": "esp32_s3_microcontroller"
+  },
+  {
+    "label": "secures",
+    "source": "m2_5_screw",
+    "target": "esp32_s3_microcontroller"
+  },
+  {
+    "label": "front_slot_fit",
+    "source": "main_enclosure_body_v3",
+    "target": "front_diffuser_panel_v3"
+  },
+  {
+    "label": "screws_into",
+    "source": "main_enclosure_body_v3",
+    "target": "back_cover_panel_v3"
+  },
+  {
+    "label": "secures",
+    "source": "m3_screw",
+    "target": "back_cover_panel_v3"
+  },
+  {
+    "label": "holds_in_place",
+    "source": "main_enclosure_body_v3",
+    "target": "lipo_battery_2500mah"
+  }
+]

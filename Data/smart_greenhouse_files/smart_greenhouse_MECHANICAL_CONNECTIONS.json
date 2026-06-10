@@ -1,0 +1,192 @@
+[
+  {
+    "label": "mounts using M5 bolts and T-nuts",
+    "source": "mechanical_frame_structure",
+    "target": "mechanical_electronics_enclosure"
+  },
+  {
+    "label": "fits into",
+    "source": "sensor_rain",
+    "target": "sensor_rain"
+  },
+  {
+    "label": "mounts to",
+    "source": "sensor_rain",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "fits into",
+    "source": "sensor_light",
+    "target": "3d_printed_light_sensor_mount"
+  },
+  {
+    "label": "mounts to",
+    "source": "3d_printed_light_sensor_mount",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "fits into",
+    "source": "sensor_temp_humidity",
+    "target": "3d_printed_temp_humidity_sensor_mount"
+  },
+  {
+    "label": "mounts to",
+    "source": "3d_printed_temp_humidity_sensor_mount",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "clips into",
+    "source": "sensor_soil_moisture",
+    "target": "3d_printed_soil_moisture_stake"
+  },
+  {
+    "label": "can be placed near",
+    "source": "3d_printed_soil_moisture_stake",
+    "target": "mechanical_water_reservoir"
+  },
+  {
+    "label": "attaches to",
+    "source": "actuator_water_pump",
+    "target": "3d_printed_pump_mount"
+  },
+  {
+    "label": "mounts inside",
+    "source": "3d_printed_pump_mount",
+    "target": "mechanical_water_reservoir"
+  },
+  {
+    "label": "connects to",
+    "source": "actuator_water_pump",
+    "target": "mechanical_irrigation_tubing"
+  },
+  {
+    "label": "connects to",
+    "source": "mechanical_irrigation_tubing",
+    "target": "mechanical_irrigation_nozzle"
+  },
+  {
+    "label": "attaches to",
+    "source": "actuator_fan",
+    "target": "3d_printed_fan_mount"
+  },
+  {
+    "label": "mounts to",
+    "source": "3d_printed_fan_mount",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "mounts inside with M3 bolts",
+    "source": "mcu_esp32",
+    "target": "mechanical_electronics_enclosure"
+  },
+  {
+    "label": "mounts inside with M3 bolts",
+    "source": "power_charge_controller",
+    "target": "mechanical_electronics_enclosure"
+  },
+  {
+    "label": "mounts inside with M3 bolts",
+    "source": "module_relay_1",
+    "target": "mechanical_electronics_enclosure"
+  },
+  {
+    "label": "mounts inside with M3 bolts",
+    "source": "module_relay_2",
+    "target": "mechanical_electronics_enclosure"
+  },
+  {
+    "label": "mounts inside with M3 bolts",
+    "source": "module_buck_converter",
+    "target": "mechanical_electronics_enclosure"
+  },
+  {
+    "label": "is supported by",
+    "source": "mechanical_roller_tube",
+    "target": "3d_printed_roller_brackets"
+  },
+  {
+    "label": "mounts to with M5 bolts",
+    "source": "3d_printed_roller_brackets",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "drives",
+    "source": "actuator_cover_motor",
+    "target": "mechanical_roller_tube"
+  },
+  {
+    "label": "mounts to",
+    "source": "actuator_cover_motor",
+    "target": "3d_printed_roller_brackets"
+  },
+  {
+    "label": "attaches to and rolls onto",
+    "source": "mechanical_tent_cover",
+    "target": "mechanical_roller_tube"
+  },
+  {
+    "label": "secures to base of",
+    "source": "mechanical_tent_cover",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "mounts inside with M3 bolts",
+    "source": "module_cover_motor_driver",
+    "target": "mechanical_electronics_enclosure"
+  },
+  {
+    "label": "fits into",
+    "source": "display_oled",
+    "target": "3d_printed_display_mount"
+  },
+  {
+    "label": "mounts to with M3 bolts",
+    "source": "3d_printed_display_mount",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "mounts at corners with M5 bolts",
+    "source": "mechanical_frame_structure",
+    "target": "mechanical_frame_reinforcement"
+  },
+  {
+    "label": "attaches to",
+    "source": "sensor_wind",
+    "target": "3d_printed_wind_sensor_mount"
+  },
+  {
+    "label": "mounts to top frame",
+    "source": "3d_printed_wind_sensor_mount",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "fits into",
+    "source": "sensor_water_level",
+    "target": "3d_printed_water_level_mount"
+  },
+  {
+    "label": "mounts to edge of",
+    "source": "3d_printed_water_level_mount",
+    "target": "mechanical_water_reservoir"
+  },
+  {
+    "label": "mounts to",
+    "source": "sensor_limit_switch_open",
+    "target": "3d_printed_limit_switch_mount"
+  },
+  {
+    "label": "mounts to",
+    "source": "sensor_limit_switch_closed",
+    "target": "3d_printed_limit_switch_mount"
+  },
+  {
+    "label": "mounts near roller ends",
+    "source": "3d_printed_limit_switch_mount",
+    "target": "mechanical_frame_structure"
+  },
+  {
+    "label": "mounts inside with M3 bolts",
+    "source": "module_battery_monitor",
+    "target": "mechanical_electronics_enclosure"
+  }
+]

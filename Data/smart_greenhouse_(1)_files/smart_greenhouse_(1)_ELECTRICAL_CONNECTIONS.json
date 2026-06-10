@@ -1,0 +1,153 @@
+[
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "esp32_mcu",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "soil_moisture_sensor",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "dht22_sensor",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Relay Logic Power",
+    "source": "buck_converter",
+    "target": "pump_relay",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Relay Logic Power",
+    "source": "buck_converter",
+    "target": "fan_relay",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "soil_moisture_sensor",
+    "protocol": "Analog",
+    "sourcePin": "GPIO34",
+    "targetPin": "AOUT"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "dht22_sensor",
+    "protocol": "OneWire",
+    "sourcePin": "GPIO23",
+    "targetPin": "Data"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "pump_relay",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO19",
+    "targetPin": "IN"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "fan_relay",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO18",
+    "targetPin": "IN"
+  },
+  {
+    "type": "power",
+    "label": "Switched 12V",
+    "source": "fan_relay",
+    "target": "cooling_fan",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "solar_panel",
+    "target": "solar_charge_controller",
+    "voltage": "12V",
+    "sourcePin": "PV+",
+    "targetPin": "PV_IN+"
+  },
+  {
+    "type": "power",
+    "source": "solar_panel",
+    "target": "solar_charge_controller",
+    "voltage": "12V",
+    "sourcePin": "PV-",
+    "targetPin": "PV_IN-"
+  },
+  {
+    "type": "power",
+    "source": "solar_charge_controller",
+    "target": "battery_12v",
+    "voltage": "12V",
+    "sourcePin": "BAT+",
+    "targetPin": "+"
+  },
+  {
+    "type": "power",
+    "source": "solar_charge_controller",
+    "target": "battery_12v",
+    "voltage": "12V",
+    "sourcePin": "BAT-",
+    "targetPin": "-"
+  },
+  {
+    "type": "power",
+    "source": "solar_charge_controller",
+    "target": "buck_converter",
+    "voltage": "12V",
+    "sourcePin": "LOAD+",
+    "targetPin": "VIN+"
+  },
+  {
+    "type": "power",
+    "source": "solar_charge_controller",
+    "target": "buck_converter",
+    "voltage": "12V",
+    "sourcePin": "LOAD-",
+    "targetPin": "VIN-"
+  },
+  {
+    "type": "power",
+    "source": "solar_charge_controller",
+    "target": "pump_relay",
+    "voltage": "12V",
+    "sourcePin": "LOAD+",
+    "targetPin": "COM"
+  },
+  {
+    "type": "power",
+    "source": "solar_charge_controller",
+    "target": "fan_relay",
+    "voltage": "12V",
+    "sourcePin": "LOAD+",
+    "targetPin": "COM"
+  },
+  {
+    "type": "power",
+    "source": "pump_relay",
+    "target": "water_pump",
+    "voltage": "12V",
+    "sourcePin": "NO",
+    "targetPin": "+"
+  },
+  {
+    "type": "power",
+    "source": "solar_charge_controller",
+    "target": "water_pump",
+    "voltage": "GND",
+    "sourcePin": "LOAD-",
+    "targetPin": "- "
+  }
+]

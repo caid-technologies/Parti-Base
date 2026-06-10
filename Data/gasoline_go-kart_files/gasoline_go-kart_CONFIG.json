@@ -1,0 +1,1316 @@
+{
+  "plan": "- Chassis: Welded or bolted steel tubing frame (e.g., square mild steel tubing 1-2 inch). Axle mounts, engine/motor mount, steering column mount.\n- Drivetrain: Small internal combustion engine (e.g., 6.5hp Predator) or brushed DC motor (e.g., 24-48V, 500-1000W), chain/belt, sprockets/pulleys, live rear axle, bearings, wheels and pneumatic tires.\n- Steering: Steering wheel, steering shaft, universal joints, steering linkage (tie rods, spindles, kingpins).\n- Braking: Rear axle disc brake assembly (caliper, disc, master cylinder/cable), brake pedal.\n- Seating & Controls: Plywood seat base, throttle pedal, engine kill switch or motor controller with throttle input.\n- Electrical (if electric): Battery (e.g., 12-48V lead-acid/LiFePO4), motor controller, wiring, fuse/breaker.",
+  "nodes": [
+    {
+      "id": "engine_kill_switch",
+      "name": "Engine Kill Switch",
+      "pins": [
+        "Ignition Kill Wire",
+        "Ground"
+      ],
+      "type": "other",
+      "partId": "686652ed-25bf-4443-b4b3-3fbac2f70f05",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fnjvFohI3E0GkOGMNrO1S1KnIcYy84ynkvobKbnawos/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGFwcHktdHJhaWwu/Y29tL21lZGlhL2Nh/dGFsb2cvcHJvZHVj/dC9jYWNoZS9kZWE3/ODcxZjlhYTljMjI1/MTU4NmRhYTAzN2Qx/MjkzMS9CLzYvcGFy/dHMtdW5saW1pdGVk/LXVuaXZlcnNhbC1r/aWxsLXN3aXRjaC5w/bmc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08YWT9XQ8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x30mm",
+      "description": "A simple momentary push-button or toggle switch to cut ignition to the gasoline engine for emergency stops.",
+      "productName": "Universal Momentary Kill Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=momentary+engine+kill+switch",
+      "estimatedCost": 4.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHmHQVCcEUeCMmGRNElvC9vXVF7ckYeF4kKu5TNenBlWSKqpsqjPFCn2sQGCp0V5nSO53CRsZ8WaMrpy10Or4xZ2rCLIl8VdJeZbyKpayEkNHAloj3V0l5D9JDod5TmgtaGcrESKxTVXHu8apT7NPclMlxM8nBMJaIYYOgMIIotV581IEuGscmGWLuTCKiHD9oDbKL1vzJ7ElCcHH2hizjBcLSjgGnUNZmK60jt6BmRfoV12xbOgHwXTMaYqwVreUdnKo8AXyGjoPxLsfWpkd3pAeXZr6XhqFHgfwbYWutA0J3a3XJ00VtHv3fojv4juJltUAHK5yZ8W4VPMPltrdsoL671crouEYe670BAMFZFmZgBTENflruuaHt61q7dTdSLaUBOhH0mb4q5wWAVVDFEF5w5pfdD5htJh8L0eXftnWO4hCzCfZMzhIem8dEQ4JfHuixYGdKjqgD4QXrlClLqc8xaNwPFvSxwo77ZQvK0aceaUzg9INYb6xFLWbkXDThRm2NisKkekjMY9VIR5DyYFn97AStHRa7SbIJIUCD9vfrbdCyclyMWSH8sCEb5p0CkA0lFALHmvHt6NPjym8yILKld1e9QV42uy6seoHTXVe9ihDeLt2iaPMFcMDWEMu2VpGXn174mOmcNYiS6KR8JZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Universal+Momentary+Kill+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "engine_mounting_plate",
+      "name": "Engine Mounting Plate",
+      "type": "structural",
+      "partId": "a9304d09-1ae0-4d06-9d42-0984f91257a7",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j_Qc_dVTiZ8F7xy_J3cTku0HnYJOIBmZK1hiuBWol9Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vZGM4a25wZGRr/L2ltYWdlL3VwbG9h/ZC9jX2ZpbGwsZl9h/dXRvLHFfYXV0by9t/ZWRpYS91cGxvYWRz/L0FUTUQwMDAwOS5q/cGc",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F98Y8WCJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x150x5mm",
+      "description": "Steel plate for mounting the gasoline engine to the chassis.",
+      "productName": "Universal Engine Mounting Plate",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+engine+mount+plate",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgxARyEh1xOxadfKaoYioWQvCwxumXxPf8OY9UZS6faouOU0ndnan0ia4GZJwUwJZgB8WyWLdzg1IqOi5LlVLQhm8R6fDr0HiyNNvhC42bQjBPDZTxenI4pwt5NSVhyoEdLJdfHzhh0yTp0OIbhPGwpNbyJCw8T3pgdVr6NjXUijyRWafD8H6ChG9W5tPGOmavofAwsShhUZL58ek9XKJBQQQKdrn4A4TVW3ooBgDesAJ5pHRfWMLWCMuSkT9Q9iCPNOtxOWZQLs9X6oCum8gcF0bv4fwldp5zC9J3EKROacBsi3mKiup0XlMXCg4i3C1qcbDfBNLaMXgYxgOrlGIdn4TdmFpn8gyNUM8Xek6XtqaIETPMJcUr1obUswHhavffZ4BanyCNoGEw0H5fGckYW4yPqW9bUM5rqOUZBltuOc7bqpeEauniY96yiFZ4PYQhxCglrY6nL0iVFvysa88ySlo0cLnTYPpCcdgEEEvTazUUseUuq0VbtonlEGuggeElYRIhEFBppoST9gnETqjbYVKlitLwL8V7JN8LE6cSEPGRAp3UdlMO9omrMLdH1z5A07K5iiwfJ78qGhlOuM5exbldsSKDqanMpEB4g14U7GuZYVgJej2FQcF5PmtsFjiD3uJ6Ou2VcRGJvBxK7eD7uP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Universal+Engine+Mounting+Plate&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rear_axle_bearing_mount_left",
+      "name": "Left Rear Axle Bearing Mount",
+      "type": "structural",
+      "partId": "18a3baec-51f5-4183-b8b1-95b29d160471",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/pfrtaWJivv503HFF6qkyMqhJZtYF1xApUioJNRcvBdg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/b2tlcGFydHMuY29t/L2Nkbi9zaG9wL3By/b2R1Y3RzLzU3XzA2/NDY3NDU4LWIxNDUt/NDUwMS04YzA4LWQ4/ZWJmZDY2ZWE4OV8x/MDI0eDEwMjQuanBn/P3Y9MTU4ODkzMDM2/Nw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BXK7H3LH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x75x50mm",
+      "description": "Bracket to secure the left rear axle bearing to the chassis.",
+      "productName": "Go Kart Bearing Hanger Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+bearing+hanger+bracket",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3B4BBQ5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Bearing+Hanger+Bracket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rear_axle_bearing_mount_right",
+      "name": "Right Rear Axle Bearing Mount",
+      "type": "structural",
+      "partId": "18a3baec-51f5-4183-b8b1-95b29d160471",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/pfrtaWJivv503HFF6qkyMqhJZtYF1xApUioJNRcvBdg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/b2tlcGFydHMuY29t/L2Nkbi9zaG9wL3By/b2R1Y3RzLzU3XzA2/NDY3NDU4LWIxNDUt/NDUwMS04YzA4LWQ4/ZWJmZDY2ZWE4OV8x/MDI0eDEwMjQuanBn/P3Y9MTU4ODkzMDM2/Nw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BXK7H3LH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x75x50mm",
+      "description": "Bracket to secure the right rear axle bearing to the chassis.",
+      "productName": "Go Kart Bearing Hanger Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+bearing+hanger+bracket",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3B4BBQ5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Bearing+Hanger+Bracket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "steering_column_support",
+      "name": "Steering Column Support Bearing",
+      "type": "structural",
+      "partId": "f7c3e6fd-c3c2-43c7-a403-3cdd6828d695",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/LsneZMdNCdujxQB9TgdRFjSzzZgo0ZjE-w_fAByGSoc/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0VaVUFB/T1N3WERWbmRIbkcv/cy1sMTQwLmpwZw",
+      "material": "Steel/Rubber",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FJ54SFKF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x50x40mm",
+      "description": "Bearing support for the steering column.",
+      "productName": "Go Kart Steering Column Support Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+steering+column+support",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3oPSZiN",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Steering+Column+Support+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "live_rear_axle",
+      "name": "Live Rear Axle",
+      "type": "mechanism",
+      "partId": "fdfd1eae-8a3b-4755-aee6-9c3dd1cef8fb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/ncEENI2jjeOcwBiqP42OE_F06BwvWY3-gsO8yXeAs4E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFyTG1kNjlPc0wu/anBn",
+      "material": "Steel Alloy",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.gopowersports.com/go-kart-parts/go-kart-axle-parts/",
+            "note": "Offers a selection of go kart axles and axle parts, including live axles. Does not specify 'solid steel' in the description but is a common supplier for go-kart parts.",
+            "price": "Not specified on category page",
+            "vendor": "GoPowerSports"
+          },
+          {
+            "url": "https://www.mcmaster.com/1497K403",
+            "note": "Specific part number (1497K403) referenced for a 48\" long, full-length keyway solid steel axle. This is a raw stock axle, not a kit.",
+            "price": "Not specified in search results",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-go-kart-axle.html",
+            "note": "Wholesale marketplace offering various go kart axles and kits from multiple sellers. Prices vary widely, and quality should be verified.",
+            "price": "Varies by seller and product",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BQMGXND7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "1000x25mm",
+      "description": "Solid steel axle for rear wheels and drivetrain.",
+      "productName": "Go Kart Live Rear Axle",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+live+rear+axle",
+      "estimatedCost": 90,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIlL9P0gGn1HCmLr7R2eF6EEvsZDniNsqZyamA9jO0AwCDgmYVpr5UfCnS6dliZnuxyYCYJjJUJgwDstpURw3M0pUvhUJLRwRrniZXGlByD56znQqsIRvKXRvohteWOf7azvECOtrJsTwH4stKRQlMYEqnqtVRQgtcNqVtw7asFw9wJwGy3wDKY9AlhGJKPYE4h5dnodZwjYOCHGA8gb0OyqFOXEtfeNWslifZBGK0zgK7lyP3myhssubJZzLVmkp6h1rOtYXHoCq2yE8djPgJ9w462tfECp4kOlXT15hb9dvGdBClBHuDYYCMP1PUnWiP5XyPHtJ20BN2HbuZj1i5lzMfRBhry7W6hjuD74x4JZWXD0j75ugM4zrcJWhI4wxQ5EgvSiu8pTV6veHmD7mqpcIiVzVPYeoWFd7Ibym6egdOhTjZSzSSsRl0UnbRQsGOeDN5QmnWO9VvvZ5cbPQB3eKyH25IOJ0qDqgxHZM41HjUSrdzrBjJqS5BwieYgom1Q8oahD0lzZu65zQAuUHmTY16u270Wf7zadcEeD7rbYTLbjZfutLpgZqTapRuf6eKv9Rt2FTpt7X8z3y07IDMvGd5BB6tbppBasDKpxtVN20eGpswsN3ozSByBVrJJgUjokyGFIOixMR7objFdDo8y7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Live+Rear+Axle&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rear_axle_bearing_left",
+      "name": "Left Rear Axle Bearing",
+      "type": "mechanism",
+      "partId": "c3ada04b-de6e-42f0-a441-d91d89da02c0",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/foW-v_XeJyWOfjIAfyz5-mNcLiiX9KWgHA-bTyyhvxI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDE2Wlpkd29IbUwu/anBn",
+      "material": "Cast Iron/Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07MVVLQ68?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x40x30mm",
+      "description": "Bearing for the left side of the rear axle.",
+      "productName": "Pillow Block Bearing 25mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=pillow+block+bearing+25mm",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwOwMB5IcccvFSbdhFYhv6vtNu4CuBsGl2pW9sayqXAjnTigjmb8YYi3uzk7mO6QYrunEcegsT0Hr7U6fDwQVJkLMiOgjvZ9KMXkU14GgWqp2tIxxmEpNqljQdGgZj8pnRpUytlOmICLFZzrTPwnp1sLPRbUZhzNrxl45wmcJ4cRC7iE2Kep6rCHpAktJzfZE1lBurMsjsCmYHJdDNYnSo0W8o2OCPZGcua8hXgrNxikHRTpyhntWGKerF6whVdPy0Ug9I5xXpk77XXPCnK1v1KQtdzO4agc8EhEsNJOGW5STJ1QaBwoTxR8coQH4RIPuqr5oUCvNsuzxkgGtF2v7Fhnh5rfm6vhZ3dQ3JQ7Dkrtd0un5ChPw3v5ZKY5Ggtmw3woFFqjmvcISB7nUY6tgYaUg8htHm5eUJGxTgWOS4QsdWErStk8GNabZWkzYXtHTrlmEpDrs4DepX58kWW3AQaxSN9riq7Q0TKrhK0uLi14g9pdozO54t0mzO6vwsGPjPYgwlxSXy4XtvOOpbKYHZ1bzt3d1Vv2cyjXD7OIhsQHblA8L1pcDz2tDDPuNGTfZ21UBEnIE8j6cB0sZmOb9kiO1BYbOIhd1qopdHfngNlSyrCkMNZ9kzmPNwRcThwuTKKu1iCxhVDGBG22ei7bqadH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Pillow+Block+Bearing+25mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rear_axle_bearing_right",
+      "name": "Right Rear Axle Bearing",
+      "type": "mechanism",
+      "partId": "c3ada04b-de6e-42f0-a441-d91d89da02c0",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/foW-v_XeJyWOfjIAfyz5-mNcLiiX9KWgHA-bTyyhvxI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDE2Wlpkd29IbUwu/anBn",
+      "material": "Cast Iron/Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07MVVLQ68?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x40x30mm",
+      "description": "Bearing for the right side of the rear axle.",
+      "productName": "Pillow Block Bearing 25mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=pillow+block+bearing+25mm",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwOwMB5IcccvFSbdhFYhv6vtNu4CuBsGl2pW9sayqXAjnTigjmb8YYi3uzk7mO6QYrunEcegsT0Hr7U6fDwQVJkLMiOgjvZ9KMXkU14GgWqp2tIxxmEpNqljQdGgZj8pnRpUytlOmICLFZzrTPwnp1sLPRbUZhzNrxl45wmcJ4cRC7iE2Kep6rCHpAktJzfZE1lBurMsjsCmYHJdDNYnSo0W8o2OCPZGcua8hXgrNxikHRTpyhntWGKerF6whVdPy0Ug9I5xXpk77XXPCnK1v1KQtdzO4agc8EhEsNJOGW5STJ1QaBwoTxR8coQH4RIPuqr5oUCvNsuzxkgGtF2v7Fhnh5rfm6vhZ3dQ3JQ7Dkrtd0un5ChPw3v5ZKY5Ggtmw3woFFqjmvcISB7nUY6tgYaUg8htHm5eUJGxTgWOS4QsdWErStk8GNabZWkzYXtHTrlmEpDrs4DepX58kWW3AQaxSN9riq7Q0TKrhK0uLi14g9pdozO54t0mzO6vwsGPjPYgwlxSXy4XtvOOpbKYHZ1bzt3d1Vv2cyjXD7OIhsQHblA8L1pcDz2tDDPuNGTfZ21UBEnIE8j6cB0sZmOb9kiO1BYbOIhd1qopdHfngNlSyrCkMNZ9kzmPNwRcThwuTKKu1iCxhVDGBG22ei7bqadH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Pillow+Block+Bearing+25mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "drive_sprocket",
+      "name": "Drive Sprocket",
+      "type": "mechanism",
+      "partId": "c5994967-3865-4497-a0ae-8d426ff5021e",
+      "category": "mechanical",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08XNBL1M3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x150x10mm",
+      "description": "Sprocket mounted on the rear axle for chain drive.",
+      "productName": "Go Kart Axle Drive Sprocket #40/41",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+drive+sprocket+40+41",
+      "estimatedCost": 20,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4betHtT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Axle+Drive+Sprocket+%2340%2F41&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "engine_sprocket",
+      "name": "Engine Clutch Sprocket",
+      "type": "mechanism",
+      "partId": "69a91142-9317-4fdc-a15e-02b358fe8c06",
+      "category": "mechanical",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08CN5S6TS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x100x80mm",
+      "description": "Clutch with integrated sprocket for engine output.",
+      "productName": "Centrifugal Clutch Sprocket #40/41",
+      "purchaseUrl": "https://www.amazon.com/s?k=centrifugal+clutch+40+41",
+      "estimatedCost": 35,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4CiyEXT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Centrifugal+Clutch+Sprocket+%2340%2F41&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "drive_chain",
+      "name": "Drive Chain",
+      "type": "mechanism",
+      "partId": "ae399e20-fa66-4c99-95d5-052c3b459daa",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/4Ma0fk00AV5wdfA7RpFfcjmx5hyaI_kwh4xyoXr08Qg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFtQWp6ZUpqOEwu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07NPSZCK6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "1500mm",
+      "description": "Chain connecting engine sprocket to axle sprocket.",
+      "productName": "Roller Chain #40/41",
+      "purchaseUrl": "https://www.amazon.com/s?k=roller+chain+40+41",
+      "estimatedCost": 18,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHWClkBcVDr1Gj2oKVmYNutdhBE7r5XUUEkOAR7BSI2DvCOaOJmE5gYbChhUlb1e00lzUjGKpysX3H9IG96bknsTc17vXPQf9hUTuy8yRAfbKRilJQWezkqVjOi0RwN3LovpyqxhGrRxadPAvQymtbFwqfGB6gIDbLfBNGaNMEc5AFHVWkBMb9pOcPkkOIVWwIm0rsAMMwjFaKA0SIS2zvY0RVcNVJUEE9zGMeMfYiWjoUuqpOVZEqbk4VzTfumtdK1FLF9VWgenAp6UJIVtvV5j732rvxSSdKj9pNKlpX639QK2eiTRl9w52iYwrBOgRIk4CWaGXmjcyt3KZ2oQb3xJXyffDz3ISvAIMYhlXWCvCAZ1TO5YCpsGFyyyiScNm0bnS948ItSxC6EwhPzgBM3cZ4b5N1cEF7AGkfLCIdMR9fPrca4fiohaysi3jV6e2G0XrGCg8ryuqxmcO9NEoZeFBkIH3tIGtqhgbdntH8wCDHMqm0XZV80YhBg9GEPOrGNBwZEbAERLz2SupcCt5bgDuSCihvCHgSwhZUKnYaXkEzBy33Nxy8kriD5ostvK9tITUpXsPRaRX9fIdKT58MCDX4jcfNmkFUn5HLPOFzBkMEnqNPMqBFBVazYcC3gAYd8qX6WAKrViLYjDnqSMGqgx",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Roller+Chain+%2340%2F41&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "front_wheel_left",
+      "name": "Left Front Wheel Assembly",
+      "type": "mechanism",
+      "partId": "0a82f389-df7a-4013-a501-0943860971ff",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Qcq9CYG2oImIpl5Uz9x4RmnoN8GYZQdEtStUCH-FT-M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZHJpZnRoZXJvdXNh/LmNvbS9jZG4vc2hv/cC9maWxlcy9GdWxs/U2l6ZVJlbmRlcl8z/MGM1ZmIzNy01M2E2/LTRjZTQtYTIzNS01/YWQzMjRhM2YwMjgu/anBnP3Y9MTc0MTM4/NzA5NSZ3aWR0aD0x/OTQ2",
+      "material": "Rubber/Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07BS1Z9DL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "250x250x100mm",
+      "description": "Complete front wheel with pneumatic tire and hub.",
+      "productName": "Go Kart Front Wheel Assembly 10 inch",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+front+wheel+10+inch",
+      "estimatedCost": 30,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZDfOmudo8NJ1NLRH8iU5r8awloLt61zWlBwkWwEe2GiJhm1RVLPSmq0AhRqbU4ufpgtheJxMg947tbJTChupssEOqDXahKFJJTr1mNjh0fBnhXksQvt3jisLaF783UWj9SwMgJFGNMIXTR2Yf4PMk6iYh1jrO18fSevkmGs5FsAi1rTLqXi53nuXou1E9nn8eZ0R3m4woCfTaMY7dC3LyaKenag50l1SIRXQEU1E1RPspgRbS8E6jTZ0pVeAJ0Npyf11aPXvHc9Cwi1zPR7oP5dBDkD8l6gOIAtDnbj9FcfRuBipESHNj0SqOXAc36dI31zt6vMbaiHkIn9uiH0B4NsTK6OSDy9NtAFg0RvEprDeqp1YsBgxraCDq1McxqiJRezDsOQsLvrKj0VlgdmYnBYhkgdO0Llw3V102DtsW4AMlbBrO0zv6X8KI2GcZChbt4JqXnOJCWSx2icxEGJqMkNSA9Mlndnw4uCQMuVXYNAbFNzXhdtnQA7bB0ORkmC7CbqMKm8xeBmXu1zJgvHri9TXuuNgrCt5LdlqIKSfHHxsWtbPFsoMn5ev7Yv7celsQ6Yj6KrM6pV5LpjnY1DH1R5hpjtMO3WazOg2x0VLNQ0rdJKhUhNrTFIOEan0zxhkz0n76YXtc8Uc8KFjRlP2FDY5RhoK9maKFZQFCau7m3jXgiZfKKB",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Front+Wheel+Assembly+10+inch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "front_wheel_right",
+      "name": "Right Front Wheel Assembly",
+      "type": "mechanism",
+      "partId": "0a82f389-df7a-4013-a501-0943860971ff",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Qcq9CYG2oImIpl5Uz9x4RmnoN8GYZQdEtStUCH-FT-M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZHJpZnRoZXJvdXNh/LmNvbS9jZG4vc2hv/cC9maWxlcy9GdWxs/U2l6ZVJlbmRlcl8z/MGM1ZmIzNy01M2E2/LTRjZTQtYTIzNS01/YWQzMjRhM2YwMjgu/anBnP3Y9MTc0MTM4/NzA5NSZ3aWR0aD0x/OTQ2",
+      "material": "Rubber/Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07BS1Z9DL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "250x250x100mm",
+      "description": "Complete front wheel with pneumatic tire and hub.",
+      "productName": "Go Kart Front Wheel Assembly 10 inch",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+front+wheel+10+inch",
+      "estimatedCost": 30,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZDfOmudo8NJ1NLRH8iU5r8awloLt61zWlBwkWwEe2GiJhm1RVLPSmq0AhRqbU4ufpgtheJxMg947tbJTChupssEOqDXahKFJJTr1mNjh0fBnhXksQvt3jisLaF783UWj9SwMgJFGNMIXTR2Yf4PMk6iYh1jrO18fSevkmGs5FsAi1rTLqXi53nuXou1E9nn8eZ0R3m4woCfTaMY7dC3LyaKenag50l1SIRXQEU1E1RPspgRbS8E6jTZ0pVeAJ0Npyf11aPXvHc9Cwi1zPR7oP5dBDkD8l6gOIAtDnbj9FcfRuBipESHNj0SqOXAc36dI31zt6vMbaiHkIn9uiH0B4NsTK6OSDy9NtAFg0RvEprDeqp1YsBgxraCDq1McxqiJRezDsOQsLvrKj0VlgdmYnBYhkgdO0Llw3V102DtsW4AMlbBrO0zv6X8KI2GcZChbt4JqXnOJCWSx2icxEGJqMkNSA9Mlndnw4uCQMuVXYNAbFNzXhdtnQA7bB0ORkmC7CbqMKm8xeBmXu1zJgvHri9TXuuNgrCt5LdlqIKSfHHxsWtbPFsoMn5ev7Yv7celsQ6Yj6KrM6pV5LpjnY1DH1R5hpjtMO3WazOg2x0VLNQ0rdJKhUhNrTFIOEan0zxhkz0n76YXtc8Uc8KFjRlP2FDY5RhoK9maKFZQFCau7m3jXgiZfKKB",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Front+Wheel+Assembly+10+inch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rear_wheel_left",
+      "name": "Left Rear Wheel Assembly",
+      "type": "mechanism",
+      "partId": "81dcb91e-7c6a-4407-b70a-263e653e13d1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/bSUsCOQm0uHmSwhRNQqUZbxd5N8VBhbSP49-u-Y012I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjEybkNNWWNLU0wu/anBn",
+      "material": "Rubber/Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FBMDFLYH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "250x250x120mm",
+      "description": "Complete rear wheel with pneumatic tire and hub.",
+      "productName": "Go Kart Rear Wheel Assembly 10 inch",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+rear+wheel+10+inch",
+      "estimatedCost": 35,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3xulFiz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Rear+Wheel+Assembly+10+inch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rear_wheel_right",
+      "name": "Right Rear Wheel Assembly",
+      "type": "mechanism",
+      "partId": "81dcb91e-7c6a-4407-b70a-263e653e13d1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/bSUsCOQm0uHmSwhRNQqUZbxd5N8VBhbSP49-u-Y012I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjEybkNNWWNLU0wu/anBn",
+      "material": "Rubber/Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FBMDFLYH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "250x250x120mm",
+      "description": "Complete rear wheel with pneumatic tire and hub.",
+      "productName": "Go Kart Rear Wheel Assembly 10 inch",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+rear+wheel+10+inch",
+      "estimatedCost": 35,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3xulFiz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Rear+Wheel+Assembly+10+inch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "steering_shaft",
+      "name": "Steering Shaft",
+      "type": "mechanism",
+      "partId": "7eb0d0fb-7ffa-462b-991f-9de4bfb7a30a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/AMpZ5uUg8Wjkz5-sXQSwE2LFjghoQDZfIFpoPfbOdK0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhL2Jl/MzNjNjQzLWYxMTEt/NGQ4OC1iZDAyLTZh/ZmQ0MjUzNmM1OC5f/X0NSMCwwLDMwMCwz/MDBfUFQwX1NYMzAw/X1YxX19fLnBuZw",
+      "material": "Steel",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/Kart-Steering-Shaft-Dia-8137-22/dp/B01BLSLJDG",
+            "note": "Go Kart 22\" Steering Shaft, 5/8\" Dia.",
+            "price": "N/A",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.amazon.com/Kart-Steering-Shaft-Dia-8137-25/dp/B01BLPJJHW",
+            "note": "Go Kart 25\" Steering Shaft, 5/8\" Dia.",
+            "price": "N/A",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-go-kart-steering-shaft.html",
+            "note": "General search for 'go kart steering shaft' on AliExpress.",
+            "price": "N/A",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GZVYYYHH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "800x20mm",
+      "description": "Main shaft connecting steering wheel to steering linkage.",
+      "productName": "Go Kart Steering Shaft",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+steering+shaft",
+      "estimatedCost": 30,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwpUMNJTf9kw3S3bs8dNrGkuShfcOi2NeZLn6Ir3e4MsbDN82vZfL4CyEqqhsIUnIpRWikVtIMmbCfPZOhlquPQI6EeRKNFdOt0dYLlWt1ePCmkH75bgOTBIvvbZQyFBaaVWdIw6xvQZCob2m4rwYwdZRUADrlJF1R4gBzW8uvmZN0lER97b2sSQsCHEJnVjIhReVL1csyFFCUk6m3aF8kH0AQpREVmU9ZqssKPdnNYBp97Z2tGNRS18QPS5PfISbk8FATBcFmrLtCHW3dwJLbv73TsxLmNafpuAJduPV76STMjnOb9sMblapCQ2MvHQH2h2rNxPNVfgaANTDKF1zWI4IqdknGQwipD7rLIVG36ktc7oGKUsvEswj6H1yodioTRrQcgARP1ua9zAVi8FYiEZ7RUO6dFHyzfSNZ2QHWrCMsToNTklXzRLUun2nvo6e38G4h2PzlqQEzxpPx0wnck2hXUHQex2P65kuTPSTSzOHZTGNLGrkO8Ok04m0A1JNOE5ICZClACDRNvstg9uc9dDZ3tqEVCzVYBxItKR6gi1UNqXgUQR14ilOcSZxISz7DR3dgqn20R1pRVRiw6KI60ZQGiHsfuxnTyOrOzMf3t1T90jhGl52qccKyxAcNHp9c63D9idxS5GTwQUrntaTTST",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Steering+Shaft&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "universal_joint_upper",
+      "name": "Upper Steering Universal Joint",
+      "type": "mechanism",
+      "partId": "ec5bb553-114e-4bd2-8f65-34fa23d3c2ae",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/0ngWlbe27XazY_J4rpypZcjsBtXmwqtMy6KvmP1gdMQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTF3US04U2tJc0wu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0C2ZRB2L5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x40x40mm",
+      "description": "Universal joint for steering shaft.",
+      "productName": "Go Kart Steering U-Joint",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+steering+u+joint",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfwiNBr1NTUIGJREqGHydsExoPW3C8KcNYhnArRNaWkKHrf1qM9HiBURuCZBxSJqkQ0aVmaynFiEBBDbyzpwfptjXCfLcF1c3c6uQ42kotN4kJf3Fi2ZESdCBSbmsSrPaGHtBUxACgRiEbZKFIV2byZfM9QBPuAnMdkf9MrLj9LuzxKVvJGPZe9CsvdmdJ0qCBawpPX2kZdczmMTjeNydBpDgKnvDxeT3riTAnYx9K1SRjGPfL9JTA4WnwBp311vcddW0WpAHZ5BJqlTN9z17kCN4U0Im1eo1RPblzLXJRAbAJ6nBPxsiShhEc9m8wAVvslD8MqCrcAzlR9Q8dyu497oZKy0dRaLOtC9O2tBCBJfzSgZQLMgELWl1kaY9HwiuXi7IjkIPkgHmW3GcTDJzctOidUDVyiCldzu3SbfbUcY6YqC8Se1RaeMErUeKO7FLUgYNmVvJzk3B5NcIxPK0tD5WZ39ohqhihnauzbSaeKvtZGhj1uBBxl5DVoffwhprvYMh24soZ1kfZTjXEPwgQfa0Vd07UR75xmKtZ5dEAQ6CBZdCUZZOMf0nwjcpIGv8Ht32qQOMQihfDWZfjANy8Oz8IFrIuO86oEdCqAAj5o2aFGr51dzONTPOZuZkHJABR7xoEDx7DI8KmkPurxj8JZt",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Steering+U-Joint&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "universal_joint_lower",
+      "name": "Lower Steering Universal Joint",
+      "type": "mechanism",
+      "partId": "ec5bb553-114e-4bd2-8f65-34fa23d3c2ae",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/0ngWlbe27XazY_J4rpypZcjsBtXmwqtMy6KvmP1gdMQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTF3US04U2tJc0wu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0C2ZRB2L5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x40x40mm",
+      "description": "Universal joint for steering shaft.",
+      "productName": "Go Kart Steering U-Joint",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+steering+u+joint",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfwiNBr1NTUIGJREqGHydsExoPW3C8KcNYhnArRNaWkKHrf1qM9HiBURuCZBxSJqkQ0aVmaynFiEBBDbyzpwfptjXCfLcF1c3c6uQ42kotN4kJf3Fi2ZESdCBSbmsSrPaGHtBUxACgRiEbZKFIV2byZfM9QBPuAnMdkf9MrLj9LuzxKVvJGPZe9CsvdmdJ0qCBawpPX2kZdczmMTjeNydBpDgKnvDxeT3riTAnYx9K1SRjGPfL9JTA4WnwBp311vcddW0WpAHZ5BJqlTN9z17kCN4U0Im1eo1RPblzLXJRAbAJ6nBPxsiShhEc9m8wAVvslD8MqCrcAzlR9Q8dyu497oZKy0dRaLOtC9O2tBCBJfzSgZQLMgELWl1kaY9HwiuXi7IjkIPkgHmW3GcTDJzctOidUDVyiCldzu3SbfbUcY6YqC8Se1RaeMErUeKO7FLUgYNmVvJzk3B5NcIxPK0tD5WZ39ohqhihnauzbSaeKvtZGhj1uBBxl5DVoffwhprvYMh24soZ1kfZTjXEPwgQfa0Vd07UR75xmKtZ5dEAQ6CBZdCUZZOMf0nwjcpIGv8Ht32qQOMQihfDWZfjANy8Oz8IFrIuO86oEdCqAAj5o2aFGr51dzONTPOZuZkHJABR7xoEDx7DI8KmkPurxj8JZt",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Steering+U-Joint&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "steering_linkage_rod_left",
+      "name": "Left Steering Tie Rod",
+      "type": "mechanism",
+      "partId": "0ff6eab6-e8cc-4170-994d-32d3ab307e3c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CeFyEEGtU49tTFuJi04qzaU_p9dIbrJ7BROv0Sdo1mk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vMnBj/cy0xMG1tLVRpZS1S/b2QtQmFsbC1Kb2lu/dC13aXRoLUVuZHMt/Zm9yLVN0ZWVyaW5n/LVNoYWZ0LUFzc2Vt/YnktZm9yLUFUVi1R/dWFkLUJ1Z2d5LUdv/LWthcnQtRm91ci1X/aGVlbGVyLURyaWZ0/LVRyaWtlLURJWS1Q/YXJ0c19kYzhhZmE4/NC03OTdjLTQyYjIt/YWRhOC0xMzMwYjY5/OWM4NmUuNmEwYzdj/YjE0NWFkMGE4NDU2/N2Y2Y2Q0YzUzZmQ0/OTYuanBlZz9vZG5I/ZWlnaHQ9NTc2Jm9k/bldpZHRoPTU3NiZv/ZG5CZz1GRkZGRkY",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DLVCZ8X9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x10mm",
+      "description": "Tie rod connecting steering arm to left spindle.",
+      "productName": "Go Kart Steering Tie Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+steering+tie+rod",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHbcjtOXZ8tSmjeHVee0NnPTk1Zn6LQ5JLMOAKq5iFeOS797eCFWbSQF1yETBlD2zqxUt88ZCceL2GVzkPmGT5zq1iVfTboAOjiuKIYzgaBWoDcjd1xp5llpwzEd4JyviPCoCTq5GETQieTt5tgI1fbvhb0i4C7sEBKWhcrHT4UiRYluDSltxJzSYGclPejBt0J2XmJ8hhOLCHpFWHrbeWbOH1nK25UbOwIzNbcoqAo5y1ImN3ApKidVPoh3yXt61i5js6dmPfkSa6Q2G2Xo5jz3rvjjuFzjfP56cyxkYGFthFC5RatPADn1N0CXr2KYAaad01aKXYjnP1qHzHLRcWLtW7YbiDIMMl7WJTIP7NQyMUrnWJezkky1weLdtCUVzO2aJoTiqHNmBBfQD1nHmEB4dLegfgzjReOIrem5GDLA8SL2WPbmiWbsdJqfHzMy5kA2y4GRp4yy9mMC2gzqjsVPM4EYvbBl0vkfmyuOX5jAUDND11WI1EQF5rqU6iEMXkNdWlrxT5DOLJ6htlQWWCyYn2LTosBALeWu8vxyedfoBkIyy5vKv2XTIzYY0CxHqQRBQpvpOe0bgt1JExosWCGGTeZyNoBzbdkbod5NDOOdqaqliIi9isEdzKUcGen1V8oJ44LlXW3k4njwJArvzOFZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Steering+Tie+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "steering_linkage_rod_right",
+      "name": "Right Steering Tie Rod",
+      "type": "mechanism",
+      "partId": "0ff6eab6-e8cc-4170-994d-32d3ab307e3c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CeFyEEGtU49tTFuJi04qzaU_p9dIbrJ7BROv0Sdo1mk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vMnBj/cy0xMG1tLVRpZS1S/b2QtQmFsbC1Kb2lu/dC13aXRoLUVuZHMt/Zm9yLVN0ZWVyaW5n/LVNoYWZ0LUFzc2Vt/YnktZm9yLUFUVi1R/dWFkLUJ1Z2d5LUdv/LWthcnQtRm91ci1X/aGVlbGVyLURyaWZ0/LVRyaWtlLURJWS1Q/YXJ0c19kYzhhZmE4/NC03OTdjLTQyYjIt/YWRhOC0xMzMwYjY5/OWM4NmUuNmEwYzdj/YjE0NWFkMGE4NDU2/N2Y2Y2Q0YzUzZmQ0/OTYuanBlZz9vZG5I/ZWlnaHQ9NTc2Jm9k/bldpZHRoPTU3NiZv/ZG5CZz1GRkZGRkY",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DLVCZ8X9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x10mm",
+      "description": "Tie rod connecting steering arm to right spindle.",
+      "productName": "Go Kart Steering Tie Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+steering+tie+rod",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHbcjtOXZ8tSmjeHVee0NnPTk1Zn6LQ5JLMOAKq5iFeOS797eCFWbSQF1yETBlD2zqxUt88ZCceL2GVzkPmGT5zq1iVfTboAOjiuKIYzgaBWoDcjd1xp5llpwzEd4JyviPCoCTq5GETQieTt5tgI1fbvhb0i4C7sEBKWhcrHT4UiRYluDSltxJzSYGclPejBt0J2XmJ8hhOLCHpFWHrbeWbOH1nK25UbOwIzNbcoqAo5y1ImN3ApKidVPoh3yXt61i5js6dmPfkSa6Q2G2Xo5jz3rvjjuFzjfP56cyxkYGFthFC5RatPADn1N0CXr2KYAaad01aKXYjnP1qHzHLRcWLtW7YbiDIMMl7WJTIP7NQyMUrnWJezkky1weLdtCUVzO2aJoTiqHNmBBfQD1nHmEB4dLegfgzjReOIrem5GDLA8SL2WPbmiWbsdJqfHzMy5kA2y4GRp4yy9mMC2gzqjsVPM4EYvbBl0vkfmyuOX5jAUDND11WI1EQF5rqU6iEMXkNdWlrxT5DOLJ6htlQWWCyYn2LTosBALeWu8vxyedfoBkIyy5vKv2XTIzYY0CxHqQRBQpvpOe0bgt1JExosWCGGTeZyNoBzbdkbod5NDOOdqaqliIi9isEdzKUcGen1V8oJ44LlXW3k4njwJArvzOFZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Steering+Tie+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "front_spindle_left",
+      "name": "Left Front Spindle",
+      "type": "mechanism",
+      "partId": "aad6f9b9-719c-4be7-9655-58d43d6d8e5c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/u9uBVgD6ztM2DqABVgivyXGSSyqism1eTN7T_LWeNNM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjF4WldYK2V4MlMu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D6G6HTC1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x100x50mm",
+      "description": "Pivot point and wheel mount for the left front wheel.",
+      "productName": "Go Kart Left Front Spindle",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+left+front+spindle",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRUJ7XaucxqPpY4aFLzZuRtr2JwQhuQGwyXXALh170z9T4z9bKtV9hgM644R3zeoRzXj8ukyXARWaJ6dS3oscAkGxiEd1EedPmUv4Mq77A2PGwtFRg4mEe0EYxUFohoKqzNlDbmZSBseLbvATv35ufdauRlXF7DozZWYNjoOJaQbUivaJHv3pRIP9EmWQkCNSGHqy2aauL8v9fBNtKvWAlCAfvsk1an8XA59eoha7fmVBvjFwCU7HEwhuJ0XtW1dNnnfRxJt1rsfi7HHAFWLfcXkitQPSPefbyRPY9mOC2Wn1gSWG3FetDieAOnoMXvjG7sOo4w1gC7DqRuDqp2YH6uTGZiNMfr6CBRsOqad546NyOJ3kRY1wMAKqsOx9IsHZNPJtmMeL4fRjfkJDiv0oZm3m7CqBXhachPTzLGe49X7s61aurJU10RN2FHnb89SjiPPsf7Zjc0Y7aOccxTBSVzFWXWexoPwJVoHAuMDcCmWFKBqy38rx8qNst4RoOwJcrDe1vwVfQenQAlZw41GJvjm88CPTXdMyOumSTAw09yoPixovufHcb7uIG34bSi2MExQndx9N0YcxECX4QbPOpGF3ApYZEEkiUnxjjMNVjhOEWljpXKrrXeAjhFQUOGX5P2l0x9kq5wEEi3ffjNBEXTz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Left+Front+Spindle&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "front_spindle_right",
+      "name": "Right Front Spindle",
+      "type": "mechanism",
+      "partId": "85f3fc5d-5b57-4b14-9166-5f13d5fb3193",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/u9uBVgD6ztM2DqABVgivyXGSSyqism1eTN7T_LWeNNM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjF4WldYK2V4MlMu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D6G6HTC1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x100x50mm",
+      "description": "Pivot point and wheel mount for the right front wheel.",
+      "productName": "Go Kart Right Front Spindle",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+right+front+spindle",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRUJ7XaucxqPpY4aFLzZuRtr2JwQhuQGwyXXALh170z9T4z9bKtV9hgM644R3zeoRzXj8ukyXARWaJ6dS3oscAkGxiEd1EedPmUv4Mq77A2PGwtFRg4mEe0EYxUFohoKqzNlDbmZSBseLbvATv35ufdauRlXF7DozZWYNjoOJaQbUivaJHv3pRIP9EmWQkCNSGHqy2aauL57yeZN1Za01wLAGsO5xcjyMSIk8ctMGk6Tgsdik2lT51nS7Yu7bboIM1RpPPaAmhm6XYAKod1PTxrAu64rXwczHeynfbbm8gTW6GKLNZI3ODn7XhdNd76gD2deSvxW6lzrIL5rh3Gfa8FFO6x1OfUNK4lNI84osNrbi587tZF7aU8PSBMa060Em09KIF07rMM8RfC9Ay7hxj4D452U6MgSctl3R3XPysRsnglhS3xH15OaUou2iLE1vEYG9U2wP42yP6FAKSnFnTTkZz4107vAGPV4cDbcIuVLK4rR3rrPGCeBhANITH2PeIMKjvskxxKUiLB9OSFt3l0nCSl7AquAJpglUZbbRWXjv1Kop86xV73ej8lhKMR27J9wgryvfB1BjG2oXoqHyc7Z1zo1Zj5AkvwqO9uY5hEcHRiEIfFdOVbQtZMdXY6VquZwlCsxRDJo0SWdUeXcia31",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Right+Front+Spindle&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "kingpin_left",
+      "name": "Left Front Kingpin",
+      "type": "misc",
+      "partId": "a2b8f97f-a2ce-46dd-9e44-1c67d69bc31b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Nw-hesN1Nnk8gJGcoHETSquXNOAcezFVMRYLzWkyUGo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2tnZ0FB/ZVN3bTlOcFRFRWIv/cy1sNTAwLmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CGD83BTN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x12mm",
+      "description": "Pin for pivoting left front spindle.",
+      "productName": "Go Kart Kingpin",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+kingpin",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4dRgHjR",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Kingpin&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "kingpin_right",
+      "name": "Right Front Kingpin",
+      "type": "misc",
+      "partId": "a2b8f97f-a2ce-46dd-9e44-1c67d69bc31b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Nw-hesN1Nnk8gJGcoHETSquXNOAcezFVMRYLzWkyUGo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2tnZ0FB/ZVN3bTlOcFRFRWIv/cy1sNTAwLmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CGD83BTN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x12mm",
+      "description": "Pin for pivoting right front spindle.",
+      "productName": "Go Kart Kingpin",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+kingpin",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4dRgHjR",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Kingpin&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "steering_arm",
+      "name": "Steering Pitman Arm",
+      "type": "mechanism",
+      "partId": "5eef97ff-0a9d-4a4b-b3e8-01c657ff6465",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/pxQ_A32aBU3o8BYLwjILRCA1twkdZOTf-ySiFkwXlrY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFUbEpkem1DN0wu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DCVTZ5DW?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x50x10mm",
+      "description": "Arm connecting the steering shaft to the tie rods.",
+      "productName": "Go Kart Steering Arm",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+steering+arm",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGzs4eXKxKc1wEw61fqSgiE3NJ0kX20tWfSvKKY0QasqxDI3Izxza35mLOYMSmr1Mq7JKQ7UudHxOJgUHeUnCPURmpIxfORpGwgST9Pezzwqxdbt5PgExEBikQ64Q64PbpBBAndqGMW2mtlBFZ9unX5GPo99z9KsaJfFQYnnad8yMGBRFZwXw8dZk6FXHYvEkhsMlY0gK9JchLpc40Ha0ZnfbZVe5Nxh3PnYFHi9N9E7tfrl19qkGvZp2LuOe19QKSoDh4G9EBBdv7fwiaZba6fDzeT6NYFnfCZZASZ1DYqPkzBb6RWogPttaoubMxj7ui2d3A9KBfjPNMBi5aWlEvXjppxMNRmaFNEQQCZro74SEcSN8tsNb2ho8H9IURAWTkaZn4PNOgOFHwaRndqJs6Zm5pHTgtAyRhN9dOQOfDnMi4matZRa3ovwZnqvK5wEGgW1oLLdtY6r37GhjslaEL6dZ3ixOrQD7RdQbIRYBuUCYcoRSfLwJO8O0qb5PRTgaTmzacMM1uv3d6KR0vK972S2WX7c4eXvf1fWaYzuSjka4CNxxJWAYWc1ZZBPB8ajDQaXPqqc0BBg5YotVAq56s5lyGWuvvGYZOrGGr19IaDp3JNNNi5IkwX4xxUkzdu1hdalXIi2c75yLKgm5iISaAkT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Steering+Arm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "brake_disc_assembly",
+      "name": "Rear Axle Brake Disc Assembly",
+      "type": "mechanism",
+      "partId": "4d03f6c4-c7bb-4d00-b806-ef06358888bb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/gpJT32638UQv3kP9aNHxl4MuTGCFvVmvmiDyj_lpu8o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL016Y0FB/T1N3bkZKai1QNncv/cy1sNTAwLmpwZw",
+      "material": "Steel/Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BPSCLLVG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x200x50mm",
+      "description": "Complete hydraulic disc brake system for the rear axle.",
+      "productName": "Go Kart Hydraulic Disc Brake Kit",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+hydraulic+disc+brake+kit",
+      "estimatedCost": 60,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhCXymIPCl7erMcR036ejp2kJ59KyORbGntb2pdY4D10enVkZutuhRCyENUT1o397yRmfFdT4kuP8Qz7j2U2xJUtFlJ9ubqvuqGWDCLydM6TMgeFhU68v7GPb1Qgrpw0yV3NjxW7RM21jOBr3PvhgNKzQoMwwzNmV96H7UXuFDMmEpYVXeKhguOW99HK4Ls2XEqpKEzfKsFyn9diR9ZLkYjvgDbsItQ9WTZ9lXZXVg9hnwJP4yEeinsYMfYOFmPA5zBKXXt3kuEGeuON63ZxAhFRJhviiZ27WWnvsZfxkrlQv6SEWNU8MA88uIAHnfqkOB60IUPiaxZhSQo2H4W6F0Zlk4syUB7hTQvQ7drHxVGR9Ox7B5c8EBaWczKnLn3AzXJj0ZqdLGRx1ZI91LQO6XIuHV94XLJ1XRK8mYvG7Ncm3OT0ZmIaamrSrsgElQOJAzqKtDv0r8wujZThJ4SMlMIyiWiF77snebvaVqwRo4ieU0aFiDsdcSb2S8Jixi01tVeBoCkoXwEfEx0viqGjDRivHAlvqnUAzpyhHYJ7MACNEPfjHHS5oqKAobSLrNavlseRI6Ptfz2Zhd35lcJTSzgSnQI2xDK85t8Ssl2fh47GOYPEtqG1AQdIUZsApLn65jyI1MEgO4dLnP9YwbMOSd9D",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Hydraulic+Disc+Brake+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "brake_pedal",
+      "name": "Brake Pedal",
+      "type": "mechanism",
+      "partId": "40faf48f-eaa2-460e-a5dd-0a30aca55630",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/EBJ0qAchdy5B8irSqTozUVgPBL4D6nbo7Cr1MfAVKqA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFRdVY3Ykloc0wu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DB4W2TVK?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x70x30mm",
+      "description": "Foot pedal for operating the brake system.",
+      "productName": "Go Kart Brake Pedal",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+brake+pedal",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxxeq8AWx5R47F11oXbFfd8VXywDDXQBm9w0OglxB07s8AGUQCDjs1mIXnM7etI90WPlpWCravR1wr50bBFbjjdQFvUUhplFimoOWMPyHIm3AEmOL6ccUUutERuZBwIiNbLqe9xZCygzm4tIRpOzKkEzLlkpdjl7OlDn6JPACRsHVBX36Qr2wzfzOzRW2x5NNitqhOmq2GzQ0kK6yqK3UJeyUyF622NqwZs3mF7sLRBf9KlsVCgzpkltRDyWSu9fQTYRbrtNhhC0RRVcszQD1RGBgxWrF0MYBCyOaTZpDvjIp7aTaoqzQtmjN004all0X5HIvw5gIYCVABQFVm1JNQD7yZfBNpv7c2nNvrAJ88qw4awXtexfbdiVkehLdUiZ0RJfocPqA2YZm29OBwDNd2Unp4J1VjH7JZZlTc4n4QjHiJkXzXMvpUCjFjoLUPJXnZOGKCoq3sfStO13lSZmDZ6FIJPx5kv7SpjiFB6jkVhgrWCVGwpyzJNMO6wsT9SsLYPzfVgTTHGcB76GUf5CZ7Lr4NRXfRURQrWauR2ZdBlSrFdVNc0MHC269fBAJE6UygmsopZpbAswqQ64mtFmADzJy0Ntgy88dkqnEsZiyb9mWGZJK7Vy4GMlwWUcRcUwVN6a3e1zpXxSWsBp7qnwpWEan",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Brake+Pedal&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "throttle_pedal",
+      "name": "Throttle Pedal",
+      "type": "mechanism",
+      "partId": "8cfe9602-a1dd-41c2-a801-68bc762c609d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/JoXxQGMmk_nBxuRSlUoycq4hwbfVaUi0YpSjOrN1t_I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFkdzh3VTJPbEwu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D9J7SQ3M?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x70x30mm",
+      "description": "Foot pedal for engine throttle control.",
+      "productName": "Go Kart Throttle Pedal",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+throttle+pedal",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfzkTFce8sOZn62j9TkrliWTbPexVjDg0HNQsmbkbF1BKDiUFIGvEQHoSO2moqYLcMcpkWZGBvA4hFldiB6EFRgO61EmEScB5eX0FMTTP30VoNLkjYQlhFGZjLKUT8Gj1PvpbyDevWJ2B5yMu6rOIAfJXZ553k67scjwnKbSKlueaVHMnTCuuJ1FH6uA32w26xj1l9bPauMoCMvqDwoy6gy6bBb4rVLPJi5oNuiM061dcakueHlHTrYUHO6gZIb82T6WhOGZguus5o3HtAnZoVrMXw7HdV6kZdEei1t8ExKDGBaBjX3cwKvHapUgDd2OGHkfeaqNPNij4IxAhBwBXqKx31VEXZoL5RDTM037KWzrPhQCvHD7tAaFpZrFOwfuu6xOcwnZet4JrbeWT4vV3bKXWnHXymXmwryPkAyJz3doP2HCaC1ZLFOSDCbbvifEC6geodsMomSvusG3VG4SUNsvgh1DP9ivDDO4vsnPl3ORBLIeU18Goxu3ZWr0RGMhNlwfZTZWn3eshcNN7OjLAJeKEkvINowfUaeIhgzJPbXdW9t9VEjGfqU810jeZCzvjhPnYcSLmlM9xUkIBdnMZpZFQvLBKCkxBDK907g66mRotHBUz9TPbLcvsjaOkTmmco9WQPHeVNjjdylYz9V1T8tz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Throttle+Pedal&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "fastener_kit_general",
+      "name": "General Fastener Kit",
+      "type": "misc",
+      "partId": "c13c3359-6f23-4675-ba03-5a969537665c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/AT_GCgs5YnqgYwt6ynLXhsys7S5gtK74OnOoeIBo_cU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3dGZ0FB/ZVN3RlBacGhRQWEv/cy1sNTAwLmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "Assorted",
+      "description": "Assortment of bolts, nuts, and washers for general assembly.",
+      "productName": "Assorted Bolt Nut Washer Kit",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+bolt+kit",
+      "estimatedCost": 40,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwomJkuxNnNvHVzWL5dTC7uDcx4ofTki8EEbs9WLKpVj2aIRgpUzJ6WZmM1DqVVPDS3BWjP3sjpJGBCyk2DKuPw7j9ZcC5eXhLyHlcugvSZNLJOe46fq8A4TzCajIszZUPxzrGU7DwS96QeUxJCbtKP9kSi1ECQpkEsqfruyGjDyspSIEODoyvvKeXIfhcWo7NU43VH2ZgDsfEkbDm6X1ln6BdO6SIAcgSN8DOvhXbhpmBtafegSVAS78VDkI8neJdT98yNznR3PJVbKg4rBWH6yQzPXiHI0j5C9MKp8AiZCL5P9Jjd8A7qrRPhOFucFsui2pG9H4yEbbtC2xOEBqm1bgRj7YXZEUQGTvzKQi7LVeQFZ7nHaYsGxtinGxAw1mI6NIdqeXsdAIMWnBnfJn98BGT1OgsU1xmzjJYfLvceEdS6klWaMrI3rErrDH5XTMeJhhlLVbUz6rUPeTJbjOPptuRAK4GXVAsNg53bHDqkRBwP0CPzNSobRcC6mkcGVvHBS8duou8pyhCyVVS52TlhJex1GsqiFTFV9gPq6telnIGJNKey1dNbEZOqtZgG9RUKU6YZSW3jYkkmLrDgRd36tjLWKCCeDdPb1l4oNY2eZ9N1UgevmrGtKiX6VPFHC94nHpLH6bvI8cgVR9wcdskzl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Assorted+Bolt+Nut+Washer+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "engine_kill_switch_mount",
+      "name": "Engine Kill Switch Mount",
+      "type": "3d_printed",
+      "partId": "cae1ef14-3635-4843-8633-a19110808535",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/1tJ9LwstItKrzeHCZ2JiRKWuRZXCE8W9ClbqKuO_de8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDE2TlJabjBZLUwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "examples": [
+          {
+            "url": "https://www.all3dp.com/2/3d-print-tolerances-guide-ultimate-guide/",
+            "title": "3D Print Tolerances & Fits: The Ultimate Guide",
+            "description": "This comprehensive guide covers essential principles for designing parts with proper tolerances and fits for 3D printing. It details general tolerance capabilities of FDM printers, discusses clearance, interference, and transition fits, and provides practical tips for achieving desired precision. For an engine kill switch mount, understanding these tolerances is crucial to ensure the switch fits snugly without being too loose or requiring excessive force to install, and that mounting holes align correctly with the chassis or an adapter plate."
+          },
+          {
+            "url": "https://www.all3dp.com/2/3d-printing-snap-fit-joints-a-practical-guide/",
+            "title": "3D Printing Snap Fit Joints: A Practical Guide",
+            "description": "This article explores the design considerations for creating robust snap-fit mechanisms in 3D printed parts. It covers various snap-fit types (cantilever, annular, U-shaped), material properties, and critical dimensions for successful locking and release. If the engine kill switch is designed to snap into its mount, this guide provides the necessary knowledge to create a secure yet accessible retention feature, accounting for the flexibility and layer adhesion characteristics of 3D printed plastic."
+          },
+          {
+            "url": "https://www.all3dp.com/2/3d-printing-wall-thickness-guide/",
+            "title": "3D Printing Wall Thickness: A Guide to Stronger Prints",
+            "description": "A detailed guide on optimizing wall thickness for strength and printability in 3D printed designs. It discusses minimum and recommended wall thicknesses for various printing processes and applications, focusing on FDM considerations like infill interaction and layer adhesion. For an engine kill switch mount, adequate wall thickness (e.g., 2-4mm, depending on print material and design) is vital to withstand vibrations from the go-kart engine and potential impacts without cracking or deforming, ensuring the kill switch remains securely in place."
+          },
+          {
+            "url": "https://www.all3dp.com/2/3d-print-bridging-ultimate-guide/",
+            "title": "3D Print Bridging: The Ultimate Guide",
+            "description": "This guide explains the concept of bridging in 3D printing, offering tips and techniques to achieve clean, support-free horizontal spans. It covers optimal bridge lengths, print settings, and design considerations to minimize sagging and ensure structural integrity. When designing an engine kill switch mount, minimizing or strategically orienting bridges can reduce the need for support material, leading to cleaner finishes and easier post-processing, especially for internal cavities or mounting features where supports would be difficult to remove."
+          }
+        ],
+        "sourcing": [],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library?query=Engine%20Kill%20Switch%20Mount",
+            "label": "GrabCAD",
+            "description": "Various 3D CAD models (STEP, IGES, SolidWorks, etc.) uploaded by community members."
+          },
+          {
+            "url": "https://www.thingiverse.com/search?q=Engine%20Kill%20Switch%20Mount",
+            "label": "Thingiverse",
+            "description": "STL files and other 3D printable models."
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://help.prusa3d.com/materials",
+            "type": "guide",
+            "title": "Prusa Research Knowledge Base",
+            "description": "3D printer filament material guide"
+          },
+          {
+            "url": "https://blog.prusa3d.com/how-to-choose-the-right-3d-printer-filament-a-beginners-guide_34199/",
+            "type": "guide",
+            "title": "Prusa Research Blog",
+            "description": "Beginner's guide to filament choice"
+          },
+          {
+            "url": "https://support.ultimaker.com/s/article/Ultimaker-filaments",
+            "type": "guide",
+            "title": "Ultimaker Material Guide",
+            "description": "Overview of Ultimaker 3D materials"
+          },
+          {
+            "url": "https://www.matterhackers.com/r/3d-printer-filament-types",
+            "type": "guide",
+            "title": "MatterHackers Filament Guide",
+            "description": "Comprehensive 3D filament type guide"
+          },
+          {
+            "url": "https://www.forward-am.com/resources/additive-manufacturing-filament/",
+            "type": "reference",
+            "title": "BASF Forward AM",
+            "description": "Industrial FDM filament portfolio"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "engine_kill_switch",
+      "dimensions": "40x30x20mm",
+      "description": "3D printed bracket to securely mount the engine kill switch.",
+      "productName": "Engine Kill Switch Mount",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 2,
+      "printSettings": "Layer height: 0.2mm, Infill: 20%, Supports: Yes",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "go_kart_engine",
+      "name": "Go-Kart Gasoline Engine",
+      "pins": [
+        "Kill Switch Terminal"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/XhL3_Pt7a-CuFB54DjbSEPCMij4m-ElacL9ZukL04VI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0ZwVUFB/T1N3WER0azJ3Tnkv/cy1sMjI1LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "examples": [
+          {
+            "url": "https://www.gokartguru.com/build-go-kart-predator-212/",
+            "title": "How to Build a Go Kart with a Predator 212cc Engine",
+            "description": "This comprehensive guide outlines the process of building a go-kart from scratch, specifically using the Predator 212cc engine as the power plant. It covers chassis selection, engine mounting, drivetrain setup (including clutch and chain alignment), steering, braking, and general assembly. The tutorial implicitly demonstrates speed control through throttle linkage and overall motion control of the vehicle."
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=Fq4QG1-61Fw",
+            "title": "DIY Mini Bike Build - Starting with a Predator 212cc Engine",
+            "description": "A video series detailing the construction of a custom mini bike, centralizing around the Predator 212cc engine. This project showcases practical integration of the engine into a small vehicle frame, explaining the mechanical aspects of power transfer, throttle control for speed profiles, and achieving stable motion through proper component selection and assembly."
+          },
+          {
+            "url": "https://www.oldminibikes.com/threads/predator-212-on-ct200u-ex-ct100u.141870/",
+            "title": "Predator 212cc Engine Swap Guide for Coleman Mini Bikes",
+            "description": "This forum thread serves as a practical guide for swapping out a stock engine for a Predator 212cc in a Coleman mini bike. It provides detailed steps, common issues, and solutions for engine mounting, chain alignment, throttle cable adaptation, and kill switch wiring, which are all crucial for controlling the engine's speed and overall motion."
+          },
+          {
+            "url": "https://www.instructables.com/Motorized-Wheelbarrow-Part-1/",
+            "title": "Building a Custom Powered Wheelbarrow with a Predator 212cc",
+            "description": "An Instructables project demonstrating how to repurpose a Predator 212cc engine to power a custom motorized wheelbarrow. This example goes beyond typical vehicle applications, showing adaptation for heavy-duty hauling. It covers engine mounting, drive system design for specific load handling and ground speed, and control mechanisms for forward motion."
+          }
+        ],
+        "sourcing": [],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library?query=Predator%20212cc%206.5%20HP%20OHV%20Horizontal%20Shaft%20Gas%20Engine",
+            "label": "GrabCAD",
+            "description": "Search for STEP, SolidWorks, Inventor, and other 3D CAD models, often contributed by users."
+          },
+          {
+            "url": "https://www.snapeda.com/search/?q=Predator%20212cc%206.5%20HP%20OHV%20Horizontal%20Shaft%20Gas%20Engine",
+            "label": "SnapEDA",
+            "description": "Search for PCB footprints, schematic symbols, and 3D models, primarily for electrical components."
+          },
+          {
+            "url": "https://www.ultralibrarian.com/search?q=Predator%20212cc%206.5%20HP%20OHV%20Horizontal%20Shaft%20Gas%20Engine",
+            "label": "Ultra Librarian",
+            "description": "Search for PCB footprints, schematic symbols, and 3D models, primarily for electrical components."
+          },
+          {
+            "url": "https://www.thingiverse.com/search?q=Predator%20212cc%206.5%20HP%20OHV%20Horizontal%20Shaft%20Gas%20Engine",
+            "label": "Thingiverse",
+            "description": "Search for 3D printable models (STL files), often user-generated designs or modifications."
+          }
+        ],
+        "datasheetUrl": "https://www.harborfreight.com/212cc-65-hp-ohv-horizontal-shaft-gas-engine-60340-96595.html",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.harborfreight.com/manuals/60000-60999/60340.pdf",
+            "type": "guide",
+            "title": "Harbor Freight Tools",
+            "description": "Official owner's manual and instructions"
+          },
+          {
+            "url": "https://www.harborfreight.com/parts",
+            "type": "reference",
+            "title": "Harbor Freight Tools",
+            "description": "Replacement parts and diagrams"
+          },
+          {
+            "url": "https://manuals.harborfreight.com/manuals/60000-60999/60340.pdf",
+            "type": "guide",
+            "title": "Harbor Freight Tools",
+            "description": "Official owner's manual and instructions"
+          },
+          {
+            "url": "https://www.harborfreight.com/parts",
+            "type": "reference",
+            "title": "Harbor Freight Tools",
+            "description": "Replacement parts and diagrams"
+          }
+        ]
+      },
+      "description": "Main power source for the go-kart, providing rotational force to the drivetrain.",
+      "productName": "Predator 212cc 6.5 HP OHV Horizontal Shaft Gas Engine",
+      "purchaseUrl": "https://www.harborfreight.com/engines-parts/gasoline-engines/212cc-65-hp-ohv-horizontal-shaft-gas-engine-epa-69730.html",
+      "estimatedCost": 150,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Predator+212cc+6.5+HP+OHV+Horizontal+Shaft+Gas+Engine&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "go_kart_frame_chassis",
+      "name": "Go-Kart Steel Frame Chassis",
+      "type": "structural",
+      "category": "mechanical",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "sourcing": [],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library?query=Universal%20Go%20Kart%20Frame%20Chassis",
+            "label": "GrabCAD",
+            "description": "Search for CAD models in formats like STEP, IGES, SolidWorks, and Autodesk Inventor."
+          },
+          {
+            "url": "https://www.snapeda.com/search/?q=Universal%20Go%20Kart%20Frame%20Chassis",
+            "label": "SnapEDA",
+            "description": "Primarily provides symbols, footprints, and 3D models for electronic components. Unlikely to have mechanical frame models."
+          },
+          {
+            "url": "https://www.ultralibrarian.com/search?q=Universal%20Go%20Kart%20Frame%20Chassis",
+            "label": "Ultra Librarian",
+            "description": "Primarily provides symbols, footprints, and 3D models for electronic components. Unlikely to have mechanical frame models."
+          },
+          {
+            "url": "https://www.thingiverse.com/search?q=Universal%20Go%20Kart%20Frame%20Chassis",
+            "label": "Thingiverse",
+            "description": "Search for 3D printable models, often in STL format, which can include mechanical structures."
+          }
+        ],
+        "datasheetUrl": "",
+        "documentationUrls": []
+      },
+      "description": "Pre-fabricated steel frame forming the main structure of the go-kart.",
+      "productName": "Universal Go Kart Frame Chassis",
+      "purchaseUrl": "https://www.amazon.com/s?k=universal+go+kart+frame+chassis",
+      "estimatedCost": 400,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Universal+Go+Kart+Frame+Chassis&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "go_kart_seat",
+      "name": "Go-Kart Seat",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Driver's seat for the go-kart.",
+      "productName": "Plastic Go Kart Racing Seat",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+racing+seat",
+      "estimatedCost": 50,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Plastic+Go+Kart+Racing+Seat&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "go_kart_seat_mounts",
+      "name": "Go-Kart Seat Mounting Brackets",
+      "type": "structural",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Brackets for securing the seat to the chassis.",
+      "productName": "Go Kart Seat Mounting Kit",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+seat+mounting+kit",
+      "estimatedCost": 20,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Seat+Mounting+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "steering_wheel",
+      "name": "Go-Kart Steering Wheel",
+      "type": "mechanism",
+      "category": "mechanical",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/Steering-Wheel-Go-Kart-Racing-Accessory/dp/B0851FBBWW",
+            "note": "270mm Steering Wheel for Go-Kart Racing Cart Accessory.",
+            "price": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-go-kart-steering-wheel.html",
+            "note": "Wide variety of go-kart steering wheels with different styles and price points.",
+            "price": "",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.mcmaster.com/go-kart-steering-wheels",
+            "note": "Industrial supplier, search for specific steering wheel options.",
+            "price": "",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "https://www.grainger.com/search?searchQuery=go+kart+steering+wheel",
+            "note": "Industrial supply distributor, search for specific steering wheel options.",
+            "price": "",
+            "vendor": "Grainger"
+          }
+        ]
+      },
+      "description": "Input device for steering the go-kart.",
+      "productName": "Go Kart Steering Wheel",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+steering+wheel",
+      "estimatedCost": 35,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Steering+Wheel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "throttle_cable",
+      "name": "Go-Kart Throttle Cable",
+      "type": "mechanism",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Cable connecting the throttle pedal to the engine's carburetor.",
+      "productName": "Go Kart Throttle Cable 72 inch",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+throttle+cable",
+      "estimatedCost": 15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Throttle+Cable+72+inch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "engine_exhaust",
+      "name": "Go-Kart Engine Exhaust",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Exhaust system for the gasoline engine to direct fumes.",
+      "productName": "Go Kart Header Pipe Exhaust",
+      "purchaseUrl": "https://www.amazon.com/s?k=go+kart+header+pipe+exhaust",
+      "estimatedCost": 40,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Go+Kart+Header+Pipe+Exhaust&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "simple design",
+    "basic tools",
+    "basic parts"
+  ],
+  "projectName": "Gasoline Go-Kart",
+  "originalPrompt": "I want to design a simple go-kart that requires basic tools and parts.",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print the engine kill switch mount",
+          "partIds": [
+            "engine_kill_switch_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Prepare chassis mounting points for engine, pedals, and steering column",
+          "partIds": [
+            "go_kart_frame_chassis",
+            "engine_mounting_plate",
+            "brake_pedal",
+            "throttle_pedal",
+            "steering_column_support"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Prepare chassis mounting points for rear axle bearing mounts and seat mounts",
+          "partIds": [
+            "go_kart_frame_chassis",
+            "rear_axle_bearing_mount_left",
+            "rear_axle_bearing_mount_right",
+            "go_kart_seat_mounts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Connect the engine kill switch to the gasoline engine ignition kill terminal",
+          "partIds": [
+            "engine_kill_switch",
+            "go_kart_engine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Fill engine with oil and appropriate fuel",
+          "partIds": [
+            "go_kart_engine"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Test engine kill switch functionality",
+          "partIds": [
+            "engine_kill_switch",
+            "go_kart_engine"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Bleed the hydraulic brake system",
+          "partIds": [
+            "brake_disc_assembly",
+            "brake_pedal"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify free movement of throttle and brake pedals",
+          "partIds": [
+            "throttle_pedal",
+            "brake_pedal",
+            "throttle_cable"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Perform initial engine start and check for proper idle and throttle response",
+          "partIds": [
+            "go_kart_engine",
+            "throttle_pedal",
+            "throttle_cable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount engine mounting plate, rear axle bearing mounts, and steering column support to the chassis",
+          "partIds": [
+            "go_kart_frame_chassis",
+            "engine_mounting_plate",
+            "rear_axle_bearing_mount_left",
+            "rear_axle_bearing_mount_right",
+            "steering_column_support",
+            "fastener_kit_general"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Install the live rear axle, bearings, drive sprocket, and brake disc assembly",
+          "partIds": [
+            "live_rear_axle",
+            "rear_axle_bearing_left",
+            "rear_axle_bearing_right",
+            "drive_sprocket",
+            "brake_disc_assembly",
+            "fastener_kit_general"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount the gasoline engine, engine clutch sprocket, and engine exhaust",
+          "partIds": [
+            "go_kart_engine",
+            "engine_mounting_plate",
+            "engine_sprocket",
+            "engine_exhaust",
+            "fastener_kit_general"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Connect the drive chain between the engine clutch sprocket and the rear axle drive sprocket",
+          "partIds": [
+            "drive_chain",
+            "engine_sprocket",
+            "drive_sprocket"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Assemble the front steering spindles with kingpins and attach front wheels",
+          "partIds": [
+            "front_spindle_left",
+            "front_spindle_right",
+            "kingpin_left",
+            "kingpin_right",
+            "front_wheel_left",
+            "front_wheel_right",
+            "fastener_kit_general"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Install the steering shaft, universal joints, steering arm, and tie rods, then attach steering wheel",
+          "partIds": [
+            "steering_shaft",
+            "universal_joint_upper",
+            "universal_joint_lower",
+            "steering_arm",
+            "steering_linkage_rod_left",
+            "steering_linkage_rod_right",
+            "steering_wheel",
+            "fastener_kit_general"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Mount the brake and throttle pedals to the chassis and connect the throttle cable to the engine",
+          "partIds": [
+            "brake_pedal",
+            "throttle_pedal",
+            "go_kart_frame_chassis",
+            "throttle_cable",
+            "go_kart_engine",
+            "fastener_kit_general"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Mount the seat mounting brackets and the go-kart seat to the chassis",
+          "partIds": [
+            "go_kart_seat_mounts",
+            "go_kart_seat",
+            "go_kart_frame_chassis",
+            "fastener_kit_general"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A gasoline-powered go-kart built with a",
+  "instructionPreamble": {
+    "tools": [
+      "Socket wrench set",
+      "Combination wrench set",
+      "Drill and drill bit set (various sizes)",
+      "Measuring tape",
+      "Marker",
+      "Wire strippers",
+      "Crimping tool (for spade connectors)",
+      "Hydraulic brake bleeding kit",
+      "3D printer (PETG capable)",
+      "Basic engine maintenance tools (e.g., spark plug wrench)"
+    ],
+    "assumptions": [
+      "Basic mechanical assembly experience",
+      "Access to a workshop space suitable for go-kart construction",
+      "Understanding of safe operating procedures for gasoline engines"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "engine_kill_switch",
+      "target": "go_kart_engine",
+      "voltage": "12V",
+      "sourcePin": "Ignition Kill Wire",
+      "targetPin": "Kill Switch Terminal"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "houses",
+      "source": "rear_axle_bearing_mount_left",
+      "target": "rear_axle_bearing_left"
+    },
+    {
+      "label": "houses",
+      "source": "rear_axle_bearing_mount_right",
+      "target": "rear_axle_bearing_right"
+    },
+    {
+      "label": "passes through",
+      "source": "live_rear_axle",
+      "target": "rear_axle_bearing_left"
+    },
+    {
+      "label": "passes through",
+      "source": "live_rear_axle",
+      "target": "rear_axle_bearing_right"
+    },
+    {
+      "label": "keyed to",
+      "source": "live_rear_axle",
+      "target": "drive_sprocket"
+    },
+    {
+      "label": "keyed to",
+      "source": "live_rear_axle",
+      "target": "rear_wheel_left"
+    },
+    {
+      "label": "keyed to",
+      "source": "live_rear_axle",
+      "target": "rear_wheel_right"
+    },
+    {
+      "label": "connects to",
+      "source": "drive_chain",
+      "target": "engine_sprocket"
+    },
+    {
+      "label": "connects to",
+      "source": "drive_chain",
+      "target": "drive_sprocket"
+    },
+    {
+      "label": "rotates within",
+      "source": "steering_shaft",
+      "target": "steering_column_support"
+    },
+    {
+      "label": "connects to",
+      "source": "steering_shaft",
+      "target": "universal_joint_upper"
+    },
+    {
+      "label": "connects to",
+      "source": "universal_joint_upper",
+      "target": "universal_joint_lower"
+    },
+    {
+      "label": "connects to",
+      "source": "universal_joint_lower",
+      "target": "steering_arm"
+    },
+    {
+      "label": "links to",
+      "source": "steering_arm",
+      "target": "front_spindle_left"
+    },
+    {
+      "label": "links to",
+      "source": "steering_arm",
+      "target": "front_spindle_right"
+    },
+    {
+      "label": "hub mounts to",
+      "source": "front_spindle_left",
+      "target": "front_wheel_left"
+    },
+    {
+      "label": "hub mounts to",
+      "source": "front_spindle_right",
+      "target": "front_wheel_right"
+    },
+    {
+      "label": "mounts to",
+      "source": "live_rear_axle",
+      "target": "brake_disc_assembly"
+    },
+    {
+      "label": "mount",
+      "source": "engine_kill_switch_mount",
+      "target": "engine_kill_switch"
+    },
+    {
+      "label": "bolted with M8 bolts",
+      "source": "go_kart_engine",
+      "target": "engine_mounting_plate"
+    },
+    {
+      "label": "shaft mounted to",
+      "source": "go_kart_engine",
+      "target": "engine_sprocket"
+    },
+    {
+      "label": "pivots on",
+      "source": "front_spindle_left",
+      "target": "kingpin_left"
+    },
+    {
+      "label": "pivots on",
+      "source": "front_spindle_right",
+      "target": "kingpin_right"
+    },
+    {
+      "label": "connected to steering arm",
+      "source": "front_spindle_left",
+      "target": "steering_linkage_rod_left"
+    },
+    {
+      "label": "connected to steering arm",
+      "source": "front_spindle_right",
+      "target": "steering_linkage_rod_right"
+    },
+    {
+      "label": "connected to pivot",
+      "source": "steering_linkage_rod_left",
+      "target": "steering_arm"
+    },
+    {
+      "label": "connected to pivot",
+      "source": "steering_linkage_rod_right",
+      "target": "steering_arm"
+    },
+    {
+      "label": "bolted to frame",
+      "source": "go_kart_frame_chassis",
+      "target": "engine_mounting_plate"
+    },
+    {
+      "label": "welded/bolted to frame",
+      "source": "go_kart_frame_chassis",
+      "target": "rear_axle_bearing_mount_left"
+    },
+    {
+      "label": "welded/bolted to frame",
+      "source": "go_kart_frame_chassis",
+      "target": "rear_axle_bearing_mount_right"
+    },
+    {
+      "label": "welded/bolted to frame",
+      "source": "go_kart_frame_chassis",
+      "target": "steering_column_support"
+    },
+    {
+      "label": "bolted to frame",
+      "source": "go_kart_frame_chassis",
+      "target": "go_kart_seat_mounts"
+    },
+    {
+      "label": "bolted to mounts",
+      "source": "go_kart_seat_mounts",
+      "target": "go_kart_seat"
+    },
+    {
+      "label": "keyed and bolted",
+      "source": "steering_shaft",
+      "target": "steering_wheel"
+    },
+    {
+      "label": "connected to pedal",
+      "source": "throttle_pedal",
+      "target": "throttle_cable"
+    },
+    {
+      "label": "connected to carburetor",
+      "source": "throttle_cable",
+      "target": "go_kart_engine"
+    },
+    {
+      "label": "bolted to engine head",
+      "source": "go_kart_engine",
+      "target": "engine_exhaust"
+    },
+    {
+      "label": "mounted to frame",
+      "source": "go_kart_frame_chassis",
+      "target": "brake_pedal"
+    },
+    {
+      "label": "mounted to frame",
+      "source": "go_kart_frame_chassis",
+      "target": "throttle_pedal"
+    }
+  ],
+  "projectId": "53d9d3e2-1657-4820-905b-841e0432811f"
+}

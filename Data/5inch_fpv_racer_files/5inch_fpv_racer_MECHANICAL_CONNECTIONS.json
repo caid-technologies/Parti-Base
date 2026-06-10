@@ -1,0 +1,242 @@
+[
+  {
+    "label": "mounts to arm",
+    "source": "frame_kit_x",
+    "target": "motor_fl"
+  },
+  {
+    "label": "mounts to arm",
+    "source": "frame_kit_x",
+    "target": "motor_fr"
+  },
+  {
+    "label": "mounts to arm",
+    "source": "frame_kit_x",
+    "target": "motor_rl"
+  },
+  {
+    "label": "mounts to arm",
+    "source": "frame_kit_x",
+    "target": "motor_rr"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_fl_1",
+    "target": "motor_fl"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_fl_2",
+    "target": "motor_fl"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_fl_3",
+    "target": "motor_fl"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_fl_4",
+    "target": "motor_fl"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_fr_1",
+    "target": "motor_fr"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_fr_2",
+    "target": "motor_fr"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_fr_3",
+    "target": "motor_fr"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_fr_4",
+    "target": "motor_fr"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_rl_1",
+    "target": "motor_rl"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_rl_2",
+    "target": "motor_rl"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_rl_3",
+    "target": "motor_rl"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_rl_4",
+    "target": "motor_rl"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_rr_1",
+    "target": "motor_rr"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_rr_2",
+    "target": "motor_rr"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_rr_3",
+    "target": "motor_rr"
+  },
+  {
+    "label": "secures motor to frame",
+    "source": "m3_screw_motor_rr_4",
+    "target": "motor_rr"
+  },
+  {
+    "label": "mounts to shaft",
+    "source": "propeller_cw_fl",
+    "target": "motor_fl"
+  },
+  {
+    "label": "mounts to shaft",
+    "source": "propeller_ccw_fr",
+    "target": "motor_fr"
+  },
+  {
+    "label": "mounts to shaft",
+    "source": "propeller_ccw_rl",
+    "target": "motor_rl"
+  },
+  {
+    "label": "mounts to shaft",
+    "source": "propeller_cw_rr",
+    "target": "motor_rr"
+  },
+  {
+    "label": "secures propeller",
+    "source": "prop_nut_m5_fl",
+    "target": "motor_fl"
+  },
+  {
+    "label": "secures propeller",
+    "source": "prop_nut_m5_fr",
+    "target": "motor_fr"
+  },
+  {
+    "label": "secures propeller",
+    "source": "prop_nut_m5_rl",
+    "target": "motor_rl"
+  },
+  {
+    "label": "secures propeller",
+    "source": "prop_nut_m5_rr",
+    "target": "motor_rr"
+  },
+  {
+    "label": "mounts to bottom plate",
+    "source": "frame_kit_x",
+    "target": "esc_4in1"
+  },
+  {
+    "label": "mounts to stack",
+    "source": "esc_4in1",
+    "target": "flight_controller"
+  },
+  {
+    "label": "supports FC",
+    "source": "fc_standoff_1",
+    "target": "esc_4in1"
+  },
+  {
+    "label": "supports FC",
+    "source": "fc_standoff_2",
+    "target": "esc_4in1"
+  },
+  {
+    "label": "supports FC",
+    "source": "fc_standoff_3",
+    "target": "esc_4in1"
+  },
+  {
+    "label": "supports FC",
+    "source": "fc_standoff_4",
+    "target": "esc_4in1"
+  },
+  {
+    "label": "secures FC stack",
+    "source": "m3_screw_fc_1",
+    "target": "flight_controller"
+  },
+  {
+    "label": "secures FC stack",
+    "source": "m3_screw_fc_2",
+    "target": "flight_controller"
+  },
+  {
+    "label": "secures FC stack",
+    "source": "m3_screw_fc_3",
+    "target": "flight_controller"
+  },
+  {
+    "label": "secures FC stack",
+    "source": "m3_screw_fc_4",
+    "target": "flight_controller"
+  },
+  {
+    "label": "attaches to frame side plates",
+    "source": "3d_camera_mount",
+    "target": "frame_kit_x"
+  },
+  {
+    "label": "inserts into mount",
+    "source": "fpv_camera",
+    "target": "3d_camera_mount"
+  },
+  {
+    "label": "attaches to rear top plate",
+    "source": "3d_vtx_antenna_mount",
+    "target": "frame_kit_x"
+  },
+  {
+    "label": "antenna passes through mount",
+    "source": "vtx",
+    "target": "3d_vtx_antenna_mount"
+  },
+  {
+    "label": "attaches to rear top plate",
+    "source": "3d_rx_antenna_mount",
+    "target": "frame_kit_x"
+  },
+  {
+    "label": "antenna secures in mount",
+    "source": "crossfire_rx",
+    "target": "3d_rx_antenna_mount"
+  },
+  {
+    "label": "sits on top plate",
+    "source": "lipo_battery",
+    "target": "frame_kit_x"
+  },
+  {
+    "label": "secures battery",
+    "source": "lipo_strap_1",
+    "target": "frame_kit_x"
+  },
+  {
+    "label": "secures battery",
+    "source": "lipo_strap_2",
+    "target": "frame_kit_x"
+  },
+  {
+    "label": "attaches to bottom plate",
+    "source": "3d_lipo_skid_plate",
+    "target": "frame_kit_x"
+  }
+]

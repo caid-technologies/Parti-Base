@@ -1,0 +1,178 @@
+[
+  {
+    "type": "power",
+    "source": "lipo_1s",
+    "target": "esp32_c3_mini",
+    "voltage": "3.7V-4.2V",
+    "sourcePin": "JST_Positive",
+    "targetPin": "5V"
+  },
+  {
+    "type": "power",
+    "source": "lipo_1s",
+    "target": "esp32_c3_mini",
+    "voltage": "0V",
+    "sourcePin": "JST_Negative",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "esp32_c3_mini",
+    "target": "mpu6050_imu",
+    "voltage": "3.3V",
+    "sourcePin": "3V3",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "source": "esp32_c3_mini",
+    "target": "mpu6050_imu",
+    "voltage": "0V",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "data",
+    "source": "esp32_c3_mini",
+    "target": "mpu6050_imu",
+    "voltage": "3.3V-0V",
+    "sourcePin": "GPIO8",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "source": "esp32_c3_mini",
+    "target": "mpu6050_imu",
+    "voltage": "3.3V-0V",
+    "sourcePin": "GPIO9",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "power",
+    "source": "lipo_1s",
+    "target": "motor_fl",
+    "voltage": "3.7V-4.2V",
+    "sourcePin": "JST_Positive",
+    "targetPin": "Positive"
+  },
+  {
+    "type": "power",
+    "source": "motor_fl",
+    "target": "mosfet_fl_esc",
+    "voltage": "0V",
+    "sourcePin": "Negative",
+    "targetPin": "Drain"
+  },
+  {
+    "type": "power",
+    "source": "mosfet_fl_esc",
+    "target": "lipo_1s",
+    "voltage": "0V",
+    "sourcePin": "Source",
+    "targetPin": "JST_Negative"
+  },
+  {
+    "type": "data",
+    "source": "esp32_c3_mini",
+    "target": "mosfet_fl_esc",
+    "voltage": "3.3V-0V",
+    "sourcePin": "GPIO0",
+    "targetPin": "Gate"
+  },
+  {
+    "type": "power",
+    "source": "lipo_1s",
+    "target": "motor_fr",
+    "voltage": "3.7V-4.2V",
+    "sourcePin": "JST_Positive",
+    "targetPin": "Positive"
+  },
+  {
+    "type": "power",
+    "source": "motor_fr",
+    "target": "mosfet_fr_esc",
+    "voltage": "0V",
+    "sourcePin": "Negative",
+    "targetPin": "Drain"
+  },
+  {
+    "type": "power",
+    "source": "mosfet_fr_esc",
+    "target": "lipo_1s",
+    "voltage": "0V",
+    "sourcePin": "Source",
+    "targetPin": "JST_Negative"
+  },
+  {
+    "type": "data",
+    "source": "esp32_c3_mini",
+    "target": "mosfet_fr_esc",
+    "voltage": "3.3V-0V",
+    "sourcePin": "GPIO1",
+    "targetPin": "Gate"
+  },
+  {
+    "type": "power",
+    "source": "lipo_1s",
+    "target": "motor_rl",
+    "voltage": "3.7V-4.2V",
+    "sourcePin": "JST_Positive",
+    "targetPin": "Positive"
+  },
+  {
+    "type": "power",
+    "source": "motor_rl",
+    "target": "mosfet_rl_esc",
+    "voltage": "0V",
+    "sourcePin": "Negative",
+    "targetPin": "Drain"
+  },
+  {
+    "type": "power",
+    "source": "mosfet_rl_esc",
+    "target": "lipo_1s",
+    "voltage": "0V",
+    "sourcePin": "Source",
+    "targetPin": "JST_Negative"
+  },
+  {
+    "type": "data",
+    "source": "esp32_c3_mini",
+    "target": "mosfet_rl_esc",
+    "voltage": "3.3V-0V",
+    "sourcePin": "GPIO2",
+    "targetPin": "Gate"
+  },
+  {
+    "type": "power",
+    "source": "lipo_1s",
+    "target": "motor_rr",
+    "voltage": "3.7V-4.2V",
+    "sourcePin": "JST_Positive",
+    "targetPin": "Positive"
+  },
+  {
+    "type": "power",
+    "source": "motor_rr",
+    "target": "mosfet_rr_esc",
+    "voltage": "0V",
+    "sourcePin": "Negative",
+    "targetPin": "Drain"
+  },
+  {
+    "type": "power",
+    "source": "mosfet_rr_esc",
+    "target": "lipo_1s",
+    "voltage": "0V",
+    "sourcePin": "Source",
+    "targetPin": "JST_Negative"
+  },
+  {
+    "type": "data",
+    "source": "esp32_c3_mini",
+    "target": "mosfet_rr_esc",
+    "voltage": "3.3V-0V",
+    "sourcePin": "GPIO3",
+    "targetPin": "Gate"
+  }
+]

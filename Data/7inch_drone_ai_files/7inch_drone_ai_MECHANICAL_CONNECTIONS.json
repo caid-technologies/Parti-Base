@@ -1,0 +1,72 @@
+[
+  {
+    "label": "mounted with M3 nylon standoffs",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "holybro_pixhawk_6c_mini"
+  },
+  {
+    "label": "fastened to",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "m3_nylon_standoff_kit"
+  },
+  {
+    "label": "assembled with",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "m3_hex_screw_assortment"
+  },
+  {
+    "label": "secures",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "battery_strap_250mm"
+  },
+  {
+    "label": "placed on",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "lipo_battery_pad"
+  },
+  {
+    "label": "mounted to frame with M3 screws",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "raspberry_pi_5_vibration_isolated_mount"
+  },
+  {
+    "label": "secures with M2.5/M3 screws",
+    "source": "raspberry_pi_5_vibration_isolated_mount",
+    "target": "raspberry_pi_5"
+  },
+  {
+    "label": "attached to (optional, can be separate)",
+    "source": "raspberry_pi_5_vibration_isolated_mount",
+    "target": "oak_d_s2_camera_mount"
+  },
+  {
+    "label": "holds securely",
+    "source": "oak_d_s2_camera_mount",
+    "target": "luxonis_oak_d_s2"
+  },
+  {
+    "label": "mounted to front section",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "tfmini_plus_front_sensor_mount"
+  },
+  {
+    "label": "secures",
+    "source": "tfmini_plus_front_sensor_mount",
+    "target": "benewake_tfmini_plus"
+  },
+  {
+    "label": "attached to top plate",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "gps_mast_mount"
+  },
+  {
+    "label": "holds elevated",
+    "source": "gps_mast_mount",
+    "target": "holybro_m10_gps"
+  },
+  {
+    "label": "mounted to front (optional)",
+    "source": "7_inch_dead_cat_frame_kit",
+    "target": "cam_fpv"
+  }
+]

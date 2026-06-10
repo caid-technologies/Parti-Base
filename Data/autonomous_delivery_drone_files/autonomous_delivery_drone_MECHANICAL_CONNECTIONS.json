@@ -1,0 +1,232 @@
+[
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_top_plate",
+    "target": "m3_aluminum_standoffs"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "m3_aluminum_standoffs",
+    "target": "frame_bottom_plate"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "frame_arm_front_left"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "frame_arm_front_right"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "frame_arm_rear_left"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "frame_arm_rear_right"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_arm_front_left",
+    "target": "motor_mount_front_left"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_arm_front_right",
+    "target": "motor_mount_front_right"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_arm_rear_left",
+    "target": "motor_mount_rear_left"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_arm_rear_right",
+    "target": "motor_mount_rear_right"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_arm_front_left",
+    "target": "esc_mount_front_left"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_arm_front_right",
+    "target": "esc_mount_front_right"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_arm_rear_left",
+    "target": "esc_mount_rear_left"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_arm_rear_right",
+    "target": "esc_mount_rear_right"
+  },
+  {
+    "label": "propeller nut/washer",
+    "source": "motor_mount_front_left",
+    "target": "propeller_front_left"
+  },
+  {
+    "label": "propeller nut/washer",
+    "source": "motor_mount_front_right",
+    "target": "propeller_front_right"
+  },
+  {
+    "label": "propeller nut/washer",
+    "source": "motor_mount_rear_left",
+    "target": "propeller_rear_left"
+  },
+  {
+    "label": "propeller nut/washer",
+    "source": "motor_mount_rear_right",
+    "target": "propeller_rear_right"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "landing_gear_front_left"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "landing_gear_front_right"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "landing_gear_rear_left"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "landing_gear_rear_right"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_top_plate",
+    "target": "flight_controller_vibration_dampener_set"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "flight_controller_vibration_dampener_set",
+    "target": "flight_controller_enclosure"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "battery_tray"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_top_plate",
+    "target": "gps_mount"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_top_plate",
+    "target": "telemetry_radio_mount"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_top_plate",
+    "target": "rc_receiver_mount"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_top_plate",
+    "target": "camera_mount"
+  },
+  {
+    "label": "M3x6mm screws",
+    "source": "frame_top_plate",
+    "target": "video_transmitter_mount"
+  },
+  {
+    "label": "M3x10mm screws",
+    "source": "frame_bottom_plate",
+    "target": "package_delivery_mechanism"
+  },
+  {
+    "label": "mount",
+    "source": "motor_mount_front_left",
+    "target": "motor_front_left"
+  },
+  {
+    "label": "mount",
+    "source": "motor_mount_front_right",
+    "target": "motor_front_right"
+  },
+  {
+    "label": "mount",
+    "source": "motor_mount_rear_left",
+    "target": "motor_rear_left"
+  },
+  {
+    "label": "mount",
+    "source": "motor_mount_rear_right",
+    "target": "motor_rear_right"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_front_left",
+    "target": "esc_front_left"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_front_right",
+    "target": "esc_front_right"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_rear_left",
+    "target": "esc_rear_left"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_rear_right",
+    "target": "esc_rear_right"
+  },
+  {
+    "label": "mount",
+    "source": "flight_controller_enclosure",
+    "target": "flight_controller"
+  },
+  {
+    "label": "mount",
+    "source": "battery_tray",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mount",
+    "source": "gps_mount",
+    "target": "gps_module"
+  },
+  {
+    "label": "mount",
+    "source": "telemetry_radio_mount",
+    "target": "telemetry_radio"
+  },
+  {
+    "label": "mount",
+    "source": "rc_receiver_mount",
+    "target": "rc_receiver"
+  },
+  {
+    "label": "mount",
+    "source": "camera_mount",
+    "target": "optional_camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "video_transmitter_mount",
+    "target": "video_transmitter"
+  }
+]

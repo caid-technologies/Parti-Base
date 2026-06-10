@@ -1,0 +1,92 @@
+[
+  {
+    "label": "mounts using",
+    "source": "drone_frame_3d",
+    "target": "esp32_c3_mini"
+  },
+  {
+    "label": "fastens to",
+    "source": "m2x6_screws",
+    "target": "esp32_c3_mini"
+  },
+  {
+    "label": "mounts using",
+    "source": "drone_frame_3d",
+    "target": "mpu6050_imu"
+  },
+  {
+    "label": "fastens to",
+    "source": "m2x6_screws",
+    "target": "mpu6050_imu"
+  },
+  {
+    "label": "holds in place",
+    "source": "drone_frame_3d",
+    "target": "motor_fl"
+  },
+  {
+    "label": "holds in place",
+    "source": "drone_frame_3d",
+    "target": "motor_fr"
+  },
+  {
+    "label": "holds in place",
+    "source": "drone_frame_3d",
+    "target": "motor_rl"
+  },
+  {
+    "label": "holds in place",
+    "source": "drone_frame_3d",
+    "target": "motor_rr"
+  },
+  {
+    "label": "drives",
+    "source": "motor_fl",
+    "target": "propeller_cw_fl"
+  },
+  {
+    "label": "drives",
+    "source": "motor_fr",
+    "target": "propeller_ccw_fr"
+  },
+  {
+    "label": "drives",
+    "source": "motor_rl",
+    "target": "propeller_ccw_rl"
+  },
+  {
+    "label": "drives",
+    "source": "motor_rr",
+    "target": "propeller_cw_rr"
+  },
+  {
+    "label": "secures with",
+    "source": "drone_frame_3d",
+    "target": "lipo_1s"
+  },
+  {
+    "label": "secures",
+    "source": "velcro_strap",
+    "target": "lipo_1s"
+  },
+  {
+    "label": "mounts",
+    "source": "drone_frame_3d",
+    "target": "mosfet_fl_esc"
+  },
+  {
+    "label": "mounts",
+    "source": "drone_frame_3d",
+    "target": "mosfet_fr_esc"
+  },
+  {
+    "label": "mounts",
+    "source": "drone_frame_3d",
+    "target": "mosfet_rl_esc"
+  },
+  {
+    "label": "mounts",
+    "source": "drone_frame_3d",
+    "target": "mosfet_rr_esc"
+  }
+]

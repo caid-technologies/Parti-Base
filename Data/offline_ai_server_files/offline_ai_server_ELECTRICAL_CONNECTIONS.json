@@ -1,0 +1,30 @@
+[
+  {
+    "type": "power",
+    "label": "Main Power Input",
+    "source": "power_wall_adapter",
+    "target": "mcu_main",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "SD Card Module Power",
+    "source": "mcu_main",
+    "target": "storage_sd",
+    "current": "50mA",
+    "voltage": "3.3V",
+    "protocol": "",
+    "sourcePin": "3V3",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "storage_sd",
+    "voltage": "",
+    "protocol": "SPI",
+    "sourcePin": "GPIO11 (MOSI), GPIO13 (MISO), GPIO12 (SCK), GPIO10 (CS)",
+    "targetPin": "MOSI, MISO, SCK, CS"
+  }
+]

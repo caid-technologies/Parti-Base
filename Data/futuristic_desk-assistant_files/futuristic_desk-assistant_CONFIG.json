@@ -1,0 +1,2127 @@
+{
+  "plan": "- MCU with dual display support (e.g., ESP32-S3 or Raspberry Pi Zero 2 W), connected to a circular display (e.g., 1.28-inch GC9A01 LCD) and a rectangular display (e.g., 4.3-inch SPI TFT LCD) via SPI or parallel interfaces.- Integrated rotary encoder with push-button capability for main navigation, several flush-mounted tactile buttons for quick actions, and an ambient RGB LED strip for status indications.- Power managed by USB-C input with appropriate buck converters (5V and 3.3V) and a Qi2/MagSafe compatible wireless charging module for phone charging.- Optional audio components include an I2S DAC, small speaker, and an optional microphone array with a physical mute switch for voice interaction.- Custom 3D-printed curved enclosure with integrated bezels for screens, mounts for all electronic components, and a custom-designed rotary ring mechanism for tactile input.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Controller (ESP32-S3)",
+      "pins": [
+        "GPIO_UART_TX",
+        "GPIO_UART_RX",
+        "GPIO_SPI_SCK",
+        "GPIO_SPI_MOSI",
+        "GPIO_SPI_MISO",
+        "GPIO_I2S_BCLK",
+        "GPIO_I2S_WS",
+        "GPIO_I2S_DATA_OUT",
+        "GPIO_ADC",
+        "GPIO_PWM",
+        "GPIO_EXT_INT",
+        "3V3",
+        "5V",
+        "GND"
+      ],
+      "type": "mcu",
+      "partId": "74657be4-0b2c-4ef4-95da-5757ffb12d25",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-S3-DevKitC-1-N8R2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/5364-00.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GPIO1,GPIO2,GPIO3,GPIO4,5V,3V3,GND"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0CNGF6S3F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$18.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010373962338.html?pdp_npi=6%40dis%21USD%2114.66%217.33%21%21%2199.11%2149.55%21%402151fca717793628264448090e10e7%2112000052183962985%21affd%21%21%21%211%210%21",
+            "price": "$7.33",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/5364",
+            "price": "$19.95",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/5364",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CNGF6S3F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x25x10mm",
+      "position3d": {
+        "x": 125,
+        "y": 30,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 65,
+        "height": 10
+      },
+      "description": "ESP32-S3 development board with Wi-Fi, Bluetooth LE, and USB-C for power and programming. Handles sound processing and LED control.",
+      "productName": "ESP32-S3-DevKitC-1-N8R2",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-DevKitC-1-N8R2/18128919",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRywSGe9S9uiq6Wo80h5kTMUZXv7MBrAWPYHpr8wG7khLyUBU0A7FKOvFCqo3enAECwkHZqAbPjOsf2vpyGBa1Aqz1UHZU0OScdiq8IdGUK76DjdO6jp44AY0ka8w2dnjAmsvRqtNinC0IZR8wD765Uybb6M3dqy1bzcQezV1MOeV2ceQwXyS8zoV3g20vaLp8F3rU1EGsvPiNNtgHw0mwHjGqpI0T9uLjNQBxEsltqBCWSydfSdYzar4T7msFI7TkN0BjWKLUX9PxRE5ZTwkKiq5u07sy1yKsJm8BKbr15hSxgZfj9I1uzbm9V7SvSd02EAkath2HDviEOzvMxRSfQd7ulHrQKWZI9tdmgNOavq9fkWFqsMVkNoKMgKgue92tFrfdFdES9xFnQ6UnFYMYSY2GjeenD2dEJ1LFxfWF6NyPHVRm1H99PeZeDI7TL3JYzfjSLB8YKvTav4QKP5mouUXhMwtQ0M6wxwA5wErekNTsQNPrIbWDY7qnmUwpCievkl2UTOJq9PC1BmEFN2rQQbyVqNehCqV8ePPcmaHwIQsLxI0bR0LnyKMUIjleBxTdhWUW0XVD8RZ3cpodpZnVRGUkciOvRotBRALYVa4gsWCD3Q5RAU3EgrAmOvMdrjjeQEKtuoOzQAqErreGeBr539",
+      "estimatedCost": 12
+    },
+    {
+      "id": "circular_display",
+      "name": "Circular Clock Display (1.28 inch)",
+      "pins": [
+        "VCC",
+        "GND",
+        "SPI_SCK",
+        "SPI_MOSI",
+        "DC",
+        "RST",
+        "CS",
+        "BL"
+      ],
+      "type": "display",
+      "partId": "6584e51c-5085-45e5-8100-68b7b5a1e8c7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1.28+inch+Round+LCD+Display+Module+GC9A01&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/NVDHFLnL9aSFixxyhmYXFcy8RmtW_Y4P5kqXwnxQPrU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cmF5c3Rhci1vcHRy/b25pY3MuY29tL3Vw/bG9hZF9maWxlcy90/ZnQtbGNkLWRpc3Bs/YXktbW9kdWxlLzEt/MjgtdGZ0L2NhcGFj/aXRpdmUtdG91Y2gt/c2NyZWVuLWRpc3Bs/YXkvUkZBNDAxMjgw/Qi1BWVctRE5GMS0x/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CB3V1366?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x40x3mm",
+      "position3d": {
+        "x": 60,
+        "y": 78,
+        "z": 45
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 40,
+        "height": 3
+      },
+      "description": "Round TFT LCD display for eye animations and interactive visual feedback. (Assuming 1.28 inch as a practical interpretation of '17inch' for a desk robot).",
+      "productName": "1.28 inch Round LCD Display Module GC9A01",
+      "purchaseUrl": "https://www.adafruit.com/product/5732",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvJ4te9unX7CREEyovHyaozhn6SWPC6Pe0zsCVoZzCz3tJvpq5yCsMDIFhDwGwdhqSHVVofOvysgq1skaduEbiOjgpVuBWvLTJJDTE0dPTdBd3CtYDD7S5Y5UhBZDl9KU9Zcj4NE473FPdUD0pSufybVbpFbX1fMWcqgTHuts7BGKCyv8JsQ4LUy2zz9VPV21TR4lRwdeQRRe0GX3gHLRoP1SFGwAr7Ul18Zjo235X7frtjmj1mugT9f6v1xDUMBXQvE9EwGczeE1Y6zkyt9ibmOwJogOVTjx899XBUoVfyZAMoOl6RZH2xq93TBHW2FE6ivMTIGoIljx8uAtp11CrZ81p02bmEpsp5JuPfWIY8rT3pkZXfBkUyHUytUCC0uUXU6N7mwsiDCf10FFRqvqekKw4e35ERU3YnGU24pqulHvoOSNQae7fPxPTQ5QilOd9av4Fsjptv1cVVziGsVYg1uVDSIu99YxSIbF8kiVaM1XUGvpR05aj1q3BbTkG6CcrRFXVtxtgxb0nrmHxrXEs8aL56yTxdRHzpnNvKiH38BgtznWpBW1vIPvECMyHyusxzlBTAuqHy8T7X9qgbyM35VH5NQVOhswVQyVXML0u7g8n1PMK3TNqRsYAQMkg3O4i0TYoS9ylExzLx0vqEStTO7",
+      "estimatedCost": 8.5
+    },
+    {
+      "id": "rectangular_display",
+      "name": "Rectangular Dashboard Display (4.3 inch)",
+      "pins": [
+        "VCC",
+        "GND",
+        "SPI_SCK",
+        "SPI_MOSI",
+        "DC",
+        "RST",
+        "CS",
+        "BL"
+      ],
+      "type": "display",
+      "partId": "0bc6cbc2-cf3f-4101-b63a-ddbc77fc4b73",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=4.3+inch+SPI+TFT+LCD+Display+ILI9488&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/513rRFJY7dL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0BNQBKFCT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$11.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-3-0-inch-tft-lcd-display-ili9341-spi.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BNQBKFCT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "105x67x5mm",
+      "position3d": {
+        "x": 160,
+        "y": 78,
+        "z": 45
+      },
+      "boundingBox": {
+        "depth": 67,
+        "width": 105,
+        "height": 5
+      },
+      "productName": "4.3 inch SPI TFT LCD Display ILI9488",
+      "purchaseUrl": "https://www.adafruit.com/product/3581",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4pfATBP",
+      "estimatedCost": 25
+    },
+    {
+      "id": "rotary_encoder_main",
+      "name": "Main Rotary Encoder with Push Button",
+      "pins": [
+        "CLK",
+        "DT",
+        "SW",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "9730bb3b-3692-4ff9-afd6-496929998044",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=EC11+Rotary+Encoder+with+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/S43aead22fd484ec4b2c0939cab23029br.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "CLK,DT,SW,GND,VCC"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005008500548926.html?pdp_npi=6%40dis%21USD%218.61%214.04%21%21%2158.24%2127.37%21%402101611117793517743156122e0ec1%2112000045439220174%21affd%21%21%21%211%210%21",
+            "price": "$4.04",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07D3DF8TK?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "14x13x30mm",
+      "position3d": {
+        "x": 60,
+        "y": 45,
+        "z": 45
+      },
+      "boundingBox": {
+        "depth": 13,
+        "width": 14,
+        "height": 30
+      },
+      "description": "Rotary encoder with integrated push button for scrolling and selection.",
+      "productName": "EC11 Rotary Encoder with Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/bourns-inc/PEC11R-4020F-N0024/3777717",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvxR5qswlfBnyhOHG3gZrY43uHwb2XjyxgrCv1Jzc9M1C8hrLRB7vbUoXO6PucnDXWy8CDVkrqLA2XJDzB3FTgtAcvWTRWze2qnjburczSJND6J8u5LjXyOb8JzciX535hRGq3K4IMns5saUtuq69KBCwS07u70uqGh0mTBuzbeiubzmS8m9Q3hpJKTmz1a4PrhKlbJ1eDEtZCIv6hew2QnB2pEG1YTRsWBclsHyujkpy2rUX6EjvEvkCoOh08E6gUlLgd4DjFflGe8gs0dEUhhcuijfKw2g3bWlDUE9U733inQm6FWQBQJYj7Z3MVDmjrmJNAOmBLPpHnPE045IhptoxOpoIgXTFydQn9sZuvscetFTA81J8MapuJNuHfAJFOtO8lmVtDrLj32PDdJF4VCbjbM2QETgSqv6ECnRNEPBKTdZbL4amcfTR8L8btsqO57BiUeP2GBJO51WHIF2u43fUTIc9zpWb1JAwXNpQxZ0TLSOqg24VqKBo8JmF0VWAlj6rHcdTOj34VfwvDJ9xumvarNSQ3leiE5y0OegVK74HhnOM8JDIAteD2V7ADLGupyYIL2j6cWUVx2rkTTf7bH0UgyXzRYPkp6xV9ODqKC7kosWYpl6ndEa0ulXvOZDNdKBD0fLVC1Jc5dodPM3Qlzt",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "button_back_home",
+      "name": "Back / Home Button",
+      "pins": [
+        "NC",
+        "COM"
+      ],
+      "type": "sensor",
+      "partId": "be78af93-4522-4d38-b093-bcac126c28a7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Switch+6x6mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51-8m-Z5Z3L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SIG"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.49",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005004971266223.html?pdp_npi=6%40dis%21USD%212.61%212.56%21%21%212.61%212.56%21%4021013cc017794388182722812e105f%2112000031200483149%21affd%21%21%21%211%210%21",
+            "price": "$2.56",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 20,
+        "y": 70,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "description": "Small tactile button for user input.",
+      "productName": "Tactile Switch 6x6mm",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/e-switch/TL1105SPF160Q/1640167",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstB8CJ3IaaRPzxOB2xyjG6rLER8mBKdQkFO3KAZn7foLzp37dKTOQoWb3oJMFRKNKyNVTS9F6q4pOo50kS1LVVOG9p0NHse0Br8sY7HxWVTEKqJ8mqXzQIVx25IqW9uo7MSGZS9fB1kbt1rjVflMo3wSgGRYKMsspb9uuSpCbEDgXwrptHPTEJVKOxxncDhYuPmUoBhPKh5SFuqLMN7YNKVQ9pJJ7gJCPi6dCKaBsoFE5skEapNRxitim6uFyTA1CiVkPWYwd3SOeCEz3LJh1Xa6uzsdxM0V7eE71GOjDCI1k5U3il9wplKLu8GRkMW2k3Rsbt4rh6co8E7gh1YyYtCWLvrI2JV5vqlznrVYvkB1y6LZpm3lVCojmjoLCYIsLtCdRl72vidTPUAi1Jt0hlUSyI5euNnnj2jDk54Gy0yotzcPlyuqA94mxoCPQ2hDssDXg263894FUqOX",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "button_snooze",
+      "name": "Snooze Reminder Button",
+      "pins": [
+        "NC",
+        "COM"
+      ],
+      "type": "sensor",
+      "partId": "be78af93-4522-4d38-b093-bcac126c28a7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Switch+6x6mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51-8m-Z5Z3L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SIG"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.49",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005004971266223.html?pdp_npi=6%40dis%21USD%212.61%212.56%21%21%212.61%212.56%21%4021013cc017794388182722812e105f%2112000031200483149%21affd%21%21%21%211%210%21",
+            "price": "$2.56",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 30,
+        "y": 70,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "description": "Small tactile button for user input.",
+      "productName": "Tactile Switch 6x6mm",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/e-switch/TL1105SPF160Q/1640167",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstB8CJ3IaaRPzxOB2xyjG6rLER8mBKdQkFO3KAZn7foLzp37dKTOQoWb3oJMFRKNKyNVTS9F6q4pOo50kS1LVVOG9p0NHse0Br8sY7HxWVTEKqJ8mqXzQIVx25IqW9uo7MSGZS9fB1kbt1rjVflMo3wSgGRYKMsspb9uuSpCbEDgXwrptHPTEJVKOxxncDhYuPmUoBhPKh5SFuqLMN7YNKVQ9pJJ7gJCPi6dCKaBsoFE5skEapNRxitim6uFyTA1CiVkPWYwd3SOeCEz3LJh1Xa6uzsdxM0V7eE71GOjDCI1k5U3il9wplKLu8GRkMW2k3Rsbt4rh6co8E7gh1YyYtCWLvrI2JV5vqlznrVYvkB1y6LZpm3lVCojmjoLCYIsLtCdRl72vidTPUAi1Jt0hlUSyI5euNnnj2jDk54Gy0yotzcPlyuqA94mxoCPQ2hDssDXg263894FUqOX",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "button_dismiss",
+      "name": "Dismiss Reminder Button",
+      "pins": [
+        "NC",
+        "COM"
+      ],
+      "type": "sensor",
+      "partId": "be78af93-4522-4d38-b093-bcac126c28a7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Switch+6x6mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51-8m-Z5Z3L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SIG"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.49",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005004971266223.html?pdp_npi=6%40dis%21USD%212.61%212.56%21%21%212.61%212.56%21%4021013cc017794388182722812e105f%2112000031200483149%21affd%21%21%21%211%210%21",
+            "price": "$2.56",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 40,
+        "y": 70,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "description": "Small tactile button for user input.",
+      "productName": "Tactile Switch 6x6mm",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/e-switch/TL1105SPF160Q/1640167",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstB8CJ3IaaRPzxOB2xyjG6rLER8mBKdQkFO3KAZn7foLzp37dKTOQoWb3oJMFRKNKyNVTS9F6q4pOo50kS1LVVOG9p0NHse0Br8sY7HxWVTEKqJ8mqXzQIVx25IqW9uo7MSGZS9fB1kbt1rjVflMo3wSgGRYKMsspb9uuSpCbEDgXwrptHPTEJVKOxxncDhYuPmUoBhPKh5SFuqLMN7YNKVQ9pJJ7gJCPi6dCKaBsoFE5skEapNRxitim6uFyTA1CiVkPWYwd3SOeCEz3LJh1Xa6uzsdxM0V7eE71GOjDCI1k5U3il9wplKLu8GRkMW2k3Rsbt4rh6co8E7gh1YyYtCWLvrI2JV5vqlznrVYvkB1y6LZpm3lVCojmjoLCYIsLtCdRl72vidTPUAi1Jt0hlUSyI5euNnnj2jDk54Gy0yotzcPlyuqA94mxoCPQ2hDssDXg263894FUqOX",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "button_focus_toggle",
+      "name": "Start/Pause Focus Mode Button",
+      "pins": [
+        "NC",
+        "COM"
+      ],
+      "type": "sensor",
+      "partId": "be78af93-4522-4d38-b093-bcac126c28a7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Switch+6x6mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51-8m-Z5Z3L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SIG"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.49",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005004971266223.html?pdp_npi=6%40dis%21USD%212.61%212.56%21%21%212.61%212.56%21%4021013cc017794388182722812e105f%2112000031200483149%21affd%21%21%21%211%210%21",
+            "price": "$2.56",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 50,
+        "y": 70,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "description": "Small tactile button for user input.",
+      "productName": "Tactile Switch 6x6mm",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/e-switch/TL1105SPF160Q/1640167",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstB8CJ3IaaRPzxOB2xyjG6rLER8mBKdQkFO3KAZn7foLzp37dKTOQoWb3oJMFRKNKyNVTS9F6q4pOo50kS1LVVOG9p0NHse0Br8sY7HxWVTEKqJ8mqXzQIVx25IqW9uo7MSGZS9fB1kbt1rjVflMo3wSgGRYKMsspb9uuSpCbEDgXwrptHPTEJVKOxxncDhYuPmUoBhPKh5SFuqLMN7YNKVQ9pJJ7gJCPi6dCKaBsoFE5skEapNRxitim6uFyTA1CiVkPWYwd3SOeCEz3LJh1Xa6uzsdxM0V7eE71GOjDCI1k5U3il9wplKLu8GRkMW2k3Rsbt4rh6co8E7gh1YyYtCWLvrI2JV5vqlznrVYvkB1y6LZpm3lVCojmjoLCYIsLtCdRl72vidTPUAi1Jt0hlUSyI5euNnnj2jDk54Gy0yotzcPlyuqA94mxoCPQ2hDssDXg263894FUqOX",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "button_mute_privacy",
+      "name": "Mute/Privacy Button",
+      "pins": [
+        "NC",
+        "COM"
+      ],
+      "type": "sensor",
+      "partId": "be78af93-4522-4d38-b093-bcac126c28a7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Switch+6x6mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51-8m-Z5Z3L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SIG"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.49",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005004971266223.html?pdp_npi=6%40dis%21USD%212.61%212.56%21%21%212.61%212.56%21%4021013cc017794388182722812e105f%2112000031200483149%21affd%21%21%21%211%210%21",
+            "price": "$2.56",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FLGZB3VP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 70,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "description": "Small tactile button for user input.",
+      "productName": "Tactile Switch 6x6mm",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/e-switch/TL1105SPF160Q/1640167",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstB8CJ3IaaRPzxOB2xyjG6rLER8mBKdQkFO3KAZn7foLzp37dKTOQoWb3oJMFRKNKyNVTS9F6q4pOo50kS1LVVOG9p0NHse0Br8sY7HxWVTEKqJ8mqXzQIVx25IqW9uo7MSGZS9fB1kbt1rjVflMo3wSgGRYKMsspb9uuSpCbEDgXwrptHPTEJVKOxxncDhYuPmUoBhPKh5SFuqLMN7YNKVQ9pJJ7gJCPi6dCKaBsoFE5skEapNRxitim6uFyTA1CiVkPWYwd3SOeCEz3LJh1Xa6uzsdxM0V7eE71GOjDCI1k5U3il9wplKLu8GRkMW2k3Rsbt4rh6co8E7gh1YyYtCWLvrI2JV5vqlznrVYvkB1y6LZpm3lVCojmjoLCYIsLtCdRl72vidTPUAi1Jt0hlUSyI5euNnnj2jDk54Gy0yotzcPlyuqA94mxoCPQ2hDssDXg263894FUqOX",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "usb_c_power_input",
+      "name": "USB-C Power Input Connector",
+      "pins": [
+        "VBUS",
+        "GND",
+        "CC1",
+        "CC2",
+        "D+",
+        "D-"
+      ],
+      "type": "power",
+      "partId": "5ee69ba5-9579-4306-a1de-13178dcba9c6",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=USB-C+Female+Breakout+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51Zn4CZ+YxL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VBUS,GND,CC1,CC2"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0CB2VFJ54?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010374234622.html?pdp_npi=6%40dis%21USD%216.50%213.18%21%21%2143.98%2121.55%21%402140d33617793485585566837e10a6%2112000052186031369%21affd%21%21%21%211%210%21",
+            "price": "$3.18",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CB2VFJ54?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x12x4mm",
+      "position3d": {
+        "x": 125,
+        "y": 20,
+        "z": 145
+      },
+      "boundingBox": {
+        "depth": 12,
+        "width": 15,
+        "height": 4
+      },
+      "description": "USB-C connector for primary power input.",
+      "productName": "USB-C Female Breakout Board",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIlS9JD47uyzxKR7SXaIUGCD9XRQAWUlXHSbwjCxYX6AsvVltGKGVTe5WIwqZ3VqppvMIRhLEemXGXfxrHFWkTk3wNKLe0BTNkdrUcUBomdCGKAlq2b6WZkXpsG56W2ZGDgwTlHmf747Lux311l5MLBCHa5xrg6GgpcPpsGVPYk2szc3uXA6IrdTbr5CLqN4geYRr2jr7NTbuzhIO42yUXRHVw74ii0QxxJknOMvTHSYp7S13vLtSKIXM0uEMpclsD4RvNnrfhrK4BWkijtbJUv5lv51E6dsXpYojSW6Qvst9dgqtN7A0fzG33UdC54FGAubDhk6HFqZTDakJv9P1imEjwFUhjjGZ9AjRFCFH0ngX6mJheXaD8OpOEQ3UovS8dlYCQbrLLQ0AcKKhPK0asBMN7nkXDEAQl6SiSrG5PbNoy8xZOwEfuY0fvgHcwmCac9MSfl8XEbuqdgsQppT6BTaAd5pLFhlNoxi9CGMLaPlMDATCZx4JOxKhGUgRJaikidxBs1D76tK8zBf6pabkIpxDl1ga0fPDZbWB666Y51e7GtEhHAZk9a1EzwXEXmQiQMZDKE5omAiPi5vjuiTD0Qo6qcA8fukryiZvu5E1EiK1ydvAjlEUUR6vyQNlAQoijDjR5mcWkcsr8qUXFrqf9tD",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIlS9JD47uyzxKR7SXaIUGCD9XRQAWUlXHSbwjCxYX6AsvVltGKGVTe5WIwqZ3VqppvMIRhLEemXGXfxrHFWkTk3wNKLe0BTNkdrUcUBomdCGKAlq2b6WZkXpsG56W2ZGDgwTlHmf747Lux311l5MLBCHa5xrg6GgpcPpsGVPYk2szc3uXA6IrdTbr5CLqN4geYRr2jr7NTbuzhIO42yUXRHVw74ii0QxxJknOMvTHSYp7S13vLtSKIXM0uEMpclsD4RvNnrfhrK4BWkijtbJUv5lv51E6dsXpYojSW6Qvst9dgqtN7A0fzG33UdC54FGAubDhk6HFqZTDakJv9P1imEjwFUhjjGZ9AjRFCFH0ngX6mJheXaD8OpOEQ3UovS8dlYCQbrLLQ0AcKKhPK0asBMN7nkXDEAQl6SiSrG5PbNoy8xZOwEfuY0fvgHcwmCac9MSfl8XEbuqdgsQppT6BTaAd5pLFhlNoxi9CGMLaPlMDATCZx4JOxKhGUgRJaikidxBs1D76tK8zBf6pabkIpxDl1ga0fPDZbWB666Y51e7GtEhHAZk9a1EzwXEXmQiQMZDKE5omAiPi5vjuiTD0Qo6qcA8fukryiZvu5E1EiK1ydvAjlEUUR6vyQNlAQoijDjR5mcWkcsr8qUXFrqf9tD",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "i2s_dac_audio",
+      "name": "I2S Audio DAC",
+      "pins": [
+        "VIN",
+        "GND",
+        "BCLK",
+        "LRCLK",
+        "DIN",
+        "SD"
+      ],
+      "type": "module",
+      "partId": "f6aaa945-1c4b-4bc7-94ce-cd0cfaf6d095",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MAX98357A+I2S+Class+D+Mono+Amplifier&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/16g2nHhgf_QErfgR93CVKbqrBgz0wrdPWGDk-Vkyjvw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jbmNz/dG9yZWJhbmR1bmcu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI2LzAyLzU2NDct/ZXNwLTAwMTJfXzJf/LnBuZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DPJRLMDJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x3mm",
+      "position3d": {
+        "x": 30,
+        "y": 30,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 3
+      },
+      "description": "Small Class D amplifier for driving a full-range speaker from the brain's I2S output.",
+      "productName": "MAX98357A I2S Class D Mono Amplifier",
+      "purchaseUrl": "https://www.adafruit.com/product/3006",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR27dNVb3qWpwVMqOsxmlRzPaKBk9JH44JXstvKuVlshABuZrC1GLVHn2AHZYkT32b1kkN51hQZ3X3NrTNmxdYAgFDnsLwHBLXL3IL0a54Lv5Hcslj41neFWlPs3conLyyd4VUriIqtjeuHHyf1tZazN0B7LyIkQlwVimGQTQWoNmP4MMdPcO6bopsDHWGYAEPqCPoJdp8ohfj4osk20aSPmS2Cb3jY3fxi2CtkkIjre2WEij2N9oPxr5pOSaoT2L0awiuNPx1KqSTI4lFGsBYRc36MxKeHBvhKO7YAwVje0lgKrTrxsXLm8xiOzGqFdYLw0IQKAWgXBPOezTRUTfzJabFsDxTyT1AZX3scUFqFLEB9bGYOvqVXA0aBcLiEn4Ug5qfDfL06ibnfpSe3JpMHMmL6GAuwepSqZCijdpfk546qhWCM3VkZHRhZ7MH8Pw9QuofBTRvMLW8f0mpwJoy5BjV4MLvSDhj8cZZN7J64QX450tLmcDrkGoKXtqthBAkisjH5fF9XVq2DHRsIEnh4CaJPawmA9V6DgXnPth56S5fBFjeWsVz3gis9PEuSkbBIeNCjyM0a5zGeDt49cJCTxYhXNyQCtJxENLfSxoIhi28QA2NqRRaPRnqP5bN5EQNX1w3vYn17a5YVNXBoobIk7",
+      "estimatedCost": 7
+    },
+    {
+      "id": "speaker_audio_output",
+      "name": "Small Speaker (1W)",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "actuator",
+      "partId": "fc0817d6-5e6f-4d2c-959d-d2abe72547f8",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8+Ohm+1+Watt+Mini+Speaker&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/4Na5cqrGpQ2pPMksXxTbsZWnuGkzD_h8bfNNieseS4g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWFrZXJmb2N1cy5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvNTI5/NDM5Ni1BcmR1aW5v/LVNwZWFrZXItOF9s/YXJnZS5qcGc_dj0x/NTg3Mzc2NzQ3",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D7S8FFKY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "28x28x7mm",
+      "position3d": {
+        "x": 30,
+        "y": 20,
+        "z": 125
+      },
+      "boundingBox": {
+        "depth": 28,
+        "width": 28,
+        "height": 7
+      },
+      "description": "Small speaker for audio output.",
+      "productName": "8 Ohm 1 Watt Mini Speaker",
+      "purchaseUrl": "https://www.adafruit.com/product/1890",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGuWZz0KzzCfjaJhYrPMrnIk2pvo9dyAISX3NeFyU2LckERsr4fxOa19NsWZWk3mqQzd9yEop8MKTia97ph5DqnujSyu6hEX4N1pM0M621VebCs8yKBGO1wjT1oJQLZNrXJThjibIQdXjQsKU4ItIAHJ0VnBhqZJeAbx2o5yOdzXw9fJJz9n9lf9l1TOOdkoY8qSSK8HBmHd0xJyKGEYYSc5SPdiGZZwjpIvPfh3wv4c9UgPQQnUcCw8yzuvrCA0MTN80wmJweMfAC4mloOr1SAg3Si80JlVQqY1sN8RJ9jc97MiGW7t2ES5ZElnlsN3seHmu0VyQX7GNkGLD7Vk04pwO3LiZvG2RCtCD2GeKRq3c9rpAcctzSDKKrlNODjUBKZRFN15oiydrXfoA27BvF4sEWPjzGafthaEbzLdxCcJyQ4O7LJ2Wa8uZdsxCZhCCm3uf8jjm4xGaL4F1uqnO8qbsC4EsSe1210fnUCDU7qQT3qMGLsivqKRUVvB0x7RbEHXQ719DyxGNuJTujwb5HMO2orEUTjq2V2wwRxxsJi5GlpO6aRvcV2CMZASeCHqzrvZ0SOBXDwBakXBtslfSZwScvSjeLcMpOiU4z4JUGgjTsQFQIqN4ZwmVbKrO78zOsCJVT4EXbEq6K9MQtBTNgeJ",
+      "estimatedCost": 2.5
+    },
+    {
+      "id": "microphone_module",
+      "name": "Microphone Module with I2S",
+      "pins": [
+        "VDD",
+        "GND",
+        "BCLK",
+        "WS",
+        "DATA"
+      ],
+      "type": "sensor",
+      "partId": "6135a6e5-33f0-4221-b621-69b87feac1f6",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SPH0645LM4H+I2S+MEMS+Microphone&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ofU_nq8HsC_eMD_FEzc9x_zzULlHNI-S2yN559XhlAI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFZRjAwNmJSU0wu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SCK,WS,SD"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B06XNL2GBW?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x3mm",
+      "position3d": {
+        "x": 100,
+        "y": 30,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 20,
+        "height": 3
+      },
+      "description": "Digital I2S MEMS microphone for high-quality audio capture with low power consumption.",
+      "productName": "SPH0645LM4H I2S MEMS Microphone",
+      "purchaseUrl": "https://www.adafruit.com/product/3421",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jyak0VBzPqJfNdJxFgM4vtMLQ0naoVlgnxetHweuRbr98U2ww1yoX5HKhBCiHS7YNLCp1zS2MBQmFKCVsC1vzNyYmWYkVtQqWECxuwUpgtZwBiW4IX1XFzx4SCWH9tUykGN8BcD96EWvaEEfWGhmXuS5to70y47E8JEthNHnW07NJ0B26t03Mmvmy5qptWRuLhYpTF3Anqk9h7Jw15zIwsQ0oQnNwJeg66JTezw9XfqQkTuiuecN0UgYqBek5i4rTNloyf209KXYszX0LDd7leqGexoQ0beDkZFmC2vVdKRcRShC8JklDEPVmw9EaR0bun4wYgzNOf7NlqeScDux6O7ctNGfqTwJoLgBPyjrjJ3KF7LFfbusrMjdjBgFjGmLDvqqL9KRCGOiyvAOwNAglMx5nqskqLVT4ML6AoJXnHXEcduf95UbXoWIV2FLaknRELj90vYJhhnIH8bDzFkk5c0XoyHvWpkErkUjVw2OpNqodN9YCaGN890WTRRfduegrNGLaEyxNwhI3Nr4yXsMzdoo7QFTsqpKPkAzkQyyjZ7kSb06rVyV9hXcn9l1L1RvF1yP5fyqsM49IEOG84GiFGDJEA3tPmWxNb9kEd3m1xY3H1qw0nHfz1SGq9j2ainTUrRu6wNlxgcrTp9jB6gqsyFHh",
+      "estimatedCost": 6
+    },
+    {
+      "id": "microphone_mute_switch",
+      "name": "Microphone Physical Mute Switch",
+      "pins": [
+        "COM",
+        "NO",
+        "NC"
+      ],
+      "type": "sensor",
+      "partId": "7c927f40-8a7d-4961-8f4a-a394e68e0b1b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SPDT+Slide+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51tOVHg8BtL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "IN,OUT_A,OUT_B"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FNK8B1YV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.48",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010439446242.html?pdp_npi=6%40dis%21USD%215.38%212.53%21%21%2136.50%2117.15%21%400b8ded7b17793325227973878e0ed5%2112000052414281020%21affd%21%21%21%211%210%21",
+            "price": "$2.53",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FNK8B1YV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x5x5mm",
+      "position3d": {
+        "x": 100,
+        "y": 20,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 5,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Slide switch for overall device power control.",
+      "productName": "SPDT Slide Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/c-k/JS102011SAQN/1640492",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIpaI0DF2juEy3sJzRsLZHEXW4iUoe6bVnts14DbxlNOaB88TbJpQFdXDJgZhEJzF4v3GK8SNJVTa0GhpALRCXYHVp4yebpoQaBBN1Um7sAwqhxq5xvv06zWonrMHLdY9odf2xESds8TifPKHF09dX2ALbzsHynacKpFXgaVI0VKI8B5znFBbZMm26Rr1RiYFAYIKinLG9iStVQ9VvWBEec6wdR8GCBJwnQUlFF110ZM2Qo2OR6oigfzfi6LeU3j7ALeldefVb9Y6ZlFcvbex2NnCIYxOCHOH1tAwkpSvbUErwDYe7mHDqmY5EzUNG6vPU67RFrAhI0rHw0SQgrrvsZTWxK1lRLI4ImEaqUYS2yH6MsdODp5emSjyeWjsRkkKlQycV4yJMPMRw3zRfNKnwmZZSO3I9zDf5pNdPConQwfVLBX4RvRho9KgEV1IJ9ZYmu0MC7dSqQbKcf3Df5hrAN9x9zg3icxSCddWUIs88OaEL5kaB4SfDyPdhcIoxc6XwaE1gS5mTTcc7WWyjeDi0Hl4Z6BwbiTTeA2MQnPzeBabQb1cQjn5rFRCxJSWf0H6PzoxNT5LBk8pKlE79xCwNqwBG3V11pTSYtXRHBa2zVtq3os8i31qoCTFgJIjh8DnQdJKuilqQg4OqFwDNHam7mj",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "main_enclosure_bottom",
+      "name": "Main Enclosure Bottom Shell",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "250x150x40mm",
+      "position3d": {
+        "x": 125,
+        "y": 20,
+        "z": 75
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 250,
+        "height": 40
+      },
+      "description": "Custom 3D-printed bottom shell forming the base and structural support for internal components. Features internal mounts and cable routing channels.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 15,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "main_enclosure_top",
+      "name": "Main Enclosure Top Shell",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "250x150x40mm",
+      "position3d": {
+        "x": 125,
+        "y": 60,
+        "z": 75
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 250,
+        "height": 40
+      },
+      "description": "Custom 3D-printed top shell with integrated openings for screens, rotary ring, and button cutouts. Designed for a sleek, curved, premium aesthetic.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 15,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "circular_display_bezel",
+      "name": "Circular Display Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "circular_display",
+      "dimensions": "50x50x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 79.5,
+        "z": 45
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bezel for the circular display, designed to smoothly integrate with the rotary ring and main enclosure, providing a clean edge.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "100% infill, 0.15mm layer"
+    },
+    {
+      "id": "rectangular_display_bezel",
+      "name": "Rectangular Display Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "rectangular_display",
+      "dimensions": "110x68x5mm",
+      "position3d": {
+        "x": 160,
+        "y": 79.5,
+        "z": 45
+      },
+      "boundingBox": {
+        "depth": 68,
+        "width": 110,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bezel for the rectangular display, ensuring a flush and seamless integration into the top enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2,
+      "printSettings": "100% infill, 0.15mm layer"
+    },
+    {
+      "id": "rotary_ring_outer",
+      "name": "Rotary Ring Outer",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "60x60x10mm",
+      "position3d": {
+        "x": 60,
+        "y": 80,
+        "z": 45
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 60,
+        "height": 10
+      },
+      "description": "Outer portion of the custom rotary ring mechanism, designed to be visually appealing and tactile, with internal gearing for the encoder.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 3,
+      "printSettings": "50% infill, 0.15mm layer"
+    },
+    {
+      "id": "rotary_ring_inner_gear",
+      "name": "Rotary Ring Inner Gear",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "rotary_encoder_main",
+      "dimensions": "15x15x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 59,
+        "z": 45
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 15,
+        "height": 5
+      },
+      "description": "Inner gear component of the rotary ring, mating with the rotary encoder's shaft, allowing smooth rotation and precise input.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "mcu_mount",
+      "name": "MCU Mounting Plate",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "main_mcu",
+      "dimensions": "60x30x5mm",
+      "position3d": {
+        "x": 125,
+        "y": 27.5,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 60,
+        "height": 5
+      },
+      "description": "Small mounting plate to securely hold the ESP32-S3 main controller within the enclosure, ensuring stability and preventing movement.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "button_back_home_cap",
+      "name": "Back/Home Button Cap",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_back_home",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 20,
+        "y": 77.5,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Ergonomic button cap designed to fit flush with the enclosure surface, providing a satisfying click for the 'Back / Home' function.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.25,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "button_snooze_cap",
+      "name": "Snooze Button Cap",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_snooze",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 30,
+        "y": 77.5,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Flush-mounted button cap for the 'Snooze reminder' function, matching the minimalist aesthetic of the device.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.25,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "button_dismiss_cap",
+      "name": "Dismiss Button Cap",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_dismiss",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 40,
+        "y": 77.5,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Flush-mounted button cap for the 'Dismiss reminder' function, maintaining the device's sleek profile.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.25,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "button_focus_toggle_cap",
+      "name": "Focus Toggle Button Cap",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_focus_toggle",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 50,
+        "y": 77.5,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Flush-mounted button cap for the 'Start/Pause focus mode' function, designed for a consistent user experience.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.25,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "button_mute_privacy_cap",
+      "name": "Mute/Privacy Button Cap",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_mute_privacy",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 77.5,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Flush-mounted button cap for the optional 'Mute/Privacy' function, clearly identifiable if implemented.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.25,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "speaker_grille",
+      "name": "Speaker Grille",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "speaker_audio_output",
+      "dimensions": "30x15x2mm",
+      "position3d": {
+        "x": 30,
+        "y": 40,
+        "z": 125
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 30,
+        "height": 2
+      },
+      "description": "Custom 3D-printed grille for the small speaker, integrated into the enclosure with a fine mesh pattern for sound diffusion and aesthetics.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "microphone_mount",
+      "name": "Microphone Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "microphone_module",
+      "dimensions": "15x15x5mm",
+      "position3d": {
+        "x": 100,
+        "y": 27.5,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 15,
+        "height": 5
+      },
+      "description": "Small internal mount for the microphone module, positioned to capture sound effectively while being hidden from view.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "50% infill, 0.15mm layer"
+    },
+    {
+      "id": "mic_mute_switch_housing",
+      "name": "Microphone Mute Switch Housing",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "microphone_mute_switch",
+      "dimensions": "20x10x10mm",
+      "position3d": {
+        "x": 100,
+        "y": 25,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 20,
+        "height": 10
+      },
+      "description": "Internal housing for the microphone physical mute switch, allowing it to be securely mounted and accessible from the outside if needed.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.75,
+      "printSettings": "50% infill, 0.15mm layer"
+    },
+    {
+      "id": "usb_c_port_mount",
+      "name": "USB-C Port Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "usb_c_power_input",
+      "dimensions": "15x10x5mm",
+      "position3d": {
+        "x": 125,
+        "y": 22.5,
+        "z": 145
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 15,
+        "height": 5
+      },
+      "description": "Small internal mount to secure the USB-C power input connector, ensuring stability when plugging/unplugging the cable.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "100% infill, 0.15mm layer"
+    },
+    {
+      "id": "standoff_m3x6mm_plastic",
+      "name": "M3x6mm Plastic Standoff",
+      "type": "misc",
+      "partId": "3cdf462d-ba03-46ce-b22f-abcb19717e00",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Plastic+PCB+Standoff&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j_t6zNEHGD5cpuX1zqY3PEoSAjHDhj3aUPSvonuhGoE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjE2djYySkw5dUwu/anBn",
+      "quantity": 8,
+      "amazonUrl": "https://www.amazon.com/dp/B0F297R23T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "Plastic standoffs used to elevate PCBs (like the main MCU and display drivers) from the enclosure base, preventing short circuits.",
+      "productName": "M3x6mm Plastic PCB Standoff",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+6mm+plastic+standoff",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4LlCMP3",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "m3_philips_screw_6mm",
+      "name": "M3x6mm Philips Head Screw",
+      "type": "misc",
+      "partId": "a197b7ed-2f97-4074-9f8d-e7df4e1ed108",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Philips+Flat+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/EwfWkNx0-5TnKLgv7_4A7ON48Nxgrzc6MoaZUOHUz-I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzF4dUZCNnc3Ukwu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B0CQ4ZJD27?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "Used for securing PCBs to standoffs and fastening internal 3D-printed mounts.",
+      "productName": "M3x6mm Philips Flat Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+6mm+screws",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3Sn9FUD",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "m2_philips_screw_4mm",
+      "name": "M2x4mm Philips Head Screw",
+      "type": "misc",
+      "partId": "52c84178-7590-4b7c-9d8b-42d3d3819f1b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x4mm+Philips+Flat+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/A0dEKoLwfzL4NoHQkVS0ej018gTfiU6I-bdEH0XgF_E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzF0bXNhNXFzZ0wu/anBn",
+      "quantity": 8,
+      "amazonUrl": "https://www.amazon.com/dp/B0B373RNJP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x4mm",
+      "description": "Smaller screws for securing displays to their bezels or mounting small modules like the microphone.",
+      "productName": "M2x4mm Philips Flat Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2+4mm+screws",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c45riS8d",
+      "estimatedCost": 0.03
+    },
+    {
+      "id": "friction_pads",
+      "name": "Non-Slip Rubber Feet",
+      "type": "misc",
+      "partId": "537c3fea-33d6-4976-a20c-432df5a3047b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Self-Adhesive+Rubber+Feet+Pads&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Qo6TiF97GZO5L0uuvQp33Q2aR5QYexXa2HawMyKrfHs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnJu/cnd4aGpqaW01cS5s/ZHljZG4uY29tL2Ns/b3VkL21tQm9uS1Jp/cFNtbGlwbm1xcC9T/ZWxmLUFkaGVzaXZl/LVJ1YmJlci1GZWV0/LWZvci1GdXJuaXR1/cmUuanBn",
+      "material": "Rubber",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0CYBY96KR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "8x2mm (diameter x thickness)",
+      "description": "Small self-adhesive rubber feet to prevent the device from sliding on a desk surface.",
+      "productName": "Self-Adhesive Rubber Feet Pads",
+      "purchaseUrl": "https://www.amazon.com/s?k=self+adhesive+rubber+feet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHZXMZopPmSvuqx09bNpnRx4M1WoHQMnaxBJrg96RYXkzKivyqp37jjhw2LqPCRfozqKzXSjinhYABV5791txWZllMRKarKmyFWUIgUHxZae8qzsIz4nBXeyXaVCyOXtQVYVlvBLX9E94A6E1U0qHSI1IGYNGjouIWlnxz2wXhxQCHfKVtKIsXwbAztRIj6UELxy6wmQpRvhO8cZXs3fzIXucxDvtZew4XwcrogeS1tfBWyzPG9iE0KCZBtMmTO76mluL4k3FbaiP4yJpDl5Bnmyu8dSkyG997DUikQjU6zD5nkbsLDIG3zv48lMKSzQApWWfcuI49hn2NkUfyADCavYXMCvmae5LEQckN2s62RSlWKzKgqjyubUjz1wvYDd9LZaishM4pKz0veiq6MTUjjCfBV3Eudz3ocMInMPMGb7TQJ9NXlcmZa1DGt4cTbc7VaVuIvWojEKeZFNvOni0MZjikmJQ36snU4HFGjQDxPA5UC56AXBeq6qgpvdtpkDX7UlFhhbb883LCJImljqgYBmmIZ1ex0KNmR5oL2zh5LeWEHbtQ621G3gHmhwrhZ50RusO9AAezZtW4df0M8fH4zAM1DAGlGPK2e7GswDFFW6xzxi6KeIlzpHwDQFQj1sEYJimORtGjsyoLaKtcwGeI07",
+      "estimatedCost": 0.2
+    },
+    {
+      "id": "rotary_encoder_bearing",
+      "name": "Miniature Ball Bearing (Rotary Ring)",
+      "type": "mechanism",
+      "partId": "958dd230-149a-4970-b17f-b9f92156ca8e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=683ZZ+Ball+Bearing+%283x7x3mm%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/bKy3zY4KKdCSpU9g3QBpkMXsezbiyCl_pU0YTFvPu4w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGVsaWRpcmVjdC5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvYWxp/Z24tYWxpZ24tYmVh/cmluZy02ODN6ei0z/eDd4M21tLWJlYXJp/bmdzLTI4MjA1NjU5/NTUzODY5LmpwZz92/PTE2MzI3NTg4Njc",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07FW18RQY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x7x3mm",
+      "position3d": {
+        "x": 60,
+        "y": 73.5,
+        "z": 45
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 7,
+        "height": 3
+      },
+      "description": "Small ball bearing to provide smooth, low-friction rotation for the outer rotary ring, enhancing the premium feel.",
+      "productName": "683ZZ Ball Bearing (3x7x3mm)",
+      "purchaseUrl": "https://www.amazon.com/s?k=683zz+bearing",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dT4bFrc6pLO4NQcuaI7dw7dlmlL9SYTuKnxcvR7fn5YyFJAyDDcGSHp5VJw1jgAyW3dJiRqPfyP0OleDtgRVzePC5lt2gXvtGTt8yhi4lXitW9EbfYISnDjzv5LeuD0fjIRvrq77cSfyzQ4hhlTLBb3qhOLGBxHM4ZREwKbpYoptjlAtBEc4b28folmdJCmbaygNiMoaRCf5MDvRIXIX9JStFR0zJcj7R0FnP9gFEhMYnSGPDGOVcxdnsPSus5spA6uiolmQiJP8FMH9s7loKa7pJw6V5GbXuN3ZXHidM619xsfQmvj6dWFMTXnPaYkxd6RZEoFUDhV4pyzc737aZsN2OXSV2eLXFFjewL0VZuzyl4hO13ocf3sHrywo3QlZx1fgfGJhhaqcJ0LVEEqQY71eC0B3YM5ItsaVfSRg3nCvegpdWUwaV6rmMpa3SLOV5MsBQsSnHo2m1NO5SfjKw8tK4Ft29QKcfCcJ3MThZwKjD4GBkLBjaUcZ2BJyUUDEU0AN02BcyBckNlsWgzve61OxJoNyzmhUMhIfMoV5IdSS8cQQCUeWv2paizSF7w444ETjfFyHZJGxM4TWAcUxaahf4nOZk7wuVVLawLK4piKDBvipDFQQ3IuRJuJ3ewefF1z4ba9DFj18Y1ioQPsk09sn",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "internal_cable_clips",
+      "name": "Internal Cable Clips",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 6,
+      "dimensions": "10x5x3mm",
+      "description": "Small 3D-printed clips integrated into the bottom enclosure to manage and route internal wiring for a clean setup.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "100% infill, 0.15mm layer"
+    },
+    {
+      "id": "i2s_dac_audio_mount",
+      "name": "I2S Audio DAC Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "i2s_dac_audio",
+      "dimensions": "50x40x12mm",
+      "position3d": {
+        "x": 30,
+        "y": 26,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 50,
+        "height": 12
+      },
+      "description": "Adapter plate for the I2S Audio DAC that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "apple_magsafe_charger",
+      "name": "Apple MagSafe Charger",
+      "pins": [],
+      "type": "module",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Apple+MagSafe+Charger&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 200,
+        "y": 77.5,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 59,
+        "width": 59,
+        "height": 5
+      },
+      "description": "Official Apple MagSafe Charger for iPhone wireless charging. Requires separate USB-C power adapter (not included in this project's scope).",
+      "productName": "Apple MagSafe Charger",
+      "purchaseUrl": "https://www.apple.com/shop/product/MHXH3AM/A/magsafe-charger",
+      "estimatedCost": 39
+    },
+    {
+      "id": "magsafe_charger_mount",
+      "name": "MagSafe Charger Mount",
+      "pins": [],
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 200,
+        "y": 76,
+        "z": 110
+      },
+      "boundingBox": {
+        "depth": 65,
+        "width": 65,
+        "height": 8
+      },
+      "description": "Custom 3D-printed mount designed to securely hold the Apple MagSafe charger flush with the enclosure surface.",
+      "productName": "Custom 3D-Printed MagSafe Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 3
+    }
+  ],
+  "notes": [
+    "sleek futuristic assistant",
+    "slim curved minimal design",
+    "soft premium look",
+    "circular clock display",
+    "rectangular dashboard display",
+    "physical rotary ring input",
+    "flush integrated buttons",
+    "ambient LED status lighting",
+    "Qi2 wireless charging",
+    "USB-C power input",
+    "3D-printable casing",
+    "hidden cable management"
+  ],
+  "projectName": "Futuristic Desk-Assistant",
+  "originalPrompt": "Create a complete blueprint for a DIY futuristic desk-assistant device.\n\nThe device should be an elegant, easy-to-use desktop assistant with a graphical interface that helps me manage day-to-day life. It should show my calendar, reminders, to-do list, clock, and useful daily information. Assume calendar/reminders/tasks can be pulled from different sources such as Google Calendar, Apple Calendar, Notion, Todoist, Gmail, Telegram, or manual API/webhook inputs. Choose the best practical integration approach.\n\nCore concept:\nA small premium desk device with two screens:\n1. A circular screen dedicated mostly to the clock.\n2. A rectangular screen for calendar, reminders, to-do list, notifications, widgets, and daily overview.\n\nThe device should feel like a sleek futuristic assistant, not a bulky maker project. The design should be slim, curved, minimal, and modern, with a soft premium look.\n\nImportant interaction requirement:\nThe device must be controlled only through physical inputs. Do not use a touchscreen.\n\nInput system:\n- The circular clock display should have a physical rotary ring around it.\n- The rotary ring should work as the main input method.\n- The ring should allow scrolling through dashboard cards, changing modes, adjusting focus timer duration, moving through calendar items, and navigating settings.\n- The rotary ring should also support press/click input if mechanically feasible, like a push-to-select control.\n- Add several clean physical buttons for quick actions:\n  - Back / Home\n  - Confirm / Select, unless handled by the rotary ring press\n  - Snooze reminder\n  - Dismiss reminder\n  - Start / pause focus mode\n  - Optional mute/privacy button\n- The buttons should be minimal and beautifully integrated into the casing, not exposed like a prototype board.\n- The UX should be designed around glanceable information and fast physical control, similar to a premium smart alarm clock, car infotainment knob, or high-end audio device.\n\nMain features to include:\n- Circular clock display with analog and digital clock modes.\n- Rectangular dashboard showing:\n  - Today’s calendar events.\n  - Upcoming reminders.\n  - To-do list.\n  - Weather.\n  - Small daily briefing / “what’s next” section.\n  - Focus timer / Pomodoro mode.\n  - Notification summaries from selected sources.\n  - Optional smart home status widgets.\n- Button-only and rotary-ring-based navigation that is simple, intuitive, and satisfying to use.\n- Ambient LED strip or subtle edge lighting for status states:\n  - calm idle mode,\n  - upcoming meeting,\n  - urgent reminder,\n  - focus mode,\n  - charging mode.\n- Qi2 / MagSafe-compatible magnetic charging area for a phone, integrated into the top or side of the casing if feasible.\n- USB-C power input.\n- Optional small speaker or buzzer for gentle reminder sounds.\n- Optional microphone only if privacy is handled properly, with a physical mute switch.\n- Night / low-brightness mode.\n- Standby mode with beautiful clock and subtle animation.\n- Local fallback mode if internet is unavailable.\n\nDesign and casing:\nThe casing should be skinny, curved, and futuristic. Avoid sharp boxy shapes. It should look like a premium consumer product, suitable for a clean desk setup.\n\nThe rotary ring around the circular display should be a key visual feature. It should look intentional, premium, and tactile — like a smooth metal or satin-finish control ring. It should not look like a random encoder added to a screen.\n\nSuggested visual style:\n- Main casing: matte off-white, pearl white, or soft light gray.\n- Accent color: electric blue, soft cyan, mint green, or violet glow.\n- Screen bezels: glossy black or dark graphite.\n- Rotary ring: brushed aluminum, dark graphite, champagne metal, or satin silver.\n- Shape: curved horizontal base with the circular screen slightly raised or integrated on one side, and the rectangular screen flowing next to it.\n- Buttons: flush, low-profile, backlit if possible, integrated into the front edge or top curve.\n- Include cable management so the power cable is hidden as much as possible.\n- Make the casing 3D-printable, but make it look polished and premium.\n- Suggest materials, finish, sanding/painting method, and assembly approach.\n\nHardware requirements:\nDefine the best hardware architecture from scratch. Choose appropriate boards, displays, sensors, power components, connectors, LEDs, buttons, charging module, speaker, and any other required components. Prioritize parts that are realistic to buy and assemble as a DIY project.\n\nPlease include:\n- Recommended main controller/computer, such as Raspberry Pi, ESP32, or another better option.\n- Exact recommended screen types and sizes for the circular and rectangular displays.\n- A practical rotary ring mechanism around the circular screen.\n- Recommended rotary encoder, magnetic encoder, bearing, or custom ring mechanism.\n- How the rotary ring should be mounted mechanically.\n- How the rotary input should connect to the controller.\n- Power architecture.\n- Wiring diagram description.\n- Bill of materials with estimated prices.\n- Alternatives for budget, balanced, and premium builds.\n- Any required adapters, drivers, and mounting hardware.\n- Thermal and safety considerations.",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all main enclosure and display bezel parts",
+          "detail": {
+            "tip": "Ensure your 3D printer bed is perfectly leveled for the first layers of the large enclosure parts to prevent warping.",
+            "steps": [
+              "Print the Main Enclosure Bottom Shell with PETG, 25% infill, and 0.2mm layer height.",
+              "Print the Main Enclosure Top Shell with PETG, 25% infill, and 0.2mm layer height.",
+              "Print the Circular Display Bezel with PETG, 100% infill, and 0.15mm layer height.",
+              "Print the Rectangular Display Bezel with PETG, 100% infill, and 0.15mm layer height.",
+              "Carefully remove all support material and deburr edges from the printed parts."
+            ],
+            "summary": "3D print all main enclosure and display bezel components."
+          },
+          "partIds": [
+            "main_enclosure_bottom",
+            "main_enclosure_top",
+            "circular_display_bezel",
+            "rectangular_display_bezel"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D print all internal mounting brackets and small mechanical components",
+          "partIds": [
+            "rotary_ring_outer",
+            "rotary_ring_inner_gear",
+            "mcu_mount",
+            "qi_charger_mount",
+            "button_back_home_cap",
+            "button_snooze_cap",
+            "button_dismiss_cap",
+            "button_focus_toggle_cap",
+            "button_mute_privacy_cap",
+            "speaker_grille",
+            "microphone_mount",
+            "mic_mute_switch_housing",
+            "usb_c_port_mount",
+            "internal_cable_clips",
+            "i2s_dac_audio_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Clean and deburr all 3D printed parts, remove supports",
+          "partIds": [
+            "main_enclosure_bottom",
+            "main_enclosure_top",
+            "circular_display_bezel",
+            "rectangular_display_bezel",
+            "rotary_ring_outer",
+            "rotary_ring_inner_gear",
+            "mcu_mount",
+            "qi_charger_mount",
+            "button_back_home_cap",
+            "button_snooze_cap",
+            "button_dismiss_cap",
+            "button_focus_toggle_cap",
+            "button_mute_privacy_cap",
+            "speaker_grille",
+            "microphone_mount",
+            "mic_mute_switch_housing",
+            "usb_c_port_mount",
+            "internal_cable_clips",
+            "i2s_dac_audio_mount"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test fit circular display and rectangular display into their bezels",
+          "partIds": [
+            "circular_display",
+            "circular_display_bezel",
+            "rectangular_display",
+            "rectangular_display_bezel"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Insert rotary encoder bearing into main enclosure top and test fit rotary ring parts",
+          "partIds": [
+            "rotary_encoder_bearing",
+            "main_enclosure_top",
+            "rotary_ring_outer",
+            "rotary_ring_inner_gear"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder power and data wires to Main Controller (ESP32-S3)",
+          "partIds": [
+            "main_mcu",
+            "usb_c_power_input",
+            "circular_display",
+            "rectangular_display",
+            "i2s_dac_audio",
+            "microphone_module",
+            "rotary_encoder_main",
+            "button_back_home",
+            "button_snooze",
+            "button_dismiss",
+            "button_focus_toggle",
+            "button_mute_privacy"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder power wires to Qi2/MagSafe Wireless Charging Module and USB-C Input",
+          "partIds": [
+            "qi_magsafe_charger",
+            "usb_c_power_input"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Solder data wires from Main Controller to Circular Clock Display and Rectangular Dashboard Display",
+          "partIds": [
+            "main_mcu",
+            "circular_display",
+            "rectangular_display"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder data wires for I2S Audio DAC and Microphone Module, and connect Speaker to DAC",
+          "partIds": [
+            "main_mcu",
+            "i2s_dac_audio",
+            "speaker_audio_output",
+            "microphone_module"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Wire the Microphone Physical Mute Switch to the Microphone Module",
+          "partIds": [
+            "microphone_mute_switch",
+            "microphone_module"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Solder wires for Main Rotary Encoder and all flush buttons",
+          "partIds": [
+            "main_mcu",
+            "rotary_encoder_main",
+            "button_back_home",
+            "button_snooze",
+            "button_dismiss",
+            "button_focus_toggle",
+            "button_mute_privacy"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Perform continuity checks on all soldered connections",
+          "partIds": [
+            "main_mcu",
+            "circular_display",
+            "rectangular_display",
+            "rotary_encoder_main",
+            "button_back_home",
+            "button_snooze",
+            "button_dismiss",
+            "button_focus_toggle",
+            "button_mute_privacy",
+            "usb_c_power_input",
+            "qi_magsafe_charger",
+            "i2s_dac_audio",
+            "speaker_audio_output",
+            "microphone_module",
+            "microphone_mute_switch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect Main Controller to computer via USB-C and verify recognition",
+          "partIds": [
+            "main_mcu",
+            "usb_c_power_input"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Upload basic test firmware to Main Controller to verify GPIO, SPI, and I2S pin assignments",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test Circular and Rectangular Displays for functionality and backlight control",
+          "partIds": [
+            "main_mcu",
+            "circular_display",
+            "rectangular_display"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify Rotary Encoder and all Button inputs are recognized by the Main Controller",
+          "partIds": [
+            "main_mcu",
+            "rotary_encoder_main",
+            "button_back_home",
+            "button_snooze",
+            "button_dismiss",
+            "button_focus_toggle",
+            "button_mute_privacy"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test I2S Audio DAC and Speaker output; verify Microphone Module input and mute switch",
+          "partIds": [
+            "main_mcu",
+            "i2s_dac_audio",
+            "speaker_audio_output",
+            "microphone_module",
+            "microphone_mute_switch"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Test Qi2/MagSafe Wireless Charging Module's power output via USB-C port (loop-through power)",
+          "partIds": [
+            "qi_magsafe_charger",
+            "usb_c_power_input"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the USB-C Power Input Connector into its 3D printed mount and secure in main enclosure bottom",
+          "partIds": [
+            "usb_c_power_input",
+            "usb_c_port_mount",
+            "main_enclosure_bottom",
+            "m2_philips_screw_4mm"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount the Main Controller to the MCU mount and secure the assembly in the main enclosure bottom",
+          "partIds": [
+            "main_mcu",
+            "mcu_mount",
+            "main_enclosure_bottom",
+            "m3_philips_screw_6mm"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount I2S Audio DAC, Microphone Module, Speaker, and Microphone Mute Switch with their mounts/grilles into the main enclosure bottom",
+          "partIds": [
+            "i2s_dac_audio",
+            "i2s_dac_audio_mount",
+            "microphone_module",
+            "microphone_mount",
+            "speaker_audio_output",
+            "speaker_grille",
+            "microphone_mute_switch",
+            "mic_mute_switch_housing",
+            "main_enclosure_bottom",
+            "m2_philips_screw_4mm"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Adhere Non-Slip Rubber Feet to the underside of the main enclosure bottom",
+          "partIds": [
+            "friction_pads",
+            "main_enclosure_bottom"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount the Qi2/MagSafe Wireless Charging Module into its mount and secure into the main enclosure top",
+          "partIds": [
+            "qi_magsafe_charger",
+            "qi_charger_mount",
+            "main_enclosure_top",
+            "m2_philips_screw_4mm"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Install Circular and Rectangular Displays into their bezels, then adhere bezels to the main enclosure top",
+          "partIds": [
+            "circular_display",
+            "circular_display_bezel",
+            "rectangular_display",
+            "rectangular_display_bezel",
+            "main_enclosure_top"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Mount the Rotary Encoder and all small buttons into the main enclosure top, then place their respective caps",
+          "partIds": [
+            "rotary_encoder_main",
+            "rotary_ring_inner_gear",
+            "rotary_ring_outer",
+            "button_back_home",
+            "button_back_home_cap",
+            "button_snooze",
+            "button_snooze_cap",
+            "button_dismiss",
+            "button_dismiss_cap",
+            "button_focus_toggle",
+            "button_focus_toggle_cap",
+            "button_mute_privacy",
+            "button_mute_privacy_cap",
+            "main_enclosure_top"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Route and manage all internal cables using Internal Cable Clips, then close and secure the main enclosure top to the bottom",
+          "partIds": [
+            "internal_cable_clips",
+            "main_enclosure_top",
+            "main_enclosure_bottom",
+            "m3_philips_screw_6mm"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A desk assistant powered by an ESP32-S3, featuring a circular clock and a rectangular dashboard display. It provides interactive control via a rotary encoder and flush buttons, Qi2 wireless charging, USB-C power, and audio I/O with a physical mic mute. All housed in a sleek, 3D-printable enclosure.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "sleek futuristic assistant",
+      "slim curved minimal design",
+      "soft premium look",
+      "circular clock display",
+      "rectangular dashboard display",
+      "physical rotary ring input",
+      "flush integrated buttons",
+      "ambient LED status lighting",
+      "Qi2 wireless charging",
+      "USB-C power input",
+      "3D-printable casing",
+      "hidden cable management"
+    ],
+    "description": "Create a complete blueprint for a DIY futuristic desk-assistant device.\n\nThe device should be an elegant, easy-to-use desktop assistant with a graphical interface that helps me manage day-to-day life. It should show my calendar, reminders, to-do list, clock, and useful daily information. Assume calendar/reminders/tasks can be pulled from different sources such as Google Calendar, Apple Calendar, Notion, Todoist, Gmail, Telegram, or manual API/webhook inputs. Choose the best practical integration approach.\n\nCore concept:\nA small premium desk device with two screens:\n1. A circular screen dedicated mostly to the clock.\n2. A rectangular screen for calendar, reminders, to-do list, notifications, widgets, and daily overview.\n\nThe device should feel like a sleek futuristic assistant, not a bulky maker project. The design should be slim, curved, minimal, and modern, with a soft premium look.\n\nImportant interaction requirement:\nThe device must be controlled only through physical inputs. Do not use a touchscreen.\n\nInput system:\n- The circular clock display should have a physical rotary ring around it.\n- The rotary ring should work as the main input method.\n- The ring should allow scrolling through dashboard cards, changing modes, adjusting focus timer duration, moving through calendar items, and navigating settings.\n- The rotary ring should also support press/click input if mechanically feasible, like a push-to-select control.\n- Add several clean physical buttons for quick actions:\n  - Back / Home\n  - Confirm / Select, unless handled by the rotary ring press\n  - Snooze reminder\n  - Dismiss reminder\n  - Start / pause focus mode\n  - Optional mute/privacy button\n- The buttons should be minimal and beautifully integrated into the casing, not exposed like a prototype board.\n- The UX should be designed around glanceable information and fast physical control, similar to a premium smart alarm clock, car infotainment knob, or high-end audio device.\n\nMain features to include:\n- Circular clock display with analog and digital clock modes.\n- Rectangular dashboard showing:\n  - Today’s calendar events.\n  - Upcoming reminders.\n  - To-do list.\n  - Weather.\n  - Small daily briefing / “what’s next” section.\n  - Focus timer / Pomodoro mode.\n  - Notification summaries from selected sources.\n  - Optional smart home status widgets.\n- Button-only and rotary-ring-based navigation that is simple, intuitive, and satisfying to use.\n- Ambient LED strip or subtle edge lighting for status states:\n  - calm idle mode,\n  - upcoming meeting,\n  - urgent reminder,\n  - focus mode,\n  - charging mode.\n- Qi2 / MagSafe-compatible magnetic charging area for a phone, integrated into the top or side of the casing if feasible.\n- USB-C power input.\n- Optional small speaker or buzzer for gentle reminder sounds.\n- Optional microphone only if privacy is handled properly, with a physical mute switch.\n- Night / low-brightness mode.\n- Standby mode with beautiful clock and subtle animation.\n- Local fallback mode if internet is unavailable.\n\nDesign and casing:\nThe casing should be skinny, curved, and futuristic. Avoid sharp boxy shapes. It should look like a premium consumer product, suitable for a clean desk setup.\n\nThe rotary ring around the circular display should be a key visual feature. It should look intentional, premium, and tactile — like a smooth metal or satin-finish control ring. It should not look like a random encoder added to a screen.\n\nSuggested visual style:\n- Main casing: matte off-white, pearl white, or soft light gray.\n- Accent color: electric blue, soft cyan, mint green, or violet glow.\n- Screen bezels: glossy black or dark graphite.\n- Rotary ring: brushed aluminum, dark graphite, champagne metal, or satin silver.\n- Shape: curved horizontal base with the circular screen slightly raised or integrated on one side, and the rectangular screen flowing next to it.\n- Buttons: flush, low-profile, backlit if possible, integrated into the front edge or top curve.\n- Include cable management so the power cable is hidden as much as possible.\n- Make the casing 3D-printable, but make it look polished and premium.\n- Suggest materials, finish, sanding/painting method, and assembly approach.\n\nHardware requirements:\nDefine the best hardware architecture from scratch. Choose appropriate boards, displays, sensors, power components, connectors, LEDs, buttons, charging module, speaker, and any other required components. Prioritize parts that are realistic to buy and assemble as a DIY project.\n\nPlease include:\n- Recommended main controller/computer, such as Raspberry Pi, ESP32, or another better option.\n- Exact recommended screen types and sizes for the circular and rectangular displays.\n- A practical rotary ring mechanism around the circular screen.\n- Recommended rotary encoder, magnetic encoder, bearing, or custom ring mechanism.\n- How the rotary ring should be mounted mechanically.\n- How the rotary input should connect to the controller.\n- Power architecture.\n- Wiring diagram description.\n- Bill of materials with estimated prices.\n- Alternatives for budget, balanced, and premium builds.\n- Any required adapters, drivers, and mounting hardware.\n- Thermal and safety considerations.",
+    "technicalDescription": "A desk assistant powered by an ESP32-S3, featuring a circular clock and a rectangular dashboard display. It provides interactive control via a rotary encoder and flush buttons, Qi2 wireless charging, USB-C power, and audio I/O with a physical mic mute. All housed in a sleek, 3D-printable enclosure."
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG capable)",
+      "Filament (PETG)",
+      "Philips head screwdriver (small)",
+      "Philips head screwdriver (medium)",
+      "Soldering iron with fine tip",
+      "Solder wire (rosin core, thin gauge)",
+      "Wire strippers",
+      "Flush cutters",
+      "Multimeter (for continuity and voltage checks)",
+      "Super glue or strong adhesive",
+      "Tweezers",
+      "USB-C data cable",
+      "Computer with USB-C port"
+    ],
+    "assumptions": [
+      "Basic soldering experience with small components",
+      "Familiarity with 3D printer operation and basic post-processing",
+      "Basic understanding of microcontrollers and flashing firmware (ESP-IDF/Arduino IDE)",
+      "Appropriate development environment (e.g., Arduino IDE, PlatformIO) installed on a computer",
+      "USB-C power adapter for testing"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main MCU Power",
+      "source": "usb_c_power_input",
+      "target": "main_mcu",
+      "current": "2A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Circular Display VCC",
+      "source": "main_mcu",
+      "target": "circular_display",
+      "current": "50mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Rectangular Display VCC",
+      "source": "main_mcu",
+      "target": "rectangular_display",
+      "current": "150mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Audio DAC Power",
+      "source": "main_mcu",
+      "target": "i2s_dac_audio",
+      "current": "50mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Microphone VDD",
+      "source": "main_mcu",
+      "target": "microphone_module",
+      "current": "10mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "label": "Circular Display SPI SCK",
+      "source": "main_mcu",
+      "target": "circular_display",
+      "protocol": "spi",
+      "sourcePin": "GPIO_SPI_SCK",
+      "targetPin": "SPI_SCK"
+    },
+    {
+      "type": "data",
+      "label": "Circular Display SPI MOSI",
+      "source": "main_mcu",
+      "target": "circular_display",
+      "protocol": "spi",
+      "sourcePin": "GPIO_SPI_MOSI",
+      "targetPin": "SPI_MOSI"
+    },
+    {
+      "type": "data",
+      "label": "Circular Display Data/Command",
+      "source": "main_mcu",
+      "target": "circular_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "DC"
+    },
+    {
+      "type": "data",
+      "label": "Circular Display Reset",
+      "source": "main_mcu",
+      "target": "circular_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "RST"
+    },
+    {
+      "type": "data",
+      "label": "Circular Display Chip Select",
+      "source": "main_mcu",
+      "target": "circular_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "CS"
+    },
+    {
+      "type": "data",
+      "label": "Circular Display Backlight PWM",
+      "source": "main_mcu",
+      "target": "circular_display",
+      "protocol": "pwm",
+      "sourcePin": "GPIO_PWM",
+      "targetPin": "BL"
+    },
+    {
+      "type": "data",
+      "label": "Rectangular Display SPI SCK",
+      "source": "main_mcu",
+      "target": "rectangular_display",
+      "protocol": "spi",
+      "sourcePin": "GPIO_SPI_SCK",
+      "targetPin": "SPI_SCK"
+    },
+    {
+      "type": "data",
+      "label": "Rectangular Display SPI MOSI",
+      "source": "main_mcu",
+      "target": "rectangular_display",
+      "protocol": "spi",
+      "sourcePin": "GPIO_SPI_MOSI",
+      "targetPin": "SPI_MOSI"
+    },
+    {
+      "type": "data",
+      "label": "Rectangular Display Data/Command",
+      "source": "main_mcu",
+      "target": "rectangular_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "DC"
+    },
+    {
+      "type": "data",
+      "label": "Rectangular Display Reset",
+      "source": "main_mcu",
+      "target": "rectangular_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "RST"
+    },
+    {
+      "type": "data",
+      "label": "Rectangular Display Chip Select",
+      "source": "main_mcu",
+      "target": "rectangular_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "CS"
+    },
+    {
+      "type": "data",
+      "label": "Rectangular Display Backlight PWM",
+      "source": "main_mcu",
+      "target": "rectangular_display",
+      "protocol": "pwm",
+      "sourcePin": "GPIO_PWM",
+      "targetPin": "BL"
+    },
+    {
+      "type": "data",
+      "label": "Rotary Encoder CLK",
+      "source": "main_mcu",
+      "target": "rotary_encoder_main",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "CLK"
+    },
+    {
+      "type": "data",
+      "label": "Rotary Encoder DT",
+      "source": "main_mcu",
+      "target": "rotary_encoder_main",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "DT"
+    },
+    {
+      "type": "data",
+      "label": "Rotary Encoder Push Button",
+      "source": "main_mcu",
+      "target": "rotary_encoder_main",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "SW"
+    },
+    {
+      "type": "data",
+      "label": "Back/Home Button",
+      "source": "main_mcu",
+      "target": "button_back_home",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "COM"
+    },
+    {
+      "type": "data",
+      "label": "Snooze Button",
+      "source": "main_mcu",
+      "target": "button_snooze",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "COM"
+    },
+    {
+      "type": "data",
+      "label": "Dismiss Button",
+      "source": "main_mcu",
+      "target": "button_dismiss",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "COM"
+    },
+    {
+      "type": "data",
+      "label": "Focus Toggle Button",
+      "source": "main_mcu",
+      "target": "button_focus_toggle",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "COM"
+    },
+    {
+      "type": "data",
+      "label": "Mute/Privacy Button",
+      "source": "main_mcu",
+      "target": "button_mute_privacy",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_EXT_INT",
+      "targetPin": "COM"
+    },
+    {
+      "type": "data",
+      "label": "Audio DAC BCLK",
+      "source": "main_mcu",
+      "target": "i2s_dac_audio",
+      "protocol": "i2s",
+      "sourcePin": "GPIO_I2S_BCLK",
+      "targetPin": "BCLK"
+    },
+    {
+      "type": "data",
+      "label": "Audio DAC LRCLK",
+      "source": "main_mcu",
+      "target": "i2s_dac_audio",
+      "protocol": "i2s",
+      "sourcePin": "GPIO_I2S_WS",
+      "targetPin": "LRCLK"
+    },
+    {
+      "type": "data",
+      "label": "Audio DAC Data In",
+      "source": "main_mcu",
+      "target": "i2s_dac_audio",
+      "protocol": "i2s",
+      "sourcePin": "GPIO_I2S_DATA_OUT",
+      "targetPin": "DIN"
+    },
+    {
+      "type": "data",
+      "label": "Speaker Audio Output",
+      "source": "i2s_dac_audio",
+      "target": "speaker_audio_output",
+      "protocol": "analog",
+      "sourcePin": "SD",
+      "targetPin": "+"
+    },
+    {
+      "type": "data",
+      "label": "Mic BCLK",
+      "source": "main_mcu",
+      "target": "microphone_module",
+      "protocol": "i2s",
+      "sourcePin": "GPIO_I2S_BCLK",
+      "targetPin": "BCLK"
+    },
+    {
+      "type": "data",
+      "label": "Mic WS",
+      "source": "main_mcu",
+      "target": "microphone_module",
+      "protocol": "i2s",
+      "sourcePin": "GPIO_I2S_WS",
+      "targetPin": "WS"
+    },
+    {
+      "type": "data",
+      "label": "Mic Data Out to MCU I2S In",
+      "source": "microphone_module",
+      "target": "main_mcu",
+      "protocol": "i2s",
+      "sourcePin": "DATA",
+      "targetPin": "GPIO_SPI_MISO"
+    },
+    {
+      "type": "data",
+      "label": "Microphone Power via Mute Switch",
+      "source": "microphone_mute_switch",
+      "target": "microphone_module",
+      "protocol": "gpio",
+      "sourcePin": "NO",
+      "targetPin": "VDD"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M3 bolts",
+      "source": "main_enclosure_top",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "Secured via adhesive/snap fit",
+      "source": "circular_display_bezel",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Secured via adhesive/snap fit",
+      "source": "rectangular_display_bezel",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Press fit/seated",
+      "source": "rotary_ring_outer",
+      "target": "rotary_encoder_bearing"
+    },
+    {
+      "label": "Press fit/retained",
+      "source": "rotary_encoder_bearing",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Coaxial engagement",
+      "source": "rotary_ring_inner_gear",
+      "target": "rotary_ring_outer"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "mcu_mount",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "Guided/retained",
+      "source": "button_back_home_cap",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Guided/retained",
+      "source": "button_snooze_cap",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Guided/retained",
+      "source": "button_dismiss_cap",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Guided/retained",
+      "source": "button_focus_toggle_cap",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Guided/retained",
+      "source": "button_mute_privacy_cap",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Snap fit/adhesive",
+      "source": "speaker_grille",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "M2 screws",
+      "source": "microphone_mount",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "M2 screws",
+      "source": "mic_mute_switch_housing",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "M2 screws",
+      "source": "usb_c_port_mount",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "Adhesive",
+      "source": "friction_pads",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "Adhesive/M2 screw",
+      "source": "internal_cable_clips",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "Adhesive/M2 screw",
+      "source": "internal_cable_clips",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "M2 screws",
+      "source": "i2s_dac_audio_mount",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "mount",
+      "source": "circular_display_bezel",
+      "target": "circular_display"
+    },
+    {
+      "label": "mount",
+      "source": "rectangular_display_bezel",
+      "target": "rectangular_display"
+    },
+    {
+      "label": "mount",
+      "source": "rotary_ring_inner_gear",
+      "target": "rotary_encoder_main"
+    },
+    {
+      "label": "mount",
+      "source": "mcu_mount",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "button_back_home_cap",
+      "target": "button_back_home"
+    },
+    {
+      "label": "mount",
+      "source": "button_snooze_cap",
+      "target": "button_snooze"
+    },
+    {
+      "label": "mount",
+      "source": "button_dismiss_cap",
+      "target": "button_dismiss"
+    },
+    {
+      "label": "mount",
+      "source": "button_focus_toggle_cap",
+      "target": "button_focus_toggle"
+    },
+    {
+      "label": "mount",
+      "source": "button_mute_privacy_cap",
+      "target": "button_mute_privacy"
+    },
+    {
+      "label": "mount",
+      "source": "speaker_grille",
+      "target": "speaker_audio_output"
+    },
+    {
+      "label": "mount",
+      "source": "microphone_mount",
+      "target": "microphone_module"
+    },
+    {
+      "label": "mount",
+      "source": "mic_mute_switch_housing",
+      "target": "microphone_mute_switch"
+    },
+    {
+      "label": "mount",
+      "source": "usb_c_port_mount",
+      "target": "usb_c_power_input"
+    },
+    {
+      "label": "mount",
+      "source": "i2s_dac_audio_mount",
+      "target": "i2s_dac_audio"
+    },
+    {
+      "label": "M2 screws",
+      "source": "magsafe_charger_mount",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "Press fit/retained",
+      "source": "magsafe_charger_mount",
+      "target": "apple_magsafe_charger"
+    }
+  ],
+  "projectId": "0df2cda6-58ab-4c70-a3fe-d446b881c4cc"
+}

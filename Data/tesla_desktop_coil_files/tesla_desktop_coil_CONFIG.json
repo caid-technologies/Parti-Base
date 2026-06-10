@@ -1,0 +1,1180 @@
+{
+  "plan": "- Design and simulate a high-frequency resonant transformer coil (primary and secondary).\n- Select a high-voltage, high-frequency power supply and a robust spark gap or solid-state switching circuit.\n- Construct a large air-core helical coil (secondary) and a smaller primary coil, ensuring proper insulation.\n- Fabricate a sturdy, non-conductive mechanical frame to support the coils, top load, and associated electronics.\n- Implement a grounding system and safety interlocks for high-voltage operation.\n- Develop a control system for power regulation and tuning, potentially using a microcontroller (e.g., Arduino or ESP32) to manage switching frequency and duration.",
+  "nodes": [
+    {
+      "id": "mcu_main",
+      "name": "Main Controller",
+      "pins": [
+        "VIN",
+        "GND",
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "type": "mcu",
+      "partId": "6c8e64ed-e655-456b-96d1-8fdc31420cdc",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/7yuhxwCtjt8FR4fyL3fJRmTClI6jDLncB4Ljb1Dx8nw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZWxlY3Ryb21ha2Vy/LmlvL3VwbG9hZHMv/aW1hZ2VzL0Jsb2cv/YXJkdWluby1uYW5v/LWJvYXJkcy1yZXZp/d2VkL3Bpbm91dHMv/bmFuby1ldmVyeS1w/aW5vdXQuanBlZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Digital I/O,Analog In,PWM Out,I2C,UART,Power In"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VX7MX27?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x18x5mm",
+      "position3d": {
+        "x": 200,
+        "y": 20,
+        "z": 175
+      },
+      "boundingBox": {
+        "depth": 18,
+        "width": 45,
+        "height": 5
+      },
+      "description": "Compact microcontroller for safety monitoring and basic system control.",
+      "productName": "Arduino Nano Every",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=arduino+nano+every",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgIj9IABhDmHH9cZwgmt3IdfEj5EnaB3kj0C6WbQ8EFhkqpWNbyLXaaT0FWqEvqgSCtHCM84MWfXlyANMtXNo74Xlrzm2YxTfvIzJH9WsFwxGvgKDRzLAcEml8RRfZX5qmhmC1vZWExON9quckpNToknUCEduczvEbBNooPs3cJ1Bw0HrjeinzmWrTebjHOKeNSMyoeqqGc7ARAXbqKENSGAvdaVirWk71NDLKUneP3j1ADA9mUERcUCt9nWLPoIWy7XFShMbNcrzchZE41aDVGXdV3rdrqIcQjuC3ZTbFar9KFHViIAICS0hMjMaQmxXFxWw8vPczdO1Cazuumrrc7KS9KhNyWhbZq8yl5NukL1HD1nsUwOI1V7XZfGc4Off1lZwxQE3lqaR2AiHl5Tvb1ROcPTHKIMQ82LzstOOU8sIMW7MivCfkvoxIKB6AVVL81YdaVFj7J2kYYOSxF1w0n4IE7m7la8OSij92c4HCShEftJa6xRiWGd2A6CSaATGjudkLpT7wRh4SIGYbcN8Vzf2tyUXKWNLl9OKhZ2TzxtoV7eN3wN8kUxh2YRI7RtQa34gzaAeKxzCvnWDfknH7G1YL822gDlwyG5xegGsR9qoiXgoqn2VEUseZsDPlGeXQQEn1LUDwWWFRI7B3LhCmIr",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Arduino+Nano+Every&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_hvps",
+      "name": "High Voltage Power Supply",
+      "pins": [
+        "HV_OUT1",
+        "HV_OUT2",
+        "AC_IN_L",
+        "AC_IN_N",
+        "GND"
+      ],
+      "type": "power",
+      "partId": "7643fe90-8e28-448e-8154-8604b4c525f9",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8-Cq7s-F5E_pgLewJanCZcnUXqXBXHYt4prlW1f9PXk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zLmFs/aWNkbi5jb20vQHNj/MDQva2YvQTY0NTFj/ZmVkMDMzNzRiYjc4/MTc0NzQ5YjIzNzk0/OTlmbC5qcGdfNzIw/eDcyMHE1MC5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FRLZZ1DJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x100x80mm",
+      "position3d": {
+        "x": 222.5,
+        "y": 57.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 150,
+        "height": 80
+      },
+      "description": "Step-up transformer providing high voltage AC for the primary circuit.",
+      "productName": "Neon Sign Transformer (NST) 15kV, 30mA",
+      "purchaseUrl": "https://www.amazon.com/s?k=neon+sign+transformer+15kv",
+      "estimatedCost": 50,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4OV2dst",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Neon+Sign+Transformer+%28NST%29+15kV%2C+30mA&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_variac",
+      "name": "Input Power Variac",
+      "pins": [
+        "AC_IN_L",
+        "AC_IN_N",
+        "AC_OUT_L",
+        "AC_OUT_N"
+      ],
+      "type": "power",
+      "partId": "6e98957e-cbe4-4514-9a3a-d2f6b3c99265",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/NLNxChSGJ7fEGPUmreCtJ8Uq6pV0o6RX8aEumH1yOKM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGFydHMtZXhwcmVz/cy5jb20vU1NQJTIw/QXBwbGljYXRpb25z/L1BhcnRzRXhwcmVz/c0BTdWl0ZUNlbnRy/aWMvU0NBJTIwMjAx/OS4xL2ltZy8xMjAt/ODQ1X0FMVF8xLmpw/Zz9yZXNpemVpZD0x/MDQmcmVzaXplaD02/MDAmcmVzaXpldz02/MDA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07JV8ZCG8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "160x130x150mm",
+      "position3d": {
+        "x": 82.5,
+        "y": 92.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 130,
+        "width": 160,
+        "height": 150
+      },
+      "description": "Adjustable AC transformer to control the input voltage and power level.",
+      "productName": "Variable AC Transformer 5A",
+      "purchaseUrl": "https://www.amazon.com/s?k=variac+5a",
+      "estimatedCost": 60,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHKbz0ZFYOmFByWe6No7zFr7iuq4hmoNf6HN9SsOXeaFkCMpmjRihQfHeBMENgAwBvKc7XrQ8sZjHlNMZ53sWYS9P8E9Njr4LcjWkXMC180yZc4IVw1h8we9Y6PmAdMfyfAYtKcj3kMfBpIRqhmI4IBAWSEJ0QbQj2n0hL20Q8GkCOmQ6asV3tZVj3xjAH3vIWiKLsjPc93z2mYlMT25cB1ftfeP09Q2s6bmgVV649jiYPqBWqXg1rOU5Cr1sAGGoibsu1klQ7Uu0vHHx4X9HT7EjSrTjim9iVP7MZTmvSNWkOqW5MdXjJ2VAf1njiwqKdH8qu1dk4uiOq0632tlRLvkNIzzl95CXnvsdSSFbNVXLFLfmhbgg14go6E5GKwxb8ws2NmPLnFoODZQwrt49Q3ZePQbPdFxZCgYKSNqB14bbxTdEfX9StDyUeT9f4hYVl79ZzMAtNsDHkbPXQ8upajrn0gPcCWpUMCdGgLMcs4eBxxUdaC2yNMx66n1S6nONeLTEojeEjBEZ1Q0aJpm2Bk5gC3sJYmkXxqi3ZRiDry6lnECIP980te6SftNCys1CfXAmjNYW7NR6L1pWIsekquOCgC1hGh9zGmxs2ojvO1cJH0QVmb46unwgaXvpKfeI4HszcRzqB35Hp1yHWQ03zf5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Variable+AC+Transformer+5A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cap_primary_bank",
+      "name": "Primary Capacitor Bank",
+      "pins": [
+        "HV_IN1",
+        "HV_IN2"
+      ],
+      "type": "other",
+      "partId": "813bb1bd-62f4-49b6-bdec-ef99174809b7",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/V90mBq7YEnVScvCsZQe3bK2m2ae31qADxQ_wpbIrwpA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3FHRUFB/T1N3WjJwbWtWTkEv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B01N95REW4?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x40x30mm",
+      "description": "Bank of capacitors storing energy for discharge into the primary coil.",
+      "productName": "High Voltage Film Capacitor Bank (e.g., 6x 0.1uF 2kV)",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=high+voltage+film+capacitor+0.1uf+2kv",
+      "estimatedCost": 30,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c40qzX17",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=High+Voltage+Film+Capacitor+Bank+%28e.g.%2C+6x+0.1uF+2kV%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "spark_gap",
+      "name": "Static Spark Gap",
+      "pins": [
+        "GAP_A",
+        "GAP_B"
+      ],
+      "type": "other",
+      "partId": "62c36705-2330-44f6-a4f6-e15e93104a85",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/9OF0P5zWf1dOEnjoSaFuHTFIZpkTI8oaWCd4O9QIkCw/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2I3Y0FB/ZVN3a25sb25yYzUv/cy1sMTQwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0GHY4TBJV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x30x20mm",
+      "description": "Adjustable electrodes that break down and conduct high voltage, initiating oscillation.",
+      "productName": "Adjustable Static Spark Gap Electrodes",
+      "purchaseUrl": "https://www.amazon.com/s?k=spark+gap+electrodes",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4CS3Cfj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Adjustable+Static+Spark+Gap+Electrodes&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "relay_main_power",
+      "name": "Main Power Control Relay",
+      "pins": [
+        "DC_IN+",
+        "DC_IN-",
+        "AC_LOAD_IN",
+        "AC_LOAD_OUT"
+      ],
+      "type": "actuator",
+      "partId": "e82aaadd-8e2d-4532-9e2b-982541eafc4a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/97EmuYYEs0V_aZ6pPo3tdcnU7KjKNxSsoHhFZR5sNkM/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9zaG9w/MmluZGlhLmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9zLWwyMDAw/X18wMzE3Nl84ODNk/ZTQ2YS1jOWY2LTRj/NmEtOWRlYS1kOGQ2/OTYxOWNkOTZfMTMw/eC5qcGc_dj0xNjcy/NTIxMTM0",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08GPJ1V2J?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x45x23mm",
+      "position3d": {
+        "x": 260,
+        "y": 17.5,
+        "z": 175
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 60,
+        "height": 23
+      },
+      "description": "Switches AC power to the HVPS based on MCU commands and safety interlocks.",
+      "productName": "Solid State Relay 25A DC-AC",
+      "purchaseUrl": "https://www.amazon.com/s?k=solid+state+relay+25a+dc+ac",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwbQ6iULM8aNyaFjwgcDSfrVuJlfjvVLRkBogYkiZS8DNQus1zhLY9V6BQmga9enRNzAhXXG4aoSBTGH5k4JQui7nLz0OPFOQdY5QPqihHugxmESPIl7idlLLWnLQ3gwObdPNrv7Z3zKxLU4X1oAvHK1hXfgVp0Fchq1CgSNYQNLcXe6SagJrKIoYgHHISmEFh0jgnhmMVnKRzSlJ41RxxB4ARLkttQR8SowoTwvbQKbnybEhe1wMkVFhkAznTbMfQ5LINoTW7FFlKbwQVPCAo9aOJhzUeUcApMkS50Ku0G6b7jTFYjnFSrrqyRlf8TRlQRSySAPKrAgdOJJnGtS7hPfCK3yuQZAacC0gIwsyY8vnjqa9yLZ0jyVlJtjhz0JT9dOawIrEeqd4oc6s0b242qy9zYud2HNN6aPGP1WgsWSTBqiSHRsms30muvsZbSPuV0fcWbRVRb22OvuuGMaoZfS7x9ShvZ7jvpLemg9j8Oc1sXlpeucFCeeHDIgSkA956BFjugYU16a1sL4Vpau3ao8PA4fZTd8h5x6IyW5bdZeDrYsVREVsvt0KhGAiX4QYABYeH3sWCv7jkFtV87D0QOb3b7MwEsDCgENRq3rrdvNYB3eGolRmkcWA40oQGvSCYVRgSoMry5yFUYrRaOH4wIX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Solid+State+Relay+25A+DC-AC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_e_stop",
+      "name": "Emergency Stop Button",
+      "pins": [
+        "NC1",
+        "NC2"
+      ],
+      "type": "sensor",
+      "partId": "a82eb7a0-669d-4988-b492-041c221cb095",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fpAvqMIKbCMR9ZNfOUr2-1KH8F8AN58vCKkJOn_dpaU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3Fsb0FB/ZVN3fmJScGNXenMv/cy1sMjI1LmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0C4P8K5ZX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x30x30mm",
+      "position3d": {
+        "x": 110,
+        "y": 80,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 40,
+        "height": 30
+      },
+      "description": "Normally closed switch to immediately cut power for safety.",
+      "productName": "Mushroom Head Emergency Stop Switch NO/NC",
+      "purchaseUrl": "https://www.amazon.com/s?k=emergency+stop+button+nc",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwwfSleVAm2safitbHjHl7KCC5K8UP3kncjdUjw6hi1yV2JWYl7asQqW9Yb3ucA79zqcBmkSnjoocV64KMqnsgZLiqfHHR5q6OnX55KFT5hz23bpdyfpvythtsXE3jXwMtUT96n49PG0hjwKEANE3QT6Z8FGZvotwzTOmgV4K8g7webte5EDYiO7a9RVvgAoEUkbojVYeu7gxSE8REVN89HwH812hAZUVeTV75Eh1XHt0R1kOzjSHEx557jIb73lHrh3v12vwGFl2bixYM6XNV9V7DDGg3c39vcZ1N9bFpbHNDBOo0pCaLZ50OYIsaCGQJrY495bzSZYV1Ors8jzItryqIL1DdwPwE1sB4ASWpPhqlF4uXLJy7isUz9VOsbJhC7fg2UmUiJJmcgOFSg38Z7kgv8J9NpVsvlC0T4VfdqMnpY01cKE2Zq5ImxjvsJ8m5CH5fTIVhRzqE45OXojokeNjgGXFt0BCvYvV1tSAxCJLokdzdZ32enyAqh0cqtS3ZHreuv9T9e8gUzdkPRfWbH6jwdw0kf3scRB5aaALIUAsfEuZvSrNZyzhfdjtjezeEMFj5ofcniIgRAOhEljHD4T9HNlFkGnx9cLb7wtSGuV7FGJjTtTDwjv9CXAML1MOkdMC0Wd8zQJ6Hq1u41DO8ML",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mushroom+Head+Emergency+Stop+Switch+NO%2FNC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_key_switch",
+      "name": "Safety Key Switch",
+      "pins": [
+        "COM",
+        "NO"
+      ],
+      "type": "sensor",
+      "partId": "fbc68e9f-fd95-43c5-94b2-114c30f24a82",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/b_VDSVEEAE8XDbrBrwcQZ2jSWbXF8J2HMkHY5yxSvEU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGFydHMtZXhwcmVz/cy5jb20vU1NQJTIw/QXBwbGljYXRpb25z/L1BhcnRzRXhwcmVz/c0BTdWl0ZUNlbnRy/aWMvU0NBJTIwMjAx/OS4xL2ltZy8wNjAt/NjgwX0FMVF8wLmpw/Zz9yZXNpemVpZD0x/MDQmcmVzaXplaD02/MDAmcmVzaXpldz02/MDA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "In,Out"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07S1MV462?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x30mm",
+      "position3d": {
+        "x": 110,
+        "y": 120,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 20,
+        "height": 30
+      },
+      "description": "Key-operated switch to arm/disarm the system, preventing accidental operation.",
+      "productName": "Key Lock Switch SPST",
+      "purchaseUrl": "https://www.amazon.com/s?k=key+lock+switch+spst",
+      "estimatedCost": 7,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGRjDlwkH0VnstpVRdUWrfUmS0dYKLznqxUWlmvaDbkXjRNLl4Uk6zdUEgGlwCoc5lZohM1ihuXspwYYPm7BL5CexZ4TvGjAjTQIZTQ6t2cm7WXzv3uKlkJABmyHwEZcskZOKYpYlzaERAdRYgXYtfCF2hsuuEzCvqiBgVnEQlWtKmbKNXYcUdS2af6YEAVvD941UYqxSwjKHBf6thcw7y0WCX8ZrkqEMl0cz8U5re8MUdOwQJUao0mQKOSOjRSxNOLVODkJweSQ4selbW7j7QJrNifj6jTtWfAEn8fxWh4fiuHk84QqQHxtCXKvBY2oyQ0rkOux2xZ6kuBRSnBi17ho2AWTBs0VUqjJ7VGQ6sF689qJ9ynm5v4yH2RpfcUa45ALr9mDEfwF4Sol945Jt03EQlZU8PgQc1l8RHrEmyIWAoprgVugtQGnwEFyEjTGHk9ClrBLRRpiZda8dOBr3uGFgkZvgz42jtoi1nVmgyBbWVpb8SDV4DT6rURp9u7eanYOYAIOQCOBxnY8YkSY5O6gAnqvJdT9oxPo1P8YitqqG9dlrzeFNlagI6xKrGmGCg40YDoyAbf4xjThdT2U7LvwhfLqiaKHAf0VuLXkxmSxCNxhzVgqRfmAzmHBi7wsyvhtfsTHB96CDGtcpNSU5yHH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Key+Lock+Switch+SPST&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "inductor_ballast",
+      "name": "Ballast Inductor",
+      "pins": [
+        "IN",
+        "OUT"
+      ],
+      "type": "other",
+      "partId": "07be0998-0c27-42b6-816b-a0a0b03a939d",
+      "category": "electrical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0GVHZJ64H?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "80x60x50mm",
+      "description": "Limits current from the HVPS to prevent damage during spark gap firing.",
+      "productName": "High Voltage Current Limiting Inductor (e.g., 100-200mH)",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=high+voltage+inductor+200mh",
+      "estimatedCost": 20,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2IiLp4t",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=High+Voltage+Current+Limiting+Inductor+%28e.g.%2C+100-200mH%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "structural_base_plate",
+      "name": "Acrylic Base Plate",
+      "type": "structural",
+      "partId": "132f7984-4fb2-48ea-91d6-182f18c932dc",
+      "category": "mechanical",
+      "material": "Acrylic",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DPSBQG9V?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x200x5mm",
+      "position3d": {
+        "x": 150,
+        "y": 2.5,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 200,
+        "width": 300,
+        "height": 5
+      },
+      "description": "Non-conductive base for mounting all components.",
+      "productName": "Cast Acrylic Sheet 300x200x5mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=acrylic+sheet+300x200x5mm",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2Qk13Lf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Cast+Acrylic+Sheet+300x200x5mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "structural_secondary_coil_form",
+      "name": "PVC Secondary Coil Form",
+      "type": "structural",
+      "partId": "a8fe0fc8-19f0-491f-b7ba-849a10e467a7",
+      "category": "mechanical",
+      "material": "PVC",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08ZM3YD4Y?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100mm_Dia_x_250mm_L",
+      "position3d": {
+        "x": 150,
+        "y": 165,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 100,
+        "height": 250
+      },
+      "description": "Insulating form for winding the secondary coil.",
+      "productName": "PVC Pipe 100mm ID x 250mm L",
+      "purchaseUrl": "https://www.homedepot.com/s/pvc%2520pipe%2520100mm",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHsTS9k7IcjusjD0Sjj2D8LhB4mkv4F0wun5JAsIVOFcFl1bLIPX7stdrsoBTeJ0TvV6mlEPtK7UYIq154jqlAPw4R6mnLRNX0eCIDk5154dmaGPpWvjTTbFr8R4M9nHMLcWnI7VTLDBQ1ktgHEyP4LGesGJc3WbdyLUYjKHM8b8kv3djJz3arhDm8BVe1g3I1UsL8M1Z815zkRYOR8vSarmkT1PgWnXiS22tYCfvEbBMIY7ENmlCyKyKc4RLEywCezMFDk5d3O2bdQZaK8c119glWQWoszV92AWzyhJepgiUrqUFxvheMecpR6KEODEwBqP1NzzPs1uavYzZiKIxq4jjOUcquCQahv3BvQhIipgyOAjH6mReHaOJcjp7N3gxmVyDfQcUqGDLVsHHwJHTAemEy6JbtNtgIGdksJQ1a2jnaTwXalltjuPjK10DTbaIbjcEdEAlRvKrkZUfW7KYiM506Bj7WWwA86dlUrRnrO8XDU6HaVFEYuHQcfEaLLTnoRDngvTAeyNFLmd4TJ6KY8d5cnn6gBwhw6W8JSk2zTO7OAt3h6l011T4PVQhhNP6H77T8goKyNM3UoknE5q3zsl047kJ98bd2iJqu9aeAcyV2Pni6rwOnJDMbM6bJnqowWrR5VJd1JMKItdfcUn0Yxv",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PVC+Pipe+100mm+ID+x+250mm+L&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "structural_vertical_support_rods",
+      "name": "Acrylic Support Rods",
+      "type": "structural",
+      "partId": "e7974347-ab24-432f-83db-c261a9bb45a2",
+      "category": "mechanical",
+      "material": "Acrylic",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0FBRJ25N1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10mm_Dia_x_200mm_L",
+      "position3d": {
+        "x": 10,
+        "y": 105,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 200
+      },
+      "description": "Supports for the secondary coil assembly and safety enclosure.",
+      "productName": "Acrylic Rod 10mm Dia x 200mm L",
+      "purchaseUrl": "https://www.amazon.com/s?k=acrylic+rod+10mm",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3v653aN",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Acrylic+Rod+10mm+Dia+x+200mm+L&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "structural_top_load_rod",
+      "name": "Non-Conductive Top Load Rod",
+      "type": "structural",
+      "partId": "eefe7dba-e945-407b-b891-5cb7ae770471",
+      "category": "mechanical",
+      "material": "Delrin",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D1P2W5WL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10mm_Dia_x_150mm_L",
+      "position3d": {
+        "x": 150,
+        "y": 375,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 150
+      },
+      "description": "Insulating rod connecting the spherical top load to the secondary coil.",
+      "productName": "Delrin Rod 10mm Dia x 150mm L",
+      "purchaseUrl": "https://www.amazon.com/s?k=delrin+rod+10mm",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c45MmY9B",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Delrin+Rod+10mm+Dia+x+150mm+L&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanism_top_load_sphere",
+      "name": "Stainless Steel Top Load Sphere",
+      "type": "mechanism",
+      "partId": "6b5eca4e-50df-491d-b5c8-0b0f4b912486",
+      "category": "mechanical",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07R4JJRJX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50mm_Dia",
+      "position3d": {
+        "x": 150,
+        "y": 475,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 50
+      },
+      "description": "Capacitive terminal at the top of the secondary coil for enhanced output.",
+      "productName": "Stainless Steel Hollow Sphere 50mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=stainless+steel+hollow+sphere+50mm",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvJskwLMqhIh7JcwRFJjWclqv1YbwEGElfi2bFn3FzW69iP3Jg3aldDkoo9z9IDiHygPht7BTKeaTyNGPMz1FxXIpAIgduzIwaRPvXo2Lrb4KZOYdVAX67qy7ib4Zk9vJv2Ji9lV3bzeO296octnAqrMXmp3TFjFKujPGH1sJxfWWtIEQax3HpgIrmuLT6HKKyIVpkDtKr9cGCnWVF1igoupjnFqUuIZ8OdvAaaXSIV6vD0yO83V5IOFbDZUMtd5dM3TFUkFNIM6nsFh8K0Ow9UVLB0AygL2z0iYqIg6O04ddg9F2PSw7kPfpGBcIGxxCKJ1ul7Lgr4pNXzgiL9FJE1PUF0wL3YHEv3PvHRtoNMmMyEZK0vIARL56NmPE9HagCAMSdiFqEhzmk6EHIQSK9aSZODNKE7MFTvuKGQp2eT6rN7OfYgTU149oMsEUlxZXDHQYuCXLRBx7MA1kvwhgQTSv3ZqVVtmpSVvJfRzWzeEaw0irrzcuDIF4kQ8FAL3h9TkxMu48uMgdujet1MQwq48FpJVwfvGww4kEZ0CeaDFHFyrZtGwJWsInkAmF4R8SKE5RKVugk64luS4vFHO6WOzRShwnWHt6mI7nMTheYVbRlkiKez7m0sfk1a3gMcZV3C6vkHfk2d2R4jeL0kJIBWb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Stainless+Steel+Hollow+Sphere+50mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "enclosure_safety_panels",
+      "name": "Acrylic Safety Panels",
+      "type": "enclosure",
+      "partId": "efd63bb3-79ff-4fb5-a82a-be474c2ca5d1",
+      "category": "mechanical",
+      "material": "Acrylic",
+      "quantity": 3,
+      "amazonUrl": "https://www.amazon.com/dp/B0BYSBDTWL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x200x3mm",
+      "position3d": {
+        "x": 110,
+        "y": 105,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 200,
+        "height": 200
+      },
+      "description": "Transparent panels to enclose the high-voltage components for safety.",
+      "productName": "Cast Acrylic Sheet 200x200x3mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=acrylic+sheet+200x200x3mm",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4dR2Ygz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Cast+Acrylic+Sheet+200x200x3mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "misc_standoffs_m3_nylon",
+      "name": "M3 Nylon Standoffs",
+      "type": "misc",
+      "partId": "8c371ff2-ed8c-40ea-8e13-38f7a5a61ad3",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/dp/B0F297R23T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "Insulating standoffs for mounting PCBs and other small components.",
+      "productName": "Nylon M3 Standoffs Assortment",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+nylon+standoffs",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwaAYknHsSWnQdgKlp0bsWsEsYSKpRwtZtb44WQ2k2nWaVUcWQ4IuhbWyxAPg8E9W8STUEWLZmmVZB0umF7v8xTAI7RSGS7SvVkrNNx0o4oZZ8LpTPfFy1J51Meu1fJ7YiCNCa9bUEA6kxImecOo3TLAYeeWU47sI5fmlWlSC1cqPkCXgU3w3sPhTtBtEwk7GS3Xgt8AEwxV1ULLmQFW0CiJlWzCrc4rBCRLyeWJPzQtvo6Lg0VNCYc7cWTX6z8Zf0rq1lEDdk4gOsoY9UDn5RkCdvbhlGVSSxcEx2BNSuqKyZ8l4chUjBrsy97ST5QItxsWTyKQbdpYUAHSqLQ3Wq8SUlI59526ZVHrkbuPevcxqKa3xXK9CRdaA2RuFqATbmmV5ngDY9dyY7PhKPYkCUgqeokqPfnVOht1KkP94SefqzfKHRuFlabm1hse2539NkBa8fms4uUGEnYpSK597HJp7sWHNUzbJ6R23qi015ItNJb4SFcXX2BjztE9lVuh9OJEMga3lN1Tjy38HGQqxXnCx835XMFLEcGoCwtLOBug7WzFhfA6ZrznWrMiJv1tmXOP60dwR8bb59OMy7ErqhBVNUTKLHN1ILD4wCGaZkwnHlfejbaZGns70Xn6xvVQSbjRDiM1h7l8vL8RUw138fZv",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Nylon+M3+Standoffs+Assortment&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "misc_fasteners_m3",
+      "name": "M3 Screws and Nuts",
+      "type": "misc",
+      "partId": "4a1b7ed3-931c-42ea-b578-162c02201757",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/tR-NL077mGU5Odys1oeT5ObUq8rj0CHOPJY_AwyyJ_Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFVOHNEYWNKaEwu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 50,
+      "amazonUrl": "https://www.amazon.com/dp/B0FG2BRXL3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "General purpose fasteners for assembling mechanical and electrical components.",
+      "productName": "M3 Stainless Steel Screw Assortment",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+stainless+steel+screws+nuts",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaDxyFwYUQLXe3R7bQTJgcIfzNTpVhrBXoyHjRpVHcA6P1M7ZWCLauqBh1A7NLidZb37tJ5kzluxM5551x3JgAFIDtFdFfc4ylm29YuvmXOOT5KMOzfwlAEKYgisax0bl1FWyhSC0QXfJelowUWjAEqm9PIi06mrpZupLxKMw4Kh2eGi2BVM7a8LJdbdl43g57CGaXNRQ5FeovQMPeMqyVBAJXAoZK081JnEygsS3iLQYYv4lgCm6nkDnUYurkyhoZrX8pzPXHPNiBgX9rqkBVE0pytk5jFlBun0oJrRzQ10l1NQW76dCYLNZGu3km5f1BL89sAUwdrjIlz2K3ZFylphbWUk46MrqTb4CZVsoFIRIGOCMwYVhOcpfOI4u39UsyLHf2KfN72s7cVSfgIKYEy6OiedAccGPznxB3Jxg7CQ4eU83JHaOxHoGifP6uAoC9p2XhL2UrffeAJwmQLGBCQndaruYOOyAEVjHwmGP86kSOCDBkgWEjRKf4QzsNsKI2Tk9pRMsByHzJFK5Fz29LrFP0Z7BA0aFslxlHuaL51crAKZMJV0v82ZwKbe2gpdgR0V2eQcM06vMF3jw8Si0V14gnjQ8rnKmkZD8Jixtz0POIIfYZ4WoTkocErud3zaI1huwZj0LYWhZn389gRGCx7N",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Stainless+Steel+Screw+Assortment&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "misc_fasteners_m4",
+      "name": "M4 Screws and Nuts",
+      "type": "misc",
+      "partId": "41c51c65-9328-408f-85c1-f295fcc4f9f6",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/73Pl5pc0nV_eZkPwHlR0jE7hHEEru9GBeiYsM0MhpL4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFlVlJzQ0xNakwu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 10,
+      "amazonUrl": "https://www.amazon.com/dp/B0CQQQ359H?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M4x15mm",
+      "description": "Heavier duty fasteners for mounting larger components like the variac or HVPS.",
+      "productName": "M4 Stainless Steel Screw Assortment",
+      "purchaseUrl": "https://www.amazon.com/s?k=m4+stainless+steel+screws+nuts",
+      "estimatedCost": 0.15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaDxyFwYUQLXe3R7bQTJgcIfzNTpVhrBXoyHjRpVHcA6P1M7ZWCLauqBh1A7NLidZb37tJ5kzluxM5551x3JgAFIDtFdFfc4ylm29YuvmXOOT5KMOzfwlAEKYgisax0bl1FWyhSC0QXfJelowUWjAEqm9PIi06mrpZupLxKMw4Kh2eGi2BVM7a8LJdbdl43g57CGaXNRQ4Ia3ljHlcsp8lz7jo3pkPYj2wKKBYX5qhd3jQE7UwlDKX5JjCAg5SRolmITzSyPg1wnFOCChEUB55xBiFWxAeOz7IcN85Vur9ORbkZWSlse9cx3eolMGYgjLCjRk5U9uQObkoH8hpj5TnpgtNdvyzzQb4SFt7ptrrlMyxYNgDx5XVEgwW4uHGDU2HysYgBmrmdvIcK3Ju39tDLnaUakIuVxW7zV85ldsuXV7AY25Gxa3pVUYJom5ZkDojR1dhq9vP4hOmwUokKZozh60OXv03kRwrE8Fvc0ddZvJkcrkvEMWfwUVKq9ue6DgzoADDkr0w4rxcgkyrxkjEfVjCkrC8extkWjDkwwwWixoRTev9fuFoqju9aAOdyi9KdiKJEbI6mjFjGSoKUYo22ueqDEzyPKMfAQLc9uwrUkSBlPsyJNCfm0mLqCI7YN2Kxaju9qn5rxX2zFu29OEMll",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M4+Stainless+Steel+Screw+Assortment&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "3dprinted_hvps_mount",
+      "name": "HVPS Mounting Bracket",
+      "type": "3d_printed",
+      "partId": "cfe16c51-3d52-4736-b7f0-4cc970d03427",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "155x105x10mm",
+      "position3d": {
+        "x": 222.5,
+        "y": 12.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 105,
+        "width": 155,
+        "height": 10
+      },
+      "description": "Custom bracket to securely mount the High Voltage Power Supply.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3dprinted_variac_mount",
+      "name": "Variac Mounting Bracket",
+      "type": "3d_printed",
+      "partId": "5b0e9869-6ad5-428f-adbd-133a3f52453b",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "165x135x10mm",
+      "position3d": {
+        "x": 82.5,
+        "y": 12.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 135,
+        "width": 165,
+        "height": 10
+      },
+      "description": "Custom bracket to securely mount the Input Power Variac.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 3,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3dprinted_cap_bank_mount",
+      "name": "Capacitor Bank Mount",
+      "type": "3d_printed",
+      "partId": "1da50f50-ab91-480c-bb60-6ae62fa3bb50",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/GCFhTQKguDcxgUu5EOQpY2HtQuVR0AB7BFCtvg2CCok/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cm1jeWJlcm5ldGlj/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTYvMTEvbW1j/LmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 60% infill, supports needed"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CLPP1DD2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x45x15mm",
+      "position3d": {
+        "x": 50,
+        "y": 15.5,
+        "z": 175
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 65,
+        "height": 15
+      },
+      "description": "Mounting bracket for the Primary Capacitor Bank.",
+      "productName": "Capacitor Bank Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2xGpyXb"
+    },
+    {
+      "id": "3dprinted_mcu_mount",
+      "name": "MCU Enclosure/Mount",
+      "type": "3d_printed",
+      "partId": "0e62743f-f875-41d4-bb51-087a722a1f54",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "50x25x10mm",
+      "position3d": {
+        "x": 200,
+        "y": 12.5,
+        "z": 175
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 50,
+        "height": 10
+      },
+      "description": "Small enclosure to protect and mount the Main Controller (Arduino Nano).",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3dprinted_spark_gap_mount",
+      "name": "Adjustable Spark Gap Mount",
+      "type": "3d_printed",
+      "partId": "7f83641c-8230-4684-bbbe-52c93fc93ab9",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "80x40x30mm",
+      "position3d": {
+        "x": 120,
+        "y": 20,
+        "z": 175
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 80,
+        "height": 30
+      },
+      "description": "Mount with adjustment mechanism for the static spark gap electrodes.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3dprinted_primary_coil_form",
+      "name": "Primary Coil Support Ring",
+      "type": "3d_printed",
+      "partId": "8bd20f61-ff84-4784-9e4a-1e2e8b43583b",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "120mm_Dia_x_20mm_H",
+      "position3d": {
+        "x": 150,
+        "y": 40,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 120,
+        "width": 120,
+        "height": 20
+      },
+      "description": "Insulating ring to support the primary coil windings around the secondary coil base.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1.8,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3dprinted_secondary_coil_base_mount",
+      "name": "Secondary Coil Base Mount",
+      "type": "3d_printed",
+      "partId": "3e08cd5e-1380-423c-9b81-98cec90fa09d",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "110mm_Dia_x_30mm_H",
+      "position3d": {
+        "x": 150,
+        "y": 20,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 110,
+        "width": 110,
+        "height": 30
+      },
+      "description": "Mount for securing the PVC secondary coil form to the base plate.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3dprinted_secondary_coil_top_mount",
+      "name": "Secondary Coil Top Mount",
+      "type": "3d_printed",
+      "partId": "84952ad9-9057-47b9-bcbd-876fe4debe3e",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "110mm_Dia_x_30mm_H",
+      "position3d": {
+        "x": 150,
+        "y": 300,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 110,
+        "width": 110,
+        "height": 30
+      },
+      "description": "Mount for attaching the top load rod to the top of the secondary coil form.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3dprinted_panel_mounts",
+      "name": "Control Panel Mounts",
+      "type": "3d_printed",
+      "partId": "c1a32df5-521e-4916-8e29-79f330ccf670",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "amazonUrl": null,
+      "dimensions": "50x30x10mm",
+      "position3d": {
+        "x": 110,
+        "y": 80,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 50,
+        "height": 10
+      },
+      "description": "Mounts for the E-stop and Key Switch on an enclosure panel.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 0.8,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    }
+  ],
+  "notes": [
+    "Tesla's design",
+    "magnifying transmitter",
+    "high voltage",
+    "wireless power"
+  ],
+  "projectName": "Tesla Desktop Coil",
+  "originalPrompt": "Create Tesla's magnifying transmitter",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D Print all custom parts",
+          "partIds": [
+            "3dprinted_hvps_mount",
+            "3dprinted_variac_mount",
+            "3dprinted_cap_bank_mount",
+            "3dprinted_mcu_mount",
+            "3dprinted_spark_gap_mount",
+            "3dprinted_primary_coil_form",
+            "3dprinted_secondary_coil_base_mount",
+            "3dprinted_secondary_coil_top_mount",
+            "3dprinted_panel_mounts"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Prepare Acrylic Base Plate and Safety Panels",
+          "partIds": [
+            "structural_base_plate",
+            "enclosure_safety_panels",
+            "structural_vertical_support_rods"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Prepare Secondary Coil Form",
+          "partIds": [
+            "structural_secondary_coil_form"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Assemble Spark Gap Electrodes with Mount",
+          "partIds": [
+            "spark_gap",
+            "3dprinted_spark_gap_mount"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Wind Secondary Coil on PVC Form",
+          "partIds": [
+            "structural_secondary_coil_form",
+            "structural_top_load_rod",
+            "mechanism_top_load_sphere",
+            "3dprinted_secondary_coil_top_mount"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wind Primary Coil onto Support Ring",
+          "partIds": [
+            "3dprinted_primary_coil_form"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Prepare MCU Wiring for Safety Controls",
+          "partIds": [
+            "mcu_main",
+            "sensor_e_stop",
+            "sensor_key_switch",
+            "relay_main_power"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Wire High Voltage Primary Circuit Components",
+          "partIds": [
+            "power_hvps",
+            "cap_primary_bank",
+            "spark_gap",
+            "inductor_ballast"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect AC Input Power Path",
+          "partIds": [
+            "power_variac",
+            "relay_main_power",
+            "inductor_ballast",
+            "power_hvps"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Flash Firmware to Main Controller",
+          "partIds": [
+            "mcu_main"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Test Safety Interlocks (E-Stop, Key Switch)",
+          "partIds": [
+            "mcu_main",
+            "sensor_e_stop",
+            "sensor_key_switch"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Verify Relay Control from MCU",
+          "partIds": [
+            "mcu_main",
+            "relay_main_power"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Conduct Continuity Checks on Coils and HV Path (Power Off)",
+          "partIds": [
+            "structural_secondary_coil_form",
+            "3dprinted_primary_coil_form",
+            "power_hvps",
+            "cap_primary_bank",
+            "spark_gap",
+            "inductor_ballast"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Check Input Power Circuit (without HVPS connected)",
+          "partIds": [
+            "power_variac",
+            "relay_main_power",
+            "inductor_ballast"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount HVPS, Variac, and Inductor to Base Plate",
+          "partIds": [
+            "structural_base_plate",
+            "power_hvps",
+            "power_variac",
+            "inductor_ballast",
+            "3dprinted_hvps_mount",
+            "3dprinted_variac_mount",
+            "misc_fasteners_m4"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount Primary Cap Bank, MCU, Relay, and Spark Gap to Base Plate",
+          "partIds": [
+            "structural_base_plate",
+            "cap_primary_bank",
+            "mcu_main",
+            "relay_main_power",
+            "spark_gap",
+            "3dprinted_cap_bank_mount",
+            "3dprinted_mcu_mount",
+            "3dprinted_spark_gap_mount",
+            "misc_standoffs_m3_nylon",
+            "misc_fasteners_m3"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Assemble and Mount Coil Structure to Base Plate",
+          "partIds": [
+            "structural_base_plate",
+            "structural_secondary_coil_form",
+            "3dprinted_secondary_coil_base_mount",
+            "3dprinted_primary_coil_form",
+            "3dprinted_secondary_coil_top_mount",
+            "structural_top_load_rod",
+            "mechanism_top_load_sphere",
+            "misc_fasteners_m3"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Install Safety Control Panel Components",
+          "partIds": [
+            "enclosure_safety_panels",
+            "3dprinted_panel_mounts",
+            "sensor_e_stop",
+            "sensor_key_switch"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Attach Vertical Supports and Safety Panels",
+          "partIds": [
+            "structural_base_plate",
+            "structural_vertical_support_rods",
+            "enclosure_safety_panels",
+            "misc_fasteners_m3"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Perform Final Wiring Connections and Cable Management",
+          "partIds": [
+            "mcu_main",
+            "power_hvps",
+            "power_variac",
+            "cap_primary_bank",
+            "spark_gap",
+            "relay_main_power",
+            "sensor_e_stop",
+            "sensor_key_switch",
+            "inductor_ballast"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A desktop Tesla magnifying transmitter generates high voltage for wireless power experiments. Utilizing a static spark gap and a high voltage power supply, it drives a resonant air-core coil with a spherical top-load, all safely enclosed on an acrylic base.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG and PLA capable)",
+      "M3 hex key / screwdriver",
+      "M4 hex key / screwdriver",
+      "Wire strippers",
+      "Soldering iron and solder",
+      "Multimeter with high voltage probe (for testing)",
+      "Drill and drill bits (for acrylic and PVC)",
+      "Safety glasses and gloves",
+      "Hot glue gun or appropriate adhesive"
+    ],
+    "assumptions": [
+      "Basic electronics knowledge and soldering experience",
+      "Familiarity with Arduino IDE for microcontroller programming",
+      "Understanding of high voltage safety procedures",
+      "Access to AC mains power for the variac and HVPS"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "power_variac",
+      "target": "relay_main_power",
+      "voltage": "0-120V AC@60Hz (variable)"
+    },
+    {
+      "type": "power",
+      "source": "relay_main_power",
+      "target": "inductor_ballast",
+      "voltage": "0-120V AC@60Hz"
+    },
+    {
+      "type": "power",
+      "source": "inductor_ballast",
+      "target": "power_hvps",
+      "voltage": "0-120V AC@60Hz"
+    },
+    {
+      "type": "power",
+      "source": "power_hvps",
+      "target": "cap_primary_bank",
+      "voltage": "15kV AC"
+    },
+    {
+      "type": "power",
+      "source": "power_hvps",
+      "target": "spark_gap",
+      "voltage": "15kV AC"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "relay_main_power",
+      "protocol": "Digital",
+      "sourcePin": "D4",
+      "targetPin": "DC_IN+"
+    },
+    {
+      "type": "data",
+      "source": "sensor_e_stop",
+      "target": "mcu_main",
+      "protocol": "Digital",
+      "sourcePin": "NC1",
+      "targetPin": "D2"
+    },
+    {
+      "type": "data",
+      "source": "sensor_key_switch",
+      "target": "mcu_main",
+      "protocol": "Digital",
+      "sourcePin": "NO",
+      "targetPin": "D3"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounted with misc_fasteners_m4",
+      "source": "structural_base_plate",
+      "target": "3dprinted_hvps_mount"
+    },
+    {
+      "label": "secured by misc_fasteners_m4",
+      "source": "3dprinted_hvps_mount",
+      "target": "power_hvps"
+    },
+    {
+      "label": "mounted with misc_fasteners_m4",
+      "source": "structural_base_plate",
+      "target": "3dprinted_variac_mount"
+    },
+    {
+      "label": "secured by misc_fasteners_m4",
+      "source": "3dprinted_variac_mount",
+      "target": "power_variac"
+    },
+    {
+      "label": "mounted with misc_fasteners_m3",
+      "source": "structural_base_plate",
+      "target": "3dprinted_cap_bank_mount"
+    },
+    {
+      "label": "secured by misc_fasteners_m3",
+      "source": "3dprinted_cap_bank_mount",
+      "target": "cap_primary_bank"
+    },
+    {
+      "label": "mounted with misc_fasteners_m3",
+      "source": "structural_base_plate",
+      "target": "3dprinted_mcu_mount"
+    },
+    {
+      "label": "secured with misc_standoffs_m3_nylon",
+      "source": "3dprinted_mcu_mount",
+      "target": "mcu_main"
+    },
+    {
+      "label": "mounted with misc_fasteners_m3",
+      "source": "structural_base_plate",
+      "target": "3dprinted_spark_gap_mount"
+    },
+    {
+      "label": "secured and adjusted",
+      "source": "3dprinted_spark_gap_mount",
+      "target": "spark_gap"
+    },
+    {
+      "label": "mounted with misc_fasteners_m3",
+      "source": "structural_base_plate",
+      "target": "3dprinted_secondary_coil_base_mount"
+    },
+    {
+      "label": "supports and secures base",
+      "source": "3dprinted_secondary_coil_base_mount",
+      "target": "structural_secondary_coil_form"
+    },
+    {
+      "label": "secured to top",
+      "source": "structural_secondary_coil_form",
+      "target": "3dprinted_secondary_coil_top_mount"
+    },
+    {
+      "label": "holds top load rod",
+      "source": "3dprinted_secondary_coil_top_mount",
+      "target": "structural_top_load_rod"
+    },
+    {
+      "label": "connects to top load",
+      "source": "structural_top_load_rod",
+      "target": "mechanism_top_load_sphere"
+    },
+    {
+      "label": "primary coil wound around base",
+      "source": "structural_secondary_coil_form",
+      "target": "3dprinted_primary_coil_form"
+    },
+    {
+      "label": "mounted with misc_fasteners_m3",
+      "source": "structural_base_plate",
+      "target": "structural_vertical_support_rods"
+    },
+    {
+      "label": "panels attached to rods with misc_fasteners_m3",
+      "source": "structural_vertical_support_rods",
+      "target": "enclosure_safety_panels"
+    },
+    {
+      "label": "mounts secured to panel",
+      "source": "enclosure_safety_panels",
+      "target": "3dprinted_panel_mounts"
+    },
+    {
+      "label": "e-stop mounted into",
+      "source": "3dprinted_panel_mounts",
+      "target": "sensor_e_stop"
+    },
+    {
+      "label": "key switch mounted into",
+      "source": "3dprinted_panel_mounts",
+      "target": "sensor_key_switch"
+    },
+    {
+      "label": "mounted directly with misc_fasteners_m3",
+      "source": "structural_base_plate",
+      "target": "relay_main_power"
+    },
+    {
+      "label": "mounted directly with misc_fasteners_m3",
+      "source": "structural_base_plate",
+      "target": "inductor_ballast"
+    }
+  ],
+  "projectId": "5606920d-050b-4a92-8c55-52183d5a81e0"
+}

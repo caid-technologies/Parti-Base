@@ -1,0 +1,1970 @@
+{
+  "plan": "- **Electronics**: ESP32 microcontroller, 2.4GHz RC receiver, brushless DC motors with ESCs for propulsion, steering servo, solar panel, MPPT charge controller, LiPo battery, waterproofing seals.\n- **Mechanical**: Custom-fabricated or off-the-shelf miniature boat hull, propellers, rudder system, motor mounts, battery compartment, debris collection mechanism (e.g., scoop or net).\n- **Structural**: Waterproof enclosures for electronics, internal structural supports, fasteners (screws, bolts, standoffs), watertight cable glands.\n- **3D Printed Parts**: Custom mounts for solar panel, motor/servo brackets, sensor housings, debris collection scoop/net frame, controller housing for user interface.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "3V3",
+        "GND",
+        "EN",
+        "GPIO0",
+        "GPIO1",
+        "GPIO2",
+        "GPIO4",
+        "GPIO5",
+        "GPIO12",
+        "GPIO13",
+        "GPIO14",
+        "GPIO15",
+        "GPIO16",
+        "GPIO17",
+        "GPIO18",
+        "GPIO19",
+        "GPIO21",
+        "GPIO22",
+        "GPIO23",
+        "GPIO25",
+        "GPIO26",
+        "GPIO27",
+        "GPIO32",
+        "GPIO33",
+        "GPIO34",
+        "GPIO35",
+        "GPIO36",
+        "GPIO39"
+      ],
+      "type": "mcu",
+      "partId": "dec73dc9-e48e-499d-be2c-f5b3818623ec",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41bumaiwAuL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GPIO0,GPIO1,GPIO2,GPIO4,GPIO5,GPIO12,GPIO13,GPIO14,GPIO15,GPIO16,GPIO17,GPIO18,GPIO19,GPIO21,GPIO22,GPIO23,GPIO25,GPIO26,GPIO27,GPIO32,GPIO33,EN,3V3,GND,VIN"
+          },
+          {
+            "label": "Protocol",
+            "value": "802.11b/g/n, Bluetooth v4.2 +EDR, Class 1, 2 and 3"
+          },
+          {
+            "label": "Data Rate",
+            "value": "150Mbps"
+          },
+          {
+            "label": "Frequency",
+            "value": "2.4GHz ~ 2.5GHz"
+          },
+          {
+            "label": "Modulation",
+            "value": "CCK, DSSS, OFDM"
+          },
+          {
+            "label": "Memory Size",
+            "value": "448kB ROM, 536kB SRAM"
+          },
+          {
+            "label": "Sensitivity",
+            "value": "-98dBm"
+          },
+          {
+            "label": "Antenna Type",
+            "value": "Integrated, Trace"
+          },
+          {
+            "label": "Mounting Type",
+            "value": "Surface Mount"
+          },
+          {
+            "label": "Package / Case",
+            "value": "38-SMD Module"
+          },
+          {
+            "label": "Power - Output",
+            "value": "20.5dBm"
+          },
+          {
+            "label": "Voltage - Supply",
+            "value": "2.7V ~ 3.6V"
+          },
+          {
+            "label": "Serial Interfaces",
+            "value": "GPIO, I2C, I2S, PWM, SDIO, SPI, UART"
+          },
+          {
+            "label": "RF Family/Standard",
+            "value": "Bluetooth, WiFi"
+          },
+          {
+            "label": "Utilized IC / Part",
+            "value": "ESP32-D0WD"
+          },
+          {
+            "label": "Current - Receiving",
+            "value": "-"
+          },
+          {
+            "label": "DigiKey Programmable",
+            "value": "Not Verified"
+          },
+          {
+            "label": "Operating Temperature",
+            "value": "-40°C ~ 85°C"
+          },
+          {
+            "label": "Current - Transmitting",
+            "value": "-"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32D-N4/9381716",
+            "price": "$3.8",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0718T232Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007540099177.html?pdp_npi=6%40dis%21USD%2113.12%216.17%21%21%2188.94%2141.80%21%4021013cc017793270844048384e0e0e%2112000041212790045%21affd%21%21%21%211%210%21",
+            "price": "$6.17",
+            "vendor": "AliExpress"
+          }
+        ],
+        "datasheetUrl": "https://www.digikey.com/en/schemeit/project/esp32-wroom-32dm113dh2800ph3q0-56a0a12874b24a439a2ebcc3b401857b"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0718T232Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25.5x18x3.1mm",
+      "description": "RF TXRX MOD BT WIFI TH SMD",
+      "productName": "ESP32-WROOM-32D Module",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32D-N4/9381716",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxh2rn9hkmIStKPjh97plikix9SaqxOe2wETDUFtSucNALy5CvgmRopvCcOFt1PkHxd7SPobRjJEuxUUpTs0PaZY0h958vIEIVeMT38Kk5jdud2VMkK6EKZWvIJSSQRFpejaXU25jNl8LJtn0M24ofR8RzYltRkefrRaHk6fsdFG8sUpFBi2hl03EK7LWGjAgYZgxkiZ7uDZmYLnULXBBmL1hx46swII2sujUwC8oSPDL4t9mmquQtunaOaHBJ5LNUjelEWNqE4U8j5G4hL1X9cpqjAv6Z7Qj0K6H9xcLfSzC5V2ZoLwfGg3kX0SLPyb5ECSg2JfHT7xATACarBahttxb9iyHVMP9iRmibdiypEMlrZRfPHfddnP2kEuMoTONJbfkWXzEyROnfkldRZzwpBWd8eTHn6iWjTYzQzr9GEFcfZhC4dk26gWQbkIzjyBO33WCNYPzxrYLycALwej52PWFESTUZ8Qy4ba6KG3UoYbr3aHjP2L6Y9ZIL0gUjfYkMLIzuVgKVls4P72g1522BfFtnhCGyuCFOF0SF4jhAX5wcEIxekBjRfXpjRL7LX9yz5lOGWDpQgYQcBZy2CNk6Vuxlhcp8EXVvMvOqB9vT51GwpTMtKOrTG1mFRZwEIJY9IwD8q9lXKh0iLz37SuBJsZl",
+      "estimatedCost": 5
+    },
+    {
+      "id": "rc_receiver",
+      "name": "RC Receiver",
+      "pins": [
+        "VCC",
+        "GND",
+        "CH1",
+        "CH2",
+        "CH3",
+        "CH4",
+        "CH5",
+        "CH6",
+        "iBUS"
+      ],
+      "type": "module",
+      "partId": "e36d44e1-8b21-4bf4-bfce-2dba6e050127",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Flysky+FS-iA6B+2.4GHz+RC+Receiver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/lH66i8_PG8EUWPpEvCwj5XkzF8dwxu7BstWC23hMoVU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFkdVZhVzV0Zkwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B092J428BF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "47x26.2x15mm",
+      "description": "Receives commands from a 2.4 GHz RC transmitter for vehicle control.",
+      "productName": "Flysky FS-iA6B 2.4GHz RC Receiver",
+      "purchaseUrl": "https://www.amazon.com/s?k=Flysky+FS-iA6B",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIqFA4ud39Pea0Na2TvEYYChB3hTe442vjpMQZ1csfIBcBy4gCzhiL2IT4SsOpAvE3ILL3VjdeVF4UjZuTZjuFetnw36zIB2yaYKpHwtaw4EOvsPzrD8m2mbhLTL08zsVTcCP96j9p0Rqf35cnP9cAHQaqivs8mFeYvN1rQtCBM9aMOA4WLXwbgmb893FZKy44kQh1U7ZqVRPCqFvn45QonxhSDFW9JTkEEBq4WrBYEgoL4Wur2a69oDKmTZqYNHGLguy8gPbCDY3PN4iAxy7M8Jg8UKY2k1ytcCammSBLDsh6ZG6OXDWaUUEhdtfqEwSX4IYhRhgw9c8MzG1CAKMHrkkV0VEzA1hRQnmicl7B3aGofDmQJc1Ds58VsY1NYNHTntdxg2ZeEkTL3q5M49w1S0enNFHzV9MAsx8XmomLegYfkYlfuCbtFkv0z2VRrsiAhdeynCwR7m79S5yKJdZimeU7ycSW4ZJOHzuriTfrcHu9ndjbTuvOazfx1LJr3xGELQ4HnPdHnGm3Zzlk36dSO5D5n6dNnE6OswtiSDsNS41A73kbd37SeJZT2NTnNuFJvCimCbR7DuNpe87ygIxaHR4HSrvuxaNwjJBv0VUfx9gpAsL1y5A5kVu0K26tQL7t9nZcruAtWSbAnxZT4oKjpv"
+    },
+    {
+      "id": "propulsion_motor_left",
+      "name": "Left Propulsion Motor",
+      "pins": [
+        "Motor Phase A",
+        "Motor Phase B",
+        "Motor Phase C"
+      ],
+      "type": "actuator",
+      "partId": "03865ebe-aa01-46e3-a78b-f0c83fa6266f",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=A2212+1000KV+Brushless+DC+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41FTqyGDHQL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "A,B,C"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0D2W24DFX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D2W24DFX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27.8x27.8x27mm",
+      "description": "Brushless DC motor for left side propulsion.",
+      "productName": "A2212 1000KV Brushless DC Motor",
+      "purchaseUrl": "https://www.amazon.com/dp/B0D2W24DFX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRtJgtuoWQjhpsMrIcpiBEZyreAu1AC7FBEdKJvvfJzTbsnHeHHc49KGEWkDqvyaGxll2vLRn8B5ep8ZFq6vLVPR5scYvOREfGfpNISfrKzR5H45Zru60cZOTyRqUPWm4se3sx3GctkXGdDah44DN7fCZKOMutsLQtwD59dFXW0mj9grengxUNYNKofS3AqvvsTpdDLWjUydXJOhU5VqOjlUkkaRZK8Hu7MiESnfcYVqhUUc7j6qwkrLF3Nc7vrVRaEZe0JbdTUXlmR6x5c694wEowJAMoI8HaO0av0WG9loIEomM4cvhhX4YvqZm7xdlO1TFHBR7upPNmavaLmj6qW9RNaRJoxqRfvVC1MWdzRVciaDqbS4DCIWPaSzbAwQNAAXvANgDacWMgMfx247roXeN7pIn0hzVUSIyxsFbLqFOU3n5Dfkvtd4aaQnUZKay0jcdhhnVzhOetThDPJyQR33ld4v8j6tKJpu5tyGt0S5mtdZS9dbjCk6zAf1FJowm8kb3JbcVpU1DYnmAVGKe4ZT5H3ZEzHA6zgI1w5Cp2Httgau34Fofxo2tbdOtTZmahxAL7vtf7BE5nU6wsCY6KKY4i0wovUjX7nCzfzqohtUbgXyN7eYv3bcsXTikKBj8AJ6c3nod7NA3XeHxfkJhSYj",
+      "estimatedCost": 10
+    },
+    {
+      "id": "propulsion_motor_right",
+      "name": "Right Propulsion Motor",
+      "pins": [
+        "Motor Phase A",
+        "Motor Phase B",
+        "Motor Phase C"
+      ],
+      "type": "actuator",
+      "partId": "03865ebe-aa01-46e3-a78b-f0c83fa6266f",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=A2212+1000KV+Brushless+DC+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41FTqyGDHQL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "A,B,C"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0D2W24DFX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D2W24DFX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27.8x27.8x27mm",
+      "description": "Brushless DC motor for left side propulsion.",
+      "productName": "A2212 1000KV Brushless DC Motor",
+      "purchaseUrl": "https://www.amazon.com/dp/B0D2W24DFX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRtJgtuoWQjhpsMrIcpiBEZyreAu1AC7FBEdKJvvfJzTbsnHeHHc49KGEWkDqvyaGxll2vLRn8B5ep8ZFq6vLVPR5scYvOREfGfpNISfrKzR5H45Zru60cZOTyRqUPWm4se3sx3GctkXGdDah44DN7fCZKOMutsLQtwD59dFXW0mj9grengxUNYNKofS3AqvvsTpdDLWjUydXJOhU5VqOjlUkkaRZK8Hu7MiESnfcYVqhUUc7j6qwkrLF3Nc7vrVRaEZe0JbdTUXlmR6x5c694wEowJAMoI8HaO0av0WG9loIEomM4cvhhX4YvqZm7xdlO1TFHBR7upPNmavaLmj6qW9RNaRJoxqRfvVC1MWdzRVciaDqbS4DCIWPaSzbAwQNAAXvANgDacWMgMfx247roXeN7pIn0hzVUSIyxsFbLqFOU3n5Dfkvtd4aaQnUZKay0jcdhhnVzhOetThDPJyQR33ld4v8j6tKJpu5tyGt0S5mtdZS9dbjCk6zAf1FJowm8kb3JbcVpU1DYnmAVGKe4ZT5H3ZEzHA6zgI1w5Cp2Httgau34Fofxo2tbdOtTZmahxAL7vtf7BE5nU6wsCY6KKY4i0wovUjX7nCzfzqohtUbgXyN7eYv3bcsXTikKBj8AJ6c3nod7NA3XeHxfkJhSYj",
+      "estimatedCost": 10
+    },
+    {
+      "id": "esc_left",
+      "name": "Left Motor ESC",
+      "pins": [
+        "Motor Phase A",
+        "Motor Phase B",
+        "Motor Phase C",
+        "Battery+",
+        "Battery-",
+        "Signal",
+        "GND",
+        "5V BEC Out"
+      ],
+      "type": "actuator",
+      "partId": "57ea8050-2584-44b4-b736-f76010d57ea3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=30A+Brushless+ESC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41tRz0ntZpL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "BAT+,BAT-,MOTOR_A,MOTOR_B,MOTOR_C,SIGNAL,GND"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZNM4H7H?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$18.59",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008493717029.html?pdp_npi=6%40dis%21USD%219.30%214.65%21%21%2162.85%2131.42%21%402140d33617793400895751464e1064%2112000045394517549%21affd%21%21%21%211%210%21",
+            "price": "$4.65",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CZNM4H7H?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x24x9mm",
+      "description": "Electronic Speed Controller for the left brushless DC motor.",
+      "productName": "30A Brushless ESC",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxher9vQzCVICf1ckyoKqTWDm8xDQLGT9Q9tkZdTEnrFVmx5D619KpYtdd8t80rxILMDfZY9sxhWS5f8NbIm3YQcX0s9hba0BuHhr9sXuz086lprkm0iawnRMIxHPigE1z9HACWbmnwgtCVSWZcoisFVfzAQXYwEBu8jNqJMKPZsnTZpMaUNyySonFfGLbSKuP6rtakgCrDEfmdwlZzZQyJUpXkar5tB3WE0Ea8q0B4tEY9NWMFB7RXzPUhORr0cOFWXS4dQzNU9cy9Kva44FJfZzIgnynmllR10vEPpVFGRfJtRsGI9eH71K597jyLlNlyeokp44zbAPD3yvrH2VChTyQpjcA1ifc6fYcLnADO2ylk2y5tuUn8lJTBrtJCNJpNUseFZHAdYcGLYODTmM5AY5Y2g76slLdxtvXllYghIsH6B6MyAfgoPpLDCFDYsJiKlAMPYpska35NN7Gzqm7IkQovY9zUyBvjlk3SfUx0nwGxAv10PnDCgawPP2UkbORFjZF1PaYGIiBZ0SesAFIvBnwYCC6BXvOzPo2LKvrmTNexbAHWnvcICcdO4uJWRkfLoGZwHzNN57Tg7XhLPAUuhwg7OUZ2RsTQpX4cBUkJHXG83WiDffj3p7poDPxcXR89AHsUBl4eCP7mBGfoUwDEjv",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxher9vQzCVICf1ckyoKqTWDm8xDQLGT9Q9tkZdTEnrFVmx5D619KpYtdd8t80rxILMDfZY9sxhWS5f8NbIm3YQcX0s9hba0BuHhr9sXuz086lprkm0iawnRMIxHPigE1z9HACWbmnwgtCVSWZcoisFVfzAQXYwEBu8jNqJMKPZsnTZpMaUNyySonFfGLbSKuP6rtakgCrDEfmdwlZzZQyJUpXkar5tB3WE0Ea8q0B4tEY9NWMFB7RXzPUhORr0cOFWXS4dQzNU9cy9Kva44FJfZzIgnynmllR10vEPpVFGRfJtRsGI9eH71K597jyLlNlyeokp44zbAPD3yvrH2VChTyQpjcA1ifc6fYcLnADO2ylk2y5tuUn8lJTBrtJCNJpNUseFZHAdYcGLYODTmM5AY5Y2g76slLdxtvXllYghIsH6B6MyAfgoPpLDCFDYsJiKlAMPYpska35NN7Gzqm7IkQovY9zUyBvjlk3SfUx0nwGxAv10PnDCgawPP2UkbORFjZF1PaYGIiBZ0SesAFIvBnwYCC6BXvOzPo2LKvrmTNexbAHWnvcICcdO4uJWRkfLoGZwHzNN57Tg7XhLPAUuhwg7OUZ2RsTQpX4cBUkJHXG83WiDffj3p7poDPxcXR89AHsUBl4eCP7mBGfoUwDEjv",
+      "estimatedCost": 8
+    },
+    {
+      "id": "esc_right",
+      "name": "Right Motor ESC",
+      "pins": [
+        "Motor Phase A",
+        "Motor Phase B",
+        "Motor Phase C",
+        "Battery+",
+        "Battery-",
+        "Signal",
+        "GND",
+        "5V BEC Out"
+      ],
+      "type": "actuator",
+      "partId": "57ea8050-2584-44b4-b736-f76010d57ea3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=30A+Brushless+ESC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41tRz0ntZpL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "BAT+,BAT-,MOTOR_A,MOTOR_B,MOTOR_C,SIGNAL,GND"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZNM4H7H?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$18.59",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008493717029.html?pdp_npi=6%40dis%21USD%219.30%214.65%21%21%2162.85%2131.42%21%402140d33617793400895751464e1064%2112000045394517549%21affd%21%21%21%211%210%21",
+            "price": "$4.65",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CZNM4H7H?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x24x9mm",
+      "description": "Electronic Speed Controller for the left brushless DC motor.",
+      "productName": "30A Brushless ESC",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxher9vQzCVICf1ckyoKqTWDm8xDQLGT9Q9tkZdTEnrFVmx5D619KpYtdd8t80rxILMDfZY9sxhWS5f8NbIm3YQcX0s9hba0BuHhr9sXuz086lprkm0iawnRMIxHPigE1z9HACWbmnwgtCVSWZcoisFVfzAQXYwEBu8jNqJMKPZsnTZpMaUNyySonFfGLbSKuP6rtakgCrDEfmdwlZzZQyJUpXkar5tB3WE0Ea8q0B4tEY9NWMFB7RXzPUhORr0cOFWXS4dQzNU9cy9Kva44FJfZzIgnynmllR10vEPpVFGRfJtRsGI9eH71K597jyLlNlyeokp44zbAPD3yvrH2VChTyQpjcA1ifc6fYcLnADO2ylk2y5tuUn8lJTBrtJCNJpNUseFZHAdYcGLYODTmM5AY5Y2g76slLdxtvXllYghIsH6B6MyAfgoPpLDCFDYsJiKlAMPYpska35NN7Gzqm7IkQovY9zUyBvjlk3SfUx0nwGxAv10PnDCgawPP2UkbORFjZF1PaYGIiBZ0SesAFIvBnwYCC6BXvOzPo2LKvrmTNexbAHWnvcICcdO4uJWRkfLoGZwHzNN57Tg7XhLPAUuhwg7OUZ2RsTQpX4cBUkJHXG83WiDffj3p7poDPxcXR89AHsUBl4eCP7mBGfoUwDEjv",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxher9vQzCVICf1ckyoKqTWDm8xDQLGT9Q9tkZdTEnrFVmx5D619KpYtdd8t80rxILMDfZY9sxhWS5f8NbIm3YQcX0s9hba0BuHhr9sXuz086lprkm0iawnRMIxHPigE1z9HACWbmnwgtCVSWZcoisFVfzAQXYwEBu8jNqJMKPZsnTZpMaUNyySonFfGLbSKuP6rtakgCrDEfmdwlZzZQyJUpXkar5tB3WE0Ea8q0B4tEY9NWMFB7RXzPUhORr0cOFWXS4dQzNU9cy9Kva44FJfZzIgnynmllR10vEPpVFGRfJtRsGI9eH71K597jyLlNlyeokp44zbAPD3yvrH2VChTyQpjcA1ifc6fYcLnADO2ylk2y5tuUn8lJTBrtJCNJpNUseFZHAdYcGLYODTmM5AY5Y2g76slLdxtvXllYghIsH6B6MyAfgoPpLDCFDYsJiKlAMPYpska35NN7Gzqm7IkQovY9zUyBvjlk3SfUx0nwGxAv10PnDCgawPP2UkbORFjZF1PaYGIiBZ0SesAFIvBnwYCC6BXvOzPo2LKvrmTNexbAHWnvcICcdO4uJWRkfLoGZwHzNN57Tg7XhLPAUuhwg7OUZ2RsTQpX4cBUkJHXG83WiDffj3p7poDPxcXR89AHsUBl4eCP7mBGfoUwDEjv",
+      "estimatedCost": 8
+    },
+    {
+      "id": "conveyor_motor",
+      "name": "Conveyor Belt Motor",
+      "pins": [
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "afa6fac5-52d2-49b1-8b65-d6a969029a66",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=N20+Mini+Gear+Motor+6V+300RPM&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/YNp_XB7cmI2iMZMXsh0aPFuch7EvA5mzWirgvx7jIHQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTErbG5NOWh5d0wu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BZDC951L?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "24x10x12mm",
+      "productName": "N20 Mini Gear Motor 6V 300RPM",
+      "purchaseUrl": "https://www.amazon.com/s?k=N20+mini+gear+motor+6V",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHPGb2a6xZ6mXUqaFBHmM3gEpv5iUujyv49SApWah1ULt5nevqmN5qA5u5vu8cgBT53X8GdEUchqkzppVkWbir1E3wcs4N94K99mRaXDlSDPqlLKCBB82sxE20Js0gULg8ip1WVuPbpkNFvXnVZSAhrewsbX9PEJvCd6cfZfR5JQ1gAFsYo1S1YZT2dG6AYMMM5PHYg0SmsrJJx7tmm65CHvcnDrjHB5wD2d2clgG8FdoG9viIpm0FIHXENUpJD09wDN3TEEk4STyyqyfeSYciR70QMvzCtCKFl8xz7uoFlT8Rkjx1gvSlqWgu6bGv3wwn7gEk5Km0HjwIh1JdbpjBny3ZVNnHna1QrHOclZIxH1E1qV0DxooPldxBnocKEVDO9qAfMS1B4THAMlaphjPc6H616gvCywLe9431UA0YT8WRRd0wrQIXncYChwnTSAda8jWnQekW24NlsW2dMpaoXsxsidtVT89YSsuKORXghMEoHE4fpB4gPvd65cH3JVDZhWZo0wbK1JIaBlQTWP3pSuYWLytjrfNFGTkTWBw55JY9mFJPaZFVVmGU8rUpjoLoC2MDdY3lXmLLpaAbLqUZLswzGVUwr1a4ilhjwGBoHOr69TE1QU4ODEl8wLqExXrwiWOQVqViCKfjuHZsrP6nmj",
+      "estimatedCost": 5
+    },
+    {
+      "id": "conveyor_motor_driver",
+      "name": "Conveyor Motor Driver",
+      "pins": [
+        "VM",
+        "GND",
+        "VCC",
+        "IN1",
+        "IN2",
+        "OUT1",
+        "OUT2"
+      ],
+      "type": "actuator",
+      "partId": "fc694a70-bde4-4632-8f30-990e9bf84026",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DRV8833+Dual+Motor+Driver+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/chq19gRs9JKT0yhRWe-_4r5Bks8xuzvmmp3K3xzK28E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFtUktUN1lSRkwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07S4FVY9M?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "18x12x2.5mm",
+      "description": "Dual H-bridge motor driver to control the two DC geared motors with PWM signals from the MCU.",
+      "productName": "DRV8833 Dual Motor Driver Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=DRV8833+motor+driver",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGRiojFq34oYZ4ugavDYWVqetOQxMZ7wvuFDR5cSQVGCRdVJkcL7K2AXh4rD4sf7LLttvoSqL0r6OdlHACnMm6QZp5VvsRCFntuOE0QhFa1orXHdOiOTzFQevbSwXqT7a3jWqTw3fFhXUTm8BbgpwMmKUsVyTDZVAmGJf8PJICoZIXYZzZfjc5OFnFL1afU4QfGyaHZ8xhESv8RQMCklho9mxLgsMMwz7yD0hWtznUx7DmskGUJVwJalhv45iaOrTzQULJZQYUhcrtGd4omcSOyubPsRAS24Y4rq3GC8uwqXAtKhwU1xjs8V87ncHz7htq9to0IxFJvr6qdyDc4Mr9E8K53K1HBNUXwReT93lBlYhDzRiNPSkl3ddK4onkefDMZ5SgmFYO4wnXtcLxbeSO54jh1PmppAsUXOSlYKqJV0iSWxtXaCaGJ8HljdxkDHiyK8uKvTGhKKbNEcFRk51vJWmztkOgbz8VXPO8rj1didNnYKKH7bS2ACj0Kp3m5UFKsT3KYjwhvSkjNG9EeqCQqZFdUaEvu2j7K7TKRBNOpfgP3IaJlBrmb57pHean0hq6L7QlPIlIcryurfZiKoWZxrZRkrpAxdd3jc0We1XU05bmECoC4Xklb4nWCJHLPL9lUGHNLYY771FDiLgI1RxTwb",
+      "estimatedCost": 3
+    },
+    {
+      "id": "solar_panel",
+      "name": "Main Solar Panel",
+      "pins": [
+        "Solar+",
+        "Solar-"
+      ],
+      "type": "power",
+      "partId": "0f10ecb8-dd98-40de-b259-ee32ec0fad16",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6V+5W+Monocrystalline+Solar+Panel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41rsPw032FL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07PNTRSNY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$25.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005009393447368.html?pdp_npi=6%40dis%21USD%212.73%212.73%21%21%212.73%212.73%21%40214114e317793352977665821e1234%2112000048980734566%21affd%21%21%21%211%210%21",
+            "price": "$2.73",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07PNTRSNY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "230x145x3mm",
+      "description": "Primary solar energy input source.",
+      "productName": "6V 5W Monocrystalline Solar Panel",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGylqZeqqrvFwXa7sm3OdHWMUllufp2bGKwmkGqyKOq3gHZamKPswfzobqZHuWRmO3GTpCVSaiuM7iHtNdzWwRrO2S4mb7pbKHKiHrSTZ5eKvtfUCOvB03TamOA1vpwQW32288w7O5jN1d8fWJDfVEaWVdpUXC1lT8zYFRMl43KY5EdoY2C4g2yUKEfcbosFaXpEIePSpO4yrLYSJMPinK6aqLpf1be7NXS3Wk6rnUquMtl9PGfz58gxPQQaSResmkt4BXAO0P1T2VIc8tOO7PFPJOpnWvI2NeOPpFZnIg66zeoSYneO5dmfS6PuDbgASu2N6iHqw5FAQy5GjowcN4sxNzg6BPyqBSykvZPZdeIXBUeHreiP7HA05RwQMqYzNoJLkk2fHcaf9i5eLHflKuTMnWrFLW8go12PoEIS7FoLUQnCjqF5tDWQVkZR6ldJ9QHEvH0QEoMxR3ZmhrE1fieaW7gdPzZshMHrq4okfZw9zh4u6tbdRmp5D70e91lzOCtW17ILmxZw8uNIZjapyuvHZZiptRUnAmL9bLhJZg5DzoryKWbJEefcCiEebObpdbvsG5ZSB0heXtT8DYDw976llGvj4ZCfiYB0Qy4i4mlQjWKMGmMU6pmhYYrDnUjQeO5M4HDY9VKOj0X9B1NvUYob",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGylqZeqqrvFwXa7sm3OdHWMUllufp2bGKwmkGqyKOq3gHZamKPswfzobqZHuWRmO3GTpCVSaiuM7iHtNdzWwRrO2S4mb7pbKHKiHrSTZ5eKvtfUCOvB03TamOA1vpwQW32288w7O5jN1d8fWJDfVEaWVdpUXC1lT8zYFRMl43KY5EdoY2C4g2yUKEfcbosFaXpEIePSpO4yrLYSJMPinK6aqLpf1be7NXS3Wk6rnUquMtl9PGfz58gxPQQaSResmkt4BXAO0P1T2VIc8tOO7PFPJOpnWvI2NeOPpFZnIg66zeoSYneO5dmfS6PuDbgASu2N6iHqw5FAQy5GjowcN4sxNzg6BPyqBSykvZPZdeIXBUeHreiP7HA05RwQMqYzNoJLkk2fHcaf9i5eLHflKuTMnWrFLW8go12PoEIS7FoLUQnCjqF5tDWQVkZR6ldJ9QHEvH0QEoMxR3ZmhrE1fieaW7gdPzZshMHrq4okfZw9zh4u6tbdRmp5D70e91lzOCtW17ILmxZw8uNIZjapyuvHZZiptRUnAmL9bLhJZg5DzoryKWbJEefcCiEebObpdbvsG5ZSB0heXtT8DYDw976llGvj4ZCfiYB0Qy4i4mlQjWKMGmMU6pmhYYrDnUjQeO5M4HDY9VKOj0X9B1NvUYob",
+      "estimatedCost": 15
+    },
+    {
+      "id": "mppt_charge_controller",
+      "name": "MPPT Charge Controller",
+      "pins": [
+        "Solar In+",
+        "Solar In-",
+        "Battery+",
+        "Battery-",
+        "Output+",
+        "Output-"
+      ],
+      "type": "power",
+      "partId": "c36495b3-e644-4239-90d8-df06ff2a5086",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=CN3791+MPPT+Solar+Charge+Controller+for+LiPo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/qSWzaW3ePO1bougn-vCmShFJk9Ytt4pZA9BSdyGMv_A/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFGREVnbnlDYUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B091TRHT9M?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x20x8mm",
+      "description": "Maximum Power Point Tracking (MPPT) solar charge controller to efficiently charge the LiPo battery from a solar panel.",
+      "productName": "CN3791 MPPT Solar Charge Controller for LiPo",
+      "purchaseUrl": "https://www.amazon.com/s?k=CN3791+MPPT+LiPo",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRT0Ct1r97wkZgwG0g2S4c3yk48qKm0dwQwUxRsfpfKuYItQVWz6VHmo3egxkIYHumNN53xflWcvzbY9v4C1HlVgxjCnyhVbHKYU1h3pHmzphjnJd532SGwe7RhgqLho7phajOIrcR2nVuLTSuh4Dranm1Tm6xXUMWLYAf2hTTB1USVBQ7UkIHadoXnRyBpby1WDtZzB1UrRrNEl2ts7192qtMVKD28ApVQNIPLpuV5SFGKUe4IbPwznRX4PKVmjSkp0iFnvA33co95ytdFvYuaCQ4wa0rgMQMDb0FOtHnAR6v7qWgIgTfx4jcfOQOz1b1OA5QOlI9bdSvbft9Wl7I1U99jvEhkdbwoSmKkBf6Rn2AI8tqUnHX7V0F7LFZXc9uPpbkf5tG9mOW9UU9HrvYyKkXPsJHUYcnSwXwydkdg1p0Ve94IqY8NGivfzCk764ZzGU1ofeDm0qUNPBnsggYkFolDB8RCR34cCYRNaPeAzVyLUV8Y23T2VFHs7U603tEIBEvtwORNajU0H1D7gbX0mQ4UI4EIl3bAuODddC7SZhUSZCVLOCIP7Q9WYTn0nQjl549KKjfCwzTGYZJoUEcSgnYJ0VVlBh05YmdleTyvVrX77scLT303xh5Ydp5N65F5XrWrRs5QJO0yh6lVgBaEJ",
+      "estimatedCost": 10
+    },
+    {
+      "id": "lipo_battery",
+      "name": "Main LiPo Battery",
+      "pins": [
+        "Balance Connector",
+        "Discharge Connector (+/-)",
+        "Discharge Connector (+)",
+        "Discharge Connector (-)"
+      ],
+      "type": "power",
+      "partId": "ae0fcb74-5646-4b25-a1c6-d706d1891f2c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3S+11.1V+2200mAh+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51YG8ydR3CL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "BAT+,BAT-"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0BYNSH6Q7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$34.19",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-3s-11-1v-2200mah-lipo-battery.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BYNSH6Q7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "106x34x24mm",
+      "description": "Long-lasting portable battery for main power supply.",
+      "productName": "3S 11.1V 2200mAh LiPo Battery",
+      "purchaseUrl": "https://www.amazon.com/dp/B0BYNSH6Q7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3vUDepr",
+      "estimatedCost": 25
+    },
+    {
+      "id": "power_distribution_board",
+      "name": "Power Distribution Board",
+      "pins": [
+        "Input+",
+        "Input-",
+        "Output 1+",
+        "Output 1-",
+        "Output 2+",
+        "Output 2-",
+        "5V Out",
+        "12V Out"
+      ],
+      "type": "power",
+      "partId": "001e73b4-1b78-4901-bc03-e7879f960a86",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=XT60+PDB+with+BEC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/DxLGRSYGybs6DEOyZSfHaNgtFOjfcrbUYZQU_7_lQ0g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yb2J1/LmluL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE4LzAyL3JvYnUt/NS0yMy5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08P7B38T9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x35x5mm",
+      "description": "Distributes power from the LiPo battery to various components and includes 5V/12V BECs.",
+      "productName": "XT60 PDB with BEC",
+      "purchaseUrl": "https://www.amazon.com/s?k=XT60+PDB+BEC",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGQOyxfdWsp3zybL5v3eo6RrdLD1tkuuhSopmvfdOlf3aMWjLXDKOfs7VriOYTOPRWakyfy3qsoDqj4QJcYexqJ0RIi6gLLyU6yCI9WakGAYlciHG4Htb0LcHjK9lRIRuWrBYGn63gvCA119cEFqRHGY08Kmh4en4HeXk381XAVCzFeSpcLjZU1TX9J0lB8f6i5BWEFFsAauRys8d6g8THhRvlSVam3D1uabSU053lit9T0kSSV3EupTJ46usZda5jXsnxlxospBXXz4LyWqBS0YloMyVUDLHsakQrIECRxNkDvMmhx5eDT2k0zHEVhgGC3xMhy4UKZ8XG3HEBb5rVl8NSDCZmn404TieiLpRKw0x0l3P8NBoAkmx2psykQgnXonHCd2Yq6nKI57x3hem8kwL6P3MwRYKTiODkKsNSSpQ9CMORuhY4bqPU4ecGii4ShQtYviNEvCVwP7oYsPXX8QmaVsIPG3XdhTH9T4rdmgBCaaqT8v3a7p01DRQOwcCGOb63fQuLoF46wXJksbd7w7AJQ14zDEjYPh2DfhTSMDJkDxLJkEHJOGbekbRRDI5TBdwzWUQMD6E4hBVSlUwh0Pc9N7JSvkpuanVbv4SdykGjSBdx6jNd2c7yxk79H4GmbvYWKDWWwgldlFTYAfF7sR",
+      "estimatedCost": 7
+    },
+    {
+      "id": "voltage_regulator_5v",
+      "name": "5V Step-Down Regulator",
+      "pins": [
+        "Vin+",
+        "Vin-",
+        "Vout+",
+        "Vout-"
+      ],
+      "type": "power",
+      "partId": "9df5a46e-e68a-476a-b8ec-df4768161756",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM2596+DC-DC+Buck+Converter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51BMWf4VE0L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN+,VIN-,VOUT+,VOUT-"
+          },
+          {
+            "label": "efficiency",
+            "value": "Up to 92%"
+          },
+          {
+            "label": "regulator_type",
+            "value": "Step Down (Buck Converter, Non-Isolated)"
+          },
+          {
+            "label": "dropout_voltage",
+            "value": "2VDC minimum (input voltage must be at least 1.5V-2V higher than output)"
+          },
+          {
+            "label": "load_regulation",
+            "value": "+/- 0.5%"
+          },
+          {
+            "label": "module_dimensions",
+            "value": "43.6mm L x 21mm W x 14mm H (typical module size)"
+          },
+          {
+            "label": "voltage_regulation",
+            "value": "+/- 2.5%"
+          },
+          {
+            "label": "input_voltage_range",
+            "value": "DC 4V to 40V (module input can be as low as 3V)"
+          },
+          {
+            "label": "switching_frequency",
+            "value": "150 kHz"
+          },
+          {
+            "label": "output_voltage_range",
+            "value": "Adjustable DC 1.23V to 35V"
+          },
+          {
+            "label": "operating_temperature",
+            "value": "-40 to +85 deg C (for output power less than 10W)"
+          },
+          {
+            "label": "maximum_output_current",
+            "value": "3A (with heatsink recommended for sustained 3A)"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://www.instructables.com/How-to-Use-DC-to-DC-Buck-Converter-LM2596/",
+            "title": "How to Use DC to DC Buck Converter LM2596",
+            "description": "This tutorial shows how to connect and adjust the LM2596 buck converter to power various devices, including tips on battery usage and multiple outputs."
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/how-to-use-dc-to-dc-buck-converter-lm2596",
+            "title": "LM2596 Buck Converter for Arduino Boards, LED Strips, and Small Motors",
+            "description": "This guide demonstrates the LM2596's use in various DIY electronics applications, highlighting its adjustable output for different voltage requirements."
+          },
+          {
+            "url": "https://forums.adafruit.com/viewtopic.php?t=151449",
+            "title": "Powering ESP8266 & Motor Controller with 24V-5V Step-down Converter",
+            "description": "A forum discussion illustrating the application of a 24V to 5V step-down converter, relevant for powering microcontrollers like ESP32 from a higher voltage supply."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0DBVYP91F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007171095432.html?pdp_npi=6%40dis%21USD%219.15%214.30%21%21%2162.04%2129.16%21%402140da8b17793271471233714e0fd1%2112000039691568366%21affd%21%21%21%211%210%21",
+            "price": "$4.3",
+            "vendor": "AliExpress"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.3dcontentcentral.com/download-model.aspx?catalogid=171&id=2815158",
+            "label": "STEP File"
+          },
+          {
+            "url": "https://grabcad.com/library/lm2596-dc-dc-buck-converter-module-1",
+            "label": "GrabCAD 3D Model"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/lm2596-dc-dc-buck-converter/",
+            "label": "STLFinder 3D Models"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "Adafruit Mini DC/DC Step-Down (Buck) Converter - 5V @ 1A output - TSR12450",
+            "reason": "A smaller, fixed 5V output alternative, suitable for lower current needs (1A)."
+          },
+          {
+            "name": "eBoot Mini MP1584EN DC-DC Buck Converter",
+            "reason": "Another compact and often cheaper alternative for general step-down applications, typically with lower current ratings."
+          },
+          {
+            "name": "Alternative buck converters for >5A applications",
+            "reason": "The LM2596 is rated for 3A (with heatsink); for applications requiring more than 5A, a different buck converter chip or module designed for higher current would be necessary."
+          }
+        ],
+        "datasheetUrl": "https://www.ti.com/lit/ds/symlink/lm2596.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://www.ti.com/lit/ds/symlink/lm2596.pdf",
+            "title": "LM2596 Datasheet (Texas Instruments)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/how-to-use-dc-to-dc-buck-converter-lm2596",
+            "title": "LM2596 Buck Converter – Working, Wiring & Usage Guide"
+          },
+          {
+            "url": "https://componentslibrary.com/lm2596-dc-dc-buck-converter-datasheet.html",
+            "title": "LM2596 DC-DC Buck Converter Datasheet: Specifications, Features, and Application Guide (Components Library)"
+          },
+          {
+            "url": "https://www.scribd.com/document/424165576/20150123144301750-pdf",
+            "title": "LM2596 DC-DC Buck Converter Specs (Scribd)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DBVYP91F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x21x14mm",
+      "description": "Steps down 24V to 5V for the ESP32 and other low-power components.",
+      "productName": "LM2596 DC-DC Buck Converter",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfxyvZuXFg7GymQIiWhjuNtVTPqj3Lo4XOZwXfyPinxUunYhcnzsECmhQXvQMwBZFO7y8k7xoMt4iHjuv8bTZiSwN9PdOaJjeEstgI5aHcGyrbRTjMrq76aa3rCOGKKow9ilh4RN26OW5032Q8A2ovdeUBL8On7LAmb3PpqilGVbgAqyzJUf4vUSlpGbWyNwnHJQC59F7HXQwNQbTPXg0lunfZT3PMLwG0hy5wjCEVC0T1LMVwbxB9xRrTN2tbaX2U07tx98wlQ8p86LAwpA9Vi8eKeA1zSOErslZvHV99NyrMqsCRaLo8Q0YZxwy3CvOGuEc4mKXo0I7HXh2k3GzbJaToF5ggRx9E0xIgYBZuDPyEXbHHwhZWPaqMjh3YwRmEa48Nr3abLMcQ0iG0B0rSFRq4kTRXKTN28j1GihjXnqxxHkSEtX9tTMqVFcLhf3QvISsseO5I9RxIWf98Aadguqk3Ofed9sX6Ehg3rgOjHPNDr7CRa8kUw8uAhmcRFTkj0Cxp3cY3cIktoNAXwDUHeldXlfoL4VGcSgbFwk7iHm8WLkQWsDfrYI9TBZ3ETDkKexRpuEIo7PCW2eGGYPRM8HWYqm5FNcE90xMP5fQORQMbJa5DosaCigh9EcVvy2ePt57wmrRLjmL3kds9psDDXV",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfxyvZuXFg7GymQIiWhjuNtVTPqj3Lo4XOZwXfyPinxUunYhcnzsECmhQXvQMwBZFO7y8k7xoMt4iHjuv8bTZiSwN9PdOaJjeEstgI5aHcGyrbRTjMrq76aa3rCOGKKow9ilh4RN26OW5032Q8A2ovdeUBL8On7LAmb3PpqilGVbgAqyzJUf4vUSlpGbWyNwnHJQC59F7HXQwNQbTPXg0lunfZT3PMLwG0hy5wjCEVC0T1LMVwbxB9xRrTN2tbaX2U07tx98wlQ8p86LAwpA9Vi8eKeA1zSOErslZvHV99NyrMqsCRaLo8Q0YZxwy3CvOGuEc4mKXo0I7HXh2k3GzbJaToF5ggRx9E0xIgYBZuDPyEXbHHwhZWPaqMjh3YwRmEa48Nr3abLMcQ0iG0B0rSFRq4kTRXKTN28j1GihjXnqxxHkSEtX9tTMqVFcLhf3QvISsseO5I9RxIWf98Aadguqk3Ofed9sX6Ehg3rgOjHPNDr7CRa8kUw8uAhmcRFTkj0Cxp3cY3cIktoNAXwDUHeldXlfoL4VGcSgbFwk7iHm8WLkQWsDfrYI9TBZ3ETDkKexRpuEIo7PCW2eGGYPRM8HWYqm5FNcE90xMP5fQORQMbJa5DosaCigh9EcVvy2ePt57wmrRLjmL3kds9psDDXV",
+      "estimatedCost": 3
+    },
+    {
+      "id": "boat_hull",
+      "name": "Boat Hull",
+      "type": "enclosure",
+      "partId": "e0ddbc44-f0d7-41d6-997f-c87dd9da1df1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RC+Boat+Hull&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31dfIqGDTvL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0006O3C3W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$179.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007580155068.html?pdp_npi=6%40dis%21USD%2137.45%2112.36%21%21%21253.39%2183.62%21%402151fd3a17794428593961132e0e82%2112000041497999441%21affd%21%21%21%211%210%21",
+            "price": "$12.36",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0006O3C3W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x150x100mm",
+      "description": "Waterproof hull for the miniature river cleaning boat.",
+      "productName": "RC Boat Hull",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRds6s1uWSn30yhUdOJnWVoYpn7BllNQXW39IRXSaGnANp7McGQtlxs16UiqIi6WjmPrLWGqTIJ0Ji2aQuVRRHqSLVHPewDQR4zOzTOeZoHtgK0jffxxbgQDX5EcYUJbLRktPISMkEk9vxpoguUDgNew1NM4JqFltXjxjzE23yexTCEbEDf8FWc5baMQkFgXFTr3vRvKWcSTsFPRNGqjlkk8oqgRMUYCMl6kD7TEOe7vJQhwpll2cAxMk8SGjPSM7m2wN1NpGn1NcQpS5MhPN0LAfAPpcBgtmVYmF0Z3jovECF5ayfSemvjpLKfhmQaqdnJ3zZ8omkYxutTrEB8rne0PAUgMojbUQJ0CHZDFbwBPQICjDDKI3KVsaiMOlBFcMG0SMUenluIoBwCR7aGFtpuhkUmPTABVk0dOMq4p6dEEPgGjQeNoPWHVYplQRHx1oewY7sGIUrH12CtUAng0k69QscPlzze9v1eFQIjfs9JVVATNRo2SnYZ0hVuw8oenaWrJGXtfcxW8DfomNzTeHsfelmIDZ5TmZCLE7fhMOppchk5SrOPPrr7Wsww2jyplsxgOhx1LQeLCzdfTChl5CLMBhRITh4iURjQ9NP5ZcBLB3OW8ejYbQKXe5qb5M0HCFFhcJ5MMWzgkZ46zUPRnwPuB",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRds6s1uWSn30yhUdOJnWVoYpn7BllNQXW39IRXSaGnANp7McGQtlxs16UiqIi6WjmPrLWGqTIJ0Ji2aQuVRRHqSLVHPewDQR4zOzTOeZoHtgK0jffxxbgQDX5EcYUJbLRktPISMkEk9vxpoguUDgNew1NM4JqFltXjxjzE23yexTCEbEDf8FWc5baMQkFgXFTr3vRvKWcSTsFPRNGqjlkk8oqgRMUYCMl6kD7TEOe7vJQhwpll2cAxMk8SGjPSM7m2wN1NpGn1NcQpS5MhPN0LAfAPpcBgtmVYmF0Z3jovECF5ayfSemvjpLKfhmQaqdnJ3zZ8omkYxutTrEB8rne0PAUgMojbUQJ0CHZDFbwBPQICjDDKI3KVsaiMOlBFcMG0SMUenluIoBwCR7aGFtpuhkUmPTABVk0dOMq4p6dEEPgGjQeNoPWHVYplQRHx1oewY7sGIUrH12CtUAng0k69QscPlzze9v1eFQIjfs9JVVATNRo2SnYZ0hVuw8oenaWrJGXtfcxW8DfomNzTeHsfelmIDZ5TmZCLE7fhMOppchk5SrOPPrr7Wsww2jyplsxgOhx1LQeLCzdfTChl5CLMBhRITh4iURjQ9NP5ZcBLB3OW8ejYbQKXe5qb5M0HCFFhcJ5MMWzgkZ46zUPRnwPuB",
+      "estimatedCost": 75
+    },
+    {
+      "id": "left_propeller",
+      "name": "Left Propulsion Propeller",
+      "type": "mechanism",
+      "partId": "9eb66075-4ca7-455d-969b-bdb3f0d8a7c5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2-Blade+RC+Boat+Propeller+30mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FK9FC2BF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "30x30x10mm",
+      "description": "Left propeller for differential steering and propulsion.",
+      "productName": "2-Blade RC Boat Propeller 30mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=rc+boat+propeller+30mm+left",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwL4WB2oHTGqYvhmttnzqiWUDFUuDrvNhdKxgsUfEfB6W7l4THqpBYI4Jur1trikQcPMs6CEzd9JJTwUQRj6uH2d997T5pwq4XuvLitRlIpnbbyFSM0FrI4hL0y37EWPcjMRzAkhcoxZ8Iya1lTOTShTs6uPQGKWPWgwK86odh6dDa4RaTnB5hCYpkCDgd4SH2WpHeCU9Vbe6vuVMMkL5SmVs76PFkkyXS0o661mtEAkCsd94yHbIGrkozZE7vRhcRz2tpIDd5RtUSDTsfEHV03krkvsTQnXzuOPPA9z3rLJuM5Yq0nfyMmZWa3cFyqZqfUo6Ym3aVJnLyhWSW0nNYeKOi8dBRgKkS6I4EzRXhARIW2vmvYzQ6jR4z5MJHICk1oeEJ9c6rKCN963zyxGGCv3w63ivIpHXpzIWSuZFOHNWwDSXaOwMA8fRb56oDYFAjx91O22J0gAvKO0KZrBMyeDLdMT34ba9EqCBq4aFgzvUA9yxpnIcXIJzInuiaKSryEtps5phoZMPHaR5JG5Fnxx5yKT6nRclAUdLRFcbGpT14kzgjtLvpoJQrQhvcuDI73y7wqGou8bzd5FjkGL8ztOMNso5v5A73dVCClPeoHiXvLzcjrZdSYR64IXoXdXr05PRejePnMj6XUQC9FU3iBp",
+      "estimatedCost": 3.5
+    },
+    {
+      "id": "right_propeller",
+      "name": "Right Propulsion Propeller",
+      "type": "mechanism",
+      "partId": "9eb66075-4ca7-455d-969b-bdb3f0d8a7c5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2-Blade+RC+Boat+Propeller+30mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FK9FC2BF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "30x30x10mm",
+      "description": "Right propeller for differential steering and propulsion.",
+      "productName": "2-Blade RC Boat Propeller 30mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=rc+boat+propeller+30mm+right",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwL4WB2oHTGqYvhmttnzqiWUDFUuDrvNhdKxgsUfEfB6W7l4THqpBYI4Jur1trikQcPMs6CEzd9JJTwUQRj6uH2d997T5pwq4XuvLitRlIpnbbyFSM0FrI4hL0y37EWPcjMRzAkhcoxZ8Iya1lTOTShTs6uPQGKWPWgwK86odh6dDa4RaTnB5hCYpkCDgd4SH2WpHeCU9Vbe6vuVMMkL5SmVs76PFkkyXS0o661mtEAkCsd94yHbIGrkozZE7vRhcRz2tpIDd5RtUSDTsfEHV03krkvsTQnXzuOPPA9z3rLJuM5Yq0nfyMmZWa3cFyqZqfUo6Ym3aVJnLyhWSW0nNYeKOi8dBRgKkS6I4EzRXhARIW2vmvYzQ6jR4z5MJHICk1oeEJ9c6rKCN963zyxGGCv3w63ivIpHXpzIWSuZFOHNWwDSXaOwMA8fRb56oDYFAjx91O22J0gAvKO0KZrBMyeDLdMT34ba9EqCBq4aFgzvUA9yxpnIcXIJzInuiaKSryEtps5phoZMPHaR5JG5Fnxx5yKT6nRclAUdLRFcbGpT14kzgjtLvpoJQrQhvcuDI73y7wqGou8bzd5FjkGL8ztOMNso5v5A73dVCClPeoHiXvLzcjrZdSYR64IXoXdXr05PRejePnMj6XUQC9FU3iBp",
+      "estimatedCost": 3.5
+    },
+    {
+      "id": "left_propeller_shaft_coupling",
+      "name": "Left Propeller Shaft Coupling",
+      "type": "mechanism",
+      "partId": "759dd169-e331-4cfc-bad5-c8caaafc549e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Motor+Shaft+Coupling+2mm+to+3mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F1Y7QRM2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x15mm",
+      "description": "Coupling for connecting the left propulsion motor to its propeller shaft.",
+      "productName": "Motor Shaft Coupling 2mm to 3mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=motor+shaft+coupling+2mm+3mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9djLnCLgQJaVBmg5IoQfW4T9TVTIR2LXTsT9EUBOfWyfVXzea9eqnyDxJni81WBYiFvyfpbliGUOkyohfGuHt89XODEfflwvtlksGiFbsaAD44Exy2lixQ0TVcL4JylLFzWbyzu8Gh8OXQ23rrJDvitg7aECul98odg2xJGihuQoqIW5OxV6QrXsXsuryg6XgWAm69bOCHAHL6tjuUvZKzFZGfgJo1uzHbg8HzzMgDQsFqdV7HFH4c6CJKWh8xfP5d3lRO9wR0hevBiVI74S5SVOHogVDc0OxgFEYYWOGG6L9xsztHEpVviK3lwg98dWw0lvKPfJx9sFzI0XUVF5nuIQrwzMGAV3XK8aHEB9JpDTSLNsFnSKRL6R9UxfSTZkoeSi6bTFNz0fFdsUVpJa8ECtYkTNT1IAH1etUFAspSt26psotlSIadmHNeTVlr4PPXuPl4iari9f5oFptkLhZvMoxcdKi1Pq6UcH82cTItmENJh3QHVXWwgRiWBYprOvqmbnhlS29dpRpVMcjnPq9TgyShP3Sd2V5DuPCyyVjljm0beiWH998Ysx8T5YHVlD0A03I1RHkvd7o4CwQ1LG9FQ7IYZGVpo0PAsb9uSgO8dMNbmKgxxrR3NVS33RjwqkNMecVDc6ajdo5nox00LyHfBvp",
+      "estimatedCost": 2
+    },
+    {
+      "id": "right_propeller_shaft_coupling",
+      "name": "Right Propeller Shaft Coupling",
+      "type": "mechanism",
+      "partId": "759dd169-e331-4cfc-bad5-c8caaafc549e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Motor+Shaft+Coupling+2mm+to+3mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F1Y7QRM2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x15mm",
+      "description": "Coupling for connecting the right propulsion motor to its propeller shaft.",
+      "productName": "Motor Shaft Coupling 2mm to 3mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=motor+shaft+coupling+2mm+3mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9djLnCLgQJaVBmg5IoQfW4T9TVTIR2LXTsT9EUBOfWyfVXzea9eqnyDxJni81WBYiFvyfpbliGUOkyohfGuHt89XODEfflwvtlksGiFbsaAD44Exy2lixQ0TVcL4JylLFzWbyzu8Gh8OXQ23rrJDvitg7aECul98odg2xJGihuQoqIW5OxV6QrXsXsuryg6XgWAm69bOCHAHL6tjuUvZKzFZGfgJo1uzHbg8HzzMgDQsFqdV7HFH4c6CJKWh8xfP5d3lRO9wR0hevBiVI74S5SVOHogVDc0OxgFEYYWOGG6L9xsztHEpVviK3lwg98dWw0lvKPfJx9sFzI0XUVF5nuIQrwzMGAV3XK8aHEB9JpDTSLNsFnSKRL6R9UxfSTZkoeSi6bTFNz0fFdsUVpJa8ECtYkTNT1IAH1etUFAspSt26psotlSIadmHNeTVlr4PPXuPl4iari9f5oFptkLhZvMoxcdKi1Pq6UcH82cTItmENJh3QHVXWwgRiWBYprOvqmbnhlS29dpRpVMcjnPq9TgyShP3Sd2V5DuPCyyVjljm0beiWH998Ysx8T5YHVlD0A03I1RHkvd7o4CwQ1LG9FQ7IYZGVpo0PAsb9uSgO8dMNbmKgxxrR3NVS33RjwqkNMecVDc6ajdo5nox00LyHfBvp",
+      "estimatedCost": 2
+    },
+    {
+      "id": "left_propeller_shaft",
+      "name": "Left Propeller Shaft",
+      "type": "mechanism",
+      "partId": "e671ded5-82b7-4a45-863c-e33b26896300",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RC+Boat+Drive+Shaft+3mm+x+100mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09F2M5CT9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x3x100mm",
+      "description": "Shaft for the left propeller, extending through the hull.",
+      "productName": "RC Boat Drive Shaft 3mm x 100mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=rc+boat+drive+shaft+3mm",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4BsnZDx"
+    },
+    {
+      "id": "right_propeller_shaft",
+      "name": "Right Propeller Shaft",
+      "type": "mechanism",
+      "partId": "e671ded5-82b7-4a45-863c-e33b26896300",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RC+Boat+Drive+Shaft+3mm+x+100mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09F2M5CT9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x3x100mm",
+      "description": "Shaft for the right propeller, extending through the hull.",
+      "productName": "RC Boat Drive Shaft 3mm x 100mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=rc+boat+drive+shaft+3mm",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4BsnZDx"
+    },
+    {
+      "id": "left_propeller_bearing",
+      "name": "Left Propeller Shaft Bearing",
+      "type": "mechanism",
+      "partId": "f18f1746-f90c-4eb1-a0a5-c90356884d4c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Flange+Bearing+3x7x3mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F4XRNC96?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "7x7x3mm",
+      "description": "Bearing to support the left propeller shaft at the hull penetration.",
+      "productName": "Flange Bearing 3x7x3mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=flange+bearing+3x7x3mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH9OmTU8vySA0BAqeeU89EN5654IZqDiWxYB83NXW8bg57W1ssmVRXbShXoSnjPlEgN89PqPW8TSrnu8X62CaaIKnrfXH6SuTbavyQetl5YljccVc8ckcRHcTqmk1PNF8u2toZukApgUk5ifFiOCgSqullqOTflVtzb57BxCd5xZhljb67ktJsButXaroerOLAnmmMjPzblGJ3Tug343txAzt2EuhXfwfkiBrReOAc6z8nswktbsAESPsPkuJCsCHO3BA8nQWHWBZzceYOF9keKGnUFm9XLnGShwK3Fl3avrjDTtzGVB9FSc4IhAmmriBrqd3f9rJkNBip3l1OZVgReKjkWoVjsQgxmXSlnwTVADIMhgbOJfeHz3C9A8dubLH1a5i5IeVN8CSpZ0NmMb9ZZMG046b0HmHE0GSzgwl4h7EoBOE8TnzuB4GYgCr6pTjz0Z7aOvRmyAqF85SpsGGgzyKiokeWkaJKpxzAC2Wd6Sr3b3Azx4El0U4EvmEkKJHKKWrpy01aHkhBv3WYWs08AJ9croaXXJI2UeBqc2aRUZU9Xi78OfgYFmvV9nqOPFSNF23NMYA2WcqxdA5vcIuFfxProdn0lHxT0frKVfbdgpTgsz6g6uW1F2Q8VKCCKX1hogZPZdePjWKlDgiACUXjPz",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "right_propeller_bearing",
+      "name": "Right Propeller Shaft Bearing",
+      "type": "mechanism",
+      "partId": "f18f1746-f90c-4eb1-a0a5-c90356884d4c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Flange+Bearing+3x7x3mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F4XRNC96?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "7x7x3mm",
+      "description": "Bearing to support the right propeller shaft at the hull penetration.",
+      "productName": "Flange Bearing 3x7x3mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=flange+bearing+3x7x3mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH9OmTU8vySA0BAqeeU89EN5654IZqDiWxYB83NXW8bg57W1ssmVRXbShXoSnjPlEgN89PqPW8TSrnu8X62CaaIKnrfXH6SuTbavyQetl5YljccVc8ckcRHcTqmk1PNF8u2toZukApgUk5ifFiOCgSqullqOTflVtzb57BxCd5xZhljb67ktJsButXaroerOLAnmmMjPzblGJ3Tug343txAzt2EuhXfwfkiBrReOAc6z8nswktbsAESPsPkuJCsCHO3BA8nQWHWBZzceYOF9keKGnUFm9XLnGShwK3Fl3avrjDTtzGVB9FSc4IhAmmriBrqd3f9rJkNBip3l1OZVgReKjkWoVjsQgxmXSlnwTVADIMhgbOJfeHz3C9A8dubLH1a5i5IeVN8CSpZ0NmMb9ZZMG046b0HmHE0GSzgwl4h7EoBOE8TnzuB4GYgCr6pTjz0Z7aOvRmyAqF85SpsGGgzyKiokeWkaJKpxzAC2Wd6Sr3b3Azx4El0U4EvmEkKJHKKWrpy01aHkhBv3WYWs08AJ9croaXXJI2UeBqc2aRUZU9Xi78OfgYFmvV9nqOPFSNF23NMYA2WcqxdA5vcIuFfxProdn0lHxT0frKVfbdgpTgsz6g6uW1F2Q8VKCCKX1hogZPZdePjWKlDgiACUXjPz",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "shaft_seal_ring_propeller_2x",
+      "name": "Propeller Shaft Seal Ring",
+      "type": "misc",
+      "partId": "e807c433-9fe1-48bc-9de4-7770f0b8d8d1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Nitrile+O-Ring+3mm+ID&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B07GQWB5GZ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x7x2mm",
+      "description": "O-rings for watertight sealing around the propeller shafts.",
+      "productName": "Nitrile O-Ring 3mm ID",
+      "purchaseUrl": "https://www.amazon.com/s?k=nitrile+o+ring+3mm+id",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgOWrwXkqIwTr0Ce0sBp3PwvuT5zPtHFD6VnQbGflLMJ7dXNuyHkCkd286fOP77QVMmnn0lTKPFTf0c3pMnmOrphQxvOfatOqRVRcwuGrV0dHEhT4bdhH1mT44VqX04i8oQ4llA7MVcGAhxiS5HPKzZ3DMus9JwoXR9E5ZtyUo1RqVEZMLFXemvOreF60DraAdSeDvfpVo68rvCmuc0XhmfrktgTJOqtECEgaqqYXUSs9CV9H3uxzod9OfrqJQRpuhErbAP5czt5ttsmyXArdOSfSn144If6dWjU7vvptUGRAqNDdwSRP41671bfVTzwXP0lrld8N1oN3G6rioo6pqfjZhjERVbg3H3wG1HS2GAkF7xqjdVkSnz9LS868vUg2m361wCwcftA8ENu9MEOe1oXh1ftgr8JskAjlGezM0Npf1qgrW0btpMExFOihQaUB1JSM5yCxw84fGCyllLw71efVoqTWgZ8kfgJ7SvZT7AJO2CJE9iwSo3tIAsASrHhAOmBOgyaLVdUot5KYCXWdTfEBanRVKjz9Sbp7HMnwRopjjh9h3YplXXeiSgGfmTKEBAcAJPmmkL1XRK2qjOqfqcDPSCpDptEDYv7LwFFWX8uXnCRqxXgnOrrwiVxfaU2Rp9ZnAemwjrkFVIadNDRSsir",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "propulsion_motor_mount_left",
+      "name": "Left Propulsion Motor Mount",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "propulsion_motor_left",
+      "dimensions": "40x30x25mm",
+      "description": "3D printed mount for the left propulsion motor inside the hull.",
+      "estimatedCost": 0.8,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "propulsion_motor_mount_right",
+      "name": "Right Propulsion Motor Mount",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "propulsion_motor_right",
+      "dimensions": "40x30x25mm",
+      "description": "3D printed mount for the right propulsion motor inside the hull.",
+      "estimatedCost": 0.8,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "conveyor_belt_frame_front",
+      "name": "Conveyor Belt Frame Front",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "100x50x30mm",
+      "description": "Front section of the 3D printed frame for the debris collection conveyor belt system.",
+      "estimatedCost": 1.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "conveyor_belt_frame_rear",
+      "name": "Conveyor Belt Frame Rear",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "100x50x30mm",
+      "description": "Rear section of the 3D printed frame for the debris collection conveyor belt system.",
+      "estimatedCost": 1.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "conveyor_belt_rollers_2x",
+      "name": "Conveyor Belt Rollers",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 2,
+      "dimensions": "80x15x15mm",
+      "description": "3D printed rollers to drive and support the conveyor belt.",
+      "estimatedCost": 1,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "conveyor_belt_material",
+      "name": "Conveyor Belt Material",
+      "type": "mechanism",
+      "partId": "3a3a10cb-e0ab-454f-8ceb-6e3736b8790a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Rubber+Conveyor+Belt+Material+80mm+wide&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FNWGXYV2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "80x300x1mm",
+      "description": "Flexible rubber material for the debris collection conveyor belt.",
+      "productName": "Rubber Conveyor Belt Material 80mm wide",
+      "purchaseUrl": "https://www.amazon.com/s?k=rubber+conveyor+belt+material",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c45P2Wjb",
+      "estimatedCost": 8
+    },
+    {
+      "id": "conveyor_motor_mount",
+      "name": "Conveyor Motor Mount",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "conveyor_motor",
+      "dimensions": "30x25x20mm",
+      "description": "3D printed mount for the conveyor belt motor.",
+      "estimatedCost": 0.6,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "conveyor_gear_motor_side",
+      "name": "Conveyor Drive Gear (Motor Side)",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "20x20x10mm",
+      "description": "3D printed gear to transfer power from the conveyor motor to the roller.",
+      "estimatedCost": 0.3,
+      "printSettings": "50% infill, 0.15mm layer"
+    },
+    {
+      "id": "conveyor_gear_roller_side",
+      "name": "Conveyor Drive Gear (Roller Side)",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "30x30x10mm",
+      "description": "3D printed gear to mate with the motor gear and drive the conveyor roller.",
+      "estimatedCost": 0.5,
+      "printSettings": "50% infill, 0.15mm layer"
+    },
+    {
+      "id": "debris_scoop_front",
+      "name": "Debris Collection Scoop",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "120x80x40mm",
+      "description": "Front 3D printed scoop mechanism to guide debris onto the conveyor belt.",
+      "estimatedCost": 2,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "debris_storage_bin",
+      "name": "Debris Storage Bin",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "100x80x60mm",
+      "description": "3D printed bin for collecting and holding the debris conveyed from the river.",
+      "estimatedCost": 2.5,
+      "printSettings": "15% infill, 0.2mm layer"
+    },
+    {
+      "id": "solar_panel_mount_frame",
+      "name": "Solar Panel Mount Frame",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "solar_panel",
+      "dimensions": "150x100x10mm",
+      "description": "3D printed frame to securely mount the solar panel on top of the boat.",
+      "estimatedCost": 1.5,
+      "printSettings": "15% infill, 0.2mm layer"
+    },
+    {
+      "id": "electronics_enclosure_base",
+      "name": "Electronics Enclosure Base",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "100x70x30mm",
+      "description": "3D printed waterproof base for housing the main electronics.",
+      "estimatedCost": 2,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "electronics_enclosure_lid",
+      "name": "Electronics Enclosure Lid",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "105x75x5mm",
+      "description": "3D printed waterproof lid for the main electronics enclosure, with gasket groove.",
+      "estimatedCost": 1,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "electronics_enclosure_gasket",
+      "name": "Electronics Enclosure Gasket",
+      "type": "misc",
+      "partId": "102d9413-1e9a-40ec-9074-fc44a8b957c5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Silicone+O-Ring+Cord+2mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/tSgN_5INfoUVfX7jBv8dH87OY-NgEcO_ysHEgeP2DSM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLy1OQUFB/T1N3eDJkWUZFcVQv/cy1sNTAwLmpwZw",
+      "material": "Silicone",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CRHL7NHZ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "2x2x300mm",
+      "description": "Silicone cord for creating a watertight seal for the electronics enclosure.",
+      "productName": "Silicone O-Ring Cord 2mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=silicone+o+ring+cord+2mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxg7uhEaOVc3eKedgH7GlJi6nDB2NldWXdWgzMyQr3gUxtzmZvob5hi2ABO2v6cExjZLR0vtB04RwJdM6oYeo0hsN4rKf6bBEWXi8o15B1sLVhPPfsLLsv1XO3krsqSZsYUyY1rjrcOrhupdnFbgw7GDMCWDhtvwgwF7N1ORSsiJQnUcj8RNkqag40rRrdDW5phB6wgfXF9QO86vz9jbbOSRd26X4Tp6qwaGmoYt4S7NeQTvyMxclUADE51wfsQPMZIf0NnaLwoROdqMF10TiW2T7MQk9gqFfNwgFm3NTQlGCbOoTCHXnJIFmuJXlmKBhmGF9PwIIerljaqbX7OUYagg7G8HuUSXxm9yXeY6OmBEsUVn4Pma1BWx6O6MogPuBQtoIgnnBgRkxYQyFbeIWTIaCjb1CkE8NOnHhwxIws3l66ZwK1iPizxuFMIfpCM0wOF8mF6cicbm0q71ekNqKGqUnDhi8a3EVR7d5MTMhj04zgtIACCsMYLFML1zia7rF5NMKVJNVGn0ksEMFDysZtWpkNnPAsNZIrF9yQG5ZXXv0vgkXNW3QdjcStmV2rKPlwbVX5bEFk3Av20eREHZkxQXc6f6kUxUQ3XrG8dTeLImCAi0EpUkRak6KlmZidgIiFIgPG4lGim84JEsWssRy2ik3",
+      "estimatedCost": 3
+    },
+    {
+      "id": "cable_glands_waterproof_3x",
+      "name": "Waterproof Cable Gland",
+      "type": "misc",
+      "partId": "9ef96eb6-8d7e-42d9-b7ff-25384ead0806",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M12+Waterproof+Cable+Gland&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51n8KdXVlWL._SL500_.jpg",
+      "material": "Nylon",
+      "quantity": 3,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08K8J45L5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.59",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005005727406479.html?pdp_npi=6%40dis%21USD%213.10%213.05%21%21%2120.97%2120.62%21%402140d36217794375939108004e100a%2112000034136121751%21affd%21%21%21%211%210%21",
+            "price": "$3.05",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08K8J45L5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x25mm",
+      "description": "Waterproof glands for routing cables into the electronics enclosure.",
+      "productName": "M12 Waterproof Cable Gland",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHXt4wf5acYmKuPZwO5LRZ3dkFq1CVbeDFrw84c1e3YWK8L2ZLUlunhXgYsLwEDVITQ3wuSkwALfCw1Lro15ErO4qE1qVEjAJE0YqUo8eQ5rTf0q6dwwHquKXDuCU9aV338xhhKb98nIRGcxIAVf9Uk1k1dUObgjFGBHm6lEeVhvY90H6X2L4fl4pRcLa8EVDO9thGjT2N5lHtKvRYi1q3JdKt4ocgzl4Yab3DP1S0wlyY8a8K95GavotbutXIWOy9Pk489RP6rynSE0KDnz5f36d3JIUoUEd0YRnWMIk2YoDtd69TSRICTWn3enkIIwWpal40yvxYkRWpVDJUODmD64OxjhzyDL7v6wDHKrTHnjvhk9uLDqYIGNYnNLoBuDIia5hv4yB9xNV4eU5lwpA397x338ZpaCjztZ8KZKvBFMRmEHWKCehJttV54gRR5KEBTgnFLQxtrapoPqaNb428aLRCzHaswfa5nFGF68507Ip8RaYBsL7742l5fMLSsIxKtrFYUPhUzrpvFxlAEjN7bayrDx0JSp0U49dNK5jSOEblHTIzuhv8mdfcrR245vOPqTwh2wmaqYHoVNNMdOy1eI6brwyRUqOGSNdhmHw2Amly9o2Xppc9IgRa1zGVi2lhlC3uwm0B9lWGBsrJPc5qBp",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHXt4wf5acYmKuPZwO5LRZ3dkFq1CVbeDFrw84c1e3YWK8L2ZLUlunhXgYsLwEDVITQ3wuSkwALfCw1Lro15ErO4qE1qVEjAJE0YqUo8eQ5rTf0q6dwwHquKXDuCU9aV338xhhKb98nIRGcxIAVf9Uk1k1dUObgjFGBHm6lEeVhvY90H6X2L4fl4pRcLa8EVDO9thGjT2N5lHtKvRYi1q3JdKt4ocgzl4Yab3DP1S0wlyY8a8K95GavotbutXIWOy9Pk489RP6rynSE0KDnz5f36d3JIUoUEd0YRnWMIk2YoDtd69TSRICTWn3enkIIwWpal40yvxYkRWpVDJUODmD64OxjhzyDL7v6wDHKrTHnjvhk9uLDqYIGNYnNLoBuDIia5hv4yB9xNV4eU5lwpA397x338ZpaCjztZ8KZKvBFMRmEHWKCehJttV54gRR5KEBTgnFLQxtrapoPqaNb428aLRCzHaswfa5nFGF68507Ip8RaYBsL7742l5fMLSsIxKtrFYUPhUzrpvFxlAEjN7bayrDx0JSp0U49dNK5jSOEblHTIzuhv8mdfcrR245vOPqTwh2wmaqYHoVNNMdOy1eI6brwyRUqOGSNdhmHw2Amly9o2Xppc9IgRa1zGVi2lhlC3uwm0B9lWGBsrJPc5qBp",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "m3_screws_10mm_20x",
+      "name": "M3x10mm Mounting Screws",
+      "type": "misc",
+      "partId": "987efac9-f46e-4f95-8b03-f005043ef58e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Stainless+Steel+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41KIuBfN39L._SL500_.jpg",
+      "material": "Stainless Steel",
+      "quantity": 20,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0DJQHJ8Y1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.49",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007429125919.html?pdp_npi=6%40dis%21USD%21240.00%21240.00%21%21%21240.00%21240.00%21%402151fd2c17793358263773674e1183%2112000040723851623%21affd%21%21%21%211%210%21",
+            "price": "$240",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DJQHJ8Y1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "General purpose M3 screws for mounting components.",
+      "productName": "M3x10mm Stainless Steel Screws",
+      "purchaseUrl": "https://www.amazon.com/dp/B0DJQHJ8Y1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHvtrLjWakuTQdaBQbRhVX7YgjZpKaXSyJ7oAT7NF89ncxZy8r63Jb1QGxljpSgjZ3paNzWtwX45GGqu8XaMS4bD4y1ScjZIBOlaItExuqsbNC0cCbl5f0qc67dPtKcvVV3XK5u085bvmDWFSlDI9ukFrSr3hCzTSIPBWoc29YjfX0t85zDJYTeZWL4Hbgc3EpndnYN8L2nvXCwMFrEttB6m1HqeUTVT0Bk4N7FfdaNXz1FaDsVbtSKvTs6FJPXQ8icSKepeUW7hI8IVcN0oGbqWGwYjgtzQ59zg0K0RINO8mAWqRX6kjkAQapWjfi3zhiXDPtmoC41m63dEqV8i80GO3rwuwxEOU2XYTigOP0aYlSbcmAvM9Ci9SnvtVCpk0mBXU1tyJA96KTB95oOZeIhlLFSKFmTOUNz97mboETgsK9564YYONpm0Pu6b3n4Xbp7DiFiLx54IEFIAXcmPx0O1SDU5OrPjE3QtURWoKOCsSInnRailAD9BGLREAztiycdtAkqAoN7BKsA206rd54mS838AKrc4pOSl0kA2jlC4yIfGnYcoUatxrK4IMiwYudIlcRW7jItzcYr1ojdeEyZvTDkponzDgoE2KiX2yrOb14sqixAozdXylMrcC0Pb19t8EYdyYrFNKaHX2tW2fVd1",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "m3_nuts_20x",
+      "name": "M3 Nuts",
+      "type": "misc",
+      "partId": "d2d0f821-8876-46bb-9ba1-98cdd29f81e5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Stainless+Steel+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41pX1SHnmpL._SL500_.jpg",
+      "quantity": 20,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08N68W9SP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$4.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006863843530.html?pdp_npi=6%40dis%21USD%2117.66%218.83%21%21%21119.40%2159.70%21%4021013cc617793484210075774e105f%2112000038553282001%21affd%21%21%21%211%210%21",
+            "price": "$8.83",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08N68W9SP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "M3 nuts for use with M3 screws.",
+      "productName": "M3 Stainless Steel Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/dp/B08N68W9SP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGJmOrxlMpDubYQYtLNRkBdFEJOK3mI6BO6T0MS7MxRIrPQPAly6lJw0dyItkwyiVNyfC4J6d9ViNmKebAbKFlGeqJaV5C3fT2oSvowjAJGp9au12oHRy0biKjpP6LiBBikjM65l3S5hL1RpBDwYCT2abZJqgsLQYPyZjdBQV1k9or8XqGxmugXqSl4NrMhUf8QCflFv2ksQXuSgW507PfTJu8iGdBzuPy4mKblM9FUNDHdMjSMPoewUKrbAkD3G0EIVfkGJrWm65PFBlHiT3XK7jj2eEayMpJdiWd9XnXHUZGo9GPq9iKtEtee4ABjVZkvuTBF7VjEE9MAZPfmWvEXfb8ud1vHaEpQBDS574qkI4JwvigBFnwcBOjYC8tXip7CWf7h1TVLAnu8HTWhG4UmfYLS6rniI7MuY04bLp1Be4340bL9OxcFdhgmIX4CDMaCoysGqpwqqVCdw6ilk9Edy94rlyYGMl3shVTURNjtZjxNlFhu0p0jtjC3Ob35aK2cFsX5ZUFiI06Qzta3Y6wQT8ciNj5R7tVy1C5gAXfHs0qAleazxnDk6we953KCYKw9TtoUJf1PXI8KRcjXASOLZeFFhF98fFrcooiIzlleA8NNyouNEYwBNyn2yvYzrRWXfHQnaHvf7J5pgW3FYa9jH",
+      "estimatedCost": 0.03
+    },
+    {
+      "id": "lipo_battery_strap",
+      "name": "LiPo Battery Strap",
+      "type": "misc",
+      "partId": "4c949c4c-8567-49a9-af58-6b1e9ecb6e5f",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Velcro+Battery+Strap+200mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Wb_e1FBv2DHWMU8SVaRMJhsRihaBZYbn_jKpnaLae5Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjE2MmdLRkVmQUwu/anBn",
+      "material": "Velcro/Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B01CJG5JV2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "lipo_battery",
+      "dimensions": "20x200x2mm",
+      "description": "Velcro strap to secure the LiPo battery within the hull.",
+      "productName": "Velcro Battery Strap 200mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=velcro+battery+strap+200mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3uo0iPL",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "internal_mounting_plate",
+      "name": "Internal Mounting Plate",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "200x120x3mm",
+      "description": "Internal plate for mounting various components within the hull, above the electronics enclosure.",
+      "estimatedCost": 2.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "esc_mount_left",
+      "name": "Left ESC Mount",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "esc_left",
+      "dimensions": "40x30x15mm",
+      "description": "3D printed mount for the left Electronic Speed Controller.",
+      "estimatedCost": 0.7,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "esc_mount_right",
+      "name": "Right ESC Mount",
+      "type": "3d_printed",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "esc_right",
+      "dimensions": "40x30x15mm",
+      "description": "3D printed mount for the right Electronic Speed Controller.",
+      "estimatedCost": 0.7,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "main_mcu_mount",
+      "name": "Main Controller Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "main_mcu",
+      "dimensions": "60x40x12mm",
+      "description": "Standoff bracket sized to the Main Controller's mounting hole pattern. M2.5 holes for board fasteners; vented underside for airflow.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "rc_receiver_mount",
+      "name": "RC Receiver Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "rc_receiver",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the RC Receiver that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "conveyor_motor_driver_mount",
+      "name": "Conveyor Motor Driver Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "conveyor_motor_driver",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the Conveyor Motor Driver with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    }
+  ],
+  "notes": [
+    "miniature",
+    "solar powered",
+    "remote controlled",
+    "river cleaning"
+  ],
+  "projectName": "River Cleaning Boat",
+  "originalPrompt": "miniature solar powered remote controlled river cleaning boat",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all custom parts (mounts, frames, gears, enclosure)",
+          "partIds": [
+            "propulsion_motor_mount_left",
+            "propulsion_motor_mount_right",
+            "conveyor_belt_frame_front",
+            "conveyor_belt_frame_rear",
+            "conveyor_belt_rollers_2x",
+            "conveyor_motor_mount",
+            "conveyor_gear_motor_side",
+            "conveyor_gear_roller_side",
+            "debris_scoop_front",
+            "debris_storage_bin",
+            "solar_panel_mount_frame",
+            "electronics_enclosure_base",
+            "electronics_enclosure_lid",
+            "internal_mounting_plate",
+            "esc_mount_left",
+            "esc_mount_right",
+            "main_mcu_mount",
+            "rc_receiver_mount",
+            "conveyor_motor_driver_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Clean and deburr all 3D printed parts",
+          "partIds": [
+            "propulsion_motor_mount_left",
+            "propulsion_motor_mount_right",
+            "conveyor_belt_frame_front",
+            "conveyor_belt_frame_rear",
+            "conveyor_belt_rollers_2x",
+            "conveyor_motor_mount",
+            "conveyor_gear_motor_side",
+            "conveyor_gear_roller_side",
+            "debris_scoop_front",
+            "debris_storage_bin",
+            "solar_panel_mount_frame",
+            "electronics_enclosure_base",
+            "electronics_enclosure_lid",
+            "internal_mounting_plate",
+            "esc_mount_left",
+            "esc_mount_right",
+            "main_mcu_mount",
+            "rc_receiver_mount",
+            "conveyor_motor_driver_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Prepare boat hull: Mark and drill mounting holes for internal plate, conveyor frames, debris scoop/bin, solar panel frame, and propulsion shaft components.",
+          "partIds": [
+            "boat_hull",
+            "internal_mounting_plate",
+            "conveyor_belt_frame_front",
+            "conveyor_belt_frame_rear",
+            "debris_scoop_front",
+            "debris_storage_bin",
+            "solar_panel_mount_frame",
+            "left_propeller_bearing",
+            "right_propeller_bearing",
+            "shaft_seal_ring_propeller_2x",
+            "cable_glands_waterproof_3x"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Install waterproof cable glands into the electronics enclosure base.",
+          "partIds": [
+            "electronics_enclosure_base",
+            "cable_glands_waterproof_3x"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder motor phase wires to Left and Right Propulsion Motors.",
+          "partIds": [
+            "propulsion_motor_left",
+            "propulsion_motor_right"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder VCC and GND wires to the Conveyor Belt Motor.",
+          "partIds": [
+            "conveyor_motor"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Prepare power wiring: Solar Panel to MPPT, MPPT to LiPo, MPPT to PDB, PDB to ESCs, PDB to 5V Regulator.",
+          "partIds": [
+            "solar_panel",
+            "mppt_charge_controller",
+            "lipo_battery",
+            "power_distribution_board",
+            "esc_left",
+            "esc_right",
+            "voltage_regulator_5v"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Prepare 5V power wiring: 5V Regulator to RC Receiver, Main Controller, and Conveyor Motor Driver (VCC).",
+          "partIds": [
+            "voltage_regulator_5v",
+            "rc_receiver",
+            "main_mcu",
+            "conveyor_motor_driver"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Prepare signal wiring: Main Controller to ESCs (PWM), RC Receiver to Main Controller (UART), Main Controller to Conveyor Motor Driver (GPIO).",
+          "partIds": [
+            "main_mcu",
+            "rc_receiver",
+            "esc_left",
+            "esc_right",
+            "conveyor_motor_driver"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect Conveyor Motor to Conveyor Motor Driver outputs.",
+          "partIds": [
+            "conveyor_motor",
+            "conveyor_motor_driver"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect Solar Panel and LiPo battery to MPPT Charge Controller; verify charging functionality.",
+          "partIds": [
+            "solar_panel",
+            "mppt_charge_controller",
+            "lipo_battery"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Power the Power Distribution Board from the MPPT; verify 5V and 12V outputs from PDB and 5V Regulator using a multimeter.",
+          "partIds": [
+            "mppt_charge_controller",
+            "power_distribution_board",
+            "voltage_regulator_5v",
+            "esc_left",
+            "esc_right",
+            "conveyor_motor_driver"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Upload basic firmware to Main Controller (main_mcu) to test GPIOs and UART communication.",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Connect RC Receiver to Main Controller; verify signal reception and mapping in firmware.",
+          "partIds": [
+            "rc_receiver",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Connect ESCs to Main Controller; perform initial motor calibration and test propulsion motors without propellers.",
+          "partIds": [
+            "main_mcu",
+            "esc_left",
+            "esc_right",
+            "propulsion_motor_left",
+            "propulsion_motor_right"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Connect Conveyor Motor Driver to Main Controller and Conveyor Motor; test basic motor function (forward/reverse).",
+          "partIds": [
+            "main_mcu",
+            "conveyor_motor_driver",
+            "conveyor_motor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount Left and Right Propulsion Motor Mounts to the Internal Mounting Plate, then attach propulsion motors to mounts.",
+          "partIds": [
+            "propulsion_motor_mount_left",
+            "propulsion_motor_mount_right",
+            "internal_mounting_plate",
+            "propulsion_motor_left",
+            "propulsion_motor_right",
+            "m3_screws_10mm_20x",
+            "m3_nuts_20x"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Assemble propeller shafts: Attach shaft couplings to motor shafts, then slide shafts through bearings and seals in the boat hull, securing propellers.",
+          "partIds": [
+            "left_propeller_shaft_coupling",
+            "right_propeller_shaft_coupling",
+            "left_propeller_shaft",
+            "right_propeller_shaft",
+            "left_propeller_bearing",
+            "right_propeller_bearing",
+            "shaft_seal_ring_propeller_2x",
+            "left_propeller",
+            "right_propeller",
+            "boat_hull"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount ESCs, Main Controller, RC Receiver, and Conveyor Motor Driver to their respective 3D printed mounts, then attach mounts to the Internal Mounting Plate.",
+          "partIds": [
+            "esc_mount_left",
+            "esc_mount_right",
+            "esc_left",
+            "esc_right",
+            "main_mcu_mount",
+            "main_mcu",
+            "rc_receiver_mount",
+            "rc_receiver",
+            "conveyor_motor_driver_mount",
+            "conveyor_motor_driver",
+            "internal_mounting_plate",
+            "m3_screws_10mm_20x",
+            "m3_nuts_20x"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Assemble the Conveyor Belt mechanism: Mount conveyor frames to the boat hull, attach rollers and gears, then mount the conveyor motor with its gear. Wrap conveyor belt material around rollers.",
+          "partIds": [
+            "conveyor_belt_frame_front",
+            "conveyor_belt_frame_rear",
+            "conveyor_belt_rollers_2x",
+            "conveyor_motor_mount",
+            "conveyor_motor",
+            "conveyor_gear_motor_side",
+            "conveyor_gear_roller_side",
+            "conveyor_belt_material",
+            "boat_hull",
+            "m3_screws_10mm_20x",
+            "m3_nuts_20x"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount the Internal Mounting Plate, Debris Scoop, Debris Storage Bin, and Solar Panel Mount Frame to the Boat Hull.",
+          "partIds": [
+            "internal_mounting_plate",
+            "debris_scoop_front",
+            "debris_storage_bin",
+            "solar_panel_mount_frame",
+            "boat_hull",
+            "m3_screws_10mm_20x",
+            "m3_nuts_20x"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Install the Main Solar Panel onto its mount frame.",
+          "partIds": [
+            "solar_panel",
+            "solar_panel_mount_frame"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Place the LiPo Battery in its compartment and secure it with the LiPo Battery Strap.",
+          "partIds": [
+            "lipo_battery",
+            "lipo_battery_strap"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Route all electrical cables through cable glands, tidy wiring, and secure the Electronics Enclosure Lid with the gasket to its base.",
+          "partIds": [
+            "electronics_enclosure_base",
+            "electronics_enclosure_lid",
+            "electronics_enclosure_gasket",
+            "cable_glands_waterproof_3x"
+          ]
+        }
+      ]
+    }
+  ],
+  "wiringCleanedHash": "438bd33e-c389-401b-89e0-1fc98924cc6d::conveyor_motor:VCC|GND,conveyor_motor_driver:VM|GND|VCC|IN1|IN2|OUT1|OUT2,esc_left:Motor Phase A|Motor Phase B|Motor Phase C|Battery+|Battery-|Signal|GND|5V BEC Out,esc_right:Motor Phase A|Motor Phase B|Motor Phase C|Battery+|Battery-|Signal|GND|5V BEC Out,lipo_battery:Balance Connector|Discharge Connector (+/-)|Discharge Connector (+)|Discharge Connector (-),main_mcu:3V3|GND|EN|GPIO0|GPIO1|GPIO2|GPIO4|GPIO5|GPIO12|GPIO13|GPIO14|GPIO15|GPIO16|GPIO17|GPIO18|GPIO19|GPIO21|GPIO22|GPIO23|GPIO25|GPIO26|GPIO27|GPIO32|GPIO33|GPIO34|GPIO35|GPIO36|GPIO39,mppt_charge_controller:Solar In+|Solar In-|Battery+|Battery-|Output+|Output-,power_distribution_board:Input+|Input-|Output 1+|Output 1-|Output 2+|Output 2-|5V Out|12V Out,propulsion_motor_left:Motor Phase A|Motor Phase B|Motor Phase C,propulsion_motor_right:Motor Phase A|Motor Phase B|Motor Phase C,rc_receiver:VCC|GND|CH1|CH2|CH3|CH4|CH5|CH6|iBUS,solar_panel:Solar+|Solar-,voltage_regulator_5v:Vin+|Vin-|Vout+|Vout-::data|main_mcu|GPIO16|esc_left|Signal|pwm|;data|main_mcu|GPIO17|esc_right|Signal|pwm|;data|main_mcu|GPIO25|conveyor_motor_driver|IN1|gpio|;data|main_mcu|GPIO26|conveyor_motor_driver|IN2|gpio|;data|rc_receiver|iBUS|main_mcu|GPIO18|uart|;power|conveyor_motor_driver|GND|conveyor_motor|GND||;power|conveyor_motor_driver||conveyor_motor|||12V;power|esc_left||propulsion_motor_left|||12V;power|esc_right||propulsion_motor_right|||12V;power|lipo_battery||mppt_charge_controller|||12.6V;power|mppt_charge_controller||lipo_battery|||12.6V;power|mppt_charge_controller||power_distribution_board|||12V;power|power_distribution_board||conveyor_motor_driver|||12V;power|power_distribution_board||esc_left|||12V;power|power_distribution_board||esc_right|||12V;power|power_distribution_board||voltage_regulator_5v|||12V;power|solar_panel||mppt_charge_controller|||12V-18V (nominal 12V), 1A-5A (peak 5A, nominal 1A);power|voltage_regulator_5v|Vout-|conveyor_motor_driver|GND||;power|voltage_regulator_5v|Vout-|main_mcu|GND||;power|voltage_regulator_5v|Vout-|rc_receiver|GND||;power|voltage_regulator_5v||conveyor_motor_driver|||5V;power|voltage_regulator_5v||main_mcu|||5V;power|voltage_regulator_5v||rc_receiver|||5V",
+  "projectDescription": "A miniature, solar-powered, remote-controlled boat designed for river debris collection. It features dual propulsion motors for maneuverability, a conveyor belt system to gather debris, and an integrated solar panel with MPPT charging for extended operation.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "miniature",
+      "solar powered",
+      "remote controlled",
+      "river cleaning"
+    ],
+    "description": "Project idea: miniature solar powered remote controlled river cleaning boat\n\nDesign notes: miniature, solar powered, remote controlled, river cleaning\n\nElectrical components (current): Main Controller (mcu, 25.5x18x3.1mm); RC Receiver (module, 47x26.2x15mm); 6x actuator: Left Propulsion Motor, Right Propulsion Motor, Left Motor ESC, Right Motor ESC +2 more; 5x power: Main Solar Panel, MPPT Charge Controller, Main LiPo Battery, Power Distribution Board +1 more\n\nMechanical/structural parts (current): Boat Hull (enclosure, 400x150x100mm); 9x mechanism: Left Propulsion Propeller, Right Propulsion Propeller, Left Propeller Shaft Coupling, Right Propeller Shaft Coupling +5 more; 6x misc: Propeller Shaft Seal Ring, Electronics Enclosure Gasket, Waterproof Cable Gland, M3x10mm Mounting Screws +2 more; 3x 3d_printed: Main Controller Mount, RC Receiver Mount, Conveyor Motor Driver Mount\n\nAssembly: Internal Mounting Plate → Boat Hull (M3 bolts); Debris Collection Scoop → Boat Hull (M3 bolts); Debris Storage Bin → Boat Hull (M3 bolts); Solar Panel Mount Frame → Boat Hull (M3 bolts); Electronics Enclosure Base → Internal Mounting Plate (M3 bolts); Electronics Enclosure Gasket → Electronics Enclosure Base (seated); Electronics Enclosure Lid → Electronics Enclosure Base (M3 screws); Waterproof Cable Gland → Electronics Enclosure Base (threaded connection); Left Propulsion Motor Mount → Internal Mounting Plate (M3 bolts); Right Propulsion Motor Mount → Internal Mounting Plate (M3 bolts); Left Propeller Shaft Coupling → Left Propeller Shaft (set screws); Right Propeller Shaft Coupling → Right Propeller Shaft (set screws); Left Propulsion Propeller → Left Propeller Shaft (threaded connection); Right Propulsion Propeller → Right Propeller Shaft (threaded connection); Left Propeller Shaft Bearing → Boat Hull (pressed fit/M3 bolts) (+31 more connections)"
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG capable)",
+      "M3 hex key set",
+      "Screwdriver set (Phillips/Flathead)",
+      "Wire strippers",
+      "Crimping tool (if using crimp connectors)",
+      "Soldering iron with fine tip",
+      "Solder (lead-free recommended)",
+      "Multimeter",
+      "Hobby knife or deburring tool",
+      "Pliers (needle-nose)",
+      "Heat gun (for heat shrink tubing)",
+      "Drill and drill bits (for boat hull modifications)",
+      "Adhesive/Sealant (for shaft seals)",
+      "Cable ties/Velcro straps"
+    ],
+    "assumptions": [
+      "Basic soldering experience",
+      "Familiarity with 3D printer operation and PETG printing",
+      "Basic understanding of DC electronics and safe battery handling (LiPo)",
+      "Access to a computer with Arduino IDE or similar development environment for microcontroller programming",
+      "Ability to compile and upload firmware to the Main Controller (main_mcu)",
+      "Access to a 12V DC power supply for initial testing (optional, but recommended)"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "data",
+      "label": "MCU to Left ESC Signal",
+      "source": "main_mcu",
+      "target": "esc_left",
+      "protocol": "pwm",
+      "sourcePin": "GPIO16",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Right ESC Signal",
+      "source": "main_mcu",
+      "target": "esc_right",
+      "protocol": "pwm",
+      "sourcePin": "GPIO17",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "label": "RC Receiver to MCU iBUS",
+      "source": "rc_receiver",
+      "target": "main_mcu",
+      "protocol": "uart",
+      "sourcePin": "iBUS",
+      "targetPin": "GPIO18"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Conveyor Driver IN1",
+      "source": "main_mcu",
+      "target": "conveyor_motor_driver",
+      "protocol": "gpio",
+      "sourcePin": "GPIO25",
+      "targetPin": "IN1"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Conveyor Driver IN2",
+      "source": "main_mcu",
+      "target": "conveyor_motor_driver",
+      "protocol": "gpio",
+      "sourcePin": "GPIO26",
+      "targetPin": "IN2"
+    },
+    {
+      "type": "power",
+      "source": "conveyor_motor_driver",
+      "target": "conveyor_motor",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "voltage_regulator_5v",
+      "target": "rc_receiver",
+      "sourcePin": "Vout-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "voltage_regulator_5v",
+      "target": "conveyor_motor_driver",
+      "sourcePin": "Vout-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "voltage_regulator_5v",
+      "target": "main_mcu",
+      "sourcePin": "Vout-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "solar_panel",
+      "target": "mppt_charge_controller",
+      "voltage": "12V-18V (nominal 12V), 1A-5A (peak 5A, nominal 1A)"
+    },
+    {
+      "type": "power",
+      "source": "mppt_charge_controller",
+      "target": "lipo_battery",
+      "voltage": "12.6V"
+    },
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "mppt_charge_controller",
+      "voltage": "12.6V"
+    },
+    {
+      "type": "power",
+      "source": "mppt_charge_controller",
+      "target": "power_distribution_board",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "power_distribution_board",
+      "target": "esc_left",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "power_distribution_board",
+      "target": "esc_right",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "esc_left",
+      "target": "propulsion_motor_left",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "esc_right",
+      "target": "propulsion_motor_right",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "power_distribution_board",
+      "target": "conveyor_motor_driver",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "conveyor_motor_driver",
+      "target": "conveyor_motor",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "voltage_regulator_5v",
+      "target": "rc_receiver",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "power_distribution_board",
+      "target": "voltage_regulator_5v",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "voltage_regulator_5v",
+      "target": "conveyor_motor_driver",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "voltage_regulator_5v",
+      "target": "main_mcu",
+      "voltage": "5V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M3 bolts",
+      "source": "internal_mounting_plate",
+      "target": "boat_hull"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "debris_scoop_front",
+      "target": "boat_hull"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "debris_storage_bin",
+      "target": "boat_hull"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "solar_panel_mount_frame",
+      "target": "boat_hull"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "electronics_enclosure_base",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "seated",
+      "source": "electronics_enclosure_gasket",
+      "target": "electronics_enclosure_base"
+    },
+    {
+      "label": "M3 screws",
+      "source": "electronics_enclosure_lid",
+      "target": "electronics_enclosure_base"
+    },
+    {
+      "label": "threaded connection",
+      "source": "cable_glands_waterproof_3x",
+      "target": "electronics_enclosure_base"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "propulsion_motor_mount_left",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "propulsion_motor_mount_right",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "set screws",
+      "source": "left_propeller_shaft_coupling",
+      "target": "left_propeller_shaft"
+    },
+    {
+      "label": "set screws",
+      "source": "right_propeller_shaft_coupling",
+      "target": "right_propeller_shaft"
+    },
+    {
+      "label": "threaded connection",
+      "source": "left_propeller",
+      "target": "left_propeller_shaft"
+    },
+    {
+      "label": "threaded connection",
+      "source": "right_propeller",
+      "target": "right_propeller_shaft"
+    },
+    {
+      "label": "pressed fit/M3 bolts",
+      "source": "left_propeller_bearing",
+      "target": "boat_hull"
+    },
+    {
+      "label": "pressed fit/M3 bolts",
+      "source": "right_propeller_bearing",
+      "target": "boat_hull"
+    },
+    {
+      "label": "seated",
+      "source": "left_propeller_shaft",
+      "target": "left_propeller_bearing"
+    },
+    {
+      "label": "seated",
+      "source": "right_propeller_shaft",
+      "target": "right_propeller_bearing"
+    },
+    {
+      "label": "seated/adhesive",
+      "source": "shaft_seal_ring_propeller_2x",
+      "target": "boat_hull"
+    },
+    {
+      "label": "sealed against",
+      "source": "left_propeller_shaft",
+      "target": "shaft_seal_ring_propeller_2x"
+    },
+    {
+      "label": "sealed against",
+      "source": "right_propeller_shaft",
+      "target": "shaft_seal_ring_propeller_2x"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "conveyor_belt_frame_front",
+      "target": "boat_hull"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "conveyor_belt_frame_rear",
+      "target": "boat_hull"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "conveyor_belt_frame_front",
+      "target": "conveyor_belt_frame_rear"
+    },
+    {
+      "label": "bearings/shafts",
+      "source": "conveyor_belt_rollers_2x",
+      "target": "conveyor_belt_frame_front"
+    },
+    {
+      "label": "bearings/shafts",
+      "source": "conveyor_belt_rollers_2x",
+      "target": "conveyor_belt_frame_rear"
+    },
+    {
+      "label": "wrapped around",
+      "source": "conveyor_belt_material",
+      "target": "conveyor_belt_rollers_2x"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "conveyor_motor_mount",
+      "target": "conveyor_belt_frame_rear"
+    },
+    {
+      "label": "press fit/set screw (roller side)",
+      "source": "conveyor_gear_motor_side",
+      "target": "conveyor_belt_rollers_2x"
+    },
+    {
+      "label": "meshed",
+      "source": "conveyor_gear_motor_side",
+      "target": "conveyor_gear_roller_side"
+    },
+    {
+      "label": "press fit/set screw (motor side)",
+      "source": "conveyor_gear_roller_side",
+      "target": "conveyor_belt_rollers_2x"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "esc_mount_left",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "esc_mount_right",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "main_mcu_mount",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "rc_receiver_mount",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "conveyor_motor_driver_mount",
+      "target": "internal_mounting_plate"
+    },
+    {
+      "label": "mount",
+      "source": "propulsion_motor_mount_left",
+      "target": "propulsion_motor_left"
+    },
+    {
+      "label": "mount",
+      "source": "propulsion_motor_mount_right",
+      "target": "propulsion_motor_right"
+    },
+    {
+      "label": "mount",
+      "source": "conveyor_motor_mount",
+      "target": "conveyor_motor"
+    },
+    {
+      "label": "mount",
+      "source": "solar_panel_mount_frame",
+      "target": "solar_panel"
+    },
+    {
+      "label": "mount",
+      "source": "lipo_battery_strap",
+      "target": "lipo_battery"
+    },
+    {
+      "label": "mount",
+      "source": "esc_mount_left",
+      "target": "esc_left"
+    },
+    {
+      "label": "mount",
+      "source": "esc_mount_right",
+      "target": "esc_right"
+    },
+    {
+      "label": "mount",
+      "source": "main_mcu_mount",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "rc_receiver_mount",
+      "target": "rc_receiver"
+    },
+    {
+      "label": "mount",
+      "source": "conveyor_motor_driver_mount",
+      "target": "conveyor_motor_driver"
+    }
+  ],
+  "projectId": "03aa25a6-cbae-4478-bca7-c8db7d245799"
+}

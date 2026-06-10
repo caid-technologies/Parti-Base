@@ -1,0 +1,244 @@
+[
+  {
+    "type": "power",
+    "label": "Main 12V Power",
+    "source": "power_supply",
+    "target": "ramps_shield",
+    "current": "10A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "MCU 5V Power",
+    "source": "ramps_shield",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "RAMPS to MCU Control",
+    "source": "ramps_shield",
+    "target": "main_mcu",
+    "protocol": "gpio",
+    "sourcePin": "Various",
+    "targetPin": "Various"
+  },
+  {
+    "type": "data",
+    "label": "X Driver Control",
+    "source": "ramps_shield",
+    "target": "x_axis_driver",
+    "protocol": "gpio",
+    "sourcePin": "X-STEP/DIR/EN",
+    "targetPin": "STEP/DIR/ENABLE"
+  },
+  {
+    "type": "power",
+    "label": "X Driver VMOT Power",
+    "source": "ramps_shield",
+    "target": "x_axis_driver",
+    "current": "1.5A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "X Driver VDD Power",
+    "source": "ramps_shield",
+    "target": "x_axis_driver",
+    "current": "50mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "X Stepper Power",
+    "source": "x_axis_driver",
+    "target": "x_axis_stepper",
+    "current": "1A",
+    "voltage": "12V"
+  },
+  {
+    "type": "data",
+    "label": "Y Driver Control",
+    "source": "ramps_shield",
+    "target": "y_axis_driver",
+    "protocol": "gpio",
+    "sourcePin": "Y-STEP/DIR/EN",
+    "targetPin": "STEP/DIR/ENABLE"
+  },
+  {
+    "type": "power",
+    "label": "Y Driver VMOT Power",
+    "source": "ramps_shield",
+    "target": "y_axis_driver",
+    "current": "1.5A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Y Driver VDD Power",
+    "source": "ramps_shield",
+    "target": "y_axis_driver",
+    "current": "50mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Y Stepper Power",
+    "source": "y_axis_driver",
+    "target": "y_axis_stepper",
+    "current": "1A",
+    "voltage": "12V"
+  },
+  {
+    "type": "data",
+    "label": "Z Driver Control",
+    "source": "ramps_shield",
+    "target": "z_axis_driver",
+    "protocol": "gpio",
+    "sourcePin": "Z-STEP/DIR/EN",
+    "targetPin": "STEP/DIR/ENABLE"
+  },
+  {
+    "type": "power",
+    "label": "Z Driver VMOT Power",
+    "source": "ramps_shield",
+    "target": "z_axis_driver",
+    "current": "1.5A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Z Driver VDD Power",
+    "source": "ramps_shield",
+    "target": "z_axis_driver",
+    "current": "50mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Z Stepper Power",
+    "source": "z_axis_driver",
+    "target": "z_axis_stepper",
+    "current": "1A",
+    "voltage": "12V"
+  },
+  {
+    "type": "data",
+    "label": "Extruder Driver Control",
+    "source": "ramps_shield",
+    "target": "extruder_driver",
+    "protocol": "gpio",
+    "sourcePin": "E0-STEP/DIR/EN",
+    "targetPin": "STEP/DIR/ENABLE"
+  },
+  {
+    "type": "power",
+    "label": "Extruder Driver VMOT Power",
+    "source": "ramps_shield",
+    "target": "extruder_driver",
+    "current": "1.5A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Extruder Driver VDD Power",
+    "source": "ramps_shield",
+    "target": "extruder_driver",
+    "current": "50mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Extruder Stepper Power",
+    "source": "extruder_driver",
+    "target": "extruder_stepper",
+    "current": "1A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "Hotend Heater D10",
+    "source": "ramps_shield",
+    "target": "hotend_heater_cartridge",
+    "current": "5A",
+    "voltage": "12V"
+  },
+  {
+    "type": "data",
+    "label": "Hotend Thermistor Input",
+    "source": "ramps_shield",
+    "target": "hotend_thermistor",
+    "protocol": "analog",
+    "sourcePin": "T0",
+    "targetPin": "2-wire signal"
+  },
+  {
+    "type": "data",
+    "label": "X Min Endstop Signal",
+    "source": "ramps_shield",
+    "target": "x_min_endstop",
+    "protocol": "gpio",
+    "sourcePin": "X-MIN",
+    "targetPin": "SIGNAL"
+  },
+  {
+    "type": "power",
+    "label": "X Min Endstop VCC",
+    "source": "ramps_shield",
+    "target": "x_min_endstop",
+    "current": "10mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Y Min Endstop Signal",
+    "source": "ramps_shield",
+    "target": "y_min_endstop",
+    "protocol": "gpio",
+    "sourcePin": "Y-MIN",
+    "targetPin": "SIGNAL"
+  },
+  {
+    "type": "power",
+    "label": "Y Min Endstop VCC",
+    "source": "ramps_shield",
+    "target": "y_min_endstop",
+    "current": "10mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Z Min Endstop Signal",
+    "source": "ramps_shield",
+    "target": "z_min_endstop",
+    "protocol": "gpio",
+    "sourcePin": "Z-MIN",
+    "targetPin": "SIGNAL"
+  },
+  {
+    "type": "power",
+    "label": "Z Min Endstop VCC",
+    "source": "ramps_shield",
+    "target": "z_min_endstop",
+    "current": "10mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Heated Bed D8",
+    "source": "ramps_shield",
+    "target": "heated_bed",
+    "current": "10A",
+    "voltage": "12V"
+  },
+  {
+    "type": "data",
+    "label": "Bed Thermistor Input",
+    "source": "ramps_shield",
+    "target": "bed_thermistor",
+    "protocol": "analog",
+    "sourcePin": "T1",
+    "targetPin": "2-wire signal"
+  }
+]

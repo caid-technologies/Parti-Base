@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.eggs/
+build/
+dist/
+wheels/
+.venv/
+venv/
+env/
+# conda environment created inside the repo (see README: `conda create -n datagen`)
+.conda/
+
+# Tool caches (formatter / linter / type-checker / tests)
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE / editor
+.claude/
+.vscode/
+.idea/
+*.swp
+
+# Project docs / agent instructions (kept local)
+CLAUDE.md
+docs/
+
+# Generated artifacts (normalized records, variants, pilot.jsonl, LoRA/GGUF, etc.)
+out/
+
+# OS
+.DS_Store
+Thumbs.db

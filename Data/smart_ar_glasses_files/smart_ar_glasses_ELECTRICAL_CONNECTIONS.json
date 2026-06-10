@@ -1,0 +1,250 @@
+[
+  {
+    "type": "power",
+    "label": "Battery to Charger",
+    "source": "power_lipo_battery",
+    "target": "power_charging_circuit",
+    "current": "500mA",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Charger Output to Buck",
+    "source": "power_charging_circuit",
+    "target": "power_buck_converter",
+    "current": "500mA",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "5V Power to MCU",
+    "source": "power_buck_converter",
+    "target": "mcu_main",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Power to Display",
+    "source": "power_buck_converter",
+    "target": "display_ar_micro",
+    "current": "20mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Power to Camera",
+    "source": "power_buck_converter",
+    "target": "camera_fpv",
+    "current": "80mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Power to Microphone",
+    "source": "power_buck_converter",
+    "target": "mic_voice_input",
+    "current": "10mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Power to GPS",
+    "source": "power_buck_converter",
+    "target": "gps_navigation",
+    "current": "50mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "imu_head_tracking",
+    "protocol": "I2C",
+    "sourcePin": "SDA",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "imu_head_tracking",
+    "protocol": "I2C",
+    "sourcePin": "SCL",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "gps_navigation",
+    "protocol": "UART",
+    "sourcePin": "TXD0",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "source": "gps_navigation",
+    "target": "mcu_main",
+    "protocol": "UART",
+    "sourcePin": "TX",
+    "targetPin": "RXD0"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "display_ar_micro",
+    "protocol": "I2C",
+    "sourcePin": "SDA",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "display_ar_micro",
+    "protocol": "I2C",
+    "sourcePin": "SCL",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO2",
+    "targetPin": "PCLK"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO4",
+    "targetPin": "VSYNC"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO16",
+    "targetPin": "HREF"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO17",
+    "targetPin": "XCLK"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO21",
+    "targetPin": "D0"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO22",
+    "targetPin": "D1"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO23",
+    "targetPin": "D2"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO25",
+    "targetPin": "D3"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO26",
+    "targetPin": "D4"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO34",
+    "targetPin": "D5"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO35",
+    "targetPin": "D6"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "Parallel DVP",
+    "sourcePin": "GPIO36",
+    "targetPin": "D7"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "SCCB/I2C",
+    "sourcePin": "SDA",
+    "targetPin": "SIOD"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "camera_fpv",
+    "protocol": "SCCB/I2C",
+    "sourcePin": "SCL",
+    "targetPin": "SIOC"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "mic_voice_input",
+    "protocol": "Analog",
+    "sourcePin": "GPIO32",
+    "targetPin": "OUT"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "speaker_audio_out",
+    "protocol": "PWM/DAC",
+    "sourcePin": "GPIO18",
+    "targetPin": "SPK+"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "input_button_left",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO13",
+    "targetPin": "SIG"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "input_button_right",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO14",
+    "targetPin": "SIG"
+  }
+]

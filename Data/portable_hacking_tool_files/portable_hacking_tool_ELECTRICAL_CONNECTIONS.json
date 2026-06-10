@@ -1,0 +1,182 @@
+[
+  {
+    "type": "power",
+    "label": "Battery Power",
+    "source": "lipo_battery",
+    "target": "power_management",
+    "current": "2A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "SBC Power In",
+    "source": "power_management",
+    "target": "main_sbc",
+    "current": "3A",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Display Video",
+    "source": "main_sbc",
+    "target": "touch_display",
+    "protocol": "hdmi",
+    "sourcePin": "HDMI",
+    "targetPin": "HDMI (Video In)"
+  },
+  {
+    "type": "data",
+    "label": "Display Touch",
+    "source": "main_sbc",
+    "target": "touch_display",
+    "protocol": "usb",
+    "sourcePin": "USB",
+    "targetPin": "USB (Touch)"
+  },
+  {
+    "type": "data",
+    "label": "WiFi Adapter",
+    "source": "main_sbc",
+    "target": "external_wifi_adapter",
+    "protocol": "usb",
+    "sourcePin": "USB",
+    "targetPin": "USB (Data/Power)"
+  },
+  {
+    "type": "data",
+    "label": "Battery Monitor",
+    "source": "main_sbc",
+    "target": "power_management",
+    "protocol": "i2c",
+    "sourcePin": "GPIO (I2C)",
+    "targetPin": "GPIO (I2C/Power)"
+  },
+  {
+    "type": "power",
+    "label": "Joystick VCC",
+    "source": "main_sbc",
+    "target": "joystick_input",
+    "current": "50mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Joystick GND",
+    "source": "main_sbc",
+    "target": "joystick_input",
+    "current": "0A",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Joystick X-axis",
+    "source": "joystick_input",
+    "target": "main_sbc",
+    "protocol": "gpio",
+    "sourcePin": "VRX",
+    "targetPin": "GPIO (ADC via external, or Digital)"
+  },
+  {
+    "type": "data",
+    "label": "Joystick Y-axis",
+    "source": "joystick_input",
+    "target": "main_sbc",
+    "protocol": "gpio",
+    "sourcePin": "VRY",
+    "targetPin": "GPIO (ADC via external, or Digital)"
+  },
+  {
+    "type": "data",
+    "label": "Joystick Button",
+    "source": "joystick_input",
+    "target": "main_sbc",
+    "protocol": "gpio",
+    "sourcePin": "SW",
+    "targetPin": "GPIO"
+  },
+  {
+    "type": "power",
+    "label": "Button Up GND",
+    "source": "main_sbc",
+    "target": "button_up",
+    "current": "0A",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Button Up Signal",
+    "source": "button_up",
+    "target": "main_sbc",
+    "protocol": "gpio",
+    "sourcePin": "Signal",
+    "targetPin": "GPIO"
+  },
+  {
+    "type": "power",
+    "label": "Button Down GND",
+    "source": "main_sbc",
+    "target": "button_down",
+    "current": "0A",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Button Down Signal",
+    "source": "button_down",
+    "target": "main_sbc",
+    "protocol": "gpio",
+    "sourcePin": "Signal",
+    "targetPin": "GPIO"
+  },
+  {
+    "type": "power",
+    "label": "Button Left GND",
+    "source": "main_sbc",
+    "target": "button_left",
+    "current": "0A",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Button Left Signal",
+    "source": "button_left",
+    "target": "main_sbc",
+    "protocol": "gpio",
+    "sourcePin": "Signal",
+    "targetPin": "GPIO"
+  },
+  {
+    "type": "power",
+    "label": "Button Right GND",
+    "source": "main_sbc",
+    "target": "button_right",
+    "current": "0A",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Button Right Signal",
+    "source": "button_right",
+    "target": "main_sbc",
+    "protocol": "gpio",
+    "sourcePin": "Signal",
+    "targetPin": "GPIO"
+  },
+  {
+    "type": "power",
+    "label": "Button Enter GND",
+    "source": "main_sbc",
+    "target": "button_enter",
+    "current": "0A",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Button Enter Signal",
+    "source": "button_enter",
+    "target": "main_sbc",
+    "protocol": "gpio",
+    "sourcePin": "Signal",
+    "targetPin": "GPIO"
+  }
+]

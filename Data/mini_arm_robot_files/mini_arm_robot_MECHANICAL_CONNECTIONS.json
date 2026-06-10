@@ -1,0 +1,122 @@
+[
+  {
+    "label": "fastened to",
+    "source": "base_housing_bottom",
+    "target": "base_plate"
+  },
+  {
+    "label": "fastened to",
+    "source": "base_housing_top",
+    "target": "base_housing_bottom"
+  },
+  {
+    "label": "fastened to",
+    "source": "base_servo_mount",
+    "target": "base_housing_bottom"
+  },
+  {
+    "label": "fastened to",
+    "source": "base_controller_mount",
+    "target": "base_housing_bottom"
+  },
+  {
+    "label": "fastened to",
+    "source": "power_management_mount",
+    "target": "base_housing_bottom"
+  },
+  {
+    "label": "fastened to",
+    "source": "control_joystick_mount",
+    "target": "base_housing_top"
+  },
+  {
+    "label": "rotational joint (driven by servo)",
+    "source": "shoulder_arm_segment",
+    "target": "base_servo_mount"
+  },
+  {
+    "label": "pressed into",
+    "source": "ball_bearing_6x19x6mm",
+    "target": "base_housing_top"
+  },
+  {
+    "label": "shaft seated in",
+    "source": "shoulder_arm_segment",
+    "target": "ball_bearing_6x19x6mm"
+  },
+  {
+    "label": "fastened to",
+    "source": "shoulder_servo_mount",
+    "target": "shoulder_arm_segment"
+  },
+  {
+    "label": "rotational joint (driven by servo)",
+    "source": "elbow_arm_segment",
+    "target": "shoulder_servo_mount"
+  },
+  {
+    "label": "fastened to",
+    "source": "elbow_servo_mount",
+    "target": "elbow_arm_segment"
+  },
+  {
+    "label": "rotational joint (driven by servo)",
+    "source": "wrist_segment",
+    "target": "elbow_servo_mount"
+  },
+  {
+    "label": "fastened to",
+    "source": "wrist_rotate_servo_mount",
+    "target": "wrist_segment"
+  },
+  {
+    "label": "rotational joint (driven by servo)",
+    "source": "pen_tool_holder",
+    "target": "wrist_rotate_servo_mount"
+  },
+  {
+    "label": "adhered to",
+    "source": "rubber_feet",
+    "target": "base_plate"
+  },
+  {
+    "label": "mount",
+    "source": "base_servo_mount",
+    "target": "base_servo"
+  },
+  {
+    "label": "mount",
+    "source": "base_controller_mount",
+    "target": "main_controller"
+  },
+  {
+    "label": "mount",
+    "source": "power_management_mount",
+    "target": "power_management"
+  },
+  {
+    "label": "mount",
+    "source": "control_joystick_mount",
+    "target": "control_joystick"
+  },
+  {
+    "label": "mount",
+    "source": "shoulder_servo_mount",
+    "target": "shoulder_servo"
+  },
+  {
+    "label": "mount",
+    "source": "elbow_servo_mount",
+    "target": "elbow_servo"
+  },
+  {
+    "label": "mount",
+    "source": "wrist_rotate_servo_mount",
+    "target": "wrist_rotate_servo"
+  },
+  {
+    "label": "mount",
+    "source": "gripper_servo_mount",
+    "target": "gripper_servo"
+  }
+]

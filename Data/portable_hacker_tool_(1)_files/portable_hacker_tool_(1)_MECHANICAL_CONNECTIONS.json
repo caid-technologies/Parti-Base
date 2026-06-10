@@ -1,0 +1,152 @@
+[
+  {
+    "label": "assembles via m3_heat_set_inserts",
+    "source": "main_enclosure_top",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "fastens with m3_screws_case",
+    "source": "main_enclosure_top",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "mounted on mcu_standoffs_3d",
+    "source": "main_mcu",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "attached to",
+    "source": "mcu_standoffs_3d",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "receives",
+    "source": "mcu_standoffs_3d",
+    "target": "m2_heat_set_inserts"
+  },
+  {
+    "label": "fastens to mcu_standoffs_3d",
+    "source": "main_mcu",
+    "target": "m2_screws_short"
+  },
+  {
+    "label": "secured to",
+    "source": "oled_display",
+    "target": "display_mount_3d"
+  },
+  {
+    "label": "integrates into",
+    "source": "display_mount_3d",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "fastens to display_mount_3d",
+    "source": "oled_display",
+    "target": "m2_screws_short"
+  },
+  {
+    "label": "mounted into",
+    "source": "button_up",
+    "target": "button_array_frame_3d"
+  },
+  {
+    "label": "mounted into",
+    "source": "button_down",
+    "target": "button_array_frame_3d"
+  },
+  {
+    "label": "mounted into",
+    "source": "button_left",
+    "target": "button_array_frame_3d"
+  },
+  {
+    "label": "mounted into",
+    "source": "button_right",
+    "target": "button_array_frame_3d"
+  },
+  {
+    "label": "mounted into",
+    "source": "button_select",
+    "target": "button_array_frame_3d"
+  },
+  {
+    "label": "integrates into",
+    "source": "button_array_frame_3d",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "secured within",
+    "source": "lipo_battery",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mounted to",
+    "source": "lipo_battery",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "mounted on",
+    "source": "lipo_charger",
+    "target": "charger_regulator_mount_3d"
+  },
+  {
+    "label": "mounted on",
+    "source": "power_regulator_3v3",
+    "target": "charger_regulator_mount_3d"
+  },
+  {
+    "label": "attached to",
+    "source": "charger_regulator_mount_3d",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "connects to",
+    "source": "wifi_bt_antenna",
+    "target": "wifi_bt_antenna_port_3d"
+  },
+  {
+    "label": "integrates into",
+    "source": "wifi_bt_antenna_port_3d",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "mounted on",
+    "source": "sub_ghz_rf_module",
+    "target": "sub_ghz_module_mount_3d"
+  },
+  {
+    "label": "attached to",
+    "source": "sub_ghz_module_mount_3d",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "mounted on",
+    "source": "nfc_rfid_module",
+    "target": "nfc_module_mount_3d"
+  },
+  {
+    "label": "attached to (flush for interaction)",
+    "source": "nfc_module_mount_3d",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "connects to",
+    "source": "sub_ghz_antenna",
+    "target": "sub_ghz_antenna"
+  },
+  {
+    "label": "integrates into",
+    "source": "sub_ghz_antenna",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "engages with",
+    "source": "m2_screws_short",
+    "target": "m2_heat_set_inserts"
+  },
+  {
+    "label": "engages with",
+    "source": "m3_screws_case",
+    "target": "m3_heat_set_inserts"
+  }
+]

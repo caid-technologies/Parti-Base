@@ -1,0 +1,122 @@
+[
+  {
+    "label": "attached via",
+    "source": "bow_riser_handle",
+    "target": "upper_bow_limb"
+  },
+  {
+    "label": "attached via",
+    "source": "bow_riser_handle",
+    "target": "lower_bow_limb"
+  },
+  {
+    "label": "secured by",
+    "source": "upper_bow_limb",
+    "target": "limb_attachment_bolt"
+  },
+  {
+    "label": "secured by",
+    "source": "lower_bow_limb",
+    "target": "limb_attachment_bolt"
+  },
+  {
+    "label": "fastened with",
+    "source": "limb_attachment_bolt",
+    "target": "limb_attachment_nut"
+  },
+  {
+    "label": "mounts at end with",
+    "source": "upper_bow_limb",
+    "target": "upper_binary_cam"
+  },
+  {
+    "label": "mounts at end with",
+    "source": "lower_bow_limb",
+    "target": "lower_binary_cam"
+  },
+  {
+    "label": "rotates on",
+    "source": "upper_binary_cam",
+    "target": "cam_axle_upper"
+  },
+  {
+    "label": "rotates on",
+    "source": "lower_binary_cam",
+    "target": "cam_axle_lower"
+  },
+  {
+    "label": "supported by",
+    "source": "cam_axle_upper",
+    "target": "cam_bearing_upper_inner"
+  },
+  {
+    "label": "supported by",
+    "source": "cam_axle_upper",
+    "target": "cam_bearing_upper_outer"
+  },
+  {
+    "label": "supported by",
+    "source": "cam_axle_lower",
+    "target": "cam_bearing_lower_inner"
+  },
+  {
+    "label": "supported by",
+    "source": "cam_axle_lower",
+    "target": "cam_bearing_lower_outer"
+  },
+  {
+    "label": "routed around",
+    "source": "bowstring",
+    "target": "upper_binary_cam"
+  },
+  {
+    "label": "routed around",
+    "source": "bowstring",
+    "target": "lower_binary_cam"
+  },
+  {
+    "label": "routed around",
+    "source": "control_cable",
+    "target": "upper_binary_cam"
+  },
+  {
+    "label": "routed around",
+    "source": "control_cable",
+    "target": "lower_binary_cam"
+  },
+  {
+    "label": "routed around",
+    "source": "buss_cable",
+    "target": "upper_binary_cam"
+  },
+  {
+    "label": "routed around",
+    "source": "buss_cable",
+    "target": "lower_binary_cam"
+  },
+  {
+    "label": "contains for mounting",
+    "source": "bow_riser_handle",
+    "target": "accessory_insert_m3"
+  },
+  {
+    "label": "mounts to",
+    "source": "bow_riser_handle",
+    "target": "arrow_rest_3d_printed"
+  },
+  {
+    "label": "secured by",
+    "source": "arrow_rest_3d_printed",
+    "target": "arrow_rest_mounting_bolt"
+  },
+  {
+    "label": "fastens into",
+    "source": "arrow_rest_mounting_bolt",
+    "target": "accessory_insert_m3"
+  },
+  {
+    "label": "has positioned on",
+    "source": "bowstring",
+    "target": "nocking_point_3d_printed"
+  }
+]

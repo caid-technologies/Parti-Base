@@ -1,0 +1,236 @@
+[
+  {
+    "type": "power",
+    "source": "battery_pack",
+    "target": "step_down_converter",
+    "current": "10A",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "battery_pack",
+    "target": "motor_controller_hat",
+    "current": "8A",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "step_down_converter",
+    "target": "main_computer",
+    "current": "3A",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "main_computer",
+    "target": "motor_controller_hat",
+    "protocol": "i2c",
+    "sourcePin": "GPIO",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "power",
+    "label": "Motor Drive",
+    "source": "motor_controller_hat",
+    "target": "drive_motor_left",
+    "current": "2A",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "label": "Motor Drive",
+    "source": "motor_controller_hat",
+    "target": "drive_motor_right",
+    "current": "2A",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "motor_controller_hat",
+    "target": "gantry_stepper",
+    "current": "1.5A",
+    "voltage": "24V"
+  },
+  {
+    "type": "data",
+    "source": "main_computer",
+    "target": "lidar_sensor",
+    "protocol": "uart",
+    "sourcePin": "GPIO",
+    "targetPin": "TX"
+  },
+  {
+    "type": "power",
+    "source": "main_computer",
+    "target": "lidar_sensor",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "main_computer",
+    "target": "imu_module",
+    "protocol": "i2c",
+    "sourcePin": "GPIO",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "power",
+    "source": "main_computer",
+    "target": "imu_module",
+    "current": "100mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "drive_motor_left",
+    "target": "main_computer",
+    "protocol": "gpio",
+    "sourcePin": "EncA",
+    "targetPin": "GPIO"
+  },
+  {
+    "type": "data",
+    "source": "drive_motor_right",
+    "target": "main_computer",
+    "protocol": "gpio",
+    "sourcePin": "EncA",
+    "targetPin": "GPIO"
+  },
+  {
+    "type": "data",
+    "source": "can_transceiver",
+    "target": "arm_1_joint_1",
+    "voltage": "5V",
+    "protocol": "can",
+    "sourcePin": "CAN_H",
+    "targetPin": "HallA"
+  },
+  {
+    "type": "data",
+    "source": "arm_1_joint_1",
+    "target": "arm_1_joint_2_6",
+    "protocol": "can",
+    "sourcePin": "HallA",
+    "targetPin": "CAN_H"
+  },
+  {
+    "type": "data",
+    "source": "can_transceiver",
+    "target": "arm_2_joint_1",
+    "voltage": "5V",
+    "protocol": "can",
+    "sourcePin": "CAN_L",
+    "targetPin": "HallA"
+  },
+  {
+    "type": "data",
+    "source": "arm_2_joint_1",
+    "target": "arm_2_joint_2_6",
+    "protocol": "can",
+    "sourcePin": "HallA",
+    "targetPin": "CAN_L"
+  },
+  {
+    "type": "power",
+    "source": "battery_pack",
+    "target": "bldc_bus_bar",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "bldc_bus_bar",
+    "target": "arm_1_joint_1",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "bldc_bus_bar",
+    "target": "arm_2_joint_1",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "bldc_bus_bar",
+    "target": "arm_1_joint_2_6",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "bldc_bus_bar",
+    "target": "arm_2_joint_2_6",
+    "voltage": "24V"
+  },
+  {
+    "type": "data",
+    "source": "main_computer",
+    "target": "can_transceiver",
+    "voltage": "3.3V",
+    "sourcePin": "GPIO25",
+    "targetPin": "GPIO25"
+  },
+  {
+    "type": "data",
+    "source": "main_computer",
+    "target": "can_transceiver",
+    "voltage": "3.3V",
+    "sourcePin": "MOSI",
+    "targetPin": "MOSI"
+  },
+  {
+    "type": "data",
+    "source": "main_computer",
+    "target": "can_transceiver",
+    "voltage": "3.3V",
+    "sourcePin": "MISO",
+    "targetPin": "MISO"
+  },
+  {
+    "type": "data",
+    "source": "main_computer",
+    "target": "can_transceiver",
+    "voltage": "3.3V",
+    "sourcePin": "SCK",
+    "targetPin": "SCK"
+  },
+  {
+    "type": "data",
+    "source": "main_computer",
+    "target": "can_transceiver",
+    "voltage": "3.3V",
+    "sourcePin": "CE0",
+    "targetPin": "CE0"
+  },
+  {
+    "type": "data",
+    "source": "arm_1_joint_2_6",
+    "target": "arm_1_joint_7",
+    "voltage": "5V/CAN FD",
+    "sourcePin": "CAN_H",
+    "targetPin": "CAN_H"
+  },
+  {
+    "type": "data",
+    "source": "arm_2_joint_2_6",
+    "target": "arm_2_joint_7",
+    "voltage": "5V/CAN FD",
+    "sourcePin": "CAN_H",
+    "targetPin": "CAN_H"
+  },
+  {
+    "type": "power",
+    "source": "bldc_bus_bar",
+    "target": "arm_1_joint_7",
+    "voltage": "24V",
+    "sourcePin": "OUT+",
+    "targetPin": "V+"
+  },
+  {
+    "type": "power",
+    "source": "bldc_bus_bar",
+    "target": "arm_2_joint_7",
+    "voltage": "24V",
+    "sourcePin": "OUT-",
+    "targetPin": "V-"
+  }
+]

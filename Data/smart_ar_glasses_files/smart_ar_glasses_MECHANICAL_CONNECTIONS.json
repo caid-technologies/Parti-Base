@@ -1,0 +1,162 @@
+[
+  {
+    "label": "mounts_via_m1.7_screws",
+    "source": "spectacle_frame",
+    "target": "left_hinge"
+  },
+  {
+    "label": "mounts_via_m1.7_screws",
+    "source": "spectacle_frame",
+    "target": "right_hinge"
+  },
+  {
+    "label": "mounts_in_frame_recess",
+    "source": "spectacle_frame",
+    "target": "nose_pad_set"
+  },
+  {
+    "label": "integrated_bay_for",
+    "source": "spectacle_frame",
+    "target": "mcu_mount"
+  },
+  {
+    "label": "holds_with_m2_screws",
+    "source": "mcu_mount",
+    "target": "mcu"
+  },
+  {
+    "label": "integrated_mount_for",
+    "source": "spectacle_frame",
+    "target": "imu_housing"
+  },
+  {
+    "label": "encloses_and_secures",
+    "source": "imu_housing",
+    "target": "imu_head_tracking"
+  },
+  {
+    "label": "integrated_bay_for",
+    "source": "spectacle_frame",
+    "target": "gps_module_mount"
+  },
+  {
+    "label": "holds_with_m2_screws",
+    "source": "gps_module_mount",
+    "target": "gps_module"
+  },
+  {
+    "label": "integrated_bezel_for",
+    "source": "spectacle_frame",
+    "target": "oled_display_bezel"
+  },
+  {
+    "label": "secures_display_into_bezel",
+    "source": "oled_display_bezel",
+    "target": "micro_oled_display"
+  },
+  {
+    "label": "integrated_mount_for",
+    "source": "spectacle_frame",
+    "target": "camera_module_housing"
+  },
+  {
+    "label": "encloses_and_positions",
+    "source": "camera_module_housing",
+    "target": "camera_module"
+  },
+  {
+    "label": "integrates_over_microphone_opening",
+    "source": "spectacle_frame",
+    "target": "microphone_grille"
+  },
+  {
+    "label": "protects_microphone",
+    "source": "microphone_grille",
+    "target": "microphone"
+  },
+  {
+    "label": "integrates_over_speaker_opening",
+    "source": "spectacle_frame",
+    "target": "speaker_grille"
+  },
+  {
+    "label": "protects_speaker",
+    "source": "speaker_grille",
+    "target": "speaker_audio_out"
+  },
+  {
+    "label": "covers_battery_bay",
+    "source": "spectacle_frame",
+    "target": "battery_bay_cover"
+  },
+  {
+    "label": "mounts_sensors_for",
+    "source": "spectacle_frame",
+    "target": "small_push_buttons"
+  },
+  {
+    "label": "mounts_over_push_buttons",
+    "source": "spectacle_frame",
+    "target": "button_caps"
+  },
+  {
+    "label": "actuates_button",
+    "source": "button_caps",
+    "target": "small_push_buttons"
+  },
+  {
+    "label": "screws_into_frame_with_m2_screws",
+    "source": "mcu_mount",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "screws_into_frame_with_m1.7_screws",
+    "source": "imu_housing",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "screws_into_frame_with_m2_screws",
+    "source": "gps_module_mount",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "secures_with_m1.7_screws",
+    "source": "oled_display_bezel",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "secures_with_m1.7_screws",
+    "source": "camera_module_housing",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "snaps_into_frame_opening",
+    "source": "microphone_grille",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "snaps_into_frame_opening",
+    "source": "speaker_grille",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "latches_onto_battery_bay",
+    "source": "battery_bay_cover",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "attaches_to_button_recess_with_adhesive",
+    "source": "button_caps",
+    "target": "spectacle_frame"
+  },
+  {
+    "label": "connects_to_left_temple_via_m1.7_screws",
+    "source": "left_hinge",
+    "target": "left_temple_frame"
+  },
+  {
+    "label": "connects_to_right_temple_via_m1.7_screws",
+    "source": "right_hinge",
+    "target": "right_temple_frame"
+  }
+]

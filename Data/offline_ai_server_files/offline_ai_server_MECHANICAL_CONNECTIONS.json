@@ -1,0 +1,37 @@
+[
+  {
+    "label": "Mounting points for standoffs",
+    "source": "enclosure_base",
+    "target": "m2_standoffs"
+  },
+  {
+    "label": "Mounting PCB to standoffs",
+    "source": "m2_standoffs",
+    "target": "mcu_main"
+  },
+  {
+    "label": "Fastening PCB to standoffs",
+    "source": "m2_screws_pcb",
+    "target": "mcu_main"
+  },
+  {
+    "label": "Inserting heat inserts into base",
+    "source": "enclosure_base",
+    "target": "m3_heat_inserts"
+  },
+  {
+    "label": "Securing lid with screws",
+    "source": "enclosure_lid",
+    "target": "m3_screws_enclosure"
+  },
+  {
+    "label": "Screwing into heat inserts",
+    "source": "m3_screws_enclosure",
+    "target": "m3_heat_inserts"
+  },
+  {
+    "label": "Integrated slot for module",
+    "source": "enclosure_base",
+    "target": "storage_sd"
+  }
+]

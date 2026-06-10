@@ -1,0 +1,321 @@
+[
+  {
+    "type": "power",
+    "label": "Battery to Charger",
+    "source": "li_ion_battery_pack",
+    "target": "li_ion_charger",
+    "current": "2A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Battery GND",
+    "source": "li_ion_battery_pack",
+    "target": "li_ion_charger",
+    "current": "0A",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Charger SYS to PMIC VIN",
+    "source": "li_ion_charger",
+    "target": "power_management_ic",
+    "current": "1A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Charger GND",
+    "source": "li_ion_charger",
+    "target": "power_management_ic",
+    "current": "0A",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "PMIC VOUT to MCU VCC",
+    "source": "power_management_ic",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "PMIC VOUT to Iridium VCC",
+    "source": "power_management_ic",
+    "target": "iridium_sbd_module",
+    "current": "1A",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "PMIC VOUT to Audio Codec VDD",
+    "source": "power_management_ic",
+    "target": "audio_codec",
+    "current": "200mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "PMIC VOUT to Mic VDD",
+    "source": "power_management_ic",
+    "target": "microphone",
+    "current": "1mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "PMIC VOUT to OLED VCC",
+    "source": "power_management_ic",
+    "target": "oled_display",
+    "current": "50mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "PMIC GND to MCU GND",
+    "source": "power_management_ic",
+    "target": "main_mcu",
+    "current": "0A",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "PMIC GND to Iridium GND",
+    "source": "power_management_ic",
+    "target": "iridium_sbd_module",
+    "current": "0A",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "PMIC GND to Audio Codec GND",
+    "source": "power_management_ic",
+    "target": "audio_codec",
+    "current": "0A",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "PMIC GND to Mic GND",
+    "source": "power_management_ic",
+    "target": "microphone",
+    "current": "0A",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "PMIC GND to OLED GND",
+    "source": "power_management_ic",
+    "target": "oled_display",
+    "current": "0A",
+    "voltage": "GND"
+  },
+  {
+    "type": "data",
+    "label": "MCU TX to Iridium RX",
+    "source": "main_mcu",
+    "target": "iridium_sbd_module",
+    "protocol": "uart",
+    "sourcePin": "UART TX",
+    "targetPin": "UART RX"
+  },
+  {
+    "type": "data",
+    "label": "Iridium TX to MCU RX",
+    "source": "iridium_sbd_module",
+    "target": "main_mcu",
+    "protocol": "uart",
+    "sourcePin": "UART TX",
+    "targetPin": "UART RX"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Iridium On/Off",
+    "source": "main_mcu",
+    "target": "iridium_sbd_module",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "On/Off"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Iridium Reset",
+    "source": "main_mcu",
+    "target": "iridium_sbd_module",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "Reset"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Audio Codec MCLK",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "PWM",
+    "targetPin": "I2S MCLK"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Audio Codec BCLK",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "SPI",
+    "targetPin": "I2S BCLK"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Audio Codec LRCLK",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "GPIO",
+    "targetPin": "I2S LRCLK"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Audio Codec SDATAIN",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "SPI",
+    "targetPin": "I2S SDATAIN"
+  },
+  {
+    "type": "data",
+    "label": "Audio Codec SDATAOUT to MCU",
+    "source": "audio_codec",
+    "target": "main_mcu",
+    "protocol": "i2s",
+    "sourcePin": "I2S SDATAOUT",
+    "targetPin": "SPI"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Audio Codec I2C SDA",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2c",
+    "sourcePin": "I2C SDA",
+    "targetPin": "I2C SDA"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Audio Codec I2C SCL",
+    "source": "main_mcu",
+    "target": "audio_codec",
+    "protocol": "i2c",
+    "sourcePin": "I2C SCL",
+    "targetPin": "I2C SCL"
+  },
+  {
+    "type": "data",
+    "label": "Mic DOUT to Audio Codec MICIN",
+    "source": "microphone",
+    "target": "audio_codec",
+    "protocol": "pdm",
+    "sourcePin": "DOUT",
+    "targetPin": "MICIN"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Mic CLK",
+    "source": "main_mcu",
+    "target": "microphone",
+    "protocol": "pdm",
+    "sourcePin": "PWM",
+    "targetPin": "CLK"
+  },
+  {
+    "type": "data",
+    "label": "Audio Codec LOUT to Speaker",
+    "source": "audio_codec",
+    "target": "speaker",
+    "protocol": "analog",
+    "sourcePin": "LOUT",
+    "targetPin": "SPK+"
+  },
+  {
+    "type": "data",
+    "label": "Audio Codec ROUT to Speaker",
+    "source": "audio_codec",
+    "target": "speaker",
+    "protocol": "analog",
+    "sourcePin": "ROUT",
+    "targetPin": "SPK-"
+  },
+  {
+    "type": "data",
+    "label": "MCU to OLED SDA",
+    "source": "main_mcu",
+    "target": "oled_display",
+    "protocol": "i2c",
+    "sourcePin": "I2C SDA",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "label": "MCU to OLED SCL",
+    "source": "main_mcu",
+    "target": "oled_display",
+    "protocol": "i2c",
+    "sourcePin": "I2C SCL",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "label": "MCU to OLED Reset",
+    "source": "main_mcu",
+    "target": "oled_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "RES"
+  },
+  {
+    "type": "data",
+    "label": "MCU to OLED Data/Command",
+    "source": "main_mcu",
+    "target": "oled_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "DC"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Charger I2C SDA",
+    "source": "main_mcu",
+    "target": "li_ion_charger",
+    "protocol": "i2c",
+    "sourcePin": "I2C SDA",
+    "targetPin": "I2C SDA"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Charger I2C SCL",
+    "source": "main_mcu",
+    "target": "li_ion_charger",
+    "protocol": "i2c",
+    "sourcePin": "I2C SCL",
+    "targetPin": "I2C SCL"
+  },
+  {
+    "type": "data",
+    "label": "Charger Status to MCU",
+    "source": "li_ion_charger",
+    "target": "main_mcu",
+    "protocol": "gpio",
+    "sourcePin": "STAT",
+    "targetPin": "GPIO"
+  },
+  {
+    "type": "data",
+    "label": "Charger Interrupt to MCU",
+    "source": "li_ion_charger",
+    "target": "main_mcu",
+    "protocol": "gpio",
+    "sourcePin": "INT",
+    "targetPin": "GPIO"
+  }
+]

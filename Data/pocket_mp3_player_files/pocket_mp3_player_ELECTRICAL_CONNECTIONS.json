@@ -1,0 +1,280 @@
+[
+  {
+    "type": "power",
+    "label": "Charge Li-Po",
+    "source": "battery_charger_module",
+    "target": "li_po_battery",
+    "current": "1A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Power from Li-Po",
+    "source": "li_po_battery",
+    "target": "battery_charger_module",
+    "current": "1A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "USB-C Charge Input",
+    "source": "usb_c_breakout",
+    "target": "battery_charger_module",
+    "current": "1A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Regulated Power to ESP32",
+    "source": "battery_charger_module",
+    "target": "esp32_main_mcu",
+    "current": "200mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Power to OLED",
+    "source": "battery_charger_module",
+    "target": "oled_display",
+    "current": "20mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Power to MicroSD",
+    "source": "battery_charger_module",
+    "target": "microsd_card_module",
+    "current": "50mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Power to Audio DAC",
+    "source": "battery_charger_module",
+    "target": "audio_dac_amplifier",
+    "current": "100mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "label": "OLED SPI CLK",
+    "source": "esp32_main_mcu",
+    "target": "oled_display",
+    "protocol": "spi",
+    "sourcePin": "GPIO18",
+    "targetPin": "SCL (CLK)"
+  },
+  {
+    "type": "data",
+    "label": "OLED SPI MOSI",
+    "source": "esp32_main_mcu",
+    "target": "oled_display",
+    "protocol": "spi",
+    "sourcePin": "GPIO23",
+    "targetPin": "SDA (MOSI)"
+  },
+  {
+    "type": "data",
+    "label": "OLED Reset",
+    "source": "esp32_main_mcu",
+    "target": "oled_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO16",
+    "targetPin": "RES"
+  },
+  {
+    "type": "data",
+    "label": "OLED Data/Command",
+    "source": "esp32_main_mcu",
+    "target": "oled_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO17",
+    "targetPin": "DC"
+  },
+  {
+    "type": "data",
+    "label": "Play Button Input",
+    "source": "esp32_main_mcu",
+    "target": "play_button",
+    "protocol": "gpio",
+    "sourcePin": "GPIO32",
+    "targetPin": "GPIO Input"
+  },
+  {
+    "type": "power",
+    "label": "Play Button GND",
+    "source": "play_button",
+    "target": "battery_charger_module",
+    "current": "0mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Next Button Input",
+    "source": "esp32_main_mcu",
+    "target": "next_button",
+    "protocol": "gpio",
+    "sourcePin": "GPIO33",
+    "targetPin": "GPIO Input"
+  },
+  {
+    "type": "power",
+    "label": "Next Button GND",
+    "source": "next_button",
+    "target": "battery_charger_module",
+    "current": "0mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Previous Button Input",
+    "source": "esp32_main_mcu",
+    "target": "prev_button",
+    "protocol": "gpio",
+    "sourcePin": "GPIO34",
+    "targetPin": "GPIO Input"
+  },
+  {
+    "type": "power",
+    "label": "Previous Button GND",
+    "source": "prev_button",
+    "target": "battery_charger_module",
+    "current": "0mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "MicroSD CS",
+    "source": "esp32_main_mcu",
+    "target": "microsd_card_module",
+    "protocol": "spi",
+    "sourcePin": "GPIO5",
+    "targetPin": "CS"
+  },
+  {
+    "type": "data",
+    "label": "MicroSD CLK",
+    "source": "esp32_main_mcu",
+    "target": "microsd_card_module",
+    "protocol": "spi",
+    "sourcePin": "GPIO18",
+    "targetPin": "SCK"
+  },
+  {
+    "type": "data",
+    "label": "MicroSD MOSI",
+    "source": "esp32_main_mcu",
+    "target": "microsd_card_module",
+    "protocol": "spi",
+    "sourcePin": "GPIO23",
+    "targetPin": "MOSI"
+  },
+  {
+    "type": "data",
+    "label": "MicroSD MISO",
+    "source": "esp32_main_mcu",
+    "target": "microsd_card_module",
+    "protocol": "spi",
+    "sourcePin": "GPIO19",
+    "targetPin": "MISO"
+  },
+  {
+    "type": "data",
+    "label": "I2S Bit Clock",
+    "source": "esp32_main_mcu",
+    "target": "audio_dac_amplifier",
+    "protocol": "i2s",
+    "sourcePin": "GPIO26",
+    "targetPin": "BCK"
+  },
+  {
+    "type": "data",
+    "label": "I2S Word Clock",
+    "source": "esp32_main_mcu",
+    "target": "audio_dac_amplifier",
+    "protocol": "i2s",
+    "sourcePin": "GPIO25",
+    "targetPin": "LRCK"
+  },
+  {
+    "type": "data",
+    "label": "I2S Data Out",
+    "source": "esp32_main_mcu",
+    "target": "audio_dac_amplifier",
+    "protocol": "i2s",
+    "sourcePin": "GPIO22",
+    "targetPin": "DATA"
+  },
+  {
+    "type": "data",
+    "label": "Analog Audio Left",
+    "source": "audio_dac_amplifier",
+    "target": "headphone_jack",
+    "protocol": "analog",
+    "sourcePin": "OUT_L",
+    "targetPin": "Left"
+  },
+  {
+    "type": "data",
+    "label": "Analog Audio Right",
+    "source": "audio_dac_amplifier",
+    "target": "headphone_jack",
+    "protocol": "analog",
+    "sourcePin": "OUT_R",
+    "targetPin": "Right"
+  },
+  {
+    "type": "data",
+    "label": "Audio Ground",
+    "source": "audio_dac_amplifier",
+    "target": "headphone_jack",
+    "protocol": "analog",
+    "sourcePin": "GND",
+    "targetPin": "Ground"
+  },
+  {
+    "type": "data",
+    "label": "Headphone Detect",
+    "source": "headphone_jack",
+    "target": "esp32_main_mcu",
+    "protocol": "gpio",
+    "sourcePin": "Detect",
+    "targetPin": "GPIO35"
+  },
+  {
+    "type": "data",
+    "label": "Speaker Output +",
+    "source": "audio_dac_amplifier",
+    "target": "internal_speaker",
+    "protocol": "analog",
+    "sourcePin": "OUT_L",
+    "targetPin": "SPK+"
+  },
+  {
+    "type": "data",
+    "label": "Speaker Output -",
+    "source": "audio_dac_amplifier",
+    "target": "internal_speaker",
+    "protocol": "analog",
+    "sourcePin": "GND",
+    "targetPin": "SPK-"
+  },
+  {
+    "type": "data",
+    "label": "USB Data +",
+    "source": "usb_c_breakout",
+    "target": "esp32_main_mcu",
+    "protocol": "usb",
+    "sourcePin": "D+",
+    "targetPin": "D+"
+  },
+  {
+    "type": "data",
+    "label": "USB Data -",
+    "source": "usb_c_breakout",
+    "target": "esp32_main_mcu",
+    "protocol": "usb",
+    "sourcePin": "D-",
+    "targetPin": "D-"
+  }
+]

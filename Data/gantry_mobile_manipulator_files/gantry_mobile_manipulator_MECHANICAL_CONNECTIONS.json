@@ -1,0 +1,197 @@
+[
+  {
+    "label": "M5 Extrusion Bolts",
+    "source": "gantry_vertical_pillar",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M5 Extrusion Bolts",
+    "source": "tray_bottom",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M5 Extrusion Bolts",
+    "source": "tray_middle",
+    "target": "gantry_vertical_pillar"
+  },
+  {
+    "label": "M5 Extrusion Bolts",
+    "source": "tray_top",
+    "target": "gantry_vertical_pillar"
+  },
+  {
+    "label": "M5 Extrusion Bolts",
+    "source": "drive_motor_left_mount",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M5 Extrusion Bolts",
+    "source": "drive_motor_right_mount",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "Coupled to motor shaft via M3 set screw",
+    "source": "drive_wheel_left",
+    "target": "drive_motor_left_mount"
+  },
+  {
+    "label": "Coupled to motor shaft via M3 set screw",
+    "source": "drive_wheel_right",
+    "target": "drive_motor_right_mount"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "castor_fl",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "castor_fr",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "castor_rl",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "castor_rr",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "lidar_mount_3d",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M5 Extrusion Bolts",
+    "source": "gantry_stepper_mount",
+    "target": "gantry_vertical_pillar"
+  },
+  {
+    "label": "Shaft coupling",
+    "source": "lead_screw_assembly",
+    "target": "gantry_stepper_mount"
+  },
+  {
+    "label": "Lead screw brass nut M3 bolts",
+    "source": "arm_carriage_mount",
+    "target": "lead_screw_assembly"
+  },
+  {
+    "label": "Linear rail slider carriage",
+    "source": "arm_carriage_mount",
+    "target": "gantry_vertical_pillar"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "arm_1_base_adapter",
+    "target": "arm_carriage_mount"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "arm_2_base_adapter",
+    "target": "arm_carriage_mount"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "main_mcu_enclosure",
+    "target": "tray_bottom"
+  },
+  {
+    "label": "M3 standoffs",
+    "source": "motor_controller_hat_mount",
+    "target": "main_mcu_enclosure"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "imu_module_mount",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "mount",
+    "source": "lidar_mount_3d",
+    "target": "lidar_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "arm_1_base_adapter",
+    "target": "arm_1_joint_1"
+  },
+  {
+    "label": "mount",
+    "source": "arm_2_base_adapter",
+    "target": "arm_2_joint_1"
+  },
+  {
+    "label": "mount",
+    "source": "main_mcu_enclosure",
+    "target": "main_computer"
+  },
+  {
+    "label": "mount",
+    "source": "motor_controller_hat_mount",
+    "target": "motor_controller_hat"
+  },
+  {
+    "label": "mount",
+    "source": "drive_motor_left_mount",
+    "target": "drive_motor_left"
+  },
+  {
+    "label": "mount",
+    "source": "drive_motor_right_mount",
+    "target": "drive_motor_right"
+  },
+  {
+    "label": "mount",
+    "source": "gantry_stepper_mount",
+    "target": "gantry_stepper"
+  },
+  {
+    "label": "mount",
+    "source": "imu_module_mount",
+    "target": "imu_module"
+  },
+  {
+    "label": "M4 Bolts",
+    "source": "arm_structure_kit",
+    "target": "arm_1_joint_1"
+  },
+  {
+    "label": "M4 Bolts",
+    "source": "arm_structure_kit",
+    "target": "arm_2_joint_1"
+  },
+  {
+    "label": "Joint Coupling",
+    "source": "arm_1_joint_2_6",
+    "target": "arm_structure_kit"
+  },
+  {
+    "label": "Joint Coupling",
+    "source": "arm_2_joint_2_6",
+    "target": "arm_structure_kit"
+  },
+  {
+    "label": "GPIO Header Plug",
+    "source": "can_transceiver",
+    "target": "main_computer"
+  },
+  {
+    "label": "Velcro",
+    "source": "bldc_bus_bar",
+    "target": "main_chassis_frame"
+  },
+  {
+    "label": "M4 Bolts",
+    "source": "arm_1_joint_7",
+    "target": "arm_structure_kit"
+  },
+  {
+    "label": "M4 Bolts",
+    "source": "arm_2_joint_7",
+    "target": "arm_structure_kit"
+  }
+]

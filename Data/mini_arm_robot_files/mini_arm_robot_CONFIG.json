@@ -1,0 +1,2265 @@
+{
+  "plan": "- Microcontroller (e.g., ESP32 or Arduino Nano), 4-6 micro servo motors, small LiPo battery with charging/boost converter, optional joystick/buttons for control.\n- Custom 3D-printed arm segments, base chassis, motor mounts, and an end-effector (e.g., gripper).\n- Small ball bearings for joints, various M2/M3 screws and nuts for assembly, adhesive rubber feet for stability.\n- Optional: Bluetooth module for wireless control, small breadboard or custom PCB for wiring.",
+  "nodes": [
+    {
+      "id": "main_controller",
+      "name": "Main Controller",
+      "pins": [
+        "GPIO",
+        "UART",
+        "SPI",
+        "I2C",
+        "ADC",
+        "PWM",
+        "3.3V",
+        "GND"
+      ],
+      "type": "mcu",
+      "partId": "abab37bb-d5cc-4e9b-99cb-fdb29eb128c9",
+      "category": "electrical",
+      "imageUrl": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/778/ESP32-DEVKITC-32D.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Type",
+            "value": "Transceiver; 802.11 b/g/n (Wi-Fi, WiFi, WLAN), Bluetooth® Smart Ready 4.x Dual Mode (BLE)"
+          },
+          {
+            "label": "pins",
+            "value": "GPIO16,GPIO17,GPIO18,GPIO19,GPIO21,GPIO22,GPIO23,GPIO25,GPIO26,GPIO27,3V3,5V,GND"
+          },
+          {
+            "label": "Contents",
+            "value": "Board(s)"
+          },
+          {
+            "label": "Frequency",
+            "value": "2.4GHz"
+          },
+          {
+            "label": "Antenna Type",
+            "value": "-"
+          },
+          {
+            "label": "Utilized IC / Part",
+            "value": "ESP-WROOM-32"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/5029",
+            "price": "$18.5",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32D/9356990",
+            "price": "$15",
+            "vendor": "DigiKey"
+          }
+        ],
+        "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x28x13mm",
+      "position3d": {
+        "x": -30,
+        "y": 12,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 28,
+        "width": 55,
+        "height": 13
+      },
+      "description": "Powerful microcontroller with integrated Wi-Fi and Bluetooth for arm control and potential wireless communication.",
+      "productName": "ESP32-WROOM-32D Development Board",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32D/9356990",
+      "estimatedCost": 7.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR6vbyXY2ppL9ObRmYh4w4AK032f6bBm9NDrp62dnlrDQlnlop8wQc5bP4qXfeJ276Yek60BQaZDYxId5Ukphk7sJJODgS1isRhZwKXDxwwiDFyENTPU35PqQK8lkODm1HaTad4RY4cP1wl45WTeh4RlPsVUHy4VlZIc1wB2PtjlQuLRD9hen7MaRbZW4t6zXUfC9bGHFbOF2gFiVJefzCXxYaTVzAVLAUvLSHkbqyQnqrFk1uqwOrOEbNP1LnoiHms9bNBTW9BnmuZ44dVxgrvfnPRrtF1DzjkV2MH7aZGrCLMYBexygMLfan7wIJiUJp4eIOAU63ETQxHQnhQQvMDIqXUQpIHv7ZeJ0RbYR4h6ZSCgjbqlf53uzTimPSlFbe9eC1rCOfbX7oPNipLwACODeOTiaCIO3enuw0oxwosWlviDGwFcQqVRTXhsNeyocPqKgRBrbSMdVuP2Ge1Q2IaEEkhh50Eg8BKvlCGSy32SrGjbmQcul0fMiQX1jWAuMkblVsvgxVG3UGecyBxwSKIQHPNhkDKAt2fnBrwReTsvwTT4maM3YA81857bt5dxvTzGWY6rbUnKbimW7cicOckKZZCq98HTyBfP4F2eHEUDXULYIyGjYr3bIldY9Oj4JLz05rZ5bvXrjNOlBdrQhrjV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D+Development+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "base_servo",
+      "name": "Base Rotation Servo",
+      "pins": [
+        "PWM",
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/2941-00.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12.2x29mm",
+      "position3d": {
+        "x": 0,
+        "y": 24,
+        "z": -50
+      },
+      "boundingBox": {
+        "depth": 12.2,
+        "width": 23,
+        "height": 29
+      },
+      "description": "Servo for controlling the base rotation of the robotic arm.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=SG90+micro+servo",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "shoulder_servo",
+      "name": "Shoulder Joint Servo",
+      "pins": [
+        "PWM",
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/2941-00.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12.2x29mm",
+      "position3d": {
+        "x": 0,
+        "y": 76.5,
+        "z": -90
+      },
+      "boundingBox": {
+        "depth": 12.2,
+        "width": 23,
+        "height": 29
+      },
+      "description": "Servo for controlling the shoulder joint movement of the robotic arm.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=SG90+micro+servo",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "elbow_servo",
+      "name": "Elbow Joint Servo",
+      "pins": [
+        "PWM",
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/2941-00.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12.2x29mm",
+      "position3d": {
+        "x": 0,
+        "y": 101.5,
+        "z": -170
+      },
+      "boundingBox": {
+        "depth": 12.2,
+        "width": 23,
+        "height": 29
+      },
+      "description": "Servo for controlling the elbow joint movement of the robotic arm.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=SG90+micro+servo",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "wrist_rotate_servo",
+      "name": "Wrist Rotate Servo",
+      "pins": [
+        "PWM",
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/2941-00.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12.2x29mm",
+      "position3d": {
+        "x": 0,
+        "y": 131.5,
+        "z": -220
+      },
+      "boundingBox": {
+        "depth": 12.2,
+        "width": 23,
+        "height": 29
+      },
+      "description": "Servo for controlling the wrist rotation, providing an additional degree of freedom.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=SG90+micro+servo",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gripper_servo",
+      "name": "Gripper Actuation Servo",
+      "pins": [
+        "PWM",
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/2941-00.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12.2x29mm",
+      "position3d": {
+        "x": 0,
+        "y": 151.5,
+        "z": -240
+      },
+      "boundingBox": {
+        "depth": 12.2,
+        "width": 23,
+        "height": 29
+      },
+      "description": "Servo for actuating the gripper or tool holder mechanism.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=SG90+micro+servo",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_battery",
+      "name": "Main LiPo Battery",
+      "pins": [
+        "VCC",
+        "GND"
+      ],
+      "type": "power",
+      "partId": "32f552de-e694-4bdb-98cc-2df4977957bc",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ymDNUouR--DTps2QJwkblQTO_mjCIgKNBJedXHmrjMQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aG9iYnlyZWNyZWF0/aW9ucHJvZHVjdHMu/Y29tL2Nkbi9zaG9w/L2ZpbGVzL3Bvd2Vy/LWhvYmJ5LTFzLTM3/di0xMDAwbWFoLTIw/Yy1saXBvLWJhdHRl/cnktd2l0aC1qc3Qt/Y29ubmVjdG9yLTkw/NDk2MF80MzZ4NDM2/LmpwZz92PTE3MzE2/MjAwMzY",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "+,-"
+          },
+          {
+            "label": "energy",
+            "value": "3.7Wh (typical)"
+          },
+          {
+            "label": "capacity",
+            "value": "1000mAh"
+          },
+          {
+            "label": "chemistry",
+            "value": "Lithium Polymer (LiPo)"
+          },
+          {
+            "label": "cycle_life",
+            "value": "500-1000 cycles"
+          },
+          {
+            "label": "nominal_voltage",
+            "value": "3.7V"
+          },
+          {
+            "label": "common_connectors",
+            "value": "JST-PH (2-pin, 2mm spacing), PH1.25, PH2.0, PH2.54"
+          },
+          {
+            "label": "fully_charged_voltage",
+            "value": "4.2V"
+          },
+          {
+            "label": "typical_dimensions_lxwxh",
+            "value": "Varies by model; common sizes include 50mm x 34mm x 5mm (e.g., 503450), 48mm x 30mm x 6mm (e.g., 603048)"
+          },
+          {
+            "label": "minimum_discharge_voltage",
+            "value": "3.0V"
+          },
+          {
+            "label": "certifications_manufacturer_dependent",
+            "value": "CB, IEC62133, CE, UL1642, UN38.3"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/result?keywords=3.7V%201000mAh%20LiPo%20Battery",
+            "note": "Various models available from multiple manufacturers.",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.mouser.com/c/power/batteries/battery-packs/?battery+chemistry=Lithium+Ion+Polymer+(LiPo)&output+voltage=3.7+V&rechargeable/non-rechargeable=Rechargeable",
+            "note": "Various 3.7V 1000mAh LiPo options available.",
+            "vendor": "Mouser"
+          },
+          {
+            "url": "https://www.adafruit.com/category/574",
+            "note": "Offers various LiPo batteries, some with similar capacity such as 1200mAh. Check specific product pages for 1000mAh.",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.sparkfun.com/products/retired/339",
+            "note": "Formerly stocked, now retired. Nominal 3.7V 1000mAh with JST-PH connector.",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.amazon.com/3-7v-1000mah-lipo-battery/s?k=3.7v+1000mah+lipo+battery",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-3.7v-1000mah-lipo-battery.html",
+            "note": "Wide range of vendors and form factors available, often with bulk pricing.",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.alibaba.com/showroom/3.7v-1000mah-lipo-battery.html",
+            "note": "Bulk orders and customizable options available.",
+            "vendor": "Alibaba"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F18N48MY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x30x6mm",
+      "position3d": {
+        "x": 30,
+        "y": 10,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 50,
+        "height": 6
+      },
+      "description": "Rechargeable lithium polymer battery to power the entire robot system.",
+      "productName": "3.7V 1000mAh LiPo Battery",
+      "purchaseUrl": "https://www.amazon.com/s?k=1000mah+3.7v+lipo+battery",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR5DvVv1UbFJXBwZAgO98s8YEnTJAgiICBjOBstQ3MtBXXOvoSaPu94TGVEMOu1RUuLKmlkv7gfQIYFbjyp7e7UztATTWeBjwvG8etwATk6jmnWVnWEu6C9I6KHJjFZvfnf47uMkCRo5qFUJoYdMVmywlp4mndae0seMMZ4xBce6bjMvd2LjTrCjiNyE9SYlLO71FhlQTUjFnmlmcKuxTlfyqdA22NP6mAHVECmJIalynn5pihJomMlWfdCpXHQOEL2MGVfD82bEia3JFv9Ohx8EXJD9hGWMsRaxMkSlQKN4F579Idkv9L5W9x4lnacl380hbTMo89ANBLGlG75kmFVsDUIj0AoC3xV3ouJmb1URomSuKHke1Yd5eXVxpDGkKEDV9Do5E5AgGYckFrnuay7SEqT15UyshzM0DD38F7cH7tgkfyMx9TlF5tw1Om2Hjy9fIRS4atHBlZsUXNM80hzmvy0JFg9cSqsT4E7fpRaXvMzmzfovwZjjmrlXFYYFZAnDIZKMrYRh9JSx1fsY94g9KDeY5kXNRLYWUe5C9QPh3qCEGK6GDj9NEIjvrQ9wwVG9J5aTbaBDKw9OQuaTKh9A9Z5Q4WwQk2aRWd7gDvEI6nNcP89cl5NEzUdWWSuNJSIvmKvjkHgTPsKiX564Q7rd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3.7V+1000mAh+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_management",
+      "name": "LiPo Charger and 5V Boost",
+      "pins": [
+        "BAT+",
+        "BAT-",
+        "OUT+",
+        "OUT-",
+        "MicroUSB"
+      ],
+      "type": "power",
+      "partId": "6f717c15-04f4-497b-b41e-9b153fc1cc87",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/K8tFbAfbsDAgY1T5eSN5u-okTIRiPvt27dxe6mOtaMo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFER2NQdWZ4akwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN_USB,BAT_IN_POS,BAT_IN_NEG,VOUT_5V,VOUT_12V,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FP2G7LW5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x18x8mm",
+      "position3d": {
+        "x": 30,
+        "y": 12,
+        "z": -30
+      },
+      "boundingBox": {
+        "depth": 18,
+        "width": 27,
+        "height": 8
+      },
+      "description": "Module for charging the LiPo battery and boosting its voltage to 5V for the microcontroller and servos.",
+      "productName": "TP4056 with MT3608 Boost Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=tp4056+mt3608+module",
+      "estimatedCost": 4,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3fT3zE1CQgR62U9egV9eHb5MDdybcAeXqixhLTdcOuvR8zKeyomRmsrE0v4gwsnqta3WRadw2vAGZGnvfEsbXyMtbhLjOOzgQsrHx2bUWeqbDIjUSOUGn4LoVnGCKeEmH3wbThIjCnTb839azlsgiAmmEvN3KC7fU4XxoRuT8EB5qb0xiZCKF4uJZ3FlJlXzV4vcMOBhIt18VqieWZAMSwF9VBNZOBXlALso7Gig55sd1U9yEaX506fEMYHWZozrGfvm0i4NmTqqHmVq2ItNMi2vwafEUuUKh4gl28aY2k6gTHmbz00GHqmS1rRvpiH5dAJJ08ynO7PWX2UVeiPdWEUg6vX6NMUa5tlUDjuOPkE71eUPoJh7SlR9pmtcxbDC1OUrAqMUO3VejmSqxf3AwAQsPpRHDUwAkMnIo4kNqyXAbBDJyQ2511Zvk78dpbvSJOlY1pyWLZ6zyk6gfRTJcufqcDTqkrEIk4MiQyjV3kjGYwCnDYBXPpMymfK0i4i7GGCbjbyq7xI9bbE30FgZ60MSexo9YLyATyS2vJDOo2080RM27lYldsQmmGMMY7c0oDHTguY46qFtcpSzSwFP2af7H6Y51VLTpzhb3TbSmk49zIe9hiGGgFk3b2rrfDDfxWL6Z3GER7fjPVcT31WZcJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TP4056+with+MT3608+Boost+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "control_joystick",
+      "name": "Control Joystick Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "VRx",
+        "VRy",
+        "SW"
+      ],
+      "type": "module",
+      "partId": "dc84f56a-6829-4b1b-b02e-9bfdc63e1b59",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/l7qyMyiQye8sRR1xQpgcNZNogS4IIRLpl-pHlbBbt7E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTEyQldZMkFVSkwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CPFDKWZF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x25x30mm",
+      "position3d": {
+        "x": 0,
+        "y": 52.5,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 40,
+        "height": 30
+      },
+      "description": "Analog joystick module for manual control of the arm's movements.",
+      "productName": "KY-023 Joystick Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=KY-023+joystick+module",
+      "estimatedCost": 3.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgIz6FdvIOsfcMgAYH0HZntKWMgx18fCki2n5X8biJIpD8X9fcBf6xM0nv40JA3eBjplb7c55mQoq9H1R2S4kTBCJsSc9yoe708AQzMLhwwM3i8eYAuLYHFR3ufNVxx5vpwV4o7Q75zol1gEPSSUlESRsGwdCMz7nHwDySAxlwtv7VvvP4qCeajDAN4bQZVzSJplq5svodqHEBgJrEZzawLGvcNuC5FGvCfb9kbM5WqHt5b7LRt5dDGVwnUCtyBz5MIOTyjtRIROicveciDmiGNSra1AbXvMRzhN48OwGyAZxiWUPYC7l4YZDh34mGX91QgXd6nte35jt0gH1mHTTU88rgRbF4ZuGXcenq9j3g6LV3oiSzyECXKLJKWosmUSQFpbEEbp6aNXppdAhQZgbclxAy2RknJItk1G26RjyLoK6reUA6Dg1rJ97s8sD0vMchJSrtIypuwjAhtL3nDd89QAru9O1IMApbaCOtb5mvJCmpJZPQ2NpIavsawnhIWBEGfYESp7OgXuK3JaWdaQFoHmEMRUgwZb09PYdGKMOEYWcWqjw5G7bk3DuT9ITs6PH7M5s8NVwJ37wHBiY0hn4rvrwzgFbYsNnHq496eaYvg3u1RS8rayruMmC7UblKBTDVKlNu27q417MhSu1VEi0T0X",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=KY-023+Joystick+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "base_plate",
+      "name": "Robot Base Plate",
+      "type": "structural",
+      "partId": "9a298137-242e-4cbe-acc6-668ee91da600",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HD4ewAAv1z3SV2_QH_2JWz5XnQ_Pa_R-L6-cufoWHFw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFZQ1k2RVBvSEwu/anBn",
+      "material": "Acrylic",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B099DBW1PG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x150x5mm",
+      "position3d": {
+        "x": 0,
+        "y": 2.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 150,
+        "height": 5
+      },
+      "description": "Flat base for stability and mounting main components.",
+      "productName": "Acrylic Sheet",
+      "purchaseUrl": "https://www.amazon.com/s?k=acrylic+sheet+150x150x5mm",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHqmszNIqCDud2lBFN4jttiBjwWIArTlMiikyrEEXo2xGcCfELFjbQ2Y7KoUNpuAvODbNIqnFSsZAF0LMsWTqiZPdPqKCF9m4RSvdw8FyZQvlxW7cBCU3IHTIM0mrlLF453VmxE48PyJSgCgPwSgAc8dWx5FZeVV5d9AsP2dazKvF2p1IGOpl1xqrhtAW0GneeS4CukoofSjKdLOvd7frylAdnryJU4tMTE6IjhUqI1PWO83rYSctmXMo2EssITZ65v1u39B7MReEGy7uldPfkZu6vT0ucAS33gTPTSlKmV3T2jLdOOfP79WorHQEEQdkYp6WlNSQXGNu0oRaJUOR0DnUzLgldZYcJSFwgHKLT1CiCE00AVuMRhY8gcIydxSEJDpoWccgtT0JrFEfhVwlXVkbbCZodTx807VIY4FqT9tsEcSxSSDaBloZIDV4F1diF2UNLi9yGe1tr56W5OR7qZI1SdnO92mJzA9y2qaEMcDkr4nQqcGFWCd2ZTivWmmxTj3jg2Iz03gvjD90GQvmeOw4WHhYpk73fioT6oqPp9W3dUaC5UIbVxOPETm1Lzqggs8TS6C4dVdWR1ZFmU94dDISz4VcsWYZf6rLJ7ICc0rjKyyI5fpZlgUptVjDFN7mWXRvv9fwLPt89qlTnMGJnm7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Acrylic+Sheet&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "base_housing_bottom",
+      "name": "Base Housing Bottom",
+      "type": "3d_printed",
+      "partId": "4f70de54-4da2-41f2-92f5-8e5109f749c9",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "140x140x30mm",
+      "position3d": {
+        "x": 0,
+        "y": 22.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 140,
+        "width": 140,
+        "height": 30
+      },
+      "description": "Enclosure for base servo and electronics, integrates with base plate.",
+      "productName": "Base Housing Bottom",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 2.5,
+      "printSettings": "PLA, 0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "base_housing_top",
+      "name": "Base Housing Top",
+      "type": "3d_printed",
+      "partId": "5d7d343e-ec77-440d-a3a7-67bfb87a5900",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "140x140x10mm",
+      "position3d": {
+        "x": 0,
+        "y": 47.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 140,
+        "width": 140,
+        "height": 10
+      },
+      "description": "Lid for the base housing, potentially with cutouts for controls.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 2,
+      "printSettings": "PLA, 0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "base_servo_mount",
+      "name": "Base Servo Mount",
+      "type": "3d_printed",
+      "partId": "7e2d0de4-0b97-4ae9-baca-5e6ff990470f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/OIw-Xn77yAAyDSYsHoOzocv2d_I8OBme_yELmg0ByE4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pdGdy/ZXNhLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMi8wMi9T/ZXJ2by0zLXNxLTUw/MC5wbmc",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0C58WDB3S?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "base_servo",
+      "dimensions": "40x20x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 22.5,
+        "z": -50
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 25
+      },
+      "description": "Mounting bracket for the base rotation servo within the base housing.",
+      "productName": "Base Servo Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "PETG, 0.2mm layer height, 30% infill",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwM1Qqi8N8sSZrMNCa1crsoBVVUHpr7u1qIq3nOHOV1FNWMaTbj8nS45mvUWPvPi3M0UoeQmIhIvIoMEL6Lafd1d5VNNlfVN2Qm7BzPSwYr2BeThhWQFioEMpkUv3ehstyHbrEVuZpQxVLK0RMPpXZuitEWQORkOUKNTfmCEqCIibVUi2JQXf3SFirRKVRjhZbOe9j409PeZAFykRkkORyUf1fldr1f1qNqwBKVBwxGrSfrYTDpNWUYVQssfsH6LLLoM0cKBLToE0b5RvdNbkm7as7pJpncZANCnmd7YoqszWfOjdzXWsS4aKIewy0yc6CualU47agnMOb3k1RSENnsDuBNZc01WxIUr9ugc0rIbCin3zDdBYMwbEHML7Y732Cee6SHZWmtDIfJVQaJP2zCBOYJGqMoENq7u5q5svzjz31KjuSeJ2XVf1m2OITI3ZidLq0PF8xjke7J0yWfaJpBFpRYy54Y9LvXSJkEPZMW4bNJPtBYFdU45TOzbQVssHbxnTQpGGWETg4zA3fef7Efw05t4zhUMYJ7lCdNi5BZRLOMUfgJSfbOUk9UKsLp8h8tM5TNLjjUcQ8jQ1M0GNPuN54Y7ySxskS69rqQUII4DfLYrBZDaP0MBNOZijxjuyNUIV8yLjTPdiv6ZYLuBkTax"
+    },
+    {
+      "id": "base_controller_mount",
+      "name": "Main Controller Mount",
+      "type": "3d_printed",
+      "partId": "88c2f9cd-0727-4d33-b78d-59c64a12f399",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/BAgMIIfCpbvpqJ17Cb8xy45W3or4b-7UOCUql1sosmM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFVZnVJMDF1ZUwu/anBn",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "main_controller",
+      "dimensions": "60x30x10mm",
+      "position3d": {
+        "x": -30,
+        "y": 10,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 60,
+        "height": 10
+      },
+      "description": "Tray or stand-off mount for the main microcontroller board.",
+      "productName": "Main Controller Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.75,
+      "printSettings": "PLA, 0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "power_management_mount",
+      "name": "Power Management Mount",
+      "type": "3d_printed",
+      "partId": "e2ba7e77-59b4-4737-ad51-17a219a7eccd",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/RfNeCymbwenS8O3Ku9l2uHLhjz2e1OBlK_qkPYq_QTc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bW91bnQtaXQuY29t/L2Nkbi9zaG9wL2Zp/bGVzL3doaXRlLWRl/c2t0b3AtcG93ZXIt/c3RyaXAtbW91bnQt/aXQtbWktNzI4MS0z/OTY4Mjg3NzQ1NjUz/OS5qcGc_dj0xNzY3/ODA5NzQ0JndpZHRo/PTEyMTQ",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "power_management",
+      "dimensions": "30x20x8mm",
+      "position3d": {
+        "x": 30,
+        "y": 10,
+        "z": -30
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 30,
+        "height": 8
+      },
+      "description": "Small bracket for securing the LiPo charger/boost converter board.",
+      "productName": "Power Management Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "PLA, 0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "control_joystick_mount",
+      "name": "Control Joystick Mount",
+      "type": "3d_printed",
+      "partId": "f9e0a62f-ee3f-4079-b773-dcf557caa0f2",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "control_joystick",
+      "dimensions": "45x45x15mm",
+      "position3d": {
+        "x": 0,
+        "y": 50,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 45,
+        "height": 15
+      },
+      "description": "Mounting bezel or housing for the joystick module.",
+      "productName": "Control Joystick Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.6,
+      "printSettings": "PLA, 0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "shoulder_arm_segment",
+      "name": "Shoulder Arm Segment",
+      "type": "3d_printed",
+      "partId": "7b6bf75c-8801-4534-ad3f-c0514ff7c7e3",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "100x40x30mm",
+      "position3d": {
+        "x": 0,
+        "y": 70,
+        "z": -50
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 40,
+        "height": 30
+      },
+      "description": "First arm link, connects base to elbow, houses shoulder servo.",
+      "productName": "Shoulder Arm Segment",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 3,
+      "printSettings": "PETG, 0.2mm layer height, 40% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "shoulder_servo_mount",
+      "name": "Shoulder Servo Mount",
+      "type": "3d_printed",
+      "partId": "cdb320c0-b698-435c-a062-b14b569fac99",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/R2-j5-X4QSxaRP6RgobU3nSejhfKfQUlE86xCElEUbs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE5WXlpcVhmZ0wu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 30% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "shoulder_servo",
+      "dimensions": "40x20x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 75,
+        "z": -90
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 25
+      },
+      "description": "Mounting feature integrated within the shoulder arm segment for the shoulder servo.",
+      "productName": "Shoulder Servo Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "PETG, 0.2mm layer height, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "elbow_arm_segment",
+      "name": "Elbow Arm Segment",
+      "type": "3d_printed",
+      "partId": "29fbf30e-61a6-4359-ad75-43b27575d672",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "90x35x28mm",
+      "position3d": {
+        "x": 0,
+        "y": 100,
+        "z": -135
+      },
+      "boundingBox": {
+        "depth": 90,
+        "width": 35,
+        "height": 28
+      },
+      "description": "Second arm link, connects shoulder to wrist, houses elbow servo.",
+      "productName": "Elbow Arm Segment",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2.8,
+      "printSettings": "PETG, 0.2mm layer height, 40% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "elbow_servo_mount",
+      "name": "Elbow Servo Mount",
+      "type": "3d_printed",
+      "partId": "ff8465da-efb0-4375-9d53-b485f37fe8c2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/yYLsxvnabyJEyfAHXsXio8FK6TGlDetrS74pKK1iPtI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGxjLXNlbnNvcnMu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIwLzEyL0NNMTAt/QVAxMFMtTS1ELXNl/cnZvLW1vdG9yLWVu/Y29kZXItY29ubmVj/dG9yLURESzEwLWVs/Ym93LWZvci1NaXRz/dWJpc2hpLTEuanBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 30% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "elbow_servo",
+      "dimensions": "40x20x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 100,
+        "z": -170
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 25
+      },
+      "description": "Mounting feature integrated within the elbow arm segment for the elbow servo.",
+      "productName": "Elbow Servo Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.45,
+      "printSettings": "PETG, 0.2mm layer height, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "wrist_segment",
+      "name": "Wrist Segment",
+      "type": "3d_printed",
+      "partId": "3133c118-7302-467a-9197-b8166260f7e0",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "60x30x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 125,
+        "z": -200
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 30,
+        "height": 25
+      },
+      "description": "Connects elbow to end-effector, houses wrist rotate servo.",
+      "productName": "Wrist Segment",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "PETG, 0.2mm layer height, 35% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "wrist_rotate_servo_mount",
+      "name": "Wrist Rotate Servo Mount",
+      "type": "3d_printed",
+      "partId": "46abb28d-3835-465e-ae62-9cfa1faf9dd7",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/-HvEKPWNVoUxITkY2ugi0sfmV3v15phnbrTUzl2boRM/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzI0/MjQvMTQ5NS9wcm9k/dWN0cy9Bcm1Vbm8t/Um9ib3RpYy1Bcm0t/R3JpcHBlci1Xcmlz/dC0xXzExMHgxMTBA/MnguanBnP3Y9MTU0/Njc0ODIwOA",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "wrist_rotate_servo",
+      "dimensions": "40x20x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 130,
+        "z": -220
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 25
+      },
+      "description": "Mounting feature integrated within the wrist segment for the wrist rotate servo.",
+      "productName": "Wrist Rotate Servo Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "PETG, 0.2mm layer height, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "pen_tool_holder",
+      "name": "Pen Tool Holder",
+      "type": "3d_printed",
+      "partId": "90826087-9c68-4920-a542-d2f8933357e6",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "40x25x45mm",
+      "position3d": {
+        "x": 0,
+        "y": 150,
+        "z": -220
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 25,
+        "height": 45
+      },
+      "description": "End-effector designed to securely hold a pen or similar tool.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.2,
+      "printSettings": "PETG, 0.2mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "gripper_servo_mount",
+      "name": "Gripper Servo Mount",
+      "type": "3d_printed",
+      "partId": "f6739151-1d54-4f1b-95de-377980bfe3a5",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Ij8x8V1L8tM0akls2nd252lPU2OGD2sxnXE81lMsk9M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy1mNnZm/c3Bra2pmL2ltYWdl/cy9zdGVuY2lsLzg2/N3cvcHJvZHVjdHMv/NDAxLzEzNzMvNjM3/MDkyX3BhcmFsbGVs/X2dyaXBwZXJfa2l0/X2Ffd2l0aF9jaGFu/bmVsX21vdW50X2Jh/Y2tfMV9fNjQ1Nzdf/XzIyNTI0LjE3MTQw/Njk3OTIuanBnP2M9/MQ",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 30% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "gripper_servo",
+      "dimensions": "40x20x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 150,
+        "z": -240
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 25
+      },
+      "description": "Mounting feature integrated with the end-effector for the gripper actuation servo.",
+      "productName": "Gripper Servo Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.25,
+      "printSettings": "PETG, 0.2mm layer height, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "ball_bearing_6x19x6mm",
+      "name": "Ball Bearing 6x19x6mm",
+      "type": "mechanism",
+      "partId": "2980123e-fc0d-426a-8b76-c37b1e8bfb91",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/aI70uq46ghr4iXTEDoCM5JV5BsOM4AIYXtimeIEYrl0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFEYU5STGM3Z0wu/anBn",
+      "material": "Steel",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0DTK61CLD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x19x6mm",
+      "position3d": {
+        "x": 0,
+        "y": 42.5,
+        "z": -50
+      },
+      "boundingBox": {
+        "depth": 19,
+        "width": 19,
+        "height": 6
+      },
+      "description": "Used at the shoulder and elbow joints for smooth rotation.",
+      "productName": "626ZZ Miniature Ball Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=626ZZ+ball+bearing",
+      "estimatedCost": 0.75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGv88T2sMYcyxPT9szlK8FM4XP4QFdj1zgRj3RfXGRCfvbZI8TzyWYSLJzh1LHDVdWelvxgmORWdn9992eRhjFHoly7Wxk1bXSysL0I0FmTiGsKa9FGHPR2s412qyahK9lEx8CPM5humUuCVUlVpiwsD6opq4O3q8LtIa8kD5f7a5usuvqOWTkXTJFP7GPdgXpnUq0DfbdyrNh2NSkRwaV4bHV1mchDNz2MSTWfmJQSXY7osoHDN7LdKc4umyBmjSD66k0qooUC7VhSUCqKsfzgnQl7qILLlpP3bKoSFsmERThETTVz13CUD0GL8wqAPqEEP5yxNOTQoFTMwX952VEfq487VpWYPJse4KA6tRsOmcJwPoBdymvHzM231tcH3cqud9H6bqsxVYI3LYMg9pIy5veNtdrmI9fhLjnQMkqFhvIPz6EItMuNCE8l1zcv9yrcrDZDvR5ZnOdvBdgY91TbI3gPaJaWSvhDIuQ2qHqzGqsg8okuKXsbGKjSuN96q8Nf5fV1lamyX2PWYtUvK8KQVVUsL9tfaM2g9clnOT9RNJ3dRKxdOUaRCKJHttCUMmjdvnlineu8m7FlTwkok5ycyrtoEUo4PFFb7c8vYupSuevNLwDU9lIC1zChZ3kA4NY24i1nZVGcZ9JUekmd8O78n",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=626ZZ+Miniature+Ball+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_hex_nut",
+      "name": "M3 Hex Nut",
+      "type": "misc",
+      "partId": "e7abe513-06ed-4876-aee3-5c3627de1e59",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/bsv_v2ocHG1TwtO1FE3J5_NhFY3irPRKH0oQvBeBIe4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZnVzaW9uZml4aW5n/cy5jby51ay9jZG4v/c2hvcC9maWxlcy9G/dWxsXzIwTnV0XzIw/TWV0cmljXzIwQTJf/ZGY5OTFlY2QtNjJi/ZS00YzhlLTkxYTIt/NWMxMGZmYWZjYjMy/XzYzMXg2MzEucG5n/P3Y9MTY5NzgxMDQw/OQ",
+      "material": "Stainless Steel",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/dp/B08N68W9SP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "Used with M3 screws for securing components.",
+      "productName": "M3 Stainless Steel Hex Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+hex+nut",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGJmOrxlMpDubYQYtLNRkBdFEJOK3mI6BO6T0MS7MxRIrPQPAly6lJw0dyItkwyiVNyfC4J6d9ViNmKebAbKFlGeqJaV5C3fT2oSvowjAJGp9au12oHRy0biKjpP6LiBBikjM65l3S5hL1RpBDwYCT2abZJqgsLQYPyZjdBQV1k9or8XqGxmugXqSl4NrMhUf8QCflFv2k81uzzDdXvyoAHdLZZhvE4nUT2M2ohVRjirgNEbWQPAVXedb90G4mmUvF8MfcpMkdClBz4e8Mc3eL2BmQplt71ebsttWvfYkEbRjjpyEGuSOjHgncipeBfwZDqXJU6XW0ccyQGAcIWBNhxR5Os5pOS16Ndz8Haplq0CuinMlMiGVtIkyGm7vk2WN9DLsK6LOjtpTsqbyq5jWNrU9fS6OTNT3BYzfEWCHcRZlpfz8XMdUBJEyERL1qm1c18SUo02KLWdt8AagHcRfwZ1zHiByhXhYX7XRQm9TUV1YBydtf3m9bERSUTvLcA2zdRk1CLXFjD5MCao6K1ivXIJsLV34HaW7gACQp9R3t6XDsHRcvihc5KHCKNminU7hgMhQlpQDSuDrhqgpd6V1U6lnWSKxIItbTp1ZcSOQwVPY7N9uDZJUPoZKX07y830uUyu4ngrDqFTymeZWsgLzjab",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Stainless+Steel+Hex+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3x8mm_screw",
+      "name": "M3x8mm Screw",
+      "type": "misc",
+      "partId": "05671c38-00e5-4c63-bf28-c18de8c725d9",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/JYRHaPKBFuKsJhE6k8nNYLkTo1n7ULOi2VTZG_xg9Yw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGVsaWRpcmVjdC5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvY2Vu/LXJhY2luZy1nMzYx/NTJhLW0zeDhtbS1i/aW5kaW5nLWhlYWQt/c2NyZXctMjg2MzY1/NTA0NjM1NjUuanBn/P3Y9MTYzMjc2MDk1/OA",
+      "material": "Stainless Steel",
+      "quantity": 10,
+      "amazonUrl": "https://www.amazon.com/dp/B01BBOZGKC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x8mm",
+      "description": "General purpose screws for attaching components to 3D prints.",
+      "productName": "M3x8mm Pan Head Machine Screw",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3x8mm+machine+screw",
+      "estimatedCost": 0.07,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyalXiYuDpRVuyoY5132s17AJaLQphEFe1GgwYgn9K2MAGryrWHsaXEre911g1DheIUpQu4z3ClA9Xx3IR7r0g0H8CKKbgUDELkbhjRUiWz3BfhX6b88oxy9baXZ2Gx2ge63v9M0Kyms708qksE6EOJEbAH5sTf7l1GPOMR8MAz6pOTEEVfIAO49Dk7L8VlbD4ovgKWqs6HbiO2CIjHb56dcYb4h33g8uQMSFAPz7JXInKs2JbbeS7qZ5SyjpZD7jrGrvff7xn5Wevi9FNUs9IFaoqx4Y9JfPTtV20eSxMNAeEFMVa9hCHWW6MD3wxpXUjDCL6UWniIxKF6nXFjK7D781MXtkhifMMvPJA6WeNT8Q4h4Y0KENnM8mIaM7psXKPdGiVA8vJv9hZWh1vOFWTD7sUsXBFonn0YPzxqKIYTed3oa1l4XSiKEaqY8cUrMmREs2LKmeM95UqDHEON0RsEu3sHjDdQXb1zq9YnLDPuFNbHW4h8yRz3bzjWwdsWkiNF0dGW2E0cb6WrFnDOavipLt9vl3vKiDRjhibMAjejT8zuaOpPLC9E9yJ19Rsp5QcyeKiF9RmSQvIYL8Za0g5AVjHur31PyYTYbixCCEodHtFf8giYNeLJa5lLRreZvGyGqtS1cWmZI9fMdVQkCH3T0n",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x8mm+Pan+Head+Machine+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3x12mm_screw",
+      "name": "M3x12mm Screw",
+      "type": "misc",
+      "partId": "848089d5-2d51-4180-a640-b1490b38b3ef",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/7Y6Pz5xPY_1RMsvMJGLJ3-_y9LUakJqj1T4OgOZQoaE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFXOFI0OG0xUkwu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 8,
+      "amazonUrl": "https://www.amazon.com/dp/B0GC4D943W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x12mm",
+      "description": "General purpose screws for attaching components to 3D prints.",
+      "productName": "M3x12mm Pan Head Machine Screw",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3x12mm+machine+screw",
+      "estimatedCost": 0.08,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3o0qRSH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x12mm+Pan+Head+Machine+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2x6mm_screw",
+      "name": "M2x6mm Screw",
+      "type": "misc",
+      "partId": "d8aca48b-ca4d-4b59-83e1-f5b612a20dbd",
+      "category": "mechanical",
+      "material": "Stainless Steel",
+      "quantity": 12,
+      "amazonUrl": null,
+      "dimensions": "M2x6mm",
+      "description": "Smaller screws for mounting micro servos.",
+      "productName": "M2x6mm Micro Machine Screw",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2x6mm+machine+screw",
+      "estimatedCost": 0.06,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2uql3OH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x6mm+Micro+Machine+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rubber_feet",
+      "name": "Adhesive Rubber Feet",
+      "type": "misc",
+      "partId": "181c332d-ee04-44bd-8b0e-2f7b801d67b9",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/GUh4U1ro2QU3z0sH4TOtTUMOtSXEdj7viAm_4ItJdyw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFSTHgySjh5eUwu/anBn",
+      "material": "Rubber",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B085DMB1XV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x3mm",
+      "description": "Provides stability and prevents scratching on surfaces.",
+      "productName": "Self-Adhesive Rubber Bumper Feet",
+      "purchaseUrl": "https://www.amazon.com/s?k=adhesive+rubber+feet",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHZXMZopPmSvuqx09bNpnRx4M1WoHQMnaxBJrg96RYXkzKivyqp37jjhw2LqPCRfozqKzXSjinhYABV5791txWZllMRKarKmyFWUIgUHxZae8qzsIz4nBXeyXaVCyOXtQVYVlvBLX9E94A6E1U0qHSI1IGYNGjouIWlnxz2wXhxQCHfKVtKIsXwbAztRIj6UELxy6wmQpRREMELXhxr1P4mLTiy9JEIl6kKrXVVvomkbmFrMCjuvmX5XusIxqSD8GaDSjfSTiEC8EKCBsWRAcmpwMhapC5PGntydWzEU24w7Vc9J7jDL0jEfaz1NnOHjMboQBAE7KGr212ebdaP3WW8S4iCm1nlRYpAxQHBJ30OkDf6R3Rg2MDaMyvVPQTrYkwGxM6A2skHdhUYlnEgkZ3xbKxuqDBXxpvEpsBZkAZ6Rnb7SxtyQZDE7EkmNpzM2pncXKiihzPZbFS4ITyAjooDUUGOPNmIL7U6x1YM8uqAuzCZqquI4VrusVOvqcp28saUevvd3zOFmgM1aouVgfB4HmJdoU4UbQLemhDEPk6ZZRdZW5rikCiHbHMyj7A3TrWxTVd267usKxJ3oVyednFSBBRQLGkiBFJcqgGWpQikJAPztwfJ43NOpy4URt5eAfoRQoIbPupExoNIcQ0CvnY6f",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Self-Adhesive+Rubber+Bumper+Feet&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "Portable",
+    "Mini",
+    "Robotic arm"
+  ],
+  "projectName": "Mini Arm Robot",
+  "originalPrompt": "A portable mini arm roboter",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D Print all PLA components",
+          "partIds": [
+            "base_housing_bottom",
+            "base_housing_top",
+            "base_controller_mount",
+            "power_management_mount",
+            "control_joystick_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D Print all PETG components",
+          "partIds": [
+            "base_servo_mount",
+            "shoulder_arm_segment",
+            "shoulder_servo_mount",
+            "elbow_arm_segment",
+            "elbow_servo_mount",
+            "wrist_segment",
+            "wrist_rotate_servo_mount",
+            "pen_tool_holder",
+            "gripper_servo_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Prepare the Robot Base Plate",
+          "partIds": [
+            "base_plate",
+            "rubber_feet"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test fit servos into their mounts",
+          "partIds": [
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "wrist_rotate_servo",
+            "gripper_servo",
+            "base_servo_mount",
+            "shoulder_servo_mount",
+            "elbow_servo_mount",
+            "wrist_rotate_servo_mount",
+            "gripper_servo_mount"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Test fit electrical components into their mounts",
+          "partIds": [
+            "main_controller",
+            "power_management",
+            "control_joystick",
+            "base_controller_mount",
+            "power_management_mount",
+            "control_joystick_mount"
+          ]
+        },
+        {
+          "id": "fabricate_6",
+          "title": "Press ball bearings into base housing top",
+          "partIds": [
+            "ball_bearing_6x19x6mm",
+            "base_housing_top"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder Main Battery to Power Management Module",
+          "partIds": [
+            "main_battery",
+            "power_management"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire 5V Power and Ground from Power Management to Main Controller and Servos",
+          "partIds": [
+            "power_management",
+            "main_controller",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "wrist_rotate_servo",
+            "gripper_servo"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire 5V Power and Ground from Power Management to Control Joystick",
+          "partIds": [
+            "power_management",
+            "control_joystick"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect PWM signal wires from Main Controller to all Servos",
+          "partIds": [
+            "main_controller",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "wrist_rotate_servo",
+            "gripper_servo"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect Analog and Digital signal wires from Main Controller to Control Joystick",
+          "partIds": [
+            "main_controller",
+            "control_joystick"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Perform continuity checks on all power and signal lines",
+          "partIds": [
+            "main_controller",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "wrist_rotate_servo",
+            "gripper_servo",
+            "main_battery",
+            "power_management",
+            "control_joystick"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect Main Controller to computer via USB and install drivers",
+          "partIds": [
+            "main_controller"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Upload initial firmware to Main Controller with basic servo control code",
+          "partIds": [
+            "main_controller"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Verify servo functionality and range of motion for each servo",
+          "partIds": [
+            "main_controller",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "wrist_rotate_servo",
+            "gripper_servo"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test Control Joystick input and read values via serial monitor",
+          "partIds": [
+            "main_controller",
+            "control_joystick"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Integrate joystick readings into servo control logic in firmware",
+          "partIds": [
+            "main_controller",
+            "control_joystick",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "wrist_rotate_servo",
+            "gripper_servo"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Calibrate servo endpoints and joystick dead zones for smooth operation",
+          "partIds": [
+            "main_controller",
+            "control_joystick",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "wrist_rotate_servo",
+            "gripper_servo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount Main Controller, Power Management, and Main Battery into Base Housing Bottom",
+          "partIds": [
+            "base_controller_mount",
+            "main_controller",
+            "power_management_mount",
+            "power_management",
+            "main_battery",
+            "base_housing_bottom",
+            "m3x8mm_screw",
+            "m3_hex_nut"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Attach Base Servo to Base Servo Mount and Fasten to Base Housing Bottom",
+          "partIds": [
+            "base_servo",
+            "base_servo_mount",
+            "base_housing_bottom",
+            "m2x6mm_screw"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Assemble Base Housing Top with Control Joystick Mount and Control Joystick",
+          "partIds": [
+            "base_housing_top",
+            "control_joystick_mount",
+            "control_joystick",
+            "m3x8mm_screw",
+            "m3_hex_nut"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Connect Shoulder Arm Segment to Base Servo and integrate ball bearing",
+          "partIds": [
+            "shoulder_arm_segment",
+            "base_servo",
+            "ball_bearing_6x19x6mm",
+            "base_housing_top",
+            "m3x8mm_screw"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Assemble Shoulder, Elbow, and Wrist Segments with respective servos",
+          "partIds": [
+            "shoulder_arm_segment",
+            "shoulder_servo_mount",
+            "shoulder_servo",
+            "elbow_arm_segment",
+            "elbow_servo_mount",
+            "elbow_servo",
+            "wrist_segment",
+            "wrist_rotate_servo_mount",
+            "wrist_rotate_servo",
+            "m2x6mm_screw",
+            "m3x12mm_screw",
+            "m3_hex_nut"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Attach Pen Tool Holder/End-Effector with Gripper Servo",
+          "partIds": [
+            "pen_tool_holder",
+            "gripper_servo_mount",
+            "gripper_servo",
+            "m2x6mm_screw"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Close up the Base Housing and attach to Base Plate",
+          "partIds": [
+            "base_housing_bottom",
+            "base_housing_top",
+            "base_plate",
+            "m3x8mm_screw",
+            "rubber_feet"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Perform final cable routing, strain relief, and system test",
+          "partIds": [
+            "main_controller",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "wrist_rotate_servo",
+            "gripper_servo",
+            "main_battery",
+            "power_management",
+            "control_joystick"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "This portable 4-Do",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PLA and PETG capable)",
+      "M2 hex key",
+      "M3 hex key",
+      "Small Phillips head screwdriver",
+      "Wire strippers",
+      "Soldering iron with fine tip",
+      "Solder",
+      "Heat shrink tubing",
+      "Hot glue gun (optional, for strain relief)",
+      "Multimeter"
+    ],
+    "assumptions": [
+      "Basic understanding of 3D printing and post-processing",
+      "Familiarity with soldering small components and wires",
+      "Knowledge of microcontroller programming (e.g., Arduino IDE, PlatformIO)",
+      "Basic electronics understanding (voltage, current, polarity)"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Battery to Power Management (Input)",
+      "source": "main_battery",
+      "target": "power_management",
+      "current": "1A",
+      "voltage": "3.7V",
+      "sourcePin": "VCC",
+      "targetPin": "BAT+"
+    },
+    {
+      "type": "power",
+      "label": "Battery to Power Management (Ground)",
+      "source": "main_battery",
+      "target": "power_management",
+      "current": "1A",
+      "voltage": "3.7V",
+      "sourcePin": "GND",
+      "targetPin": "BAT-"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Main Controller (VCC)",
+      "source": "power_management",
+      "target": "main_controller",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "OUT+",
+      "targetPin": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Main Controller (GND)",
+      "source": "power_management",
+      "target": "main_controller",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "OUT-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Base Servo (VCC)",
+      "source": "power_management",
+      "target": "base_servo",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "OUT+",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Base Servo (GND)",
+      "source": "power_management",
+      "target": "base_servo",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "OUT-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Shoulder Servo (VCC)",
+      "source": "power_management",
+      "target": "shoulder_servo",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "OUT+",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Shoulder Servo (GND)",
+      "source": "power_management",
+      "target": "shoulder_servo",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "OUT-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Elbow Servo (VCC)",
+      "source": "power_management",
+      "target": "elbow_servo",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "OUT+",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Elbow Servo (GND)",
+      "source": "power_management",
+      "target": "elbow_servo",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "OUT-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Wrist Rotate Servo (VCC)",
+      "source": "power_management",
+      "target": "wrist_rotate_servo",
+      "current": "300mA",
+      "voltage": "5V",
+      "sourcePin": "OUT+",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Wrist Rotate Servo (GND)",
+      "source": "power_management",
+      "target": "wrist_rotate_servo",
+      "current": "300mA",
+      "voltage": "5V",
+      "sourcePin": "OUT-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Gripper Servo (VCC)",
+      "source": "power_management",
+      "target": "gripper_servo",
+      "current": "300mA",
+      "voltage": "5V",
+      "sourcePin": "OUT+",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Gripper Servo (GND)",
+      "source": "power_management",
+      "target": "gripper_servo",
+      "current": "300mA",
+      "voltage": "5V",
+      "sourcePin": "OUT-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Joystick (VCC)",
+      "source": "power_management",
+      "target": "control_joystick",
+      "current": "50mA",
+      "voltage": "5V",
+      "sourcePin": "OUT+",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "label": "Power Management to Joystick (GND)",
+      "source": "power_management",
+      "target": "control_joystick",
+      "current": "50mA",
+      "voltage": "5V",
+      "sourcePin": "OUT-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "data",
+      "label": "Base Servo PWM Signal",
+      "source": "main_controller",
+      "target": "base_servo",
+      "protocol": "PWM",
+      "sourcePin": "PWM",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "label": "Shoulder Servo PWM Signal",
+      "source": "main_controller",
+      "target": "shoulder_servo",
+      "protocol": "PWM",
+      "sourcePin": "PWM",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "label": "Elbow Servo PWM Signal",
+      "source": "main_controller",
+      "target": "elbow_servo",
+      "protocol": "PWM",
+      "sourcePin": "PWM",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "label": "Wrist Rotate Servo PWM Signal",
+      "source": "main_controller",
+      "target": "wrist_rotate_servo",
+      "protocol": "PWM",
+      "sourcePin": "PWM",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "label": "Gripper Servo PWM Signal",
+      "source": "main_controller",
+      "target": "gripper_servo",
+      "protocol": "PWM",
+      "sourcePin": "PWM",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "label": "Joystick X-axis Analog Read",
+      "source": "main_controller",
+      "target": "control_joystick",
+      "protocol": "Analog",
+      "sourcePin": "ADC",
+      "targetPin": "VRx"
+    },
+    {
+      "type": "data",
+      "label": "Joystick Y-axis Analog Read",
+      "source": "main_controller",
+      "target": "control_joystick",
+      "protocol": "Analog",
+      "sourcePin": "ADC",
+      "targetPin": "VRy"
+    },
+    {
+      "type": "data",
+      "label": "Joystick Button Digital Read",
+      "source": "main_controller",
+      "target": "control_joystick",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO",
+      "targetPin": "SW"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "fastened to",
+      "source": "base_housing_bottom",
+      "target": "base_plate"
+    },
+    {
+      "label": "fastened to",
+      "source": "base_housing_top",
+      "target": "base_housing_bottom"
+    },
+    {
+      "label": "fastened to",
+      "source": "base_servo_mount",
+      "target": "base_housing_bottom"
+    },
+    {
+      "label": "fastened to",
+      "source": "base_controller_mount",
+      "target": "base_housing_bottom"
+    },
+    {
+      "label": "fastened to",
+      "source": "power_management_mount",
+      "target": "base_housing_bottom"
+    },
+    {
+      "label": "fastened to",
+      "source": "control_joystick_mount",
+      "target": "base_housing_top"
+    },
+    {
+      "label": "rotational joint (driven by servo)",
+      "source": "shoulder_arm_segment",
+      "target": "base_servo_mount"
+    },
+    {
+      "label": "pressed into",
+      "source": "ball_bearing_6x19x6mm",
+      "target": "base_housing_top"
+    },
+    {
+      "label": "shaft seated in",
+      "source": "shoulder_arm_segment",
+      "target": "ball_bearing_6x19x6mm"
+    },
+    {
+      "label": "fastened to",
+      "source": "shoulder_servo_mount",
+      "target": "shoulder_arm_segment"
+    },
+    {
+      "label": "rotational joint (driven by servo)",
+      "source": "elbow_arm_segment",
+      "target": "shoulder_servo_mount"
+    },
+    {
+      "label": "fastened to",
+      "source": "elbow_servo_mount",
+      "target": "elbow_arm_segment"
+    },
+    {
+      "label": "rotational joint (driven by servo)",
+      "source": "wrist_segment",
+      "target": "elbow_servo_mount"
+    },
+    {
+      "label": "fastened to",
+      "source": "wrist_rotate_servo_mount",
+      "target": "wrist_segment"
+    },
+    {
+      "label": "rotational joint (driven by servo)",
+      "source": "pen_tool_holder",
+      "target": "wrist_rotate_servo_mount"
+    },
+    {
+      "label": "adhered to",
+      "source": "rubber_feet",
+      "target": "base_plate"
+    },
+    {
+      "label": "mount",
+      "source": "base_servo_mount",
+      "target": "base_servo"
+    },
+    {
+      "label": "mount",
+      "source": "base_controller_mount",
+      "target": "main_controller"
+    },
+    {
+      "label": "mount",
+      "source": "power_management_mount",
+      "target": "power_management"
+    },
+    {
+      "label": "mount",
+      "source": "control_joystick_mount",
+      "target": "control_joystick"
+    },
+    {
+      "label": "mount",
+      "source": "shoulder_servo_mount",
+      "target": "shoulder_servo"
+    },
+    {
+      "label": "mount",
+      "source": "elbow_servo_mount",
+      "target": "elbow_servo"
+    },
+    {
+      "label": "mount",
+      "source": "wrist_rotate_servo_mount",
+      "target": "wrist_rotate_servo"
+    },
+    {
+      "label": "mount",
+      "source": "gripper_servo_mount",
+      "target": "gripper_servo"
+    }
+  ],
+  "projectId": "9e2b74d2-cd0b-4947-8dc6-d746cc4162a8"
+}

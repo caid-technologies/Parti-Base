@@ -1,0 +1,97 @@
+[
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "flight_controller_mount",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "lipo_battery_holder",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "camera_module_mount",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "microphone_housing",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws",
+    "source": "fly_body_enclosure",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "motor_front_left_mount",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "motor_front_right_mount",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "motor_rear_left_mount",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "motor_rear_right_mount",
+    "target": "drone_frame"
+  },
+  {
+    "label": "M2 nylon screws and nuts",
+    "source": "radio_receiver_mount",
+    "target": "drone_frame"
+  },
+  {
+    "label": "mount",
+    "source": "flight_controller_mount",
+    "target": "flight_controller"
+  },
+  {
+    "label": "mount",
+    "source": "lipo_battery_holder",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mount",
+    "source": "camera_module_mount",
+    "target": "camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "microphone_housing",
+    "target": "microphone"
+  },
+  {
+    "label": "mount",
+    "source": "motor_front_left_mount",
+    "target": "motor_front_left"
+  },
+  {
+    "label": "mount",
+    "source": "motor_front_right_mount",
+    "target": "motor_front_right"
+  },
+  {
+    "label": "mount",
+    "source": "motor_rear_left_mount",
+    "target": "motor_rear_left"
+  },
+  {
+    "label": "mount",
+    "source": "motor_rear_right_mount",
+    "target": "motor_rear_right"
+  },
+  {
+    "label": "mount",
+    "source": "radio_receiver_mount",
+    "target": "radio_receiver"
+  }
+]

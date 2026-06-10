@@ -1,0 +1,157 @@
+[
+  {
+    "label": "M3 bolts and heat-set inserts",
+    "source": "main_receiver_body",
+    "target": "buttstock"
+  },
+  {
+    "label": "M3 bolts and heat-set inserts",
+    "source": "main_receiver_body",
+    "target": "handguard"
+  },
+  {
+    "label": "Threaded or M3 bolted connection",
+    "source": "main_receiver_body",
+    "target": "outer_barrel"
+  },
+  {
+    "label": "M3 bolts and heat-set inserts",
+    "source": "main_receiver_body",
+    "target": "pistol_grip"
+  },
+  {
+    "label": "M3 bolts and heat-set inserts",
+    "source": "main_receiver_body",
+    "target": "trigger_box"
+  },
+  {
+    "label": "Press fit or M3 bolted",
+    "source": "main_receiver_body",
+    "target": "cylinder_sleeve"
+  },
+  {
+    "label": "Retained by slot or M3 bolts",
+    "source": "main_receiver_body",
+    "target": "spring_guide"
+  },
+  {
+    "label": "Sliding rail and linkage",
+    "source": "main_receiver_body",
+    "target": "charging_handle"
+  },
+  {
+    "label": "M3 bolts or snap fit",
+    "source": "main_receiver_body",
+    "target": "hop_up_unit"
+  },
+  {
+    "label": "M3 bolts and heat-set inserts",
+    "source": "main_receiver_body",
+    "target": "battery_tray"
+  },
+  {
+    "label": "M3 bolts and heat-set inserts",
+    "source": "main_receiver_body",
+    "target": "mcu_mount"
+  },
+  {
+    "label": "M3 bolts and heat-set inserts",
+    "source": "main_receiver_body",
+    "target": "buck_converter_mount"
+  },
+  {
+    "label": "M3 bolts and heat-set inserts",
+    "source": "main_receiver_body",
+    "target": "safety_switch_mount"
+  },
+  {
+    "label": "Concentric fit",
+    "source": "outer_barrel",
+    "target": "inner_barrel"
+  },
+  {
+    "label": "Internal fit",
+    "source": "outer_barrel",
+    "target": "barrel_stabilizer"
+  },
+  {
+    "label": "Seated/retained",
+    "source": "inner_barrel",
+    "target": "hop_up_unit"
+  },
+  {
+    "label": "Concentric fit",
+    "source": "barrel_stabilizer",
+    "target": "inner_barrel"
+  },
+  {
+    "label": "Pivot pin",
+    "source": "trigger_box",
+    "target": "trigger_component"
+  },
+  {
+    "label": "Sliding fit",
+    "source": "cylinder_sleeve",
+    "target": "piston_body"
+  },
+  {
+    "label": "M3 bolts or threaded",
+    "source": "piston_body",
+    "target": "piston_head"
+  },
+  {
+    "label": "Internal compression",
+    "source": "piston_body",
+    "target": "main_spring"
+  },
+  {
+    "label": "Linkage or direct attachment",
+    "source": "piston_body",
+    "target": "charging_handle"
+  },
+  {
+    "label": "Guides spring",
+    "source": "spring_guide",
+    "target": "main_spring"
+  },
+  {
+    "label": "Sliding rail",
+    "source": "magazine_body",
+    "target": "magazine_follower"
+  },
+  {
+    "label": "Retained within body",
+    "source": "magazine_body",
+    "target": "magazine_spring"
+  },
+  {
+    "label": "Compresses spring",
+    "source": "magazine_follower",
+    "target": "magazine_spring"
+  },
+  {
+    "label": "mount",
+    "source": "trigger_box",
+    "target": "trigger_switch"
+  },
+  {
+    "label": "mount",
+    "source": "battery_tray",
+    "target": "battery_pack"
+  },
+  {
+    "label": "mount",
+    "source": "mcu_mount",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "buck_converter_mount",
+    "target": "buck_converter"
+  },
+  {
+    "label": "mount",
+    "source": "safety_switch_mount",
+    "target": "safety_switch"
+  }
+]

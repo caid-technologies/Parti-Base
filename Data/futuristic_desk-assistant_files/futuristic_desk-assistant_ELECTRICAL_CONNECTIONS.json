@@ -1,0 +1,294 @@
+[
+  {
+    "type": "power",
+    "label": "Main MCU Power",
+    "source": "usb_c_power_input",
+    "target": "main_mcu",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Circular Display VCC",
+    "source": "main_mcu",
+    "target": "circular_display",
+    "current": "50mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Rectangular Display VCC",
+    "source": "main_mcu",
+    "target": "rectangular_display",
+    "current": "150mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Audio DAC Power",
+    "source": "main_mcu",
+    "target": "i2s_dac_audio",
+    "current": "50mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Microphone VDD",
+    "source": "main_mcu",
+    "target": "microphone_module",
+    "current": "10mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "label": "Circular Display SPI SCK",
+    "source": "main_mcu",
+    "target": "circular_display",
+    "protocol": "spi",
+    "sourcePin": "GPIO_SPI_SCK",
+    "targetPin": "SPI_SCK"
+  },
+  {
+    "type": "data",
+    "label": "Circular Display SPI MOSI",
+    "source": "main_mcu",
+    "target": "circular_display",
+    "protocol": "spi",
+    "sourcePin": "GPIO_SPI_MOSI",
+    "targetPin": "SPI_MOSI"
+  },
+  {
+    "type": "data",
+    "label": "Circular Display Data/Command",
+    "source": "main_mcu",
+    "target": "circular_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "DC"
+  },
+  {
+    "type": "data",
+    "label": "Circular Display Reset",
+    "source": "main_mcu",
+    "target": "circular_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "RST"
+  },
+  {
+    "type": "data",
+    "label": "Circular Display Chip Select",
+    "source": "main_mcu",
+    "target": "circular_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "CS"
+  },
+  {
+    "type": "data",
+    "label": "Circular Display Backlight PWM",
+    "source": "main_mcu",
+    "target": "circular_display",
+    "protocol": "pwm",
+    "sourcePin": "GPIO_PWM",
+    "targetPin": "BL"
+  },
+  {
+    "type": "data",
+    "label": "Rectangular Display SPI SCK",
+    "source": "main_mcu",
+    "target": "rectangular_display",
+    "protocol": "spi",
+    "sourcePin": "GPIO_SPI_SCK",
+    "targetPin": "SPI_SCK"
+  },
+  {
+    "type": "data",
+    "label": "Rectangular Display SPI MOSI",
+    "source": "main_mcu",
+    "target": "rectangular_display",
+    "protocol": "spi",
+    "sourcePin": "GPIO_SPI_MOSI",
+    "targetPin": "SPI_MOSI"
+  },
+  {
+    "type": "data",
+    "label": "Rectangular Display Data/Command",
+    "source": "main_mcu",
+    "target": "rectangular_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "DC"
+  },
+  {
+    "type": "data",
+    "label": "Rectangular Display Reset",
+    "source": "main_mcu",
+    "target": "rectangular_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "RST"
+  },
+  {
+    "type": "data",
+    "label": "Rectangular Display Chip Select",
+    "source": "main_mcu",
+    "target": "rectangular_display",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "CS"
+  },
+  {
+    "type": "data",
+    "label": "Rectangular Display Backlight PWM",
+    "source": "main_mcu",
+    "target": "rectangular_display",
+    "protocol": "pwm",
+    "sourcePin": "GPIO_PWM",
+    "targetPin": "BL"
+  },
+  {
+    "type": "data",
+    "label": "Rotary Encoder CLK",
+    "source": "main_mcu",
+    "target": "rotary_encoder_main",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "CLK"
+  },
+  {
+    "type": "data",
+    "label": "Rotary Encoder DT",
+    "source": "main_mcu",
+    "target": "rotary_encoder_main",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "DT"
+  },
+  {
+    "type": "data",
+    "label": "Rotary Encoder Push Button",
+    "source": "main_mcu",
+    "target": "rotary_encoder_main",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "SW"
+  },
+  {
+    "type": "data",
+    "label": "Back/Home Button",
+    "source": "main_mcu",
+    "target": "button_back_home",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "COM"
+  },
+  {
+    "type": "data",
+    "label": "Snooze Button",
+    "source": "main_mcu",
+    "target": "button_snooze",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "COM"
+  },
+  {
+    "type": "data",
+    "label": "Dismiss Button",
+    "source": "main_mcu",
+    "target": "button_dismiss",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "COM"
+  },
+  {
+    "type": "data",
+    "label": "Focus Toggle Button",
+    "source": "main_mcu",
+    "target": "button_focus_toggle",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "COM"
+  },
+  {
+    "type": "data",
+    "label": "Mute/Privacy Button",
+    "source": "main_mcu",
+    "target": "button_mute_privacy",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_EXT_INT",
+    "targetPin": "COM"
+  },
+  {
+    "type": "data",
+    "label": "Audio DAC BCLK",
+    "source": "main_mcu",
+    "target": "i2s_dac_audio",
+    "protocol": "i2s",
+    "sourcePin": "GPIO_I2S_BCLK",
+    "targetPin": "BCLK"
+  },
+  {
+    "type": "data",
+    "label": "Audio DAC LRCLK",
+    "source": "main_mcu",
+    "target": "i2s_dac_audio",
+    "protocol": "i2s",
+    "sourcePin": "GPIO_I2S_WS",
+    "targetPin": "LRCLK"
+  },
+  {
+    "type": "data",
+    "label": "Audio DAC Data In",
+    "source": "main_mcu",
+    "target": "i2s_dac_audio",
+    "protocol": "i2s",
+    "sourcePin": "GPIO_I2S_DATA_OUT",
+    "targetPin": "DIN"
+  },
+  {
+    "type": "data",
+    "label": "Speaker Audio Output",
+    "source": "i2s_dac_audio",
+    "target": "speaker_audio_output",
+    "protocol": "analog",
+    "sourcePin": "SD",
+    "targetPin": "+"
+  },
+  {
+    "type": "data",
+    "label": "Mic BCLK",
+    "source": "main_mcu",
+    "target": "microphone_module",
+    "protocol": "i2s",
+    "sourcePin": "GPIO_I2S_BCLK",
+    "targetPin": "BCLK"
+  },
+  {
+    "type": "data",
+    "label": "Mic WS",
+    "source": "main_mcu",
+    "target": "microphone_module",
+    "protocol": "i2s",
+    "sourcePin": "GPIO_I2S_WS",
+    "targetPin": "WS"
+  },
+  {
+    "type": "data",
+    "label": "Mic Data Out to MCU I2S In",
+    "source": "microphone_module",
+    "target": "main_mcu",
+    "protocol": "i2s",
+    "sourcePin": "DATA",
+    "targetPin": "GPIO_SPI_MISO"
+  },
+  {
+    "type": "data",
+    "label": "Microphone Power via Mute Switch",
+    "source": "microphone_mute_switch",
+    "target": "microphone_module",
+    "protocol": "gpio",
+    "sourcePin": "NO",
+    "targetPin": "VDD"
+  }
+]

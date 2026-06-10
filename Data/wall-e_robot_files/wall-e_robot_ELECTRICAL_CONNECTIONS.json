@@ -1,0 +1,349 @@
+[
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "bms_module",
+    "voltage": "7.4-12.6V"
+  },
+  {
+    "type": "power",
+    "source": "bms_module",
+    "target": "buck_converter_5v",
+    "voltage": "7.4-12.6V"
+  },
+  {
+    "type": "power",
+    "source": "bms_module",
+    "target": "motor_driver_tracks",
+    "voltage": "7.4-12.6V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "licheerv_nano_main",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "esp32_controller",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "licheerv_nano_main",
+    "target": "esp32_controller",
+    "protocol": "UART",
+    "sourcePin": "UART_TX",
+    "targetPin": "UART_RX"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "licheerv_nano_main",
+    "protocol": "UART",
+    "sourcePin": "UART_TX",
+    "targetPin": "UART_RX"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "motor_driver_tracks",
+    "protocol": "PWM",
+    "sourcePin": "GPIO16 (Motor1_PWM)",
+    "targetPin": "PWMA"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "motor_driver_tracks",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO17 (Motor1_DIR)",
+    "targetPin": "AIN1"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "motor_driver_tracks",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO17 (Motor1_DIR)",
+    "targetPin": "AIN2"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "motor_driver_tracks",
+    "protocol": "PWM",
+    "sourcePin": "GPIO18 (Motor2_PWM)",
+    "targetPin": "PWMB"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "motor_driver_tracks",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO19 (Motor2_DIR)",
+    "targetPin": "BIN1"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "motor_driver_tracks",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO19 (Motor2_DIR)",
+    "targetPin": "BIN2"
+  },
+  {
+    "type": "power",
+    "source": "motor_driver_tracks",
+    "target": "left_track_motor",
+    "voltage": "7.4-12.6V"
+  },
+  {
+    "type": "power",
+    "source": "motor_driver_tracks",
+    "target": "right_track_motor",
+    "voltage": "7.4-12.6V"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "ultrasonic_front",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO5 (US_Trig_Front)",
+    "targetPin": "TRIG"
+  },
+  {
+    "type": "data",
+    "source": "ultrasonic_front",
+    "target": "esp32_controller",
+    "protocol": "GPIO",
+    "sourcePin": "ECHO",
+    "targetPin": "GPIO4 (US_Echo_Front)"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "ultrasonic_rear",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO2 (US_Trig_Rear)",
+    "targetPin": "TRIG"
+  },
+  {
+    "type": "data",
+    "source": "ultrasonic_rear",
+    "target": "esp32_controller",
+    "protocol": "GPIO",
+    "sourcePin": "ECHO",
+    "targetPin": "GPIO0 (US_Echo_Rear)"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "ir_sensor_front",
+    "protocol": "ADC",
+    "sourcePin": "GPIO34 (IR_Front)",
+    "targetPin": "OUT"
+  },
+  {
+    "type": "data",
+    "source": "esp32_controller",
+    "target": "ir_sensor_rear",
+    "protocol": "ADC",
+    "sourcePin": "GPIO35 (IR_Rear)",
+    "targetPin": "OUT"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "ultrasonic_front",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "ultrasonic_rear",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "ir_sensor_front",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "ir_sensor_rear",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "licheerv_nano_main",
+    "target": "mic_module_usb",
+    "protocol": "USB",
+    "sourcePin": "USB_HOST",
+    "targetPin": "USB_DP/DM"
+  },
+  {
+    "type": "power",
+    "source": "licheerv_nano_main",
+    "target": "mic_module_usb",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "licheerv_nano_main",
+    "target": "speaker_module_amp",
+    "protocol": "I2S",
+    "sourcePin": "I2S_OUT",
+    "targetPin": "L_IN"
+  },
+  {
+    "type": "power",
+    "source": "licheerv_nano_main",
+    "target": "speaker_module_amp",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "3.3V Power",
+    "source": "licheerv_nano_main",
+    "target": "display_st7789",
+    "voltage": "3.3V",
+    "sourcePin": "3.3V",
+    "targetPin": "VIN"
+  },
+  {
+    "type": "data",
+    "label": "SPI Interface",
+    "source": "licheerv_nano_main",
+    "target": "display_st7789",
+    "protocol": "SPI"
+  },
+  {
+    "type": "power",
+    "label": "5V Power",
+    "source": "buck_converter_5v",
+    "target": "watchdog_timer",
+    "voltage": "5V",
+    "sourcePin": "VOUT+",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "data",
+    "label": "Watchdog Reset",
+    "source": "watchdog_timer",
+    "target": "licheerv_nano_main",
+    "sourcePin": "DRV",
+    "targetPin": "RESET"
+  },
+  {
+    "type": "data",
+    "label": "Watchdog Reset",
+    "source": "watchdog_timer",
+    "target": "esp32_controller",
+    "sourcePin": "DRV_ALT",
+    "targetPin": "EN"
+  },
+  {
+    "type": "data",
+    "label": "Watchdog Keep-alive",
+    "source": "licheerv_nano_main",
+    "target": "watchdog_timer",
+    "voltage": "3.3V",
+    "sourcePin": "GPIO_A",
+    "targetPin": "DONE"
+  },
+  {
+    "type": "data",
+    "label": "Watchdog Keep-alive",
+    "source": "esp32_controller",
+    "target": "watchdog_timer",
+    "voltage": "3.3V",
+    "sourcePin": "GPIO_B",
+    "targetPin": "DONE_ALT"
+  },
+  {
+    "type": "data",
+    "label": "Low Battery Signal",
+    "source": "bms_module",
+    "target": "esp32_controller",
+    "voltage": "3.3V",
+    "sourcePin": "LOW_BATT_OUT",
+    "targetPin": "GPIO_C"
+  },
+  {
+    "type": "data",
+    "label": "PWM Signal",
+    "source": "esp32_controller",
+    "target": "head_pan_servo",
+    "protocol": "PWM",
+    "sourcePin": "GPIO12",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "PWM Signal",
+    "source": "esp32_controller",
+    "target": "head_tilt_servo",
+    "protocol": "PWM",
+    "sourcePin": "GPIO13",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "PWM Signal",
+    "source": "esp32_controller",
+    "target": "left_arm_servo",
+    "protocol": "PWM",
+    "sourcePin": "GPIO14",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "PWM Signal",
+    "source": "esp32_controller",
+    "target": "right_arm_servo",
+    "protocol": "PWM",
+    "sourcePin": "GPIO15",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "head_pan_servo",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "head_tilt_servo",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "left_arm_servo",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "right_arm_servo",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "MIPI CSI",
+    "source": "licheerv_nano_main",
+    "target": "camera_mipi_csi_ov5647",
+    "protocol": "MIPI CSI"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "camera_mipi_csi_ov5647",
+    "voltage": "5V"
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "type": "power",
+    "label": "Main power in for buck",
+    "source": "battery_pack",
+    "target": "buck_converter",
+    "current": "5A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "label": "Main ground in for buck",
+    "source": "battery_pack",
+    "target": "buck_converter",
+    "current": "5A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "label": "5V power to MCU",
+    "source": "buck_converter",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Ground to MCU",
+    "source": "buck_converter",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Trigger signal",
+    "source": "main_mcu",
+    "target": "trigger_switch",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "NO"
+  },
+  {
+    "type": "data",
+    "label": "Safety position 1",
+    "source": "main_mcu",
+    "target": "safety_switch",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "POS1"
+  },
+  {
+    "type": "data",
+    "label": "Safety position 2",
+    "source": "main_mcu",
+    "target": "safety_switch",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "POS2"
+  },
+  {
+    "type": "power",
+    "label": "Trigger switch VCC",
+    "source": "main_mcu",
+    "target": "trigger_switch",
+    "current": "1mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Trigger switch GND",
+    "source": "main_mcu",
+    "target": "trigger_switch",
+    "current": "1mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Safety switch VCC",
+    "source": "main_mcu",
+    "target": "safety_switch",
+    "current": "1mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Safety switch GND",
+    "source": "main_mcu",
+    "target": "safety_switch",
+    "current": "1mA",
+    "voltage": "3.3V"
+  }
+]

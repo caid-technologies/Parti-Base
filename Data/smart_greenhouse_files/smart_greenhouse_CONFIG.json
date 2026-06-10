@@ -1,0 +1,1831 @@
+{
+  "plan": "-  MCU: ESP32 or Arduino Mega for sensor integration and motor control. Power: Solar panel with charge controller and battery.-  Sensors: Rain sensor, LDR/photoresistor for light, soil moisture sensor (capacitive), DHT22 for temperature/humidity.-  Actuators: DC gear motors (2 for roof retraction), water pump for irrigation, small fan for ventilation.-  Mechanical: Aluminum or PVC frame for greenhouse structure, linear rails and timing belts for roof mechanism, small nozzles for irrigation.-  Enclosures: Waterproof enclosures for electronics, 3D-printed mounts for sensors and motors.",
+  "nodes": [
+    {
+      "id": "mcu_esp32",
+      "name": "Main Controller",
+      "pins": [
+        "GPIO16",
+        "GPIO17",
+        "GPIO18",
+        "GPIO19",
+        "GPIO21",
+        "GPIO22",
+        "GPIO23",
+        "GPIO25",
+        "GPIO26",
+        "GPIO27",
+        "ADC_CH0",
+        "ADC_CH1",
+        "SDA",
+        "SCL",
+        "3V3",
+        "GND",
+        "5V"
+      ],
+      "type": "mcu",
+      "partId": "adae0166-a040-4ad7-879e-aa03207d2856",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/MQCWWrlFRzyNHN__5qHN76SiNjCp68n9oLyu6uVmEco/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZGl5bW9yZS5jYy9j/ZG4vc2hvcC9wcm9k/dWN0cy84XzMxOGZi/ZTU2LWUwYzAtNGE4/OC1hYWE1LWE0MWJi/MzgxNjc0Y18xMDI0/eDEwMjQuanBnP3Y9/MTYyNjE1MDAzNg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x28x13mm",
+      "description": "Central microcontroller for sensor data processing and actuator control, with integrated Wi-Fi.",
+      "productName": "ESP32 Dev Kit C V4",
+      "purchaseUrl": "https://www.amazon.com/s?k=ESP32+Dev+Kit+C+V4",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwYLyE5siav8bjgEx7RHJI3ajaV5OLPfvyDYhtqKp7R9P4XsquepxYqSritlSYmg1mszAQWjXj5LydQPCvFskUdTIXfQGTEjrJRhE8BWfY47JLOOq3wOXwY22UReeHOzEPAAzm3obbUy72NaE7UK8TWIZxFEjE55vwAL0sASSOqZS5zLaRTK0oFz8kpnMubK2CdnRsBiuoNKo79Ydyp9CMAuk8EG5rWaMxkvyKwtZ0irbb00jRjHM8BsC8g94bSvJMSezn7z7T8ynRRaiC2yM77cF9KODQW27dXtdBLmje49MWzl4FVhyuMS4dKcrdgMaV0Yuf9NETkeDey1UhgMXlBPv34k4B3Y498DYMMnUbYJ8jtc2ETPlOfVOiGJ0tgz7HQsSczkNmpxJlMdOP5qfLLsMKJaWOdiLm5nZZx1WQpCFoD50O5M0VOTetvSRanoCEp7YywebH0gZkxuvcrq590UYsrFSaS4fBfISmd9SxmMdgrOSeunt26kLjOzGPc0iMIwuyfXahazhVyPg7VQCGoSsAA0OF7FT4UsvRPHlJTeDsY1MHY3OKFPawH3ZkTMtpd1OeQUlj8oorVUolDOfIv308Lf6oYcrHxdAEDZwNpoAwcNkZTrbTMuLefupMrEAf89M2BCI0KjgwShtJt5BwkF",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32+Dev+Kit+C+V4&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_solar_panel",
+      "name": "Solar Power Panel",
+      "pins": [
+        "V+",
+        "V-"
+      ],
+      "type": "power",
+      "partId": "5cf5c260-6fd7-4902-9102-70bce401be56",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/6jun5JozkyKfhxkvIkeZemu9vqc2AKzOoFg8S6bgNYs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcm9i/b3RzLmNvLmluL3B1/Yi9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvZDhkZGQw/ZjliMGNkMDA4YjU3/MDg1Y2QyMThiNDg4/MzIvMS8yLzEydl8x/MF93YXR0X3NvbGFy/X3BhbmVsLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B00OZC3X1C?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "350x235x18mm",
+      "description": "Converts solar energy into electrical power to charge the battery.",
+      "productName": "10W 12V Solar Panel",
+      "purchaseUrl": "https://www.amazon.com/s?k=10W+12V+solar+panel",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfvOUagKOFhG4CMYSSUwiPnft5FXPkbOxhrPXIW8QdsCnZl0ugnlexnE06q34UeNfQjPQ774nArrAVDZnMXVRZ3lCtwvZleEBd7xXXHxCkoIRCSNnFlnySLxH0hj0LWlmjRUkkaxNu9AV8oUqgNtZ6BxMH6N6AmZXPujuMWvyBdPGVBLX7wAJjsuskTfaPZpWLmqKbKD7xZrAOrC7dM1mYZDU3SweI2uBkRqNmhKRTMmGsCUVwPIob79IC7TjTj91HdjsAT6yuELchu8dYxAasKsxCm2tdBoXr2AnjDfOHPHOoT5DigsZmdsZeoKmAYfAOdaQthR3KOTs2TNtxbnO6tb8w1nDz4ftBCHuc8HII3bKVrjyp4ZZHE7xQKn4eM3IYZ4lmKOqztiBn1VqLNpKrpEbvfibi0t3r6xOkBlXBUXpZBDg86dnu0oWlurkCqhzeDVecvewNTA2Uv9hjzVfXRKYjxrvV8qsaPG6QgXgWwEzZXzQdpBQgnklGgFqLPHSVagXjYWQeU0TQBjBmhmJt6Tmm99GYEIL0MScyKhzffEq7rCmMsf6eEyPBq1kVrQW5135tJFXgs14cIa4YH6Bm0AiKteQps8du9WP4uFxsmQ937Y9g11RZfbvjgZFXfjHhw8v2m2GIGku43DNFLGqpAx",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=10W+12V+Solar+Panel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_charge_controller",
+      "name": "Battery Charge Controller",
+      "pins": [
+        "Solar+",
+        "Solar-",
+        "Battery+",
+        "Battery-",
+        "Load+",
+        "Load-"
+      ],
+      "type": "power",
+      "partId": "04b22de6-18ef-47d7-a9e7-d58bd4916564",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/BqFNtaF1XqqVwbdtCc0NKK-hIDobsdtS5T_P0svowgQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTEyQ2NTOFNlQkwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DGP8YMGD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "68x48x20mm",
+      "description": "Manages power flow from solar panel to battery and provides regulated output for loads.",
+      "productName": "MPPT Solar Charge Controller 3S Li-ion",
+      "purchaseUrl": "https://www.amazon.com/s?k=mppt+solar+charge+controller+12V",
+      "estimatedCost": 18,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIqEhsabZvfR30Rj9JpXQIWkxcJpEk96WCZghB8FjD0A6KTCjdbNlXkTFB0l0v1iRHMMyt6wg57nHHWVtil9FF3w5fvVWBqUwo6D7Qs48aAWW1rpYNwOOJdQiU5a74BrQ829WMy2wP6QRa33OTz918oY2FAZzRV2PRtL02cbMbE4FWswKGm8Th3MMm4BssuADSlMDM52pl51k5CLDhMwOAyH9prIpde4Rtv3ZuRItY0tN4Balx1imymwnyTaW2Ds2VnQIWsStYUBLXFjWGErVcAw1980LiXMbH9ypI4VbekRchm70CbhhGHrWoznBCGLrlmWgVFBrC4gJRJWTE4AdOmfCO8h3IEOihv0K8FnBeKPgW9vPJsyDYQ7ojYRNR1dPpi9rTGCNmOqJtCtEkqzCivCYzZ1OwgpYjJ8ebYYP2Fm17B94THFLIJnaMZWAkAGiiqkbdXuBf43V0COxH933uiwZi3UPPwpP0fSu8VO3TMmpvfoQpleMJQ3zEeVElePOY7Znex2ir2dWVmJwbSzOfDofysAOrt93Pzeq1D1Slmp67f72de59cAuC9eJs13ovL4JwM1RsFZEY6DP6tnUIfTNfgcPAsjFJJBSMKR2rF72mq8sQmWdSrrqe18Hgrq9yH4Q9kzkG6y3FbfS3wZpb3on",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MPPT+Solar+Charge+Controller+3S+Li-ion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_battery",
+      "name": "System Battery",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "power",
+      "partId": "c5b45ddd-f279-4f1c-929d-b0997855bef4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/FaWQcBIjF7cXlGVgKbERwwaYehF5kdI5gmz2kwzSXzY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFoNTlyZDQ2UUwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Positive,Negative"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B003S1RQ2S?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "151x65x94mm",
+      "description": "Stores electrical energy for powering the system, especially during low light conditions.",
+      "productName": "12V 7Ah SLA Battery",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+7Ah+SLA+battery",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwYLxxPHj9I94JjyeiMOBi6C06msd7vGWNPO5Y0X4Bg4xa8kfKWKA11RMAPNfJHJWkOBUGLJV1Tv0lG6YMGUfaDWl48rtZoQLod3ENoVD3cRmkQpzcDWaNfgGsDb4KQf1VUmCi3gZFvvOGFRmgRPRXeEUT2gjHyn0rJecz3JCE16O191dD0AWVM6PMREMiIqxfg9az7mAyF1OedfrfCob1ww0dZXx6qCSmoWavh1rVN8O5eyxCqPQRsssJJYNearvfatUVCrwUU4QOhWB2vmCUttX6buLUOPoS2HN9M0KAQr8iaLdcz1EupYUv1vO0ufxrjXZMNlm6hfTcKsfWtrhbUxtRIGdZkM6PIxAEz4gtkBT6qSPUWRzHdcgFlWxJCAzi8tgDSekFB7bZnd8MuQ9DZyJ26K9WyaSsAMEFcpiycEg72reZXpSvU4r77IhD6I1kpCDC2KgGMkDCjjQ2waYRieH4js7ijU2gvttTJWv6Fs55HX5Vsy4KqbFj3MWVdeVSI3aTiE2sE2ClvM7QSaRiz5pZoenIuWuXQgNIxqvDjdxgp9CheBm3GZGeYXawm82FvwzFEsMtSKOw9EiWXSp1Ye4n8V52JJvnT8Ouh48BZaKl7cAMfbTJwzD1KN9CJPW2cPjC9JDV6m1mJDTXGOymhz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+7Ah+SLA+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_rain",
+      "name": "Rain Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "DOUT",
+        "AOUT"
+      ],
+      "type": "sensor",
+      "partId": "a78ac3ff-3d64-4dac-9959-f9dc3200c187",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/0gTu7DVj6iIKuqy8hJPFMieFBQV-PR5LkxGwP2A__uo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dG9tc29uZWxlY3Ry/b25pY3MuY29tL2Nk/bi9zaG9wL3Byb2R1/Y3RzL0FESVlSYWlu/RHJvcFNlbnNvck1v/ZHVsZVRvbXNvbkVs/ZWN0cm9uaWNzLmpw/Zz9jcm9wPWNlbnRl/ciZoZWlnaHQ9MTA4/MCZ2PTE2NTExNDQy/NTcmd2lkdGg9MTA4/MA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Digital Out,Analog Out"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01MUVVSSF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x40x1mm (pad), 32x14x7mm (module)",
+      "description": "Detects the presence of rain to trigger automatic roof closure.",
+      "productName": "KY-009 Rain Sensor Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=KY-009+rain+sensor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHQrweM9at4dlpQOWmZ0uLtZ1GxHHSrhdQPBqFupWGZxFb9V3atJjOzQ2dRg2S9BA6SygeSYO2mcdQlqZChbnYm25IFHcCmwnbZW1J9ktswbOhpP8Nh2bxoQ71yx4pbpyWcOuGtmxofE1OxgRAw5Mn4VSKmsbMazszrvxS4bmQ0rtATDPgsaScHlVG6g3sQKrxMuVoHcf8jV6NcHVBb6aCDEG2A52kbCixZMu4Bk1ui89e5fpNj1Ka9gsFq3WJTBOcoQu4mbjjyWhDCXm8HiE8WnT06lFXNbXFCS7roKBuHwyxqeW0XO5h7PYdC9AUzh3WMri6ucrmRhgy1Zq0Lgq65EzWb26t2yHhsJwOcTZ6SlTuhYDEc8ul87ms9Rq61RCE2rp4lH7NiskWS8lYtHjLtmEDlKv7a4x5chR4f73dx1jVPnxvjrRAqNTZT7vpCOE0z2VEdfkjaiv9R4mJuyusE8o85RBlyn8lJ2CWWlt2yFQRN0rRdPzIzY11vsInvngVBUvKgcswAt9IHwQcXjDp2gpHw3BxlngqUjRcO61eHCDxxlxfuzBYplRJhI4LyAMSoOHLczukh1c3xw2bAKTN8j4sd2sqURPpgPGUXeBekSirXW4ob6MjqnZAwIvTJjfRV8Rwt0ODVSNyl52bTNqsVz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=KY-009+Rain+Sensor+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_light",
+      "name": "Ambient Light Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "SDA",
+        "SCL",
+        "ADDR"
+      ],
+      "type": "sensor",
+      "partId": "abc60fbb-aa46-4019-9b06-c58543e1b0a1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/JXNsOzrE-OVOxPh4OuhjtEA0tLNWbkbv-kaMFYYSXPE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Ymx1ZS1wY2IuY29t/L2Nkbi9zaG9wL3By/b2R1Y3RzL0lGX0RB/N0U4RTVGLmpwZz92/PTE1MzA5MjE0MjQm/d2lkdGg9MTQ0NQ",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SDA,SCL,ADDR"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0B74NL8S4?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "32x15x5mm",
+      "description": "Measures ambient light intensity for automatic roof opening/closing and night mode.",
+      "productName": "BH1750FVI Digital Light Sensor Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=BH1750FVI+light+sensor",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4eyVwMH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BH1750FVI+Digital+Light+Sensor+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_soil_moisture",
+      "name": "Soil Moisture Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "AOUT"
+      ],
+      "type": "sensor",
+      "partId": "7f3ef174-ee62-4cbc-b02b-38d8ba58f3de",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/_NodDEweE33euko2JUDd_pSxaSKmK9Zrawg8CqHj7WQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZWxlY3Jvdy5jb20v/bWVkaWEvY2F0YWxv/Zy9wcm9kdWN0L2Nh/Y2hlL2I2Yjk1Nzc5/MzdlNmE5NmY1MGU1/M2RkYzQyOTgzNjI4/L2Mvci9jcm93dGFp/bF9jYXBhY2l0aXZl/X3NvaWxfbW9pc3R1/cmVfc2Vuc29yXzEu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,AOUT"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07SYBSHGX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "98x23x5mm",
+      "description": "Measures soil humidity levels to trigger automatic irrigation.",
+      "productName": "Capacitive Soil Moisture Sensor v1.2",
+      "purchaseUrl": "https://www.amazon.com/s?k=Capacitive+Soil+Moisture+Sensor",
+      "estimatedCost": 4,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHIvxp8xlDZ3yQpC3m2j2ZyXpVDK2m0yX9ckpPG581KTbrO1jLdV2T91LjO8Llr36hhmeMI56Qhytv31w0vjqR5y1X96FlICJVdi9nrRk68RH3A5zW6areWieqVxgl7AVf7h8k5wkBuJhP2sgUx6eafRosjLB4WFA7L00AkXuki4wYjhpiLocshsLVwjqrfv7CpOtrcb52jIuPPLNbe1nVKGA9s2L0XlKQpfzRGNxwxR4XG2RoH4vjMDdal8Sx3yXQV2DNbF7W2EZLz5TFw653slTS7YDjCKPcqgOVRctkZdLfR6Hvcox0oZ2GM4Hec203rrWwqYGrb7HQeGzrtOJIVLeNIdpzqIX9nCTTOBWj0Qx5MqzAPPKFEdU6BO6w0gBAuY4Nq8v99eTsIfd3hC6F6oVl7vxfciaT0r67hLSKBLPznmwPrrKmQL4ppIIoC5XJimcYI82ej735H9iQb8pAug076b2P2aNddz5cZCgISMkAIzEdeCfqUvH6ghHTELPm5468SV1sTsr58FsI97JbUm1ZYTvESmBR0URKpf6m6xvT75ZBWY5d1qLeqgrMmxxd6WOG1fNqlCUMp7tW1Joo3rAGKsPDNZwa33TBg6Tbx0RIR07Ll9jtfaPoSWEyTmlGBFSjTfIlAvxP5WIrkZyKFp",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Capacitive+Soil+Moisture+Sensor+v1.2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_temp_humidity",
+      "name": "Temperature & Humidity Sensor",
+      "pins": [
+        "VCC",
+        "DATA",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "96835268-f750-4264-8aae-8ca0deb65ce3",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Uwf8mB5g09eJHr3Dn8XS1myRAG5x3--IML6BivxP-w4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZXNwYm9hcmRzLmRl/di9pbWcvSG1ndFVE/MVRiSi01NDUucG5n",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D9W5CMHS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x12x5.5mm",
+      "description": "Monitors internal greenhouse temperature and humidity for ventilation control.",
+      "productName": "DHT22 Digital Temperature Humidity Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=DHT22+digital+temperature+humidity+sensor",
+      "estimatedCost": 7,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3V8zFMp",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DHT22+Digital+Temperature+Humidity+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "actuator_water_pump",
+      "name": "Water Irrigation Pump",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "actuator",
+      "partId": "9c455135-3c39-4fb5-bcd8-f1f35cd07935",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8nHD3y6CD8Cfa6KWI0fqs8cm63m6HLg60tvdMNZVthg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFJaERyVFZ4SFMu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CFF91KVS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x30x30mm",
+      "description": "Pumps water from the reservoir for automatic plant irrigation.",
+      "productName": "12V Mini Submersible Water Pump",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+mini+submersible+water+pump",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQRUSHzVAcTJRyKjqLhqK6t5a3ipIROlhnkoMTwuLXvqn2I4PZfTkh5FNSsAOdnKD8diLYWAVFV55FtMEY8jLwUUHfJ18N7ItEAhCM5xyoYuyyUewE6jlJKIF8rTbRajFDk7xy6FHGexOX2FcM8IIpZvYLz2D3tsdxvDvrc4WN2dTupp9yjVWmGO2fJchtf27rcew6BPtPiV9a1s1WwQ1W7TXASwbPBU3mLl6K0OPQXzqPK3g3l2miB7SZHqPIFGtkJs9vTe2Afe2Iryw3w57ssgLg2PVTxSrFCjpw5gt3QUAhBSC34QJIUXS0TU6LmvsTo7XjEE9QAubCJKu6cAQ6s2t2Q2FV01AU20PhidN0cii2e9oXLxiMtRsdE3iX00rcuYscyjGPBBIaSzljQcEookab0RinDbpgcvS47gvqWuvDhUzmwqy5LqVI3vfIWnAQ6TSIwRny1GHmtK8U1RT5jtPLLhJgnya1DDLGojU3NWT4PrSEBQK09kxycBXJj1uorxRM337w4TVKp2mxgZhQHvADqxKBK4Bkd1QtxebACKEpwcfYSE4jxW7gIN7J9tvuqVrDaprjEhqyAMz2y7JqtdB1XW6WFK2NJx6nwCanZLtd9LE0Tmo5g4SwSvqKB1bAXsinA62CCKVx5Ry49rNVrd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+Mini+Submersible+Water+Pump&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "actuator_fan",
+      "name": "Ventilation Fan",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "actuator",
+      "partId": "9b7a1d77-16f7-455e-b5d6-e39d5e980339",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/KS7tVTnWfZ6VlhJS_wBF1IFMIzKxhbfy3pisV0MJVeE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzgxLTV4NzRrM3NM/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,PWM"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07D493BDX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x60x15mm",
+      "description": "Provides ventilation to control internal greenhouse temperature.",
+      "productName": "12V DC Cooling Fan (e.g., 60mm)",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+DC+cooling+fan+60mm",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIB75Ep5e1QqMQtuv40lT0dofMr0gnLvLZt7MUVP7odtQScNR6xNfl4lCaqdNrfSCeHToalP3q3TwVHPXwuMntuqELcbK2crQOzFgvDQQiqCSVC4W2kR8HUgFYBkX9ZTrwJXglvR2uW9aiftRkktXgwRz0MxWw73ETy4dOYucAjThcvicjKgAwhaF4Biv7Fl5SrUvGn7ZtyJGo0fYX0EmEcAjkJnvSLPsipamBiaHp2ibsyqwAGDMfjbYajb7ujo6gmZMkLM8LofhC0zsQwWHDarIximbi83KHOZbB2o4Z2dF2Ap7ywByJo11k5SjSQuPFlutfnQMXuDn2HqDLcyFHcLBsY1zyKIXKQAanY5ThtjMv2mZQEfJAc1a3159LtNBCryoguI2vsRcp4K3LpXhlEM4uvSwulqKl5S93sO4fYA8WDfLLQJwQZCdna8w2XZ7fM85R48gJF9fwtxSm5hpiQQTLWpX2yr48LV1f3NLmR4RK2jmtkCvQxFv4qAb5RCMWJluIvIndOTwdjbHvqsbmYOJGm8142X9Xh4yc3zKkI84K11ugTi9ocMlK8YxGx84B7jw75qxGAIZTNkpoHaSDXix04VS7fWPQOJMQxbrfy8Wrlc65jtiSbJbCOE4HgG4AQ0BqNQEzqv6oL30njsw3uX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+DC+Cooling+Fan+%28e.g.%2C+60mm%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "module_relay_1",
+      "name": "Pump Control Relay",
+      "pins": [
+        "VCC",
+        "GND",
+        "IN",
+        "NC",
+        "COM",
+        "NO"
+      ],
+      "type": "module",
+      "partId": "53a9acc2-14db-41ed-9618-9e23a87ab36b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/zU9gDDAaGkVD9Mt9zq6rHDIojzOOLpb_zHlWWIqfqF0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFFRXhNeitwOUwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,IN"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B095YFJ69T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x17x19mm",
+      "description": "Switches the 12V water pump on/off via MCU signal.",
+      "productName": "12V 1-Channel Relay Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+1+channel+relay+module",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNLNupZt6pe0Fj5BfdHmqUJSr5yUY16IhaJBUuT3BDh2ionZiX61R0zOJQaygelAvy8ly4O0y7LzR4CHbdGzmoqixAS6qDqokiI5pXmzl5qoSafT7IRTxnR7MtkpECIu34uZltp3x9bwWU4j4z09CHn7AlTAXDqV0YOeehuLBnT7OMuaMD7bdHdHcexBBNOxwAyP3Xlo1KwWsw1OZopnC6dfKPjFPkQt3CxasEEzCy2OxmLAALEAKTMiHbOzXCwgTvbXWJ5gkTf5wtkuUPGC7svfbpyAwcbJKvZX5HXtqc36vKw7CeBWBXzQCoClTY0Kl83KddXRiRjpzewpXmGdxFtrMLNSOUF8TrqHqD4OsPB7elq9EEpZ4xoZq6OSokXy06ROMeFqyl53TZcy2oqQvzcq8lAtHpvYOA8rKnV8dcRmWZxZtOYm1BkV5w3G0Tx49t1BiaqYKctiUcsEGvvgKkRyf72KjvlqjDZBdW0wNMVrcBjIL1AU3qRbwxfNz7v7gMnkOMqM69DAyGkw1CZVtU6nO81TdEiqUax5ILN26NR2TiMeV4HtPxuHLLfHp0gPsCWxpS3tFzhpaGussD4ix6mHoNS4PIiiNxGtbWzsM1N8GHu5fie6AOF2VCwHjLjHj8dpZlu5eFDCDiFLwli3Xf9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+1-Channel+Relay+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "module_relay_2",
+      "name": "Fan Control Relay",
+      "pins": [
+        "VCC",
+        "GND",
+        "IN",
+        "NC",
+        "COM",
+        "NO"
+      ],
+      "type": "module",
+      "partId": "53a9acc2-14db-41ed-9618-9e23a87ab36b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/zU9gDDAaGkVD9Mt9zq6rHDIojzOOLpb_zHlWWIqfqF0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFFRXhNeitwOUwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,IN"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B095YFJ69T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x17x19mm",
+      "description": "Switches the 12V fan on/off via MCU signal.",
+      "productName": "12V 1-Channel Relay Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+1+channel+relay+module",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNLNupZt6pe0Fj5BfdHmqUJSr5yUY16IhaJBUuT3BDh2ionZiX61R0zOJQaygelAvy8ly4O0y7LzR4CHbdGzmoqixAS6qDqokiI5pXmzl5qoSafT7IRTxnR7MtkpECIu34uZltp3x9bwWU4j4z09CHn7AlTAXDqV0YOeehuLBnT7OMuaMD7bdHdHcexBBNOxwAyP3Xlo1KwWsw1OZopnC6dfKPjFPkQt3CxasEEzCy2OxmLAALEAKTMiHbOzXCwgTvbXWJ5gkTf5wtkuUPGC7svfbpyAwcbJKvZX5HXtqc36vKw7CeBWBXzQCoClTY0Kl83KddXRiRjpzewpXmGdxFtrMLNSOUF8TrqHqD4OsPB7elq9EEpZ4xoZq6OSokXy06ROMeFqyl53TZcy2oqQvzcq8lAtHpvYOA8rKnV8dcRmWZxZtOYm1BkV5w3G0Tx49t1BiaqYKctiUcsEGvvgKkRyf72KjvlqjDZBdW0wNMVrcBjIL1AU3qRbwxfNz7v7gMnkOMqM69DAyGkw1CZVtU6nO81TdEiqUax5ILN26NR2TiMeV4HtPxuHLLfHp0gPsCWxpS3tFzhpaGussD4ix6mHoNS4PIiiNxGtbWzsM1N8GHu5fie6AOF2VCwHjLjHj8dpZlu5eFDCDiFLwli3Xf9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+1-Channel+Relay+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "module_buck_converter",
+      "name": "5V Step-Down Converter",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "module",
+      "partId": "bfc13bb2-cdcd-45ba-9387-4cffe44f6357",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fW4_GDBeL2rT8mg2Zb_Vxj_7Yepyy9vnmAidOfdgKg0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0ZDY0FB/ZVN3ZHBacFRZWDIv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN+,VIN-,VOUT+,VOUT-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01MQGMOKI?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x17x4mm",
+      "description": "Steps down 12V battery voltage to 5V for powering the ESP32 and 5V sensors.",
+      "productName": "MP1584EN DC-DC Buck Converter Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=MP1584EN+buck+converter",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHNSBmwrWAucJktiEiF7T0GrENZ2N7RQ8V7BzbnqVxsrMEtflOJAoWeKe8mUiCgYFPVMDIxu8NTz8jXT1itEaiw2BrvgnZAqoOdAQLXgy2xDI4IYHyjpfL1PV4yQQtYDMvEqzJqDLvhVGKAiCSoNBbLpErJsRrHybXqL0l95P6DX7YO2HSjDGZzgHtn95FpQWrCBaeHi8mwXRA392HGThUeR8kfMrad7zxJNs4Wg2T0t7wuWV5V0ENI4OHd1jio8uYGElxlSpMPYc58Rtneb6dVnW6HAoFjjbVTkbzE6wIaQO0p0dDdUMAz8L6voip9VmrtE2XEr72WJTQJfiPKq6SAonms8loTMoOZV9KO5vcSD3HDG5nUV35sivjQO2PqCTqp8QQB90S4pLGollmOTcjGuKYlWqZvfexTRMaa83ZWF1JFb8TO0pbHfuChtgvbsW8irolSiE8AZeCNB4sqPZEzMUkLSNi0kGsEUN0wrrxbn4CrgqeGbU0nDn1VvtED8DF3Re4CnzBgI9nPtR6WTQtEmUixcOYFGVsJEQLQS0kyvhcJNTdVBEBBlgPGhkho7fKPKL0JRD9HHJtuIZgNimr4thVY5Wd8sigUcUR7Mdn7Dkqua3w3GWm9txX9RP9JBhZiedF0vpmUtMMmD3KV0uGaX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MP1584EN+DC-DC+Buck+Converter+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_frame_structure",
+      "name": "Greenhouse Frame Structure",
+      "type": "structural",
+      "partId": "87634fc5-8760-4c50-b625-71636b7a41e2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/uqMM2waamcGTQzyJtItekCqVvMcAK44vEwrJe7QDOek/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFTbGg4TEhpYUwu/anBn",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DY7GX9YL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "2000x1500x1800mm",
+      "description": "Main structural frame for the greenhouse, robust enough for 2-5 sq m roof and environmental exposure.",
+      "productName": "Aluminum Extrusion Kit 20x20mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=aluminum+extrusion+greenhouse+kit",
+      "estimatedCost": 150,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3n1I95j",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Extrusion+Kit+20x20mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_water_reservoir",
+      "name": "Rainwater Reservoir",
+      "type": "mechanism",
+      "partId": "34f90289-c937-40bd-a50d-ca81636eac98",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/2tfmbDDuuhoOMX2oUbhASP2SKY73pS8Go80OLAxvzaM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zLmFs/aWNkbi5jb20vQHNj/MDQva2YvSGIzOGVi/NTlkMzFjZTQ3OGZh/YmQyNDU5NjQzOGZh/NDlhaC5wbmdfMjAw/eDIwMC5qcGc",
+      "material": "HDPE Plastic",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B00YFT9846?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x400x500mm",
+      "description": "Stores harvested rainwater for the irrigation system.",
+      "productName": "80L Plastic Water Barrel",
+      "purchaseUrl": "https://www.amazon.com/s?k=80l+rain+barrel",
+      "estimatedCost": 40,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwHIaxEPnirF5STn5C9x1UcihHTCRrcJVFRW8oCEBIaea2aV17NIRAIaEKzNhO3eeXanYWxjqchZXwTixAIn79BkC1GAC4QUdwXDHGfZhPlmA74N8do1eGnDg0SS9Y7e5jBIh7g9ZeDPFhft5dOXhJRJnCCb65D6ga0c64Mu4jnLm5bqaHSWaf3VQL3RTNDozayJYma95Bn4F7ZG6m3pVitzaNIjNRSAGUhbVTSlBDMPIUEZmzEYn9uu4v6dsQBAQAADZ3aBJIGmysa30iNHAqkffNrcco5QIDVERASyDkQCgbNBnK26KsmnviaNHkPxuzzMsproBJ16mw4lls4shmOmhgNlFHZz7eiGyMPLRoqIM9ruA6bhPUBpnEjxghyq2QAsA2tY4CpsrlAzPsUJZdfSbq6jYMoYsFW8Sf0AK1jzAe5PR5HNEhnt0ndzdwqakWVrY1qG0bwrImXo2Ck5OjqV4lpRYdBgRuE08R1FrwaW0SYI81o6ACO3TMU0j2Majta9vXBOZ4zFqgYYSxf8nzw65VDmEcOdIPxujBLM35KosNiOUHGRgahRrlLOEbW1VWWdswV6mK8DQH6pfJwLLBRGH1NZLu37zbWeoz5K7WfyMdkKRlZXNVVZBXCsExHdhEifp3fqrMuQspiNSxgpqZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=80L+Plastic+Water+Barrel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_irrigation_tubing",
+      "name": "Irrigation Tubing",
+      "type": "mechanism",
+      "partId": "fddcfedb-801f-4ded-b243-0496bd9aeb63",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/TKzp_yRH8jw_Pl2tAJF-Uiw1k2tFzPJOcNVKV41MR3U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2lmVUFB/T1N3MlB0Zy1FUGkv/cy1sNTAwLndlYnA",
+      "material": "Polyethylene",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0007WJIJU?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15000x6x1mm",
+      "description": "Delivers water from the pump to the irrigation emitters.",
+      "productName": "1/4 inch Drip Irrigation Tubing",
+      "purchaseUrl": "https://www.amazon.com/s?k=1/4+inch+drip+irrigation+tubing+50ft",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxROxelxHM6c3Yo0vZVgguelkdvfHsU73k3Kk2MTbrNjnq3gTCFYJbxANnL4tMvmBCEu1Ll9Rir8zphMq3NhXJAIhXuNQoqtPOgAaCdw3Ze8l02oiRXxWTM61eNmEmVndYKa7u4nW3a0YgEl8CEE44LQw5wJ9NvYmkBNIXssorhykDFL1jm6Zkv7H5tlI4hefufA4xtUIsRdP2mbZM7LteN1RHUi2aJ6jsYNjTePjrBryI8rvTfynZguVfax7rTQcXk4uHBLlN0Fd634LMxbJAvN9CKT4wXzK5pSLMsoiGzTv60eaihRwYRH4TZcxGANj1UhIic10LtzMMtrY3D3F6DjZHLUvQwEAWKf3L6aomCZ8HtOBu0a7qjUFVrE6JoDzTBfUhSBxAOOq2ay5brkGrG3r4C6zley33j7CUzqO4WbI8AD2JzE5nMJGUA1dtVlyIScxKAZJWHiggXQEYBtSJhoV9m3uu4bjJIgAiZN19ND1FXzVFIgPO6EAPpxBxxuUYrwJbyLHCXwLwrd2khA9dW3q27V09Xl9tiYEru8ngbqbXnJzLHvKU53voKan5PsmnqjPxdMcX5qMS45mj8FkkDwySVWsr7faxefNZia115sBqD1SY7iGWdjXY0wKFa3Hab7End9IQudTpTa1Q66EbP3H",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1%2F4+inch+Drip+Irrigation+Tubing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_irrigation_nozzle",
+      "name": "Irrigation Drip Emitter",
+      "type": "mechanism",
+      "partId": "c29ebd4a-113d-45f2-85da-a798d1caa758",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/EBtVUj2SuGc6TCTZ9NrtmN5xufsNdh2YAS02_Q7xHkA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxTFZEMG1CQlpM/LmpwZw",
+      "material": "Plastic",
+      "quantity": 10,
+      "amazonUrl": "https://www.amazon.com/dp/B0BVPLK1KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x10x10mm",
+      "description": "Provides controlled water delivery to plants.",
+      "productName": "Adjustable Drip Emitter",
+      "purchaseUrl": "https://www.amazon.com/s?k=adjustable+drip+emitter",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIpl7PHZQVdujT339ZJy3KK5PQSoay0QaAOENL4kth3VklDkm1i1N1tjq9kQGRbPu0Kx8Oc3InOyPiGa53X6SHsVN1syWBtubKMdO9rEKdBN3M6mVhUocL3qdtwcPgAlcxHvAPqbgr5KdhE4CGbrJ7fKN8WuCFZLBB1GN6pVEUxNfJKwrAIwVLE8q0YOklxrIh1D76t0MiFnhvhNz3d0pWm4fkYKCy1JlBfRPwTcMdywToPeNevRe6SMRh0iI2wzRm2AOMIAZgCvCEGctvJyCBgr5XcjbR1RsvYgQRXV3wIKUfDFU4FWCsrddKT24yUp7T0VwgY6JJ3YmbxzzBlnpLcRcGqhSHKLrQE6uqrcRYF72o5srpT1ZemBqzA1UdopSpYg0IVwtlutwG4eLp4q6RODRkOKBjxpn6KGpf41v0fej8596mLk2bK9PO8i4F9iFhSIrLDekvgATYlXQuObHsJQb2AvNRJ7nCssqe0lOLnHh8QGk5VryEygGwns4XXEQ3Vrsw87g7QXW1dDMSinG8HtfLhUQ9LuXI4fw26IJih1nxYQTEflOk1cI5lmYenCKW8cxK1c73WpCC7qDFfaWi1enS52h2Ft50KEYUS07zeZ5ooeg5KSjRPtLn3Z9eGb6aPQkGynja31Glsm0NnLXRiT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Adjustable+Drip+Emitter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_electronics_enclosure",
+      "name": "Main Electronics Enclosure",
+      "type": "enclosure",
+      "partId": "eb34202a-8f81-4bdb-82e9-2f035d0f08bf",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Kjzsu9O7moKx4ZgfepplJKIdB3n2qgj4eC4x7o2WiSs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzUxOHlZaHFLQ0ZM/LmpwZw",
+      "material": "ABS Plastic",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09VDBZFP2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x150x80mm",
+      "description": "Houses and protects the MCU, power management, and relay modules from weather elements.",
+      "productName": "IP54 ABS Electrical Project Box",
+      "purchaseUrl": "https://www.amazon.com/s?k=ip54+abs+project+box+200x150x80",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQztZRCheeCG2haq3qu5J91XrS9x1pfvbh7SuE2weBoK1vBUShX3MV1cBPvAOHil1Pi6twtP6hKCDzOEozjwQz4XfiTqLJKdMbGQ8Q536CWrtAyd9O5MVHs2uCLoIRigJokdNZFpByxxUhZX3CdvIOPublDEzeQvo7Fgewdh7jHll86cSElttyelx7wQDoL0g6Sk0qDp5sByCtRGJq0EB4VcZ2RBwHsqU8pI2xWXOmL3ty4NVgXOxF2QRiCD6hFzOWb88seNWfmI0gUPC3hFOVbjd518pcBbXVTAf9JDYjk004UvBQVEDTcQcpEu4zyNq0GUWsV5vE4VPXIhAdvZS2meJ2f7ivb1e7mbrVyYkSTtq97bOMrpjsFO4910AjCnWBnk49zjIEdp9bMVQ8jf2ULMFr9cHwxLVincXVljHJHscKFVlyJOdrcV87GNDbjcVaJjYCJVrcNY1d37H4DcV2WfBl8Rjz6kLWtwq3waSA5NZjsLkL0RFAeW8O1Z8UMXAZSKf5N4Scrv0jW6LaolW8qQtI1zN4v0jD3EBL2V3K7Hx9raa8p2kE0NHt3X7hx1gwNwWKME5pzTv3fJltBTCAKvfGWezmKbFNVjpMcc4qLDW4ULP3q8aXKTy3Pm2rmfT83bBsvAv0unZEvuEMKL7KEX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=IP54+ABS+Electrical+Project+Box&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "3d_printed_rain_sensor_enclosure",
+      "name": "Rain Sensor Enclosure",
+      "type": "3d_printed",
+      "partId": "c9b5ee3c-c84f-4a25-bb9c-02a720830f4b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/C-9M-zTOedkt_442Y0hh20OQ4UlrV0X9Xz23hEYvlEY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmlu/dHNwaXJlZC5zaG9w/L2Nkbi9zaG9wL3By/b2R1Y3RzL0lNR18x/MDQ3LnBuZz92PTE2/Nzg3Mjg1Mzkmd2lk/dGg9MTQ0NQ",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill, no supports"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "60x40x20mm",
+      "description": "Protective enclosure for the rain sensor, allowing exposure but preventing direct harsh impacts.",
+      "productName": "Rain Sensor Enclosure",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3d_printed_light_sensor_mount",
+      "name": "Light Sensor Mount",
+      "type": "3d_printed",
+      "partId": "673fea1f-7230-45c9-96db-f56b59b95021",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/3izi3jY63tocobhKrxkNrrKHKhFPzyUvE10Pqqhg-h0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudGhkc3RhdGlj/LmNvbS9wcm9kdWN0/SW1hZ2VzLzlmYzhh/ZDc5LWQwZTQtNDJi/MC05MjhmLTJjZjk5/NTAzYzc5ZC9zdm4v/YmxhY2stYy1jYXR0/bGV5YS1vdXRkb29y/LWNlaWxpbmctbGln/aHRzLWhsYTI1OTYt/amVzLWZtLTY0XzYw/MC5qcGc",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "Layer height: 0.2mm, Infill: 20%, Supports: No"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "40x20x15mm",
+      "description": "Mount for positioning the ambient light sensor for accurate readings.",
+      "productName": "Light Sensor Mount",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 0.5,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3d_printed_temp_humidity_sensor_mount",
+      "name": "Temperature/Humidity Sensor Mount",
+      "type": "3d_printed",
+      "partId": "f1c39103-1d13-41ae-8f26-e9f7ca674598",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Q4b4kHPII7RAS_6dVoZur5OdY5W8jG_eI3rzWXwBJjI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFZeTljcEVIZUwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "Layer height: 0.2mm, Infill: 20%, Supports: No"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "30x20x15mm",
+      "description": "Mount for the DHT22 sensor, typically positioned inside the greenhouse.",
+      "productName": "Temp/Humidity Sensor Mount",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 0.5,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3d_printed_soil_moisture_stake",
+      "name": "Soil Moisture Sensor Stake",
+      "type": "3d_printed",
+      "partId": "0a03b98c-b680-4614-89b1-be0d67fc6565",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/6mt1pyeTc2qvDKlFR8CQ716xr_fICpqcWiosGEIKuxU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZXBhLmdvdi9zaXRl/cy9kZWZhdWx0L2Zp/bGVzL3N0eWxlcy9z/bWFsbC9wdWJsaWMv/MjAxNy0xMi93cy1w/cm9kdWN0cy1odC1z/bXMuanBnP2l0b2s9/MGxDeWhWMGU",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "120x30x10mm",
+      "description": "Stake to hold the capacitive soil moisture sensor securely in the soil.",
+      "productName": "Soil Moisture Sensor Stake",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3d_printed_pump_mount",
+      "name": "Water Pump Mount",
+      "type": "3d_printed",
+      "partId": "882171da-e6e7-4337-b51e-e574f8701b07",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/_NKNBr6-TqPcYIsBK5Ig0qlfW_JUwFxmv7i6huQVEYM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vd3d3LnBy/cHJhY2luZ3Byb2R1/Y3RzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxMi8wMS9Q/UlAtNjcxMC0xUEwu/anBnP2ZpdD0xNjAw/LDExNDMmc3NsPTE",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "Layer height: 0.2mm, Infill: 30%, Nozzle temp: 240C, Bed temp: 80C"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "50x40x40mm",
+      "description": "Mount for securing the submersible water pump inside the reservoir.",
+      "productName": "Water Pump Mount",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3d_printed_fan_mount",
+      "name": "Ventilation Fan Mount",
+      "type": "3d_printed",
+      "partId": "20412d0a-761f-46b8-811c-932b4f758cb0",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "65x65x10mm",
+      "description": "Mount and grille for the ventilation fan to be integrated into the greenhouse wall.",
+      "productName": "Ventilation Actuator Mount",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "mechanical_m3_bolt_short",
+      "name": "M3 Mounting Bolt",
+      "type": "misc",
+      "partId": "5776ab2b-bef1-46e7-b0fc-40b07807407a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/UAUwzYAkcSL76a9nijdCWhh9zvijVYsYxxshOeGDXak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jYXJp/c21hLXNob3AuY29t/L2Nkbi9zaG9wL3By/b2R1Y3RzLzE1NTk1/LmpwZz92PTE1OTM1/Mzg0MTE",
+      "material": "Stainless Steel",
+      "quantity": 30,
+      "amazonUrl": "https://www.amazon.com/dp/B0DJQHJ8Y1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "Standard bolts for mounting sensors, small modules, and 3D-printed parts.",
+      "productName": "M3x10mm Hex Screw",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x10mm+hex+screw",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdNZVN5NXMyndb7vp2IqLBSyXOclU75icHVA2Y64KuG2fJ5jMUXPXaI2utOSrx205zphrI49NuYHrzsA5M3gaEmuQtaV0wDmgLovMEiFmpbji4oGpmOoCA7vGVES14Mfb1xgwlGVQ8eMP9zuEq1x8PlYzVX0XnMSC94v7I1MXBVWIUnyjseeSUxitCHo1VvKyuSsxMFJd4dtocXkjMuIern8pX8ojHInfi7gNtgpgRlNqg4s4bItN8r4ryXCWA1jpAPnGxnhC2MJKmKqG6cNImaYULJScu0cP7aniDBQBsfAJRx8HUr2UCouIN8Y0S9q9XKfsLt8AN9XBtPIoHkwPaCD9vDK8a1sma4IPba1UCUwQb8ib1tDvjksxVGJMKnqiYcA5iRPlvPHUbAcICKeOtGh4gofmoKn4oFpTRoWkJWS4sxTraovQ477F5wBnexKOYkL1NIH3troMbjrY68ELY5N5H8uw6HFkyqe0MIRUzaV8sgEstxTuzL6omuOesjZAfSXBr9dluVDJ2H6FhRS7XXYyaomXavXD0zrT6VeJPocIWES73u8ziCnMyA146bFDOcb6WVcwDgMWldiWwqO9ROnRiMCCfHPG2yesPHE5Y67YaM5WxdSqykRqUq6IAJA2huHCiKnxgOOpbjgrnRz7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Hex+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_m3_nut",
+      "name": "M3 Nut",
+      "type": "misc",
+      "partId": "d73269cd-cb20-4d1f-b725-473d4d15d123",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/LB5lOwoNPWXSNsZjfLYfNPcMOOgtgwiq4CQFHuRVlvw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhLzNk/NDIzM2VkLWQ2NTYt/NDQ3Mi1iNmRjLWMw/ZGJhMDQ0ZWUxMS5f/X0NSMCwwLDYwMCw4/MDBfUFQwX1NYMzAw/X1YxX19fLmpwZw",
+      "material": "Stainless Steel",
+      "quantity": 30,
+      "research": {
+        "specs": [
+          {
+            "label": "grade",
+            "value": "Class 8"
+          },
+          {
+            "label": "material",
+            "value": "Steel"
+          },
+          {
+            "label": "standard",
+            "value": "DIN 934"
+          },
+          {
+            "label": "thread_size",
+            "value": "M3"
+          },
+          {
+            "label": "mcmaster_url",
+            "value": "https://www.mcmaster.com/90591A121"
+          },
+          {
+            "label": "thickness_mm",
+            "value": "2.4"
+          },
+          {
+            "label": "thread_pitch_mm",
+            "value": "0.5"
+          },
+          {
+            "label": "mcmaster_part_number",
+            "value": "90591A121"
+          },
+          {
+            "label": "width_across_flats_mm",
+            "value": "5.5"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.mcmaster.com/90591A121",
+            "note": "Metric Class 8 Steel Hex Nut, M3 x 0.5 mm Thread.",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "https://accu-components.com/us/hexagon-nuts/7888-HPN-M3-A2",
+            "note": "Stainless Steel (18-8 / 304) M3 Hex Nut, DIN 934 standard.",
+            "vendor": "Accu"
+          },
+          {
+            "url": "https://www.amazon.com/binifiMux-M1-6-Stainless-Steel-200pcs/dp/B08N68W9SP",
+            "note": "BinifiMux 150 pcs M3 Hex Nuts, Stainless Steel.",
+            "vendor": "Amazon"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "Stainless Steel M3 Hex Nut",
+            "reason": "Common alternative material offering increased corrosion resistance, suitable for environments where rust is a concern."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F9FC4563?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "Used with M3 bolts.",
+      "productName": "M3 Hex Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+hex+nut",
+      "estimatedCost": 0.03,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxheLVocLOesSj3YW9HVKSsjAuk0dhY8YT34rvUc5SPCcgI4QR7M5m7vL2CF1qaBN4YJaX2QCpde3asIqUTPZ7VH9jKyimAosVWo9rG6TlCDaJUGpnvxlaPEscouM2pHiy6Zxvpv1xT7pzOx6Fyo1keQHGdNb57GbSrrLl71Nratjl21Ld7kva7BOr6PkrmoRWaWh55AYolzU1dOLoDySfy5xqzSNdCl8glehlwejzSjdBWWTy455YHy3CX2I7X2ObZVmbtMcf1ZUKuy3taFB42G8QQY84Qc4A1f3VRgrR0nJqOWvy3goW5gegX5b2bBZ1k2czC8zEVqH7rPoznKC20B59KhVc4PoJpxOQAUNtDVHQdHjBsNGXv95tkExStXJLEG11lQ9xv22J4JnI1vii0Nu3EQIdxtejAVyHJWNqCT13JRh7KcER1qIRKfChSyklB9j8OCgppqg2vy43gHOXb4m1bC5PKWwlS0VmszjTySRubVMcAX5jP3Nq7SzwDa9fENTb8qipCz0RPBfMDKJI7gfNImum5INc6y6pnW04vDsv2RseqfgSSq1QxKiQmekKGaoRFqdbfvKRAdH95QjwG2ahskUOMyHg56bFgmRJ7WDpoYcDIBiuvNSPqvIBj08Id1dQEYcaic7Lr6FyPp6BfRl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_m5_bolt_long",
+      "name": "M5 Frame Bolt",
+      "type": "misc",
+      "partId": "bc7738d2-4aa4-47fa-934e-b307a584f929",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/GKr2xVv4PH0RnM4GVki0zmc42UzMgUQh7NYic6MA7IY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxRm5DMUV2M1RM/LmpwZw",
+      "material": "Stainless Steel",
+      "quantity": 50,
+      "amazonUrl": "https://www.amazon.com/dp/B0BLNLH7YY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5x16mm",
+      "description": "For assembling the aluminum extrusion frame and mounting heavier components like linear rails.",
+      "productName": "M5x16mm Hex Socket Head Cap Screw",
+      "purchaseUrl": "https://www.amazon.com/s?k=M5x16mm+hex+socket+screw",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4qvlWUd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5x16mm+Hex+Socket+Head+Cap+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_m5_t_nut",
+      "name": "M5 T-Nut",
+      "type": "misc",
+      "partId": "dbd84606-5cf9-44a7-8ea1-e7c250150957",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/-iC7A7lFljknLSslj2GYVEQR1rzTPVm5i34qBKuC9_0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDE5RWdrUWZnUEwu/anBn",
+      "material": "Carbon Steel",
+      "quantity": 50,
+      "amazonUrl": "https://www.amazon.com/dp/B0BK75LJNF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x6x4mm",
+      "description": "Used with M5 bolts for connecting components to aluminum extrusions.",
+      "productName": "M5 T-Slot Nut 20 Series",
+      "purchaseUrl": "https://www.amazon.com/s?k=m5+t-slot+nut+2020",
+      "estimatedCost": 0.08,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFAhtdWaILtYMDkv8NDbnQs5vvdzdLtdI5JRSAqK2JT7LKdYeTPq99at8f3zsmU0L5narThL6aGTi1zyKlmDWbeXPqknJilUo6re0p44YI3myKjgY2NtQ0xizyTx1qLB3qppknWRgG2TFmSdyKS29qcin7hs6Xj9EGhkIZxPqz2dvFYKO02x1hsKCnU9MbF7k3BaM7nh4nJm2M0cjUU2P1L2Ng6REl7ClgkRo0KRNUZWJCKvaYcXbfH2gZk103XVmc0ebhFUZMpacRSTKYp4QabPCyVXeZIsgTChlSu1jTgw49APrwBfUTPnUyAgAGWgS3YOVoeucpjOyTzg6eVWJ4uMUHPuN4wmhWMVDLIz5KOeO9lPmXy08CYVRE5zxD1ekDcPIkpVNR4ptEtxvzZ166EEuZExgfWbxLA7KJgeRZlhSYmeIeBRxo2bBijR2wWO9JhEjrobyxVk6cxZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+T-Slot+Nut+20+Series&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_tent_cover",
+      "name": "Flexible Tent Cover",
+      "type": "structural",
+      "category": "mechanical",
+      "material": "Polyethylene",
+      "quantity": 1,
+      "dimensions": "2500x2000mm",
+      "description": "Flexible, transparent UV-resistant film that serves as the roll-up cover for the greenhouse.",
+      "productName": "6 mil Greenhouse Plastic Film",
+      "purchaseUrl": "https://www.amazon.com/s?k=6+mil+greenhouse+plastic+film",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6+mil+Greenhouse+Plastic+Film&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "actuator_cover_motor",
+      "name": "Cover Roll-up Motor",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/gbeNcZQG_-QErmohdm0_keueOhuUCDH2ihetsFcmSu0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly81Lmlt/aW1nLmNvbS9kYXRh/NS9TRUxMRVIvRGVm/YXVsdC8yMDIzLzYv/MzE3NDY3NDMyL1JJ/L1VCL1NKLzM0Njc4/NjMwL2ltZy0yODIy/LTUwMHg1MDAuSlBH",
+      "quantity": 1,
+      "dimensions": "77x32x25mm",
+      "description": "A single, self-locking worm gear motor to roll the flexible cover up and down.",
+      "productName": "12V DC Worm Gear Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+DC+worm+gear+motor",
+      "estimatedCost": 20,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+DC+Worm+Gear+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "module_cover_motor_driver",
+      "name": "Cover Motor Driver",
+      "pins": [
+        "VIN",
+        "GND",
+        "IN1",
+        "IN2",
+        "VCC",
+        "OUT1",
+        "OUT2"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/jbyF2mGnAa-atgHUetevAUtHNr5UgYP7VAea4LLEWPY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFCc1RRcHVHckwu/anBn",
+      "quantity": 1,
+      "dimensions": "20x18x5mm",
+      "description": "A simple H-bridge motor driver to control the direction of the single cover motor.",
+      "productName": "DRV8871 DC Motor Driver Carrier",
+      "purchaseUrl": "https://www.amazon.com/s?k=DRV8871+motor+driver",
+      "estimatedCost": 7,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DRV8871+DC+Motor+Driver+Carrier&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_roller_tube",
+      "name": "Cover Roller Tube",
+      "type": "mechanism",
+      "category": "mechanical",
+      "material": "Aluminum",
+      "quantity": 1,
+      "dimensions": "1500x25x25mm",
+      "description": "The central tube onto which the flexible cover is rolled.",
+      "productName": "Aluminum Tube 25mm OD",
+      "purchaseUrl": "https://www.amazon.com/s?k=aluminum+tube+25mm+od+1.5m",
+      "estimatedCost": 18,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Tube+25mm+OD&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "3d_printed_roller_brackets",
+      "name": "Roller Support Brackets",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 2,
+      "dimensions": "50x50x30mm",
+      "description": "3D printed brackets to mount the roller tube to the main greenhouse frame.",
+      "productName": "Roller Support Brackets",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer height, 30% infill"
+    },
+    {
+      "id": "display_oled",
+      "name": "Status Display",
+      "pins": [
+        "VCC",
+        "GND",
+        "SCL",
+        "SDA"
+      ],
+      "type": "display",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/wlLKTNnu9JYQjnjEw5FTVudUS3EASzLtILiD2x0wLIc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFQWWJYcSs0aEwu/anBn",
+      "quantity": 1,
+      "dimensions": "27x27x4mm",
+      "description": "A small OLED screen to display real-time sensor data like temperature and humidity.",
+      "productName": "0.96 inch I2C OLED Display Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=0.96+i2c+oled+display",
+      "estimatedCost": 5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=0.96+inch+I2C+OLED+Display+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "3d_printed_display_mount",
+      "name": "Display Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "40x40x20mm",
+      "description": "A 3D printed enclosure and mount for the status display, attaching to the greenhouse frame.",
+      "productName": "OLED Display Mount",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "sensor_wind",
+      "name": "Wind Speed Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "OUT"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/_8TWKpHcnCVsrnTtYjMdqFf9WXmYq-wdd2LAqQ2XFB0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9nYW90/ZWsuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDI0LzAyL1By/b2R1Y3QtSUQtR0FP/VGVrLUFUSS0xMTQt/My5wbmc",
+      "quantity": 1,
+      "dimensions": "160x160x120mm",
+      "description": "Measures wind speed to automatically close the tent cover during high winds for protection.",
+      "productName": "Anemometer Wind Speed Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=anemometer+wind+speed+sensor+voltage",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Anemometer+Wind+Speed+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_water_level",
+      "name": "Reservoir Water Level Sensor",
+      "pins": [
+        "VCC",
+        "TRIG",
+        "ECHO",
+        "GND"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/s5n46LFSq84EyxdirFI0jrPO1JOcliqxX8TQObVGobI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tYWtl/cmJvdGljcy5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjMv/MTEvTUItRUxDLVNF/Ti1KU05TUjRULTAy/LndlYnA",
+      "quantity": 1,
+      "dimensions": "41x28.5x15mm",
+      "description": "Monitors the water level in the reservoir to prevent the pump from running dry and to send low-water alerts.",
+      "productName": "JSN-SR04T Waterproof Ultrasonic Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=JSN-SR04T",
+      "estimatedCost": 9,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=JSN-SR04T+Waterproof+Ultrasonic+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_limit_switch_open",
+      "name": "Cover Open Limit Switch",
+      "pins": [
+        "COM",
+        "NO",
+        "NC"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ga4GmT_25AeXFjYj_9YhcfRJzCCAfitsRCXFiLSlaB0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MjFVWHVYaTJWQ0wu/anBn",
+      "quantity": 1,
+      "dimensions": "28x16x10mm",
+      "description": "Detects when the tent cover has reached the fully open position, preventing motor strain.",
+      "productName": "V-156-1C25 Micro Limit Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=V-156-1C25+limit+switch",
+      "estimatedCost": 1.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=V-156-1C25+Micro+Limit+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sensor_limit_switch_closed",
+      "name": "Cover Closed Limit Switch",
+      "pins": [
+        "COM",
+        "NO",
+        "NC"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ga4GmT_25AeXFjYj_9YhcfRJzCCAfitsRCXFiLSlaB0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MjFVWHVYaTJWQ0wu/anBn",
+      "quantity": 1,
+      "dimensions": "28x16x10mm",
+      "description": "Detects when the tent cover has reached the fully closed position, preventing motor strain.",
+      "productName": "V-156-1C25 Micro Limit Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=V-156-1C25+limit+switch",
+      "estimatedCost": 1.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=V-156-1C25+Micro+Limit+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "module_battery_monitor",
+      "name": "Battery Monitor Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "SDA",
+        "SCL",
+        "VIN+",
+        "VIN-"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/NmeKi4d0wKbRdA6iCl0eO-stTCRvlG4Wxyjy1mlmkrE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9iaWd5/YW5wcm9qZWN0LmNv/bS8zOTA1LWxhcmdl/X2RlZmF1bHQvaW5h/MjE5LWN1cnJlbnQt/dm9sdGFnZS1wb3dl/ci1zZW5zb3Iud2Vi/cA",
+      "quantity": 1,
+      "dimensions": "25x22x10mm",
+      "description": "Monitors battery voltage, current, and power usage for energy management and low-battery alerts.",
+      "productName": "INA219 I2C Current/Voltage Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=INA219+sensor",
+      "estimatedCost": 6,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=INA219+I2C+Current%2FVoltage+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mechanical_frame_reinforcement",
+      "name": "Frame Reinforcement Bracket",
+      "type": "structural",
+      "category": "mechanical",
+      "material": "Aluminum",
+      "quantity": 8,
+      "dimensions": "28x28x20mm",
+      "description": "Reinforces the corners of the main frame structure to improve rigidity and resistance to adverse weather.",
+      "productName": "2020 Aluminum Corner Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+corner+bracket",
+      "estimatedCost": 1.2,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Corner+Bracket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "3d_printed_wind_sensor_mount",
+      "name": "Wind Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "50x50x80mm",
+      "description": "Mounts the wind speed sensor securely to the top of the greenhouse frame.",
+      "productName": "Anemometer Mount",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 25% infill"
+    },
+    {
+      "id": "3d_printed_water_level_mount",
+      "name": "Water Level Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "60x40x30mm",
+      "description": "Holds the ultrasonic water level sensor at the top of the water reservoir, pointing downwards.",
+      "productName": "Ultrasonic Sensor Bracket",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "3d_printed_limit_switch_mount",
+      "name": "Limit Switch Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 2,
+      "dimensions": "40x25x20mm",
+      "description": "Mounts the limit switches onto the frame to be triggered by the movement of the cover mechanism.",
+      "productName": "Adjustable Limit Switch Bracket",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 0.8,
+      "printSettings": "0.2mm layer height, 50% infill"
+    }
+  ],
+  "notes": [
+    "autonomous cultivation",
+    "retractable roof",
+    "real-time adaptation",
+    "optimized light",
+    "optimized water",
+    "optimized temperature",
+    "no human intervention",
+    "automatic closure rain"
+  ],
+  "projectName": "Smart Greenhouse",
+  "originalPrompt": "Invernadero Inteligente Autónomo. Sistema automatizado de cultivo con techo retráctil que se adapta al entorno en tiempo real, optimizando luz, agua y temperatura sin intervención humana.Funciones principales\n🌧️ Cierre automático por lluvia (sensor de agua)\n☀️ Apertura por alta radiación solar (sensor de luz)\n🌙 Modo nocturno: cierre parcial o total\n🌱 Riego automático según humedad del suelo\n🌡️ Control de temperatura interna (ventilación o cierre)",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all custom mounts, enclosures, and brackets",
+          "partIds": [
+            "3d_printed_rain_sensor_enclosure",
+            "3d_printed_light_sensor_mount",
+            "3d_printed_temp_humidity_sensor_mount",
+            "3d_printed_soil_moisture_stake",
+            "3d_printed_pump_mount",
+            "3d_printed_fan_mount",
+            "3d_printed_roller_brackets",
+            "3d_printed_display_mount",
+            "3d_printed_wind_sensor_mount",
+            "3d_printed_water_level_mount",
+            "3d_printed_limit_switch_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Prepare the flexible tent cover for attachment to the roller tube",
+          "partIds": [
+            "mechanical_tent_cover",
+            "mechanical_roller_tube"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Cut irrigation tubing to desired lengths and attach drip emitters",
+          "partIds": [
+            "mechanical_irrigation_tubing",
+            "mechanical_irrigation_nozzle"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Pre-assemble mechanical frame reinforcement brackets",
+          "partIds": [
+            "mechanical_frame_reinforcement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Connect solar panel, battery, and 12V loads to the charge controller",
+          "partIds": [
+            "power_solar_panel",
+            "power_charge_controller",
+            "power_battery",
+            "module_buck_converter",
+            "module_cover_motor_driver",
+            "module_relay_1",
+            "module_relay_2",
+            "module_battery_monitor"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire 5V buck converter output to ESP32 power",
+          "partIds": [
+            "module_buck_converter",
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect I2C devices (Light Sensor, Battery Monitor, Display) to ESP32 SDA/SCL",
+          "partIds": [
+            "sensor_light",
+            "module_battery_monitor",
+            "display_oled",
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect digital sensors (Rain, Limit Switches) to ESP32 GPIOs",
+          "partIds": [
+            "sensor_rain",
+            "sensor_limit_switch_open",
+            "sensor_limit_switch_closed",
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect analog sensors (Soil Moisture, Temp/Humidity, Wind) and ultrasonic sensor (Water Level) to ESP32 pins",
+          "partIds": [
+            "sensor_soil_moisture",
+            "sensor_temp_humidity",
+            "sensor_wind",
+            "sensor_water_level",
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Wire ESP32 data pins to the Cover Motor Driver and connect to Cover Roll-up Motor",
+          "partIds": [
+            "mcu_esp32",
+            "module_cover_motor_driver",
+            "actuator_cover_motor"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Wire ESP32 data pins to Pump and Fan Control Relays, then connect to Water Pump and Ventilation Fan",
+          "partIds": [
+            "mcu_esp32",
+            "module_relay_1",
+            "module_relay_2",
+            "actuator_water_pump",
+            "actuator_fan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Install ESP32 development environment and all required libraries for new sensors and modules",
+          "partIds": [
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Upload initial test firmware to ESP32, verify Wi-Fi connectivity",
+          "partIds": [
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test each sensor (Rain, Light, Soil, Temp/Humidity, Wind, Water Level, Limit Switches) individually for correct readings",
+          "partIds": [
+            "sensor_rain",
+            "sensor_light",
+            "sensor_soil_moisture",
+            "sensor_temp_humidity",
+            "sensor_wind",
+            "sensor_water_level",
+            "sensor_limit_switch_open",
+            "sensor_limit_switch_closed",
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify Cover Roll-up Motor operation (open/close) and limit switch functionality",
+          "partIds": [
+            "actuator_cover_motor",
+            "module_cover_motor_driver",
+            "sensor_limit_switch_open",
+            "sensor_limit_switch_closed",
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test Water Irrigation Pump and Ventilation Fan activation through relays",
+          "partIds": [
+            "actuator_water_pump",
+            "actuator_fan",
+            "module_relay_1",
+            "module_relay_2",
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Verify Battery Monitor readings and Status Display output",
+          "partIds": [
+            "module_battery_monitor",
+            "display_oled",
+            "mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Calibrate all relevant sensor thresholds and develop initial smart logic for prioritized control",
+          "partIds": [
+            "mcu_esp32"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Assemble the Greenhouse Frame Structure and install reinforcement brackets",
+          "partIds": [
+            "mechanical_frame_structure",
+            "mechanical_frame_reinforcement",
+            "mechanical_m5_bolt_long",
+            "mechanical_m5_t_nut"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount the Cover Roller Tube, Cover Roll-up Motor, and associated limit switches to the frame using 3D printed brackets",
+          "partIds": [
+            "mechanical_roller_tube",
+            "actuator_cover_motor",
+            "3d_printed_roller_brackets",
+            "sensor_limit_switch_open",
+            "sensor_limit_switch_closed",
+            "3d_printed_limit_switch_mount",
+            "mechanical_frame_structure",
+            "mechanical_m5_bolt_long",
+            "mechanical_m5_t_nut"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Attach the Flexible Tent Cover to the roller tube and secure its base to the frame",
+          "partIds": [
+            "mechanical_tent_cover",
+            "mechanical_roller_tube",
+            "mechanical_frame_structure"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount all sensors (Rain, Light, Temp/Humidity, Wind) and the Status Display to the greenhouse frame using their 3D printed mounts/enclosures",
+          "partIds": [
+            "sensor_rain",
+            "3d_printed_rain_sensor_enclosure",
+            "sensor_light",
+            "3d_printed_light_sensor_mount",
+            "sensor_temp_humidity",
+            "3d_printed_temp_humidity_sensor_mount",
+            "sensor_wind",
+            "3d_printed_wind_sensor_mount",
+            "display_oled",
+            "3d_printed_display_mount",
+            "mechanical_frame_structure",
+            "mechanical_m3_bolt_short",
+            "mechanical_m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Install the Rainwater Reservoir, mount the Water Irrigation Pump and Water Level Sensor inside, and route irrigation tubing",
+          "partIds": [
+            "mechanical_water_reservoir",
+            "actuator_water_pump",
+            "3d_printed_pump_mount",
+            "sensor_water_level",
+            "3d_printed_water_level_mount",
+            "mechanical_irrigation_tubing"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount the Ventilation Fan to the greenhouse frame using its 3D printed mount",
+          "partIds": [
+            "actuator_fan",
+            "3d_printed_fan_mount",
+            "mechanical_frame_structure",
+            "mechanical_m3_bolt_short",
+            "mechanical_m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Mount all electronics (ESP32, power management, relays, motor driver, battery monitor) inside the Main Electronics Enclosure and secure to the frame",
+          "partIds": [
+            "mcu_esp32",
+            "power_charge_controller",
+            "module_buck_converter",
+            "module_cover_motor_driver",
+            "module_relay_1",
+            "module_relay_2",
+            "module_battery_monitor",
+            "mechanical_electronics_enclosure",
+            "mechanical_frame_structure",
+            "mechanical_m3_bolt_short",
+            "mechanical_m3_nut",
+            "mechanical_m5_bolt_long",
+            "mechanical_m5_t_nut"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Mount the Solar Power Panel to the greenhouse frame and connect to the Battery Charge Controller",
+          "partIds": [
+            "power_solar_panel",
+            "power_charge_controller",
+            "mechanical_frame_structure"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "An advanced autonomous greenhouse optimizes plant growth using various environmental sensors (rain, light, soil, temp/humidity, wind, water level) and a battery monitor, with data displayed locally. A main controller manages a solar-powered retractable tent cover, irrigation pump, and ventilation fan, incorporating limit switches for safety and Wi-Fi for remote monitoring and alerts.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG capable)",
+      "M3 hex key",
+      "M5 hex key",
+      "Wire strippers",
+      "Small Phillips screwdriver",
+      "Multimeter",
+      "Computer with USB port",
+      "Adjustable wrench",
+      "Soldering iron with fine tip"
+    ],
+    "assumptions": [
+      "Basic understanding of electronics and wiring diagrams",
+      "Familiarity with 3D printing processes",
+      "Access to a computer with Arduino IDE or PlatformIO installed",
+      "Basic programming knowledge for uploading firmware"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "power_solar_panel",
+      "target": "power_charge_controller",
+      "voltage": "12V-18V (Voc max.)"
+    },
+    {
+      "type": "power",
+      "source": "power_charge_controller",
+      "target": "power_battery",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "power_charge_controller",
+      "target": "module_buck_converter",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "module_buck_converter",
+      "target": "mcu_esp32",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "sensor_rain",
+      "voltage": "3V3"
+    },
+    {
+      "type": "data",
+      "source": "sensor_rain",
+      "target": "mcu_esp32",
+      "protocol": "digital",
+      "sourcePin": "DOUT",
+      "targetPin": "GPIO16"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "sensor_light",
+      "voltage": "3V3"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "sensor_light",
+      "protocol": "I2C",
+      "sourcePin": "SDA",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "sensor_light",
+      "protocol": "I2C",
+      "sourcePin": "SCL",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "sensor_soil_moisture",
+      "voltage": "3V3"
+    },
+    {
+      "type": "data",
+      "source": "sensor_soil_moisture",
+      "target": "mcu_esp32",
+      "protocol": "analog",
+      "sourcePin": "AOUT",
+      "targetPin": "ADC_CH0"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "sensor_temp_humidity",
+      "voltage": "3V3"
+    },
+    {
+      "type": "data",
+      "source": "sensor_temp_humidity",
+      "target": "mcu_esp32",
+      "protocol": "1-wire",
+      "sourcePin": "DATA",
+      "targetPin": "GPIO17"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "module_relay_1",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "module_relay_1",
+      "protocol": "digital",
+      "sourcePin": "GPIO26",
+      "targetPin": "IN"
+    },
+    {
+      "type": "power",
+      "source": "module_relay_1",
+      "target": "actuator_water_pump",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "power_charge_controller",
+      "target": "module_relay_1",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "module_relay_2",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "module_relay_2",
+      "protocol": "digital",
+      "sourcePin": "GPIO27",
+      "targetPin": "IN"
+    },
+    {
+      "type": "power",
+      "source": "module_relay_2",
+      "target": "actuator_fan",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "power_charge_controller",
+      "target": "module_relay_2",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "power_charge_controller",
+      "target": "module_cover_motor_driver",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "module_cover_motor_driver",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "module_cover_motor_driver",
+      "protocol": "digital",
+      "sourcePin": "GPIO18",
+      "targetPin": "IN1"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "module_cover_motor_driver",
+      "protocol": "digital",
+      "sourcePin": "GPIO19",
+      "targetPin": "IN2"
+    },
+    {
+      "type": "power",
+      "source": "module_cover_motor_driver",
+      "target": "actuator_cover_motor",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "display_oled",
+      "voltage": "3V3"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "display_oled",
+      "protocol": "I2C",
+      "sourcePin": "SDA",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "display_oled",
+      "protocol": "I2C",
+      "sourcePin": "SCL",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "sensor_wind",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "sensor_wind",
+      "target": "mcu_esp32",
+      "protocol": "analog",
+      "sourcePin": "OUT",
+      "targetPin": "ADC_CH1"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "sensor_water_level",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "sensor_water_level",
+      "protocol": "ultrasonic",
+      "sourcePin": "GPIO22",
+      "targetPin": "TRIG"
+    },
+    {
+      "type": "data",
+      "source": "sensor_water_level",
+      "target": "mcu_esp32",
+      "protocol": "ultrasonic",
+      "sourcePin": "ECHO",
+      "targetPin": "GPIO23"
+    },
+    {
+      "type": "data",
+      "source": "sensor_limit_switch_open",
+      "target": "mcu_esp32",
+      "protocol": "digital",
+      "sourcePin": "NO",
+      "targetPin": "GPIO21"
+    },
+    {
+      "type": "data",
+      "source": "sensor_limit_switch_closed",
+      "target": "mcu_esp32",
+      "protocol": "digital",
+      "sourcePin": "NO",
+      "targetPin": "GPIO25"
+    },
+    {
+      "type": "power",
+      "source": "mcu_esp32",
+      "target": "module_battery_monitor",
+      "voltage": "3V3"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "module_battery_monitor",
+      "protocol": "I2C",
+      "sourcePin": "SDA",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "mcu_esp32",
+      "target": "module_battery_monitor",
+      "protocol": "I2C",
+      "sourcePin": "SCL",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "power",
+      "source": "power_charge_controller",
+      "target": "module_battery_monitor",
+      "voltage": "12V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounts using M5 bolts and T-nuts",
+      "source": "mechanical_frame_structure",
+      "target": "mechanical_electronics_enclosure"
+    },
+    {
+      "label": "fits into",
+      "source": "sensor_rain",
+      "target": "sensor_rain"
+    },
+    {
+      "label": "mounts to",
+      "source": "sensor_rain",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "fits into",
+      "source": "sensor_light",
+      "target": "3d_printed_light_sensor_mount"
+    },
+    {
+      "label": "mounts to",
+      "source": "3d_printed_light_sensor_mount",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "fits into",
+      "source": "sensor_temp_humidity",
+      "target": "3d_printed_temp_humidity_sensor_mount"
+    },
+    {
+      "label": "mounts to",
+      "source": "3d_printed_temp_humidity_sensor_mount",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "clips into",
+      "source": "sensor_soil_moisture",
+      "target": "3d_printed_soil_moisture_stake"
+    },
+    {
+      "label": "can be placed near",
+      "source": "3d_printed_soil_moisture_stake",
+      "target": "mechanical_water_reservoir"
+    },
+    {
+      "label": "attaches to",
+      "source": "actuator_water_pump",
+      "target": "3d_printed_pump_mount"
+    },
+    {
+      "label": "mounts inside",
+      "source": "3d_printed_pump_mount",
+      "target": "mechanical_water_reservoir"
+    },
+    {
+      "label": "connects to",
+      "source": "actuator_water_pump",
+      "target": "mechanical_irrigation_tubing"
+    },
+    {
+      "label": "connects to",
+      "source": "mechanical_irrigation_tubing",
+      "target": "mechanical_irrigation_nozzle"
+    },
+    {
+      "label": "attaches to",
+      "source": "actuator_fan",
+      "target": "3d_printed_fan_mount"
+    },
+    {
+      "label": "mounts to",
+      "source": "3d_printed_fan_mount",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "mounts inside with M3 bolts",
+      "source": "mcu_esp32",
+      "target": "mechanical_electronics_enclosure"
+    },
+    {
+      "label": "mounts inside with M3 bolts",
+      "source": "power_charge_controller",
+      "target": "mechanical_electronics_enclosure"
+    },
+    {
+      "label": "mounts inside with M3 bolts",
+      "source": "module_relay_1",
+      "target": "mechanical_electronics_enclosure"
+    },
+    {
+      "label": "mounts inside with M3 bolts",
+      "source": "module_relay_2",
+      "target": "mechanical_electronics_enclosure"
+    },
+    {
+      "label": "mounts inside with M3 bolts",
+      "source": "module_buck_converter",
+      "target": "mechanical_electronics_enclosure"
+    },
+    {
+      "label": "is supported by",
+      "source": "mechanical_roller_tube",
+      "target": "3d_printed_roller_brackets"
+    },
+    {
+      "label": "mounts to with M5 bolts",
+      "source": "3d_printed_roller_brackets",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "drives",
+      "source": "actuator_cover_motor",
+      "target": "mechanical_roller_tube"
+    },
+    {
+      "label": "mounts to",
+      "source": "actuator_cover_motor",
+      "target": "3d_printed_roller_brackets"
+    },
+    {
+      "label": "attaches to and rolls onto",
+      "source": "mechanical_tent_cover",
+      "target": "mechanical_roller_tube"
+    },
+    {
+      "label": "secures to base of",
+      "source": "mechanical_tent_cover",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "mounts inside with M3 bolts",
+      "source": "module_cover_motor_driver",
+      "target": "mechanical_electronics_enclosure"
+    },
+    {
+      "label": "fits into",
+      "source": "display_oled",
+      "target": "3d_printed_display_mount"
+    },
+    {
+      "label": "mounts to with M3 bolts",
+      "source": "3d_printed_display_mount",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "mounts at corners with M5 bolts",
+      "source": "mechanical_frame_structure",
+      "target": "mechanical_frame_reinforcement"
+    },
+    {
+      "label": "attaches to",
+      "source": "sensor_wind",
+      "target": "3d_printed_wind_sensor_mount"
+    },
+    {
+      "label": "mounts to top frame",
+      "source": "3d_printed_wind_sensor_mount",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "fits into",
+      "source": "sensor_water_level",
+      "target": "3d_printed_water_level_mount"
+    },
+    {
+      "label": "mounts to edge of",
+      "source": "3d_printed_water_level_mount",
+      "target": "mechanical_water_reservoir"
+    },
+    {
+      "label": "mounts to",
+      "source": "sensor_limit_switch_open",
+      "target": "3d_printed_limit_switch_mount"
+    },
+    {
+      "label": "mounts to",
+      "source": "sensor_limit_switch_closed",
+      "target": "3d_printed_limit_switch_mount"
+    },
+    {
+      "label": "mounts near roller ends",
+      "source": "3d_printed_limit_switch_mount",
+      "target": "mechanical_frame_structure"
+    },
+    {
+      "label": "mounts inside with M3 bolts",
+      "source": "module_battery_monitor",
+      "target": "mechanical_electronics_enclosure"
+    }
+  ],
+  "projectId": "15dbf441-c741-46ee-b150-fd91359954e9"
+}

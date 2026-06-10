@@ -1,0 +1,2213 @@
+{
+  "plan": "- ESP32 NodeMCU mounted on a universal terminal adapter for system control.\n- Power distribution with a 12V 5A AC/DC adapter, a 12V to 5V 5A buck converter, and 1N4007 flyback diodes for inductive loads.\n- Sensors include ADS1115 (for pH and TDS), water flow sensor, and two water level float switches.\n- Actuators consist of two 12V mini water pumps, three 12V solenoid valves, and a 5V peristaltic micropump, controlled by an 8-channel optocoupled relay board.\n- All components housed within an IP65 junction box for protection.\n- I2C communication for ADS1115 with ESP32 GPIO 21 (SDA) and GPIO 22 (SCL).",
+  "nodes": [
+    {
+      "id": "esp32_nodemcu",
+      "name": "Main Controller",
+      "pins": [
+        "GPIO 12",
+        "GPIO 13",
+        "GPIO 14",
+        "GPIO 25",
+        "GPIO 26",
+        "GPIO 27",
+        "GPIO 32",
+        "GPIO 33",
+        "GPIO 21 (SDA)",
+        "GPIO 22 (SCL)",
+        "GPIO 23",
+        "GPIO 17",
+        "GPIO 16",
+        "Vin",
+        "GND"
+      ],
+      "type": "mcu",
+      "partId": "7856fbd8-7055-4bad-8afd-95e4c58b327f",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32+NodeMCU+%2830%2F38+pin%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51tb1FyX5mL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$16.79",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-wifi-bluetooth-integrated-on-esp32.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "59x27x12mm",
+      "productName": "ESP32 NodeMCU (30/38 pin)",
+      "purchaseUrl": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4XEO9qV",
+      "estimatedCost": 10
+    },
+    {
+      "id": "main_power_adapter",
+      "name": "Main AC/DC Power Adapter",
+      "pins": [
+        "DC 5.5x2.1mm male jack"
+      ],
+      "type": "power",
+      "partId": "b0bbda3b-dedb-4000-a7eb-436ad1bcfd2e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+5A+%2860W%29+AC%2FDC+Adapter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41ma7-d+ZZL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08FHR7PC4?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$42.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005011653942474.html?pdp_npi=6%40dis%21USD%2128.81%2114.40%21%21%21194.94%2197.47%21%40210152bd17794569537498499e1122%2112000056156883053%21affd%21%21%21%211%210%21",
+            "price": "$14.4",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08FHR7PC4?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "110x50x30mm",
+      "productName": "12V 5A (60W) AC/DC Adapter",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNNjdOS6Mye5vU48qzJ1KLW8bKM1V5m5KvwJGLXHeLIV6Ox7f16KFtfweDiseiim3338SSKKyRMgyXZWC45uFRo6jTvrCWPlBf9z4tUcUjUnoUfhHR5ewXRy4mYPXmcZE34iM6wgoJKwKpAJTqTnbHdZYD9OEEAd483ulYIqVAerOodbVnWT77q13bZjzlP2GHhfzDBzyZLTmEkd6embfe9HCxtWwJDb5fZ0OME4kNKXojywtwcbCdaRmDW8XQ9J89LOW4PvbE7Z8r6OxyoNh80pNrbRP92hqPxAOIyoxfFtwpOoVbiGh8R5dasx3YAFeVhWRl2vrB54s4zJg0lzbmOf8XbqjxlT9MjJm23o4X9pJT55BRkNyMd0ho2Huk4w4lCD5cejvdH4PdgBTZ9KQnQPO7Pn6vfwhIyNZ4DOqikG6mWnckKx7RrIgwKcSK3jyZCygMlwJdSmn0iks9KTB5dvew0eVgYDaWLy5gttASGIowWgm4C66Xl9S47Beh43OOUk0Sc1O58R32ScDfIZjnbNiUXyW7oFi3NEva1ZLOiXJdzvwErb2Y9nDxbds9VnzJRLpoKHSVvIkADn9Qr9pNko9mreK55wPPVMh7pSHKEWkAlN7npc2WgM4uT3hIQfHVVf4ZMLNw3JgEYaVZRsfMR",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNNjdOS6Mye5vU48qzJ1KLW8bKM1V5m5KvwJGLXHeLIV6Ox7f16KFtfweDiseiim3338SSKKyRMgyXZWC45uFRo6jTvrCWPlBf9z4tUcUjUnoUfhHR5ewXRy4mYPXmcZE34iM6wgoJKwKpAJTqTnbHdZYD9OEEAd483ulYIqVAerOodbVnWT77q13bZjzlP2GHhfzDBzyZLTmEkd6embfe9HCxtWwJDb5fZ0OME4kNKXojywtwcbCdaRmDW8XQ9J89LOW4PvbE7Z8r6OxyoNh80pNrbRP92hqPxAOIyoxfFtwpOoVbiGh8R5dasx3YAFeVhWRl2vrB54s4zJg0lzbmOf8XbqjxlT9MjJm23o4X9pJT55BRkNyMd0ho2Huk4w4lCD5cejvdH4PdgBTZ9KQnQPO7Pn6vfwhIyNZ4DOqikG6mWnckKx7RrIgwKcSK3jyZCygMlwJdSmn0iks9KTB5dvew0eVgYDaWLy5gttASGIowWgm4C66Xl9S47Beh43OOUk0Sc1O58R32ScDfIZjnbNiUXyW7oFi3NEva1ZLOiXJdzvwErb2Y9nDxbds9VnzJRLpoKHSVvIkADn9Qr9pNko9mreK55wPPVMh7pSHKEWkAlN7npc2WgM4uT3hIQfHVVf4ZMLNw3JgEYaVZRsfMR",
+      "estimatedCost": 20
+    },
+    {
+      "id": "dc_female_terminal",
+      "name": "DC Input Terminal Block",
+      "pins": [
+        "DC 5.5x2.1mm female jack",
+        "Screw Terminal +",
+        "Screw Terminal -"
+      ],
+      "type": "module",
+      "partId": "f1ed3182-1e6e-4e2c-aa5e-184dce10367a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DC-Female+Adapter+w%2F+screw+terminal&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41LQQQ+RZZL._SL500_.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0C4JJ2HB4?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x15x15mm",
+      "productName": "DC-Female Adapter w/ screw terminal",
+      "purchaseUrl": "https://www.amazon.com/s?k=DC+female+screw+terminal+adapter",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4FlXL09",
+      "estimatedCost": 3
+    },
+    {
+      "id": "buck_converter_12v_to_5v",
+      "name": "12V to 5V DC-DC Converter",
+      "pins": [
+        "Input 12V+",
+        "Input GND-",
+        "Output 5V+",
+        "Output GND-"
+      ],
+      "type": "power",
+      "partId": "f92414cf-75d4-42c9-a439-f892ab6c3af3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=24V%2F12V+to+5V+5A+Buck+Converter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41qNqVehs3L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0BPRV1K6Q?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007226862468.html?pdp_npi=6%40dis%21USD%211.65%211.52%21%21%211.65%211.52%21%402151fd2c17794510652682391e0e49%2112000039877905152%21affd%21%21%21%211%210%21",
+            "price": "$1.52",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BPRV1K6Q?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x30x20mm",
+      "productName": "24V/12V to 5V 5A Buck Converter",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRw0Y1HWQb15iiaRsdKFWXSGdL7YZXHj2wpfAfaGLYFjvOcDernAneOqj7v2KhEuUOzH3nfle6NfuClogcg4il0ftxqlVVBbnLGyzzfs3uL0is2KahJcoWvrckA0PkAnRH9VgNRIwDYTcnGOK29kiG1iPYiv0Bi391CM3pe8PNS2I7BFZptd7VjjiZjUwt9biCdk4NRNiNlQEWje0xIxenpu8E5Cw0lacXP6dclWEWPwpk8qnLtPbnfj7ELyvWvQrcEFqo8DbXSjZ3OTmHoLSWHL5eMhKr1FiWgILMKMrrVeJ8v4bAgPiQxgz8qaST3T4vUAiS6gT9clQlC98uW1QSX305uFry2SntI9HLxBexf5iv88QAWdxY7RGS4ZmPaVY372IqSffgQqxv5DXhlUExcux67hQwOzL1HOnIQLYCnyEnibjLM4KTcpbNoDr6FXbCR7U27ZmS1oo1701sWL5yOVB4yzaxLtA8mrq0PbtxKN6ZKTTAOYJB9uvlQnp5hfRqk9MgbJnQcqGbPDYCzCjt1HbR8zBqgVrqfQaIPaOylpb4O8CPSX3TJuur5WYFicZI4jidbVE5o6qzTrvi0wtHie5QefZ8fGLzMl3v8FB4vRUH4nmW1zKnYGfSZ1jwWgfiO8ySIyH9G50bzfhLmJTSPh",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRw0Y1HWQb15iiaRsdKFWXSGdL7YZXHj2wpfAfaGLYFjvOcDernAneOqj7v2KhEuUOzH3nfle6NfuClogcg4il0ftxqlVVBbnLGyzzfs3uL0is2KahJcoWvrckA0PkAnRH9VgNRIwDYTcnGOK29kiG1iPYiv0Bi391CM3pe8PNS2I7BFZptd7VjjiZjUwt9biCdk4NRNiNlQEWje0xIxenpu8E5Cw0lacXP6dclWEWPwpk8qnLtPbnfj7ELyvWvQrcEFqo8DbXSjZ3OTmHoLSWHL5eMhKr1FiWgILMKMrrVeJ8v4bAgPiQxgz8qaST3T4vUAiS6gT9clQlC98uW1QSX305uFry2SntI9HLxBexf5iv88QAWdxY7RGS4ZmPaVY372IqSffgQqxv5DXhlUExcux67hQwOzL1HOnIQLYCnyEnibjLM4KTcpbNoDr6FXbCR7U27ZmS1oo1701sWL5yOVB4yzaxLtA8mrq0PbtxKN6ZKTTAOYJB9uvlQnp5hfRqk9MgbJnQcqGbPDYCzCjt1HbR8zBqgVrqfQaIPaOylpb4O8CPSX3TJuur5WYFicZI4jidbVE5o6qzTrvi0wtHie5QefZ8fGLzMl3v8FB4vRUH4nmW1zKnYGfSZ1jwWgfiO8ySIyH9G50bzfhLmJTSPh",
+      "estimatedCost": 8
+    },
+    {
+      "id": "relay_board_8_channel",
+      "name": "8-Channel Optocoupled Relay Board",
+      "pins": [
+        "VCC (5V)",
+        "GND",
+        "IN1",
+        "IN2",
+        "IN3",
+        "IN4",
+        "IN5",
+        "IN6",
+        "IN7",
+        "IN8",
+        "NO/NC/COM for Channels 1-8",
+        "COM for Channels 1-8"
+      ],
+      "type": "module",
+      "partId": "585fbb3c-6d83-49cc-84b4-a52e887dee7c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8-Channel+Optocoupled+Relay+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/511da7wBDHL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0F1C3ZJB3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.77",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007171066542.html?pdp_npi=6%40dis%21USD%215.87%212.76%21%21%2139.82%2118.72%21%402140da8b17793317525523809e0fd1%2112000057797356935%21affd%21%21%21%211%210%21",
+            "price": "$2.76",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F1C3ZJB3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "138x56x19mm",
+      "productName": "8-Channel Optocoupled Relay Board",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNLNupZt6pe0Fj5BfdHmqUJSr5yUY16IhaJBUuT3BDh2ionZiX61R0zOJQaygelAvy8ly4O0y7LzR4CHbdGzmoqixAS6qDqokiI5pXmzl5qoSafT7IRTxnR7MtkpECIu34uZltp3x9bwWU4j4z09CHn7AlTAXDqV0YOeehuLBnT7OMuaMD7bdHdHcexBBNOxwAyP3Xlo0JiRWF6uQNtt5fYePWMgxIC4JM4ixYbKewe9XSUcy1rVr9c8m6TrW3TtajMjmggzwpYhL9N74K8QF5YtMQPEBJ1iD6fKotJ6p9vI8Hi77taqWd23HmnNKkjJMQSEYdEuYKwdtEkeZqQW8NWcVg2ssbUCfzqrDos3XcuwnPAmnJj1K2cyiVvVWxRqHOJTG6aZWhdPQMAwXeQqrJ53WA3rS1KYLqKkBcy7KgYE2sgnnPNNvVfvFKPANS3DVY4EnnlBhbVGaILkJtL17dTBpppmeSRZvh3ZLAr2yvjhlWL60iTcaG1Uu69Qe63BwqD8UKBn82ztxGWbwgroIlb9pkSJySJcTUIeZnBbXjFwnFLP0zvZzLf8OZ9XDebs5gOzmFOacQOYZU8JJSXx5zYYGqxKXx2emumIcuw3pRwAI0TxMBaU8IaxQlqT8F13d5tX3XosDtKGFgR1O7lcant",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNLNupZt6pe0Fj5BfdHmqUJSr5yUY16IhaJBUuT3BDh2ionZiX61R0zOJQaygelAvy8ly4O0y7LzR4CHbdGzmoqixAS6qDqokiI5pXmzl5qoSafT7IRTxnR7MtkpECIu34uZltp3x9bwWU4j4z09CHn7AlTAXDqV0YOeehuLBnT7OMuaMD7bdHdHcexBBNOxwAyP3Xlo0JiRWF6uQNtt5fYePWMgxIC4JM4ixYbKewe9XSUcy1rVr9c8m6TrW3TtajMjmggzwpYhL9N74K8QF5YtMQPEBJ1iD6fKotJ6p9vI8Hi77taqWd23HmnNKkjJMQSEYdEuYKwdtEkeZqQW8NWcVg2ssbUCfzqrDos3XcuwnPAmnJj1K2cyiVvVWxRqHOJTG6aZWhdPQMAwXeQqrJ53WA3rS1KYLqKkBcy7KgYE2sgnnPNNvVfvFKPANS3DVY4EnnlBhbVGaILkJtL17dTBpppmeSRZvh3ZLAr2yvjhlWL60iTcaG1Uu69Qe63BwqD8UKBn82ztxGWbwgroIlb9pkSJySJcTUIeZnBbXjFwnFLP0zvZzLf8OZ9XDebs5gOzmFOacQOYZU8JJSXx5zYYGqxKXx2emumIcuw3pRwAI0TxMBaU8IaxQlqT8F13d5tX3XosDtKGFgR1O7lcant",
+      "estimatedCost": 12
+    },
+    {
+      "id": "solenoid_valve_1_freshwater",
+      "name": "Solenoid Valve 1 (Freshwater Inlet)",
+      "pins": [
+        "12V+",
+        "GND-"
+      ],
+      "type": "actuator",
+      "partId": "df2fa0b7-83a5-4533-be59-a60a53f6579e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=G1%2F2%22+Solenoid+Valve+%2812V%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/4130LS+MSVL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$29.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-generic-solenoid-valve-12v.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x55x30mm",
+      "productName": "G1/2\" Solenoid Valve (12V)",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3WX6rLP",
+      "estimatedCost": 15
+    },
+    {
+      "id": "solenoid_valve_2_drain",
+      "name": "Solenoid Valve 2 (Wastewater Outlet)",
+      "pins": [
+        "12V+",
+        "GND-"
+      ],
+      "type": "actuator",
+      "partId": "df2fa0b7-83a5-4533-be59-a60a53f6579e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=G1%2F2%22+Solenoid+Valve+%2812V%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/4130LS+MSVL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$29.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-generic-solenoid-valve-12v.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x55x30mm",
+      "productName": "G1/2\" Solenoid Valve (12V)",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3WX6rLP",
+      "estimatedCost": 15
+    },
+    {
+      "id": "solenoid_valve_3_spare",
+      "name": "Solenoid Valve 3 (Spare)",
+      "pins": [
+        "12V+",
+        "GND-"
+      ],
+      "type": "actuator",
+      "partId": "df2fa0b7-83a5-4533-be59-a60a53f6579e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=G1%2F2%22+Solenoid+Valve+%2812V%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/4130LS+MSVL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$29.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-generic-solenoid-valve-12v.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x55x30mm",
+      "productName": "G1/2\" Solenoid Valve (12V)",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FBHGNKPX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3WX6rLP",
+      "estimatedCost": 15
+    },
+    {
+      "id": "mini_water_pump_1_main_flood",
+      "name": "Mini Water Pump 1 (Main Ebb & Flow Flood)",
+      "pins": [
+        "12V+",
+        "GND-"
+      ],
+      "type": "actuator",
+      "partId": "a7b5b5d5-89e4-49e9-b1a2-6a2eacc3acbd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Water+Pump+%2812V%2C+10W%2C+600L%2FH%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41oTFfL-qNL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B09XH1GYYQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$14.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005012269708130.html?pdp_npi=6%40dis%21USD%2127.40%2127.13%21%21%21185.37%21183.52%21%402140d33617796002408572795e1085%2112000057936900950%21affd%21%21%21%211%210%21",
+            "price": "$27.13",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09XH1GYYQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x30x25mm",
+      "productName": "Mini Water Pump (12V, 10W, 600L/H)",
+      "purchaseUrl": "https://www.amazon.com/dp/B09XH1GYYQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRL49cOVzNpb4d8fm6ZwjytywcDuTrzTQfekRZsoN8qh8gqCiUWCzXgqx8IlDqamyHof4ihzpjZUJgE2RhqpCVF871KYbqTwawP7JTuJNTqgjpuJDlM2tu5GCrTCHrAahdHmK0AcqC5V0QSjhpo8HF5psR51eE5CIB0VNBF79fCiYbgKQmis2Y5kA5kWv6u4T95aJPPpTpFRRxTjQdQKpkadJMtezn2AOHfdNXY1RSpouH58yjG6Gzg7eXGgMWhhxJRjgP8TTdMoZhwCGtNTB8kfeAaipiRLmH6AHZQ7NlS7NCxUlWkMZMDoDSJmBFkEBoqmRfYCy6UKtJyjeICOnyUYb2MkOiG2LB9K51znGd7xDvjqwa9cebIdVSRuZPd4KpcRN2dWG6CzrF279MyBvccKvIdRhqB5pRNLWlNBlLynHdhOfvg4bEvRvpEGF1RYyecP0eINaTwfufTvOTNMWOzgIB97hZP7DVcaQOadNaH6lUB3nXwtsxvvaB9ruIJ0mPwgnmNDEOmaq6tlQtvghxn9rTU7pQxP0boCuthzbYrTG4Zr1pA3PN5DjTB8nAgZoUpIk8gGF5JmAJw448dDuoET46HpVUKqIqCPO8iXrlfrE0nAZXPQE4IU9K8XxxNBDmAYgOaByTtIJOzTnflsbsG3",
+      "estimatedCost": 10
+    },
+    {
+      "id": "mini_water_pump_2_recirculation",
+      "name": "Mini Water Pump 2 (Recirculation)",
+      "pins": [
+        "12V+",
+        "GND-"
+      ],
+      "type": "actuator",
+      "partId": "a7b5b5d5-89e4-49e9-b1a2-6a2eacc3acbd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Water+Pump+%2812V%2C+10W%2C+600L%2FH%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41oTFfL-qNL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B09XH1GYYQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$14.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005012269708130.html?pdp_npi=6%40dis%21USD%2127.40%2127.13%21%21%21185.37%21183.52%21%402140d33617796002408572795e1085%2112000057936900950%21affd%21%21%21%211%210%21",
+            "price": "$27.13",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09XH1GYYQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x30x25mm",
+      "productName": "Mini Water Pump (12V, 10W, 600L/H)",
+      "purchaseUrl": "https://www.amazon.com/dp/B09XH1GYYQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRL49cOVzNpb4d8fm6ZwjytywcDuTrzTQfekRZsoN8qh8gqCiUWCzXgqx8IlDqamyHof4ihzpjZUJgE2RhqpCVF871KYbqTwawP7JTuJNTqgjpuJDlM2tu5GCrTCHrAahdHmK0AcqC5V0QSjhpo8HF5psR51eE5CIB0VNBF79fCiYbgKQmis2Y5kA5kWv6u4T95aJPPpTpFRRxTjQdQKpkadJMtezn2AOHfdNXY1RSpouH58yjG6Gzg7eXGgMWhhxJRjgP8TTdMoZhwCGtNTB8kfeAaipiRLmH6AHZQ7NlS7NCxUlWkMZMDoDSJmBFkEBoqmRfYCy6UKtJyjeICOnyUYb2MkOiG2LB9K51znGd7xDvjqwa9cebIdVSRuZPd4KpcRN2dWG6CzrF279MyBvccKvIdRhqB5pRNLWlNBlLynHdhOfvg4bEvRvpEGF1RYyecP0eINaTwfufTvOTNMWOzgIB97hZP7DVcaQOadNaH6lUB3nXwtsxvvaB9ruIJ0mPwgnmNDEOmaq6tlQtvghxn9rTU7pQxP0boCuthzbYrTG4Zr1pA3PN5DjTB8nAgZoUpIk8gGF5JmAJw448dDuoET46HpVUKqIqCPO8iXrlfrE0nAZXPQE4IU9K8XxxNBDmAYgOaByTtIJOzTnflsbsG3",
+      "estimatedCost": 10
+    },
+    {
+      "id": "peristaltic_pump",
+      "name": "Peristaltic Micropump (Fertilizer Dosing)",
+      "pins": [
+        "5V+",
+        "GND-"
+      ],
+      "type": "actuator",
+      "partId": "9cdbbb22-a0d3-478c-8802-e0addc842b6b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5V+Peristaltic+Micropump&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41BE7sHIjbL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0BB7KFRKJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$14.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005011564245941.html?pdp_npi=6%40dis%21USD%215.71%215.71%21%21%2138.62%2138.62%21%4021013cc017796169227373710e0ffc%2112000055933781107%21affd%21%21%21%211%210%21",
+            "price": "$5.71",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BB7KFRKJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x45x30mm",
+      "productName": "5V Peristaltic Micropump",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR9MpnAaAqNHer8tjPCW7wMB56PX5zHCSAvwRBHGnoz94cAxWGzb1ecBPzmp2lQOebS5WglbuLR9wb6oPFH9RFIGC9KeQOSZ3TLAoxpFRIVwQWykPsaLfIfBL2rixXnbx74oTzTRoNks9aWYlHbtFGJzLO6lv4QOdOTdxXlXY3pb3e5zMAUOwWxy52doFa9u09VWSudAkI097Dyp6qYaK8Ca4iCAfMkH8ATY0FpZNNCPu6hovciIrDOaFUnPLesK0DtzZEqtG6KEiuBPBzQQCQ4zlPiRpM2KEYNehYl53NQkS7eRBoB9YIc61Ftl85uhlLLGRPtseDqusffoWMXRDj5nzAqSiHOcHpAEryBUUvAkoLHqHE3uU3LqpgeresrFo9YsyNUb7N1c2cLqxIFjvFs12Bq7P04MxwFdY2waVjayduLf4oZEeiefl6R0sxf8e2qtkoLqmE5wR1UPaJuQ49kiMngI1sWdaJ0Mgds4g5xSn4hlD1GuX6I99d2EYCWFxnzRqOqf7EO2lke9345iwa6hFIOEDQ0xOt9Znb6diIQ7tQgXh4qGsSVFpNMmSDK6cwCdMSEoansWpYO8dloOdFojOuxMXtxNao41CPTr2T1fQ1BP9L9UTo45YsdWpMfW1KDJUtx4ug8GpuIXiNrQzMOB",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR9MpnAaAqNHer8tjPCW7wMB56PX5zHCSAvwRBHGnoz94cAxWGzb1ecBPzmp2lQOebS5WglbuLR9wb6oPFH9RFIGC9KeQOSZ3TLAoxpFRIVwQWykPsaLfIfBL2rixXnbx74oTzTRoNks9aWYlHbtFGJzLO6lv4QOdOTdxXlXY3pb3e5zMAUOwWxy52doFa9u09VWSudAkI097Dyp6qYaK8Ca4iCAfMkH8ATY0FpZNNCPu6hovciIrDOaFUnPLesK0DtzZEqtG6KEiuBPBzQQCQ4zlPiRpM2KEYNehYl53NQkS7eRBoB9YIc61Ftl85uhlLLGRPtseDqusffoWMXRDj5nzAqSiHOcHpAEryBUUvAkoLHqHE3uU3LqpgeresrFo9YsyNUb7N1c2cLqxIFjvFs12Bq7P04MxwFdY2waVjayduLf4oZEeiefl6R0sxf8e2qtkoLqmE5wR1UPaJuQ49kiMngI1sWdaJ0Mgds4g5xSn4hlD1GuX6I99d2EYCWFxnzRqOqf7EO2lke9345iwa6hFIOEDQ0xOt9Znb6diIQ7tQgXh4qGsSVFpNMmSDK6cwCdMSEoansWpYO8dloOdFojOuxMXtxNao41CPTr2T1fQ1BP9L9UTo45YsdWpMfW1KDJUtx4ug8GpuIXiNrQzMOB",
+      "estimatedCost": 18
+    },
+    {
+      "id": "ads1115_adc_module",
+      "name": "16-bit ADC Module",
+      "pins": [
+        "VDD (5V)",
+        "GND",
+        "SCL",
+        "SDA",
+        "A0",
+        "A1",
+        "A2",
+        "A3",
+        "ADDR"
+      ],
+      "type": "module",
+      "partId": "c9b3e7cc-92b1-46b8-9c26-20979225f74e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ADS1115+16-Bit+ADC+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/410WXOt9NWL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SDA,SCL,ADDR,ALRT,A0,A1,A2,A3"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0CNV9G4K1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$11.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005009384017773.html?pdp_npi=6%40dis%21USD%216.60%213.10%21%21%2144.68%2121.00%21%402151fd3a17794409986627069e0f07%2112000048937485494%21affd%21%21%21%211%210%21",
+            "price": "$3.1",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CNV9G4K1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x10x3mm",
+      "description": "16-bit ADC for precise measurement of bio-electrical impedance signal from the BIA circuit.",
+      "productName": "ADS1115 16-Bit ADC Module",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRPzSnGMwfztevDl4YES6uunZl3jjTA1qX8ErT3QC9V0offosMfUa5bBOtc87sFsagPBnLatNGbjIkJLoBODURFv92NrBTcJunhG9BTYbwyXrRoqUNK5z0YZEzK91sLy67TfzZ1ua1ZjkJqN4K3pUcegEe1wUEESevnO1spELVJoVEWvk04aJ8OgsoUWqMR4kYOaCyTawx9SsHJHpzn2EBVjt4UUzroby1Srnk6bMExCQC02Gbbx8L3IBKEri50ukKVj0ngmM8jcaVfYrVepaLJr0fvNsu0NjjUJaULWQnRBXSDqLmQT2wuoJc0LhIVtGkgRoRSv1V8XGLnedrtftXbhAcBVfji0yXuSva0qJnFOQ9gmu3h4lCwVNTqWBLgLeAEi5y3ZqYHf7rVi7SLe3weou31y6pPqFFzjW3z3esjcU8bhyEQDKYJxVVco94RABRRt3lMPqVtlMjfvpNJs3XXHAy8JjNkPKnd1SqeKrbepWbV1IzsVOtq7lWvhmQyDDYm0pXmxZSaNhndLIFhbIFiH0fWlJ0vCuC0PAkivDZVRlEqjZCpCWn53E66JJRCBVhX6npa94ZZh5D0BtlLFP1mOMxl14HEp9fCyPbsWgFPfmWFeTl2Lt4Ko2aS0SWk9ZheqnmaGFQuhNB0s5Jr2dQn1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRPzSnGMwfztevDl4YES6uunZl3jjTA1qX8ErT3QC9V0offosMfUa5bBOtc87sFsagPBnLatNGbjIkJLoBODURFv92NrBTcJunhG9BTYbwyXrRoqUNK5z0YZEzK91sLy67TfzZ1ua1ZjkJqN4K3pUcegEe1wUEESevnO1spELVJoVEWvk04aJ8OgsoUWqMR4kYOaCyTawx9SsHJHpzn2EBVjt4UUzroby1Srnk6bMExCQC02Gbbx8L3IBKEri50ukKVj0ngmM8jcaVfYrVepaLJr0fvNsu0NjjUJaULWQnRBXSDqLmQT2wuoJc0LhIVtGkgRoRSv1V8XGLnedrtftXbhAcBVfji0yXuSva0qJnFOQ9gmu3h4lCwVNTqWBLgLeAEi5y3ZqYHf7rVi7SLe3weou31y6pPqFFzjW3z3esjcU8bhyEQDKYJxVVco94RABRRt3lMPqVtlMjfvpNJs3XXHAy8JjNkPKnd1SqeKrbepWbV1IzsVOtq7lWvhmQyDDYm0pXmxZSaNhndLIFhbIFiH0fWlJ0vCuC0PAkivDZVRlEqjZCpCWn53E66JJRCBVhX6npa94ZZh5D0BtlLFP1mOMxl14HEp9fCyPbsWgFPfmWFeTl2Lt4Ko2aS0SWk9ZheqnmaGFQuhNB0s5Jr2dQn1",
+      "estimatedCost": 7
+    },
+    {
+      "id": "ph_sensor_module",
+      "name": "pH Sensor Module with Electrode",
+      "pins": [
+        "VCC (5V)",
+        "GND",
+        "Analog Output",
+        "BNC Connector"
+      ],
+      "type": "sensor",
+      "partId": "a4e16ca0-7faf-4ab7-b200-6bb0b320e250",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=pH+Sensor+Module+with+Electrode&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41u3ZUwyCBL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08GYF269Y?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$33.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-analog-ph-sensor-module-bnc-interface.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08GYF269Y?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x32x20mm",
+      "productName": "pH Sensor Module with Electrode",
+      "purchaseUrl": "https://www.amazon.com/dp/B08GYF269Y?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3taWOrP",
+      "estimatedCost": 35
+    },
+    {
+      "id": "tds_sensor_module",
+      "name": "TDS Sensor Module with Probe",
+      "pins": [
+        "VCC (5V)",
+        "GND",
+        "Analog Output"
+      ],
+      "type": "sensor",
+      "partId": "0d888ebd-02cb-421c-8b5b-5ef55f2a9c60",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TDS+Sensor+Module+with+Probe&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41l7evwvSxL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005011929645647.html?pdp_npi=6%40dis%21USD%21227.61%21227.61%21%21%211535.86%211535.86%21%40214114e317796954088342820e1277%2112000057064596885%21affd%21%21%21%211%210%21",
+            "price": "$227.61",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B086GX2539?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$11.9",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B086GX2539?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x32x20mm",
+      "productName": "TDS Sensor Module with Probe",
+      "purchaseUrl": "https://www.amazon.com/dp/B086GX2539?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZbnVxqvz6rJ3ZAAzo2MFkNfhwedpRFfq16Lku5LWWrUhQgAWQIl9KRqQJzKSI2BifcSin0pq5pV5d9toFFBBzSwqw8iXk24QYQfIHXyP7SfwQDxcRsMheCIwYxkTeBI76GqQu4MDkPkoTgpGHdDXvvuaCm9lbhkNaTTGg5l8Dj7eCDOsyDuDB0a53s0UHntaSDtRMh6aesXiR6aoQzBGFhX2AFZsH6uQ2ekI0D08tKyx20yhvvScf4NO8XQ8oXCm2hnsd4X99GIrPlqq62mxN2wCz3CyvSpkrBDuAG0Xc7olmFZ1kAYpE36Ah0fsJvKETGkqiX7NftKcQHjcLo0PnXZRQhgkw8KvxDnwO4rY072zc8yqcAu4NzUZDfoRmqPtbOV3jsFWTMtOmJ8mNYzhDfHR64EW7pOXPgu1icIlcT23FG0fT03yOh8ozhl26P0z3ZXWww1nhnGraXzINCy26FWJrwJnEoVuiFlJf3A3hG5pA54nL3THHQZfCYo5Zy7irmTnIeZQnOuF58cqwmr1eIiMdmjcobwHcZscYNzeQR4FGnWz3WbSlhEybihQ1DONi7AJ4AguS6afvJb60Ui2necza9z63xMkto7Oza3lhWHKyoRMQcp9qpO6iopllNtmF4tMJECah6iOp3sGtbbBuikWoo6d4iFxndOAN8SnYAJIt8NzaOP",
+      "estimatedCost": 25
+    },
+    {
+      "id": "water_flow_sensor",
+      "name": "Water Flow Sensor",
+      "pins": [
+        "VCC (5V)",
+        "GND",
+        "Signal Output"
+      ],
+      "type": "sensor",
+      "partId": "460f108b-8fb0-4151-9619-2754d06056fa",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=G1%2F2%22+Water+Flow+Sensor+%28Hall+effect%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/_pVf-dLSYysziYMp2AtMgF6gHbwB_zIMk6z-uPI_nSM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YW1pY2lrYXJ0LmNv/bS9jZG4vc2hvcC9m/aWxlcy82MXNPWXhl/c2U2TF9HMTJfV2F0/ZXJfRmxvd19TZW5z/b3JfX0hhbGxfRWZm/ZWN0XzEzMExtaW5f/UmFuZ2VfQWNjdXJh/dGVfV2F0ZXJfRmxv/d19NZWFzdXJlbWVu/dF9jMHRtaXotaHNt/eXNob3BpZnljb21f/M2YzMjI1ZDZmZWVl/YTg1YmFhYzUwMWJl/NjBmMDg2MjhfYzB0/bWl6LWhzbXlzaG9w/aWZ5Y29tXzY4NTgz/ZmU2MmQ1Y2VlZWM2/ZjAyMTYxMDJmZjA0/Njc5LmpwZz92PTE3/NjI1MTYyMjAmd2lk/dGg9OTQw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CC949527?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "58x45x25mm",
+      "productName": "G1/2\" Water Flow Sensor (Hall effect)",
+      "purchaseUrl": "https://www.amazon.com/s?k=G1%2F2+hall+water+flow+sensor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdaxc1J66ZU75jZO5kVRz3ZYgkcBaA3ODVFD7VuKYgPUA0jnWfVEMtrfdJoi6WaQtqKgPMI3d4oVp10mG2FqwrWetOfj2kDmHNXh8xidGKTSvB8PiwicRMWu1W3lybJZxfLWkAm22vFXv4rYtcmG8tHc7Hof3PTSS6n7OlavCyBXxmzELnyLZ4YZALl8l25GKCA74GqtvI4ENeUBxTzuhyFCR4aPhN5POeSc7NxRn6p4m4vYTekcXJhI5GfFElWW4kiW3NIrQ2get5RgHkqQfdCjjiuNDZlF1jhdL3kn19OkFlfF5064ZoPMxVCQmlEshu921TIpb133xHuEuGYwEoq6mNyKWEnw1yNOdVoOIljNX4M2gsDN8XI6A8ssAFiZVu0BXNnzfiSTraMcjOlWFbN8sddX47tjl4exnLy7WoQzSA7AwNotpwETY6r5SOxYeG78s9cj6o6OUksYBELqKi9Mws4D4R76RKM2rxY2tYglyVqZA01kOLGHpru1oVahj0nrrbTtgObuqOVjJupawIrBQW8Kfy13rNHikRxST6DI7MNIxOO0rAy8konZYTRxobt36UyMIBmciZ7iUUPPN2Aip1jXDgtMbz0aJNV0IBLZ3Zq84Nwu02ZCtU5OvnGc0qW2s0bxTn03lcX9Zoxw4",
+      "estimatedCost": 8
+    },
+    {
+      "id": "float_sensor_1_growth_tube",
+      "name": "Water Level Float Sensor (Growth Tube)",
+      "pins": [
+        "Signal",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "d878f857-45d2-45aa-9198-95948046fcc5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Water+Level+Sensor+%28Angle%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/411OnijCDUL._SL500_.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07Q1GJ7JL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x25x20mm",
+      "productName": "Water Level Sensor (Angle)",
+      "purchaseUrl": "https://www.amazon.com/s?k=angle+water+level+float+sensor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvyeuvHkHoaC7AR7c2gOsFUGLA3hh05bK45O6X8348RYasZzzOzWOwmwIpqQKyrBkbRL9xe3XiOk9HPCZRdellpy3vOkmPg1g1KHKH4fPbAFA7L5v1n2xXGu7Ve7JSzEZSayfV3ZJL6oIkJGUis7fihWnuynyptCTZA8oa9YOjeUvBbLoAGYTU8ERqn6NVym8xN2DHwgmI9PRdsugzzmPU8kfnSwFOatAQfFIl9rafCDYGg6X5MFTzjZS0yBwd2bvi46QlALHQfDqzVWOHfOFzS8A1MTcIdWlMDTU7b8MPxcOTe7cGQKfZtfRS0vTTyPaJxi1U8nzzG71cvbpbyTQYVh8YZt5v5mwZS4F8pJ5O5LamCqizq7iDehdWn2YrPxnAdrWylzNT3sJBBU0FY6JG1eZxfomsxxQPnZ56UKu59nefOH4U1OA2QVurbYd2HcQym2y4cmfMrxr1PR6sOhWsLabz7hyMTxFuc5JP4JBzr8r5kUOkcwdORkysM0gmkYO1IO881gfikdqazFKCEal0sMP5VP2FBWYudIkSbLqR78uacZTK9Uupk3iF4T5DfELZ9xWCV1EJAJbmxJpWLnpgQzj3WSQtSHRu06RHkYFRb1TW0KaRDxqy2n7DgU45mIoQnBOCtnPgz9aAK2nqJa1MRZ",
+      "estimatedCost": 5
+    },
+    {
+      "id": "float_sensor_2_reservoir",
+      "name": "Water Level Float Sensor (Reservoir)",
+      "pins": [
+        "Signal",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "d878f857-45d2-45aa-9198-95948046fcc5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Water+Level+Sensor+%28Angle%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/411OnijCDUL._SL500_.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07Q1GJ7JL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x25x20mm",
+      "productName": "Water Level Sensor (Angle)",
+      "purchaseUrl": "https://www.amazon.com/s?k=angle+water+level+float+sensor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvyeuvHkHoaC7AR7c2gOsFUGLA3hh05bK45O6X8348RYasZzzOzWOwmwIpqQKyrBkbRL9xe3XiOk9HPCZRdellpy3vOkmPg1g1KHKH4fPbAFA7L5v1n2xXGu7Ve7JSzEZSayfV3ZJL6oIkJGUis7fihWnuynyptCTZA8oa9YOjeUvBbLoAGYTU8ERqn6NVym8xN2DHwgmI9PRdsugzzmPU8kfnSwFOatAQfFIl9rafCDYGg6X5MFTzjZS0yBwd2bvi46QlALHQfDqzVWOHfOFzS8A1MTcIdWlMDTU7b8MPxcOTe7cGQKfZtfRS0vTTyPaJxi1U8nzzG71cvbpbyTQYVh8YZt5v5mwZS4F8pJ5O5LamCqizq7iDehdWn2YrPxnAdrWylzNT3sJBBU0FY6JG1eZxfomsxxQPnZ56UKu59nefOH4U1OA2QVurbYd2HcQym2y4cmfMrxr1PR6sOhWsLabz7hyMTxFuc5JP4JBzr8r5kUOkcwdORkysM0gmkYO1IO881gfikdqazFKCEal0sMP5VP2FBWYudIkSbLqR78uacZTK9Uupk3iF4T5DfELZ9xWCV1EJAJbmxJpWLnpgQzj3WSQtSHRu06RHkYFRb1TW0KaRDxqy2n7DgU45mIoQnBOCtnPgz9aAK2nqJa1MRZ",
+      "estimatedCost": 5
+    },
+    {
+      "id": "flyback_diode_solenoid_1",
+      "name": "Flyback Diode (Solenoid Valve 1)",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "module",
+      "partId": "cc250517-1b08-4786-910e-5a46d3af744a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1N4007+Rectifier+Diode&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51MUziFqduL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Anode,Cathode"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005009508821696.html?pdp_npi=6%40dis%21USD%216.19%212.91%21%21%2141.86%2119.67%21%402140d36217794606626011245e1175%2112000049319061688%21affd%21%21%21%211%210%21",
+            "price": "$2.91",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5x3x3mm",
+      "description": "Protects MOSFET from voltage spikes when ignition coil primary de-energizes. Placed across primary coil.",
+      "productName": "1N4007 Rectifier Diode",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/onsemi/1N4007/458641",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyalSJSHNMpno6f7H7mhR4FnjWmpRzjn8EOj4enrdHQ5yrDW6F8IIVsg6ylNrN9BAWZE9Fz7qYW9ztSaNE1Y5aIjBvp8yVqnLVa9g6q2bW7TFRolImOeVCVSlAoMDzFO9BOZJPC2DRxhxeu5hNNegx3mPwZJQNOwa24kxMSTKOEiG4ehSaFIGWy3etZ8WB8b8DLrOAaZEWKfYq9haLaLt8B4X62kcpXHlFsNR2fNpVYkl3LYFf1AE8w5L8fAG5C3FfgfXWn7WTOnuo3xMHK2sGorjfPbqzR2i0cgBpose48HnSjBBoWDN2n3vqRE2E06PrF6J1Ihax7NKijOQsuMDXbKrGwvUPNxTw91TfWdQI0bs1Nrl1aNqfoZiOxpQu88plOjRKr2BA5Rf00ije36QkghqGIjOzkRHPJJMLFk7pFYLkseESXwCBwbflxc9JP3gssLllCP5Ph7zyBTkcBoMH4ukQpPq2gAJqzExS0W8Xc4h63jnWpqBcnmrzhUerVC6xAt8OI9BYHev1NtN8FJKaMlqxLkB7T8xBFwIxW1VzODkW2Fo8FRM9auaDGANALBDV2CUCgBHkB8BCakOfvacKhMq1YOB5yZPinPdAdbAmTE1sOIidIg7ezmw8NIUvEWXvmuH29QsNsmpsRlx8XNQSfmb",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "flyback_diode_solenoid_2",
+      "name": "Flyback Diode (Solenoid Valve 2)",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "module",
+      "partId": "cc250517-1b08-4786-910e-5a46d3af744a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1N4007+Rectifier+Diode&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51MUziFqduL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Anode,Cathode"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005009508821696.html?pdp_npi=6%40dis%21USD%216.19%212.91%21%21%2141.86%2119.67%21%402140d36217794606626011245e1175%2112000049319061688%21affd%21%21%21%211%210%21",
+            "price": "$2.91",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5x3x3mm",
+      "description": "Protects MOSFET from voltage spikes when ignition coil primary de-energizes. Placed across primary coil.",
+      "productName": "1N4007 Rectifier Diode",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/onsemi/1N4007/458641",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyalSJSHNMpno6f7H7mhR4FnjWmpRzjn8EOj4enrdHQ5yrDW6F8IIVsg6ylNrN9BAWZE9Fz7qYW9ztSaNE1Y5aIjBvp8yVqnLVa9g6q2bW7TFRolImOeVCVSlAoMDzFO9BOZJPC2DRxhxeu5hNNegx3mPwZJQNOwa24kxMSTKOEiG4ehSaFIGWy3etZ8WB8b8DLrOAaZEWKfYq9haLaLt8B4X62kcpXHlFsNR2fNpVYkl3LYFf1AE8w5L8fAG5C3FfgfXWn7WTOnuo3xMHK2sGorjfPbqzR2i0cgBpose48HnSjBBoWDN2n3vqRE2E06PrF6J1Ihax7NKijOQsuMDXbKrGwvUPNxTw91TfWdQI0bs1Nrl1aNqfoZiOxpQu88plOjRKr2BA5Rf00ije36QkghqGIjOzkRHPJJMLFk7pFYLkseESXwCBwbflxc9JP3gssLllCP5Ph7zyBTkcBoMH4ukQpPq2gAJqzExS0W8Xc4h63jnWpqBcnmrzhUerVC6xAt8OI9BYHev1NtN8FJKaMlqxLkB7T8xBFwIxW1VzODkW2Fo8FRM9auaDGANALBDV2CUCgBHkB8BCakOfvacKhMq1YOB5yZPinPdAdbAmTE1sOIidIg7ezmw8NIUvEWXvmuH29QsNsmpsRlx8XNQSfmb",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "flyback_diode_solenoid_3",
+      "name": "Flyback Diode (Solenoid Valve 3)",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "module",
+      "partId": "cc250517-1b08-4786-910e-5a46d3af744a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1N4007+Rectifier+Diode&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51MUziFqduL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Anode,Cathode"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005009508821696.html?pdp_npi=6%40dis%21USD%216.19%212.91%21%21%2141.86%2119.67%21%402140d36217794606626011245e1175%2112000049319061688%21affd%21%21%21%211%210%21",
+            "price": "$2.91",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5x3x3mm",
+      "description": "Protects MOSFET from voltage spikes when ignition coil primary de-energizes. Placed across primary coil.",
+      "productName": "1N4007 Rectifier Diode",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/onsemi/1N4007/458641",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyalSJSHNMpno6f7H7mhR4FnjWmpRzjn8EOj4enrdHQ5yrDW6F8IIVsg6ylNrN9BAWZE9Fz7qYW9ztSaNE1Y5aIjBvp8yVqnLVa9g6q2bW7TFRolImOeVCVSlAoMDzFO9BOZJPC2DRxhxeu5hNNegx3mPwZJQNOwa24kxMSTKOEiG4ehSaFIGWy3etZ8WB8b8DLrOAaZEWKfYq9haLaLt8B4X62kcpXHlFsNR2fNpVYkl3LYFf1AE8w5L8fAG5C3FfgfXWn7WTOnuo3xMHK2sGorjfPbqzR2i0cgBpose48HnSjBBoWDN2n3vqRE2E06PrF6J1Ihax7NKijOQsuMDXbKrGwvUPNxTw91TfWdQI0bs1Nrl1aNqfoZiOxpQu88plOjRKr2BA5Rf00ije36QkghqGIjOzkRHPJJMLFk7pFYLkseESXwCBwbflxc9JP3gssLllCP5Ph7zyBTkcBoMH4ukQpPq2gAJqzExS0W8Xc4h63jnWpqBcnmrzhUerVC6xAt8OI9BYHev1NtN8FJKaMlqxLkB7T8xBFwIxW1VzODkW2Fo8FRM9auaDGANALBDV2CUCgBHkB8BCakOfvacKhMq1YOB5yZPinPdAdbAmTE1sOIidIg7ezmw8NIUvEWXvmuH29QsNsmpsRlx8XNQSfmb",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "flyback_diode_pump_1",
+      "name": "Flyback Diode (Mini Water Pump 1)",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "module",
+      "partId": "cc250517-1b08-4786-910e-5a46d3af744a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1N4007+Rectifier+Diode&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51MUziFqduL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Anode,Cathode"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005009508821696.html?pdp_npi=6%40dis%21USD%216.19%212.91%21%21%2141.86%2119.67%21%402140d36217794606626011245e1175%2112000049319061688%21affd%21%21%21%211%210%21",
+            "price": "$2.91",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5x3x3mm",
+      "description": "Protects MOSFET from voltage spikes when ignition coil primary de-energizes. Placed across primary coil.",
+      "productName": "1N4007 Rectifier Diode",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/onsemi/1N4007/458641",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyalSJSHNMpno6f7H7mhR4FnjWmpRzjn8EOj4enrdHQ5yrDW6F8IIVsg6ylNrN9BAWZE9Fz7qYW9ztSaNE1Y5aIjBvp8yVqnLVa9g6q2bW7TFRolImOeVCVSlAoMDzFO9BOZJPC2DRxhxeu5hNNegx3mPwZJQNOwa24kxMSTKOEiG4ehSaFIGWy3etZ8WB8b8DLrOAaZEWKfYq9haLaLt8B4X62kcpXHlFsNR2fNpVYkl3LYFf1AE8w5L8fAG5C3FfgfXWn7WTOnuo3xMHK2sGorjfPbqzR2i0cgBpose48HnSjBBoWDN2n3vqRE2E06PrF6J1Ihax7NKijOQsuMDXbKrGwvUPNxTw91TfWdQI0bs1Nrl1aNqfoZiOxpQu88plOjRKr2BA5Rf00ije36QkghqGIjOzkRHPJJMLFk7pFYLkseESXwCBwbflxc9JP3gssLllCP5Ph7zyBTkcBoMH4ukQpPq2gAJqzExS0W8Xc4h63jnWpqBcnmrzhUerVC6xAt8OI9BYHev1NtN8FJKaMlqxLkB7T8xBFwIxW1VzODkW2Fo8FRM9auaDGANALBDV2CUCgBHkB8BCakOfvacKhMq1YOB5yZPinPdAdbAmTE1sOIidIg7ezmw8NIUvEWXvmuH29QsNsmpsRlx8XNQSfmb",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "flyback_diode_pump_2",
+      "name": "Flyback Diode (Mini Water Pump 2)",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "module",
+      "partId": "cc250517-1b08-4786-910e-5a46d3af744a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1N4007+Rectifier+Diode&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51MUziFqduL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Anode,Cathode"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005009508821696.html?pdp_npi=6%40dis%21USD%216.19%212.91%21%21%2141.86%2119.67%21%402140d36217794606626011245e1175%2112000049319061688%21affd%21%21%21%211%210%21",
+            "price": "$2.91",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FC2CQF24?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5x3x3mm",
+      "description": "Protects MOSFET from voltage spikes when ignition coil primary de-energizes. Placed across primary coil.",
+      "productName": "1N4007 Rectifier Diode",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/onsemi/1N4007/458641",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyalSJSHNMpno6f7H7mhR4FnjWmpRzjn8EOj4enrdHQ5yrDW6F8IIVsg6ylNrN9BAWZE9Fz7qYW9ztSaNE1Y5aIjBvp8yVqnLVa9g6q2bW7TFRolImOeVCVSlAoMDzFO9BOZJPC2DRxhxeu5hNNegx3mPwZJQNOwa24kxMSTKOEiG4ehSaFIGWy3etZ8WB8b8DLrOAaZEWKfYq9haLaLt8B4X62kcpXHlFsNR2fNpVYkl3LYFf1AE8w5L8fAG5C3FfgfXWn7WTOnuo3xMHK2sGorjfPbqzR2i0cgBpose48HnSjBBoWDN2n3vqRE2E06PrF6J1Ihax7NKijOQsuMDXbKrGwvUPNxTw91TfWdQI0bs1Nrl1aNqfoZiOxpQu88plOjRKr2BA5Rf00ije36QkghqGIjOzkRHPJJMLFk7pFYLkseESXwCBwbflxc9JP3gssLllCP5Ph7zyBTkcBoMH4ukQpPq2gAJqzExS0W8Xc4h63jnWpqBcnmrzhUerVC6xAt8OI9BYHev1NtN8FJKaMlqxLkB7T8xBFwIxW1VzODkW2Fo8FRM9auaDGANALBDV2CUCgBHkB8BCakOfvacKhMq1YOB5yZPinPdAdbAmTE1sOIidIg7ezmw8NIUvEWXvmuH29QsNsmpsRlx8XNQSfmb",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "dc_ac_inverter_220v",
+      "name": "12V DC to 220V AC Inverter",
+      "pins": [
+        "12V Input +",
+        "12V Input -",
+        "220V AC Output"
+      ],
+      "type": "power",
+      "partId": "596bde8f-61d9-4c16-a377-aed9a9146896",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+DC+to+220V+AC+Inverter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41WVhTn1G4L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0B288PKJ1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$47.41",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006861937070.html?pdp_npi=6%40dis%21USD%2186.07%2140.45%21%21%21581.98%21273.53%21%4021013cc617794177509762607e11bc%2112000057999991889%21affd%21%21%21%211%210%21",
+            "price": "$40.45",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0B288PKJ1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x80x40mm",
+      "productName": "12V DC to 220V AC Inverter",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhpCLf2XY4EIoEFEYL4OF3iSb3m3aiDxrejBnbXjV1IYmj4EAbWG6m7l68qz0MgSsH5ItJoQZEaS632kyY28hwIyzQ1Uf4qRwrwf9xMpCDJc4xcW5LEjrIDqAE1ZNW1ewvbqiaJCUIAHVSeVXow3dz1XVNC8JmqeI0Y9o3HpHKTBfcvyCINJGO8XjBtGyodLkUqDZOSSJh8qk3zmUnfAJBqNeDiYE3qRktmBSlVBkcvMoX5aSsW6G0PgYhmMr8ByO6kZbPPSnZQXrwc4rID03Yj9DT2hXYyeOMLDIeoKLlxRiO0JbibsMhSu7PKPbpNZ8pm2MI57pDEan6IpEZC4XRKomZbKUAiF9zJ2WjFJ05DqaKJls4rpn2wk9XECGSoHKlfpM1nbrduVEw8DZeRBFmOQDOcForvB16HYqHYhUzf3D1HpQTU4f9hZ8JyZkmtxMR0QqyDyItTcHMEFmJpqBXtZtTCNjRQuxTxm67DMJclrcEcHuSZJH0Mc1UozAWYGxzSmI5xNtvPv4jKE17XtjyzyKs4vHLee95e6oG1CUqxCkmWSCmlI8aFTYi2rCsFDpZYJIjZM3nHi676rc3Z4TYNzviTl41yHRJUj341BMUDSZBBSHnwvMiDHhdmRGvXziHvKfMiM4g6TZDXSHHD04jwx",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhpCLf2XY4EIoEFEYL4OF3iSb3m3aiDxrejBnbXjV1IYmj4EAbWG6m7l68qz0MgSsH5ItJoQZEaS632kyY28hwIyzQ1Uf4qRwrwf9xMpCDJc4xcW5LEjrIDqAE1ZNW1ewvbqiaJCUIAHVSeVXow3dz1XVNC8JmqeI0Y9o3HpHKTBfcvyCINJGO8XjBtGyodLkUqDZOSSJh8qk3zmUnfAJBqNeDiYE3qRktmBSlVBkcvMoX5aSsW6G0PgYhmMr8ByO6kZbPPSnZQXrwc4rID03Yj9DT2hXYyeOMLDIeoKLlxRiO0JbibsMhSu7PKPbpNZ8pm2MI57pDEan6IpEZC4XRKomZbKUAiF9zJ2WjFJ05DqaKJls4rpn2wk9XECGSoHKlfpM1nbrduVEw8DZeRBFmOQDOcForvB16HYqHYhUzf3D1HpQTU4f9hZ8JyZkmtxMR0QqyDyItTcHMEFmJpqBXtZtTCNjRQuxTxm67DMJclrcEcHuSZJH0Mc1UozAWYGxzSmI5xNtvPv4jKE17XtjyzyKs4vHLee95e6oG1CUqxCkmWSCmlI8aFTYi2rCsFDpZYJIjZM3nHi676rc3Z4TYNzviTl41yHRJUj341BMUDSZBBSHnwvMiDHhdmRGvXziHvKfMiM4g6TZDXSHHD04jwx",
+      "estimatedCost": 30
+    },
+    {
+      "id": "return_pump_220v",
+      "name": "Return Pump (220V AC)",
+      "pins": [
+        "220V AC Live",
+        "220V AC Neutral"
+      ],
+      "type": "actuator",
+      "partId": "a599bd09-f3a7-48fe-898e-be2c7a1338f7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=220V+AC+Submersible+Water+Pump&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41wD72qi-oL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08YJ6NNQP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$30",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08YJ6NNQP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x60x80mm",
+      "productName": "220V AC Submersible Water Pump",
+      "purchaseUrl": "https://www.amazon.com/dp/B08YJ6NNQP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxwp5LUzulRI9acSFUBCHeuV0D7vo9V2EQW5HgQGspuflGFs5sDQGRiK7qnMS9DNhWxzdJrKk3Tdq3PgOzZ6ixqBOQm1Q5cX6qrWwRlHIKNvUDqz2Qp5qBGwdrOLCOTxUNIhRhZpwuKRJz9zfp9twHR8n4hY8FVBCTZ5EFKKP2RM2Egtu8kjb3IWVfqkWxm5q6nBQiP3q9p93fUpOu26Z2sJHtgHLcwzxsx6lTwsdFVq7GM2OdK26OyrvqwjVCNAEl1Jx6nY5pb8gt8P6EdKNavFONGmqpXDbqufIZ4PhUdPKC6eHTiPIL7dDes5h3OvwvKlGwPr2CtJzJwetGKzHWMrpnbOCL6KoMHqDIxZB97ZiR7DwH4WRpOkWZplBxHDt6OeVsQGXR1QsyVpPRBII3PvVKqf1GsntK0qlrxLRtMPR9Eiv5wgVQqnnK6gaaMhVCQDXmQTiXGFDCDWlexNRMhPe2ONna0cZuc1tL2hGvmulv4TpN5PwOMa0BG9osPxaUmUk9K2Nd7bA98zJHbbOHRu4kray3Xuf5xHW4pFPlqAh2thD4vpUCarsi3NASZUknc1H6h1Xn4VZyDXz7LkR466MV7r3dIoWVI9GOs0KUP4fEPpEBglnFC0S9aN99VZ5TkLoi0zAl8ffreytMPtUgFJH",
+      "estimatedCost": 25
+    },
+    {
+      "id": "ip65_junction_box",
+      "name": "IP65 Junction Box Enclosure",
+      "type": "enclosure",
+      "partId": "14c1a93f-b190-46ed-a838-d5298b25c722",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=IP65+Waterproof+Electrical+Junction+Box&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31NYvxM5suL._SL500_.jpg",
+      "material": "ABS Plastic",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08KY7VK8W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08KY7VK8W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x150x75mm",
+      "description": "Waterproof enclosure to house all electronics, protecting them from the humid environment.",
+      "productName": "IP65 Waterproof Electrical Junction Box",
+      "purchaseUrl": "https://www.amazon.com/dp/B08KY7VK8W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaEe73GwoMoEkoaHzwRgvrTc0gzXDJ80HShgoB6IQGuqRnzrSNUQHknyYuB03wutRPwKjpsKYq77MoXoOpKgj1U5ZefvN1vGMSZdguy8rbck5JwhkvqKklH3V3z3zq7uejhfkoA3oE9koZo2Ad9KyzhLnnYi0SmP8Q9uVBwvp8Fmvsu6IPT4qAr9oMNTS2j3rOLefaQrztCzqcCityYUmCnTqYXyNGsELRnutcJnDnUomJgffBixfxqEU8WVAGwrXDIJduZU5MHvmzSzb7HfpxcSSlnKClwEVkh7sbIWRU2cr453osu6F20Zk6kCHML43V2D2EMR5pNlcka5AIVBcYmcia7OfYmeOvkWGqnIMNSEnYfyJndtY2btSJBPU1GkVdgOJakIIZxoNwxN31EtjF7nV9g1DHFPKrOcF5Jrcx2F84tyCzJYW3tLvsoDUPDPBLvroC3Vg7hrC1xKSekcBAQv1o6cedQ1X6qnsR8dvSCJ8AP4nsxYGUhNnHlaefoScTaMhvqHplPg0cXI3y1p2fFqpIYRH9d6RWrrTTSLufJIhzbzTSULNLduZXDl0GTXptI95uepMzvxcNaOmuOYmpv042wkYVDPw9E7vqN3U63iJtMvfgkkFN62o4qZM1R5pD7TWX8LWczTmua7TBkRw2kb",
+      "estimatedCost": 15
+    },
+    {
+      "id": "cable_gland_m12_power",
+      "name": "Cable Gland M12 (Power)",
+      "type": "enclosure",
+      "partId": "86a07a8e-cf3c-420f-8344-ceb3b7dec81e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M12+Cable+Gland+IP68&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41dMBTo05FL._SL500_.jpg",
+      "material": "Nylon",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B01MSZW5HQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.79",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005005727406479.html?pdp_npi=6%40dis%21USD%213.10%213.05%21%21%2120.97%2120.62%21%402141149b17793549371058759e0f06%2112000034136121751%21affd%21%21%21%211%210%21",
+            "price": "$3.05",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01MSZW5HQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M12",
+      "description": "Waterproof cable gland for main DC power input into the enclosure.",
+      "productName": "M12 Cable Gland IP68",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHXt4wf5acYmKuPZwO5LRZ3dkFq1CVbeDFrw84c1e3YWK8L2ZLUlunhXgYsLwEDVITQ3wuSkwALfCw1Lro15ErO4qE1qVEjAJE0YqUo8eQ5rTf0q6dwwHquKXDuCU9aV338xhhKb98nIRGcxIAVf9Uk1k1dUObgjFGBHm6lEeVhvY90H6X2L4fl4pRcLa8EVDO9thGjT2NuNv7j0ihJ8DN6aCUUO9M5KJwngZfM82gCTMrDc5ISQMlVJG1XrBbOcUvTG30pheogMtlaLHVnRhKUJxSZvv4y5yHW5VZ93CVgf4cm6kTPlv8aNHqf6VZhcewLKDxnpZrx93c1FCdjh3T7uJICyoAtdSLbSCeN8JiyPcoVUG0XUrIerm0A0ktju26R0poMeMUsswTQXDBJ3vuGPPwaafKzibULwS2iAX51wmnHBvKe1s9BgsUNJkjtF9kz0zdydhxNJmpzm7ArkhUJtEcvMhX8HeRdrkwAQf52HQJfBuBpJjp0UaRaJyagLWvKAylxrXqXUDVO2UOfyU68ArKAa51aV7K6cVIvnFmlVjW4SKf6GTOTTScjxFHxfD6qEUkuEFeBhgHuHSigeVoyHPCfdnmoGFyAfz0X5Q7aUXkf3VciUU0vUBBEAugo8cqYRWRmWy3F0g7k0rCc2XYPD",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHXt4wf5acYmKuPZwO5LRZ3dkFq1CVbeDFrw84c1e3YWK8L2ZLUlunhXgYsLwEDVITQ3wuSkwALfCw1Lro15ErO4qE1qVEjAJE0YqUo8eQ5rTf0q6dwwHquKXDuCU9aV338xhhKb98nIRGcxIAVf9Uk1k1dUObgjFGBHm6lEeVhvY90H6X2L4fl4pRcLa8EVDO9thGjT2NuNv7j0ihJ8DN6aCUUO9M5KJwngZfM82gCTMrDc5ISQMlVJG1XrBbOcUvTG30pheogMtlaLHVnRhKUJxSZvv4y5yHW5VZ93CVgf4cm6kTPlv8aNHqf6VZhcewLKDxnpZrx93c1FCdjh3T7uJICyoAtdSLbSCeN8JiyPcoVUG0XUrIerm0A0ktju26R0poMeMUsswTQXDBJ3vuGPPwaafKzibULwS2iAX51wmnHBvKe1s9BgsUNJkjtF9kz0zdydhxNJmpzm7ArkhUJtEcvMhX8HeRdrkwAQf52HQJfBuBpJjp0UaRaJyagLWvKAylxrXqXUDVO2UOfyU68ArKAa51aV7K6cVIvnFmlVjW4SKf6GTOTTScjxFHxfD6qEUkuEFeBhgHuHSigeVoyHPCfdnmoGFyAfz0X5Q7aUXkf3VciUU0vUBBEAugo8cqYRWRmWy3F0g7k0rCc2XYPD",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "cable_gland_m16_actuators",
+      "name": "Cable Gland M16 (Actuators)",
+      "type": "enclosure",
+      "partId": "e558b85f-fcca-49a3-a36b-caf47d2117d5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M16+Cable+Gland+IP68&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41jf-JKzpqL._SL500_.jpg",
+      "material": "Nylon/Plastic",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FCS66WW1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.29",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005003093251442.html?pdp_npi=6%40dis%21USD%213.01%212.96%21%21%213.01%212.96%21%402151fd2c17793553455004491e1007%2112000024037775981%21affd%21%21%21%211%210%21",
+            "price": "$2.96",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FCS66WW1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M16",
+      "description": "Waterproof cable gland for actuator wiring (pumps, valves) exiting the enclosure.",
+      "productName": "M16 Cable Gland IP68",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxhe2P6Z08XGzzv6NGZPWaeO327MKJsIZwMchiMp00BqtKgYn08awKFWFaQjIL6Bp89pWJuyV00q7qSq2s5KKxdozD2VDe9mpfBbRPFHpyY0S3lA4AwYiVuY3Vodmp6BFvJSe4BTR5x4j2PAjwzPHKTFztWgNIOLpdnesZ6oGt94ou7vLUiGB2dVqNUtkB2KLFQqEYD7F0ykrDZWGnF5ff7zdypVFlp5AKgZN2bLC0atGtvI2c0JaMhbh00Fw1cbxMVShT7yAU9RXwyzPO3L3elhHjW2p5FXCIwmtuO5JRTllhTNPBNWEz3UW6kPNsTnneVncv3ZMB2LbnWAXrkuZJohXmrqo6C7sMgwc5qzIvQZtWu0cvEngQe1ZhsJ6hvi2GNWmZWILkaH4aAkalZzZSxl5W5AnzcEvAYxawnDdS6sFVZT32d4EvuNFrDCS4I0knXMuYPHe2H9pM0j3cRSfWBYvdrl9b7LSO8mkDc7s376iMXSHkPKq8OiA0tlvUor0Hnr9K3YQKnreEO4NME95IN9EmOASPTpjgOM3ToWEc0coKQKS7aqQWu4xEAVBNQOfngDfoHIbTyxguoziZI65fcZhWIiUJipXSUADIdyclkAYfsNDonZce24mtV6AKZdJb03EM7WrVtBd0Xc1iGDH90Bt",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxhe2P6Z08XGzzv6NGZPWaeO327MKJsIZwMchiMp00BqtKgYn08awKFWFaQjIL6Bp89pWJuyV00q7qSq2s5KKxdozD2VDe9mpfBbRPFHpyY0S3lA4AwYiVuY3Vodmp6BFvJSe4BTR5x4j2PAjwzPHKTFztWgNIOLpdnesZ6oGt94ou7vLUiGB2dVqNUtkB2KLFQqEYD7F0ykrDZWGnF5ff7zdypVFlp5AKgZN2bLC0atGtvI2c0JaMhbh00Fw1cbxMVShT7yAU9RXwyzPO3L3elhHjW2p5FXCIwmtuO5JRTllhTNPBNWEz3UW6kPNsTnneVncv3ZMB2LbnWAXrkuZJohXmrqo6C7sMgwc5qzIvQZtWu0cvEngQe1ZhsJ6hvi2GNWmZWILkaH4aAkalZzZSxl5W5AnzcEvAYxawnDdS6sFVZT32d4EvuNFrDCS4I0knXMuYPHe2H9pM0j3cRSfWBYvdrl9b7LSO8mkDc7s376iMXSHkPKq8OiA0tlvUor0Hnr9K3YQKnreEO4NME95IN9EmOASPTpjgOM3ToWEc0coKQKS7aqQWu4xEAVBNQOfngDfoHIbTyxguoziZI65fcZhWIiUJipXSUADIdyclkAYfsNDonZce24mtV6AKZdJb03EM7WrVtBd0Xc1iGDH90Bt",
+      "estimatedCost": 2
+    },
+    {
+      "id": "cable_gland_m16_sensors",
+      "name": "Cable Gland M16 (Sensors)",
+      "type": "enclosure",
+      "partId": "e558b85f-fcca-49a3-a36b-caf47d2117d5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M16+Cable+Gland+IP68&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41jf-JKzpqL._SL500_.jpg",
+      "material": "Nylon/Plastic",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FCS66WW1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.29",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005003093251442.html?pdp_npi=6%40dis%21USD%213.01%212.96%21%21%213.01%212.96%21%402151fd2c17793553455004491e1007%2112000024037775981%21affd%21%21%21%211%210%21",
+            "price": "$2.96",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FCS66WW1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M16",
+      "description": "Waterproof cable gland for sensor wiring (pH, TDS, flow, float) exiting the enclosure.",
+      "productName": "M16 Cable Gland IP68",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxhe2P6Z08XGzzv6NGZPWaeO327MKJsIZwMchiMp00BqtKgYn08awKFWFaQjIL6Bp89pWJuyV00q7qSq2s5KKxdozD2VDe9mpfBbRPFHpyY0S3lA4AwYiVuY3Vodmp6BFvJSe4BTR5x4j2PAjwzPHKTFztWgNIOLpdnesZ6oGt94ou7vLUiGB2dVqNUtkB2KLFQqEYD7F0ykrDZWGnF5ff7zdypVFlp5AKgZN2bLC0atGtvI2c0JaMhbh00Fw1cbxMVShT7yAU9RXwyzPO3L3elhHjW2p5FXCIwmtuO5JRTllhTNPBNWEz3UW6kPNsTnneVncv3ZMB2LbnWAXrkuZJohXmrqo6C7sMgwc5qzIvQZtWu0cvEngQe1ZhsJ6hvi2GNWmZWILkaH4aAkalZzZSxl5W5AnzcEvAYxawnDdS6sFVZT32d4EvuNFrDCS4I0knXMuYPHe2H9pM0j3cRSfWBYvdrl9b7LSO8mkDc7s376iMXSHkPKq8OiA0tlvUor0Hnr9K3YQKnreEO4NME95IN9EmOASPTpjgOM3ToWEc0coKQKS7aqQWu4xEAVBNQOfngDfoHIbTyxguoziZI65fcZhWIiUJipXSUADIdyclkAYfsNDonZce24mtV6AKZdJb03EM7WrVtBd0Xc1iGDH90Bt",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxhe2P6Z08XGzzv6NGZPWaeO327MKJsIZwMchiMp00BqtKgYn08awKFWFaQjIL6Bp89pWJuyV00q7qSq2s5KKxdozD2VDe9mpfBbRPFHpyY0S3lA4AwYiVuY3Vodmp6BFvJSe4BTR5x4j2PAjwzPHKTFztWgNIOLpdnesZ6oGt94ou7vLUiGB2dVqNUtkB2KLFQqEYD7F0ykrDZWGnF5ff7zdypVFlp5AKgZN2bLC0atGtvI2c0JaMhbh00Fw1cbxMVShT7yAU9RXwyzPO3L3elhHjW2p5FXCIwmtuO5JRTllhTNPBNWEz3UW6kPNsTnneVncv3ZMB2LbnWAXrkuZJohXmrqo6C7sMgwc5qzIvQZtWu0cvEngQe1ZhsJ6hvi2GNWmZWILkaH4aAkalZzZSxl5W5AnzcEvAYxawnDdS6sFVZT32d4EvuNFrDCS4I0knXMuYPHe2H9pM0j3cRSfWBYvdrl9b7LSO8mkDc7s376iMXSHkPKq8OiA0tlvUor0Hnr9K3YQKnreEO4NME95IN9EmOASPTpjgOM3ToWEc0coKQKS7aqQWu4xEAVBNQOfngDfoHIbTyxguoziZI65fcZhWIiUJipXSUADIdyclkAYfsNDonZce24mtV6AKZdJb03EM7WrVtBd0Xc1iGDH90Bt",
+      "estimatedCost": 2
+    },
+    {
+      "id": "ip65_small_valve_box",
+      "name": "IP65 Junction Box (Valves)",
+      "type": "enclosure",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=IP65+Waterproof+Electrical+Junction+Box+%28Small%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Smaller waterproof enclosure to house the solenoid valves and their flyback diodes.",
+      "productName": "IP65 Waterproof Electrical Junction Box (Small)",
+      "purchaseUrl": "https://www.amazon.com/dp/B08KY7VK8W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "estimatedCost": 10
+    },
+    {
+      "id": "reservoir_box",
+      "name": "Water Reservoir Tank",
+      "type": "structural",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Hydroponic+Reservoir+Tank+10-20L&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Container for storing nutrient solution and housing some sensors and pumps.",
+      "productName": "Hydroponic Reservoir Tank 10-20L",
+      "purchaseUrl": "https://www.amazon.com/s?k=hydroponic+reservoir+tank",
+      "estimatedCost": 25
+    },
+    {
+      "id": "cable_gland_m16_sensors_reservoir",
+      "name": "Cable Gland M16 (Reservoir Sensors)",
+      "type": "enclosure",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M16+Cable+Gland+IP68&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Waterproof cable gland for sensor wiring entering the reservoir.",
+      "productName": "M16 Cable Gland IP68",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxhe2P6Z08XGzzv6NGZPWaeO327MKJsIZwMchiMp00BqtKgYn08awKFWFaQjIL6Bp89pWJuyV00q7qSq2s5KKxdozD2VDe9mpfBbRPFHpyY0S3lA4AwYiVuY3Vodmp6BFvJSe4BTR5x4j2PAjwzPHKTFztWgNIOLpdnesZ6oGt94ou7vLUiGB2dVqNUtkB2KLFQqEYD7F0ykrDZWGnF5ff7zdypVFlp5AKgZN2bLC0atGtvI2c0JaMhbh00Fw1cbxMVShT7yAU9RXwyzPO3L3elhHjW2p5FXCIwmtuO5JRTllhTNPBNWEz3UW6kPNsTnneVncv3ZMB2LbnWAXrkuZJohXmrqo6C7sMgwc5qzIvQZtWu0cvEngQe1ZhsJ6hvi2GNWmZWILkaH4aAkalZzZSxl5W5AnzcEvAYxawnDdS6sFVZT32d4EvuNFrDCS4I0knXMuYPHe2H9pM0j3cRSfWBYvdrl9b7LSO8mkDc7s376iMXSHkPKq8OiA0tlvUor0Hnr9K3YQKnreEO4NME95IN9EmOASPTpjgOM3ToWEc0coKQKS7aqQWu4xEAVBNQOfngDfoHIbTyxguoziZI65fcZhWIiUJipXSUADIdyclkAYfsNDonZce24mtV6AKZdJb03EM7WrVtBd0Xc1iGDH90Bt",
+      "estimatedCost": 2
+    },
+    {
+      "id": "cable_gland_m16_valve_box",
+      "name": "Cable Gland M16 (Valve Box)",
+      "type": "enclosure",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M16+Cable+Gland+IP68&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 2,
+      "description": "Waterproof cable glands for power/control wiring entering the solenoid valve enclosure.",
+      "productName": "M16 Cable Gland IP68",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxhe2P6Z08XGzzv6NGZPWaeO327MKJsIZwMchiMp00BqtKgYn08awKFWFaQjIL6Bp89pWJuyV00q7qSq2s5KKxdozD2VDe9mpfBbRPFHpyY0S3lA4AwYiVuY3Vodmp6BFvJSe4BTR5x4j2PAjwzPHKTFztWgNIOLpdnesZ6oGt94ou7vLUiGB2dVqNUtkB2KLFQqEYD7F0ykrDZWGnF5ff7zdypVFlp5AKgZN2bLC0atGtvI2c0JaMhbh00Fw1cbxMVShT7yAU9RXwyzPO3L3elhHjW2p5FXCIwmtuO5JRTllhTNPBNWEz3UW6kPNsTnneVncv3ZMB2LbnWAXrkuZJohXmrqo6C7sMgwc5qzIvQZtWu0cvEngQe1ZhsJ6hvi2GNWmZWILkaH4aAkalZzZSxl5W5AnzcEvAYxawnDdS6sFVZT32d4EvuNFrDCS4I0knXMuYPHe2H9pM0j3cRSfWBYvdrl9b7LSO8mkDc7s376iMXSHkPKq8OiA0tlvUor0Hnr9K3YQKnreEO4NME95IN9EmOASPTpjgOM3ToWEc0coKQKS7aqQWu4xEAVBNQOfngDfoHIbTyxguoziZI65fcZhWIiUJipXSUADIdyclkAYfsNDonZce24mtV6AKZdJb03EM7WrVtBd0Xc1iGDH90Bt",
+      "estimatedCost": 2
+    }
+  ],
+  "notes": [
+    "automated hydroponic system",
+    "central 12V 5A power",
+    "separated power rails",
+    "optocoupled relay board",
+    "ADS1115 16-bit ADC",
+    "IP65 junction box",
+    "flyback diode protection",
+    "stable ESP32 pinout"
+  ],
+  "projectName": "Hydroponic Flow System",
+  "originalPrompt": "SYSTEM BLUEPRINT: AUTOMATED HYDROPONIC LOW/HIGH TIDE FLOW SYSTEMSystem Architect: MichaelPlatform: ESP32 NodeMCUVersion: 1.1 (Revised for 12V 5A Central Power Supply)Document Type: System & Wiring Specification for Blueprint.am / Fritzing1. SYSTEM OVERVIEW & SPECIFICATIONSThis project covers the management of a fully automated hydroponic greenhouse system. The core is an ESP32 NodeMCU mounted in a flexible screw terminal expansion board. The system is centrally powered by a 12V 5A (60W) AC/DC wall adapter and is divided into two separate power rails (12V and 5V) for optimal protection of logic and pumps.Key Power Specifications:Main Input (Mains): $230\\text{V AC} \\rightarrow 12\\text{V DC } (5\\text{A, } 60\\text{W})$ via closed wall adapter.12V DC Rail (Power): Directly drives 2x 12V mini water pumps and 3x 12V solenoid valves.5V DC Rail (Logic & Low Voltage): Downconverted via a $24\\text{V}/12\\text{V} \\rightarrow 5\\text{V } (5\\text{A})$ step-down buck module. Powering the ESP32, the 8-channel optocoupled relay board, the ADS1115 ADC module, and the 5V peristaltic pump.2. POWER DISTRIBUTION & SAFETY (POWER RAIL BLUEPRINT)It is critical that the logic (ESP32/sensors) and inductive loads (motors/valves) are kept separate on the power rails to avoid voltage drops that can reset the microcontroller.                  [ 230V AC Wall Outlet ]\n                            |\n                     ( 12V 5A Adapter )\n                            |\n                 [ DC-Female Terminal ]\n                 /                      \\\n                /                        \\\n      =======================          ===================================\n      | 12V DC Power Rail   |          | Step-down Module (12V -> 5V 5A)  |\n      =======================          ===================================\n         |      |      |                         |\n         |      |      +-- Solenoid Valves (3x)  |\n         |      +--------- Mini Water Pumps (2x) =========================\n         |                                       |   5V DC Logic Rail    |\n      [ Relays (Channels 1-2 & 4-6) ]            =========================\n                                                    |       |       |\n                                                    |       |       +-- Relay Board (VCC)\n                                                    |       +---------- ADS1115 & Sensors\n                                                    +------------------ ESP32 Vin Pin\nCritical Protection Against Inductive Kickback (Flyback Diodes)Because pumps and solenoid valves contain coils (inductive loads), a high negative voltage spike occurs when a relay turns them off.Requirement: A 1N4007 diode must be mounted in parallel across each of the two 12V water pumps and the three 12V solenoid valves.Direction: The diode cathode (the end with the white band) must face the positive line ($+$), and the anode must face the ground/negative line ($-$).3. FAIL-SAFE ESP32 PIN-MAPPING (I/O LAYOUT)Certain pins on an ESP32 have specific functions during bootup (strapping pins) that can prevent the chip from starting if they are pulled high or low by sensors or relays. Below is the most stable and secure pin distribution for your setup:A. Digital Outputs (8-Channel Relay Board Control)Note: We are using pins that are 100% safe during boot.Relay ChannelESP32 GPIOComponentFunctionChannel 1GPIO 12Solenoid Valve 1 (12V)Freshwater Inlet (Auto-fill)Channel 2GPIO 13Mini Water Pump 1 (12V)Main Ebb & Flow Flood PumpChannel 3GPIO 14Pump 2 (12V / Unused)Recirculation / SpareChannel 4GPIO 25Return Pump (220V AC)Forces growth tube water up to reservoirChannel 5GPIO 26Solenoid Valve 3 (12V)Wastewater Outlet (Drain)Channel 6GPIO 27Peristaltic Pump (5V)Liquid Fertilizer DosingChannel 7GPIO 32SpareAvailable for expansionChannel 8GPIO 33SpareAvailable for expansionB. Digital & Analog Inputs (Sensors)To ensure highly accurate chemical measurements of pH and TDS, the analog sensors are routed through the external ADS1115 16-bit ADC, which communicates with the ESP32 via the $I^2C$ protocol.Sensor / DeviceESP32 Pin / ConnectionSignal TypeSpecial RemarksADS1115 (ADC)GPIO 21 (SDA)$I^2C$ DataPulled to the 5V Logic RailADS1115 (ADC)GPIO 22 (SCL)$I^2C$ ClockPulled to the 5V Logic RailWater Flow SensorGPIO 23Digital InputRequires Hardware Interrupt Pin for pulse countFloat Sensor 1GPIO 17Digital InputGrowth Tube dry-run level switch (active low)Float Sensor 2GPIO 16Digital InputReservoir high-water limit / safety lock4. ANALOG DETAIL SPECIFICATION: ADS1115 CONNECTIONSince the ESP32's internal analog-to-digital converter (ADC) is known to be non-linear and noisy (which ruins pH and TDS readings), we use your ADS1115 module:ADS1115 Power Supply:Connect VDD to the 5V rail (Important: sensor boards must run on the same voltage reference as the ADC).Connect GND to Common Ground/negative.Analog Channel Allocation:Channel A0: pH Sensor Module (Analog output).Channel A1: TDS Sensor Module (Analog output).Channel A2: Spare (e.g., soil moisture or light sensor).Channel A3: Spare.Address Configuration:Connect the ADDR pin to GND to assign the default $I^2C$ address 0x48.5. REPLACEMENT POWER & BILL OF MATERIALS (BOM)Here are the raw line items for setting up your Blueprint Bill of Materials:QtyComponentPurposeConnection Type1 pc.ESP32 NodeMCU (30 or 38 pin)System Brain / WiFi GatewayMounted on Terminal Board1 pc.ESP32 Universal Terminal AdapterRobust wiring installation in boxScrew Terminals1 pc.12V 5A (60W) AC/DC AdapterMain power supply for the setupDC 5.5x2.1mm male jack1 pc.DC-Female Adapter w/ screw terminalEasy power termination without cuttingScrew Terminals1 pc.24V/12V to 5V 5A Buck ConverterSteps down 12V to safe 5V logicScrew Terminals1 pc.8-Channel Optocoupled Relay BoardSwitches pumps and valves on/offOptoisolated connection (5V VCC)2 pcs.Mini Water Pump (12V, 10W, 600L/H)Water transport and circulationControlled via Relays 2 and 33 pcs.G1/2\" Solenoid Valve (12V)Zone valves and emergency shutoff/drainControlled via Relays 1 and 51 pc.5V Peristaltic MicropumpPrecise liquid fertilizer dosingControlled via Relay 61 pc.ADS1115 16-Bit ADC ModulePrecise reading of analog sensors$I^2C$ Bus1 pc.pH Sensor Module with ElectrodeMonitoring of feed water acidityAnalog to ADS1115 channel A01 pc.TDS Sensor Module with ProbeMonitoring of dissolved nutrients/ECAnalog to ADS1115 channel A11 pc.G1/2\" Water Flow SensorMeasurement of actual water volumeDigital to ESP32 GPIO 232 pcs.Water Level Sensor (Angle)Mechanical float switches for tanksDigital to GPIO 16 and 175 pcs.1N4007 Rectifier DiodesFlyback protection across coilsMounted directly across pumps/valves6. STEP-BY-STEP JUNCTION BOX ASSEMBLY GUIDEFollow this sequence meticulously during assembly to prevent wiring errors:Prepare Enclosure (IP65 Junction Box):Mount the ESP32 terminal adapter, step-down module, and relay board securely to the backplate.Connect Main Power:Plug the 12V 5A power supply's jack into the DC-female terminal block.Run wires from the DC-female terminal to the 12V power rail (supplying power to the \"Common\" contacts of the pumps and valves on the relay board).Run 12V into the Input ($+$ and $-$) of the step-down buck module.Set Up and Connect 5V Logic Power:From the step-down module's Output ($+$ and $-$), distribute 5V onto a common logic bus.Connect 5V to the ESP32's Vin pin (or 5V pin on the terminal board), to the VCC pin of your 8-channel relay board, and to the VDD/VCC pins of the ADS1115 and sensor boards.Important: Connect all ground wires (GND) together into a common ground point!Install Flyback Diodes on Actuators:Take the 5 pcs. 1N4007 diodes. Solder or screw them in place as close to the pumps and solenoid valves as physically possible (e.g., directly into terminal blocks or wire connections at the load). Ensure the white band (cathode) points toward the positive wire.Connect Data Lines:Connect the GPIO outputs from the ESP32 terminal board to the relay board inputs IN1 through IN6.Connect the $I^2C$ pins (SDA to GPIO 21, SCL to GPIO 22) to the ADS1115 board.Perform Cold-Test (Without 230V Mains):Use a multimeter to verify there are absolutely no short circuits between the 12V, 5V, and GND rails before plugging the power supply into the wall outlet!",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Mark and drill holes for cable glands on the main IP65 Junction Box",
+          "detail": {
+            "steps": [
+              "Using the Cable Gland M12 (Power) and Cable Gland M16 (Actuators/Sensors) as templates, mark the center points for each gland on the IP65 Junction Box enclosure.",
+              "Drill pilot holes using a small drill bit (e.g., 3mm) at each marked location.",
+              "Enlarge the power cable gland hole to 15.2mm for the M12 gland.",
+              "Enlarge the actuator and sensor cable gland holes to 18.5mm for the M16 glands.",
+              "Deburr all drilled holes thoroughly to ensure a smooth, clean edge for proper cable gland seating and IP65 seal integrity."
+            ],
+            "summary": "Mark and drill cable gland holes in the IP65 Junction Box."
+          },
+          "partIds": [
+            "ip65_junction_box",
+            "cable_gland_m12_power",
+            "cable_gland_m16_actuators",
+            "cable_gland_m16_sensors"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Mount the power DC Input Terminal Block and 12V to 5V DC-DC Converter inside the main junction box",
+          "detail": {
+            "steps": [
+              "Position the DC Input Terminal Block and the 12V to 5V DC-DC Converter inside the IP65 Junction Box, ensuring adequate space for wiring and cable glands.",
+              "Mark the mounting hole locations for both components on the internal mounting points of the enclosure.",
+              "Drill pilot holes for mounting screws at the marked locations, suitable for small self-tapping plastic screws (e.g., M2 or M2.5).",
+              "Secure the DC Input Terminal Block using appropriate screws, ensuring it is firmly attached.",
+              "Secure the 12V to 5V DC-DC Converter using appropriate screws, ensuring it is also firmly attached and stable."
+            ],
+            "summary": "Mount power components inside the main IP65 junction box."
+          },
+          "partIds": [
+            "ip65_junction_box",
+            "dc_female_terminal",
+            "buck_converter_12v_to_5v"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Mount the ESP32 Main Controller, 8-Channel Relay Board, and ADS1115 ADC Module inside the main junction box",
+          "detail": {
+            "steps": [
+              "Determine optimal placement for the Main Controller (ESP32 NodeMCU), 8-Channel Optocoupled Relay Board, and 16-bit ADC Module within the IP65 Junction Box enclosure, considering wire routing and access to ports.",
+              "Mark the mounting hole locations for each component on the internal surface of the IP65 Junction Box.",
+              "Drill pilot holes, then 3mm clearance holes, at each marked mounting point for M3 standoffs.",
+              "Install M3 plastic standoffs at each drilled location to elevate the circuit boards.",
+              "Secure the Main Controller (ESP32 NodeMCU), 8-Channel Optocoupled Relay Board, and 16-bit ADC Module to their respective standoffs using M3 screws."
+            ],
+            "summary": "Mount the main controller, relay board, and ADC module in the IP65 junction box."
+          },
+          "partIds": [
+            "ip65_junction_box",
+            "esp32_nodemcu",
+            "relay_board_8_channel",
+            "ads1115_adc_module"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Mark and drill holes for cable glands on the small IP65 Junction Box (Valves)",
+          "detail": {
+            "steps": [
+              "Using the Cable Gland M16 (Valve Box) as a template, mark the center points for each gland on the IP65 Junction Box (Valves) enclosure.",
+              "Drill pilot holes using a small drill bit (e.g., 3mm) at each marked location.",
+              "Enlarge the cable gland holes to 18.5mm for the M16 glands.",
+              "Deburr all drilled holes thoroughly to ensure a smooth, clean edge for proper cable gland seating and IP65 seal integrity."
+            ],
+            "summary": "Mark and drill cable gland holes in the small IP65 Junction Box (Valves)."
+          },
+          "partIds": [
+            "ip65_small_valve_box",
+            "cable_gland_m16_valve_box"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Mount Solenoid Valves 1-3 inside the small IP65 Junction Box (Valves)",
+          "detail": {
+            "steps": [
+              "Determine optimal placement for Solenoid Valve 1 (Freshwater Inlet), Solenoid Valve 2 (Wastewater Outlet), and Solenoid Valve 3 (Spare) inside the IP65 Junction Box (Valves) to accommodate plumbing and wiring.",
+              "Mark and drill mounting holes for each solenoid valve on the enclosure surface (e.g., use M3 or M4 screws for mounting).",
+              "Secure Solenoid Valve 1 (Freshwater Inlet) to the enclosure using appropriate screws.",
+              "Secure Solenoid Valve 2 (Wastewater Outlet) to the enclosure using appropriate screws.",
+              "Secure Solenoid Valve 3 (Spare) to the enclosure using appropriate screws."
+            ],
+            "summary": "Mount solenoid valves inside the small IP65 Junction Box."
+          },
+          "partIds": [
+            "ip65_small_valve_box",
+            "solenoid_valve_1_freshwater",
+            "solenoid_valve_2_drain",
+            "solenoid_valve_3_spare"
+          ]
+        },
+        {
+          "id": "fabricate_6",
+          "title": "Secure cable glands into all drilled holes on both IP65 junction boxes",
+          "detail": {
+            "steps": [
+              "Insert the M12 Power Cable Gland into its hole on the main IP65 Junction Box Enclosure, ensuring the sealing washer is correctly placed on the outside, and tighten the securing nut from the inside.",
+              "Insert the M16 Actuator Cable Gland and M16 Sensor Cable Gland into their respective holes on the main IP65 Junction Box Enclosure, securing each with its nut and sealing washer.",
+              "Insert the M16 Valve Box Cable Gland into its hole on the IP65 Junction Box (Valves), securing it with its nut and sealing washer.",
+              "Carefully tighten all cable gland nuts using a wrench until they are snug and form a watertight seal, but do not overtighten."
+            ],
+            "summary": "Secure all cable glands into the main and valve IP65 junction boxes."
+          },
+          "partIds": [
+            "ip65_junction_box",
+            "cable_gland_m12_power",
+            "cable_gland_m16_actuators",
+            "cable_gland_m16_sensors",
+            "ip65_small_valve_box",
+            "cable_gland_m16_valve_box"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Wire the main 12V power distribution from the DC Input Terminal Block to the 12V to 5V DC-DC Converter and all 12V actuators (pumps, solenoid valves, DC-AC Inverter)",
+          "detail": {
+            "steps": [
+              "Connect the 'Screw Terminal +' of the DC Input Terminal Block to the 'Input 12V+' of the 12V to 5V DC-DC Converter.",
+              "Connect the 'Screw Terminal -' of the DC Input Terminal Block to the 'Input GND-' of the 12V to 5V DC-DC Converter.",
+              "Connect the 'Screw Terminal +' of the DC Input Terminal Block to the positive leads (12V+) of Solenoid Valve 1, Solenoid Valve 2, Solenoid Valve 3, Mini Water Pump 1, and Mini Water Pump 2.",
+              "Connect the 'Screw Terminal +' of the DC Input Terminal Block to the '12V Input +' of the 12V DC to 220V AC Inverter.",
+              "Connect the 'Screw Terminal -' of the DC Input Terminal Block to the '12V Input -' of the 12V DC to 220V AC Inverter."
+            ],
+            "summary": "Wire 12V power from the terminal block to the DC-DC converter and all 12V devices."
+          },
+          "partIds": [
+            "dc_female_terminal",
+            "buck_converter_12v_to_5v",
+            "solenoid_valve_1_freshwater",
+            "solenoid_valve_2_drain",
+            "solenoid_valve_3_spare",
+            "mini_water_pump_1_main_flood",
+            "mini_water_pump_2_recirculation",
+            "dc_ac_inverter_220v"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire the 5V power distribution from the DC-DC Converter to the ESP32, Relay Board, ADS1115, pH Sensor, TDS Sensor, Water Flow Sensor, and Peristaltic Micropump",
+          "detail": {
+            "steps": [
+              "Connect the 'Output 5V+' pin of the 12V to 5V DC-DC Converter to the 'Vin' pin of the Main Controller (ESP32 NodeMCU), the 'VCC (5V)' pin of the 8-Channel Optocoupled Relay Board, the 'VDD (5V)' pin of the 16-bit ADC Module, the 'VCC (5V)' pin of the pH Sensor Module, the 'VCC (5V)' pin of the TDS Sensor Module, the 'VCC (5V)' pin of the Water Flow Sensor, and the '5V+' pin of the Peristaltic Micropump.",
+              "Connect the 'Output GND-' pin of the 12V to 5V DC-DC Converter to the 'GND' pin of the Main Controller (ESP32 NodeMCU), the 'GND' pin of the 8-Channel Optocoupled Relay Board, the 'GND' pin of the 16-bit ADC Module, the 'GND' pin of the pH Sensor Module, the 'GND' pin of the TDS Sensor Module, the 'GND' pin of the Water Flow Sensor, and the 'GND-' pin of the Peristaltic Micropump."
+            ],
+            "summary": "Wire 5V power and ground from the DC-DC Converter to specified modules."
+          },
+          "partIds": [
+            "buck_converter_12v_to_5v",
+            "esp32_nodemcu",
+            "relay_board_8_channel",
+            "ads1115_adc_module",
+            "ph_sensor_module",
+            "tds_sensor_module",
+            "water_flow_sensor",
+            "peristaltic_pump"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect ESP32 GPIOs to the Relay Board input pins (IN1-IN6) for controlling actuators",
+          "detail": {
+            "tip": "Ensure correct pin orientation for jumper wires, connecting the ESP32 GPIO to the corresponding 'IN' pin on the relay module. Double-check to avoid accidental shorts or incorrect control signals.",
+            "steps": [
+              "Connect ESP32's GPIO 12 to the Relay Board's IN1 pin using a jumper wire.",
+              "Connect ESP32's GPIO 13 to the Relay Board's IN2 pin using a jumper wire.",
+              "Connect ESP32's GPIO 14 to the Relay Board's IN3 pin using a jumper wire.",
+              "Connect ESP32's GPIO 25 to the Relay Board's IN4 pin using a jumper wire.",
+              "Connect ESP32's GPIO 26 to the Relay Board's IN5 pin using a jumper wire.",
+              "Connect ESP32's GPIO 27 to the Relay Board's IN6 pin using a jumper wire."
+            ],
+            "summary": "Connect ESP32 GPIOs to the 8-Channel Relay Board input pins."
+          },
+          "partIds": [
+            "esp32_nodemcu",
+            "relay_board_8_channel"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Wire the I2C bus between ESP32 (SDA, SCL) and the ADS1115 ADC Module (SDA, SCL)",
+          "partIds": [
+            "esp32_nodemcu",
+            "ads1115_adc_module"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect analog sensor outputs (pH, TDS) to ADS1115 ADC input channels (A0, A1), and configure ADS1115 ADDR pin",
+          "detail": {
+            "steps": [
+              "Connect the 'Analog Output' pin of the pH Sensor Module to the 'A0' input of the 16-bit ADC Module.",
+              "Connect the 'Analog Output' pin of the TDS Sensor Module to the 'A1' input of the 16-bit ADC Module.",
+              "Connect the 'ADDR' pin of the 16-bit ADC Module to its 'GND' pin to set the I2C address to 0x48."
+            ],
+            "summary": "Wire pH and TDS sensor analog outputs to ADS1115 ADC, configure ADDR pin."
+          },
+          "partIds": [
+            "ads1115_adc_module",
+            "ph_sensor_module",
+            "tds_sensor_module"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Wire the Signal and GND pins for the Water Flow Sensor and both Float Sensors to ESP32 GPIOs",
+          "detail": {
+            "steps": [
+              "Connect the Signal Output pin of the Water Flow Sensor to GPIO 23 on the ESP32 Main Controller.",
+              "Connect the Signal pin of the Water Level Float Sensor (Growth Tube) to GPIO 17 on the ESP32 Main Controller.",
+              "Connect the Signal pin of the Water Level Float Sensor (Reservoir) to GPIO 16 on the ESP32 Main Controller.",
+              "Connect the GND pins of the Water Flow Sensor, Water Level Float Sensor (Growth Tube), and Water Level Float Sensor (Reservoir) to a common GND pin on the ESP32 Main Controller."
+            ],
+            "summary": "Wire sensors' Signal and GND pins to the ESP32 main controller."
+          },
+          "partIds": [
+            "esp32_nodemcu",
+            "water_flow_sensor",
+            "float_sensor_1_growth_tube",
+            "float_sensor_2_reservoir"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Install flyback diodes across the coils of all solenoid valves and mini water pumps, observing polarity",
+          "detail": {
+            "tip": "Ensure correct diode polarity for each component. Reversing polarity can cause a short circuit or damage the diode and the driving circuit.",
+            "steps": [
+              "For each Solenoid Valve (Freshwater Inlet, Wastewater Outlet, Spare), connect the Anode lead of its respective Flyback Diode to the GND- terminal of the valve.",
+              "For each Solenoid Valve, connect the Cathode lead of its respective Flyback Diode to the 12V+ terminal of the valve.",
+              "For each Mini Water Pump (Main Ebb & Flow Flood, Recirculation), connect the Anode lead of its respective Flyback Diode to the GND- terminal of the pump.",
+              "For each Mini Water Pump, connect the Cathode lead of its respective Flyback Diode to the 12V+ terminal of the pump.",
+              "Secure all diode connections, preferably by soldering and insulating with heat shrink tubing, or using appropriate crimp terminals."
+            ],
+            "summary": "Install flyback diodes across the coils of all solenoid valves and mini water pumps."
+          },
+          "partIds": [
+            "solenoid_valve_1_freshwater",
+            "flyback_diode_solenoid_1",
+            "solenoid_valve_2_drain",
+            "flyback_diode_solenoid_2",
+            "solenoid_valve_3_spare",
+            "flyback_diode_solenoid_3",
+            "mini_water_pump_1_main_flood",
+            "flyback_diode_pump_1",
+            "mini_water_pump_2_recirculation",
+            "flyback_diode_pump_2"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Wire the 220V AC Return Pump to the 12V DC to 220V AC Inverter output",
+          "detail": {
+            "steps": [
+              "Identify the 220V AC Live and Neutral wires extending from the Return Pump (220V AC).",
+              "Connect the Return Pump's 220V AC Live wire to one of the 220V AC Output terminals on the 12V DC to 220V AC Inverter.",
+              "Connect the Return Pump's 220V AC Neutral wire to the remaining 220V AC Output terminal on the 12V DC to 220V AC Inverter.",
+              "Ensure all 220V AC connections are securely terminated, using heat shrink tubing or appropriate connectors for insulation."
+            ],
+            "summary": "Wire the 220V AC Return Pump to the AC Inverter output."
+          },
+          "partIds": [
+            "dc_ac_inverter_220v",
+            "return_pump_220v"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Perform continuity checks on all power and ground lines to prevent shorts",
+          "detail": {
+            "steps": [
+              "Set a multimeter to continuity mode.",
+              "Verify there is no continuity (short circuit) between the 'Screw Terminal +' and 'Screw Terminal -' on the DC Input Terminal Block.",
+              "Verify there is no continuity (short circuit) between the 'Input 12V+' and 'Input GND-' pins of the 12V to 5V DC-DC Converter.",
+              "Verify there is no continuity (short circuit) between the 'Output 5V+' and 'Output GND-' pins of the 12V to 5V DC-DC Converter.",
+              "Check for continuity between the 'Output 5V+' from the 12V to 5V DC-DC Converter and the 'Vin' pin on the Main Controller (ESP32 NodeMCU), and 'VCC (5V)' on the 8-Channel Optocoupled Relay Board, and 'VDD (5V)' on the 16-bit ADC Module, ensuring proper 5V distribution.",
+              "Check for continuity between the 'Output GND-' from the 12V to 5V DC-DC Converter and the 'GND' pins of the Main Controller (ESP32 NodeMCU), 8-Channel Optocoupled Relay Board, and 16-bit ADC Module, confirming ground connections."
+            ],
+            "summary": "Perform multimeter continuity checks on all power and ground lines."
+          },
+          "partIds": [
+            "dc_female_terminal",
+            "buck_converter_12v_to_5v",
+            "esp32_nodemcu",
+            "relay_board_8_channel",
+            "ads1115_adc_module"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Apply 12V power and verify 5V output from the DC-DC converter using a multimeter",
+          "detail": {
+            "steps": [
+              "Connect the Main AC/DC Power Adapter's male jack to the DC Input Terminal Block's female jack.",
+              "Plug the Main AC/DC Power Adapter into a wall outlet to apply 12V power.",
+              "Set a multimeter to DC voltage measurement mode.",
+              "Carefully probe the 'Input 12V+' and 'Input GND-' terminals of the 12V to 5V DC-DC Converter to confirm approximately 12V input.",
+              "Probe the 'Output 5V+' and 'Output GND-' terminals of the 12V to 5V DC-DC Converter to verify a stable 5V output."
+            ],
+            "summary": "Verify 5V output from DC-DC converter after applying 12V power."
+          },
+          "partIds": [
+            "main_power_adapter",
+            "dc_female_terminal",
+            "buck_converter_12v_to_5v"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Connect ESP32 to computer, verify driver installation, and upload basic 'blink' sketch to confirm functionality",
+          "detail": {
+            "steps": [
+              "Connect the ESP32 Main Controller to your computer using a USB cable.",
+              "Verify that the necessary USB-to-serial drivers (e.g., CP210x or CH340) are correctly installed and that the ESP32 is recognized as a COM port in your system's device manager.",
+              "Open your Arduino IDE (or preferred ESP32 development environment), select 'ESP32 Dev Module' as the board, and choose the correct COM port.",
+              "Upload a basic 'blink' example sketch to the ESP32 Main Controller to confirm successful firmware flashing and operation.",
+              "Observe the onboard LED on the ESP32 Main Controller; it should begin blinking, indicating successful program execution."
+            ],
+            "summary": "Connect ESP32 to computer, verify drivers, and upload 'blink' sketch."
+          },
+          "partIds": [
+            "esp32_nodemcu"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Upload I2C scanner sketch to ESP32 and verify detection of the ADS1115 module",
+          "detail": {
+            "steps": [
+              "Connect the Main Controller (ESP32 NodeMCU) to your computer via USB cable.",
+              "Open the Arduino IDE, select the correct board (ESP32 Dev Module) and COM port.",
+              "Upload a standard I2C scanner sketch (available in examples or online) to the ESP32.",
+              "Open the Serial Monitor and observe the output to confirm that the 16-bit ADC Module (ADS1115) is detected at I2C address 0x48."
+            ],
+            "summary": "Upload an I2C scanner sketch to ESP32 and verify ADS1115 detection."
+          },
+          "partIds": [
+            "esp32_nodemcu",
+            "ads1115_adc_module"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Develop and upload initial firmware for controlling relays, testing each actuator individually",
+          "detail": {
+            "tip": "Start with simple 'blink' style code for each relay to confirm basic functionality before integrating complex logic. Isolate testing to one actuator at a time to simplify debugging.",
+            "steps": [
+              "Connect the Main Controller (ESP32 NodeMCU) to your computer via USB for programming.",
+              "Using your preferred IDE (e.g., Arduino IDE with ESP32 board support), write firmware to sequentially activate and deactivate each relay channel (IN1 through IN6) for a short duration.",
+              "Upload the developed firmware to the Main Controller (ESP32 NodeMCU).",
+              "Observe and verify that Solenoid Valve 1 (Freshwater Inlet), Solenoid Valve 2 (Wastewater Outlet), Solenoid Valve 3 (Spare), Mini Water Pump 1 (Main Ebb & Flow Flood), Mini Water Pump 2 (Recirculation), and the Peristaltic Micropump (Fertilizer Dosing) activate and deactivate correctly when their corresponding relay channels are triggered. Also test the 12V DC to 220V AC Inverter (and subsequently the Return Pump) if connected to a relay channel (e.g. IN7)."
+            ],
+            "summary": "Develop firmware to control and test each relay-actuated component."
+          },
+          "partIds": [
+            "esp32_nodemcu",
+            "relay_board_8_channel",
+            "solenoid_valve_1_freshwater",
+            "solenoid_valve_2_drain",
+            "solenoid_valve_3_spare",
+            "mini_water_pump_1_main_flood",
+            "mini_water_pump_2_recirculation",
+            "peristaltic_pump",
+            "dc_ac_inverter_220v",
+            "return_pump_220v"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Test analog sensor readings (pH, TDS) through the ADS1115 and verify digital sensor inputs (water flow, float sensors) on the ESP32",
+          "detail": {
+            "steps": [
+              "Upload a basic test firmware to the ESP32 Main Controller that initializes I2C for the 16-bit ADC Module (ADS1115) and reads from its A0 and A1 channels.",
+              "Submerge the pH Sensor Module's electrode and TDS Sensor Module's probe into known reference solutions (e.g., distilled water, calibration fluids), and verify the reported analog values on the serial monitor of the ESP32.",
+              "Verify that the 16-bit ADC Module (ADS1115) is recognized on the I2C bus (address 0x48).",
+              "Manually trigger the Water Level Float Sensor (Growth Tube) and Water Level Float Sensor (Reservoir) by changing their orientation or submerging them, verifying the corresponding digital state changes on ESP32's GPIO 17 and GPIO 16 via the serial monitor.",
+              "Induce a small amount of water flow through the Water Flow Sensor and monitor for pulse readings or frequency changes on ESP32's GPIO 23, verifying its functionality."
+            ],
+            "summary": "Verify analog and digital sensor inputs to ESP32 via ADS1115 and direct GPIO."
+          },
+          "partIds": [
+            "esp32_nodemcu",
+            "ads1115_adc_module",
+            "ph_sensor_module",
+            "tds_sensor_module",
+            "water_flow_sensor",
+            "float_sensor_1_growth_tube",
+            "float_sensor_2_reservoir"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Route all external sensor and actuator cables through the appropriate cable glands into the main IP65 junction box",
+          "detail": {
+            "steps": [
+              "Feed the cables from the pH Sensor Module, TDS Sensor Module, Water Flow Sensor, Water Level Float Sensor (Growth Tube), and Water Level Float Sensor (Reservoir) through the Cable Gland M16 (Sensors) into the main IP65 Junction Box Enclosure.",
+              "Feed the cables from Mini Water Pump 1 (Main Ebb & Flow Flood), Mini Water Pump 2 (Recirculation), and Peristaltic Micropump (Fertilizer Dosing) through the Cable Gland M16 (Actuators) into the main IP65 Junction Box Enclosure.",
+              "Do not tighten the cable glands yet, leave enough slack for internal connections."
+            ],
+            "summary": "Route all external sensor and actuator cables through main IP65 junction box cable glands."
+          },
+          "partIds": [
+            "ip65_junction_box",
+            "cable_gland_m16_actuators",
+            "cable_gland_m16_sensors",
+            "ph_sensor_module",
+            "tds_sensor_module",
+            "water_flow_sensor",
+            "float_sensor_1_growth_tube",
+            "float_sensor_2_reservoir",
+            "mini_water_pump_1_main_flood",
+            "mini_water_pump_2_recirculation",
+            "peristaltic_pump"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Route cables for the solenoid valves from the small IP65 Valve Box to the main IP65 Junction Box",
+          "detail": {
+            "steps": [
+              "Gather the power and control cables for Solenoid Valve 1, Solenoid Valve 2, and Solenoid Valve 3.",
+              "Feed these grouped cables through the Cable Gland M16 (Valve Box) installed on the IP65 Junction Box (Valves).",
+              "Feed the same grouped cables through the Cable Gland M16 (Actuators) installed on the main IP65 Junction Box Enclosure.",
+              "Pull sufficient cable slack through both glands to allow for internal wiring, then gently tighten the compression nuts on both the Cable Gland M16 (Valve Box) and Cable Gland M16 (Actuators) to provide strain relief."
+            ],
+            "summary": "Route solenoid valve cables from the valve box to the main junction box."
+          },
+          "partIds": [
+            "ip65_small_valve_box",
+            "cable_gland_m16_valve_box",
+            "ip65_junction_box"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Organize and secure all internal wiring using cable ties or clips for strain relief and neatness",
+          "detail": {
+            "steps": [
+              "Within the main IP65 Junction Box Enclosure, bundle similar wires (e.g., power, data, sensor leads) using cable ties or adhesive clips.",
+              "Route bundled wires along the interior walls or designated channels, securing them to prevent interference and provide strain relief at connection points.",
+              "Ensure adequate slack in wires connected to moving parts or components that may need future access, such as the ESP32 and relay board terminals.",
+              "Repeat the bundling and securing process for all wiring within the IP65 Junction Box (Valves), paying special attention to wires leading to the solenoid valves.",
+              "Verify that no wires are pinched, taut, or interfere with the proper closure of either enclosure lid."
+            ],
+            "summary": "Organize and secure all internal wiring within both IP65 junction boxes."
+          },
+          "partIds": [
+            "ip65_junction_box",
+            "ip65_small_valve_box"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Submerge the pH and TDS sensors and Mini Water Pump 1 into the Water Reservoir Tank",
+          "detail": {
+            "steps": [
+              "Place the pH Sensor Module with Electrode into the Water Reservoir Tank, ensuring the electrode and module are fully submerged in the water as per design.",
+              "Place the TDS Sensor Module with Probe into the Water Reservoir Tank, ensuring the probe and module are fully submerged in the water.",
+              "Position the Mini Water Pump 1 (Main Ebb & Flow Flood) at the bottom of the Water Reservoir Tank, ensuring it is fully submerged and stable for operation.",
+              "Route the cables for the pH Sensor, TDS Sensor, and Mini Water Pump 1 through the Cable Gland M16 (Reservoir Sensors) installed on the reservoir box, tightening the gland to create a watertight seal around the cables."
+            ],
+            "summary": "Submerge pH and TDS sensors and Mini Water Pump 1 into the Water Reservoir Tank."
+          },
+          "partIds": [
+            "reservoir_box",
+            "ph_sensor_module",
+            "tds_sensor_module",
+            "mini_water_pump_1_main_flood"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Connect the main AC/DC Power Adapter to the DC Input Terminal Block, ensuring proper strain relief at the cable gland",
+          "detail": {
+            "steps": [
+              "Plug the DC 5.5x2.1mm male jack of the Main AC/DC Power Adapter into the DC 5.5x2.1mm female jack of the DC Input Terminal Block.",
+              "Feed the cable from the Main AC/DC Power Adapter through the Cable Gland M12 (Power).",
+              "Tighten the compression nut of the Cable Gland M12 (Power) until the cable is securely gripped, providing strain relief and maintaining the IP65 seal."
+            ],
+            "summary": "Connect power adapter to terminal block with strain relief."
+          },
+          "partIds": [
+            "main_power_adapter",
+            "dc_female_terminal",
+            "cable_gland_m12_power"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Perform final system power-up and verify all components respond correctly to control signals",
+          "detail": {
+            "steps": [
+              "Connect the Main AC/DC Power Adapter's male jack to the DC Input Terminal Block's female jack.",
+              "Power on the system and observe the Main Controller (ESP32 NodeMCU) and 8-Channel Optocoupled Relay Board for proper power indication (e.g., power LEDs illuminated).",
+              "Using a test firmware, sequentially activate each relay connected to Solenoid Valve 1, Solenoid Valve 2, Solenoid Valve 3, Mini Water Pump 1, Mini Water Pump 2, Peristaltic Micropump, and the 12V DC to 220V AC Inverter (which will power the Return Pump), verifying audible and/or visual confirmation of activation.",
+              "Monitor the serial output or a display for stable readings from the pH Sensor Module, TDS Sensor Module, Water Flow Sensor, Water Level Float Sensor (Growth Tube), and Water Level Float Sensor (Reservoir).",
+              "Inspect all wiring for secure connections and proper routing, ensuring no wires are pinched or under strain, and ensure all IP65 enclosures are properly closed and sealed."
+            ],
+            "summary": "Perform final system power-up and verify all components function correctly."
+          },
+          "partIds": []
+        },
+        {
+          "id": "assemble_7",
+          "title": "Secure all enclosure lids, ensuring IP65 rating is maintained with proper gaskets and screws",
+          "detail": {
+            "steps": [
+              "Ensure that the rubber gaskets are correctly seated and undamaged on the main IP65 Junction Box Enclosure and the IP65 Junction Box (Valves).",
+              "Carefully align the lid of the main IP65 Junction Box Enclosure with its base and begin inserting the lid screws.",
+              "Tighten the screws on the main IP65 Junction Box Enclosure lid in a diagonal or cross pattern to ensure even pressure and a watertight seal.",
+              "Align the lid of the IP65 Junction Box (Valves) with its base and insert the lid screws.",
+              "Tighten the screws on the IP65 Junction Box (Valves) lid in a diagonal or cross pattern to ensure an even and secure seal."
+            ],
+            "summary": "Secure all enclosure lids, ensuring IP65 rating is maintained."
+          },
+          "partIds": [
+            "ip65_junction_box",
+            "ip65_small_valve_box"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "An automated ESP32-controlled hydroponic system manages water and nutrient delivery using relay-switched pumps and solenoid valves, protected by flyback diodes. An ADS1115 ADC precisely monitors pH, TDS, and water levels, all housed in IP65 enclosures with separated power rails.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "automated hydroponic system",
+      "central 12V 5A power",
+      "separated power rails",
+      "optocoupled relay board",
+      "ADS1115 16-bit ADC",
+      "IP65 junction box",
+      "flyback diode protection",
+      "stable ESP32 pinout"
+    ],
+    "description": "SYSTEM BLUEPRINT: AUTOMATED HYDROPONIC LOW/HIGH TIDE FLOW SYSTEMSystem Architect: MichaelPlatform: ESP32 NodeMCUVersion: 1.1 (Revised for 12V 5A Central Power Supply)Document Type: System & Wiring Specification for Blueprint.am / Fritzing1. SYSTEM OVERVIEW & SPECIFICATIONSThis project covers the management of a fully automated hydroponic greenhouse system. The core is an ESP32 NodeMCU mounted in a flexible screw terminal expansion board. The system is centrally powered by a 12V 5A (60W) AC/DC wall adapter and is divided into two separate power rails (12V and 5V) for optimal protection of logic and pumps.Key Power Specifications:Main Input (Mains): $230\\text{V AC} \\rightarrow 12\\text{V DC } (5\\text{A, } 60\\text{W})$ via closed wall adapter.12V DC Rail (Power): Directly drives 2x 12V mini water pumps and 3x 12V solenoid valves.5V DC Rail (Logic & Low Voltage): Downconverted via a $24\\text{V}/12\\text{V} \\rightarrow 5\\text{V } (5\\text{A})$ step-down buck module. Powering the ESP32, the 8-channel optocoupled relay board, the ADS1115 ADC module, and the 5V peristaltic pump.2. POWER DISTRIBUTION & SAFETY (POWER RAIL BLUEPRINT)It is critical that the logic (ESP32/sensors) and inductive loads (motors/valves) are kept separate on the power rails to avoid voltage drops that can reset the microcontroller.                  [ 230V AC Wall Outlet ]\n                            |\n                     ( 12V 5A Adapter )\n                            |\n                 [ DC-Female Terminal ]\n                 /                      \\\n                /                        \\\n      =======================          ===================================\n      | 12V DC Power Rail   |          | Step-down Module (12V -> 5V 5A)  |\n      =======================          ===================================\n         |      |      |                         |\n         |      |      +-- Solenoid Valves (3x)  |\n         |      +--------- Mini Water Pumps (2x) =========================\n         |                                       |   5V DC Logic Rail    |\n      [ Relays (Channels 1-2 & 4-6) ]            =========================\n                                                    |       |       |\n                                                    |       |       +-- Relay Board (VCC)\n                                                    |       +---------- ADS1115 & Sensors\n                                                    +------------------ ESP32 Vin Pin\nCritical Protection Against Inductive Kickback (Flyback Diodes)Because pumps and solenoid valves contain coils (inductive loads), a high negative voltage spike occurs when a relay turns them off.Requirement: A 1N4007 diode must be mounted in parallel across each of the two 12V water pumps and the three 12V solenoid valves.Direction: The diode cathode (the end with the white band) must face the positive line ($+$), and the anode must face the ground/negative line ($-$).3. FAIL-SAFE ESP32 PIN-MAPPING (I/O LAYOUT)Certain pins on an ESP32 have specific functions during bootup (strapping pins) that can prevent the chip from starting if they are pulled high or low by sensors or relays. Below is the most stable and secure pin distribution for your setup:A. Digital Outputs (8-Channel Relay Board Control)Note: We are using pins that are 100% safe during boot.Relay ChannelESP32 GPIOComponentFunctionChannel 1GPIO 12Solenoid Valve 1 (12V)Freshwater Inlet (Auto-fill)Channel 2GPIO 13Mini Water Pump 1 (12V)Main Ebb & Flow Flood PumpChannel 3GPIO 14Pump 2 (12V / Unused)Recirculation / SpareChannel 4GPIO 25Return Pump (220V AC)Forces growth tube water up to reservoirChannel 5GPIO 26Solenoid Valve 3 (12V)Wastewater Outlet (Drain)Channel 6GPIO 27Peristaltic Pump (5V)Liquid Fertilizer DosingChannel 7GPIO 32SpareAvailable for expansionChannel 8GPIO 33SpareAvailable for expansionB. Digital & Analog Inputs (Sensors)To ensure highly accurate chemical measurements of pH and TDS, the analog sensors are routed through the external ADS1115 16-bit ADC, which communicates with the ESP32 via the $I^2C$ protocol.Sensor / DeviceESP32 Pin / ConnectionSignal TypeSpecial RemarksADS1115 (ADC)GPIO 21 (SDA)$I^2C$ DataPulled to the 5V Logic RailADS1115 (ADC)GPIO 22 (SCL)$I^2C$ ClockPulled to the 5V Logic RailWater Flow SensorGPIO 23Digital InputRequires Hardware Interrupt Pin for pulse countFloat Sensor 1GPIO 17Digital InputGrowth Tube dry-run level switch (active low)Float Sensor 2GPIO 16Digital InputReservoir high-water limit / safety lock4. ANALOG DETAIL SPECIFICATION: ADS1115 CONNECTIONSince the ESP32's internal analog-to-digital converter (ADC) is known to be non-linear and noisy (which ruins pH and TDS readings), we use your ADS1115 module:ADS1115 Power Supply:Connect VDD to the 5V rail (Important: sensor boards must run on the same voltage reference as the ADC).Connect GND to Common Ground/negative.Analog Channel Allocation:Channel A0: pH Sensor Module (Analog output).Channel A1: TDS Sensor Module (Analog output).Channel A2: Spare (e.g., soil moisture or light sensor).Channel A3: Spare.Address Configuration:Connect the ADDR pin to GND to assign the default $I^2C$ address 0x48.5. REPLACEMENT POWER & BILL OF MATERIALS (BOM)Here are the raw line items for setting up your Blueprint Bill of Materials:QtyComponentPurposeConnection Type1 pc.ESP32 NodeMCU (30 or 38 pin)System Brain / WiFi GatewayMounted on Terminal Board1 pc.ESP32 Universal Terminal AdapterRobust wiring installation in boxScrew Terminals1 pc.12V 5A (60W) AC/DC AdapterMain power supply for the setupDC 5.5x2.1mm male jack1 pc.DC-Female Adapter w/ screw terminalEasy power termination without cuttingScrew Terminals1 pc.24V/12V to 5V 5A Buck ConverterSteps down 12V to safe 5V logicScrew Terminals1 pc.8-Channel Optocoupled Relay BoardSwitches pumps and valves on/offOptoisolated connection (5V VCC)2 pcs.Mini Water Pump (12V, 10W, 600L/H)Water transport and circulationControlled via Relays 2 and 33 pcs.G1/2\" Solenoid Valve (12V)Zone valves and emergency shutoff/drainControlled via Relays 1 and 51 pc.5V Peristaltic MicropumpPrecise liquid fertilizer dosingControlled via Relay 61 pc.ADS1115 16-Bit ADC ModulePrecise reading of analog sensors$I^2C$ Bus1 pc.pH Sensor Module with ElectrodeMonitoring of feed water acidityAnalog to ADS1115 channel A01 pc.TDS Sensor Module with ProbeMonitoring of dissolved nutrients/ECAnalog to ADS1115 channel A11 pc.G1/2\" Water Flow SensorMeasurement of actual water volumeDigital to ESP32 GPIO 232 pcs.Water Level Sensor (Angle)Mechanical float switches for tanksDigital to GPIO 16 and 175 pcs.1N4007 Rectifier DiodesFlyback protection across coilsMounted directly across pumps/valves6. STEP-BY-STEP JUNCTION BOX ASSEMBLY GUIDEFollow this sequence meticulously during assembly to prevent wiring errors:Prepare Enclosure (IP65 Junction Box):Mount the ESP32 terminal adapter, step-down module, and relay board securely to the backplate.Connect Main Power:Plug the 12V 5A power supply's jack into the DC-female terminal block.Run wires from the DC-female terminal to the 12V power rail (supplying power to the \"Common\" contacts of the pumps and valves on the relay board).Run 12V into the Input ($+$ and $-$) of the step-down buck module.Set Up and Connect 5V Logic Power:From the step-down module's Output ($+$ and $-$), distribute 5V onto a common logic bus.Connect 5V to the ESP32's Vin pin (or 5V pin on the terminal board), to the VCC pin of your 8-channel relay board, and to the VDD/VCC pins of the ADS1115 and sensor boards.Important: Connect all ground wires (GND) together into a common ground point!Install Flyback Diodes on Actuators:Take the 5 pcs. 1N4007 diodes. Solder or screw them in place as close to the pumps and solenoid valves as physically possible (e.g., directly into terminal blocks or wire connections at the load). Ensure the white band (cathode) points toward the positive wire.Connect Data Lines:Connect the GPIO outputs from the ESP32 terminal board to the relay board inputs IN1 through IN6.Connect the $I^2C$ pins (SDA to GPIO 21, SCL to GPIO 22) to the ADS1115 board.Perform Cold-Test (Without 230V Mains):Use a multimeter to verify there are absolutely no short circuits between the 12V, 5V, and GND rails before plugging the power supply into the wall outlet!",
+    "technicalDescription": "An automated hydroponic system utilizes an ESP32 NodeMCU and ADS1115 ADC for precise water flow, nutrient dosing, and environmental sensing. It manages pumps and valves via an 8-channel optocoupled relay board, with separate 12V and 5V power rails, all enclosed in an IP65 junction box."
+  },
+  "instructionPreamble": {
+    "tools": [
+      "Drill and drill bits (appropriate for enclosure materials and cable glands)",
+      "M12 and M16 wrench/spanner (for cable glands)",
+      "Wire strippers and cutters",
+      "Screwdrivers (Phillips and flathead for terminal blocks and mounting)",
+      "Multimeter",
+      "Soldering iron (optional, if ESP32 headers are not pre-soldered)",
+      "Heat shrink tubing and heat gun (if using for connections)",
+      "Measuring tape or ruler",
+      "Marker pen",
+      "Safety glasses"
+    ],
+    "assumptions": [
+      "Basic electrical wiring knowledge and safety practices, especially with AC power",
+      "Familiarity with ESP32 board and flashing firmware",
+      "Access to a computer with a suitable IDE (e.g., Arduino IDE, PlatformIO) for ESP32 programming",
+      "Basic understanding of hydroponic system components and their function",
+      "12V DC power supply available for testing (e.g., the main_power_adapter)"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main 12V DC Input",
+      "source": "main_power_adapter",
+      "target": "dc_female_terminal",
+      "current": "5A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "12V to Buck Converter",
+      "source": "dc_female_terminal",
+      "target": "buck_converter_12v_to_5v",
+      "current": "5A",
+      "voltage": "12V",
+      "sourcePin": "Screw Terminal +",
+      "targetPin": "Input 12V+"
+    },
+    {
+      "type": "power",
+      "label": "GND to Buck Converter",
+      "source": "dc_female_terminal",
+      "target": "buck_converter_12v_to_5v",
+      "current": "5A",
+      "voltage": "GND",
+      "sourcePin": "Screw Terminal -",
+      "targetPin": "Input GND-"
+    },
+    {
+      "type": "power",
+      "label": "5V to ESP32 Vin",
+      "source": "buck_converter_12v_to_5v",
+      "target": "esp32_nodemcu",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "Output 5V+",
+      "targetPin": "Vin"
+    },
+    {
+      "type": "power",
+      "label": "GND to ESP32",
+      "source": "buck_converter_12v_to_5v",
+      "target": "esp32_nodemcu",
+      "current": "500mA",
+      "voltage": "GND",
+      "sourcePin": "Output GND-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "5V to Relay Board VCC",
+      "source": "buck_converter_12v_to_5v",
+      "target": "relay_board_8_channel",
+      "current": "100mA",
+      "voltage": "5V",
+      "sourcePin": "Output 5V+",
+      "targetPin": "VCC (5V)"
+    },
+    {
+      "type": "power",
+      "label": "GND to Relay Board",
+      "source": "buck_converter_12v_to_5v",
+      "target": "relay_board_8_channel",
+      "current": "100mA",
+      "voltage": "GND",
+      "sourcePin": "Output GND-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "5V to ADS1115 VDD",
+      "source": "buck_converter_12v_to_5v",
+      "target": "ads1115_adc_module",
+      "current": "10mA",
+      "voltage": "5V",
+      "sourcePin": "Output 5V+",
+      "targetPin": "VDD (5V)"
+    },
+    {
+      "type": "power",
+      "label": "GND to ADS1115",
+      "source": "buck_converter_12v_to_5v",
+      "target": "ads1115_adc_module",
+      "current": "10mA",
+      "voltage": "GND",
+      "sourcePin": "Output GND-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "5V to pH Sensor VCC",
+      "source": "buck_converter_12v_to_5v",
+      "target": "ph_sensor_module",
+      "current": "50mA",
+      "voltage": "5V",
+      "sourcePin": "Output 5V+",
+      "targetPin": "VCC (5V)"
+    },
+    {
+      "type": "power",
+      "label": "GND to pH Sensor",
+      "source": "buck_converter_12v_to_5v",
+      "target": "ph_sensor_module",
+      "current": "50mA",
+      "voltage": "GND",
+      "sourcePin": "Output GND-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "5V to TDS Sensor VCC",
+      "source": "buck_converter_12v_to_5v",
+      "target": "tds_sensor_module",
+      "current": "50mA",
+      "voltage": "5V",
+      "sourcePin": "Output 5V+",
+      "targetPin": "VCC (5V)"
+    },
+    {
+      "type": "power",
+      "label": "GND to TDS Sensor",
+      "source": "buck_converter_12v_to_5v",
+      "target": "tds_sensor_module",
+      "current": "50mA",
+      "voltage": "GND",
+      "sourcePin": "Output GND-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "5V to Water Flow Sensor VCC",
+      "source": "buck_converter_12v_to_5v",
+      "target": "water_flow_sensor",
+      "current": "20mA",
+      "voltage": "5V",
+      "sourcePin": "Output 5V+",
+      "targetPin": "VCC (5V)"
+    },
+    {
+      "type": "power",
+      "label": "GND to Water Flow Sensor",
+      "source": "buck_converter_12v_to_5v",
+      "target": "water_flow_sensor",
+      "current": "20mA",
+      "voltage": "GND",
+      "sourcePin": "Output GND-",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Peristaltic Pump 5V Power",
+      "source": "buck_converter_12v_to_5v",
+      "target": "peristaltic_pump",
+      "current": "500mA",
+      "voltage": "5V",
+      "sourcePin": "Output 5V+",
+      "targetPin": "5V+"
+    },
+    {
+      "type": "power",
+      "label": "Peristaltic Pump GND",
+      "source": "buck_converter_12v_to_5v",
+      "target": "peristaltic_pump",
+      "current": "500mA",
+      "voltage": "GND",
+      "sourcePin": "Output GND-",
+      "targetPin": "GND-"
+    },
+    {
+      "type": "data",
+      "label": "Solenoid Valve 1 Control",
+      "source": "esp32_nodemcu",
+      "target": "relay_board_8_channel",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 12",
+      "targetPin": "IN1"
+    },
+    {
+      "type": "data",
+      "label": "Mini Water Pump 1 Control",
+      "source": "esp32_nodemcu",
+      "target": "relay_board_8_channel",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 13",
+      "targetPin": "IN2"
+    },
+    {
+      "type": "data",
+      "label": "Mini Water Pump 2 Control",
+      "source": "esp32_nodemcu",
+      "target": "relay_board_8_channel",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 14",
+      "targetPin": "IN3"
+    },
+    {
+      "type": "data",
+      "label": "Return Pump Control",
+      "source": "esp32_nodemcu",
+      "target": "relay_board_8_channel",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 25",
+      "targetPin": "IN4"
+    },
+    {
+      "type": "data",
+      "label": "Solenoid Valve 2 Control",
+      "source": "esp32_nodemcu",
+      "target": "relay_board_8_channel",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 26",
+      "targetPin": "IN5"
+    },
+    {
+      "type": "data",
+      "label": "Peristaltic Pump Control",
+      "source": "esp32_nodemcu",
+      "target": "relay_board_8_channel",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 27",
+      "targetPin": "IN6"
+    },
+    {
+      "type": "data",
+      "label": "I2C SDA to ADS1115",
+      "source": "esp32_nodemcu",
+      "target": "ads1115_adc_module",
+      "protocol": "i2c",
+      "sourcePin": "GPIO 21 (SDA)",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "label": "I2C SCL to ADS1115",
+      "source": "esp32_nodemcu",
+      "target": "ads1115_adc_module",
+      "protocol": "i2c",
+      "sourcePin": "GPIO 22 (SCL)",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "data",
+      "label": "pH Sensor Analog to A0",
+      "source": "ads1115_adc_module",
+      "target": "ph_sensor_module",
+      "protocol": "analog",
+      "sourcePin": "A0",
+      "targetPin": "Analog Output"
+    },
+    {
+      "type": "data",
+      "label": "TDS Sensor Analog to A1",
+      "source": "ads1115_adc_module",
+      "target": "tds_sensor_module",
+      "protocol": "analog",
+      "sourcePin": "A1",
+      "targetPin": "Analog Output"
+    },
+    {
+      "type": "data",
+      "label": "ADS1115 Address 0x48",
+      "source": "ads1115_adc_module",
+      "target": "ads1115_adc_module",
+      "protocol": "gpio",
+      "sourcePin": "GND",
+      "targetPin": "ADDR"
+    },
+    {
+      "type": "data",
+      "label": "Water Flow Sensor Signal",
+      "source": "esp32_nodemcu",
+      "target": "water_flow_sensor",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 23",
+      "targetPin": "Signal Output"
+    },
+    {
+      "type": "data",
+      "label": "Float Sensor 1 Signal",
+      "source": "esp32_nodemcu",
+      "target": "float_sensor_1_growth_tube",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 17",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "label": "Float Sensor 2 Signal",
+      "source": "esp32_nodemcu",
+      "target": "float_sensor_2_reservoir",
+      "protocol": "gpio",
+      "sourcePin": "GPIO 16",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "power",
+      "label": "Float Sensor 1 GND",
+      "source": "float_sensor_1_growth_tube",
+      "target": "esp32_nodemcu",
+      "current": "10mA",
+      "voltage": "GND",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Float Sensor 2 GND",
+      "source": "float_sensor_2_reservoir",
+      "target": "esp32_nodemcu",
+      "current": "10mA",
+      "voltage": "GND",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "label": "12V to Solenoid Valve 1 (Common)",
+      "source": "dc_female_terminal",
+      "target": "solenoid_valve_1_freshwater",
+      "current": "500mA",
+      "voltage": "12V",
+      "sourcePin": "Screw Terminal +",
+      "targetPin": "12V+"
+    },
+    {
+      "type": "power",
+      "label": "Solenoid Valve 1 Switched GND",
+      "source": "relay_board_8_channel",
+      "target": "solenoid_valve_1_freshwater",
+      "current": "500mA",
+      "voltage": "GND",
+      "sourcePin": "COM for Channels 1-8",
+      "targetPin": "GND-"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Solenoid 1 (12V+)",
+      "source": "solenoid_valve_1_freshwater",
+      "target": "flyback_diode_solenoid_1",
+      "protocol": "gpio",
+      "sourcePin": "12V+",
+      "targetPin": "Cathode"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Solenoid 1 (GND-)",
+      "source": "solenoid_valve_1_freshwater",
+      "target": "flyback_diode_solenoid_1",
+      "protocol": "gpio",
+      "sourcePin": "GND-",
+      "targetPin": "Anode"
+    },
+    {
+      "type": "power",
+      "label": "12V to Solenoid Valve 2 (Common)",
+      "source": "dc_female_terminal",
+      "target": "solenoid_valve_2_drain",
+      "current": "500mA",
+      "voltage": "12V",
+      "sourcePin": "Screw Terminal +",
+      "targetPin": "12V+"
+    },
+    {
+      "type": "power",
+      "label": "Solenoid Valve 2 Switched GND",
+      "source": "relay_board_8_channel",
+      "target": "solenoid_valve_2_drain",
+      "current": "500mA",
+      "voltage": "GND",
+      "sourcePin": "COM for Channels 1-8",
+      "targetPin": "GND-"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Solenoid 2 (12V+)",
+      "source": "solenoid_valve_2_drain",
+      "target": "flyback_diode_solenoid_2",
+      "protocol": "gpio",
+      "sourcePin": "12V+",
+      "targetPin": "Cathode"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Solenoid 2 (GND-)",
+      "source": "solenoid_valve_2_drain",
+      "target": "flyback_diode_solenoid_2",
+      "protocol": "gpio",
+      "sourcePin": "GND-",
+      "targetPin": "Anode"
+    },
+    {
+      "type": "power",
+      "label": "12V to Solenoid Valve 3 (Common)",
+      "source": "dc_female_terminal",
+      "target": "solenoid_valve_3_spare",
+      "current": "500mA",
+      "voltage": "12V",
+      "sourcePin": "Screw Terminal +",
+      "targetPin": "12V+"
+    },
+    {
+      "type": "power",
+      "label": "Solenoid Valve 3 Switched GND",
+      "source": "relay_board_8_channel",
+      "target": "solenoid_valve_3_spare",
+      "current": "500mA",
+      "voltage": "GND",
+      "sourcePin": "COM for Channels 1-8",
+      "targetPin": "GND-"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Solenoid 3 (12V+)",
+      "source": "solenoid_valve_3_spare",
+      "target": "flyback_diode_solenoid_3",
+      "protocol": "gpio",
+      "sourcePin": "12V+",
+      "targetPin": "Cathode"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Solenoid 3 (GND-)",
+      "source": "solenoid_valve_3_spare",
+      "target": "flyback_diode_solenoid_3",
+      "protocol": "gpio",
+      "sourcePin": "GND-",
+      "targetPin": "Anode"
+    },
+    {
+      "type": "power",
+      "label": "12V to Mini Water Pump 1 (Common)",
+      "source": "dc_female_terminal",
+      "target": "mini_water_pump_1_main_flood",
+      "current": "1A",
+      "voltage": "12V",
+      "sourcePin": "Screw Terminal +",
+      "targetPin": "12V+"
+    },
+    {
+      "type": "power",
+      "label": "Mini Water Pump 1 Switched GND",
+      "source": "relay_board_8_channel",
+      "target": "mini_water_pump_1_main_flood",
+      "current": "1A",
+      "voltage": "GND",
+      "sourcePin": "COM for Channels 1-8",
+      "targetPin": "GND-"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Pump 1 (12V+)",
+      "source": "mini_water_pump_1_main_flood",
+      "target": "flyback_diode_pump_1",
+      "protocol": "gpio",
+      "sourcePin": "12V+",
+      "targetPin": "Cathode"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Pump 1 (GND-)",
+      "source": "mini_water_pump_1_main_flood",
+      "target": "flyback_diode_pump_1",
+      "protocol": "gpio",
+      "sourcePin": "GND-",
+      "targetPin": "Anode"
+    },
+    {
+      "type": "power",
+      "label": "12V to Mini Water Pump 2 (Common)",
+      "source": "dc_female_terminal",
+      "target": "mini_water_pump_2_recirculation",
+      "current": "1A",
+      "voltage": "12V",
+      "sourcePin": "Screw Terminal +",
+      "targetPin": "12V+"
+    },
+    {
+      "type": "power",
+      "label": "Mini Water Pump 2 Switched GND",
+      "source": "relay_board_8_channel",
+      "target": "mini_water_pump_2_recirculation",
+      "current": "1A",
+      "voltage": "GND",
+      "sourcePin": "COM for Channels 1-8",
+      "targetPin": "GND-"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Pump 2 (12V+)",
+      "source": "mini_water_pump_2_recirculation",
+      "target": "flyback_diode_pump_2",
+      "protocol": "gpio",
+      "sourcePin": "12V+",
+      "targetPin": "Cathode"
+    },
+    {
+      "type": "data",
+      "label": "Flyback Diode for Pump 2 (GND-)",
+      "source": "mini_water_pump_2_recirculation",
+      "target": "flyback_diode_pump_2",
+      "protocol": "gpio",
+      "sourcePin": "GND-",
+      "targetPin": "Anode"
+    },
+    {
+      "type": "power",
+      "label": "12V to DC-AC Inverter",
+      "source": "dc_female_terminal",
+      "target": "dc_ac_inverter_220v",
+      "current": "2A",
+      "voltage": "12V",
+      "sourcePin": "Screw Terminal +",
+      "targetPin": "12V Input +"
+    },
+    {
+      "type": "power",
+      "label": "GND to DC-AC Inverter",
+      "source": "dc_female_terminal",
+      "target": "dc_ac_inverter_220v",
+      "current": "2A",
+      "voltage": "GND",
+      "sourcePin": "Screw Terminal -",
+      "targetPin": "12V Input -"
+    },
+    {
+      "type": "power",
+      "label": "220V AC to Return Pump Live",
+      "source": "dc_ac_inverter_220v",
+      "target": "return_pump_220v",
+      "current": "2A",
+      "voltage": "220V AC",
+      "sourcePin": "220V AC Output",
+      "targetPin": "220V AC Live"
+    },
+    {
+      "type": "power",
+      "label": "220V AC to Return Pump Neutral",
+      "source": "dc_ac_inverter_220v",
+      "target": "return_pump_220v",
+      "current": "2A",
+      "voltage": "220V AC",
+      "sourcePin": "220V AC Output",
+      "targetPin": "220V AC Neutral"
+    },
+    {
+      "type": "power",
+      "label": "Peristaltic Pump Switched GND (Via 5V power)",
+      "source": "relay_board_8_channel",
+      "target": "peristaltic_pump",
+      "current": "500mA",
+      "voltage": "GND",
+      "sourcePin": "COM for Channels 1-8",
+      "targetPin": "GND-"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "threaded connection with sealing washer",
+      "source": "cable_gland_m12_power",
+      "target": "ip65_junction_box"
+    },
+    {
+      "label": "threaded connection with sealing washer",
+      "source": "cable_gland_m16_actuators",
+      "target": "ip65_junction_box"
+    },
+    {
+      "label": "threaded connection with sealing washer",
+      "source": "cable_gland_m16_sensors",
+      "target": "ip65_junction_box"
+    },
+    {
+      "label": "submerged in water",
+      "source": "reservoir_box",
+      "target": "ph_sensor_module"
+    },
+    {
+      "label": "submerged in water",
+      "source": "reservoir_box",
+      "target": "tds_sensor_module"
+    },
+    {
+      "label": "submerged in water",
+      "source": "reservoir_box",
+      "target": "mini_water_pump_1_main_flood"
+    },
+    {
+      "label": "mounted inside",
+      "source": "ip65_small_valve_box",
+      "target": "solenoid_valve_1_freshwater"
+    },
+    {
+      "label": "mounted inside",
+      "source": "ip65_small_valve_box",
+      "target": "solenoid_valve_2_drain"
+    },
+    {
+      "label": "mounted inside",
+      "source": "ip65_small_valve_box",
+      "target": "solenoid_valve_3_spare"
+    },
+    {
+      "label": "threaded connection with sealing washer",
+      "source": "cable_gland_m16_sensors_reservoir",
+      "target": "reservoir_box"
+    },
+    {
+      "label": "threaded connection with sealing washer",
+      "source": "cable_gland_m16_valve_box",
+      "target": "ip65_small_valve_box"
+    }
+  ],
+  "projectId": "a61f5219-de59-4eb0-af94-27a97959c1a8"
+}

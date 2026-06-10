@@ -1,0 +1,1685 @@
+{
+  "plan": "- Microcontroller: ESP32 for Wi-Fi/Bluetooth communication and processing.\n- Display: Small OLED screen for displaying information or status.\n- Input: Tactile buttons or a small joystick for navigation and interaction.\n- Power: LiPo battery with charging module for portable operation.\n- Enclosure: Custom 3D-printed compact case to house all components.\n- Antennas: External Wi-Fi and Bluetooth antennas for improved range.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "VCC",
+        "GND",
+        "3V3",
+        "GPIO16",
+        "GPIO17",
+        "GPIO18",
+        "GPIO19",
+        "GPIO21",
+        "GPIO22",
+        "GPIO23",
+        "GPIO25",
+        "GPIO26",
+        "GPIO27",
+        "SDA",
+        "SCL",
+        "MOSI",
+        "MISO",
+        "SCK",
+        "CS_RF",
+        "CS_NFC",
+        "ADC0",
+        "U.FL_Connector"
+      ],
+      "type": "mcu",
+      "partId": "0cb03cd4-c10f-4bd1-ae27-0b6fcad2cc7c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/BbtaPy02rXW8ehIadtdBFldmPTxvpcwdplJShbb2mvM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZWxlY3Jvdy5jb20v/bWVkaWEvY2F0YWxv/Zy9wcm9kdWN0L2Nh/Y2hlL2I2Yjk1Nzc5/MzdlNmE5NmY1MGU1/M2RkYzQyOTgzNjI4/L2Uvcy9lc3AzMi13/cm9vbS0zMmQuanBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "3V3,GND,GPIO0,GPIO2,GPIO4,GPIO5,GPIO12,GPIO13,GPIO14,GPIO15,GPIO16,GPIO17,GPIO18,GPIO19,GPIO21,GPIO22,GPIO23,GPIO25,GPIO26,GPIO27,GPIO32,GPIO33"
+          }
+        ],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32D-4MB/9381716",
+            "note": "ESP32-WROOM-32D-N4 module, available but not normally stocked. Price may vary.",
+            "price": "Approx. $2.75 - $3.50 (for single unit, subject to change)",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.sparkfun.com/sparkfun-thing-plus-esp32-wroom-usb-c.html",
+            "note": "Development board featuring ESP32-WROOM module, Feather-compatible, with USB-C.",
+            "price": "$19.95",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.adafruit.com/search?q=ESP32+WROOM",
+            "note": "Search results for ESP32 WROOM modules and development boards. Specific product links may vary.",
+            "price": "Varies by product (e.g., Adafruit Feather ESP32 typically $18-$20)",
+            "vendor": "Adafruit"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CNYK7WT2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "52x28x13mm",
+      "description": "Main processing unit for Wi-Fi/Bluetooth communication, data analysis, display/input management, and interface with other RF modules.",
+      "productName": "ESP32-WROOM-32D",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=ESP32-WROOM-32D",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR6vbyXY2ppL9ObRmYh4w4AK032f6bBm9NDrp62dnlrDQlnlop8wQc5bP4qXfeJ276Yek60BQaZDYxId5Ukphk7sJJODgS1isRhZwKXDxwwiDFyENTPU35PqQK8lkODm1HaTad4RY4cP1wl45WTeh4RlPsVUHy4VlZIc1wB2PtjlQuLRD9hen7MaRbZW4t6zXUfC9bGHFbYOKE0Ermlvb7EBN3cvdoWKkHNK6yXZ534UO9WSk5CiNfM9B1jszmmqfqllGFq2vb0rCSCIBNa4dD04zwyXoT925cGb94DGT5Y45JxsJbd8ME0Ed87lANkkJlMow1crqjjd1yDluBpgTJtkGqVlAH2JtTMjCWI0Lw7L8ISPYBut3gSSPD9L2HZvI9VngUqzdfTjetbjCpTzus2iWJvxs5RAqjiCBfsEhCvxIY9hlrbIOO5SEDZazF2AoTIne4qY5L2HRipfyb32ccbFGHCt80OC3OY29TpI6b19pjwSxjF5smW5h9O96FWe2WKUDBgSuqaXqMMxDTDLF00IvVngPOBisoRWvITPgm67kGQpX9OQCfdsFN9cgRL5ECQrOL9f5SkAjBNpjXkHxmKJZVg29c9XaOwV0DZOhtUKDYTKVhYNX09ApZSIWkJDWAR7heujceE5Cfh9gYZ7KzAx",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "oled_display",
+      "name": "OLED Display",
+      "pins": [
+        "VCC",
+        "GND",
+        "SDA",
+        "SCL"
+      ],
+      "type": "display",
+      "partId": "7a32fbe8-930a-4177-bc92-2b6554cedc8d",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/P9jGe4v9g3JkXED7jJpP2BawTr5tmsgBp4Z6CxERdSQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFIN1JwR3BsbUwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SCL,SDA"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D2RMQQHR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x27x4mm",
+      "description": "Small, low-power OLED screen for displaying network information, scan results, menus, and battery level.",
+      "productName": "SSD1306 0.96 inch OLED Display",
+      "purchaseUrl": "https://www.amazon.com/s?k=SSD1306+0.96+inch+OLED+display",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRyxAvUSPUSjPHUTr77M9a5gaHAkY8zttMepDjVK7dGrvo244ugf65QsqLKk6RaFpQv6ezSmVyecQADFvedRg8da83RnzVs7HhpmvfCXSv5kZ7bX8JFCWLERS0GJKWeODyHS2IzBn3tOQfIMW7SYq83njneQ3Ptptor4abF2sWF5sU7TypilOLtBlemsbwsuskEW2iBQis9TzDdWbkYuFYGsBngerHR2YTJydSHT3ePmAvkWcLpOtY6vnfs1gE5GfDjHz9QGpFZbYBh31mwQvbAbsNf5kbaIaMf7BJcGaO5J6zy7CWC0a3YaT4HCFC3Dh6n356z6PCjm7mAKOSlq66iWUAUUCKWzCfyipN2ITfcNKrDB4YjSUFFtHDugu5E7jkJB3wVYJ3xN3dBy3e8ScJBVWEbQ7y8PVvSvk5FBf7qByVgOVF8S6eipFt3gUxUvy4BSZBA9GdhwTpKHo4iM0Zb2m8hwqhfiqlC3iIwAjVaDfJHsFb4XyhbcLgtdgxfnWQPvlbRNiEECR4y0ip99X88dX4G0rJJ7ckepFFRNdDfVYe4bxr5xfSRnC0gSr8KDer9iEGtRMJMD6Ln28yHZTVY753EnMk2KGYy1iBY8x1hAJ4ooRqP8nBbWkQO8DxxC0mmmY8ZYeyvVwI5OsljDxmiX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SSD1306+0.96+inch+OLED+Display&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "button_up",
+      "name": "Up Navigation Button",
+      "pins": [
+        "GND",
+        "Signal"
+      ],
+      "type": "module",
+      "partId": "07440f26-94a5-4f9d-a36a-565d36c678ef",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/2MynQ8pbcHVpnK0TRmb0Z1cqa9m2ZUYIxKtTKBMAQzY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFZaWVaazMyc0wu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "1,2"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "description": "Tactile button for 'up' navigation in menus or parameter adjustment.",
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=6x6x5mm+tactile+switch",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstA8cOYdXWE8GiU7DaYRFP6ArO7H8DYTUgfTd1cr6frxnfz7csBv89SJccB9dfkTd4uaaSUgqNw9qTId9f3w0PiYPC1FeOOXgTBUJS7CfWhXmO8FmyVIr70BJuze7re2a2xY699p1d0D2TinAlZX0509ytYfh6qvLalPUsnvxn1bTplSgXEooig7MWlGzGhXDC2KbgRwJFgFi4eOIp63WEXpUUTJu48xgVbHFrevO9BHOiGnEs6TlKXepwQSrKJsEW8oWdTTnArMCLwYkcVau0nGZjJlcoSpFPRPzucQ0r1ZlGFNo7bh90rP2D3AiNgFT3YdUvoUUrmzoj05qHZzXiMa0YCvtkvGQ8rfunx3IFx8JUCSaHE6NHk0D27v6iLIsOOPFDcVDH7OV3pqy1YQGriJIJX0ztPPyZzOvOuPgeozwCH301OLZeIW1ODlCZ85A2lb9NhfJapddxCf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "button_down",
+      "name": "Down Navigation Button",
+      "pins": [
+        "GND",
+        "Signal"
+      ],
+      "type": "module",
+      "partId": "07440f26-94a5-4f9d-a36a-565d36c678ef",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/2MynQ8pbcHVpnK0TRmb0Z1cqa9m2ZUYIxKtTKBMAQzY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFZaWVaazMyc0wu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "1,2"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "description": "Tactile button for 'down' navigation in menus or parameter adjustment.",
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=6x6x5mm+tactile+switch",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstA8cOYdXWE8GiU7DaYRFP6ArO7H8DYTUgfTd1cr6frxnfz7csBv89SJccB9dfkTd4uaaSUgqNw9qTId9f3w0PiYPC1FeOOXgTBUJS7CfWhXmO8FmyVIr70BJuze7re2a2xY699p1d0D2TinAlZX0509ytYfh6qvLalPUsnvxn1bTplSgXEooig7MWlGzGhXDC2KbgRwJFgFi4eOIp63WEXpUUTJu48xgVbHFrevO9BHOiGnEs6TlKXepwQSrKJsEW8oWdTTnArMCLwYkcVau0nGZjJlcoSpFPRPzucQ0r1ZlGFNo7bh90rP2D3AiNgFT3YdUvoUUrmzoj05qHZzXiMa0YCvtkvGQ8rfunx3IFx8JUCSaHE6NHk0D27v6iLIsOOPFDcVDH7OV3pqy1YQGriJIJX0ztPPyZzOvOuPgeozwCH301OLZeIW1ODlCZ85A2lb9NhfJapddxCf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "button_left",
+      "name": "Left Navigation Button",
+      "pins": [
+        "GND",
+        "Signal"
+      ],
+      "type": "module",
+      "partId": "07440f26-94a5-4f9d-a36a-565d36c678ef",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/2MynQ8pbcHVpnK0TRmb0Z1cqa9m2ZUYIxKtTKBMAQzY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFZaWVaazMyc0wu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "1,2"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "description": "Tactile button for 'left' navigation in menus or parameter adjustment.",
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=6x6x5mm+tactile+switch",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstA8cOYdXWE8GiU7DaYRFP6ArO7H8DYTUgfTd1cr6frxnfz7csBv89SJccB9dfkTd4uaaSUgqNw9qTId9f3w0PiYPC1FeOOXgTBUJS7CfWhXmO8FmyVIr70BJuze7re2a2xY699p1d0D2TinAlZX0509ytYfh6qvLalPUsnvxn1bTplSgXEooig7MWlGzGhXDC2KbgRwJFgFi4eOIp63WEXpUUTJu48xgVbHFrevO9BHOiGnEs6TlKXepwQSrKJsEW8oWdTTnArMCLwYkcVau0nGZjJlcoSpFPRPzucQ0r1ZlGFNo7bh90rP2D3AiNgFT3YdUvoUUrmzoj05qHZzXiMa0YCvtkvGQ8rfunx3IFx8JUCSaHE6NHk0D27v6iLIsOOPFDcVDH7OV3pqy1YQGriJIJX0ztPPyZzOvOuPgeozwCH301OLZeIW1ODlCZ85A2lb9NhfJapddxCf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "button_right",
+      "name": "Right Navigation Button",
+      "pins": [
+        "GND",
+        "Signal"
+      ],
+      "type": "module",
+      "partId": "07440f26-94a5-4f9d-a36a-565d36c678ef",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/2MynQ8pbcHVpnK0TRmb0Z1cqa9m2ZUYIxKtTKBMAQzY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFZaWVaazMyc0wu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "1,2"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "description": "Tactile button for 'right' navigation in menus or parameter adjustment.",
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=6x6x5mm+tactile+switch",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstA8cOYdXWE8GiU7DaYRFP6ArO7H8DYTUgfTd1cr6frxnfz7csBv89SJccB9dfkTd4uaaSUgqNw9qTId9f3w0PiYPC1FeOOXgTBUJS7CfWhXmO8FmyVIr70BJuze7re2a2xY699p1d0D2TinAlZX0509ytYfh6qvLalPUsnvxn1bTplSgXEooig7MWlGzGhXDC2KbgRwJFgFi4eOIp63WEXpUUTJu48xgVbHFrevO9BHOiGnEs6TlKXepwQSrKJsEW8oWdTTnArMCLwYkcVau0nGZjJlcoSpFPRPzucQ0r1ZlGFNo7bh90rP2D3AiNgFT3YdUvoUUrmzoj05qHZzXiMa0YCvtkvGQ8rfunx3IFx8JUCSaHE6NHk0D27v6iLIsOOPFDcVDH7OV3pqy1YQGriJIJX0ztPPyZzOvOuPgeozwCH301OLZeIW1ODlCZ85A2lb9NhfJapddxCf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "button_select",
+      "name": "Select/Action Button",
+      "pins": [
+        "GND",
+        "Signal"
+      ],
+      "type": "module",
+      "partId": "07440f26-94a5-4f9d-a36a-565d36c678ef",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/2MynQ8pbcHVpnK0TRmb0Z1cqa9m2ZUYIxKtTKBMAQzY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFZaWVaazMyc0wu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "1,2"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "description": "Tactile button for 'select' or 'action' confirmation.",
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=6x6x5mm+tactile+switch",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx3O45qvMjVvtzm3P6H9RNa162ua3zwGHj5sQ321w6Twfcr7LxdiK0of4fhtakRYYd45liYsfL51YqgvkFI9t6vR6aBiCXeFqyPIuuxiGr0FBXGTv48Zw8UVVG56q6KQexypMuHjoHAIQ7EdJtT6Ajo6HT3ABXEJWgzHKgMDbg0pRSOfOf8HAp5baOeKvwHuVlsJSYBhstA8cOYdXWE8GiU7DaYRFP6ArO7H8DYTUgfTd1cr6frxnfz7csBv89SJccB9dfkTd4uaaSUgqNw9qTId9f3w0PiYPC1FeOOXgTBUJS7CfWhXmO8FmyVIr70BJuze7re2a2xY699p1d0D2TinAlZX0509ytYfh6qvLalPUsnvxn1bTplSgXEooig7MWlGzGhXDC2KbgRwJFgFi4eOIp63WEXpUUTJu48xgVbHFrevO9BHOiGnEs6TlKXepwQSrKJsEW8oWdTTnArMCLwYkcVau0nGZjJlcoSpFPRPzucQ0r1ZlGFNo7bh90rP2D3AiNgFT3YdUvoUUrmzoj05qHZzXiMa0YCvtkvGQ8rfunx3IFx8JUCSaHE6NHk0D27v6iLIsOOPFDcVDH7OV3pqy1YQGriJIJX0ztPPyZzOvOuPgeozwCH301OLZeIW1ODlCZ85A2lb9NhfJapddxCf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_battery",
+      "name": "LiPo Battery",
+      "pins": [
+        "BAT_POS",
+        "BAT_NEG",
+        "V_SENSE_POS"
+      ],
+      "type": "power",
+      "partId": "32f552de-e694-4bdb-98cc-2df4977957bc",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ymDNUouR--DTps2QJwkblQTO_mjCIgKNBJedXHmrjMQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aG9iYnlyZWNyZWF0/aW9ucHJvZHVjdHMu/Y29tL2Nkbi9zaG9w/L2ZpbGVzL3Bvd2Vy/LWhvYmJ5LTFzLTM3/di0xMDAwbWFoLTIw/Yy1saXBvLWJhdHRl/cnktd2l0aC1qc3Qt/Y29ubmVjdG9yLTkw/NDk2MF80MzZ4NDM2/LmpwZz92PTE3MzE2/MjAwMzY",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "+,-"
+          },
+          {
+            "label": "energy",
+            "value": "3.7Wh (typical)"
+          },
+          {
+            "label": "capacity",
+            "value": "1000mAh"
+          },
+          {
+            "label": "chemistry",
+            "value": "Lithium Polymer (LiPo)"
+          },
+          {
+            "label": "cycle_life",
+            "value": "500-1000 cycles"
+          },
+          {
+            "label": "nominal_voltage",
+            "value": "3.7V"
+          },
+          {
+            "label": "common_connectors",
+            "value": "JST-PH (2-pin, 2mm spacing), PH1.25, PH2.0, PH2.54"
+          },
+          {
+            "label": "fully_charged_voltage",
+            "value": "4.2V"
+          },
+          {
+            "label": "typical_dimensions_lxwxh",
+            "value": "Varies by model; common sizes include 50mm x 34mm x 5mm (e.g., 503450), 48mm x 30mm x 6mm (e.g., 603048)"
+          },
+          {
+            "label": "minimum_discharge_voltage",
+            "value": "3.0V"
+          },
+          {
+            "label": "certifications_manufacturer_dependent",
+            "value": "CB, IEC62133, CE, UL1642, UN38.3"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/result?keywords=3.7V%201000mAh%20LiPo%20Battery",
+            "note": "Various models available from multiple manufacturers.",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.mouser.com/c/power/batteries/battery-packs/?battery+chemistry=Lithium+Ion+Polymer+(LiPo)&output+voltage=3.7+V&rechargeable/non-rechargeable=Rechargeable",
+            "note": "Various 3.7V 1000mAh LiPo options available.",
+            "vendor": "Mouser"
+          },
+          {
+            "url": "https://www.adafruit.com/category/574",
+            "note": "Offers various LiPo batteries, some with similar capacity such as 1200mAh. Check specific product pages for 1000mAh.",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.sparkfun.com/products/retired/339",
+            "note": "Formerly stocked, now retired. Nominal 3.7V 1000mAh with JST-PH connector.",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.amazon.com/3-7v-1000mah-lipo-battery/s?k=3.7v+1000mah+lipo+battery",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-3.7v-1000mah-lipo-battery.html",
+            "note": "Wide range of vendors and form factors available, often with bulk pricing.",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.alibaba.com/showroom/3.7v-1000mah-lipo-battery.html",
+            "note": "Bulk orders and customizable options available.",
+            "vendor": "Alibaba"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F18N48MY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x34x6mm",
+      "description": "Rechargeable power source for portable operation, with voltage monitoring capability.",
+      "productName": "3.7V 1000mAh LiPo Battery",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=3.7V%201000mAh%20LiPo%20Battery",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR5DvVv1UbFJXBwZAgO98s8YEnTJAgiICBjOBstQ3MtBXXOvoSaPu94TGVEMOu1RUuLKmlkv7gfQIYFbjyp7e7UztATTWeBjwvG8etwATk6jmnWVnWEu6C9I6KHJjFZvfnf47uMkCRo5qFUJoYdMVmywlp4mndae0seMMZ4xBce6bjMvd2LjTrCjiNyE9SYlLO71FhlQTUjFnmlmcKuxTlfyqdA22NP6mAHVECmJIalynn5pihJomMlWfdCpXHQOEL2MGVfD82bEia3JFv9Ohx8EXJD9hGWMsRaxMkSlQKN4F579Idkv9L5W9x4lnacl380hbTMo89ANBLGlG75kmFVsDUIj0AoC3xV3ouJmb1URomSuKHke1Yd5eXVxpDGkKEDV9Do5E5AgGYckFrnuay7SEqT15UyshzM0DD38F7cH7tgkfyMx9TlF5tw1Om2Hjy9fIRS4atHBlZsUXNM80hzmvy0JFg9cSqsT4E7fpRaXvMzmzfovwZjjmrlXFYYFZAnDIZKMrYRh9JSx1fsY94g9KDeY5kXNRLYWUe5C9QPh3qCEGK6GDj9NEIjvrQ9wwVG9J5aTbaBDKw9OQuaTKh9A9Z5Q4WwQk2aRWd7gDvEI6nNcP89cl5NEzUdWWSuNJSIvmKvjkHgTPsKiX564Q7rd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3.7V+1000mAh+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_charger",
+      "name": "LiPo Charging Module",
+      "pins": [
+        "IN_POS",
+        "IN_NEG",
+        "BAT_POS",
+        "BAT_NEG",
+        "OUT_POS",
+        "OUT_NEG"
+      ],
+      "type": "power",
+      "partId": "eebf6869-a2c1-495c-8da2-515edb609798",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/X2NpRoXNzcZJNPGcZ1SA2YIrZ_v07QnPR8VGKVwx6-I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbnZp/c3RpYW1hbGwuY29t/L2Nkbi9zaG9wL3By/b2R1Y3RzL3RwNDA1/Ni1kdzAxYS1lbmhh/bmNlZC11c2ItYy1s/aXBvLWJhdHRlcnkt/Y2hhcmdlci1tb2R1/bGUtNXYtMWEtMXMt/NTAxNzk2LmpwZz92/PTE2NTMyNjkyOTkm/d2lkdGg9MTk0Ng",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "BAT_POS,BAT_NEG,IN_POS,IN_NEG"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08FSRV7GS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "26x17x5mm",
+      "description": "Manages charging of the LiPo battery from a USB 5V source and provides regulated output.",
+      "productName": "TP4056 LiPo Charger Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=TP4056+LiPo+charger+module",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxwp43uGCgcyw0PxEf3evoqkEN7NvylPI7Tcd41YPAkqgtR7vWS0OE01Z6jsrOgV6XuPkG9IWepUeUvXWiWnK0ADqftsythIW2XLFgpsVjl3hl5FnDJcp8azf1chNtEIgMm32rvLXw7MIh2CL3Djqw0soJdj9oOiAtoH5lWElKlNLf6GPZOrk6TwnchsJEo0QCMNp0BcRlqwFbzb5j5hOTDiY2v7kKZfPgKityeZK0nA4RbiKEzHSwmEEe6wkX8Y7vJsROkhqiOcPqUUDnQqV5Ewjet86DYGZ268I58pl4kYsWsxH0ROrf9ljDNO5PaqQIxRg7iFkiPURHTpS5ZAFmy7M179NUJxzQHnxIeqNh0vIgI5xi0GoYcbDqxx282BDWgjArcBRDQUHNAAnzZ9l6N0TyXaDuhTZabp9gvQNeTBzN15oqXajBVHG4aERaHBFmf4qtEfn4bhfnotV7cwWJw0nMKVTJ03ot00dhoS81az9rS0A9aDATpj5EvgvGdih5boWRvo829Fp0CDf58HT55mKY7MyXmk3TNb6r3QIf4oD4DBNHPnz9IRKqVFPpCcZc0RaVVCUADIjXe0rPAttXTyhrpgTyTZYLVckdezzSOQDthTMl2tpmEh7HEantrsVHU2en8xXlbEukSim92dGwqBv",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TP4056+LiPo+Charger+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_regulator_3v3",
+      "name": "3.3V Step-Down Regulator",
+      "pins": [
+        "VIN",
+        "VOUT",
+        "GND"
+      ],
+      "type": "power",
+      "partId": "322499d3-28be-4b0b-b35f-a33a06f73603",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/JxygMNxnzb2gcPa_SLsBke187rYSRCtuJNnBNF8fwEA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zLmFs/aWNkbi5jb20vQHNj/MDQva2YvSFRCMVR5/RGhqZG5KOEtKalNz/emRxNnl4dUZYYVMu/anBnXzcyMHg3MjBx/NTAuanBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN,GND,VOUT"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0881X2YGB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x5x2mm",
+      "description": "Provides stable 3.3V power to all components from the LiPo battery output.",
+      "productName": "AMS1117-3.3 Linear Regulator",
+      "purchaseUrl": "https://www.amazon.com/s?k=AMS1117-3.3+regulator",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxh4xw0u65V2OpqHVHFBKzWk9SfPzMVoavRAs1NwERdPKZqnmgC1mZHzC2VpWVtYmIGzjhNIXZx0UbifRQzHhEV7im2MTuzsd08KejjCCC1rp49GWMmBjggZR65FkYiFynRbu2KYvw1AvC4oQAcWadSeyjakGiok3wH6vFTHWIWUReBH63q2oAou0NvpcQKOJ2hj8oKG3S1R8BPbNKeCoVXtlzynHFT9WOmOOVmAzcI48RHP2ZM2EDntMcrxfa0NTLucxYfC36k2HYV1CdFNi1JZG511nqAU9VmEzlyaJTzIjPUA5hbRrbDB65DmcnXaTsguTR7i0I9LITENnd25y7B1nE8ODjZjpyTTdkxk2Fud9W2vgbTzJn0yLtCeVPCsiMCgFmZHy3FZRAJH3cFfmlywPQcL3Ztl0fUwwImorVVgPOhX1qyrEoSvKhuRfgksiCDjs6N3caK3svMEQSey19uSw1sLp514KyP4gqIh9IEOq0TDyKyBIIwXEB4FCtcNOdHCq7H3l5Tjvr0jOD83i1uaMElVtFowj2J8uIgfs0qh7LsCZV5A5ZD9M7i6ZDqV4QpxqC9qfRMFsNIQGLWSthMRUU7mEodTuhyyVmqFRI6t0U5miUiJgzH50fqX6rmSh8eTQP9hDcIvHEOasCEoNprbH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=AMS1117-3.3+Linear+Regulator&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "wifi_bt_antenna",
+      "name": "External Wi-Fi/BT Antenna",
+      "pins": [
+        "U.FL_Connector"
+      ],
+      "type": "other",
+      "partId": "3fe91591-25e0-4a76-9d1c-16c7557088a4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/lQ3jA5Yh-mM2B24DQgiVrWVBWuhHl76u_WLO5vBGYBk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFFR0RYNEdPSEwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "U.FL Connector"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01KBU61S8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x5x1mm (cable+element)",
+      "description": "External antenna connected to the ESP32 for improved Wi-Fi and Bluetooth signal range and reliability.",
+      "productName": "2.4GHz IPEX U.FL Antenna",
+      "purchaseUrl": "https://www.amazon.com/s?k=2.4GHz+IPEX+U.FL+Antenna",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwN6YNVqhIfv9KgKJGCkhmR28dkCA2Ca8gIwXWUKCUjU2CxocL4d1XuLYIBl9rTP58bvhcBSQYRJKSWid12sQ1fKbwmzRoBxcBygRY86HEwtccu59EyUW0LyrR8AXzaNNSsg7jS5pwSnBS4ZpnTyI0NmQN05Fb5nou9J1ew2llf3tsdGykEZjFJILuWCVkYIBN4XjDJfYSpTByQX6Kd0Cj8U9DmjQRul8Xi7RPglVKoUQmT1EfDMTfdeHkAdW6cSxkmOiwdQqM9oBJTW4v9FNSoiVEEAyFzaxvpUs0vbNW2tvQFOW5a5L5eQSavvWMliciDhijzU8niU38ijg96Tz8yFfdToiOMBx1GbM55OPihga5qQMHWl0xk6iI6UjjCILJ0HSexjpI5FxB9nJaMSzoDfd6p57FhYWHMWSo1LAxw7mVLLMZvwJ0zkHBcIj2ufLQkrJGi1GYJoshzhFrIcuQRY7Ojk32wwOukJdY529tSdwxlMydwED9fl1GP6NaMM7WNDCfGPlUvAOlV8wrYteAb9Ule6H1ws17HXGS6WaDGevrLeFqiNCmkm3YcrbvlIZ2NiGVxCF14QqEA6HJ6YBsKlIzS0gziKPguTIDH5Xn7R371f1a9DcyV2TQXapl2dguaiwAIVuxLGWxyncAk7m0Rp",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2.4GHz+IPEX+U.FL+Antenna&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sub_ghz_rf_module",
+      "name": "Sub-GHz RF Transceiver",
+      "pins": [
+        "VCC",
+        "GND",
+        "MOSI",
+        "MISO",
+        "SCK",
+        "CS",
+        "GDO0",
+        "GDO2",
+        "ANT_OUT"
+      ],
+      "type": "module",
+      "partId": "933f57b0-4232-4da5-8f90-314da31a2241",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/lTqhZx6WPX92gBJeQx_llL4LyWUwxgdQfnM5zuyiHsA/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLzIza0FB/ZVN3SmV0cHdoTDAv/cy1sMTQwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F7XGBX65?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x15x3mm",
+      "description": "Enables communication on sub-GHz frequencies for capturing and transmitting various radio signals.",
+      "productName": "CC1101 RF Module 433MHz",
+      "purchaseUrl": "https://www.amazon.com/s?k=CC1101+RF+module+433MHz",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQRIRKFeYTKP654vw45tJBNtN5U2l3rjRDOQEMZLbdnATEhmQOLLykePAtJJFSqQYm8yacKbcVRrxmRwwojDe4euVp2yYDYNMHOXdLCy4qwyExVEKbwwWoUMu3Xbrp2kC4KOKhrc1rwaXqwSvEzW8HOnHgp9pOa9Tffun2VKNBy5iGLqNTKLPHWKWkHOU6nOUfYiCQ98MiCyGaVarL4LGnTa1EVg4yI0QdbnMCs7CC8gX6ECeRIIZf7FonwU43tDN4xAb7XaO52TsRDruUGUQkw66C5ZHji1cyAkR0rHsEyVsYA0IucPB5lBoRtUxKqGEkF8K7WVsZJU6RpZ7Wxx6JToNZ6QVNrLD52wZwJTdmHiS6y0z9kTtiUOI09sVqas6QgPFaBNxBtvn6OUF3wfssWu0Yh56rVq73maRSjTK4J8vB27ijbTOOa2PA9J2BPhwYV4sHgP1gfnCzchA6cSV6OKVyqv0cnuHEys5LvsuSMdtN8yfLuUI9HLzkbKvRxzhjUYpKUNErWUJb4CMXxqFWlFB9BycWceZ0FEPU780i6IhNWj9dgBhNxdRNCW6qndCr6sKRTtHCdpihvPYA7Z2sUklj8v88vNv4GPbKbl5Lo7meETEIcZuuV4ZW6SsxwdrdbkcRm4KSBD9xOYmC7Uic8F",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=CC1101+RF+Module+433MHz&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "nfc_rfid_module",
+      "name": "NFC/RFID Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "SDA",
+        "SCL"
+      ],
+      "type": "module",
+      "partId": "37de0827-623c-4390-bb58-06c33cae3f3b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/AYgis18KGxU-ZJC2YbWyWrWwm29MncJuAgIykk1_LJo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE5bWU2U0gzQkwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SDA,SCL"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09VC5BQFC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x41x3mm",
+      "description": "Provides Near Field Communication and RFID capabilities for interacting with compatible tags and devices.",
+      "productName": "PN532 NFC RFID Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=PN532+NFC+RFID+module",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQRIRKFeYTKP654vw45tJBNtN5U2l3rjRDOQEMZLbdnATEhmQOLLykePAtJJFSqQYm8yacKbcVRrxmRwwojDe4euVp2yYDYNMHOXdLCy4qwyExVEKbwwWoUMu3Xbrp2kC4KOKhrc1rwaXqwSvEzW8HOnHgp9pOa9Tffun2VKNBy5iGLqNTKLPHWKWkHOU6nOUfYiCQ98MitGIxSYZQGzc0HmUYKdXSeP7yvdEeA9CRUWPf7O3xGcfoyHatOCXBnf9ms1KGvtGk32hGqK390kzHdcccpb5E5Gobq78O4FYQTvd1F0tSuYPorgfVAjSTEf8U50EywfeoCJkvJDVbdYKQ1pByRUiQRJ4BSxvDdPny3fpzpyE0mnx764zD3lDaMs9b7xT3Fjb28SLLxkocvXcszylp7lIWD4ljNspeMc5Q6W43Tuc3CxwQdWJJP2DtTtSL1aLcxfL2U71xGUvZI8ItmQg4gDnLhk3TGTC2vCx6azKPMhxthUYQoVKorpblU5gLOtUZ8ML6plhFOdRjZ0XGus6y3SP1sDQgbeEmJ8S4igMRHm6qg7mih6yz5tq2xU093dRbRcAH5M02k32tA017xwIEOIGrKDCrGVXWWuvbBfr4MZNgcXuOrqw7JQyNq4nRokYvdT9rQypWKeiDB73yaf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PN532+NFC+RFID+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "sub_ghz_antenna",
+      "name": "Sub-GHz Antenna",
+      "pins": [
+        "Antenna_Input"
+      ],
+      "type": "other",
+      "partId": "827700f1-65f0-4a7a-adf0-c1c3da2ae376",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/qx0HJImFst8DFzIXDnO8SsUCiZiN9pdM1XBD7Tfy39M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sY2Fu/dGVubmFzLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8x/MC8yN3g0bW0tR3Jv/dW5kLVBsYW5lLUFu/dGVubmEtNDMzTUh6/LUhlbGljYWwtQW50/ZW5uYS1NYW51ZmFj/dHVyZXItQ1QtUkYt/QW50ZW5uYXMtSW5j/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B01CGMOYYM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "30x5x5mm",
+      "description": "Antenna specifically tuned for the 433MHz band to enhance the performance of the sub-GHz RF module.",
+      "productName": "433MHz Helical Antenna",
+      "purchaseUrl": "https://www.amazon.com/s?k=433MHz+helical+antenna",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHHxpi03LDB8QISDMNf5KVvBKHCU3n4sSJau3om0z4dFlEwuBEsRfueHUtIMpQxKXa1PLwMJqZzFKK29sF2t0UTPDCed4lKEt7IctvaNTBzgs1WyDPS0MvTcthhlU7TDzgV6959j8OnS7w2dolt5E5YXIHoSrkjKpqmdVt4P2hEKkkAhFymVZtYoPeAknmL0nSyDsiYIHgJbgwgTANlnYS3SSIxwAN6N9tEoFl5s3OWduxjiAhpCenTvA4Y00iK9DnxieLwyApJhvLcDrzMJJlvUmqXPfrUO2Wy8dmDLDr3qWV4YTkG1zvY6Db06QSBIYpR4tVSYRvGVJIRplni5ZEsho0ZwEV28WSTDVdgG9eevk7sOVEIzaEAu6kFCUQZPoGx2jEVQM4lioosa4djE7AZJBjOZv8wYmSAXgWQBWrTlOW6L74j2cYjwdgxZ1cMsiHBTXeZx0pBkAvgUlPv5NRL5TNzjqBHlFVdiU1lT69GuUgLBPfEvvhQod9zpjVS4WILR3DWWMA21w1JV4khZU9cKbalbFOvAihhmVFTsKQxLCeLG64Fnk1YaHtASnTVTK1qVF3kTuZmDc9znJy2jjJaaxvUx4tv6YWXyoR03idobtX5MReOQMVvdbKdd9bOwvJBANU1O65OLTVam88Ctxiub",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=433MHz+Helical+Antenna&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_enclosure_top",
+      "name": "Main Enclosure Top Half",
+      "type": "3d_printed",
+      "partId": "27978089-0b74-4130-b415-586a62299532",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/H4TcV-JBtEvomN2sftIoCBeGt9mA0fuYxuGQ4LVp1s0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pdHNl/bmNsb3N1cmVzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8xMS9mb290ZXI2/LmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "130x80x20mm",
+      "description": "Top half of the compact handheld enclosure, designed with openings for the OLED display, multiple buttons, and antenna ports.",
+      "productName": "Main Enclosure Top",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 12,
+      "printSettings": "FDM, 0.4mm nozzle, 0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "main_enclosure_bottom",
+      "name": "Main Enclosure Bottom Half",
+      "type": "3d_printed",
+      "partId": "0b317097-bd65-4799-a717-2f6c1aa97d48",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/PxyqJAzYj5dh2NQX_iMTTSjkYMD2byUU3D3BtANuwIQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhLzRl/YWE1YWQ1LTA1ZmQt/NDFiYi04NTVjLTA3/YzU1NjA5YTZjNy5f/X0NSMCwwLDE2MDAs/MTYwMF9QVDBfU1gy/MjBfVjFfX18uanBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "130x80x20mm",
+      "description": "Bottom half of the compact handheld enclosure, includes internal mounting features for electrical components and a cutout for the USB charging port.",
+      "productName": "Main Enclosure Bottom",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 12,
+      "printSettings": "FDM, 0.4mm nozzle, 0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "mcu_standoffs_3d",
+      "name": "MCU Standoffs",
+      "type": "3d_printed",
+      "partId": "d9379e4a-de28-46b0-ba77-c0222a6e72bd",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 4,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 100% infill, no supports"
+          }
+        ],
+        "summary": "",
+        "sourcing": [],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library?query=MCU%20Standoffs",
+            "label": "GrabCAD",
+            "description": "STEP, IGES, SolidWorks, STL 3D models"
+          },
+          {
+            "url": "https://www.snapeda.com/search/?q=MCU%20Standoffs",
+            "label": "SnapEDA",
+            "description": "PCB footprint and 3D model"
+          },
+          {
+            "url": "https://www.ultralibrarian.com/search?q=MCU%20Standoffs",
+            "label": "Ultra Librarian",
+            "description": "ECAD models, footprints, and 3D models"
+          },
+          {
+            "url": "https://www.thingiverse.com/search?q=MCU%20Standoffs",
+            "label": "Thingiverse",
+            "description": "STL files for 3D printing"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://help.prusa3d.com/materials",
+            "type": "guide",
+            "title": "Prusa Knowledge Base",
+            "description": "3D printing filament material guide"
+          },
+          {
+            "url": "https://www.matterhackers.com/3d-printer-filament-comparison-guide",
+            "type": "reference",
+            "title": "MatterHackers",
+            "description": "Comprehensive filament comparison guide"
+          },
+          {
+            "url": "https://support.ultimaker.com/s/article/115004128008/What-are-the-differences-between-PLA-and-ABS",
+            "type": "docs",
+            "title": "Ultimaker Support",
+            "description": "PLA vs ABS material differences"
+          },
+          {
+            "url": "https://www.matterhackers.com/articles/how-to-succeed-when-3d-printing-with-petg",
+            "type": "guide",
+            "title": "MatterHackers",
+            "description": "PETG 3D printing guide"
+          },
+          {
+            "url": "https://help.prusa3d.com/materials",
+            "type": "guide",
+            "title": "Prusa Knowledge Base",
+            "description": "3D printing filament material guide"
+          },
+          {
+            "url": "https://www.matterhackers.com/3d-printer-filament-comparison-guide",
+            "type": "reference",
+            "title": "MatterHackers",
+            "description": "Comprehensive filament comparison guide"
+          },
+          {
+            "url": "https://support.ultimaker.com/s/article/115004128008/What-are-the-differences-between-PLA-and-ABS",
+            "type": "docs",
+            "title": "Ultimaker Support",
+            "description": "PLA vs ABS material differences"
+          },
+          {
+            "url": "https://www.matterhackers.com/articles/how-to-succeed-when-3d-printing-with-petg",
+            "type": "guide",
+            "title": "MatterHackers",
+            "description": "PETG 3D printing guide"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "8x8x5mm",
+      "description": "Small 3D-printed standoffs to elevate and secure the main MCU board within the enclosure.",
+      "productName": "MCU Standoffs",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 0.5,
+      "printSettings": "FDM, 0.4mm nozzle, 0.15mm layer height, 100% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "display_mount_3d",
+      "name": "OLED Display Mount",
+      "type": "3d_printed",
+      "partId": "25dc9f40-cc95-4b02-83f3-b5c155ae0829",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Q_YPaRXfRkbraRMKa8GM5D6zSAT99Y72CfC5adPsyP8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGdy/YWRlLnZvZ2Vscy5j/b20vbWVkaWEvY2F0/YWxvZy9wcm9kdWN0/L2NhY2hlLzc0YzEw/NTdmNzk5MWI0ZWRi/MmJjN2JkYWE5NGRl/OTMzL3cvZS93ZWJf/dmVyc2lvbi10dm0z/NDA1c3BfcHJvZHVj/dF9pbWFnZS5wbmc",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "30x30x5mm",
+      "description": "Custom frame to securely hold the OLED display in position behind its window in the top enclosure half.",
+      "productName": "OLED Display Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1.5,
+      "printSettings": "FDM, 0.4mm nozzle, 0.15mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "button_array_frame_3d",
+      "name": "Button Array Frame",
+      "type": "3d_printed",
+      "partId": "58f5f42f-1c90-4cb0-951b-89d84ece263a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/ALA6lmqZFa8Sk-P5b4avg1iGtA2-MD9ZG26Zc92yWIM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFqQUVCTUZ0SUwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "L1_OUT,L2_OUT,R1_OUT,R2_OUT,GND"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "40x30x8mm",
+      "description": "Integrated frame to hold the five tactile buttons securely in the main enclosure top half.",
+      "productName": "Shoulder Button Array",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 2,
+      "printSettings": "FDM, 0.4mm nozzle, 0.15mm layer height, 50% infill",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3KShujx"
+    },
+    {
+      "id": "lipo_battery_holder_3d",
+      "name": "LiPo Battery Holder",
+      "type": "3d_printed",
+      "partId": "65f8dbfd-47ad-4ebc-91e5-4cf2cdd39c89",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/NoAmPf0fMALirnLHH-E3N9QjZLBUZoDmtwZlEldRxIU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuaWJzcG90LmNv/bS93Nml6bDRlOTR5/OWNucW9nbGdsZDUx/M25zcmh2P3dpZHRo/PTgwMCZoZWlnaHQ9/ODAwJmZvcm1hdD1q/cGVn",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "Layer height: 0.2mm, Infill: 20%, Supports: No"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07WRQ3XTJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x38x8mm",
+      "description": "Internal tray to secure the LiPo battery and prevent movement inside the enclosure.",
+      "productName": "3S LiPo Battery Holder",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1.8,
+      "printSettings": "FDM, 0.4mm nozzle, 0.2mm layer height, 20% infill",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3hT5AIt"
+    },
+    {
+      "id": "charger_regulator_mount_3d",
+      "name": "Charger & Regulator Mount",
+      "type": "3d_printed",
+      "partId": "790c93fd-6f7b-4300-8c91-bf84e55baf60",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/0UQU2SXrXPschD32Lj0sQYQx-_nBzOFST3TClAzDtug/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzgxR1hzT1JDZWpM/LmpwZw",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill, no supports needed for base"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "35x25x5mm",
+      "description": "Combined mount for the LiPo charging module and the 3.3V step-down regulator.",
+      "productName": "Voltage Regulator Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1,
+      "printSettings": "FDM, 0.4mm nozzle, 0.15mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "wifi_bt_antenna_port_3d",
+      "name": "Wi-Fi/BT Antenna Port",
+      "type": "3d_printed",
+      "partId": "39630139-17c6-48a8-b93e-a0daf22c92af",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/wKo2Q3CAwG3foo9R10oTn7CTX1gPHe8agLKkbaNdS5g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFQVW83NVkyTkwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B082SHKT3Q?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x15x5mm",
+      "description": "Mount to secure the external Wi-Fi/BT antenna's U.FL connector or a small panel-mount adapter to the enclosure.",
+      "productName": "Wi-Fi/Bluetooth Antenna",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 0.5,
+      "printSettings": "FDM, 0.4mm nozzle, 0.15mm layer height, 50% infill",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHrKIGR2Uy4BIaHN9bVeJBcB1W3BVInPRDx0NJrrJFkdr5i8WuQA2yZvgUX2xS8M4JRdJySdi1l7KBzRDMXB2k8wvKAQKjbbaYpS9rMNcsk2GBaWfh8c64e5WR7KZeAAuQ7lsLbYT5vrVllgTtBC1iWCohRQxd6cmZOqyrrrjk8zdMpl2emtqnjo8A3ygDNe9ixtjUscLmJ4aThF64mz6VD7YVYFpjPpaffOw12iMvo3RZAWiu8r920ju3hu6uLCG5uVjfycFsjAKNDP3T2YoR7n6kHAPs54p7Mz0IAfiDXEZ9PTJdibfonf9v04xfRw5hi7BoSLFYr7HiygMiOXGSZYcN1MkyL61ZY6Ylz2mYA65qNPJ5o5v5GkQ5EXJuuRlrOrr20AOgmmCLCL0NKCT9vhRKMic3uFFg5LTV4LcbX53b0dkTPcr8P5wHKSxuOysH2biZNH9ejan4YfAiBjETkUfBXpRGBnnMnvbO25xj6d2oRT2rGpFzACZMCybi2nIVsnouMmYwF4YdOMAoG66F3Y1Nmb48koOramwAoiCYxwbFo7JtwZqxx7E8lsTtPivAjv3eXfNnSlfTkOLFmC5F3DrtZX1D1H8a0EkpkKVt33YEuxlVKK9CELQfkdM5PDREVccReh6ThyhzD7DZ9RjHLz"
+    },
+    {
+      "id": "sub_ghz_module_mount_3d",
+      "name": "Sub-GHz Module Mount",
+      "type": "3d_printed",
+      "partId": "c6dc9999-8f18-46a0-a7b6-56956632b46b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/s5R0KV69Vx3cE38wuZWkk02xU19jtjqn8r_b-mvymww/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFPdVVaUGM4OUwu/anBn",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer, 30% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "30x20x5mm",
+      "description": "Mount for the Sub-GHz RF transceiver module.",
+      "productName": "SDR Module Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1,
+      "printSettings": "FDM, 0.4mm nozzle, 0.15mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "nfc_module_mount_3d",
+      "name": "NFC Module Mount",
+      "type": "3d_printed",
+      "partId": "398cdc0e-481b-419a-9eb2-4b3e1e6dc4cd",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CxMn9dIX68mRMw28Cw80KrScLW9FBHsZWkt_ryl7R1I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy00Y2Nj/NWdmcDBjL2ltYWdl/cy9zdGVuY2lsLzYw/MHg2MDAvcHJvZHVj/dHMvOTA3LzExNzkw/L21udTUwMS10ZWNo/c3BlY3NfXzE5ODM2/X18yMzk5OS4xNzUz/NzQ3MTUwLmpwZz9j/PTI",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "45x45x5mm",
+      "description": "Mount for the NFC/RFID module, allowing it to be positioned near the enclosure surface for card interaction.",
+      "productName": "Mic Module Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1.5,
+      "printSettings": "FDM, 0.4mm nozzle, 0.15mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "sub_ghz_antenna_port_3d",
+      "name": "Sub-GHz Antenna Port",
+      "type": "3d_printed",
+      "partId": "9ec44e27-961b-484a-a3a5-a5b2f941a316",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "15x15x5mm",
+      "description": "Mount to secure the external Sub-GHz antenna to the enclosure.",
+      "productName": "Antenna Port Gaskets",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 0.5,
+      "printSettings": "FDM, 0.4mm nozzle, 0.15mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "m2_heat_set_inserts",
+      "name": "M2 Heat-Set Inserts",
+      "type": "misc",
+      "partId": "daf7eec4-212d-45e1-80fc-f23f200bac29",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/KuKZ6bcLp1yjOKfkfKyCrWmVePdS-8voyjGSUOqwZ_4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFTVXg4RXp4Zkwu/anBn",
+      "material": "Brass",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B0CS6XJSSL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x3mm",
+      "description": "Brass heat-set inserts for creating robust M2 threads in 3D printed parts for component mounting.",
+      "productName": "M2 Brass Heat Set Inserts",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2+brass+heat+set+inserts",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRpTpv62RXR9sVfC98GmMLkJmXC4qpbJhcQvkbxptOmgDfhTbS0PHwVgmr0VhydRzMgIoquzg3yg5D05i1x7FPxzxIl3P5mtn3X76qprXJgmg8InDgseeFkYRIIwB95RGJoFep43tAYGEBIRAZZ6LvWcRuoiSpUrlsk0dOnD41f9DJE08hfuSws15ysCxPxduPqEdOBJqzU5FbcT4r87S9pRNqEz1lIvqGk7CAWaFPWCfEmyhwfJeZhyotpqAKBEctCutEnTkheil2BxKIvRK5wXM289ycXJx4fSbLhmzszMs2qcFLR13Wi4UnbxDD6WoLWN4JoGn2r0OhAiiRT4qjn0FYprDlHrME0i509kbi4K203jbbPK9kFZ6PlwxDGU1J3GIXNW9QMDdlachODSkFRPFiDWiBcqMh9E9VewLyHRZ0tHMAGQpwkKKwsA5Tunu4ysqc1L9X4slCg9lEp6zE1GFP3YUH6qJbHtcd5XefYaFmvAkfUXtI520kwTLxNJmZx7ca9KPzqFfBNo5i1Qgx0sLz0E7Bavlxk7D2cPZ0EQcKeHqTXt6giYhETtDqDBfydKhkK5yZSYoABmdFbjUApWm1nnctVpHC5FaxdLlT3hF5zra1BCPJw499DItDavuMeDgdYGHeYUpXeNCpVCdSjv",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Brass+Heat+Set+Inserts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_screws_short",
+      "name": "M2x4mm Pan Head Screws",
+      "type": "misc",
+      "partId": "1331b8ab-2fa8-41c5-8397-bdd9597474b0",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/uke7j54f6_IRmiLY3NtnCU4BQ63xHDHwB2CS-v9P0Oo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGFyZmluZ3Rvbi5j/b20vY2RuL3Nob3Av/ZmlsZXMvdXhfYTIy/MTEyMzAwdXgwMzM4/X3V4X2QwM180MDB4/LmpwZz92PTE3NDk5/MTk5ODc",
+      "material": "Stainless Steel",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B07MPK3N63?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x4mm",
+      "description": "Small screws for attaching electrical modules (MCU, display, RF modules) to their 3D-printed mounts.",
+      "productName": "M2x4mm Pan Head Machine Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2x4mm+pan+head+screws",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8FXYYwRVZyMttfeUSAjfKB449kyAVBdwnJEmXkMHVBDnYNBYIEmhiN7cD3gf4wwh9LRQPOm5UHNdi1dVUvRWO7PECHvXbzmquYq0BSKMyn5gyyDrfM87GuEBbQsQbNONOvxEJEtSeWhzVaXbN5hnCJHdeXYtj7Yj2fPXhjsNXJlEZipFAAR3T25KneRXEMn0svVKshXYtIOR88cVPOKcOl2ATAW2z3dbaR1NI4dWLPnMb1bEbHz3lBBhC4JJtxthZPmAHCujlECJ018z0joRCEVgW1pZ7APqDrh2x2dzA8LBzd21YFrIaJ6DAlEZQTIvS4bNOHHyXL5rAIkaciCY4JoEHuEvaxSn7jq5uW2ZBqMaCxiZsCvzdRpnyuULRjAuSSqNWcVBvmcZs7axNbQEohlJXpdJDn6o8Ys6NDaNEZMhqFzJw5dmzFRpedVNVDDN57hUJDTkRJ42AOJo1k4pCpTWt3oApiiRd7eIs168jRkbzI0JwBit3Bfag3wean5fFW6n6adFhSP0rXIqgjasicloaPKSGDCbNQoDbcPKO3H7pozYliKGIRvvIMWyUxTz06Nc6gOloBQ6BSrwrDbgBk3G0fTbQjQVZicKAPzsR2mjpOKnLHlYDlI6r6eitZWi43BRFBFBsMnwM5UYu3gNsP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x4mm+Pan+Head+Machine+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_heat_set_inserts",
+      "name": "M3 Heat-Set Inserts",
+      "type": "misc",
+      "partId": "a218c217-5ff2-453c-bf9b-0cb77fe40758",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/96m5thzHQdreCwyfr2goWQ3mUkr7bMyKUcjbCmO0Fms/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFvYmZGcU9acEwu/anBn",
+      "material": "Brass",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0CS6VZYL8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x4mm",
+      "description": "Brass heat-set inserts for creating robust M3 threads in 3D printed parts for case assembly.",
+      "productName": "M3 Brass Heat Set Inserts",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+brass+heat+set+inserts",
+      "estimatedCost": 0.15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRpTpv62RXR9sVfC98GmMLkJmXC4qpbJhcQvkbxptOmgDfhTbS0PHwVgmr0VhydRzMgIoquzg3yg5D05i1x7FPxzxIl3P5mtn3X76qprXJgmg8InDgseeFkYRIIwB95RGJoFep43tAYGEBIRAZZ6LvWcRuoiSpUrlsk0dOnD41f9DJE08hfuSws15ysCxPxduPqEdOBJqzG04NUdFJ3bWrfijdWCN43CSC9mYDkrFhwwBbQVz82VhOIzQnJDGqhjn3119Vw7ZBsbw5zNsuKCnHfhCbxRPNLdII35nubRaiPuAYxgMIty1KMm8HZY6F24WzUNGNr5Ay28BHTyNjrjgt37wwssKrFvlAkOc5eRVIfTsSPf00gPtpAnzrYCtO6pa4kt7Oim5FLl2fo9qzTlncqIyd0FnXRaj8FR9jadMKDscIUwEZtfGnXX3P4fbw1kDhD2QSSJMAn5RvUfmbQoftnN7hwclCo2YteNbSFQAlUTLnDvyAuTFcIVw4tUUdoYhbRuWVI1mNuQLwgrpJQ8M1sDLKul4ZypKQqK0WzxjP33EG9LwNWvX48ub96mvj0CpIbLhMAbjsoKwt5GdKy2tzmAgkWEcWjNuBrzPdW6qbqkvKztM8k9TpouDclbRaxH4aTLDpxLZe7KN7MOAMFYQW5H",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Brass+Heat+Set+Inserts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screws_case",
+      "name": "M3x8mm Button Head Screws",
+      "type": "misc",
+      "partId": "c1322393-2c2d-4542-98e4-c7bcd13f86ce",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/pxyuRT-r9yF8_pgHtlMFSkazQZ7_TJDRq5ALcUESKdU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zY2hl/cGlzbW9kZWwuY29t/LzczMi1wZDRfZGVm/L1JBQ0VfU1BFQ19C/VVRUT05fSEVBRF9T/Q1JFV19NM1g2TU1f/XzIwUENTXy5qcGc",
+      "material": "Stainless Steel",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0FLKCP52N?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x8mm",
+      "description": "Screws for assembling the top and bottom halves of the main enclosure.",
+      "productName": "M3x8mm Button Head Machine Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x8mm+button+head+screws",
+      "estimatedCost": 0.08,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwU9dBINt0AsceFrxgOgfTOqHg2OeTMh46HOJUyt0owrhqo0Q0OLt1bSkO0i4YG12tlDyTh6IlI30PK6FPMZO6fyGSef9rKZv1KvceYL196OAZqHl3PXSob209gbZEqb9VfeuuTaxoEpw1aXvTjQ8nA5xcrxOlUNlQERXqKJj9RuMtDKJhmnlxAvFwcLwjIjF1goKmx7IzIEbhV29Ndr988VEsugqGQdMlPGPzaPxhMEwZilS50s1gL2sIqgxrDNSqfshkgatJ6y5gVRqipfz5Rf2avWBZhkvnQQaNwI2gPnMfnBsHStAu1BeFo9NlF7heeJVIYirOtuxrwPhkckycMHvbmTdI8LW4bB9mz4s8LdADzArrKmK51uUHI96Lm2BWCHGnI96gEnWED4kKHTnv6VYwOFi74q4yyDbjmg4cPpISDmczTbDzWxW5vVomqWnqQxW1MwuAnFkUPtyq6sSqGs3FokHCvR3TzmnnRiQiyQVXPQbKQwZxmIiZdMep1HF4AzGTCPopAqGiaDydkac2cUl9mTXBUsMFD9YEA3FYr5wy1OFYD7kmmsmFymcPKdTRuqHq4gMsYQVEl0G2oCRsEgJiU0wzcbcKtB6ej1DKgv7Pdvsagwtk2lv1V9Sb3RM6RTCqozyXQk6wUzOLxTFA1V",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x8mm+Button+Head+Machine+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "compact form factor",
+    "portable operation",
+    "wireless communication"
+  ],
+  "projectName": "Portable Hacker Tool (1)",
+  "originalPrompt": "hacker",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all mechanical components",
+          "partIds": [
+            "main_enclosure_top",
+            "main_enclosure_bottom",
+            "mcu_standoffs_3d",
+            "display_mount_3d",
+            "button_array_frame_3d",
+            "lipo_battery_holder_3d",
+            "charger_regulator_mount_3d",
+            "wifi_bt_antenna_port_3d",
+            "sub_ghz_module_mount_3d",
+            "nfc_module_mount_3d",
+            "sub_ghz_antenna_port_3d"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Install M2 heat-set inserts into MCU standoffs",
+          "partIds": [
+            "mcu_standoffs_3d",
+            "m2_heat_set_inserts"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Install M3 heat-set inserts into main enclosure bottom",
+          "partIds": [
+            "main_enclosure_bottom",
+            "m3_heat_set_inserts"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Clean and deburr all 3D printed parts",
+          "partIds": [
+            "main_enclosure_top",
+            "main_enclosure_bottom",
+            "mcu_standoffs_3d",
+            "display_mount_3d",
+            "button_array_frame_3d",
+            "lipo_battery_holder_3d",
+            "charger_regulator_mount_3d",
+            "wifi_bt_antenna_port_3d",
+            "sub_ghz_module_mount_3d",
+            "nfc_module_mount_3d",
+            "sub_ghz_antenna_port_3d"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Wire LiPo battery to LiPo charging module",
+          "partIds": [
+            "lipo_battery",
+            "lipo_charger"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire LiPo charging module output to 3.3V step-down regulator input",
+          "partIds": [
+            "lipo_charger",
+            "power_regulator_3v3"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire 3.3V regulator output to main controller, OLED display, sub-GHz module, and NFC module power inputs",
+          "partIds": [
+            "power_regulator_3v3",
+            "main_mcu",
+            "oled_display",
+            "sub_ghz_rf_module",
+            "nfc_rfid_module"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect main controller I2C lines to OLED display and NFC/RFID module",
+          "partIds": [
+            "main_mcu",
+            "oled_display",
+            "nfc_rfid_module"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect main controller SPI lines and CS_RF to sub-GHz RF transceiver",
+          "partIds": [
+            "main_mcu",
+            "sub_ghz_rf_module"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Wire all navigation buttons and select button to main controller GPIOs and common ground",
+          "partIds": [
+            "main_mcu",
+            "button_up",
+            "button_down",
+            "button_left",
+            "button_right",
+            "button_select"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Connect LiPo battery voltage sense line to main controller ADC input",
+          "partIds": [
+            "lipo_battery",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Connect external Wi-Fi/BT antenna and Sub-GHz antenna to their respective modules",
+          "partIds": [
+            "wifi_bt_antenna",
+            "main_mcu",
+            "sub_ghz_rf_module",
+            "sub_ghz_antenna"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Perform initial power-up test and verify voltage at all modules using multimeter",
+          "partIds": [
+            "lipo_battery",
+            "lipo_charger",
+            "power_regulator_3v3",
+            "main_mcu",
+            "oled_display",
+            "sub_ghz_rf_module",
+            "nfc_rfid_module"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Upload basic test firmware to the main controller",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test OLED display functionality (display initialization and basic text output)",
+          "partIds": [
+            "oled_display",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify navigation and select button inputs register correctly on the main controller",
+          "partIds": [
+            "button_up",
+            "button_down",
+            "button_left",
+            "button_right",
+            "button_select",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test sub-GHz RF module communication and basic transmit/receive functionality",
+          "partIds": [
+            "sub_ghz_rf_module",
+            "main_mcu",
+            "sub_ghz_antenna"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Test NFC/RFID module communication and basic tag detection",
+          "partIds": [
+            "nfc_rfid_module",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Calibrate and verify LiPo battery voltage sensing accuracy",
+          "partIds": [
+            "lipo_battery",
+            "main_mcu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount MCU standoffs and main controller into the main enclosure bottom",
+          "partIds": [
+            "main_mcu",
+            "mcu_standoffs_3d",
+            "main_enclosure_bottom",
+            "m2_screws_short"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount OLED display into display mount and secure to main enclosure top",
+          "partIds": [
+            "oled_display",
+            "display_mount_3d",
+            "main_enclosure_top",
+            "m2_screws_short"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Install navigation buttons into button array frame and secure to main enclosure top",
+          "partIds": [
+            "button_up",
+            "button_down",
+            "button_left",
+            "button_right",
+            "button_select",
+            "button_array_frame_3d",
+            "main_enclosure_top"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount LiPo battery into its holder and secure to main enclosure bottom",
+          "partIds": [
+            "lipo_battery",
+            "lipo_battery_holder_3d",
+            "main_enclosure_bottom"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount charger and regulator onto their mount and secure to main enclosure bottom",
+          "partIds": [
+            "lipo_charger",
+            "power_regulator_3v3",
+            "charger_regulator_mount_3d",
+            "main_enclosure_bottom"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount sub-GHz module and NFC module into their respective mounts and secure to enclosure halves",
+          "partIds": [
+            "sub_ghz_rf_module",
+            "sub_ghz_module_mount_3d",
+            "main_enclosure_bottom",
+            "nfc_rfid_module",
+            "nfc_module_mount_3d",
+            "main_enclosure_top"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Integrate Wi-Fi/BT and Sub-GHz antenna ports into the main enclosure top",
+          "partIds": [
+            "wifi_bt_antenna_port_3d",
+            "main_enclosure_top",
+            "sub_ghz_antenna_port_3d"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Route all cables neatly, secure main enclosure top to bottom, and fasten with screws",
+          "partIds": [
+            "main_enclosure_top",
+            "main_enclosure_bottom",
+            "m3_screws_case"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "This compact, portable hacker tool integrates an ESP3",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (FDM, PETG/PLA capable)",
+      "PETG filament",
+      "PLA filament",
+      "Soldering iron with fine tip",
+      "Solder",
+      "Wire strippers",
+      "Flush cutters",
+      "Heat gun (optional, for heat shrink)",
+      "Small Phillips head screwdriver",
+      "M3 hex key",
+      "Multimeter",
+      "Tweezers (for small components/wires)",
+      "Heat-set insert installation tip (for soldering iron)"
+    ],
+    "assumptions": [
+      "Basic soldering skills",
+      "Familiarity with 3D printer operation and filament handling",
+      "Understanding of basic electronics safety and polarity",
+      "Computer with suitable development environment (e.g., Arduino IDE, PlatformIO) installed",
+      "Basic microcontroller programming knowledge"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "lipo_charger",
+      "voltage": "3.7V",
+      "sourcePin": "BAT_POS",
+      "targetPin": "BAT_POS"
+    },
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "lipo_charger",
+      "voltage": "3.7V",
+      "sourcePin": "BAT_NEG",
+      "targetPin": "BAT_NEG"
+    },
+    {
+      "type": "power",
+      "source": "lipo_charger",
+      "target": "power_regulator_3v3",
+      "voltage": "3.7V",
+      "sourcePin": "OUT_POS",
+      "targetPin": "VIN"
+    },
+    {
+      "type": "power",
+      "source": "lipo_charger",
+      "target": "power_regulator_3v3",
+      "voltage": "3.7V",
+      "sourcePin": "OUT_NEG",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "main_mcu",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "3V3"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "main_mcu",
+      "voltage": "3.3V",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "oled_display",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "oled_display",
+      "voltage": "3.3V",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "button_up",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "button_down",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "button_left",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "button_right",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "button_select",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "sub_ghz_rf_module",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "sub_ghz_rf_module",
+      "voltage": "3.3V",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "nfc_rfid_module",
+      "voltage": "3.3V",
+      "sourcePin": "VOUT",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "source": "power_regulator_3v3",
+      "target": "nfc_rfid_module",
+      "voltage": "3.3V",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "oled_display",
+      "voltage": "3.3V_logic_I2C_clock_line_signal_transmission_rate_of_up_to_400kHz",
+      "sourcePin": "SCL",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "oled_display",
+      "voltage": "3.3V_logic_I2C_data_line_signal_transmission_rate_of_up_to_400kHz",
+      "sourcePin": "SDA",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "nfc_rfid_module",
+      "voltage": "3.3V_logic_I2C_clock_line_signal_transmission_rate_of_up_to_400kHz",
+      "sourcePin": "SCL",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "nfc_rfid_module",
+      "voltage": "3.3V_logic_I2C_data_line_signal_transmission_rate_of_up_to_400kHz",
+      "sourcePin": "SDA",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "button_up",
+      "voltage": "3.3V_digital_input_with_pull-up",
+      "sourcePin": "GPIO16",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "button_down",
+      "voltage": "3.3V_digital_input_with_pull-up",
+      "sourcePin": "GPIO17",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "button_left",
+      "voltage": "3.3V_digital_input_with_pull-up",
+      "sourcePin": "GPIO18",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "button_right",
+      "voltage": "3.3V_digital_input_with_pull-up",
+      "sourcePin": "GPIO19",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "button_select",
+      "voltage": "3.3V_digital_input_with_pull-up",
+      "sourcePin": "GPIO23",
+      "targetPin": "Signal"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "lipo_battery",
+      "voltage": "3.7V_analog_input_for_battery_monitoring_via_voltage_divider",
+      "sourcePin": "ADC0",
+      "targetPin": "V_SENSE_POS"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "sub_ghz_rf_module",
+      "voltage": "3.3V_logic_SPI_data_output",
+      "sourcePin": "MOSI",
+      "targetPin": "MOSI"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "sub_ghz_rf_module",
+      "voltage": "3.3V_logic_SPI_data_input",
+      "sourcePin": "MISO",
+      "targetPin": "MISO"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "sub_ghz_rf_module",
+      "voltage": "3.3V_logic_SPI_clock_line",
+      "sourcePin": "SCK",
+      "targetPin": "SCK"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "sub_ghz_rf_module",
+      "voltage": "3.3V_logic_SPI_chip_select",
+      "sourcePin": "CS_RF",
+      "targetPin": "CS"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "wifi_bt_antenna",
+      "voltage": "RF_Signal_2.4GHz",
+      "sourcePin": "U.FL_Connector",
+      "targetPin": "U.FL_Connector"
+    },
+    {
+      "type": "data",
+      "source": "sub_ghz_rf_module",
+      "target": "sub_ghz_antenna",
+      "voltage": "RF_Signal_433MHz",
+      "sourcePin": "ANT_OUT",
+      "targetPin": "Antenna_Input"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "assembles via m3_heat_set_inserts",
+      "source": "main_enclosure_top",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "fastens with m3_screws_case",
+      "source": "main_enclosure_top",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "mounted on mcu_standoffs_3d",
+      "source": "main_mcu",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "attached to",
+      "source": "mcu_standoffs_3d",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "receives",
+      "source": "mcu_standoffs_3d",
+      "target": "m2_heat_set_inserts"
+    },
+    {
+      "label": "fastens to mcu_standoffs_3d",
+      "source": "main_mcu",
+      "target": "m2_screws_short"
+    },
+    {
+      "label": "secured to",
+      "source": "oled_display",
+      "target": "display_mount_3d"
+    },
+    {
+      "label": "integrates into",
+      "source": "display_mount_3d",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "fastens to display_mount_3d",
+      "source": "oled_display",
+      "target": "m2_screws_short"
+    },
+    {
+      "label": "mounted into",
+      "source": "button_up",
+      "target": "button_array_frame_3d"
+    },
+    {
+      "label": "mounted into",
+      "source": "button_down",
+      "target": "button_array_frame_3d"
+    },
+    {
+      "label": "mounted into",
+      "source": "button_left",
+      "target": "button_array_frame_3d"
+    },
+    {
+      "label": "mounted into",
+      "source": "button_right",
+      "target": "button_array_frame_3d"
+    },
+    {
+      "label": "mounted into",
+      "source": "button_select",
+      "target": "button_array_frame_3d"
+    },
+    {
+      "label": "integrates into",
+      "source": "button_array_frame_3d",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "secured within",
+      "source": "lipo_battery",
+      "target": "lipo_battery"
+    },
+    {
+      "label": "mounted to",
+      "source": "lipo_battery",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "mounted on",
+      "source": "lipo_charger",
+      "target": "charger_regulator_mount_3d"
+    },
+    {
+      "label": "mounted on",
+      "source": "power_regulator_3v3",
+      "target": "charger_regulator_mount_3d"
+    },
+    {
+      "label": "attached to",
+      "source": "charger_regulator_mount_3d",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "connects to",
+      "source": "wifi_bt_antenna",
+      "target": "wifi_bt_antenna_port_3d"
+    },
+    {
+      "label": "integrates into",
+      "source": "wifi_bt_antenna_port_3d",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "mounted on",
+      "source": "sub_ghz_rf_module",
+      "target": "sub_ghz_module_mount_3d"
+    },
+    {
+      "label": "attached to",
+      "source": "sub_ghz_module_mount_3d",
+      "target": "main_enclosure_bottom"
+    },
+    {
+      "label": "mounted on",
+      "source": "nfc_rfid_module",
+      "target": "nfc_module_mount_3d"
+    },
+    {
+      "label": "attached to (flush for interaction)",
+      "source": "nfc_module_mount_3d",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "connects to",
+      "source": "sub_ghz_antenna",
+      "target": "sub_ghz_antenna"
+    },
+    {
+      "label": "integrates into",
+      "source": "sub_ghz_antenna",
+      "target": "main_enclosure_top"
+    },
+    {
+      "label": "engages with",
+      "source": "m2_screws_short",
+      "target": "m2_heat_set_inserts"
+    },
+    {
+      "label": "engages with",
+      "source": "m3_screws_case",
+      "target": "m3_heat_set_inserts"
+    }
+  ],
+  "projectId": "77aa3ae3-c3f3-46d0-af75-adbc325c582b"
+}

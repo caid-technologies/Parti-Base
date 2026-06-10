@@ -1,0 +1,1922 @@
+{
+  "plan": "-  Select a 5-inch carbon fiber frame kit (e.g., X-type or H-type) for durability and rigidity.\n-  Integrate an F4/F7 flight controller (FC) with an integrated OSD and PDB, a 4-in-1 ESC (30-60A), and a compatible receiver (e.g., Crossfire, ELRS, FrSky).\n-  Mount four high-KV (1700-2400KV) brushless motors with matching 5-inch propellers and secure with appropriate M5 prop nuts.\n-  Install an FPV camera (e.g., Caddx Ratel, Runcam Phoenix) and a video transmitter (VTX) with an antenna, ensuring clear video feed.\n-  Power the system with a 4S or 6S LiPo battery (1300-1500mAh) and include a low-ESR capacitor for clean power delivery.\n-  Design custom 3D-printed parts for camera mounts, antenna mounts, and potentially a LiPo skid plate.",
+  "nodes": [
+    {
+      "id": "flight_controller",
+      "name": "Main Flight Controller",
+      "pins": [
+        "VBAT",
+        "GND",
+        "5V",
+        "3.3V",
+        "UART1 TX/RX",
+        "UART2 TX/RX",
+        "UART3 TX/RX",
+        "SDA",
+        "SCL",
+        "ESC Telemetry",
+        "Motor 1-4 Signal",
+        "LED_STRIP",
+        "Buzzer"
+      ],
+      "type": "mcu",
+      "partId": "a831a84a-f2cb-4960-85c5-a03e225eadaa",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/po5_ZQzZROzi3lYkMOhgFCeUB4i6ipC-e68uLsviM0U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cmFjZWRheXF1YWRz/LmNvbS9jZG4vc2hv/cC9wcm9kdWN0cy9o/b2x5YnJvLWhvbHli/cm8ta2FrdXRlLWg3/LW1pbmktMjB4MjAt/ZmxpZ2h0LWNvbnRy/b2xsZXItZmMtMjk0/Mzc4MjU2Nzk0NzMu/anBnP3Y9MTc2MjQ0/MTUyNiZ3aWR0aD0x/NDQ1",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "PWM1-4,UART1-6,I2C,SPI,SBUS/CRSF,VBAT,GND,5V,3.3V,USB"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DYJX4GY1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "30.5x30.5x7mm",
+      "position3d": {
+        "x": 0,
+        "y": 49.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 30.5,
+        "width": 30.5,
+        "height": 7
+      },
+      "description": "F7-based flight controller with integrated OSD, barometer, and multiple UARTS for high-performance racing drones. Optimized for 6S operation.",
+      "productName": "HolyBro Kakute H7 Mini V2",
+      "purchaseUrl": "https://www.racedayquads.com/products/holybro-kakute-h7-mini-v2-flight-controller-w-bluetooth",
+      "estimatedCost": 75,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4aVgMZn",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HolyBro+Kakute+H7+Mini+V2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esc_4in1",
+      "name": "4-in-1 ESC",
+      "pins": [
+        "VBAT_IN",
+        "GND_IN",
+        "Motor 1-4 Signal",
+        "Motor 1-4 Telemetry",
+        "Motor 1-4 Phase A/B/C"
+      ],
+      "type": "module",
+      "partId": "4c346069-eb31-4803-8317-76cfc90fdf77",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/JxLneWmkTORoWkpxTPxeoHupQSo833OFlZFaWh4lLWM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bXlmcHZzdG9yZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDUvU2NyZWVu/c2hvdF8yMDIwLTA1/LTEyLUY1NUEtUFJP/JUUyJTg1JUExJUUy/JTgwJUEyRjMtNlMt/NElOMS0zMmJpdF9F/U0NfRlBWX1QtTU9U/T1ItU3RvcmUtT2Zm/aWNpYWwtU3RvcmUt/Zm9yLVQtbW90b3It/ZHJvbmUtbW90b3JF/U0NQcm9wZWxsZXIt/MzAweDMwMC5wbmc",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GND,VBAT,M1,M2,M3,M4,CURR,TLM"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FX4K9JN8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x40x8mm",
+      "position3d": {
+        "x": 0,
+        "y": 38,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 40,
+        "height": 8
+      },
+      "description": "High-current 55A 4-in-1 ESC compatible with 6S LiPo, running BLHeli_32 firmware for precise motor control.",
+      "productName": "T-Motor F55A Pro II 55A 4-in-1 ESC",
+      "purchaseUrl": "https://www.racedayquads.com/products/t-motor-f55a-pro-ii-55a-4in1-esc-3-6s",
+      "estimatedCost": 80,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZDjYSkiNCdzWAn2V2iqKgZ5Q79d6bMGN3pCZQnaXOpszOmnNgBnoezQTKfxn6CQlS4uRAkNdOe0wri92WGVuQA7wv9FVG5us7Eg52rmY3K82dQg7UwtzjgSwojsFaPxkW7Mo2ormVUrBNX2XYRKXdIUpx2nQf24bMSRZLm0qpW2p8IUnWUUSUB6KdAxgN2J9Z8TOjZDD76jOuvxb09fLdCpZxaZOAAtU7dGNm0rG75x0pkCdKTgelD1KdzRbS7yHdkVajSBQV0DY4OIHOYykuPz5ZUayWgepsUiyms6WAiDBK2z43FG5M8QgL4MSuxzlUXQbOjR1bPZtgF7nyazyjF1pjFWeJ7xecojRx8aZUBxc9APcHuBSQQF2bRS3oPjz08FMvF8rIBCWxmmrrXtXMBqGnure8S99gtf2OixYgxpruLjvbxbak6X3u1rCOpcoGyF4LYoyrkSuGJso82nk5IdNXLo7YTwVpHfhLwNCHkAjv5Hb5aulnJVs8EKqHUQVXPbOKi9UofFgDxgfaq6p1z3b9NfaKWY88pv2GUusH6tRBeUC5xD8aaSosx4i9vZprKuZKWgFeqXPNNYOrFV90Sm7KS4KLYFqZ8bBy90il1vvJwKsoWi4VvaQeNeW0LWtRgmUfoIO27hq5LxwHRXiDd4BiaxhgZddrCaTaMBI9pk5VMULzJV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+F55A+Pro+II+55A+4-in-1+ESC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_fl",
+      "name": "Front Left Motor",
+      "pins": [
+        "Phase A",
+        "Phase B",
+        "Phase C"
+      ],
+      "type": "actuator",
+      "partId": "a8dc09a9-13b7-4f45-8f9c-dd0c56b8ffe7",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/kOrioMjbdi8kAO6Yktx117Ykx8aDQqLZrvwQ7NRCkGQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/anN1bW8uY29tL2xo/aS0yMjEyLTkyMGt2/LWJydXNobGVzcy1t/b3Rvci1jY3ctMjI4/OS04NS1LLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Phase A,Phase B,Phase C"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GRN4L4VL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x27x31mm",
+      "position3d": {
+        "x": 70,
+        "y": 45.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 27,
+        "width": 27,
+        "height": 31
+      },
+      "description": "High-performance brushless motor optimized for 6S racing with 5-inch propellers.",
+      "productName": "T-Motor F40 Pro III 2207 1750KV",
+      "purchaseUrl": "https://www.racedayquads.com/products/t-motor-f40-pro-iii-2207-1750kv-motor",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHPuf9KOsW7v57i3MDrEMMjwbiRYABcc5S3KHOx1V086eFlq9iACp1oX8W0GzCtI8Br4r17ApTDgWyaRWdLbetQ828gWRHmhlvP21kjBicFtSyK41qozmCC7UbCz5UWfj1bKz6XisuVTulyVz14Iw4iGt8IAEgHQFgxgI7VCszjojcPFWj89GQzhiNHZqzmDat3uAEcnxm6c21XAXCYVv3RkVcJwWlL6WsjQJKcCj1Z0CQ1DLU9gJFk2zu2yJrTWi6JuHQQhDcyQFFnT0SQaDYu9EN72eMdSFMgt55wfKRUSbRF76XQfu1vRF09qse3Unb8s7Sdq9QgWP2gBc6yJfmxKK5NHgqOVcFcVkFPnHK665RRJ5ihg40u77bnV1uxmYuPDQfR7Zs0osgsuKQ1QhewFPefSXbiPclAn2J2jZWlQMkgh24t7Myz9tEGLSzHA19EyQrF4ejvq9BfWTCzBYN8FYEq7RZWsADn70mYErig9RXtOBRSrjZHsya5QaP4xAwE5yE4xqgzkXR1qmRwKqOqBHwsnPaIgrFQxSjaDRWj5ltwtHJa4kC5kuf4WGL3VRtfGIO9lmOrJdjiCt7DcnEvvtKjnr0Pr0YyfJmvdnI4W5afTYvPuLqElhuwbmYBePy6aqo9FCXL8nTLLc62jF1jN",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+F40+Pro+III+2207+1750KV&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_fr",
+      "name": "Front Right Motor",
+      "pins": [
+        "Phase A",
+        "Phase B",
+        "Phase C"
+      ],
+      "type": "actuator",
+      "partId": "a8dc09a9-13b7-4f45-8f9c-dd0c56b8ffe7",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/kOrioMjbdi8kAO6Yktx117Ykx8aDQqLZrvwQ7NRCkGQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/anN1bW8uY29tL2xo/aS0yMjEyLTkyMGt2/LWJydXNobGVzcy1t/b3Rvci1jY3ctMjI4/OS04NS1LLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Phase A,Phase B,Phase C"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GRN4L4VL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x27x31mm",
+      "position3d": {
+        "x": 70,
+        "y": 45.5,
+        "z": -70
+      },
+      "boundingBox": {
+        "depth": 27,
+        "width": 27,
+        "height": 31
+      },
+      "description": "High-performance brushless motor optimized for 6S racing with 5-inch propellers.",
+      "productName": "T-Motor F40 Pro III 2207 1750KV",
+      "purchaseUrl": "https://www.racedayquads.com/products/t-motor-f40-pro-iii-2207-1750kv-motor",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHPuf9KOsW7v57i3MDrEMMjwbiRYABcc5S3KHOx1V086eFlq9iACp1oX8W0GzCtI8Br4r17ApTDgWyaRWdLbetQ828gWRHmhlvP21kjBicFtSyK41qozmCC7UbCz5UWfj1bKz6XisuVTulyVz14Iw4iGt8IAEgHQFgxgI7VCszjojcPFWj89GQzhiNHZqzmDat3uAEcnxm6c21XAXCYVv3RkVcJwWlL6WsjQJKcCj1Z0CQ1DLU9gJFk2zu2yJrTWi6JuHQQhDcyQFFnT0SQaDYu9EN72eMdSFMgt55wfKRUSbRF76XQfu1vRF09qse3Unb8s7Sdq9QgWP2gBc6yJfmxKK5NHgqOVcFcVkFPnHK665RRJ5ihg40u77bnV1uxmYuPDQfR7Zs0osgsuKQ1QhewFPefSXbiPclAn2J2jZWlQMkgh24t7Myz9tEGLSzHA19EyQrF4ejvq9BfWTCzBYN8FYEq7RZWsADn70mYErig9RXtOBRSrjZHsya5QaP4xAwE5yE4xqgzkXR1qmRwKqOqBHwsnPaIgrFQxSjaDRWj5ltwtHJa4kC5kuf4WGL3VRtfGIO9lmOrJdjiCt7DcnEvvtKjnr0Pr0YyfJmvdnI4W5afTYvPuLqElhuwbmYBePy6aqo9FCXL8nTLLc62jF1jN",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+F40+Pro+III+2207+1750KV&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_rl",
+      "name": "Rear Left Motor",
+      "pins": [
+        "Phase A",
+        "Phase B",
+        "Phase C"
+      ],
+      "type": "actuator",
+      "partId": "a8dc09a9-13b7-4f45-8f9c-dd0c56b8ffe7",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/kOrioMjbdi8kAO6Yktx117Ykx8aDQqLZrvwQ7NRCkGQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/anN1bW8uY29tL2xo/aS0yMjEyLTkyMGt2/LWJydXNobGVzcy1t/b3Rvci1jY3ctMjI4/OS04NS1LLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Phase A,Phase B,Phase C"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GRN4L4VL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x27x31mm",
+      "position3d": {
+        "x": -70,
+        "y": 45.5,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 27,
+        "width": 27,
+        "height": 31
+      },
+      "description": "High-performance brushless motor optimized for 6S racing with 5-inch propellers.",
+      "productName": "T-Motor F40 Pro III 2207 1750KV",
+      "purchaseUrl": "https://www.racedayquads.com/products/t-motor-f40-pro-iii-2207-1750kv-motor",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHPuf9KOsW7v57i3MDrEMMjwbiRYABcc5S3KHOx1V086eFlq9iACp1oX8W0GzCtI8Br4r17ApTDgWyaRWdLbetQ828gWRHmhlvP21kjBicFtSyK41qozmCC7UbCz5UWfj1bKz6XisuVTulyVz14Iw4iGt8IAEgHQFgxgI7VCszjojcPFWj89GQzhiNHZqzmDat3uAEcnxm6c21XAXCYVv3RkVcJwWlL6WsjQJKcCj1Z0CQ1DLU9gJFk2zu2yJrTWi6JuHQQhDcyQFFnT0SQaDYu9EN72eMdSFMgt55wfKRUSbRF76XQfu1vRF09qse3Unb8s7Sdq9QgWP2gBc6yJfmxKK5NHgqOVcFcVkFPnHK665RRJ5ihg40u77bnV1uxmYuPDQfR7Zs0osgsuKQ1QhewFPefSXbiPclAn2J2jZWlQMkgh24t7Myz9tEGLSzHA19EyQrF4ejvq9BfWTCzBYN8FYEq7RZWsADn70mYErig9RXtOBRSrjZHsya5QaP4xAwE5yE4xqgzkXR1qmRwKqOqBHwsnPaIgrFQxSjaDRWj5ltwtHJa4kC5kuf4WGL3VRtfGIO9lmOrJdjiCt7DcnEvvtKjnr0Pr0YyfJmvdnI4W5afTYvPuLqElhuwbmYBePy6aqo9FCXL8nTLLc62jF1jN",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+F40+Pro+III+2207+1750KV&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_rr",
+      "name": "Rear Right Motor",
+      "pins": [
+        "Phase A",
+        "Phase B",
+        "Phase C"
+      ],
+      "type": "actuator",
+      "partId": "a8dc09a9-13b7-4f45-8f9c-dd0c56b8ffe7",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/kOrioMjbdi8kAO6Yktx117Ykx8aDQqLZrvwQ7NRCkGQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/anN1bW8uY29tL2xo/aS0yMjEyLTkyMGt2/LWJydXNobGVzcy1t/b3Rvci1jY3ctMjI4/OS04NS1LLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Phase A,Phase B,Phase C"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GRN4L4VL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x27x31mm",
+      "position3d": {
+        "x": -70,
+        "y": 45.5,
+        "z": -70
+      },
+      "boundingBox": {
+        "depth": 27,
+        "width": 27,
+        "height": 31
+      },
+      "description": "High-performance brushless motor optimized for 6S racing with 5-inch propellers.",
+      "productName": "T-Motor F40 Pro III 2207 1750KV",
+      "purchaseUrl": "https://www.racedayquads.com/products/t-motor-f40-pro-iii-2207-1750kv-motor",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHPuf9KOsW7v57i3MDrEMMjwbiRYABcc5S3KHOx1V086eFlq9iACp1oX8W0GzCtI8Br4r17ApTDgWyaRWdLbetQ828gWRHmhlvP21kjBicFtSyK41qozmCC7UbCz5UWfj1bKz6XisuVTulyVz14Iw4iGt8IAEgHQFgxgI7VCszjojcPFWj89GQzhiNHZqzmDat3uAEcnxm6c21XAXCYVv3RkVcJwWlL6WsjQJKcCj1Z0CQ1DLU9gJFk2zu2yJrTWi6JuHQQhDcyQFFnT0SQaDYu9EN72eMdSFMgt55wfKRUSbRF76XQfu1vRF09qse3Unb8s7Sdq9QgWP2gBc6yJfmxKK5NHgqOVcFcVkFPnHK665RRJ5ihg40u77bnV1uxmYuPDQfR7Zs0osgsuKQ1QhewFPefSXbiPclAn2J2jZWlQMkgh24t7Myz9tEGLSzHA19EyQrF4ejvq9BfWTCzBYN8FYEq7RZWsADn70mYErig9RXtOBRSrjZHsya5QaP4xAwE5yE4xqgzkXR1qmRwKqOqBHwsnPaIgrFQxSjaDRWj5ltwtHJa4kC5kuf4WGL3VRtfGIO9lmOrJdjiCt7DcnEvvtKjnr0Pr0YyfJmvdnI4W5afTYvPuLqElhuwbmYBePy6aqo9FCXL8nTLLc62jF1jN",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T-Motor+F40+Pro+III+2207+1750KV&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "fpv_camera",
+      "name": "FPV Camera",
+      "pins": [
+        "VCC",
+        "GND",
+        "Video Out"
+      ],
+      "type": "sensor",
+      "partId": "bb12410f-9cca-4818-a0e4-227273b5f228",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/F0hb5VtW7pNgXbwymnuwi4uDc6WxDKy-dP_sARkKFu4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cHJvZ3Jlc3NpdmVy/Yy5jb20vY2RuL3No/b3AvcHJvZHVjdHMv/YmFieXJhdGVsMl8x/MDI0eDEwMjQuanBn/P3Y9MTYyMTU0MDA0/Mg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Video_Out,GND,VCC"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DDBW1D5F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "19x19x16mm",
+      "position3d": {
+        "x": 70,
+        "y": 45,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 19,
+        "width": 19,
+        "height": 16
+      },
+      "description": "Low latency FPV camera with excellent image quality for racing, wide dynamic range.",
+      "productName": "Caddx Ratel 2",
+      "purchaseUrl": "https://www.racedayquads.com/products/caddx-ratel-2-1-8mm-lens-fpv-camera",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxxbfQrQpTCUlkz0ROipXymsJx5RCBI7IYEuMpE6uxgn00SJw0lcKCvP9LapXw2aX5IawdEsUcnOZlFcDXEyc7DMkVlNcTXl3lEkVw8oSz6YclAmr4N5rP8ndXgfhKmsjzzovMlpKaEid6YbXpcDWqfCXV2wh1ZpF581ZqIeooJ9N6iXV2akqz0qfbSFRkZp8wXRzm4QzO7fHstaVE9Np2zSrGJrIzRHt1HfiENeTXn7bv3XZdZUKaNTgYtGDFDXooMGQCEHecbcxbb8NyHPZF9xVU2ZEb2kFLF0DLNrIKh5CR3xRB9RBGnWDZhhBiD26xBs6nmiXBcjwUi1UCzEIE1vx4aAMLzTWES0rAkVS8RE5v7nzqURCMvo6jAiYFbXg77yH7mRz85j0WNH6QAq7MGpbsZ4UknKbe9cZjT4Sf2FHeNl052M2KIaTjgivtQbJ9u5nHiYa5I9SFjARJWCF9qXmLKiFrXenjFyysS6smeTi8SdpdvNtVLwauwTUChn2lMuutSFlsqUXSXShTHdqc1pGzLwtTN3vxDzLiGFhiQBWJEbJjHIfoZaNmQDfruPZUOfDfS68NV4TThf580veJh4QmpdwzfjuLANHXy0hTrWRO9OdceMim7zYhsdTaalk179l7KadfgaIdqxmBRIOaTpt",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Caddx+Ratel+2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "vtx",
+      "name": "Video Transmitter",
+      "pins": [
+        "VBAT_IN",
+        "GND_IN",
+        "Video In",
+        "SmartAudio",
+        "Antenna Out"
+      ],
+      "type": "module",
+      "partId": "7dbfc85e-d5e4-44d0-86d7-24993667ab50",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/At53Sa66tKQtkNU1xKsPqTd2Z6mIGiOcwuihwBYQJAc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zb2xv/Z29vZC5uZXQvY2Ru/L3Nob3AvZmlsZXMv/U2ViZWUwOWUyN2Vh/MDQwZjc5Zjc4OTQ4/YWRlYzQ1NTQ3ei53/ZWJwP3Y9MTcwMjk0/ODg0MCZ3aWR0aD0x/MDAw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BRMMLVR2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "28x28x5mm",
+      "position3d": {
+        "x": -40,
+        "y": 45,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 28,
+        "width": 28,
+        "height": 5
+      },
+      "description": "Powerful 800mW VTX with SmartAudio for remote channel/power configuration and robust signal.",
+      "productName": "Rush Tank Solo VTX",
+      "purchaseUrl": "https://www.racedayquads.com/products/rushfpv-rush-tank-solo-vtx",
+      "estimatedCost": 40,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwNTs7UaTk9BAlkNFhbG0VZX6QWJdcyVu0ibJqHY5WO6PgtiFNgwBqXQAGLpEUtNK1uGRl2p5stdI4ocuUE8dDog2trDQcSxyU7IFcsmIAa4zvD5BKwDN4pwe7I6ieRxThzOuaoaAORCMIbhvN3MsveZbDqBo5i7VRZnTd66hIhGpCDwbQcEeFf53mSAdOVij4cUvyp3iMiAZcjndOuvyDMXb6lDhxGAPUbxpKNyP92J6eNQmiAmNow5Wu4BpiM45CnS7YXk6Y1IynIkEKf9d7RJ5Qe4E1VCOcAwxu5iybYVBCGpDOStkX6WcITzTx8NmWU6hHuJC1hI6prXH2Mwb8IbVQxof8z8US1IZQ482C2D4pGmD0g4vAVefrnNjkQdzJyaR3qM53Htm4z7C5j5xCZ1ZkErofXHzADgp0F7BiEpZwGwICZJGY6db4PuOcpQlf6Ja0UbruiP0dLEtuTg9k4TLsTJl49wXeBwEm6Jh94y6SkHRq9Y9H7RlE99s9Bu6BzrAV5zngxpvgrAjE8SvtC7BdA9GsELrzRpBUlFASEdAEfrdFrDxc41Th4s30OTG2OnDp6FVW8GBakcs8N1Mm9OVc954MFDpSHI7C7lC8vkzijcDX4FYVP2Hio7DBWXMsGd8mxZDQSLRoogORzui33N",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Rush+Tank+Solo+VTX&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "crossfire_rx",
+      "name": "Crossfire Receiver",
+      "pins": [
+        "VCC",
+        "GND",
+        "UART TX",
+        "UART RX",
+        "CRSF_RX",
+        "CRSF_TX"
+      ],
+      "type": "module",
+      "partId": "cf88d8ec-6312-4d75-bb64-832ef6d20a02",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/K_z6Rrjb_wz2fvmhuCl-2rlcgEVvGWcn8KR97q1SI4I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvdC9iL3Ricy1j/cm9zc2ZpcmUtbmFu/by1yeC1wcm8tLS1u/ZGFhLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CQ57ZKRV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "18x12x3mm",
+      "position3d": {
+        "x": -40,
+        "y": 55,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 12,
+        "width": 18,
+        "height": 3
+      },
+      "description": "Compact Crossfire receiver with telemetry, ideal for reliable long-range control and penetration.",
+      "productName": "TBS Crossfire Nano RX Pro",
+      "purchaseUrl": "https://www.racedayquads.com/products/tbs-crossfire-nano-rx-pro-with-antenna",
+      "estimatedCost": 40,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH4aXxthaDsRz82T0Dc8igP1hsMc5244mh6Jso1Zc7bHnORbEp86zn24xC0V1UvDMVIfhl1u4g5K6fsFNyEmb8zSF0oouLWBYBFdENRSjCPTSidvjTQ4S2wpBej3oCKuPhPSP0yoBlR5cn1SSFtPlW4gFUfYMpjnluEmOBHmdxJzSIWTgpQCawvsoMKiqxSX9510kg0wTZ5Fczhb7MUlWxkgNT5K5XhQul8Zth3uhSTsz8bwTbPQutSCOkETs9Ba139PfPWgns1Bmlls4IT53kEJf1dTYJ03jitkJUa1GqJNPzUxrKtSSq0yMadoV4qGLVZq0RByHAFV166PwNtRPxj3mtzHvhzr8w8egxmEfL7z3mzCtmESuaHO394BTmnLdQoZmClFHtaAu33eDe3BqCcCPJSHbCJCDdGaeyjU3Y3W3LzEEVA0ywXtA7IGheuIt6PC5lTcDMJyclBTOVygiPJqzmLdCD5lIJh71OFNC8RVw4YcU2pwwBIMQYmGeE7f3gLmRUfKTrf2avXnAH4XZfSZYDLfAvhreqRPwYuYtrOKdTdDz2vkGuuk6X408WWrRj0vyAkqT9yEXkpQlaDA7PiCJ75LHXhJtw0VQgZ5tOjzBQF75OgcFgievXsEDKbgdH9tGCOvv6QjwfOUiR75DvB5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TBS+Crossfire+Nano+RX+Pro&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_battery",
+      "name": "6S LiPo Battery",
+      "pins": [
+        "XT60 Positive",
+        "XT60 Negative"
+      ],
+      "type": "power",
+      "partId": "40d91e6a-e18d-4773-87d8-fcdcf6cca052",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/TORaTkXp8atu8C3J6Np3I64-mnmzEgtskyYFHzQkkfg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZHJvbmUtZnB2LXJh/Y2VyLmNvbS8yMDMz/My1wcm9kdWN0X3pv/b20vY25obC1ibGFj/ay1zZXJpZXMtMTMw/MG1haC02cy0xMDBj/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B098S6MBXM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x35x45mm",
+      "position3d": {
+        "x": 0,
+        "y": 70,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 70,
+        "height": 45
+      },
+      "description": "High C-rating 6S LiPo battery for maximum power delivery and flight duration in racing drones.",
+      "productName": "CNHL Black Series 6S 1300mAh 120C",
+      "purchaseUrl": "https://www.racedayquads.com/products/cnhl-black-series-1300mah-6s-22-2v-120c-lipo-battery",
+      "estimatedCost": 45,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2uMHGR3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=CNHL+Black+Series+6S+1300mAh+120C&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "capacitor_main",
+      "name": "Main Power Capacitor",
+      "pins": [
+        "Positive",
+        "Negative"
+      ],
+      "type": "other",
+      "partId": "4f307f9f-e978-4ef8-acee-0bd135355c9c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Mn7hkSGQ37V5-CB_T6DpbSdKpCgoCrR6t6XlbM3NDCY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2ltYWNmcHYuY29t/L2ltZy9wYW5hc29u/aWMtbG93LWVzci1j/YXBhY2l0b3ItMzV2/LTEwMDB1Zi5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B072SSJQSJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "12.5x12.5x20mm",
+      "description": "Low ESR electrolytic capacitor for filtering voltage spikes and noise on the main power line.",
+      "productName": "Panasonic EEU-FR1V102B 1000uF 35V",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/panasonic-electronic-components/EEU-FR1V102B/771190",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRrWQ3QgCKoiYX0l7JYWzzT2NBXR08ZdOfQIXKvObEZHQo9qHeXwlz2T9jBAb8LkZ4uZSrmg2K8y9SQZc5c9YtlzJ5pFAj4fvLu8dQOjWL4eHBIwLsmjGl8OXLpvEKrT1P8T0Uoozl9cZaQfQ4dv1IQrY47dli6Mr7YyhZxL7tXA0BxOs6krAhnbhmG26SJKthwAQFBFObWyzrl5G4NxQtjcmnx5G57oyDcRDpQfL8VFqsjoSWYrKJhnR4pPzeqIkIBT5aQEcRuce9Q3yf217URdZHTSLCEFs6ZBdWEH6ka3rvhdZMa2C6pVqWctgsGUWTt5Eye0O3UTcb2c3Zz4NWQS4gMMJWPBIhWAhuinsyyWnNZVuIEdYlUxFyWv4LJF5I7sOL5KscjzIoZ7sSM6uNDEukEBevwo4aag1mXDCV2c4JqpNK4IqYqDPshOXPcKVTvmtuoQjh3s6MoFcAbyk0zoAJ7GexoEmJ92PgsMLxXsM1gS9DA8XdNnUs6dRBNkpEGw1wn2oqJCjyomsrvGINxPCtmYDRMBlXSSFb0s6VdpUWscite6prGJy1xnSwELhElsa5qDEiH8BU5AzBRKkJEezW2FpJbWLsLc27htjgYUoBweFkHNlabSJgcBOM741D50rG2y9RoktuRwMVm0YzHD",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Panasonic+EEU-FR1V102B+1000uF+35V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "frame_kit_x",
+      "name": "5-inch X-type Frame Kit",
+      "type": "structural",
+      "partId": "591b8deb-1d65-4eaa-9ee3-9cdc24077543",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/6x-7ktW4jZZWZu4u4MjNGEDVMvjOaYPFOh9iST084u4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cmFjZWRheXF1YWRz/LmNvbS9jZG4vc2hv/cC9wcm9kdWN0cy9n/ZXByYy1nZXByYy1j/bDI1LWNpbmVsb2cy/NS1jaW5ld2hvb3At/Mi01LW1pY3JvLWZy/YW1lLWtpdC1mcmFt/ZS0zMDM4NDg3Mjc4/Mzk4NS53ZWJwP3Y9/MTczNzM5NjYwMyZ3/aWR0aD01MzM",
+      "material": "Carbon Fiber",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0G6YX289V?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "210x160x30mm",
+      "position3d": {
+        "x": 0,
+        "y": 15,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 160,
+        "width": 210,
+        "height": 30
+      },
+      "description": "Durable carbon fiber frame designed for 5-inch racing drones, X-type symmetrical geometry.",
+      "productName": "GEPRC Mark5 O3 Frame Kit",
+      "purchaseUrl": "https://www.racedayquads.com/products/geprc-mark5-o3-frame-kit",
+      "estimatedCost": 60,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c43OYiln",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GEPRC+Mark5+O3+Frame+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "propeller_cw_fl",
+      "name": "5-inch Propeller CW (FL)",
+      "type": "mechanism",
+      "partId": "b12d8a26-3ae2-4909-b61a-b6a5bc38d230",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Lncy2aIZW20Sy49mplEkC8tZNybkccltWdbhMwMJltQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbWF4/bW9kZWwuY29tL2Nk/bi9zaG9wL3Byb2R1/Y3RzL2ltZ180Mjk4/XzYwMHguanBnP3Y9/MTU5ODUzMzA4Nw",
+      "material": "Polycarbonate",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DBQ6CTZP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "130x130x10mm",
+      "position3d": {
+        "x": 70,
+        "y": 66,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 130,
+        "width": 130,
+        "height": 10
+      },
+      "description": "Durable 3-blade 5-inch propeller for racing, optimized for 6S power, Clockwise rotation.",
+      "productName": "Gemfan 51433 Propeller CW",
+      "purchaseUrl": "https://www.racedayquads.com/products/gemfan-51433-propellers-12-pack?variant=39707166113905",
+      "estimatedCost": 2.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dZnbkNkvdwxQsx85pXhoLkBF5izbCOh5VfsgchGxBOoIOznGoQj7xUjQwVWrFSlQvL8GKdve0WJlqQaDQlvKyuA6PeK7xVCPteB6wBf7Wov4D4eVfKIqEeGylanYRtPzGYVl1Ky1T08Lz66xSyPgSRDbzcGpv3ao5aR9To1Xeguz9m4YZz7JVyBLx1yVSGBRQwhXm0AWYTDhyAsPXICv0yGr1SYF9QKQzFkmHg1vHySzG2PcdxCwqxXjL466IkiDgnsM4mm0jsGRNw1Fbi77nrRB03C6WfJetsC7qmE4nCpL3uc2AMLELTFopsYaIOxqLR35u2HzFbGOkTmC3Bql0ygr16n6nVcfIybTkWD55XHFBeiWrzUeSyt4zmZinHI2Gl7fYgstwxF63ql2HKzl33k5BVtAExLZAydGuQM3Ttco0jMMm1q2MDfxkPd4OS0MO4U7ZxLNx6rccLDFsdE9wKclPI8wUZfAPedkT8vUBuLq697DiDa8MMwwAd9E6oQ5w6sNCFouXCec3IR3jdtvUDd2L0FQEh8xDy9kqLRlqYSPIvMuaQF2Zb1mEmVdnP8F9IKUr7t2z5EfUcCareMSM10FWXd9j1oIORgdcqTIjNYSWBR1L3kZHopFQQz7IJiKCCJ4hINKkiLGtRxLXKZUYsFZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Gemfan+51433+Propeller+CW&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "propeller_ccw_fr",
+      "name": "5-inch Propeller CCW (FR)",
+      "type": "mechanism",
+      "partId": "b12d8a26-3ae2-4909-b61a-b6a5bc38d230",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Lncy2aIZW20Sy49mplEkC8tZNybkccltWdbhMwMJltQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbWF4/bW9kZWwuY29tL2Nk/bi9zaG9wL3Byb2R1/Y3RzL2ltZ180Mjk4/XzYwMHguanBnP3Y9/MTU5ODUzMzA4Nw",
+      "material": "Polycarbonate",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DBQ6CTZP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "130x130x10mm",
+      "position3d": {
+        "x": 70,
+        "y": 66,
+        "z": -70
+      },
+      "boundingBox": {
+        "depth": 130,
+        "width": 130,
+        "height": 10
+      },
+      "description": "Durable 3-blade 5-inch propeller for racing, optimized for 6S power, Counter-Clockwise rotation.",
+      "productName": "Gemfan 51433 Propeller CCW",
+      "purchaseUrl": "https://www.racedayquads.com/products/gemfan-51433-propellers-12-pack?variant=39707166113905",
+      "estimatedCost": 2.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dZnbkNkvdwxQsx85pXhoLkBF5izbCOh5VfsgchGxBOoIOznGoQj7xUjQwVWrFSlQvL8GKdve0WJlqQaDQlvKyuA6PeK7xVCPteB6wBf7Wov4D4eVfKIqEeGylanYRtPzGYVl1Ky1T08Lz66xSyPgSRDbzcGpv3ao5aR9To1Xeguz9m4YZz7JVyBLx1yVSGBRQwhXm0AWYTDhyAsPXICv0yGr1SYF9QKQzFkmHg1vHySzG2PcdxCwqxXjL466IkiDgnsM4mm0jsGRNw1Fbi77nrRB03C6WfJetsC7qmE4nCpL3uc2AMLELTFopsYaIOxqLR35u2HzFbGOkTmC3Bql0ygr16n6nVcfIybTkWD55XHFBeiWrzUeSyt4zmZinHI2Gl7fYgstwxF63ql2HKzl33k5BVtAExLZAydGuQM3Ttco0jMMm1q2MDfxkPd4OS0MO4U7ZxLNx6rccLDFsdE9wKclPI8wUZfAPedkT8vUBuLq697DiDa8MMwwAd9E6oQ5w6sNCFouXCec3IR3jdtvUDd2L0FQEh8xDy9kqLRlqYSPIvMuaQF2Zb1mEmVdnP8F9IKUr7t2z5EfUcCareMSM10FWXd9j1oIORgdcqTIjNYSWBR1L3kZHopFQQz7IJiKCCJ4hINKkiLGtRxLXKZUYsFZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Gemfan+51433+Propeller+CCW&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "propeller_ccw_rl",
+      "name": "5-inch Propeller CCW (RL)",
+      "type": "mechanism",
+      "partId": "b12d8a26-3ae2-4909-b61a-b6a5bc38d230",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Lncy2aIZW20Sy49mplEkC8tZNybkccltWdbhMwMJltQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbWF4/bW9kZWwuY29tL2Nk/bi9zaG9wL3Byb2R1/Y3RzL2ltZ180Mjk4/XzYwMHguanBnP3Y9/MTU5ODUzMzA4Nw",
+      "material": "Polycarbonate",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DBQ6CTZP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "130x130x10mm",
+      "position3d": {
+        "x": -70,
+        "y": 66,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 130,
+        "width": 130,
+        "height": 10
+      },
+      "description": "Durable 3-blade 5-inch propeller for racing, optimized for 6S power, Counter-Clockwise rotation.",
+      "productName": "Gemfan 51433 Propeller CCW",
+      "purchaseUrl": "https://www.racedayquads.com/products/gemfan-51433-propellers-12-pack?variant=39707166113905",
+      "estimatedCost": 2.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dZnbkNkvdwxQsx85pXhoLkBF5izbCOh5VfsgchGxBOoIOznGoQj7xUjQwVWrFSlQvL8GKdve0WJlqQaDQlvKyuA6PeK7xVCPteB6wBf7Wov4D4eVfKIqEeGylanYRtPzGYVl1Ky1T08Lz66xSyPgSRDbzcGpv3ao5aR9To1Xeguz9m4YZz7JVyBLx1yVSGBRQwhXm0AWYTDhyAsPXICv0yGr1SYF9QKQzFkmHg1vHySzG2PcdxCwqxXjL466IkiDgnsM4mm0jsGRNw1Fbi77nrRB03C6WfJetsC7qmE4nCpL3uc2AMLELTFopsYaIOxqLR35u2HzFbGOkTmC3Bql0ygr16n6nVcfIybTkWD55XHFBeiWrzUeSyt4zmZinHI2Gl7fYgstwxF63ql2HKzl33k5BVtAExLZAydGuQM3Ttco0jMMm1q2MDfxkPd4OS0MO4U7ZxLNx6rccLDFsdE9wKclPI8wUZfAPedkT8vUBuLq697DiDa8MMwwAd9E6oQ5w6sNCFouXCec3IR3jdtvUDd2L0FQEh8xDy9kqLRlqYSPIvMuaQF2Zb1mEmVdnP8F9IKUr7t2z5EfUcCareMSM10FWXd9j1oIORgdcqTIjNYSWBR1L3kZHopFQQz7IJiKCCJ4hINKkiLGtRxLXKZUYsFZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Gemfan+51433+Propeller+CCW&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "propeller_cw_rr",
+      "name": "5-inch Propeller CW (RR)",
+      "type": "mechanism",
+      "partId": "b12d8a26-3ae2-4909-b61a-b6a5bc38d230",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Lncy2aIZW20Sy49mplEkC8tZNybkccltWdbhMwMJltQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbWF4/bW9kZWwuY29tL2Nk/bi9zaG9wL3Byb2R1/Y3RzL2ltZ180Mjk4/XzYwMHguanBnP3Y9/MTU5ODUzMzA4Nw",
+      "material": "Polycarbonate",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DBQ6CTZP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "130x130x10mm",
+      "position3d": {
+        "x": -70,
+        "y": 66,
+        "z": -70
+      },
+      "boundingBox": {
+        "depth": 130,
+        "width": 130,
+        "height": 10
+      },
+      "description": "Durable 3-blade 5-inch propeller for racing, optimized for 6S power, Clockwise rotation.",
+      "productName": "Gemfan 51433 Propeller CW",
+      "purchaseUrl": "https://www.racedayquads.com/products/gemfan-51433-propellers-12-pack?variant=39707166113905",
+      "estimatedCost": 2.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dZnbkNkvdwxQsx85pXhoLkBF5izbCOh5VfsgchGxBOoIOznGoQj7xUjQwVWrFSlQvL8GKdve0WJlqQaDQlvKyuA6PeK7xVCPteB6wBf7Wov4D4eVfKIqEeGylanYRtPzGYVl1Ky1T08Lz66xSyPgSRDbzcGpv3ao5aR9To1Xeguz9m4YZz7JVyBLx1yVSGBRQwhXm0AWYTDhyAsPXICv0yGr1SYF9QKQzFkmHg1vHySzG2PcdxCwqxXjL466IkiDgnsM4mm0jsGRNw1Fbi77nrRB03C6WfJetsC7qmE4nCpL3uc2AMLELTFopsYaIOxqLR35u2HzFbGOkTmC3Bql0ygr16n6nVcfIybTkWD55XHFBeiWrzUeSyt4zmZinHI2Gl7fYgstwxF63ql2HKzl33k5BVtAExLZAydGuQM3Ttco0jMMm1q2MDfxkPd4OS0MO4U7ZxLNx6rccLDFsdE9wKclPI8wUZfAPedkT8vUBuLq697DiDa8MMwwAd9E6oQ5w6sNCFouXCec3IR3jdtvUDd2L0FQEh8xDy9kqLRlqYSPIvMuaQF2Zb1mEmVdnP8F9IKUr7t2z5EfUcCareMSM10FWXd9j1oIORgdcqTIjNYSWBR1L3kZHopFQQz7IJiKCCJ4hINKkiLGtRxLXKZUYsFZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Gemfan+51433+Propeller+CW&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_strap_1",
+      "name": "LiPo Battery Strap 1",
+      "type": "misc",
+      "partId": "8c49b4ce-da0f-4711-a87e-404a90588a01",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/B_UaG6oy-hrIzXJkE2eBU7sN5w1sXUOou3et4QcWcHc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFIODAxdUsyN0wu/anBn",
+      "material": "Nylon/Velcro",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B073Z6ZP67?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "250x20x2mm",
+      "description": "Velcro strap for securing the LiPo battery to the drone frame's top plate.",
+      "productName": "RDQ LiPo Strap 20x250mm",
+      "purchaseUrl": "https://www.racedayquads.com/products/racedayquads-lipo-straps-pack-of-2",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvQZ2rc2RedPbUn6gVfPIJ2koeBaGWeRHWelBdWx7ytvib54W6JlxOsKHARfHc6cFMwBUfX3WvupQXoinEeNkgeu9eH9E8XTzZNeGJkOnmZDc1TiFzbT8VZt6H5Z3AAlLIGdWxT6PJU8MuZocywi6ZEhxL4STnRxSxasoQmJC5nUP5n58A5qO0Tc5CAjyjrIoH4FLWpVhUbemwt2ScuF6ec85NjYdvxJWfyEdHT183XcCxRTS8eCbmF6ZALJED1YXB6tKq44013e4ZjVixhA6NGEVEjfdgmKesJU4e47xKR934orb5o0GYSgXYoRDVDlVLC3c6GtZrtMjJU4cMn8ZDN9kU5TahvmRAsWMAgkKKcFwSrM5mN2VDhkB0osmjC6dr4DB8AnI0GoOspLrGKdealOyNoaZyld6eWIbIu4bG1j7HLyWjLRn5BbXnDoBUpzIIDEdLSpohauuZcPY430g1eGVIRlGXTbrQogdpoH9DXDoI3ke2nIZH4T7Go31XEumHhhSNNTkcg00DBePCkxNL3ZrDzyJypg6Pq2SQXePQ2eTdQTWrlnMYb9Jj1kdJnYhcOfsxoQDeErxNdsbTrtnsVfix3BO1est6n0HiKVCJqxBTJlgNmHNK8QCDQMFEIvTLVXqPPvFqUEzRnbLEIWsSPZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RDQ+LiPo+Strap+20x250mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_strap_2",
+      "name": "LiPo Battery Strap 2",
+      "type": "misc",
+      "partId": "8c49b4ce-da0f-4711-a87e-404a90588a01",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/B_UaG6oy-hrIzXJkE2eBU7sN5w1sXUOou3et4QcWcHc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFIODAxdUsyN0wu/anBn",
+      "material": "Nylon/Velcro",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B073Z6ZP67?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "250x20x2mm",
+      "description": "Velcro strap for securing the LiPo battery to the drone frame's top plate.",
+      "productName": "RDQ LiPo Strap 20x250mm",
+      "purchaseUrl": "https://www.racedayquads.com/products/racedayquads-lipo-straps-pack-of-2",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvQZ2rc2RedPbUn6gVfPIJ2koeBaGWeRHWelBdWx7ytvib54W6JlxOsKHARfHc6cFMwBUfX3WvupQXoinEeNkgeu9eH9E8XTzZNeGJkOnmZDc1TiFzbT8VZt6H5Z3AAlLIGdWxT6PJU8MuZocywi6ZEhxL4STnRxSxasoQmJC5nUP5n58A5qO0Tc5CAjyjrIoH4FLWpVhUbemwt2ScuF6ec85NjYdvxJWfyEdHT183XcCxRTS8eCbmF6ZALJED1YXB6tKq44013e4ZjVixhA6NGEVEjfdgmKesJU4e47xKR934orb5o0GYSgXYoRDVDlVLC3c6GtZrtMjJU4cMn8ZDN9kU5TahvmRAsWMAgkKKcFwSrM5mN2VDhkB0osmjC6dr4DB8AnI0GoOspLrGKdealOyNoaZyld6eWIbIu4bG1j7HLyWjLRn5BbXnDoBUpzIIDEdLSpohauuZcPY430g1eGVIRlGXTbrQogdpoH9DXDoI3ke2nIZH4T7Go31XEumHhhSNNTkcg00DBePCkxNL3ZrDzyJypg6Pq2SQXePQ2eTdQTWrlnMYb9Jj1kdJnYhcOfsxoQDeErxNdsbTrtnsVfix3BO1est6n0HiKVCJqxBTJlgNmHNK8QCDQMFEIvTLVXqPPvFqUEzRnbLEIWsSPZ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RDQ+LiPo+Strap+20x250mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "fc_standoff_1",
+      "name": "FC/ESC M3 Standoff 1",
+      "type": "misc",
+      "partId": "8ee3bb16-2fd8-47a7-9ade-33e2945ab578",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HO0TaOSJ8B0FS2w4D8U1FT1DMn4HDEP-MVqelRYRs2w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWxr/bWFuM2QuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA4/L0hEMDA0NC0yLnBu/Zw",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F297R23T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x20mm",
+      "description": "Nylon standoff to separate flight controller and ESC, and mount to the frame.",
+      "productName": "M3 Nylon Standoffs 20mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+nylon+standoffs+20mm",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwRZzPyacKAkPdKDBDnPZUjhWXR2NqrwBtXaSouCM9FPNVOq7ofQWRP71TIPopaXdmydGA12iihDiBsjeuB2yAzscRgAATxu1f45BJr5t4Thbvq38F17oSZGIL5GWFMiuafRRjRuVY2wMMjv9blDVjAvwWoQ6ApvJ6fMZ3ebZsDmZ8p4d4vwUdX0Jbs6UgPbyKJ715C6iz98QKEBkr6dt0woP0o39lUeVHfCPnDa3SbUrv6ImcmzlW5dfPWsqt7D4SZpRSGsiJuMYVmaWFeXwOW1PrIIxCorzHgwYmGDBrwUGTuUvtvO8iadgB4uLBSxpbAfAjQTDaqBruGEW9wnlwMlMoj1oip5xorpHF811HPQoq7WmgS9j2rJc5i1FKVQohZMexP0oU9jVerlMLompoMqHBpwomUI2rYc0kmKkpqfX3HVh7u8JTsGZoHJUPkWFb9UYOfsrC3Y1UfrUxQYSDTiQJZ0uKsQpv4T0s4MVIbAJ3F0t6whbgImyMAzDdiklTWDGmEMQD9caMdLd2pwMo4KWFrAU8AN1vrnJYMcAwuLkGjQ4xmnj9muVKpItss5iti5Xtti9bfUGdD0O7Q0lAtFzdmHnR4GptGAfwEJsLR0hTUdUTS0Uborr9tMzBhYsSDxl0NttLNAgVnozAkr4duP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Nylon+Standoffs+20mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "fc_standoff_2",
+      "name": "FC/ESC M3 Standoff 2",
+      "type": "misc",
+      "partId": "8ee3bb16-2fd8-47a7-9ade-33e2945ab578",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HO0TaOSJ8B0FS2w4D8U1FT1DMn4HDEP-MVqelRYRs2w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWxr/bWFuM2QuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA4/L0hEMDA0NC0yLnBu/Zw",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F297R23T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x20mm",
+      "description": "Nylon standoff to separate flight controller and ESC, and mount to the frame.",
+      "productName": "M3 Nylon Standoffs 20mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+nylon+standoffs+20mm",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwRZzPyacKAkPdKDBDnPZUjhWXR2NqrwBtXaSouCM9FPNVOq7ofQWRP71TIPopaXdmydGA12iihDiBsjeuB2yAzscRgAATxu1f45BJr5t4Thbvq38F17oSZGIL5GWFMiuafRRjRuVY2wMMjv9blDVjAvwWoQ6ApvJ6fMZ3ebZsDmZ8p4d4vwUdX0Jbs6UgPbyKJ715C6iz98QKEBkr6dt0woP0o39lUeVHfCPnDa3SbUrv6ImcmzlW5dfPWsqt7D4SZpRSGsiJuMYVmaWFeXwOW1PrIIxCorzHgwYmGDBrwUGTuUvtvO8iadgB4uLBSxpbAfAjQTDaqBruGEW9wnlwMlMoj1oip5xorpHF811HPQoq7WmgS9j2rJc5i1FKVQohZMexP0oU9jVerlMLompoMqHBpwomUI2rYc0kmKkpqfX3HVh7u8JTsGZoHJUPkWFb9UYOfsrC3Y1UfrUxQYSDTiQJZ0uKsQpv4T0s4MVIbAJ3F0t6whbgImyMAzDdiklTWDGmEMQD9caMdLd2pwMo4KWFrAU8AN1vrnJYMcAwuLkGjQ4xmnj9muVKpItss5iti5Xtti9bfUGdD0O7Q0lAtFzdmHnR4GptGAfwEJsLR0hTUdUTS0Uborr9tMzBhYsSDxl0NttLNAgVnozAkr4duP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Nylon+Standoffs+20mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "fc_standoff_3",
+      "name": "FC/ESC M3 Standoff 3",
+      "type": "misc",
+      "partId": "8ee3bb16-2fd8-47a7-9ade-33e2945ab578",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HO0TaOSJ8B0FS2w4D8U1FT1DMn4HDEP-MVqelRYRs2w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWxr/bWFuM2QuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA4/L0hEMDA0NC0yLnBu/Zw",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F297R23T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x20mm",
+      "description": "Nylon standoff to separate flight controller and ESC, and mount to the frame.",
+      "productName": "M3 Nylon Standoffs 20mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+nylon+standoffs+20mm",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwRZzPyacKAkPdKDBDnPZUjhWXR2NqrwBtXaSouCM9FPNVOq7ofQWRP71TIPopaXdmydGA12iihDiBsjeuB2yAzscRgAATxu1f45BJr5t4Thbvq38F17oSZGIL5GWFMiuafRRjRuVY2wMMjv9blDVjAvwWoQ6ApvJ6fMZ3ebZsDmZ8p4d4vwUdX0Jbs6UgPbyKJ715C6iz98QKEBkr6dt0woP0o39lUeVHfCPnDa3SbUrv6ImcmzlW5dfPWsqt7D4SZpRSGsiJuMYVmaWFeXwOW1PrIIxCorzHgwYmGDBrwUGTuUvtvO8iadgB4uLBSxpbAfAjQTDaqBruGEW9wnlwMlMoj1oip5xorpHF811HPQoq7WmgS9j2rJc5i1FKVQohZMexP0oU9jVerlMLompoMqHBpwomUI2rYc0kmKkpqfX3HVh7u8JTsGZoHJUPkWFb9UYOfsrC3Y1UfrUxQYSDTiQJZ0uKsQpv4T0s4MVIbAJ3F0t6whbgImyMAzDdiklTWDGmEMQD9caMdLd2pwMo4KWFrAU8AN1vrnJYMcAwuLkGjQ4xmnj9muVKpItss5iti5Xtti9bfUGdD0O7Q0lAtFzdmHnR4GptGAfwEJsLR0hTUdUTS0Uborr9tMzBhYsSDxl0NttLNAgVnozAkr4duP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Nylon+Standoffs+20mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "fc_standoff_4",
+      "name": "FC/ESC M3 Standoff 4",
+      "type": "misc",
+      "partId": "8ee3bb16-2fd8-47a7-9ade-33e2945ab578",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HO0TaOSJ8B0FS2w4D8U1FT1DMn4HDEP-MVqelRYRs2w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWxr/bWFuM2QuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA4/L0hEMDA0NC0yLnBu/Zw",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F297R23T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x20mm",
+      "description": "Nylon standoff to separate flight controller and ESC, and mount to the frame.",
+      "productName": "M3 Nylon Standoffs 20mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+nylon+standoffs+20mm",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwRZzPyacKAkPdKDBDnPZUjhWXR2NqrwBtXaSouCM9FPNVOq7ofQWRP71TIPopaXdmydGA12iihDiBsjeuB2yAzscRgAATxu1f45BJr5t4Thbvq38F17oSZGIL5GWFMiuafRRjRuVY2wMMjv9blDVjAvwWoQ6ApvJ6fMZ3ebZsDmZ8p4d4vwUdX0Jbs6UgPbyKJ715C6iz98QKEBkr6dt0woP0o39lUeVHfCPnDa3SbUrv6ImcmzlW5dfPWsqt7D4SZpRSGsiJuMYVmaWFeXwOW1PrIIxCorzHgwYmGDBrwUGTuUvtvO8iadgB4uLBSxpbAfAjQTDaqBruGEW9wnlwMlMoj1oip5xorpHF811HPQoq7WmgS9j2rJc5i1FKVQohZMexP0oU9jVerlMLompoMqHBpwomUI2rYc0kmKkpqfX3HVh7u8JTsGZoHJUPkWFb9UYOfsrC3Y1UfrUxQYSDTiQJZ0uKsQpv4T0s4MVIbAJ3F0t6whbgImyMAzDdiklTWDGmEMQD9caMdLd2pwMo4KWFrAU8AN1vrnJYMcAwuLkGjQ4xmnj9muVKpItss5iti5Xtti9bfUGdD0O7Q0lAtFzdmHnR4GptGAfwEJsLR0hTUdUTS0Uborr9tMzBhYsSDxl0NttLNAgVnozAkr4duP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Nylon+Standoffs+20mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_fc_1",
+      "name": "M3 FC Mounting Screw 1",
+      "type": "misc",
+      "partId": "2b17bdc3-4b12-431b-bfa0-69e2fa991604",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/QATHZfmH5Pwre4KrHK5_vtCzeenofG4KRkdb564j_eQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFmR3MzUDZoNFMu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31S7NP3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x8mm",
+      "description": "M3 screw for securing the flight controller stack.",
+      "productName": "M3x8mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x8mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIBLkIqRj3JOsmJUBLoO5vFB8MtqKZlNh4KCNXo7DdDdL3J3cHRYtVTwfCtRDwJBdIQrVugKyvsYiTMaSsySXxZ7gmxEqT0HF5zkXkogjyPhceAjVEKTZoH5hEnpRc5aH9jn47NbgM9ODy8Q42z9L41pNX6dO3W7IXPwvzwff3yZk0wcaC8M1CcnBxSnSzEGRitTxCFn6J2a6RN8uDrhcUsqf2tAru5w3JEXfnYYS0aFnZO86cheRqqZDmqdF6KSSZCq182Yicg8Ejg4oBdoxkyLCXrCLp4cVJDL5mayv3uLzFMedlX81VmaymxZGQByQqOV503XTuXw0m3DGHS5awZm66cUJCNhO4cRfENEVxMALI8Aek6HYSxGw6W7UAUbvRwhgvjeal6WwtwVnkHoe9GvnRctojIDcIKWyNJBUB1sZHzptLutoPSiLrqnGf5GALN22hG9taZqSqNZmjhZqnVuR0A5R13auZx6bY8vXWoPO4YBf2qRSgOOmZj0PFMV0J4rHsvZbNEH0pM7c4jlAEDiOoUqGr7ayQbSLrx4CJgtWe2xCNlMnQ427IGRz8Xg4oJADyOs86B9jKK4hUyVzv5H8fV0l81Z3YBaSxglXfLlPpQ5rqaWkWAhdTB8ejcwp1VA3vHaRs4CMtINroHYyNib",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x8mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_fc_2",
+      "name": "M3 FC Mounting Screw 2",
+      "type": "misc",
+      "partId": "2b17bdc3-4b12-431b-bfa0-69e2fa991604",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/QATHZfmH5Pwre4KrHK5_vtCzeenofG4KRkdb564j_eQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFmR3MzUDZoNFMu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31S7NP3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x8mm",
+      "description": "M3 screw for securing the flight controller stack.",
+      "productName": "M3x8mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x8mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIBLkIqRj3JOsmJUBLoO5vFB8MtqKZlNh4KCNXo7DdDdL3J3cHRYtVTwfCtRDwJBdIQrVugKyvsYiTMaSsySXxZ7gmxEqT0HF5zkXkogjyPhceAjVEKTZoH5hEnpRc5aH9jn47NbgM9ODy8Q42z9L41pNX6dO3W7IXPwvzwff3yZk0wcaC8M1CcnBxSnSzEGRitTxCFn6J2a6RN8uDrhcUsqf2tAru5w3JEXfnYYS0aFnZO86cheRqqZDmqdF6KSSZCq182Yicg8Ejg4oBdoxkyLCXrCLp4cVJDL5mayv3uLzFMedlX81VmaymxZGQByQqOV503XTuXw0m3DGHS5awZm66cUJCNhO4cRfENEVxMALI8Aek6HYSxGw6W7UAUbvRwhgvjeal6WwtwVnkHoe9GvnRctojIDcIKWyNJBUB1sZHzptLutoPSiLrqnGf5GALN22hG9taZqSqNZmjhZqnVuR0A5R13auZx6bY8vXWoPO4YBf2qRSgOOmZj0PFMV0J4rHsvZbNEH0pM7c4jlAEDiOoUqGr7ayQbSLrx4CJgtWe2xCNlMnQ427IGRz8Xg4oJADyOs86B9jKK4hUyVzv5H8fV0l81Z3YBaSxglXfLlPpQ5rqaWkWAhdTB8ejcwp1VA3vHaRs4CMtINroHYyNib",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x8mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_fc_3",
+      "name": "M3 FC Mounting Screw 3",
+      "type": "misc",
+      "partId": "2b17bdc3-4b12-431b-bfa0-69e2fa991604",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/QATHZfmH5Pwre4KrHK5_vtCzeenofG4KRkdb564j_eQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFmR3MzUDZoNFMu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31S7NP3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x8mm",
+      "description": "M3 screw for securing the flight controller stack.",
+      "productName": "M3x8mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x8mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIBLkIqRj3JOsmJUBLoO5vFB8MtqKZlNh4KCNXo7DdDdL3J3cHRYtVTwfCtRDwJBdIQrVugKyvsYiTMaSsySXxZ7gmxEqT0HF5zkXkogjyPhceAjVEKTZoH5hEnpRc5aH9jn47NbgM9ODy8Q42z9L41pNX6dO3W7IXPwvzwff3yZk0wcaC8M1CcnBxSnSzEGRitTxCFn6J2a6RN8uDrhcUsqf2tAru5w3JEXfnYYS0aFnZO86cheRqqZDmqdF6KSSZCq182Yicg8Ejg4oBdoxkyLCXrCLp4cVJDL5mayv3uLzFMedlX81VmaymxZGQByQqOV503XTuXw0m3DGHS5awZm66cUJCNhO4cRfENEVxMALI8Aek6HYSxGw6W7UAUbvRwhgvjeal6WwtwVnkHoe9GvnRctojIDcIKWyNJBUB1sZHzptLutoPSiLrqnGf5GALN22hG9taZqSqNZmjhZqnVuR0A5R13auZx6bY8vXWoPO4YBf2qRSgOOmZj0PFMV0J4rHsvZbNEH0pM7c4jlAEDiOoUqGr7ayQbSLrx4CJgtWe2xCNlMnQ427IGRz8Xg4oJADyOs86B9jKK4hUyVzv5H8fV0l81Z3YBaSxglXfLlPpQ5rqaWkWAhdTB8ejcwp1VA3vHaRs4CMtINroHYyNib",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x8mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_fc_4",
+      "name": "M3 FC Mounting Screw 4",
+      "type": "misc",
+      "partId": "2b17bdc3-4b12-431b-bfa0-69e2fa991604",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/QATHZfmH5Pwre4KrHK5_vtCzeenofG4KRkdb564j_eQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFmR3MzUDZoNFMu/anBn",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31S7NP3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x8mm",
+      "description": "M3 screw for securing the flight controller stack.",
+      "productName": "M3x8mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x8mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIBLkIqRj3JOsmJUBLoO5vFB8MtqKZlNh4KCNXo7DdDdL3J3cHRYtVTwfCtRDwJBdIQrVugKyvsYiTMaSsySXxZ7gmxEqT0HF5zkXkogjyPhceAjVEKTZoH5hEnpRc5aH9jn47NbgM9ODy8Q42z9L41pNX6dO3W7IXPwvzwff3yZk0wcaC8M1CcnBxSnSzEGRitTxCFn6J2a6RN8uDrhcUsqf2tAru5w3JEXfnYYS0aFnZO86cheRqqZDmqdF6KSSZCq182Yicg8Ejg4oBdoxkyLCXrCLp4cVJDL5mayv3uLzFMedlX81VmaymxZGQByQqOV503XTuXw0m3DGHS5awZm66cUJCNhO4cRfENEVxMALI8Aek6HYSxGw6W7UAUbvRwhgvjeal6WwtwVnkHoe9GvnRctojIDcIKWyNJBUB1sZHzptLutoPSiLrqnGf5GALN22hG9taZqSqNZmjhZqnVuR0A5R13auZx6bY8vXWoPO4YBf2qRSgOOmZj0PFMV0J4rHsvZbNEH0pM7c4jlAEDiOoUqGr7ayQbSLrx4CJgtWe2xCNlMnQ427IGRz8Xg4oJADyOs86B9jKK4hUyVzv5H8fV0l81Z3YBaSxglXfLlPpQ5rqaWkWAhdTB8ejcwp1VA3vHaRs4CMtINroHYyNib",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x8mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_fl_1",
+      "name": "M3 Motor Mounting Screw (FL 1)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_fl_2",
+      "name": "M3 Motor Mounting Screw (FL 2)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_fl_3",
+      "name": "M3 Motor Mounting Screw (FL 3)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_fl_4",
+      "name": "M3 Motor Mounting Screw (FL 4)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_fr_1",
+      "name": "M3 Motor Mounting Screw (FR 1)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_fr_2",
+      "name": "M3 Motor Mounting Screw (FR 2)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_fr_3",
+      "name": "M3 Motor Mounting Screw (FR 3)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_fr_4",
+      "name": "M3 Motor Mounting Screw (FR 4)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_rl_1",
+      "name": "M3 Motor Mounting Screw (RL 1)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_rl_2",
+      "name": "M3 Motor Mounting Screw (RL 2)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_rl_3",
+      "name": "M3 Motor Mounting Screw (RL 3)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_rl_4",
+      "name": "M3 Motor Mounting Screw (RL 4)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_rr_1",
+      "name": "M3 Motor Mounting Screw (RR 1)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_rr_2",
+      "name": "M3 Motor Mounting Screw (RR 2)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_rr_3",
+      "name": "M3 Motor Mounting Screw (RR 3)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_motor_rr_4",
+      "name": "M3 Motor Mounting Screw (RR 4)",
+      "type": "misc",
+      "partId": "d05d06f5-4f92-495e-bc83-47a9123f9e1d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/E5ndY_-fcU1rG9_hqAgrU7iSYzEg8gK_eX9VVRDk6ak/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxVk1yWHpHWXNT/LmpwZw",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F31RNYDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "M3 screw for mounting brushless motors to the frame arms.",
+      "productName": "M3x6mm Hex Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTFI62r5cRWJqgjdfF9ii8Bve2AhXCIVRVzhhabRfmKFbw1MGpMLzeIM9n99EGnZQikzGznQEnA1ZaNoiAzxO3QedEQZQGRO1tZvXIhERmrFiG2L2nQbRHaR2Duy1OeFVCO83pIjATg7OQ1NsrFFhiH24FrZcnf42pXNyiSoSf4UAbY9ehcoOyKaDoYXcI4Bg3hWLSasB3CYQ6n3FQEyjOuWQQpYTz6tttk7TQn7E6uWBm7HvEO7AL14bnoOedhCSqGiwup37KyE8lsVteHefTyEWy8OQRfwUN851CQGf8jT73d8L8yRRZo4tZNLzWkcUbDjai81oxsxk4scKK0qj8vJXEeTy2enhTdCQthBza1ne2jGuOLJmam4nv01eYijKtnTQg1BAkCA1h1b3sI5yqKTohe7Sqoh0crfkTHmvtkPahBCzf3tPqwj2EngR6HV1UVxJk8VBN4swEHZABx2Hh9lzkjeaJB6Pb1VQizyehz0CqaXV47z3VKyYzWSI53FNt5cHNFFGi3ej1STshKVZb2I8TWV40M1vBoyzbK2HaDJ6hdZXEXtXR2ZP05Vs3Lq0ZGkNwU17awFAtGTQ3hvMErI3JOKjbIB3jTwK1lKbRKOKpPcNl6JgWu23kON4xeuIMnGNK8xrnGbrtrHeEKgHFD1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Hex+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "prop_nut_m5_fl",
+      "name": "M5 Prop Nut (FL)",
+      "type": "misc",
+      "partId": "c44be142-ea32-4e3c-82a7-25347af0bfcb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CW6ySb40Fg9L5Ekzp9ZXKjNuvQJwMxaBa60uBSPjIWY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzUxWmhKUmZHeDFM/LmpwZw",
+      "material": "Steel/Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BXD4DJVJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5",
+      "description": "M5 flanged nylon lock nut to secure propeller to motor shaft.",
+      "productName": "M5 Flanged Nylon Lock Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=M5+flanged+nylon+lock+nut",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jyaa7CrMkmC94LMFo7GW0Xye8TFW3YqaS7wpgz4dsKAn90xmoScwiBejHYSOUBxL42XWiLXly7vgxFERJ5Z45hJq1rE1XFoI0LifsnbPAVB11LXCTOGO3j0Q7Px31RpaQvUBCUd6yS9GsjKSbM507n2ZijNeewDj4QbeebP7CEWdw4bNNFfYRG7lmJceow8OaSoBnfmkElNfMCUagQvLZfDTq2GfY02fKfxdfzHcT5q3qgXF7OrxP1ICqJfuqOIxTXkD7tDE1js3fg3gV5l5kTVnvdHqlQpAJydIyQUyjIUt8uIufhzv361wRvVQHLlOxeU6Ilq7QfYhH96SPvHhmFMCixc6uQJf0QnSIIFYpyZt9kO5y0clDScbWPc2CKDMfxJTWOPygaDqIPb5EdQs6xwv819BoN3G4I7O82Ao8vunCShpbN0CayX19kf8AdKzeoXpwEKnTZiFfbSuiLJxQq8FbDKUc5dYIGUha58ZFa7IF2ZnRSLnqjHehtObt8wyavFyBU7qu2Qm6iqUhKC1ZLDx9VhV9VyCAfE9xjXVbaM6ODb4AilbABMGKK9C2r1C3nLVdObq5CLJHX2wW3i3Q8ffoJCAXXYRa1ohl32D7XF31Bv1qoGWW0ShFvJK8ZHoFSMZHuIZuAjroDBRDjtRuRc2R",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+Flanged+Nylon+Lock+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "prop_nut_m5_fr",
+      "name": "M5 Prop Nut (FR)",
+      "type": "misc",
+      "partId": "c44be142-ea32-4e3c-82a7-25347af0bfcb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CW6ySb40Fg9L5Ekzp9ZXKjNuvQJwMxaBa60uBSPjIWY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzUxWmhKUmZHeDFM/LmpwZw",
+      "material": "Steel/Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BXD4DJVJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5",
+      "description": "M5 flanged nylon lock nut to secure propeller to motor shaft.",
+      "productName": "M5 Flanged Nylon Lock Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=M5+flanged+nylon+lock+nut",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jyaa7CrMkmC94LMFo7GW0Xye8TFW3YqaS7wpgz4dsKAn90xmoScwiBejHYSOUBxL42XWiLXly7vgxFERJ5Z45hJq1rE1XFoI0LifsnbPAVB11LXCTOGO3j0Q7Px31RpaQvUBCUd6yS9GsjKSbM507n2ZijNeewDj4QbeebP7CEWdw4bNNFfYRG7lmJceow8OaSoBnfmkElNfMCUagQvLZfDTq2GfY02fKfxdfzHcT5q3qgXF7OrxP1ICqJfuqOIxTXkD7tDE1js3fg3gV5l5kTVnvdHqlQpAJydIyQUyjIUt8uIufhzv361wRvVQHLlOxeU6Ilq7QfYhH96SPvHhmFMCixc6uQJf0QnSIIFYpyZt9kO5y0clDScbWPc2CKDMfxJTWOPygaDqIPb5EdQs6xwv819BoN3G4I7O82Ao8vunCShpbN0CayX19kf8AdKzeoXpwEKnTZiFfbSuiLJxQq8FbDKUc5dYIGUha58ZFa7IF2ZnRSLnqjHehtObt8wyavFyBU7qu2Qm6iqUhKC1ZLDx9VhV9VyCAfE9xjXVbaM6ODb4AilbABMGKK9C2r1C3nLVdObq5CLJHX2wW3i3Q8ffoJCAXXYRa1ohl32D7XF31Bv1qoGWW0ShFvJK8ZHoFSMZHuIZuAjroDBRDjtRuRc2R",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+Flanged+Nylon+Lock+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "prop_nut_m5_rl",
+      "name": "M5 Prop Nut (RL)",
+      "type": "misc",
+      "partId": "c44be142-ea32-4e3c-82a7-25347af0bfcb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CW6ySb40Fg9L5Ekzp9ZXKjNuvQJwMxaBa60uBSPjIWY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzUxWmhKUmZHeDFM/LmpwZw",
+      "material": "Steel/Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BXD4DJVJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5",
+      "description": "M5 flanged nylon lock nut to secure propeller to motor shaft.",
+      "productName": "M5 Flanged Nylon Lock Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=M5+flanged+nylon+lock+nut",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jyaa7CrMkmC94LMFo7GW0Xye8TFW3YqaS7wpgz4dsKAn90xmoScwiBejHYSOUBxL42XWiLXly7vgxFERJ5Z45hJq1rE1XFoI0LifsnbPAVB11LXCTOGO3j0Q7Px31RpaQvUBCUd6yS9GsjKSbM507n2ZijNeewDj4QbeebP7CEWdw4bNNFfYRG7lmJceow8OaSoBnfmkElNfMCUagQvLZfDTq2GfY02fKfxdfzHcT5q3qgXF7OrxP1ICqJfuqOIxTXkD7tDE1js3fg3gV5l5kTVnvdHqlQpAJydIyQUyjIUt8uIufhzv361wRvVQHLlOxeU6Ilq7QfYhH96SPvHhmFMCixc6uQJf0QnSIIFYpyZt9kO5y0clDScbWPc2CKDMfxJTWOPygaDqIPb5EdQs6xwv819BoN3G4I7O82Ao8vunCShpbN0CayX19kf8AdKzeoXpwEKnTZiFfbSuiLJxQq8FbDKUc5dYIGUha58ZFa7IF2ZnRSLnqjHehtObt8wyavFyBU7qu2Qm6iqUhKC1ZLDx9VhV9VyCAfE9xjXVbaM6ODb4AilbABMGKK9C2r1C3nLVdObq5CLJHX2wW3i3Q8ffoJCAXXYRa1ohl32D7XF31Bv1qoGWW0ShFvJK8ZHoFSMZHuIZuAjroDBRDjtRuRc2R",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+Flanged+Nylon+Lock+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "prop_nut_m5_rr",
+      "name": "M5 Prop Nut (RR)",
+      "type": "misc",
+      "partId": "c44be142-ea32-4e3c-82a7-25347af0bfcb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CW6ySb40Fg9L5Ekzp9ZXKjNuvQJwMxaBa60uBSPjIWY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzUxWmhKUmZHeDFM/LmpwZw",
+      "material": "Steel/Nylon",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BXD4DJVJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5",
+      "description": "M5 flanged nylon lock nut to secure propeller to motor shaft.",
+      "productName": "M5 Flanged Nylon Lock Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=M5+flanged+nylon+lock+nut",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jyaa7CrMkmC94LMFo7GW0Xye8TFW3YqaS7wpgz4dsKAn90xmoScwiBejHYSOUBxL42XWiLXly7vgxFERJ5Z45hJq1rE1XFoI0LifsnbPAVB11LXCTOGO3j0Q7Px31RpaQvUBCUd6yS9GsjKSbM507n2ZijNeewDj4QbeebP7CEWdw4bNNFfYRG7lmJceow8OaSoBnfmkElNfMCUagQvLZfDTq2GfY02fKfxdfzHcT5q3qgXF7OrxP1ICqJfuqOIxTXkD7tDE1js3fg3gV5l5kTVnvdHqlQpAJydIyQUyjIUt8uIufhzv361wRvVQHLlOxeU6Ilq7QfYhH96SPvHhmFMCixc6uQJf0QnSIIFYpyZt9kO5y0clDScbWPc2CKDMfxJTWOPygaDqIPb5EdQs6xwv819BoN3G4I7O82Ao8vunCShpbN0CayX19kf8AdKzeoXpwEKnTZiFfbSuiLJxQq8FbDKUc5dYIGUha58ZFa7IF2ZnRSLnqjHehtObt8wyavFyBU7qu2Qm6iqUhKC1ZLDx9VhV9VyCAfE9xjXVbaM6ODb4AilbABMGKK9C2r1C3nLVdObq5CLJHX2wW3i3Q8ffoJCAXXYRa1ohl32D7XF31Bv1qoGWW0ShFvJK8ZHoFSMZHuIZuAjroDBRDjtRuRc2R",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+Flanged+Nylon+Lock+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "3d_camera_mount",
+      "name": "FPV Camera Mount",
+      "type": "3d_printed",
+      "partId": "b00f5e4c-ab32-4b95-8314-333a17e2dd6e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/tuDKCP_OA5Ebik1KaFm2DeyRJj0YHPjINpKMcYjW__Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hcmtv/bi5jb20vY2RuL3No/b3AvZmlsZXMvY2xh/bXAtY2FtZXJhLW1v/dW50LWZvci1uaWtv/bi1zb255LXNhbXN1/bmctY2Fub24tb2x5/bXB1cy1wYW5hc29u/aWMtY2FtZXJhcy0x/LWFya29uLW1vdW50/cy1ybTA4NjE0MjBf/NTEyeDUxMi5qcGc_/dj0xNzE1MjkyNzAw",
+      "material": "TPU",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "25x25x20mm",
+      "position3d": {
+        "x": 70,
+        "y": 45,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 25,
+        "height": 20
+      },
+      "description": "Custom 3D-printed mount to securely hold the FPV camera at an adjustable angle.",
+      "productName": "Camera Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=geprc+mark5+camera+mount",
+      "estimatedCost": 1,
+      "printSettings": "Flexible, high infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3d_vtx_antenna_mount",
+      "name": "VTX Antenna Mount",
+      "type": "3d_printed",
+      "partId": "5907a23d-cd34-4f13-9831-c7e5545accc5",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/t_X5tW4CG8-U0Xs78rxk1C2Ak3buWKgkpOD1Esp4Mgc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9mcHZ1/YS5jb20vaW1hZ2Uv/Y2FjaGUvY2F0YWxv/Zy9lYXN5cGhvdG8v/Njc0L2tyaXBsZW5u/eWEtZGx5YS1hbnRl/bi1yeC10YS12dHgt/bmEtcmFtdS1jcnV4/MzUtMS0zODN4Mzgz/LmpwZw",
+      "material": "TPU",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "30x15x15mm",
+      "position3d": {
+        "x": -85,
+        "y": 55,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 30,
+        "height": 15
+      },
+      "description": "Custom 3D-printed mount to secure the VTX antenna, often integrated with RX antenna mount.",
+      "productName": "VTX Antenna Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=geprc+mark5+vtx+antenna+mount",
+      "estimatedCost": 0.5,
+      "printSettings": "Flexible, medium infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3d_rx_antenna_mount",
+      "name": "Crossfire Receiver Antenna Mount",
+      "type": "3d_printed",
+      "partId": "ccdf7dea-c7ee-4e78-b440-b23e2e456d50",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/A7HcIGe1NtQZVkW57z2Vzxt_yVWIMaTKnD3ag-Plj9I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idXp6/ZnB2LmNvbS5hdS9j/ZG4vc2hvcC9wcm9k/dWN0cy9wcm9kdWN0/cy03NTQwZmYwYy1h/N2E2LTQ2MmMtYTI1/My0wYThkZWQyNDQz/NjQuanBnP3Y9MTcx/MDc2NjkyNSZ3aWR0/aD0xOTQ2",
+      "material": "TPU",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 100% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "40x10x10mm",
+      "position3d": {
+        "x": -95,
+        "y": 55,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 40,
+        "height": 10
+      },
+      "description": "Custom 3D-printed mount for the TBS Crossfire Immortal T antenna, ensuring optimal signal reception.",
+      "productName": "Receiver Antenna Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=geprc+mark5+crossfire+immortal+t+mount",
+      "estimatedCost": 0.5,
+      "printSettings": "Flexible, medium infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "3d_lipo_skid_plate",
+      "name": "LiPo Skid Plate/Protector",
+      "type": "3d_printed",
+      "partId": "f547c82b-89b9-4206-b2ce-706bf76a7297",
+      "category": "mechanical",
+      "material": "TPU",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "90x40x5mm",
+      "position3d": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 90,
+        "height": 5
+      },
+      "description": "Custom 3D-printed protector for the bottom of the LiPo battery, reducing impact damage.",
+      "productName": "",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=geprc+mark5+lipo+skid",
+      "estimatedCost": 1.5,
+      "printSettings": "Flexible, high infill",
+      "aliexpressUrl": null
+    }
+  ],
+  "notes": [
+    "5-inch racing drone",
+    "FPV drone",
+    "Comprehensive instructions",
+    "Good-looking CAD schematics",
+    "Assembly procedure"
+  ],
+  "projectName": "5inch FPV Racer",
+  "originalPrompt": "Please help with the design and build of a 5\" racing FPV drone. Give comprehensive instructions for design and build procedure. As much as possible, give good-looking CAD schematics of the assembly procedure and major parts.",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D Print Custom Mounts and Protector",
+          "partIds": [
+            "3d_camera_mount",
+            "3d_vtx_antenna_mount",
+            "3d_rx_antenna_mount",
+            "3d_lipo_skid_plate"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Deburr Carbon Fiber Frame Edges",
+          "partIds": [
+            "frame_kit_x"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Prepare FC and ESC for Soldering",
+          "partIds": [
+            "flight_controller",
+            "esc_4in1",
+            "capacitor_main"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder Main Power and Capacitor to ESC",
+          "partIds": [
+            "esc_4in1",
+            "capacitor_main",
+            "lipo_battery"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder Motors to 4-in-1 ESC",
+          "partIds": [
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "esc_4in1"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect 4-in-1 ESC to Flight Controller",
+          "partIds": [
+            "esc_4in1",
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder Crossfire Receiver to Flight Controller",
+          "partIds": [
+            "crossfire_rx",
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Solder FPV Camera to Flight Controller",
+          "partIds": [
+            "fpv_camera",
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect Video Transmitter (VTX) to Flight Controller and Camera",
+          "partIds": [
+            "vtx",
+            "flight_controller",
+            "fpv_camera"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Perform Continuity Checks on All Power Lines",
+          "partIds": [
+            "lipo_battery",
+            "esc_4in1",
+            "flight_controller",
+            "vtx",
+            "fpv_camera",
+            "crossfire_rx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Flash Flight Controller Firmware (Betaflight)",
+          "partIds": [
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Configure ESCs with BLHeli_32",
+          "partIds": [
+            "esc_4in1",
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Bind Crossfire Receiver and Configure Channels",
+          "partIds": [
+            "crossfire_rx",
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test Motor Direction and Spin-up",
+          "partIds": [
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test FPV Video Feed and VTX Settings",
+          "partIds": [
+            "fpv_camera",
+            "vtx"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Calibrate Accelerometer and Perform Failsafe Setup",
+          "partIds": [
+            "flight_controller",
+            "crossfire_rx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount Motors to Frame Arms",
+          "partIds": [
+            "frame_kit_x",
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "m3_screw_motor_fl_1",
+            "m3_screw_motor_fl_2",
+            "m3_screw_motor_fl_3",
+            "m3_screw_motor_fl_4",
+            "m3_screw_motor_fr_1",
+            "m3_screw_motor_fr_2",
+            "m3_screw_motor_fr_3",
+            "m3_screw_motor_fr_4",
+            "m3_screw_motor_rl_1",
+            "m3_screw_motor_rl_2",
+            "m3_screw_motor_rl_3",
+            "m3_screw_motor_rl_4",
+            "m3_screw_motor_rr_1",
+            "m3_screw_motor_rr_2",
+            "m3_screw_motor_rr_3",
+            "m3_screw_motor_rr_4"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount FC and ESC Stack",
+          "partIds": [
+            "frame_kit_x",
+            "esc_4in1",
+            "flight_controller",
+            "fc_standoff_1",
+            "fc_standoff_2",
+            "fc_standoff_3",
+            "fc_standoff_4",
+            "m3_screw_fc_1",
+            "m3_screw_fc_2",
+            "m3_screw_fc_3",
+            "m3_screw_fc_4"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Install FPV Camera and VTX/RX Antennas with 3D Printed Mounts",
+          "partIds": [
+            "fpv_camera",
+            "vtx",
+            "crossfire_rx",
+            "3d_camera_mount",
+            "3d_vtx_antenna_mount",
+            "3d_rx_antenna_mount",
+            "frame_kit_x"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Route and Secure All Wiring",
+          "partIds": []
+        },
+        {
+          "id": "assemble_5",
+          "title": "Attach LiPo Skid Plate and Battery Straps",
+          "partIds": [
+            "3d_lipo_skid_plate",
+            "lipo_strap_1",
+            "lipo_strap_2",
+            "frame_kit_x"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Install Propellers and Prop Nuts",
+          "partIds": [
+            "propeller_cw_fl",
+            "propeller_ccw_fr",
+            "propeller_ccw_rl",
+            "propeller_cw_rr",
+            "prop_nut_m5_fl",
+            "prop_nut_m5_fr",
+            "prop_nut_m5_rl",
+            "prop_nut_m5_rr",
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Perform Final Mechanical Inspection",
+          "partIds": []
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A 5-inch racing FPV drone built on an X-type carbon fiber frame. It uses a 6S LiPo battery to power four brushless motors and 5-inch propellers, controlled by a flight controller and 4-in-1 ESC. An FPV camera, video transmitter, and Crossfire receiver provide real-time video and reliable control for high-speed flight.",
+  "instructionPreamble": {
+    "tools": [
+      "Soldering iron with fine tip",
+      "Solder (lead-free recommended)",
+      "Wire strippers and flush cutters",
+      "Heat shrink tubing assortment",
+      "M3 hex driver/key",
+      "M5 nut driver/wrench",
+      "3D printer (TPU capable)",
+      "Hobby knife or deburring tool",
+      "Multimeter for continuity checks",
+      "Helping hands/PCB holder",
+      "Zip ties and electrical tape (for cable management)"
+    ],
+    "assumptions": [
+      "Basic soldering experience is assumed",
+      "Familiarity with FPV drone components and assembly practices",
+      "Access to a computer for firmware flashing and configuration (Betaflight/BLHeli_32 Configurator)",
+      "Understanding of LiPo battery safety and handling"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main Power",
+      "source": "lipo_battery",
+      "target": "esc_4in1",
+      "current": "80A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "Ripple Filter",
+      "source": "lipo_battery",
+      "target": "capacitor_main",
+      "current": "80A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "FC Power",
+      "source": "esc_4in1",
+      "target": "flight_controller",
+      "current": "5A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Motor 1 Power",
+      "source": "esc_4in1",
+      "target": "motor_fl",
+      "current": "55A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "Motor 2 Power",
+      "source": "esc_4in1",
+      "target": "motor_fr",
+      "current": "55A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "Motor 3 Power",
+      "source": "esc_4in1",
+      "target": "motor_rl",
+      "current": "55A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "power",
+      "label": "Motor 4 Power",
+      "source": "esc_4in1",
+      "target": "motor_rr",
+      "current": "55A",
+      "voltage": "22.2V"
+    },
+    {
+      "type": "data",
+      "label": "Motor 1 Signal",
+      "source": "flight_controller",
+      "target": "esc_4in1",
+      "protocol": "DShot600",
+      "sourcePin": "Motor 1 Signal",
+      "targetPin": "Motor 1 Signal"
+    },
+    {
+      "type": "data",
+      "label": "Motor 2 Signal",
+      "source": "flight_controller",
+      "target": "esc_4in1",
+      "protocol": "DShot600",
+      "sourcePin": "Motor 2 Signal",
+      "targetPin": "Motor 2 Signal"
+    },
+    {
+      "type": "data",
+      "label": "Motor 3 Signal",
+      "source": "flight_controller",
+      "target": "esc_4in1",
+      "protocol": "DShot600",
+      "sourcePin": "Motor 3 Signal",
+      "targetPin": "Motor 3 Signal"
+    },
+    {
+      "type": "data",
+      "label": "Motor 4 Signal",
+      "source": "flight_controller",
+      "target": "esc_4in1",
+      "protocol": "DShot600",
+      "sourcePin": "Motor 4 Signal",
+      "targetPin": "Motor 4 Signal"
+    },
+    {
+      "type": "data",
+      "label": "ESC Telemetry",
+      "source": "esc_4in1",
+      "target": "flight_controller",
+      "protocol": "UART",
+      "sourcePin": "Telemetry",
+      "targetPin": "ESC Telemetry"
+    },
+    {
+      "type": "data",
+      "label": "Crossfire Data",
+      "source": "flight_controller",
+      "target": "crossfire_rx",
+      "protocol": "CRSF",
+      "sourcePin": "UART2 RX",
+      "targetPin": "CRSF_TX"
+    },
+    {
+      "type": "data",
+      "label": "Crossfire Data",
+      "source": "flight_controller",
+      "target": "crossfire_rx",
+      "protocol": "CRSF",
+      "sourcePin": "UART2 TX",
+      "targetPin": "CRSF_RX"
+    },
+    {
+      "type": "power",
+      "label": "RX Power",
+      "source": "flight_controller",
+      "target": "crossfire_rx",
+      "current": "100mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "SmartAudio",
+      "source": "flight_controller",
+      "target": "vtx",
+      "protocol": "SmartAudio",
+      "sourcePin": "UART1 TX",
+      "targetPin": "SmartAudio"
+    },
+    {
+      "type": "data",
+      "label": "Video Signal",
+      "source": "fpv_camera",
+      "target": "vtx",
+      "protocol": "Analog Video",
+      "sourcePin": "Video Out",
+      "targetPin": "Video In"
+    },
+    {
+      "type": "power",
+      "label": "VTX Power",
+      "source": "flight_controller",
+      "target": "vtx",
+      "current": "500mA",
+      "voltage": "9V"
+    },
+    {
+      "type": "power",
+      "label": "Camera Power",
+      "source": "flight_controller",
+      "target": "fpv_camera",
+      "current": "100mA",
+      "voltage": "5V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounts to arm",
+      "source": "frame_kit_x",
+      "target": "motor_fl"
+    },
+    {
+      "label": "mounts to arm",
+      "source": "frame_kit_x",
+      "target": "motor_fr"
+    },
+    {
+      "label": "mounts to arm",
+      "source": "frame_kit_x",
+      "target": "motor_rl"
+    },
+    {
+      "label": "mounts to arm",
+      "source": "frame_kit_x",
+      "target": "motor_rr"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_fl_1",
+      "target": "motor_fl"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_fl_2",
+      "target": "motor_fl"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_fl_3",
+      "target": "motor_fl"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_fl_4",
+      "target": "motor_fl"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_fr_1",
+      "target": "motor_fr"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_fr_2",
+      "target": "motor_fr"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_fr_3",
+      "target": "motor_fr"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_fr_4",
+      "target": "motor_fr"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_rl_1",
+      "target": "motor_rl"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_rl_2",
+      "target": "motor_rl"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_rl_3",
+      "target": "motor_rl"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_rl_4",
+      "target": "motor_rl"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_rr_1",
+      "target": "motor_rr"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_rr_2",
+      "target": "motor_rr"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_rr_3",
+      "target": "motor_rr"
+    },
+    {
+      "label": "secures motor to frame",
+      "source": "m3_screw_motor_rr_4",
+      "target": "motor_rr"
+    },
+    {
+      "label": "mounts to shaft",
+      "source": "propeller_cw_fl",
+      "target": "motor_fl"
+    },
+    {
+      "label": "mounts to shaft",
+      "source": "propeller_ccw_fr",
+      "target": "motor_fr"
+    },
+    {
+      "label": "mounts to shaft",
+      "source": "propeller_ccw_rl",
+      "target": "motor_rl"
+    },
+    {
+      "label": "mounts to shaft",
+      "source": "propeller_cw_rr",
+      "target": "motor_rr"
+    },
+    {
+      "label": "secures propeller",
+      "source": "prop_nut_m5_fl",
+      "target": "motor_fl"
+    },
+    {
+      "label": "secures propeller",
+      "source": "prop_nut_m5_fr",
+      "target": "motor_fr"
+    },
+    {
+      "label": "secures propeller",
+      "source": "prop_nut_m5_rl",
+      "target": "motor_rl"
+    },
+    {
+      "label": "secures propeller",
+      "source": "prop_nut_m5_rr",
+      "target": "motor_rr"
+    },
+    {
+      "label": "mounts to bottom plate",
+      "source": "frame_kit_x",
+      "target": "esc_4in1"
+    },
+    {
+      "label": "mounts to stack",
+      "source": "esc_4in1",
+      "target": "flight_controller"
+    },
+    {
+      "label": "supports FC",
+      "source": "fc_standoff_1",
+      "target": "esc_4in1"
+    },
+    {
+      "label": "supports FC",
+      "source": "fc_standoff_2",
+      "target": "esc_4in1"
+    },
+    {
+      "label": "supports FC",
+      "source": "fc_standoff_3",
+      "target": "esc_4in1"
+    },
+    {
+      "label": "supports FC",
+      "source": "fc_standoff_4",
+      "target": "esc_4in1"
+    },
+    {
+      "label": "secures FC stack",
+      "source": "m3_screw_fc_1",
+      "target": "flight_controller"
+    },
+    {
+      "label": "secures FC stack",
+      "source": "m3_screw_fc_2",
+      "target": "flight_controller"
+    },
+    {
+      "label": "secures FC stack",
+      "source": "m3_screw_fc_3",
+      "target": "flight_controller"
+    },
+    {
+      "label": "secures FC stack",
+      "source": "m3_screw_fc_4",
+      "target": "flight_controller"
+    },
+    {
+      "label": "attaches to frame side plates",
+      "source": "3d_camera_mount",
+      "target": "frame_kit_x"
+    },
+    {
+      "label": "inserts into mount",
+      "source": "fpv_camera",
+      "target": "3d_camera_mount"
+    },
+    {
+      "label": "attaches to rear top plate",
+      "source": "3d_vtx_antenna_mount",
+      "target": "frame_kit_x"
+    },
+    {
+      "label": "antenna passes through mount",
+      "source": "vtx",
+      "target": "3d_vtx_antenna_mount"
+    },
+    {
+      "label": "attaches to rear top plate",
+      "source": "3d_rx_antenna_mount",
+      "target": "frame_kit_x"
+    },
+    {
+      "label": "antenna secures in mount",
+      "source": "crossfire_rx",
+      "target": "3d_rx_antenna_mount"
+    },
+    {
+      "label": "sits on top plate",
+      "source": "lipo_battery",
+      "target": "frame_kit_x"
+    },
+    {
+      "label": "secures battery",
+      "source": "lipo_strap_1",
+      "target": "frame_kit_x"
+    },
+    {
+      "label": "secures battery",
+      "source": "lipo_strap_2",
+      "target": "frame_kit_x"
+    },
+    {
+      "label": "attaches to bottom plate",
+      "source": "3d_lipo_skid_plate",
+      "target": "frame_kit_x"
+    }
+  ],
+  "projectId": "521858f4-c256-4d2e-97cb-c383963b3c5d"
+}

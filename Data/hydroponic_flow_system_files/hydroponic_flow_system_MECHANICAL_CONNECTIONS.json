@@ -1,0 +1,57 @@
+[
+  {
+    "label": "threaded connection with sealing washer",
+    "source": "cable_gland_m12_power",
+    "target": "ip65_junction_box"
+  },
+  {
+    "label": "threaded connection with sealing washer",
+    "source": "cable_gland_m16_actuators",
+    "target": "ip65_junction_box"
+  },
+  {
+    "label": "threaded connection with sealing washer",
+    "source": "cable_gland_m16_sensors",
+    "target": "ip65_junction_box"
+  },
+  {
+    "label": "submerged in water",
+    "source": "reservoir_box",
+    "target": "ph_sensor_module"
+  },
+  {
+    "label": "submerged in water",
+    "source": "reservoir_box",
+    "target": "tds_sensor_module"
+  },
+  {
+    "label": "submerged in water",
+    "source": "reservoir_box",
+    "target": "mini_water_pump_1_main_flood"
+  },
+  {
+    "label": "mounted inside",
+    "source": "ip65_small_valve_box",
+    "target": "solenoid_valve_1_freshwater"
+  },
+  {
+    "label": "mounted inside",
+    "source": "ip65_small_valve_box",
+    "target": "solenoid_valve_2_drain"
+  },
+  {
+    "label": "mounted inside",
+    "source": "ip65_small_valve_box",
+    "target": "solenoid_valve_3_spare"
+  },
+  {
+    "label": "threaded connection with sealing washer",
+    "source": "cable_gland_m16_sensors_reservoir",
+    "target": "reservoir_box"
+  },
+  {
+    "label": "threaded connection with sealing washer",
+    "source": "cable_gland_m16_valve_box",
+    "target": "ip65_small_valve_box"
+  }
+]

@@ -1,0 +1,10 @@
+Name,Product Name,Description,Category,Type,Quantity,Estimated Cost,Total Cost,URL
+"Main AI Controller","ESP32-S3-DevKitC-1","Low-power System-on-Chip (SoC) for AI inference and control, with integrated Wi-Fi and Bluetooth.","electrical","mcu",1,12.00,12.00,"https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-DEVKITC-1/16544955"
+"MicroSD Card Module","MicroSD Card Adapter Module","Provides external storage for the operating system and AI model files via SPI interface.","electrical","module",1,3.00,3.00,"https://www.amazon.com/s?k=microsd+card+module+spi"
+"USB-C Wall Adapter","5V 2A USB-C Power Adapter","Provides regulated 5V DC power from a wall outlet to the main controller.","electrical","power",1,15.00,15.00,"https://www.amazon.com/s?k=5v+2a+usb-c+power+adapter"
+"Server Enclosure Base","Enclosure Base","3D-printed bottom housing for the server, integrating mounts for the ESP32-S3 and a slot for the MicroSD module. Includes cutouts for USB-C power and ventilation.","mechanical","3d_printed",1,2.00,2.00,"https://www.amazon.com/s?k=3d+printing+service"
+"Server Enclosure Lid","Enclosure Lid","3D-printed top cover for the server enclosure, designed with passive cooling vents.","mechanical","3d_printed",1,1.00,1.00,"https://www.amazon.com/s?k=3d+printing+service"
+"M2 PCB Standoffs","M2 Brass Standoffs","Used to mount the main AI controller PCB to the enclosure base.","mechanical","misc",4,0.25,1.00,"https://www.amazon.com/s?k=m2+brass+standoffs"
+"M2 Screws for PCB","M2 Pan Head Screws","Secure the ESP32-S3 PCB to the M2 standoffs.","mechanical","misc",4,0.05,0.20,"https://www.amazon.com/s?k=m2+screws"
+"M3 Heat Set Inserts","M3 Brass Heat Set Inserts","Provide strong, reusable screw threads in the 3D-printed enclosure base for attaching the lid.","mechanical","misc",4,0.15,0.60,"https://www.amazon.com/s?k=m3+brass+heat+set+inserts"
+"M3 Screws for Enclosure","M3 Pan Head Screws","Secure the enclosure lid to the enclosure base via M3 heat set inserts.","mechanical","misc",4,0.08,0.32,"https://www.amazon.com/s?k=m3+screws"

@@ -1,0 +1,197 @@
+[
+  {
+    "label": "houses",
+    "source": "rear_axle_bearing_mount_left",
+    "target": "rear_axle_bearing_left"
+  },
+  {
+    "label": "houses",
+    "source": "rear_axle_bearing_mount_right",
+    "target": "rear_axle_bearing_right"
+  },
+  {
+    "label": "passes through",
+    "source": "live_rear_axle",
+    "target": "rear_axle_bearing_left"
+  },
+  {
+    "label": "passes through",
+    "source": "live_rear_axle",
+    "target": "rear_axle_bearing_right"
+  },
+  {
+    "label": "keyed to",
+    "source": "live_rear_axle",
+    "target": "drive_sprocket"
+  },
+  {
+    "label": "keyed to",
+    "source": "live_rear_axle",
+    "target": "rear_wheel_left"
+  },
+  {
+    "label": "keyed to",
+    "source": "live_rear_axle",
+    "target": "rear_wheel_right"
+  },
+  {
+    "label": "connects to",
+    "source": "drive_chain",
+    "target": "engine_sprocket"
+  },
+  {
+    "label": "connects to",
+    "source": "drive_chain",
+    "target": "drive_sprocket"
+  },
+  {
+    "label": "rotates within",
+    "source": "steering_shaft",
+    "target": "steering_column_support"
+  },
+  {
+    "label": "connects to",
+    "source": "steering_shaft",
+    "target": "universal_joint_upper"
+  },
+  {
+    "label": "connects to",
+    "source": "universal_joint_upper",
+    "target": "universal_joint_lower"
+  },
+  {
+    "label": "connects to",
+    "source": "universal_joint_lower",
+    "target": "steering_arm"
+  },
+  {
+    "label": "links to",
+    "source": "steering_arm",
+    "target": "front_spindle_left"
+  },
+  {
+    "label": "links to",
+    "source": "steering_arm",
+    "target": "front_spindle_right"
+  },
+  {
+    "label": "hub mounts to",
+    "source": "front_spindle_left",
+    "target": "front_wheel_left"
+  },
+  {
+    "label": "hub mounts to",
+    "source": "front_spindle_right",
+    "target": "front_wheel_right"
+  },
+  {
+    "label": "mounts to",
+    "source": "live_rear_axle",
+    "target": "brake_disc_assembly"
+  },
+  {
+    "label": "mount",
+    "source": "engine_kill_switch_mount",
+    "target": "engine_kill_switch"
+  },
+  {
+    "label": "bolted with M8 bolts",
+    "source": "go_kart_engine",
+    "target": "engine_mounting_plate"
+  },
+  {
+    "label": "shaft mounted to",
+    "source": "go_kart_engine",
+    "target": "engine_sprocket"
+  },
+  {
+    "label": "pivots on",
+    "source": "front_spindle_left",
+    "target": "kingpin_left"
+  },
+  {
+    "label": "pivots on",
+    "source": "front_spindle_right",
+    "target": "kingpin_right"
+  },
+  {
+    "label": "connected to steering arm",
+    "source": "front_spindle_left",
+    "target": "steering_linkage_rod_left"
+  },
+  {
+    "label": "connected to steering arm",
+    "source": "front_spindle_right",
+    "target": "steering_linkage_rod_right"
+  },
+  {
+    "label": "connected to pivot",
+    "source": "steering_linkage_rod_left",
+    "target": "steering_arm"
+  },
+  {
+    "label": "connected to pivot",
+    "source": "steering_linkage_rod_right",
+    "target": "steering_arm"
+  },
+  {
+    "label": "bolted to frame",
+    "source": "go_kart_frame_chassis",
+    "target": "engine_mounting_plate"
+  },
+  {
+    "label": "welded/bolted to frame",
+    "source": "go_kart_frame_chassis",
+    "target": "rear_axle_bearing_mount_left"
+  },
+  {
+    "label": "welded/bolted to frame",
+    "source": "go_kart_frame_chassis",
+    "target": "rear_axle_bearing_mount_right"
+  },
+  {
+    "label": "welded/bolted to frame",
+    "source": "go_kart_frame_chassis",
+    "target": "steering_column_support"
+  },
+  {
+    "label": "bolted to frame",
+    "source": "go_kart_frame_chassis",
+    "target": "go_kart_seat_mounts"
+  },
+  {
+    "label": "bolted to mounts",
+    "source": "go_kart_seat_mounts",
+    "target": "go_kart_seat"
+  },
+  {
+    "label": "keyed and bolted",
+    "source": "steering_shaft",
+    "target": "steering_wheel"
+  },
+  {
+    "label": "connected to pedal",
+    "source": "throttle_pedal",
+    "target": "throttle_cable"
+  },
+  {
+    "label": "connected to carburetor",
+    "source": "throttle_cable",
+    "target": "go_kart_engine"
+  },
+  {
+    "label": "bolted to engine head",
+    "source": "go_kart_engine",
+    "target": "engine_exhaust"
+  },
+  {
+    "label": "mounted to frame",
+    "source": "go_kart_frame_chassis",
+    "target": "brake_pedal"
+  },
+  {
+    "label": "mounted to frame",
+    "source": "go_kart_frame_chassis",
+    "target": "throttle_pedal"
+  }
+]

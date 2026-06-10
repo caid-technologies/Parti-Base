@@ -1,0 +1,1654 @@
+{
+  "plan": "- Single Board Computer (e.g., Raspberry Pi Zero 2 W or similar) for core processing, Wi-Fi, and Bluetooth.\n- Touchscreen display (small, e.g., 3.5-5 inch) for interface.\n- Lithium Polymer battery and associated charging/power management module (e.g., LiPo HAT) for portability.\n- USB WiFi adapter (if SBC doesn't have sufficient built-in capability) for signal capture/analysis.\n- Custom 3D-printed compact enclosure to house all components, with cutouts for ports and screen.\n- Small tactile buttons or joystick for additional user input, integrated into the enclosure.",
+  "nodes": [
+    {
+      "id": "main_sbc",
+      "name": "Main Controller SBC",
+      "pins": [
+        "GPIO",
+        "USB",
+        "HDMI",
+        "CSI",
+        "DSI",
+        "Ethernet",
+        "Power In (USB-C)"
+      ],
+      "type": "mcu",
+      "partId": "83e2d39b-cc30-4383-b824-0d57eb4334e1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Raspberry+Pi+4+Model+B+%284GB+RAM%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/4296-11.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07V5JTMV9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$149.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007254431950.html?pdp_npi=6%40dis%21USD%21275.26%21151.39%21%21%211861.13%211023.62%21%402151fd3a17793444373528002e0dfe%2112000039961912196%21affd%21%21%21%211%210%21",
+            "price": "$151.39",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/4296",
+            "price": "$120",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/4296",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07V5JTMV9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "85x56x17mm",
+      "position3d": {
+        "x": 0,
+        "y": 10.5,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 56,
+        "width": 85,
+        "height": 17
+      },
+      "productName": "Raspberry Pi 4 Model B (4GB RAM)",
+      "purchaseUrl": "https://www.adafruit.com/product/4296",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZeS4Xo5xh2CIBTuxL9EULIPpNe37FKFzoMwFIQA5tPEtBOmt0BtrlLcAb1775N7B1PXf1XD2G5OJRCGTxVO9zgTZyU1P5JvnikJ968q0Yg92U40xvfolK7k0cxhyLFvLLGeDkK27QTXUlEwNR1xhwZil0an0roWs6F41ffRuOtR3xIeA1GfmL7jctAL6iUtX9eICgedR7DjbytCtMqwrjopv5M5RJohvpvhI1gRQxaGglCUjvw9IWpy8EpVEldFeAUzD9q4903ynyqwdpW3sKqmBx2dYc7XzX0FUrivlJoDU6VOd5Rgv6uTZGbyEsVMBppAvxXBSs96zgnWWqvhmg0txGGvjsuIYjvlVIxfl7KMvzOIf4P5b8h2flsVPvW136PFunTZAueE7oFllsUEjIZK7ZD8I3EjtaAcdQgUqlXM0eH10kpTBeq3xLdo6A1DBvM9UikiOMTRgIaY4mCO1tsRtN4bSjnWNTLoa1IxpmLlbwiggKBHX8X8kGnz7op5IBM7bC9q41woplE2jzCoj7hD0IkoJxwqoOV3mLfR0CnEirmsPKKiIvtNmWem4PvMaxoRVOGBzN96yG7FoGLOKjA6XcbJZsB7OpPKwAAbYn2P15i60sN09xUGlxXVLPyfmcZt1IETpuW4ecrdyemghAt3jUjvjX7d7boagfPReThDQPAzIV2b",
+      "estimatedCost": 60
+    },
+    {
+      "id": "touch_display",
+      "name": "5-inch Capacitive Touch Display",
+      "pins": [
+        "HDMI (Video In)",
+        "USB (Touch)",
+        "Power In (Micro USB)"
+      ],
+      "type": "display",
+      "partId": "701cfef0-27ac-4c7e-9255-0defa97ac902",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5+inch+HDMI+Capacitive+Touch+Screen+LCD&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51llaiF1RTL._SL500_.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0B1MK3SQ2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "121x76x10mm",
+      "position3d": {
+        "x": 0,
+        "y": 39.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 76,
+        "width": 121,
+        "height": 10
+      },
+      "productName": "5 inch HDMI Capacitive Touch Screen LCD",
+      "purchaseUrl": "https://www.amazon.com/s?k=5+inch+hdmi+capacitive+touchscreen+raspberry+pi",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxfi5NBGu0j84WASgSe7eHAjhAgM9YIMOdJoKIdQ2o03RWjuMmnnpw2znCYyrcgOXGwz8pDyF4CAi6jdxJTCKGOBsV2B95XUevNbqEchPkveQUFIago3iUYRfrhmF50NAselElNNn4UJqQ70vXm25pDTw70UateRIVH5rRAQUDxeXWOaMkcy3zL6HYsQkLoJpUflDlMIjWzDhR7CpAOWGH7JVAboa5d5OBbnjZ3E95OYu26SsBTAlKY0iLZcLEyXoNDxYNsXcdrTKd0Acs22heKSKxwxxV5Hr24Cw0QbW0PZZPh939S4iVlFEJiZ0HiydeGmVNqT4lyV9TzrkztAU06cpt7BlIoeZWALVTYUE31wYnJE08kwYQBA7RN4ABHHmJ1A2YAP3U4SaSa3GvYhJ7L9IpkTeFMEmHrXigPkFTpaUoXzB7O2ZRR4ihzhlELjB6g6dJIsb3AuJJE4YCRQfUzdJUmlMVZNsBNCG4mOukvZtuSzX5PFapOcsZcDBvJswd2lH7gsvOm7kcCBtT6Wht6QiqPDEXUJshkfs7iIKNBC52QpWzFBJAwa04MCcHZ5dYCf62fITBVzM6ZJTzY5amRtnMulAhNa55oidHd1H05z20FTDxVPE7jZA7aRprkkOPdBf1OCuMQAsCN8k0BAYUSNV",
+      "estimatedCost": 45
+    },
+    {
+      "id": "power_management",
+      "name": "Li-Po Power Management HAT",
+      "pins": [
+        "GPIO (I2C/Power)",
+        "Micro USB (Charging)",
+        "JST-PH (Battery)"
+      ],
+      "type": "power",
+      "partId": "dd5eae73-f7dc-4cea-ad9b-c3d2d40fd23a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=UPS+HAT+for+Raspberry+Pi&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/Sec4c245a09fd423db8d8c60192dcf1fao.png",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0D39VDMDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$32.63",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005004091121680.html?pdp_npi=6%40dis%21USD%214.89%214.69%21%21%2133.09%2131.77%21%400b8ded7b17794684536773805e10c4%2112000028001887331%21affd%21%21%21%211%210%21",
+            "price": "$4.69",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D39VDMDP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x56x20mm",
+      "position3d": {
+        "x": -10,
+        "y": 25.5,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 56,
+        "width": 65,
+        "height": 20
+      },
+      "description": "Provides uninterrupted power to Raspberry Pi during power outages.",
+      "productName": "UPS HAT for Raspberry Pi",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH9OpBfbjr8R5IUxzxvTmdTd62QXwbvMpnc7Pp73xo70rSqPqTLDXusD30DARCLFupi754jUU8h9JH21IgpRTdbSQdPNI02FmylCVcEH6hZpoqaGKAQjriUm6mYHDcyX04355yLrEo7U5pBw2TfehIM8OyOCEzUEcjekP5QkqdpWzYq5gPfCdFH8ac8DKfWZ5TFOjBUfdTeG9SMbNI5GM6ZSBLIykU3kDzzBmZeFhUcreF3VBlWq6LKJgAFnNkYi9ADf1HkVWLefTDuUr94Y6M55avHgwh4pOif4Vnmv5xmA9jO3uzXXXomWghyCeU9lzSBsoxIbydR3Fy0nxdGz3OdtcQOzdKyltuAlN1q9So4Ze8wYA7rdoq5CSq7dObg5SCmQRTYbF6Lxl1GH4SzNrjPVuPPSgJMfRYfeF3yoiho1SuZLl6e1DOHwzhKeRN3SJvfyNAw7AMLBCJuUNNyIXN0r7m1WrTv0f1CUSyjaBL9kIJ5kgPaxGrRDcIpos6aNeT23FxnQzmmnuXwvlv26qcUkFlQivVU6rITGXZueSDaDkKLAX9KDt8S1fauDoIR9zw06TSjpO8Q0vE0EvZhDRdmR5WVkxDhvmtQnNO9KXGaEWCs8qsYhoRLwNvEnz8oIsLh3ONRE26kaHQoW5A28TNpt",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH9OpBfbjr8R5IUxzxvTmdTd62QXwbvMpnc7Pp73xo70rSqPqTLDXusD30DARCLFupi754jUU8h9JH21IgpRTdbSQdPNI02FmylCVcEH6hZpoqaGKAQjriUm6mYHDcyX04355yLrEo7U5pBw2TfehIM8OyOCEzUEcjekP5QkqdpWzYq5gPfCdFH8ac8DKfWZ5TFOjBUfdTeG9SMbNI5GM6ZSBLIykU3kDzzBmZeFhUcreF3VBlWq6LKJgAFnNkYi9ADf1HkVWLefTDuUr94Y6M55avHgwh4pOif4Vnmv5xmA9jO3uzXXXomWghyCeU9lzSBsoxIbydR3Fy0nxdGz3OdtcQOzdKyltuAlN1q9So4Ze8wYA7rdoq5CSq7dObg5SCmQRTYbF6Lxl1GH4SzNrjPVuPPSgJMfRYfeF3yoiho1SuZLl6e1DOHwzhKeRN3SJvfyNAw7AMLBCJuUNNyIXN0r7m1WrTv0f1CUSyjaBL9kIJ5kgPaxGrRDcIpos6aNeT23FxnQzmmnuXwvlv26qcUkFlQivVU6rITGXZueSDaDkKLAX9KDt8S1fauDoIR9zw06TSjpO8Q0vE0EvZhDRdmR5WVkxDhvmtQnNO9KXGaEWCs8qsYhoRLwNvEnz8oIsLh3ONRE26kaHQoW5A28TNpt",
+      "estimatedCost": 25
+    },
+    {
+      "id": "lipo_battery",
+      "name": "Rechargeable Li-Po Battery",
+      "pins": [
+        "JST-PH (Power Out)"
+      ],
+      "type": "power",
+      "partId": "d2e3bbcb-9272-45d0-8535-3a1d6d224066",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3.7V+5000mAh+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41g-xbHjNQL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "BAT+,BAT-"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FFM8P3L9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010427123130.html?pdp_npi=6%40dis%21USD%2111.54%215.65%21%21%2178.04%2138.24%21%402151fd2c17793564554537018e0e49%2112000052377972611%21affd%21%21%21%211%210%21",
+            "price": "$5.65",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FFM8P3L9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "90x50x10mm",
+      "position3d": {
+        "x": 0,
+        "y": 12.5,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 90,
+        "height": 10
+      },
+      "description": "Primary power source for the station.",
+      "productName": "3.7V 5000mAh LiPo Battery",
+      "purchaseUrl": "https://www.adafruit.com/product/2011",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwsGrwjXNq4L4t7uP4pTNuqUUSCVvk6SikqcDMT1icEOdf8QbXPs3NFmUXRUfaGL4mM5fbboGokpHgo4ZrjqrLoKWkANxGtDAiv9ReHjlHgIDfWVSLmuIwyQS78anLRa6vm2ZdvwL3OYAFJ3KmGeLaW2J0jSgaTJ0df8g3Rcxvq7juS55TYPeWEcDxXkiNlPtFiWCgzE56wOv2L4TSzkOkWkVsdYXEJMT0jexrOSGm0TxLWMWs5ukCXBOjBxhY7A6COHflH2wFyI8H1nmgSFOMaHsr3B0LUa0uKQ3xShhsx0phvtgzBVTk3WGOPAg80ZFvECNBw787SR6bDnpKITB9vEbCuAt3Lq5anvwDfhEdMOViV9pYMvZNTY5xxrc069HlhPInPGmMBaZGHiaBsWDSxrkE7Hp12SUq4j27z0MyINPveM8qfxygCKm3XBaU42CwBDXnichHXJ14WrxWcR5GqXZKiC60fZ6RhdzAfJXNrVAcv2z6TEJ646J7gYMCEFqpPHfa8pZkwaqYontrTunj3iMTGTkxhmTPioljkGJsYM0717NiJs91bqZpFdsy0kd2SfjSqPjYeIVZ15MEBu0zsFYWrMDTfosLpTx2c7KkE8ReWOpu5VZYmSYrnkyn7uc4geOAf8FHkLDEkVBTYGr73d",
+      "estimatedCost": 15
+    },
+    {
+      "id": "external_wifi_adapter",
+      "name": "High-Gain USB WiFi Adapter",
+      "pins": [
+        "USB (Data/Power)"
+      ],
+      "type": "module",
+      "partId": "842a028b-cd2e-461d-b76b-b1261718c15a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Alfa+AWUS036ACM+USB+Wi-Fi+Adapter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/21Nc8Q0eLZL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-alfa-awus036acm-usb-wi-fi-adapter.html",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B08BJS8FXD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$59.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08BJS8FXD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "85x25x10mm",
+      "position3d": {
+        "x": 40,
+        "y": 12.5,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 85,
+        "height": 10
+      },
+      "description": "External USB Wi-Fi adapter with monitor mode and packet injection capabilities for advanced Wi-Fi security testing.",
+      "productName": "Alfa AWUS036ACM USB Wi-Fi Adapter",
+      "purchaseUrl": "https://www.amazon.com/dp/B08BJS8FXD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4DHKTxB",
+      "estimatedCost": 40
+    },
+    {
+      "id": "joystick_input",
+      "name": "Mini Joystick Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "VRX",
+        "VRY",
+        "SW"
+      ],
+      "type": "sensor",
+      "partId": "dc84f56a-6829-4b1b-b02e-9bfdc63e1b59",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=KY-023+Joystick+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41IJpfE3iQL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0CPFDKWZF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008086523681.html?pdp_npi=6%40dis%21USD%218.75%213.06%21%21%2159.32%2120.76%21%40214114e317793271851837055e116e%2112000043641155039%21affd%21%21%21%211%210%21",
+            "price": "$3.06",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CPFDKWZF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x25x25mm",
+      "position3d": {
+        "x": -50,
+        "y": 36,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 40,
+        "height": 25
+      },
+      "description": "Dual-axis joystick for controlling arm movements.",
+      "productName": "KY-023 Joystick Module",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgIz6FdvIOsfcMgAYH0HZntKWMgx18fCki2n5X8biJIpD8X9fcBf6xM0nv40JA3eBjplb7c55mQoq9H1R2S4kTBCJsSc9yoe708AQzMLhwwM3i8eYAuLYHFR3ufNVxx5vpwV4o7Q75zol1gEPSSUlESRsGwdCMz7nHwDySAxlwtv7VvvP4qCeajDAN4bQZVzSJplq5svodqHEBgJrEZzawLGvcNuC5FGvCfb9kbM5WqHt5b7LRt5dDGVwnUCtyBz5MIOTyjtRIROicveciDmiGNSra1AbXvMRzhN48OwGyAZxiWUPYC7l4YZDh34mGX91QgXd6nte35jt0gH1mHTTU88rgRbF4ZuGXcenq9j3g6LV3oiSzyECXKLJKWosmUSQFpbEEbp6aNXppdAhQZgbclxAy2RknJItk1G26RjyLoK6reUA6Dg1rJ97s8sD0vMchJSrtIypuwjAhtL3nDd89QAru9O1IMApbaCOtb5mvJCmpJZPQ2NpIavsawnhIWBEGfYESp7OgXuK3JaWdaQFoHmEMRUgwZb09PYdGKMOEYWcWqjw5G7bk3DuT9ITs6PH7M5s8NVwJ37wHBiY0hn4rvrwzgFbYsNnHq496eaYvg3u1RS8rayruMmC7UblKBTDVKlNu27q417MhSu1VEi0T0X",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgIz6FdvIOsfcMgAYH0HZntKWMgx18fCki2n5X8biJIpD8X9fcBf6xM0nv40JA3eBjplb7c55mQoq9H1R2S4kTBCJsSc9yoe708AQzMLhwwM3i8eYAuLYHFR3ufNVxx5vpwV4o7Q75zol1gEPSSUlESRsGwdCMz7nHwDySAxlwtv7VvvP4qCeajDAN4bQZVzSJplq5svodqHEBgJrEZzawLGvcNuC5FGvCfb9kbM5WqHt5b7LRt5dDGVwnUCtyBz5MIOTyjtRIROicveciDmiGNSra1AbXvMRzhN48OwGyAZxiWUPYC7l4YZDh34mGX91QgXd6nte35jt0gH1mHTTU88rgRbF4ZuGXcenq9j3g6LV3oiSzyECXKLJKWosmUSQFpbEEbp6aNXppdAhQZgbclxAy2RknJItk1G26RjyLoK6reUA6Dg1rJ97s8sD0vMchJSrtIypuwjAhtL3nDd89QAru9O1IMApbaCOtb5mvJCmpJZPQ2NpIavsawnhIWBEGfYESp7OgXuK3JaWdaQFoHmEMRUgwZb09PYdGKMOEYWcWqjw5G7bk3DuT9ITs6PH7M5s8NVwJ37wHBiY0hn4rvrwzgFbYsNnHq496eaYvg3u1RS8rayruMmC7UblKBTDVKlNu27q417MhSu1VEi0T0X",
+      "estimatedCost": 5
+    },
+    {
+      "id": "button_up",
+      "name": "Tactile Button (Up)",
+      "pins": [
+        "Signal",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "59e4f741-abc2-4efa-bcef-fec4e2b2f6dc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31uSQTvsBML._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005006880995108.html?pdp_npi=6%40dis%21USD%217.24%214.13%21%21%2148.98%2127.92%21%402140d33617793476360918514e114b%2112000038606619260%21affd%21%21%21%211%210%21",
+            "price": "$4.13",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 36,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=tactile+switch+6x6x5mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIFpce04FB58kyE7TFkkz1CRjb2BkFrWDZJPU37PgB9lEa9QWpWa8mT1LIMqqnSsg93s39pEjuZIZrvD4tJglGvHjCPFx3rwjpZ0zETlrcvYqUyy3FuwFPaZha5hpbepBuWdqUibTqN8QksGQEL40Rpje8ZZK3WJRcKKJPt8bzuSikRCDWzS7MPuN31gLHjj2L20yFb7vjCDOjB4mtSCDgN18NBpOduwcXSP6HpFqeuRXtAaIynAVa3MYMx53hpYG1DDo8WliXoMR8xKDi37nWU3bdQxB4URMQHysOLasmUvcexmmlIafrRwGEh1rLjPA8xmsmM1x3bHPC3pla1N7RdR6HdpG3MHtju8wKvv8qFjyj6C7anuYAGkeKq7XjloNpXcyVEe9XTJdVXWq8xuagq8K2vXS2yhYyqADZgBe3OVMA6TusRqETiKBRmytYOKx983oRjVZcBAeJm7vQCtDi28XxyO5RghFNg3usU3bHWS8R4skrsK0EDw5jEQasTjQJGpIwEnOQzlQqev2LPP7EXUsh8vgULRFMGhGnvLgXfWygvmD1eXD4r0DL0ughl0z4ztP36YKDvpwtasbH5ZKEd2XhtooTXZlTzUCtCxTf1LEgLordwpQ8MED10k7vXUqs81yVknZlw3ZP6Gy0A5qbN1",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "button_down",
+      "name": "Tactile Button (Down)",
+      "pins": [
+        "Signal",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "59e4f741-abc2-4efa-bcef-fec4e2b2f6dc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31uSQTvsBML._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005006880995108.html?pdp_npi=6%40dis%21USD%217.24%214.13%21%21%2148.98%2127.92%21%402140d33617793476360918514e114b%2112000038606619260%21affd%21%21%21%211%210%21",
+            "price": "$4.13",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 36,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=tactile+switch+6x6x5mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIFpce04FB58kyE7TFkkz1CRjb2BkFrWDZJPU37PgB9lEa9QWpWa8mT1LIMqqnSsg93s39pEjuZIZrvD4tJglGvHjCPFx3rwjpZ0zETlrcvYqUyy3FuwFPaZha5hpbepBuWdqUibTqN8QksGQEL40Rpje8ZZK3WJRcKKJPt8bzuSikRCDWzS7MPuN31gLHjj2L20yFb7vjCDOjB4mtSCDgN18NBpOduwcXSP6HpFqeuRXtAaIynAVa3MYMx53hpYG1DDo8WliXoMR8xKDi37nWU3bdQxB4URMQHysOLasmUvcexmmlIafrRwGEh1rLjPA8xmsmM1x3bHPC3pla1N7RdR6HdpG3MHtju8wKvv8qFjyj6C7anuYAGkeKq7XjloNpXcyVEe9XTJdVXWq8xuagq8K2vXS2yhYyqADZgBe3OVMA6TusRqETiKBRmytYOKx983oRjVZcBAeJm7vQCtDi28XxyO5RghFNg3usU3bHWS8R4skrsK0EDw5jEQasTjQJGpIwEnOQzlQqev2LPP7EXUsh8vgULRFMGhGnvLgXfWygvmD1eXD4r0DL0ughl0z4ztP36YKDvpwtasbH5ZKEd2XhtooTXZlTzUCtCxTf1LEgLordwpQ8MED10k7vXUqs81yVknZlw3ZP6Gy0A5qbN1",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "button_left",
+      "name": "Tactile Button (Left)",
+      "pins": [
+        "Signal",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "59e4f741-abc2-4efa-bcef-fec4e2b2f6dc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31uSQTvsBML._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005006880995108.html?pdp_npi=6%40dis%21USD%217.24%214.13%21%21%2148.98%2127.92%21%402140d33617793476360918514e114b%2112000038606619260%21affd%21%21%21%211%210%21",
+            "price": "$4.13",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 40,
+        "y": 36,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=tactile+switch+6x6x5mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIFpce04FB58kyE7TFkkz1CRjb2BkFrWDZJPU37PgB9lEa9QWpWa8mT1LIMqqnSsg93s39pEjuZIZrvD4tJglGvHjCPFx3rwjpZ0zETlrcvYqUyy3FuwFPaZha5hpbepBuWdqUibTqN8QksGQEL40Rpje8ZZK3WJRcKKJPt8bzuSikRCDWzS7MPuN31gLHjj2L20yFb7vjCDOjB4mtSCDgN18NBpOduwcXSP6HpFqeuRXtAaIynAVa3MYMx53hpYG1DDo8WliXoMR8xKDi37nWU3bdQxB4URMQHysOLasmUvcexmmlIafrRwGEh1rLjPA8xmsmM1x3bHPC3pla1N7RdR6HdpG3MHtju8wKvv8qFjyj6C7anuYAGkeKq7XjloNpXcyVEe9XTJdVXWq8xuagq8K2vXS2yhYyqADZgBe3OVMA6TusRqETiKBRmytYOKx983oRjVZcBAeJm7vQCtDi28XxyO5RghFNg3usU3bHWS8R4skrsK0EDw5jEQasTjQJGpIwEnOQzlQqev2LPP7EXUsh8vgULRFMGhGnvLgXfWygvmD1eXD4r0DL0ughl0z4ztP36YKDvpwtasbH5ZKEd2XhtooTXZlTzUCtCxTf1LEgLordwpQ8MED10k7vXUqs81yVknZlw3ZP6Gy0A5qbN1",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "button_right",
+      "name": "Tactile Button (Right)",
+      "pins": [
+        "Signal",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "59e4f741-abc2-4efa-bcef-fec4e2b2f6dc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31uSQTvsBML._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005006880995108.html?pdp_npi=6%40dis%21USD%217.24%214.13%21%21%2148.98%2127.92%21%402140d33617793476360918514e114b%2112000038606619260%21affd%21%21%21%211%210%21",
+            "price": "$4.13",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 80,
+        "y": 36,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=tactile+switch+6x6x5mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIFpce04FB58kyE7TFkkz1CRjb2BkFrWDZJPU37PgB9lEa9QWpWa8mT1LIMqqnSsg93s39pEjuZIZrvD4tJglGvHjCPFx3rwjpZ0zETlrcvYqUyy3FuwFPaZha5hpbepBuWdqUibTqN8QksGQEL40Rpje8ZZK3WJRcKKJPt8bzuSikRCDWzS7MPuN31gLHjj2L20yFb7vjCDOjB4mtSCDgN18NBpOduwcXSP6HpFqeuRXtAaIynAVa3MYMx53hpYG1DDo8WliXoMR8xKDi37nWU3bdQxB4URMQHysOLasmUvcexmmlIafrRwGEh1rLjPA8xmsmM1x3bHPC3pla1N7RdR6HdpG3MHtju8wKvv8qFjyj6C7anuYAGkeKq7XjloNpXcyVEe9XTJdVXWq8xuagq8K2vXS2yhYyqADZgBe3OVMA6TusRqETiKBRmytYOKx983oRjVZcBAeJm7vQCtDi28XxyO5RghFNg3usU3bHWS8R4skrsK0EDw5jEQasTjQJGpIwEnOQzlQqev2LPP7EXUsh8vgULRFMGhGnvLgXfWygvmD1eXD4r0DL0ughl0z4ztP36YKDvpwtasbH5ZKEd2XhtooTXZlTzUCtCxTf1LEgLordwpQ8MED10k7vXUqs81yVknZlw3ZP6Gy0A5qbN1",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "button_enter",
+      "name": "Tactile Button (Enter)",
+      "pins": [
+        "Signal",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "59e4f741-abc2-4efa-bcef-fec4e2b2f6dc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31uSQTvsBML._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005006880995108.html?pdp_npi=6%40dis%21USD%217.24%214.13%21%21%2148.98%2127.92%21%402140d33617793476360918514e114b%2112000038606619260%21affd%21%21%21%211%210%21",
+            "price": "$4.13",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 36,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "productName": "6x6x5mm Tactile Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=tactile+switch+6x6x5mm",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIFpce04FB58kyE7TFkkz1CRjb2BkFrWDZJPU37PgB9lEa9QWpWa8mT1LIMqqnSsg93s39pEjuZIZrvD4tJglGvHjCPFx3rwjpZ0zETlrcvYqUyy3FuwFPaZha5hpbepBuWdqUibTqN8QksGQEL40Rpje8ZZK3WJRcKKJPt8bzuSikRCDWzS7MPuN31gLHjj2L20yFb7vjCDOjB4mtSCDgN18NBpOduwcXSP6HpFqeuRXtAaIynAVa3MYMx53hpYG1DDo8WliXoMR8xKDi37nWU3bdQxB4URMQHysOLasmUvcexmmlIafrRwGEh1rLjPA8xmsmM1x3bHPC3pla1N7RdR6HdpG3MHtju8wKvv8qFjyj6C7anuYAGkeKq7XjloNpXcyVEe9XTJdVXWq8xuagq8K2vXS2yhYyqADZgBe3OVMA6TusRqETiKBRmytYOKx983oRjVZcBAeJm7vQCtDi28XxyO5RghFNg3usU3bHWS8R4skrsK0EDw5jEQasTjQJGpIwEnOQzlQqev2LPP7EXUsh8vgULRFMGhGnvLgXfWygvmD1eXD4r0DL0ughl0z4ztP36YKDvpwtasbH5ZKEd2XhtooTXZlTzUCtCxTf1LEgLordwpQ8MED10k7vXUqs81yVknZlw3ZP6Gy0A5qbN1",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "enclosure_bottom_shell",
+      "name": "Enclosure Bottom Shell",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "150x90x30mm",
+      "position3d": {
+        "x": 0,
+        "y": 15,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 90,
+        "width": 150,
+        "height": 30
+      },
+      "description": "Custom 3D-printed bottom shell of the enclosure, forming the base and structural support.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2.5,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "enclosure_top_bezel",
+      "name": "Enclosure Top Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "150x90x15mm",
+      "position3d": {
+        "x": 0,
+        "y": 37.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 90,
+        "width": 150,
+        "height": 15
+      },
+      "description": "Custom 3D-printed top bezel for the enclosure, integrating the display and button cutouts.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "sbc_mount",
+      "name": "SBC Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "main_sbc",
+      "dimensions": "90x60x10mm",
+      "position3d": {
+        "x": 0,
+        "y": 5,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 90,
+        "height": 10
+      },
+      "description": "Custom 3D-printed mount to secure the Single Board Computer inside the enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "display_frame",
+      "name": "Display Frame",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "touch_display",
+      "dimensions": "130x80x5mm",
+      "position3d": {
+        "x": 0,
+        "y": 34.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 80,
+        "width": 130,
+        "height": 5
+      },
+      "description": "Custom 3D-printed internal frame to hold and align the 5-inch display.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.4,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "lipo_battery_tray",
+      "name": "Li-Po Battery Tray",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "lipo_battery",
+      "dimensions": "80x50x15mm",
+      "position3d": {
+        "x": 0,
+        "y": 7.5,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 80,
+        "height": 15
+      },
+      "description": "Custom 3D-printed tray to securely hold the Li-Po battery within the enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "power_management_mount",
+      "name": "Power Management Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "power_management",
+      "dimensions": "65x30x8mm",
+      "position3d": {
+        "x": -10,
+        "y": 4,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 65,
+        "height": 8
+      },
+      "description": "Custom 3D-printed mount for the Li-Po Power Management HAT.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.2,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "wifi_adapter_mount",
+      "name": "WiFi Adapter Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "external_wifi_adapter",
+      "dimensions": "40x20x10mm",
+      "position3d": {
+        "x": 40,
+        "y": 5,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 10
+      },
+      "description": "Custom 3D-printed mount for the high-gain USB WiFi adapter.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.15,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "joystick_bezel",
+      "name": "Joystick Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "joystick_input",
+      "dimensions": "25x25x5mm",
+      "position3d": {
+        "x": -50,
+        "y": 42.5,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 25,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bezel to securely hold the mini joystick module in the enclosure's top panel.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "button_up_bezel",
+      "name": "Button Up Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_up",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 42.5,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bezel for the 'Up' tactile button, integrating it into the enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.05,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "button_down_bezel",
+      "name": "Button Down Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_down",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 42.5,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bezel for the 'Down' tactile button, integrating it into the enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.05,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "button_left_bezel",
+      "name": "Button Left Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_left",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 40,
+        "y": 42.5,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bezel for the 'Left' tactile button, integrating it into the enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.05,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "button_right_bezel",
+      "name": "Button Right Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_right",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 80,
+        "y": 42.5,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bezel for the 'Right' tactile button, integrating it into the enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.05,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "button_enter_bezel",
+      "name": "Button Enter Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "button_enter",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 60,
+        "y": 42.5,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bezel for the 'Enter' tactile button, integrating it into the enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.05,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "m3_brass_heat_set_insert",
+      "name": "M3 Brass Heat-Set Insert",
+      "type": "misc",
+      "partId": "a218c217-5ff2-453c-bf9b-0cb77fe40758",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Brass+Heat+Set+Inserts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51Le5SVH7JL._SL500_.jpg",
+      "quantity": 12,
+      "research": {
+        "specs": [
+          {
+            "label": "material",
+            "value": "Brass"
+          },
+          {
+            "label": "length_mm",
+            "value": "6.4"
+          },
+          {
+            "label": "application",
+            "value": "Plastic"
+          },
+          {
+            "label": "insert_type",
+            "value": "Heat-Set"
+          },
+          {
+            "label": "thread_size",
+            "value": "M3"
+          },
+          {
+            "label": "mcmaster_url",
+            "value": "https://www.mcmaster.com/94180A333"
+          },
+          {
+            "label": "thread_pitch",
+            "value": "0.5"
+          },
+          {
+            "label": "mcmaster_part_number",
+            "value": "94180A333"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.mcmaster.com/94180A333",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "https://www.adafruit.com/product/4255",
+            "price": "$5.95",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0CS6VZYL8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006351445007.html?pdp_npi=6%40dis%21USD%2112.01%216.25%21%21%2181.43%2142.41%21%402141149b17793251850437285e1158%2112000036858180035%21affd%21%21%21%211%210%21",
+            "price": "$6.25",
+            "vendor": "AliExpress"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "McMaster-Carr M3 Brass Heat-Set Insert, 3.8mm Length",
+            "reason": "A shorter M3 brass heat-set insert option from McMaster-Carr, part number 94180A331 (M3-.5 Internal Thread, 3.8mm Length)."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CS6VZYL8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x4mm",
+      "description": "Brass threaded inserts for creating strong, reusable M3 threads in 3D-printed parts.",
+      "productName": "M3 Brass Heat Set Inserts",
+      "purchaseUrl": "https://www.adafruit.com/product/4255",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRpTpv62RXR9sVfC98GmMLkJmXC4qpbJhcQvkbxptOmgDfhTbS0PHwVgmr0VhydRzMgIoquzg3yg5D05i1x7FPxzxIl3P5mtn3X76qprXJgmg8InDgseeFkYRIIwB95RGJoFep43tAYGEBIRAZZ6LvWcRuoiSpUrlsk0dOnD41f9DJE08hfuSws15ysCxPxduPqEdOBJqzG04NUdFJ3bWrfijdWCN43CSC9mYDkrFhwwBbQVz82VhOIzQnJDGqhjn3119Vw7ZBsbw5zNsuKCnHfhCbxRPNLdII35nubRaiPuAYxgMIty1KMm8HZY6F24WzUNGNr5Ay28BHTyNjrjgt37wwssKrFvlAkOc5eRVIfTsSPf00gPtpAnzrYCtO6pa4kt7Oim5FLl2fo9qzTlncqIyd0FnXRaj8FR9jadMKDscIUwEZtfGnXX3P4fbw1kDhD2QSSJMAn5RvUfmbQoftnN7hwclCo2YteNbSFQAlUTLnDvyAuTFcIVw4tUUdoYhbRuWVI1mNuQLwgrpJQ8M1sDLKul4ZypKQqK0WzxjP33EG9LwNWvX48ub96mvj0CpIbLhMAbjsoKwt5GdKy2tzmAgkWEcWjNuBrzPdW6qbqkvKztM8k9TpouDclbRaxH4aTLDpxLZe7KN7MOAMFYQW5H",
+      "estimatedCost": 0.08
+    },
+    {
+      "id": "m3_flat_head_screw_10mm",
+      "name": "M3 Flat Head Screw 10mm",
+      "type": "misc",
+      "partId": "4cf6035a-f92a-48e9-bf63-66ac7f662528",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Flat+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31J7iDyRITL._SL500_.jpg",
+      "material": "Stainless Steel",
+      "quantity": 8,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-m3x10mm-flat-head-screws.html",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B08HNF3J3D?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08HNF3J3D?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "M3 flat head screws for assembling enclosure parts and securing components.",
+      "productName": "M3x10mm Flat Head Screws",
+      "purchaseUrl": "https://www.amazon.com/dp/B08HNF3J3D?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4ByFtV7",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "m2_5_flat_head_screw_6mm",
+      "name": "M2.5 Flat Head Screw 6mm",
+      "type": "misc",
+      "partId": "d627e4bf-37f3-416b-9a45-b1eb4a014855",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2.5x6mm+Flat+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41rNu6FMRkL._SL500_.jpg",
+      "material": "Steel",
+      "quantity": 4,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0D2R5STWJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$6.39",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-m2-5x6mm-flat-head-screws.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D2R5STWJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2.5x6mm",
+      "description": "M2.5 flat head screws for mounting SBC and other small PCBs.",
+      "productName": "M2.5x6mm Flat Head Screws",
+      "purchaseUrl": "https://www.amazon.com/dp/B0D2R5STWJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3rUXsdr",
+      "estimatedCost": 0.04
+    }
+  ],
+  "notes": [
+    "Hacking tool",
+    "Screen",
+    "Battery life",
+    "Bluetooth speaker control",
+    "Wi-Fi access",
+    "Signal capture",
+    "Compact form factor",
+    "Cheap"
+  ],
+  "projectName": "Portable Hacking Tool",
+  "originalPrompt": "A Hacking Tool with a Screen, battery life, it Must can Control speakers via Bluetooth and can go into W-lan. It Must can catch Signals of other devices and it Must be cheap",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all mechanical components according to specified settings",
+          "partIds": [
+            "enclosure_bottom_shell",
+            "enclosure_top_bezel",
+            "sbc_mount",
+            "display_frame",
+            "lipo_battery_tray",
+            "power_management_mount",
+            "wifi_adapter_mount",
+            "joystick_bezel",
+            "button_up_bezel",
+            "button_down_bezel",
+            "button_left_bezel",
+            "button_right_bezel",
+            "button_enter_bezel"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Clean and deburr all 3D printed parts, removing supports and imperfections",
+          "partIds": [
+            "enclosure_bottom_shell",
+            "enclosure_top_bezel",
+            "sbc_mount",
+            "display_frame",
+            "lipo_battery_tray",
+            "power_management_mount",
+            "wifi_adapter_mount",
+            "joystick_bezel",
+            "button_up_bezel",
+            "button_down_bezel",
+            "button_left_bezel",
+            "button_right_bezel",
+            "button_enter_bezel"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Install M3 brass heat-set inserts into designated holes in the enclosure bottom shell",
+          "partIds": [
+            "m3_brass_heat_set_insert",
+            "enclosure_bottom_shell"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test-fit the SBC mount with the main_sbc and the display frame with the touch_display",
+          "partIds": [
+            "sbc_mount",
+            "main_sbc",
+            "display_frame",
+            "touch_display"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Test-fit the joystick and button bezels with their respective input modules and buttons",
+          "partIds": [
+            "joystick_bezel",
+            "joystick_input",
+            "button_up_bezel",
+            "button_up",
+            "button_down_bezel",
+            "button_down",
+            "button_left_bezel",
+            "button_left",
+            "button_right_bezel",
+            "button_right",
+            "button_enter_bezel",
+            "button_enter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Prepare and solder wires to the joystick module pins (VCC, GND, VRX, VRY, SW)",
+          "partIds": [
+            "joystick_input"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Prepare and solder wires to each tactile button (Signal, GND)",
+          "partIds": [
+            "button_up",
+            "button_down",
+            "button_left",
+            "button_right",
+            "button_enter"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect the Li-Po battery to the power management HAT via the JST-PH connector",
+          "partIds": [
+            "lipo_battery",
+            "power_management"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect the power management HAT GPIO (I2C/Power) to the main_sbc GPIO (I2C) pins",
+          "partIds": [
+            "power_management",
+            "main_sbc"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect the joystick input and all button wires to the appropriate GPIO pins on the main_sbc",
+          "partIds": [
+            "joystick_input",
+            "button_up",
+            "button_down",
+            "button_left",
+            "button_right",
+            "button_enter",
+            "main_sbc"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect the main_sbc to the touch_display via HDMI for video and USB for touch data",
+          "partIds": [
+            "main_sbc",
+            "touch_display"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect the main_sbc to external power (USB-C) and verify boot-up and OS functionality",
+          "partIds": [
+            "main_sbc"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Connect the external Wi-Fi adapter to the main_sbc and verify its recognition and connectivity",
+          "partIds": [
+            "external_wifi_adapter",
+            "main_sbc"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Power the touch_display externally (Micro USB) and verify video output from main_sbc via HDMI",
+          "partIds": [
+            "touch_display",
+            "main_sbc"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify touch input functionality on the display via the USB connection to the main_sbc",
+          "partIds": [
+            "touch_display",
+            "main_sbc"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Verify I2C communication and basic power management functions between main_sbc and power_management HAT",
+          "partIds": [
+            "main_sbc",
+            "power_management"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Test all joystick and tactile button inputs, ensuring correct GPIO assignment and responsiveness",
+          "partIds": [
+            "joystick_input",
+            "button_up",
+            "button_down",
+            "button_left",
+            "button_right",
+            "button_enter",
+            "main_sbc"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Verify the system can power on and off using the power management HAT and Li-Po battery",
+          "partIds": [
+            "main_sbc",
+            "power_management",
+            "lipo_battery"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the main_sbc onto the SBC mount using appropriate screws",
+          "partIds": [
+            "main_sbc",
+            "sbc_mount"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount the touch_display into the display frame, securing it with M2.5 screws if applicable",
+          "partIds": [
+            "touch_display",
+            "display_frame",
+            "m2_5_flat_head_screw_6mm"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount the Li-Po battery into the battery tray and secure the power management HAT onto its mount",
+          "partIds": [
+            "lipo_battery",
+            "lipo_battery_tray",
+            "power_management",
+            "power_management_mount"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount the external Wi-Fi adapter onto its mount",
+          "partIds": [
+            "external_wifi_adapter",
+            "wifi_adapter_mount"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Secure the SBC mount, Li-Po battery tray, power management mount, and Wi-Fi adapter mount into the enclosure bottom shell using M2.5 screws",
+          "partIds": [
+            "enclosure_bottom_shell",
+            "sbc_mount",
+            "lipo_battery_tray",
+            "power_management_mount",
+            "wifi_adapter_mount",
+            "m2_5_flat_head_screw_6mm"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Route all internal cables (HDMI, USB, GPIO, power) neatly and apply strain relief where necessary",
+          "partIds": [
+            "main_sbc",
+            "touch_display",
+            "power_management",
+            "lipo_battery",
+            "external_wifi_adapter",
+            "joystick_input",
+            "button_up",
+            "button_down",
+            "button_left",
+            "button_right",
+            "button_enter"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Snap-fit the joystick and button bezels with their respective components into the enclosure top bezel",
+          "partIds": [
+            "enclosure_top_bezel",
+            "joystick_bezel",
+            "joystick_input",
+            "button_up_bezel",
+            "button_up",
+            "button_down_bezel",
+            "button_down",
+            "button_left_bezel",
+            "button_left",
+            "button_right_bezel",
+            "button_right",
+            "button_enter_bezel",
+            "button_enter"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Attach the display frame with the touch_display to the enclosure top bezel (clips/M2.5 screws) and then close the enclosure top bezel onto the bottom shell using M3 flat head screws",
+          "partIds": [
+            "enclosure_top_bezel",
+            "display_frame",
+            "touch_display",
+            "enclosure_bottom_shell",
+            "m3_flat_head_screw_10mm",
+            "m2_5_flat_head_screw_6mm"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A compact, battery-powered hacking tool integrates an SBC, 5-inch capacitive touchscreen, and high-gain WiFi for W-LAN access and signal capture. Housed in a 3D-printed enclosure, it features joystick and button controls for Bluetooth speaker manipulation.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "Hacking tool",
+      "Screen",
+      "Battery life",
+      "Bluetooth speaker control",
+      "Wi-Fi access",
+      "Signal capture",
+      "Compact form factor",
+      "Cheap"
+    ],
+    "description": "Project idea: A Hacking Tool with a Screen, battery life, it Must can Control speakers via Bluetooth and can go into W-lan. It Must can catch Signals of other devices and it Must be cheap\n\nDesign notes: Hacking tool, Screen, Battery life, Bluetooth speaker control, Wi-Fi access, Signal capture, Compact form factor, Cheap\n\nElectrical components (current): Main Controller SBC (mcu, 85x56x17mm); 5-inch Capacitive Touch Display (display, 121x76x10mm); 2x power: Li-Po Power Management HAT, Rechargeable Li-Po Battery; High-Gain USB WiFi Adapter (module, 85x25x10mm); 6x sensor: Mini Joystick Module, Tactile Button (Up), Tactile Button (Down), Tactile Button (Left) +2 more\n\nMechanical/structural parts (current): 13x 3d_printed: Enclosure Bottom Shell, Enclosure Top Bezel, SBC Mount, Display Frame +9 more; 3x misc: M3 Brass Heat-Set Insert, M3 Flat Head Screw 10mm, M2.5 Flat Head Screw 6mm\n\nAssembly: Enclosure Bottom Shell → M3 Brass Heat-Set Insert (press-fitted); Enclosure Bottom Shell → SBC Mount (M2.5 screws); Enclosure Bottom Shell → Li-Po Battery Tray (M2.5 screws); Enclosure Bottom Shell → Power Management Mount (M2.5 screws); Enclosure Bottom Shell → WiFi Adapter Mount (M2.5 screws); Enclosure Top Bezel → Enclosure Bottom Shell (M3 flat head screws into heat-set inserts); Enclosure Top Bezel → Display Frame (clips/M2.5 screws); Enclosure Top Bezel → Joystick Bezel (clips/snap-fit); Enclosure Top Bezel → Button Up Bezel (clips/snap-fit); Enclosure Top Bezel → Button Down Bezel (clips/snap-fit); Enclosure Top Bezel → Button Left Bezel (clips/snap-fit); Enclosure Top Bezel → Button Right Bezel (clips/snap-fit); Enclosure Top Bezel → Button Enter Bezel (clips/snap-fit); M3 Flat Head Screw 10mm → Enclosure Top Bezel (passes through); M3 Flat Head Screw 10mm → M3 Brass Heat-Set Insert (threaded connection) (+16 more connections)"
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG capable)",
+      "Heat gun or soldering iron with flat tip (for heat-set inserts)",
+      "M2.5 hex key or screwdriver",
+      "M3 hex key or screwdriver",
+      "Wire strippers",
+      "Soldering iron with fine tip",
+      "Solder",
+      "Multimeter",
+      "Tweezers",
+      "Small hobby knife or deburring tool",
+      "USB-C power supply (5V, 3A recommended)",
+      "Micro USB cable",
+      "HDMI cable (suitable for SBC to display)",
+      "USB-A to USB-Micro B cable (for display touch)",
+      "USB-A extension cable or adapter (for WiFi adapter)"
+    ],
+    "assumptions": [
+      "Basic 3D printing knowledge and printer calibration",
+      "Basic soldering experience for small components and wires",
+      "Familiarity with Linux command line for SBC configuration",
+      "Micro SD card with a compatible operating system for the Main Controller SBC is prepared",
+      "Appropriate GPIO breakout cables or jumper wires are available for connecting peripherals to the main_sbc"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Battery Power",
+      "source": "lipo_battery",
+      "target": "power_management",
+      "current": "2A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "SBC Power In",
+      "source": "power_management",
+      "target": "main_sbc",
+      "current": "3A",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "Display Video",
+      "source": "main_sbc",
+      "target": "touch_display",
+      "protocol": "hdmi",
+      "sourcePin": "HDMI",
+      "targetPin": "HDMI (Video In)"
+    },
+    {
+      "type": "data",
+      "label": "Display Touch",
+      "source": "main_sbc",
+      "target": "touch_display",
+      "protocol": "usb",
+      "sourcePin": "USB",
+      "targetPin": "USB (Touch)"
+    },
+    {
+      "type": "data",
+      "label": "WiFi Adapter",
+      "source": "main_sbc",
+      "target": "external_wifi_adapter",
+      "protocol": "usb",
+      "sourcePin": "USB",
+      "targetPin": "USB (Data/Power)"
+    },
+    {
+      "type": "data",
+      "label": "Battery Monitor",
+      "source": "main_sbc",
+      "target": "power_management",
+      "protocol": "i2c",
+      "sourcePin": "GPIO (I2C)",
+      "targetPin": "GPIO (I2C/Power)"
+    },
+    {
+      "type": "power",
+      "label": "Joystick VCC",
+      "source": "main_sbc",
+      "target": "joystick_input",
+      "current": "50mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Joystick GND",
+      "source": "main_sbc",
+      "target": "joystick_input",
+      "current": "0A",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Joystick X-axis",
+      "source": "joystick_input",
+      "target": "main_sbc",
+      "protocol": "gpio",
+      "sourcePin": "VRX",
+      "targetPin": "GPIO (ADC via external, or Digital)"
+    },
+    {
+      "type": "data",
+      "label": "Joystick Y-axis",
+      "source": "joystick_input",
+      "target": "main_sbc",
+      "protocol": "gpio",
+      "sourcePin": "VRY",
+      "targetPin": "GPIO (ADC via external, or Digital)"
+    },
+    {
+      "type": "data",
+      "label": "Joystick Button",
+      "source": "joystick_input",
+      "target": "main_sbc",
+      "protocol": "gpio",
+      "sourcePin": "SW",
+      "targetPin": "GPIO"
+    },
+    {
+      "type": "power",
+      "label": "Button Up GND",
+      "source": "main_sbc",
+      "target": "button_up",
+      "current": "0A",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Button Up Signal",
+      "source": "button_up",
+      "target": "main_sbc",
+      "protocol": "gpio",
+      "sourcePin": "Signal",
+      "targetPin": "GPIO"
+    },
+    {
+      "type": "power",
+      "label": "Button Down GND",
+      "source": "main_sbc",
+      "target": "button_down",
+      "current": "0A",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Button Down Signal",
+      "source": "button_down",
+      "target": "main_sbc",
+      "protocol": "gpio",
+      "sourcePin": "Signal",
+      "targetPin": "GPIO"
+    },
+    {
+      "type": "power",
+      "label": "Button Left GND",
+      "source": "main_sbc",
+      "target": "button_left",
+      "current": "0A",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Button Left Signal",
+      "source": "button_left",
+      "target": "main_sbc",
+      "protocol": "gpio",
+      "sourcePin": "Signal",
+      "targetPin": "GPIO"
+    },
+    {
+      "type": "power",
+      "label": "Button Right GND",
+      "source": "main_sbc",
+      "target": "button_right",
+      "current": "0A",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Button Right Signal",
+      "source": "button_right",
+      "target": "main_sbc",
+      "protocol": "gpio",
+      "sourcePin": "Signal",
+      "targetPin": "GPIO"
+    },
+    {
+      "type": "power",
+      "label": "Button Enter GND",
+      "source": "main_sbc",
+      "target": "button_enter",
+      "current": "0A",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Button Enter Signal",
+      "source": "button_enter",
+      "target": "main_sbc",
+      "protocol": "gpio",
+      "sourcePin": "Signal",
+      "targetPin": "GPIO"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "press-fitted",
+      "source": "enclosure_bottom_shell",
+      "target": "m3_brass_heat_set_insert"
+    },
+    {
+      "label": "M2.5 screws",
+      "source": "enclosure_bottom_shell",
+      "target": "sbc_mount"
+    },
+    {
+      "label": "M2.5 screws",
+      "source": "enclosure_bottom_shell",
+      "target": "lipo_battery_tray"
+    },
+    {
+      "label": "M2.5 screws",
+      "source": "enclosure_bottom_shell",
+      "target": "power_management_mount"
+    },
+    {
+      "label": "M2.5 screws",
+      "source": "enclosure_bottom_shell",
+      "target": "wifi_adapter_mount"
+    },
+    {
+      "label": "M3 flat head screws into heat-set inserts",
+      "source": "enclosure_top_bezel",
+      "target": "enclosure_bottom_shell"
+    },
+    {
+      "label": "clips/M2.5 screws",
+      "source": "enclosure_top_bezel",
+      "target": "display_frame"
+    },
+    {
+      "label": "clips/snap-fit",
+      "source": "enclosure_top_bezel",
+      "target": "joystick_bezel"
+    },
+    {
+      "label": "clips/snap-fit",
+      "source": "enclosure_top_bezel",
+      "target": "button_up_bezel"
+    },
+    {
+      "label": "clips/snap-fit",
+      "source": "enclosure_top_bezel",
+      "target": "button_down_bezel"
+    },
+    {
+      "label": "clips/snap-fit",
+      "source": "enclosure_top_bezel",
+      "target": "button_left_bezel"
+    },
+    {
+      "label": "clips/snap-fit",
+      "source": "enclosure_top_bezel",
+      "target": "button_right_bezel"
+    },
+    {
+      "label": "clips/snap-fit",
+      "source": "enclosure_top_bezel",
+      "target": "button_enter_bezel"
+    },
+    {
+      "label": "passes through",
+      "source": "m3_flat_head_screw_10mm",
+      "target": "enclosure_top_bezel"
+    },
+    {
+      "label": "threaded connection",
+      "source": "m3_flat_head_screw_10mm",
+      "target": "m3_brass_heat_set_insert"
+    },
+    {
+      "label": "threaded connection",
+      "source": "m2_5_flat_head_screw_6mm",
+      "target": "sbc_mount"
+    },
+    {
+      "label": "threaded connection",
+      "source": "m2_5_flat_head_screw_6mm",
+      "target": "lipo_battery_tray"
+    },
+    {
+      "label": "threaded connection",
+      "source": "m2_5_flat_head_screw_6mm",
+      "target": "power_management_mount"
+    },
+    {
+      "label": "threaded connection",
+      "source": "m2_5_flat_head_screw_6mm",
+      "target": "wifi_adapter_mount"
+    },
+    {
+      "label": "threaded connection",
+      "source": "m2_5_flat_head_screw_6mm",
+      "target": "display_frame"
+    },
+    {
+      "label": "mount",
+      "source": "sbc_mount",
+      "target": "main_sbc"
+    },
+    {
+      "label": "mount",
+      "source": "display_frame",
+      "target": "touch_display"
+    },
+    {
+      "label": "mount",
+      "source": "lipo_battery_tray",
+      "target": "lipo_battery"
+    },
+    {
+      "label": "mount",
+      "source": "power_management_mount",
+      "target": "power_management"
+    },
+    {
+      "label": "mount",
+      "source": "wifi_adapter_mount",
+      "target": "external_wifi_adapter"
+    },
+    {
+      "label": "mount",
+      "source": "joystick_bezel",
+      "target": "joystick_input"
+    },
+    {
+      "label": "mount",
+      "source": "button_up_bezel",
+      "target": "button_up"
+    },
+    {
+      "label": "mount",
+      "source": "button_down_bezel",
+      "target": "button_down"
+    },
+    {
+      "label": "mount",
+      "source": "button_left_bezel",
+      "target": "button_left"
+    },
+    {
+      "label": "mount",
+      "source": "button_right_bezel",
+      "target": "button_right"
+    },
+    {
+      "label": "mount",
+      "source": "button_enter_bezel",
+      "target": "button_enter"
+    }
+  ],
+  "projectId": "5083fd41-3842-40c1-8e81-a42ca4898d39"
+}

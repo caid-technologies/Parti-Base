@@ -1,0 +1,2184 @@
+{
+  "plan": "- High-performance System-on-Chip (SoC) with multi-core ARM CPU and integrated GPU, suitable for mobile applications. Selection will depend on power efficiency and computational needs for extreme RAM/storage.\n- 128GB LPDDR5/6 RAM modules integrated directly with the SoC for maximum bandwidth. Requires custom PCB design for density.\n- 3TB NVMe SSD storage solution, potentially multiple high-density M.2 modules or custom embedded flash, connected via high-speed interfaces.\n- High-resolution AMOLED or OLED display, multi-camera system (wide, ultra-wide, telephoto), and full suite of communication modules (5G, Wi-Fi 7, Bluetooth 5.x, GPS).\n- Advanced power management ICs, high-capacity Li-Po battery pack (e.g., 5000-8000mAh), and rapid charging circuitry (USB-C Power Delivery).\n- Precision-machined aluminum or titanium unibody chassis, internal mounting points for components, custom-designed thermal management system (vapor chamber, graphite sheets).",
+  "nodes": [
+    {
+      "id": "main_soc",
+      "name": "Main System-on-Chip",
+      "pins": [
+        "LPDDR6_IF",
+        "UFS_IF",
+        "MIPI_DSI",
+        "CSI",
+        "PCIe",
+        "USB_C",
+        "GPIO",
+        "I2C",
+        "SPI"
+      ],
+      "type": "mcu",
+      "partId": "e48e88e9-5a99-40cc-8b47-1229a13aad5a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+High-Performance+Mobile+SoC+%28e.g.%2C+A17+Bionic+equivalent%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/CHEesQqaP4lZ_lUInxMlwiMqn1tvW3-P18Ii0stC-wE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNndyNDJn/M2E4dXBkMS5qcGVn",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-high-performance-mobile-soc-e-g-apple-a18-bionic-equivalent.html",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "15x15x1.5mm",
+      "productName": "Custom High-Performance Mobile SoC (e.g., A17 Bionic equivalent)",
+      "purchaseUrl": "https://www.qualcomm.com/products/snapdragon/processors/snapdragon-8-gen-3",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3kPXsjb",
+      "estimatedCost": 200
+    },
+    {
+      "id": "integrated_ram",
+      "name": "128GB LPDDR6 RAM",
+      "pins": [
+        "LPDDR6_IF"
+      ],
+      "type": "module",
+      "partId": "73aa4919-5a05-42c2-a5f9-44f981c05c27",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Integrated+LPDDR6+Memory+Die&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/d6y-fXTWPAsHZoveKe6fNqla9owgROdCa3swkZOgKYM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc3lub3BzeXMu/Y29tL2lzL2ltYWdl/L3N5bm9wc3lzL211/bHRpLWRpZS0zZC1j/aGlwLTIxP3RzPTE3/Nzg1MDI5ODczMTIm/JHJlc3BvbnNpdmUk",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F8BDQ2JS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x15x0.5mm",
+      "productName": "Integrated LPDDR6 Memory Die",
+      "purchaseUrl": "https://www.samsung.com/semiconductor/dram/lpddr/lpddr5x/",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3IlSt2h",
+      "estimatedCost": 150
+    },
+    {
+      "id": "internal_storage",
+      "name": "3TB UFS 4.0 Storage",
+      "pins": [
+        "UFS_IF"
+      ],
+      "type": "module",
+      "partId": "cf42752d-71df-4734-b583-09f90dc75b53",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=High-Density+UFS+4.0+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OdOpJp8tL3SDocJg2iBfrY-oP2yegmGPIk5-XdljgGQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFJaXB4UEV4b0wu/anBn",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "11.5x13x1.0mm",
+      "productName": "High-Density UFS 4.0 Module",
+      "purchaseUrl": "https://www.micron.com/products/nand-flash/ufs",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4ovBglj",
+      "estimatedCost": 300
+    },
+    {
+      "id": "amoled_display",
+      "name": "Main AMOLED Display",
+      "pins": [
+        "MIPI_DSI",
+        "BL_PWM",
+        "VDD",
+        "VSS"
+      ],
+      "type": "display",
+      "partId": "9e141361-1f11-40fb-8e11-14b7eed450f3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6.8-inch+LTPO+AMOLED+Panel+%28e.g.%2C+Samsung+Display%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51135KwX1uL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-samsung-display-6-6-inch-fhd-amoled.html",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0F4DNFZ5B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$123.5",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F4DNFZ5B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "155x70x2mm",
+      "productName": "6.8-inch LTPO AMOLED Panel (e.g., Samsung Display)",
+      "purchaseUrl": "https://www.samsungdisplay.com/eng/product/mobile.jsp",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3gCrrgv",
+      "estimatedCost": 120
+    },
+    {
+      "id": "power_management_ic_main",
+      "name": "Main Power Management IC",
+      "pins": [
+        "VBATT",
+        "VOUT_CPU",
+        "VOUT_GPU",
+        "I2C",
+        "GPIO"
+      ],
+      "type": "power",
+      "partId": "691abfef-04f9-4fd8-bcd9-2435a8da6670",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Qualcomm+SMB8150+or+similar&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/5pHGkiovDQL7FxBYwEpKhzT4Riff9P92JZ4v-OsXEFY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8y/LzI5L1F1YWxjb21t/X0hlYWRxdWFydGVy/c19MYV9Kb2xsYS5q/cGc",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "5x5x1mm",
+      "productName": "Qualcomm SMB8150 or similar",
+      "purchaseUrl": "https://www.qualcomm.com/products/power",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3HqfVZX",
+      "estimatedCost": 15
+    },
+    {
+      "id": "wireless_module",
+      "name": "5G/Wi-Fi 7/BT 5.4 Module",
+      "pins": [
+        "PCIe",
+        "USB",
+        "SDIO",
+        "RF_ANTENNA_TX",
+        "RF_ANTENNA_RX"
+      ],
+      "type": "module",
+      "partId": "108df2b4-752b-4a89-9ac9-645e3f8aaaff",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Qualcomm+FastConnect+7800+%2B+Snapdragon+X75+Modem&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/pGwmdm-C3Lz7RE1gtCoaydXkSL-9XE6EeFgFf4I0EbI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuZGlnaXQuaW4v/ZGVmYXVsdC9mM2Yy/YTU5NmViMmQ5YmQz/OWJiMWE3YWRkMDJj/YmFjY2RiMjgyMjgw/LmpwZWc",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "12x12x1.2mm",
+      "description": "Integrated module for high-speed 5G cellular and Wi-Fi 7 wireless connectivity.",
+      "productName": "Qualcomm FastConnect 7800 + Snapdragon X75 Modem",
+      "purchaseUrl": "https://www.qualcomm.com/products/wireless-networking/wi-fi-bluetooth/fastconnect",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2wtLXQt",
+      "estimatedCost": 50
+    },
+    {
+      "id": "gnss_module",
+      "name": "GPS/GNSS Module",
+      "pins": [
+        "UART",
+        "I2C",
+        "PPS",
+        "RF_IN"
+      ],
+      "type": "module",
+      "partId": "14d61a43-3813-4a86-8f41-b096bf48e7d0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Broadcom+BCM47788+or+similar&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/xEy4JNEr2sjvDniySJZP1vq_AlofRhNUGt6V3RWGF2k/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9vcy1z/dG9yZS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjQvMDIv/cHJvZHVjdHMtYmNt/OTQzNDYwbWMuLWFw/cGxlLTFfMS0xNDh4/MTExLmpwZw",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-broadcom-bcm4390-equivalent.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "3x3x0.5mm",
+      "productName": "Broadcom BCM47788 or similar",
+      "purchaseUrl": "https://www.broadcom.com/products/wireless/gnss",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3BGkRTX",
+      "estimatedCost": 8
+    },
+    {
+      "id": "main_camera_module",
+      "name": "Main Wide-Angle Camera",
+      "pins": [
+        "MIPI_CSI",
+        "I2C",
+        "GPIO_CTRL"
+      ],
+      "type": "sensor",
+      "partId": "f344782e-1009-483e-bfc4-27add6a94b51",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sony+IMX989+1-inch+sensor+module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/YaYuenSR2gwzArbOCi03WMrVAkaz5arsH0xDZbHUHio/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5tYWRlLWluLWNo/aW5hLmNvbS8yMDJm/MGowMERVcWVQT2h6/SGlici9PRU0tMS1J/bmNoLUNhbWVyYS1J/bWFnZS1TZW5zb3It/TW9kdWxlLUN1c3Rv/bS1PaXMtQ2FtZXJh/LU1vZHVsZS1JbXg5/ODkud2VicA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BHF4D1QY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x15x8mm",
+      "description": "High-resolution large sensor camera module for exceptional image quality in various lighting conditions, a key component for an 'all-rounder' camera.",
+      "productName": "Sony IMX989 1-inch sensor module",
+      "purchaseUrl": "https://www.sony-semicon.com/products/is/mobile/index.html",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3EsreFX",
+      "estimatedCost": 80
+    },
+    {
+      "id": "ultrawide_camera_module",
+      "name": "Ultra-Wide Camera",
+      "pins": [
+        "MIPI_CSI",
+        "I2C",
+        "GPIO_CTRL"
+      ],
+      "type": "sensor",
+      "partId": "cc13ccbb-f412-4f15-acd2-27dc01dfc07a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sony+IMX563+sensor+module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/GrSzBG3L3k2hjKeLYt771NB2GrI9UIibfevHdXI0LIw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sZW9w/YXJkaW1hZ2luZy5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjMvMDcvTEktSU1Y/NTYzLU1JUEktQUYt/aWNvbi5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BHF4D1QY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x6mm",
+      "productName": "Sony IMX563 sensor module",
+      "purchaseUrl": "https://www.sony-semicon.com/products/is/mobile/index.html",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4cFRVT7",
+      "estimatedCost": 40
+    },
+    {
+      "id": "telephoto_camera_module",
+      "name": "Telephoto Camera",
+      "pins": [
+        "MIPI_CSI",
+        "I2C",
+        "GPIO_CTRL"
+      ],
+      "type": "sensor",
+      "partId": "ea13d542-6278-4ae5-b20c-ce08cd000d48",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sony+IMX890+%28Periscope%29+sensor+module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/wSZpN48juh_RP3aLq0L7RgMc-SlaCrk58xnPh9BPTKE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly95bWNp/bmVtYS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjYvMDMv/U29ueS1JTVg5MjUt/R2xvYmFsLVNodXR0/ZXItU2Vuc29yLUVu/dGVycy1Qcm9kdWN0/aW9uLVdpdGgtMjQu/NU1QLWF0LTM5NC1m/cHMuMDAxLTQ4MHgz/ODQud2VicA",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-sony-imx890-custom-periscope-lens.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "10x10x6mm",
+      "productName": "Sony IMX890 (Periscope) sensor module",
+      "purchaseUrl": "https://www.sony-semicon.com/products/is/mobile/index.html",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3IHdUlf",
+      "estimatedCost": 50
+    },
+    {
+      "id": "front_camera_module",
+      "name": "Front-Facing Camera",
+      "pins": [
+        "MIPI_CSI",
+        "I2C",
+        "GPIO_CTRL"
+      ],
+      "type": "sensor",
+      "partId": "17cdd843-d51e-4837-9928-fa00e614f2d2",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Samsung+ISOCELL+JN1+sensor+module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/THNrmj6WuGLhnTGLxyh5lf4x1-a0gJZ-hrg0PKeKm2o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90ZWNo/bm9zcG9ydHMuY28u/aW4vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjEvMDYvRTNnaEV4/NlVZQVVIX0pJLTEw/MjR4NTc2LndlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FCDYC32T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5x5x3mm",
+      "description": "Front-facing camera optimized for selfies and video calls, with good low-light performance.",
+      "productName": "Samsung ISOCELL JN1 sensor module",
+      "purchaseUrl": "https://www.samsung.com/semiconductor/image-sensor/mobile-image-sensor/isocell-jn1/",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c30uYHJF",
+      "estimatedCost": 25
+    },
+    {
+      "id": "audio_codec",
+      "name": "Audio Codec",
+      "pins": [
+        "I2S",
+        "I2C",
+        "GPIO",
+        "MIC_IN",
+        "SPK_OUT"
+      ],
+      "type": "module",
+      "partId": "533d5b9b-40a2-4452-84c0-2e0690e95f50",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Cirrus+Logic+CS47L93+or+similar&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/A2soyXtOZiOy37gbX2bxPh2mcpzOmsbmZgk8Y6A-Nxg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vQ2ly/cnVzLWxvZ2ljLUNY/VDYxNzZfNzkxYWM2/MWYtMGE1Mi00ZWMy/LWFmNWQtMWYxNWUw/OTdjOWRlLjY4NmE2/N2JjNDYyYTMxMmJj/NzQxN2Q3OWI3ZTRh/YjUzLmpwZWc_b2Ru/SGVpZ2h0PTU4MCZv/ZG5XaWR0aD01ODAm/b2RuQmc9RkZGRkZG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B005T7LFDK?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "4x4x1mm",
+      "productName": "Cirrus Logic CS47L93 or similar",
+      "purchaseUrl": "https://www.cirrus.com/products/audio-codecs/",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3yLrlj7",
+      "estimatedCost": 10
+    },
+    {
+      "id": "accelerometer_gyro",
+      "name": "Accelerometer & Gyroscope",
+      "pins": [
+        "SPI",
+        "I2C",
+        "INT"
+      ],
+      "type": "sensor",
+      "partId": "9d478cff-a415-47ee-a1f4-faddbcafd1b9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Bosch+BMI323&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/uNVFZHshQVXhB50jWpszDf2_p5Q1hpaoZgCiFES99S4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZnV0dXJlZWxlY3Ry/b25pY3MuY29tL21l/ZGlhcy9zeXNfbWFz/dGVyL2ltYWdlcy9p/bWFnZXMvMTA0MDQ3/MTc3ODkyMTQvQm9z/Y2gtQk1JMzIzLUlN/VS5qcGc",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-bosch-bmi323.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "2x2x0.6mm",
+      "description": "6-axis IMU for motion sensing and orientation.",
+      "productName": "Bosch BMI323",
+      "purchaseUrl": "https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi323/",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4VBvfuv",
+      "estimatedCost": 2.5
+    },
+    {
+      "id": "magnetometer",
+      "name": "Magnetometer",
+      "pins": [
+        "I2C",
+        "INT"
+      ],
+      "type": "sensor",
+      "partId": "626c2283-61cc-4daa-8f30-eb1fb2a3a347",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Asahi+Kasei+AKM09918&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/78JtxA6-xVumT5HIyiD6x1tqS97uV9T6E4nRu4-8N68/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWM2LmFycm93LmNv/bS9hcm9wZGZjb252/ZXJzaW9uL2Fycm93/aW1hZ2VzL2I5OTE2/ODE4MTcxMjdjODUz/MGEwZGMzNTBjYTBi/MjJhZTdjODMyNmQv/YWswOTkxOGMuanBn",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "1.5x1.5x0.5mm",
+      "description": "Electronic compass for device orientation.",
+      "productName": "Asahi Kasei AKM09918",
+      "purchaseUrl": "https://www.akm.com/us/en/products/electronic-compass/3-axis-electronic-compass/",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4ellRdr",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "ambient_light_proximity",
+      "name": "Ambient Light & Proximity Sensor",
+      "pins": [
+        "I2C",
+        "INT"
+      ],
+      "type": "sensor",
+      "partId": "84eccfab-a7cc-46a6-ab08-57f209c8e38c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ams+OSRAM+TMD27723&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/23ZNvIaYjjqU1rME0rTvZnwkb60qsNx8XADIKWQ-i7c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5lbnJndGVjaC5j/by51ay90aHVtYnMv/NmM0YzkyODVlMDE0/NTFkNmIyZmY5ODJi/NGVkNzNiMmVmYzI2/MDk4Ny5qcGc",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-ams-osram-tmd27723.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "2x2x0.5mm",
+      "productName": "ams OSRAM TMD27723",
+      "purchaseUrl": "https://ams-osram.com/products/sensors/ambient-light-sensors/ams-tmd27723-digital-ambient-light-proximity-sensor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3xTal25",
+      "estimatedCost": 1.8
+    },
+    {
+      "id": "fingerprint_sensor",
+      "name": "Under-Display Fingerprint Sensor",
+      "pins": [
+        "SPI",
+        "I2C",
+        "INT"
+      ],
+      "type": "sensor",
+      "partId": "dfcd320e-58ec-448b-9b64-220de97d5a67",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Qualcomm+3D+Sonic+Sensor+Gen+2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Rj0Bo9_N6rY09E8IixNjB2yW5iwuUeW81aTkUzCHO_4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/OTEtY2RuLmNvbS9o/dWIvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjEvMDEvUXVhbGNv/bW0tR2VuLTItM0Qt/U29uaWMtU2Vuc29y/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "9x4x0.2mm",
+      "description": "Ultrasonic under-display fingerprint sensor for biometric authentication.",
+      "productName": "Qualcomm 3D Sonic Sensor Gen 2",
+      "purchaseUrl": "https://www.qualcomm.com/products/features/security/3d-sonic-sensor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4ODqbIh",
+      "estimatedCost": 15
+    },
+    {
+      "id": "usb_c_controller",
+      "name": "USB-C Power Delivery Controller",
+      "pins": [
+        "USB_DP_DM",
+        "USB_TX_RX",
+        "CC1",
+        "CC2",
+        "VBUS_CTRL",
+        "I2C"
+      ],
+      "type": "module",
+      "partId": "2cdb9838-a1b4-4931-a38e-5260e25ffe1b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Cypress+CCG6SF&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/dUKEDXzqXs5eJmCSfOrsWmxML2B89F643LBmJXX855U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGFyZHdhcmVsdXh4/LmRlL2ltYWdlcy9j/ZG4wMS80MkI3REZB/NERGRDI0RkRFOENC/Q0Q4Qzk5N0ExMjM4/Mi9pbWcvNUY2NjUz/MjM1Q0FDNDMyQjlG/Q0NGNTE2NUI2Mjkx/MzQvQ3lwcmVzc19D/Q0c2REZfQ0NHNlNG/X1VTQl9UeXBlLUNf/UG9ydF9Db250cm9s/bGVyXzVGNjY1MzIz/NUNBQzQzMkI5RkND/RjUxNjVCNjI5MTM0/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "4x4x0.6mm",
+      "productName": "Cypress CCG6SF",
+      "purchaseUrl": "https://www.infineon.com/cms/en/product/power/usb-type-c-and-power-delivery/ez-pd-ccg6sf/",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4t7rFhn",
+      "estimatedCost": 4
+    },
+    {
+      "id": "linear_haptic_motor",
+      "name": "Linear Haptic Vibrator",
+      "pins": [
+        "PWM",
+        "GND",
+        "VCC"
+      ],
+      "type": "actuator",
+      "partId": "11aa1701-258a-43c2-b00d-8d69aee54c05",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=AAC+Technologies+0809+X-axis+Linear+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/v32FhWUvz5cMKlB4ixFViUaYgEE3gzfefxk-HLR1Mb0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9oMnd0/ZWNoLmJsb2IuY29y/ZS53aW5kb3dzLm5l/dC9wcm9kL0ltYWdl/cy9Qcm9kdWN0UGlj/cy9MTURTMjAwNC0y/QTFBLmpwZw",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "8x9x3.5mm",
+      "productName": "AAC Technologies 0809 X-axis Linear Motor",
+      "purchaseUrl": "https://www.aactechnologies.com/products/haptics/linear-haptics/",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3ggBYvx",
+      "estimatedCost": 3
+    },
+    {
+      "id": "li_po_battery",
+      "name": "Li-Po Battery Pack",
+      "pins": [
+        "BATT_POS",
+        "BATT_NEG",
+        "TEMP_NTC",
+        "BAL_PIN"
+      ],
+      "type": "power",
+      "partId": "b29107ae-8d54-446e-b55d-1e1f85dba79c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+5000mAh+3.87V+Li-Po+Cell&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/315MgGLoYEL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-custom-curved-3-7v-500mah-li-po-battery.html",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07BTT6N48?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.79",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07BTT6N48?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "75x60x5mm",
+      "productName": "Custom 5000mAh 3.87V Li-Po Cell",
+      "purchaseUrl": "https://www.tme.eu/en/details/ip-505465/li-polymer-packages/imagin",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3zAbKXx",
+      "estimatedCost": 30
+    },
+    {
+      "id": "unibody_chassis",
+      "name": "Unibody Chassis",
+      "type": "structural",
+      "partId": "95563234-ec2c-448d-899f-8b4c683a70e9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+CNC+Titanium+Unibody&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31a89Rimj1L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0GTLTL48F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$29.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008495476678.html?pdp_npi=6%40dis%21USD%212.02%212.02%21%21%2113.70%2113.70%21%40214114e317794487393961310e112d%2112000045402402861%21affd%21%21%21%211%210%21",
+            "price": "$2.02",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GTLTL48F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "160x75x7mm",
+      "description": "Precision-machined titanium unibody chassis, forming the primary structure and external housing.",
+      "productName": "Custom CNC Titanium Unibody",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxI2pFaKm8NJlHw4AxSsjQO6NPYtjMaeZ7vHlV8VfMPF7pgyKyvcmViU17abfZpkwDh2eHXW5PICwxv63TUeN2ZcinLZh9rrsUc3sKZlffbYJx93z0NQyQhNuEaJWHSlXWxnv0DGRlBmu74295s8MnQve2i89AVooTdPSjOrs074HIB5HsaZJLSjVDjJOawh569Xq0k0Cps7WjrE4OoO3EblZvIc8Rp6Mj5nEvgsJr4dEBkhoLPmjjrW1JOSIi3qSxD5TZoZtP2A6x11k7Ig358tyUIMnza4eGOg8A9GDEO2d8iXw0148d1iIPxLBe4PSX8hg1UcKfvxjqQx15hcYiTz78M3M7ceEziMuqGkcT7pXSZkRsUy4a135zSDZ2DKOT7cmxu4Qvee2I29SIEA6gKcaN4np4GrMfSyMWIuVAul8nN42ts4eho474HavelbhPkqwy0mJzzjoOEFQ101vomwHYz2eehtIUEAsBEy8pzSnYCYrI6CpqprFcGVbk6IfpcDrpgIWpSeG2mAuzC8DrZf3HxX8UWOEva4jRVln4fg4tOXG5Hc6BL8XaTghHIWIPfHZSVKNomJGpJUURiEP5K0c80x1sp2pH3JJZuKxVlWeEIUxyHy19sN3z2Eeny1QpxzHC8SsMR4cGrK5bvmA7AYT",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxI2pFaKm8NJlHw4AxSsjQO6NPYtjMaeZ7vHlV8VfMPF7pgyKyvcmViU17abfZpkwDh2eHXW5PICwxv63TUeN2ZcinLZh9rrsUc3sKZlffbYJx93z0NQyQhNuEaJWHSlXWxnv0DGRlBmu74295s8MnQve2i89AVooTdPSjOrs074HIB5HsaZJLSjVDjJOawh569Xq0k0Cps7WjrE4OoO3EblZvIc8Rp6Mj5nEvgsJr4dEBkhoLPmjjrW1JOSIi3qSxD5TZoZtP2A6x11k7Ig358tyUIMnza4eGOg8A9GDEO2d8iXw0148d1iIPxLBe4PSX8hg1UcKfvxjqQx15hcYiTz78M3M7ceEziMuqGkcT7pXSZkRsUy4a135zSDZ2DKOT7cmxu4Qvee2I29SIEA6gKcaN4np4GrMfSyMWIuVAul8nN42ts4eho474HavelbhPkqwy0mJzzjoOEFQ101vomwHYz2eehtIUEAsBEy8pzSnYCYrI6CpqprFcGVbk6IfpcDrpgIWpSeG2mAuzC8DrZf3HxX8UWOEva4jRVln4fg4tOXG5Hc6BL8XaTghHIWIPfHZSVKNomJGpJUURiEP5K0c80x1sp2pH3JJZuKxVlWeEIUxyHy19sN3z2Eeny1QpxzHC8SsMR4cGrK5bvmA7AYT",
+      "estimatedCost": 150
+    },
+    {
+      "id": "display_glass",
+      "name": "Display Cover Glass",
+      "type": "enclosure",
+      "partId": "6d123a7c-e8e8-4f5b-be2d-61e612f839b4",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Gorilla+Glass+Victus+2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "158x73x0.7mm",
+      "description": "Ultra-hardened glass panel covering and protecting the AMOLED display.",
+      "productName": "Custom Gorilla Glass Victus 2",
+      "purchaseUrl": "https://www.amazon.com/s?k=gorilla+glass+sheet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3hLN5wZ",
+      "estimatedCost": 30
+    },
+    {
+      "id": "rear_glass_panel",
+      "name": "Rear Cover Glass",
+      "type": "enclosure",
+      "partId": "6d123a7c-e8e8-4f5b-be2d-61e612f839b4",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Gorilla+Glass+Victus+2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "158x73x0.7mm",
+      "description": "Hardened glass panel forming the rear of the device, adhering to the unibody chassis.",
+      "productName": "Custom Gorilla Glass Victus 2",
+      "purchaseUrl": "https://www.amazon.com/s?k=gorilla+glass+sheet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3hLN5wZ",
+      "estimatedCost": 25
+    },
+    {
+      "id": "internal_midframe",
+      "name": "Internal Midframe",
+      "type": "structural",
+      "partId": "3d38d230-ad3b-4a09-97a8-70fd13edc7c8",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+CNC+Magnesium+Alloy+Midframe&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x70x2mm",
+      "description": "Lightweight magnesium alloy midframe providing internal rigidity and mounting points for PCB and components.",
+      "productName": "Custom CNC Magnesium Alloy Midframe",
+      "purchaseUrl": "https://www.amazon.com/s?k=magnesium+alloy+sheet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3LVxs3P",
+      "estimatedCost": 40
+    },
+    {
+      "id": "vapor_chamber",
+      "name": "Vapor Chamber",
+      "type": "mechanism",
+      "partId": "e6b1ea32-366a-4291-827d-91fa08cd5507",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Ultra-Thin+Vapor+Chamber&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/_peGqVao8XK3L5TeJ2axAfUDon-9aRB_DZYn1mxTS6s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YXdpbmQtdGhlcm1h/bC5jb20vdXBsb2Fk/cy8yMDIzMzQ1MjEv/dWx0cmEtdGhpbi12/YXBvci1jaGFtYmVy/LWhlYXRzaW5rM2Nh/NGZjM2YtZjFmZS00/NjAwLTk1MjAtN2Ix/MGQzOGNmOGM5Lmpw/Zw",
+      "material": "Copper/Graphite Composite",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-custom-ultra-thin-vapor-chamber.html",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "50x40x0.4mm",
+      "description": "Advanced ultra-thin vapor chamber for efficient heat dissipation from the SoC and mainboard.",
+      "productName": "Custom Ultra-Thin Vapor Chamber",
+      "purchaseUrl": "https://www.amazon.com/s?k=smartphone+vapor+chamber",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c33Bp10Z",
+      "estimatedCost": 15
+    },
+    {
+      "id": "graphite_sheet_top",
+      "name": "Graphite Thermal Sheet (Top)",
+      "type": "misc",
+      "partId": "6c23cc65-62fc-477a-afc4-786f199c5724",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Panasonic+PGS+Graphite+Sheet&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "140x60x0.1mm",
+      "description": "Flexible graphite sheet for further heat spreading and dissipation, positioned above the main components.",
+      "productName": "Panasonic PGS Graphite Sheet",
+      "purchaseUrl": "https://www.amazon.com/s?k=graphite+thermal+sheet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2JwDwa5",
+      "estimatedCost": 3
+    },
+    {
+      "id": "graphite_sheet_bottom",
+      "name": "Graphite Thermal Sheet (Bottom)",
+      "type": "misc",
+      "partId": "6c23cc65-62fc-477a-afc4-786f199c5724",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Panasonic+PGS+Graphite+Sheet&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "140x60x0.1mm",
+      "description": "Flexible graphite sheet for further heat spreading and dissipation, positioned below the main components/battery.",
+      "productName": "Panasonic PGS Graphite Sheet",
+      "purchaseUrl": "https://www.amazon.com/s?k=graphite+thermal+sheet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2JwDwa5",
+      "estimatedCost": 3
+    },
+    {
+      "id": "power_button",
+      "name": "Power Button",
+      "type": "misc",
+      "partId": "7e019c95-0b74-4001-9a2e-f5ea0b8b5af9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Metal+Side+Button&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/ec6-mqwh45IVp_NuR8tQKzn8DKsniF51wytws-25CtM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dWtwYWNjZXNzb3Jp/ZXMuY29tL2ZpbGVz/L2ltZy9wcm9kdWN0/L3Nldy1vbi1idXR0/b25zL2dhbGxlcnkv/ZmxlZXQtcGxhc3Rp/Yy1zZXctb24tYnV0/dG9uLndlYnA",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FCMMS74Q?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x2x1.5mm",
+      "description": "Tactile metal button for power control, integrated into the chassis side.",
+      "productName": "Custom Metal Side Button",
+      "purchaseUrl": "https://www.amazon.com/s?k=smartphone+metal+button",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4LLCqqV",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "volume_rocker",
+      "name": "Volume Rocker",
+      "type": "misc",
+      "partId": "76715cd2-f5d0-4377-8114-e95a91a9b3fc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Metal+Volume+Rocker&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/sEAxC2vcx4E-BUNEiFe04woumGF9nh0w9kBQkSl3ubE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9iMjkx/MDM5MC5zbXVzaGNk/bi5jb20vMjkxMDM5/MC93cC1jb250ZW50/L3VwbG9hZHMvYmIt/cGx1Z2luL2NhY2hl/L1ByZWNpc2lvbi1T/aGVldC1NZXRhbC1G/YWJyaWNhdGlvbjU0/LXNxdWFyZS1mYWY3/NmY0MzNjMzI0YjEx/YzQ3NDZmNzhjZjFk/MDU5NS1wZnQybzQw/Yno4bnIuanBnP2xv/c3N5PTImc3RyaXA9/MSZ3ZWJwPTE",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B00W9KH08Y?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x2x1.5mm",
+      "description": "Integrated metal rocker button for volume adjustment on the chassis side.",
+      "productName": "Custom Metal Volume Rocker",
+      "purchaseUrl": "https://www.amazon.com/s?k=smartphone+volume+rocker",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2wXRby5",
+      "estimatedCost": 2
+    },
+    {
+      "id": "sim_tray",
+      "name": "SIM Card Tray",
+      "type": "misc",
+      "partId": "148c12ca-521c-4be1-b429-44501e036e6a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Dual+Nano+SIM+Tray&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BH8NBBKJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x8x1.5mm",
+      "description": "Ejectable tray for dual Nano SIM cards, flush with the chassis.",
+      "productName": "Custom Dual Nano SIM Tray",
+      "purchaseUrl": "https://www.amazon.com/s?k=nano+sim+card+tray",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4natDTF",
+      "estimatedCost": 2
+    },
+    {
+      "id": "usb_c_port_gasket",
+      "name": "USB-C Port Gasket",
+      "type": "misc",
+      "partId": "a72e2907-ad17-4237-b9e2-35e3220e5f6f",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Silicone+USB-C+Gasket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/alraRaIdyQpyvEFkMcYYJxMPbX3w_AdaZrj6ZuW3GZk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zLmFs/aWNkbi5jb20vQHNj/MDQva2YvSDk5YTZm/MzhjY2Q3MDRiNGE4/MmEyMGM3Nzc1NjI4/NGNjbS5qcGdfMzAw/eDMwMC5qcGc",
+      "material": "Medical-grade Silicone",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0GL6VGMPD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "12x4x1mm",
+      "description": "Silicone gasket for waterproofing and dust protection around the USB-C port.",
+      "productName": "Custom Silicone USB-C Gasket",
+      "purchaseUrl": "https://www.amazon.com/s?k=usb-c+port+gasket",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3uIKujr",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "speaker_grill_top",
+      "name": "Top Speaker Grill",
+      "type": "misc",
+      "partId": "19794f5a-6f25-4fc9-ae10-ae27589c7ac0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Micro-Perforated+Grill&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B00F3FJRGK?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x1.5x0.5mm",
+      "description": "Acoustically transparent, micro-perforated grill for the top earpiece/speaker.",
+      "productName": "Custom Micro-Perforated Grill",
+      "purchaseUrl": "https://www.amazon.com/s?k=smartphone+speaker+grille",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2zIQIYD",
+      "estimatedCost": 0.8
+    },
+    {
+      "id": "speaker_grill_bottom",
+      "name": "Bottom Speaker Grill",
+      "type": "misc",
+      "partId": "19794f5a-6f25-4fc9-ae10-ae27589c7ac0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Micro-Perforated+Grill&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B00F3FJRGK?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x2x0.5mm",
+      "description": "Acoustically transparent, micro-perforated grill for the bottom loudspeaker.",
+      "productName": "Custom Micro-Perforated Grill",
+      "purchaseUrl": "https://www.amazon.com/s?k=smartphone+speaker+grille",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2zIQIYD",
+      "estimatedCost": 1
+    },
+    {
+      "id": "main_camera_lens_cover",
+      "name": "Main Camera Lens Cover",
+      "type": "misc",
+      "partId": "83363aa2-092f-4e7d-a648-4bc6b629bca3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sapphire+Glass+Camera+Lens+Cover&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41j-YQ36ljL._SL500_.jpg",
+      "material": "Sapphire Glass",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$15.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "main_camera_module",
+      "dimensions": "8x8x0.5mm",
+      "description": "Protective sapphire glass cover for the main wide-angle camera lens.",
+      "productName": "Sapphire Glass Camera Lens Cover",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgYp1JXLCgi30wdPo1nNUAvM5N616ytwdFntywW1BwCJW0RrTE8mjFMRhUvHEAjlEGjAE0FFYsCHNTwodMXcZwiDh90M9F1NUkKkZAwdu2M9xq5ZDroGSR5uC62emvvgaNUIX4xdCm8MECVJoj9y7ddn6eCvd5p2CePlcbUPCItEyK1lpKwOi55kBnQvemypeBjMdhqA3vQPrXmzgPz7UhpGrbT7R7OCzw81nKWsgTB2Xz56PqlZZn86EbCqdIcI7JJb9C6uQd6wkIpspDqMRrq3JB3G7JXgzz5mjWTZSWeebM7wxLZhi4Psir2dNYEU9iRNMISCeue4ELcoQBf9Glif5lrAzbNuqtn9m7QBUmF93dgzgnwKq3IEgQrM3e8wSnWjRfE9kS0xPGRvS7SwNIytJRnWRm3YcncX8gldUWSwWqApCWGbiHJsdkPgv8GRFjHcuLUwffn3oPSRMJErWNqJ5pcrppLpbB8DlcCC2axStZcouE6Em36gkNujie51b7J61JdUmLK93ddN1nfRe6t0tYqDAkPvIeiqQwSH8VC2oVMSSPsWGtrXbWlfPvaWvd8qgn92TyvNQrJL7NUpubr0ZOKkQJbVSspmCGhk90QQupxACIAO5bzHTwouFzcrPfIS2aoX8Gyl4TeUYz9mlm0b",
+      "estimatedCost": 3
+    },
+    {
+      "id": "ultrawide_camera_lens_cover",
+      "name": "Ultrawide Camera Lens Cover",
+      "type": "misc",
+      "partId": "83363aa2-092f-4e7d-a648-4bc6b629bca3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sapphire+Glass+Camera+Lens+Cover&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41j-YQ36ljL._SL500_.jpg",
+      "material": "Sapphire Glass",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$15.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "ultrawide_camera_module",
+      "dimensions": "7x7x0.5mm",
+      "description": "Protective sapphire glass cover for the ultra-wide camera lens.",
+      "productName": "Sapphire Glass Camera Lens Cover",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgYp1JXLCgi30wdPo1nNUAvM5N616ytwdFntywW1BwCJW0RrTE8mjFMRhUvHEAjlEGjAE0FFYsCHNTwodMXcZwiDh90M9F1NUkKkZAwdu2M9xq5ZDroGSR5uC62emvvgaNUIX4xdCm8MECVJoj9y7ddn6eCvd5p2CePlcbUPCItEyK1lpKwOi55kBnQvemypeBjMdhqA3vQPrXmzgPz7UhpGrbT7R7OCzw81nKWsgTB2Xz56PqlZZn86EbCqdIcI7JJb9C6uQd6wkIpspDqMRrq3JB3G7JXgzz5mjWTZSWeebM7wxLZhi4Psir2dNYEU9iRNMISCeue4ELcoQBf9Glif5lrAzbNuqtn9m7QBUmF93dgzgnwKq3IEgQrM3e8wSnWjRfE9kS0xPGRvS7SwNIytJRnWRm3YcncX8gldUWSwWqApCWGbiHJsdkPgv8GRFjHcuLUwffn3oPSRMJErWNqJ5pcrppLpbB8DlcCC2axStZcouE6Em36gkNujie51b7J61JdUmLK93ddN1nfRe6t0tYqDAkPvIeiqQwSH8VC2oVMSSPsWGtrXbWlfPvaWvd8qgn92TyvNQrJL7NUpubr0ZOKkQJbVSspmCGhk90QQupxACIAO5bzHTwouFzcrPfIS2aoX8Gyl4TeUYz9mlm0b",
+      "estimatedCost": 2.5
+    },
+    {
+      "id": "telephoto_camera_lens_cover",
+      "name": "Telephoto Camera Lens Cover",
+      "type": "misc",
+      "partId": "83363aa2-092f-4e7d-a648-4bc6b629bca3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sapphire+Glass+Camera+Lens+Cover&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41j-YQ36ljL._SL500_.jpg",
+      "material": "Sapphire Glass",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$15.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "telephoto_camera_module",
+      "dimensions": "7x7x0.5mm",
+      "description": "Protective sapphire glass cover for the telephoto camera lens.",
+      "productName": "Sapphire Glass Camera Lens Cover",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FK9T3TTR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgYp1JXLCgi30wdPo1nNUAvM5N616ytwdFntywW1BwCJW0RrTE8mjFMRhUvHEAjlEGjAE0FFYsCHNTwodMXcZwiDh90M9F1NUkKkZAwdu2M9xq5ZDroGSR5uC62emvvgaNUIX4xdCm8MECVJoj9y7ddn6eCvd5p2CePlcbUPCItEyK1lpKwOi55kBnQvemypeBjMdhqA3vQPrXmzgPz7UhpGrbT7R7OCzw81nKWsgTB2Xz56PqlZZn86EbCqdIcI7JJb9C6uQd6wkIpspDqMRrq3JB3G7JXgzz5mjWTZSWeebM7wxLZhi4Psir2dNYEU9iRNMISCeue4ELcoQBf9Glif5lrAzbNuqtn9m7QBUmF93dgzgnwKq3IEgQrM3e8wSnWjRfE9kS0xPGRvS7SwNIytJRnWRm3YcncX8gldUWSwWqApCWGbiHJsdkPgv8GRFjHcuLUwffn3oPSRMJErWNqJ5pcrppLpbB8DlcCC2axStZcouE6Em36gkNujie51b7J61JdUmLK93ddN1nfRe6t0tYqDAkPvIeiqQwSH8VC2oVMSSPsWGtrXbWlfPvaWvd8qgn92TyvNQrJL7NUpubr0ZOKkQJbVSspmCGhk90QQupxACIAO5bzHTwouFzcrPfIS2aoX8Gyl4TeUYz9mlm0b",
+      "estimatedCost": 2.5
+    },
+    {
+      "id": "front_camera_lens_cover",
+      "name": "Front Camera Lens Cover",
+      "type": "misc",
+      "partId": "f4473006-e563-436a-b3e3-6d9616d6a651",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Glass+Lens+Cover&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51dc8Uk6h8L._SL500_.jpg",
+      "material": "Glass",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FLJVG5B1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$12.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FLJVG5B1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "front_camera_module",
+      "dimensions": "3x3x0.5mm",
+      "description": "Small protective glass cover for the front-facing camera lens.",
+      "productName": "Custom Glass Lens Cover",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FLJVG5B1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dZn2BFiYj4W2s3qy4qKvbbR87l2yVNa7fPzihaHvIxOt2qFkPkiR1Qd542Aza4tOXj0roOMnOAZulIBdXOUMj2ib2sCe7tjBNAozQsoaOMhtZHpOF9OPbhkp9raXfrZnODnndivSx4KdkK2hHdfWatBYiem2U9Dcph5ULFwuWZMNBCA1QRV7sYgSFDjyF3r9sY6RRdwygdRHtPg6rHBtiAlGIm0zSF83HheXxU41H2ktnNnF4jSjKyexkTvz6CmHDAC7T6GNY66yswPVFn9eqmSpv2FQJc3gQCCHpq9aUudTEbEkKKJc95Qpi7CFAlXLVsYR3xRF02p51f6XEzJGQcNc5iUyuCOCOuwohujmJacgXt4ZHl9a1f5DuSdoD6iG6R3A5rC24TUvZYMf5MVQOpZ0ovCvR3tcxTiK84MaxV5F7D9CtHuPOsoqigLM8zM4gYQLzxoNZTgIy3utovMyS7HRsSBXVl7At0LwC6qTaqKH1iH8597ME39FqEnFNXKBZlnTFCIIGcE06bL4oHaDVgKS0M9DpKZzXmG6gcBQ5VUS890VeVWqTTnQp72BRybFc4wwspTyJ62Mgmt3qCvnVSjIfsGZMbyXuvIyCKy0wHpUiVjGKCbSuvcH7HbMvdN5oEYzKj2mxACEpnbAVPanwvVt",
+      "estimatedCost": 0.8
+    },
+    {
+      "id": "pcb_mounting_screws",
+      "name": "PCB Mounting Screws",
+      "type": "misc",
+      "partId": "c7abc027-1d75-464c-b6ee-e032351a2242",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M1.2x2mm+Phillips+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/WrdAK_60P7WbJ4X3hCh7d0HEBMNyYmjzDUwXHi9sykE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL1E3UUFB/T1N3RExoZFozdFkv/cy1sNTAwLmpwZw",
+      "material": "Stainless Steel",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B0FWR4PPFH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M1.2x2mm",
+      "description": "Small Phillips head screws for securing the main PCB to the midframe.",
+      "productName": "M1.2x2mm Phillips Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m1.2x2mm+screws",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3ARsDNB",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "battery_adhesive_strip",
+      "name": "Battery Adhesive Strip",
+      "type": "misc",
+      "partId": "adc723ec-33a7-4b0e-876a-c84c93a4840e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3M+VHB+Double+Sided+Adhesive+Tape&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41OCwBEEQjL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005010228538555.html?pdp_npi=6%40dis%21USD%219.35%214.39%21%21%2163.22%2129.71%21%40210152bd17793847595953907e101a%2112000051606062178%21affd%21%21%21%211%210%21",
+            "price": "$4.39",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FY6T11WN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.52",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FY6T11WN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "li_po_battery",
+      "dimensions": "70x50x0.2mm",
+      "description": "Strong double-sided adhesive strip for securing the Li-Po battery pack.",
+      "productName": "3M VHB Double Sided Adhesive Tape",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQiqf4uLqKDGW0wv8bveTqMmMR745nhLmAAesHpIiE7jM5ghtlH1J849rrZJTQ94kqW66IWEKGIH2elWWkrIxrbkJY4v9CF6J10dwaRejAcSzclhlwlZm5W496oVZt2IAhCwLgKZ7ABone4cOwSOcGujgqxTfEQHwI61I9gl6jelHM032KI5qnmCSs9xZWVVy9ZRMqNnde9MikbnbLTW7WkcDS2cm5KKpuOQElTGuaKrzIJwFism4q7QbqzuVVaM7EGoYJ8CPrUa4a5dU4qzmHVrYeZwViWFkaPt3k2P6zdUjHckxZZDaUFRIqW9BfZESxxaFPZX0cZ4cLrXcCnMQ7OTt9L4F3O1Xq8eDGSXTrlhGNl4ZxF1H7r9EP0R0htp9armU7jJ98Qoe50sGMoFBOEbmCYqFlqNJBGsoZnTbQXfthTxUxO6YrQZ3748lvvx2X7y7GvzNDQZDqwEQazEhLDSpDKr5k5bgrK4jRmTDOiSFkPUX0v0DGCW0QShjvOwkuPc4CzJ5F7Ok5aLUfhgkePSlukSXFPIzMquk05pdo3iN384myStmpmcuIkyJFkQwb4TXzf1ApPiVgM6ZOVL6hcwHgSRowTdPVqUqCjyE26Ns8piyRkFbwf6QOeXFRHEGFfPldrKimjHkBra8rZaXt5p",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQiqf4uLqKDGW0wv8bveTqMmMR745nhLmAAesHpIiE7jM5ghtlH1J849rrZJTQ94kqW66IWEKGIH2elWWkrIxrbkJY4v9CF6J10dwaRejAcSzclhlwlZm5W496oVZt2IAhCwLgKZ7ABone4cOwSOcGujgqxTfEQHwI61I9gl6jelHM032KI5qnmCSs9xZWVVy9ZRMqNnde9MikbnbLTW7WkcDS2cm5KKpuOQElTGuaKrzIJwFism4q7QbqzuVVaM7EGoYJ8CPrUa4a5dU4qzmHVrYeZwViWFkaPt3k2P6zdUjHckxZZDaUFRIqW9BfZESxxaFPZX0cZ4cLrXcCnMQ7OTt9L4F3O1Xq8eDGSXTrlhGNl4ZxF1H7r9EP0R0htp9armU7jJ98Qoe50sGMoFBOEbmCYqFlqNJBGsoZnTbQXfthTxUxO6YrQZ3748lvvx2X7y7GvzNDQZDqwEQazEhLDSpDKr5k5bgrK4jRmTDOiSFkPUX0v0DGCW0QShjvOwkuPc4CzJ5F7Ok5aLUfhgkePSlukSXFPIzMquk05pdo3iN384myStmpmcuIkyJFkQwb4TXzf1ApPiVgM6ZOVL6hcwHgSRowTdPVqUqCjyE26Ns8piyRkFbwf6QOeXFRHEGFfPldrKimjHkBra8rZaXt5p",
+      "estimatedCost": 1
+    },
+    {
+      "id": "vibration_motor_mount",
+      "name": "Vibration Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "linear_haptic_motor",
+      "dimensions": "15x5x3mm",
+      "description": "Custom 3D-printed bracket to securely hold the linear haptic motor in place.",
+      "purchaseUrl": "https://www.amazon.com/s?k=petg+filament",
+      "estimatedCost": 0.2,
+      "printSettings": "100% infill, 0.15mm layer"
+    },
+    {
+      "id": "camera_module_gasket_main",
+      "name": "Main Camera Module Gasket",
+      "type": "misc",
+      "partId": "da0148b5-439e-47cf-979c-3decd012bc73",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Ultrawide+Camera+Module+Gasket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "main_camera_module",
+      "dimensions": "10x10x1mm",
+      "description": "Foam gasket for the main camera module to reduce vibrations and light leakage.",
+      "productName": "Ultrawide Camera Module Gasket",
+      "purchaseUrl": "https://www.amazon.com/s?k=camera+foam+gasket",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c404uL6t",
+      "estimatedCost": 0.3
+    },
+    {
+      "id": "camera_module_gasket_ultrawide",
+      "name": "Ultrawide Camera Module Gasket",
+      "type": "misc",
+      "partId": "da0148b5-439e-47cf-979c-3decd012bc73",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Ultrawide+Camera+Module+Gasket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "ultrawide_camera_module",
+      "dimensions": "8x8x1mm",
+      "description": "Foam gasket for the ultrawide camera module to reduce vibrations and light leakage.",
+      "purchaseUrl": "https://www.amazon.com/s?k=camera+foam+gasket",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c404uL6t",
+      "estimatedCost": 0.2
+    },
+    {
+      "id": "camera_module_gasket_telephoto",
+      "name": "Telephoto Camera Module Gasket",
+      "type": "misc",
+      "partId": "da0148b5-439e-47cf-979c-3decd012bc73",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Ultrawide+Camera+Module+Gasket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "telephoto_camera_module",
+      "dimensions": "8x8x1mm",
+      "description": "Foam gasket for the telephoto camera module to reduce vibrations and light leakage.",
+      "productName": "Ultrawide Camera Module Gasket",
+      "purchaseUrl": "https://www.amazon.com/s?k=camera+foam+gasket",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c404uL6t",
+      "estimatedCost": 0.2
+    },
+    {
+      "id": "display_adhesive_seal",
+      "name": "Display Adhesive Seal",
+      "type": "misc",
+      "partId": "018bf0f6-2d75-4b41-825e-acc3197308a0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=B7000+Phone+Repair+Adhesive&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "Acrylic Adhesive",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0B723T8WQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "amoled_display",
+      "dimensions": "150x70x0.5mm",
+      "description": "Flexible adhesive for sealing the display glass to the chassis, providing water resistance.",
+      "productName": "B7000 Phone Repair Adhesive",
+      "purchaseUrl": "https://www.amazon.com/s?k=b7000+phone+adhesive",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxxoaPNakuH1KqcyP0WW6Cjrh8g1dyK41QXvxDuVTNs04kVfcVE5gkWsn4SmD5QmVzinooPTWHFn29uMLIN96No103lZOBudji8jbxclCdVWenk3ISdf5gnfuZIWORlPZLtuNm0SvJxsWYVqIs7xlBFML5jX8ezRZ0ZdeQDom9DEyqmcIzPPYEJOLXUKuWzoqCM7R39yycLwMfCrgQH6zEHSVSln1FTDI5c319mealHitOuGcWZ07NLALYX1SMY5qLYW6HziYk7shL7KtT2sxjUVMlnP8Y4PnHqR5X91D3ov4XdZtwzlRZzsQ4NInaF89u7MwmZTPKUSGQ6iU77yuNdYxhdFz9RxGrtenDSha2z1SbcyxS9OWTb1LixsY5VcGAFTYQd3TvXSeAtwHqSIz0suxbPh4uWMveINZD4qFdVkY4u2Ga2mtwA3G1XJ12fdS8dohvGm9hynHqbQU4Fy7TxTQ4CDpDiys2HMUjbez4X7NJ3HeEzNC07Rgyn7PuStyFTIYzry5HdojZRw2xAqtvZNrJLTKiMkVFwkqbdOLAmJDQaW9kI5BsMPBWrdB4AKq10RZrhNQ9oWCbtB44jESsp7N4cmwb0RUJj8fHPGSSkthCMiTuRXHAWXD1feE7E8ZkbvaabS3NpRLIT9sTbEK7LST",
+      "estimatedCost": 2
+    },
+    {
+      "id": "main_soc_mount",
+      "name": "Main System-on-Chip Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "main_soc",
+      "dimensions": "60x40x12mm",
+      "description": "Standoff bracket sized to the Main System-on-Chip's mounting hole pattern. M2.5 holes for board fasteners; vented underside for airflow.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "integrated_ram_mount",
+      "name": "128GB LPDDR6 RAM Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "integrated_ram",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the 128GB LPDDR6 RAM that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "internal_storage_mount",
+      "name": "3TB UFS 4.0 Storage Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "internal_storage",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the 3TB UFS 4.0 Storage that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "wireless_module_mount",
+      "name": "5G/Wi-Fi 7/BT 5.4 Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "wireless_module",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the 5G/Wi-Fi 7/BT 5.4 Module that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "gnss_module_mount",
+      "name": "GPS/GNSS Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "gnss_module",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the GPS/GNSS Module that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "audio_codec_mount",
+      "name": "Audio Codec Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "audio_codec",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the Audio Codec that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "accelerometer_gyro_mount",
+      "name": "Accelerometer & Gyroscope Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "accelerometer_gyro",
+      "dimensions": "30x30x15mm",
+      "description": "Form-fitting cradle for the Accelerometer & Gyroscope that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "magnetometer_mount",
+      "name": "Magnetometer Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "magnetometer",
+      "dimensions": "30x30x15mm",
+      "description": "Form-fitting cradle for the Magnetometer that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "ambient_light_proximity_mount",
+      "name": "Ambient Light & Proximity Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "ambient_light_proximity",
+      "dimensions": "30x30x15mm",
+      "description": "Form-fitting cradle for the Ambient Light & Proximity Sensor that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "fingerprint_sensor_mount",
+      "name": "Under-Display Fingerprint Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "fingerprint_sensor",
+      "dimensions": "30x30x15mm",
+      "description": "Form-fitting cradle for the Under-Display Fingerprint Sensor that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "usb_c_controller_mount",
+      "name": "USB-C Power Delivery Controller Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "usb_c_controller",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the USB-C Power Delivery Controller that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    }
+  ],
+  "notes": [
+    "3TB storage",
+    "128GB RAM",
+    "Mobile device"
+  ],
+  "projectName": "Apex Smartphone",
+  "originalPrompt": "Fais un moi un téléphonne à 3to de stockage et 128 Go de RAM",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all custom mounts and the vibration motor mount",
+          "partIds": [
+            "vibration_motor_mount",
+            "main_soc_mount",
+            "integrated_ram_mount",
+            "internal_storage_mount",
+            "wireless_module_mount",
+            "gnss_module_mount",
+            "audio_codec_mount",
+            "accelerometer_gyro_mount",
+            "magnetometer_mount",
+            "ambient_light_proximity_mount",
+            "fingerprint_sensor_mount",
+            "usb_c_controller_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Deburr and clean 3D printed parts, ensure fitment for respective components",
+          "partIds": [
+            "vibration_motor_mount",
+            "main_soc_mount",
+            "integrated_ram_mount",
+            "internal_storage_mount",
+            "wireless_module_mount",
+            "gnss_module_mount",
+            "audio_codec_mount",
+            "accelerometer_gyro_mount",
+            "magnetometer_mount",
+            "ambient_light_proximity_mount",
+            "fingerprint_sensor_mount",
+            "usb_c_controller_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Clean all glass panels and lens covers",
+          "partIds": [
+            "display_glass",
+            "rear_glass_panel",
+            "main_camera_lens_cover",
+            "ultrawide_camera_lens_cover",
+            "telephoto_camera_lens_cover",
+            "front_camera_lens_cover"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Connect Main SoC to LPDDR6 RAM and UFS Storage via flex cables (if not integrated)",
+          "partIds": [
+            "main_soc",
+            "integrated_ram",
+            "internal_storage"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect AMOLED Display, Cameras, Wireless Module, GNSS, Audio Codec, and Sensors to Main SoC/PCB via flex cables",
+          "partIds": [
+            "main_soc",
+            "amoled_display",
+            "main_camera_module",
+            "ultrawide_camera_module",
+            "telephoto_camera_module",
+            "front_camera_module",
+            "wireless_module",
+            "gnss_module",
+            "audio_codec",
+            "accelerometer_gyro",
+            "magnetometer",
+            "ambient_light_proximity",
+            "fingerprint_sensor"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect USB-C PD Controller to Main SoC and route VBUS to Power Management IC",
+          "partIds": [
+            "main_soc",
+            "usb_c_controller",
+            "power_management_ic_main"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect Power Management IC to all power-consuming components and Li-Po Battery",
+          "partIds": [
+            "power_management_ic_main",
+            "li_po_battery",
+            "main_soc",
+            "integrated_ram",
+            "internal_storage",
+            "amoled_display",
+            "wireless_module",
+            "gnss_module",
+            "main_camera_module",
+            "ultrawide_camera_module",
+            "telephoto_camera_module",
+            "front_camera_module",
+            "audio_codec",
+            "accelerometer_gyro",
+            "magnetometer",
+            "ambient_light_proximity",
+            "fingerprint_sensor",
+            "linear_haptic_motor"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect Linear Haptic Vibrator to Power Management IC and Main SoC (PWM control)",
+          "partIds": [
+            "linear_haptic_motor",
+            "power_management_ic_main",
+            "main_soc"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Perform initial continuity checks on all power and ground lines",
+          "partIds": [
+            "power_management_ic_main",
+            "li_po_battery",
+            "main_soc",
+            "integrated_ram",
+            "internal_storage",
+            "amoled_display",
+            "wireless_module",
+            "gnss_module",
+            "main_camera_module",
+            "ultrawide_camera_module",
+            "telephoto_camera_module",
+            "front_camera_module",
+            "audio_codec",
+            "accelerometer_gyro",
+            "magnetometer",
+            "ambient_light_proximity",
+            "fingerprint_sensor",
+            "linear_haptic_motor",
+            "usb_c_controller"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect Li-Po Battery and apply power to the main PCB assembly",
+          "partIds": [
+            "li_po_battery",
+            "power_management_ic_main"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Verify power rails and voltages using a multimeter",
+          "partIds": [
+            "power_management_ic_main"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Flash initial firmware/bootloader to Main SoC via USB-C or debug port",
+          "partIds": [
+            "main_soc",
+            "usb_c_controller"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test basic display functionality and touch input (if integrated with display)",
+          "partIds": [
+            "amoled_display"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Verify camera module detection and capture functionality for all cameras",
+          "partIds": [
+            "main_camera_module",
+            "ultrawide_camera_module",
+            "telephoto_camera_module",
+            "front_camera_module"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Test Wireless (5G/Wi-Fi/BT) and GNSS module functionality",
+          "partIds": [
+            "wireless_module",
+            "gnss_module"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Verify sensor functionality (accelerometer, gyro, magnetometer, ambient light, fingerprint)",
+          "partIds": [
+            "accelerometer_gyro",
+            "magnetometer",
+            "ambient_light_proximity",
+            "fingerprint_sensor"
+          ]
+        },
+        {
+          "id": "bringup_8",
+          "title": "Test audio input (MIC) and output (SPK) via audio codec",
+          "partIds": [
+            "audio_codec"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount Main SoC, RAM, Storage, Wireless, GNSS, Audio, USB-C Controller, and Sensors into their respective 3D printed mounts and secure mounts to internal midframe with M1.2 screws",
+          "partIds": [
+            "main_soc",
+            "integrated_ram",
+            "internal_storage",
+            "wireless_module",
+            "gnss_module",
+            "audio_codec",
+            "accelerometer_gyro",
+            "magnetometer",
+            "ambient_light_proximity",
+            "fingerprint_sensor",
+            "usb_c_controller",
+            "main_soc_mount",
+            "integrated_ram_mount",
+            "internal_storage_mount",
+            "wireless_module_mount",
+            "gnss_module_mount",
+            "audio_codec_mount",
+            "accelerometer_gyro_mount",
+            "magnetometer_mount",
+            "ambient_light_proximity_mount",
+            "fingerprint_sensor_mount",
+            "usb_c_controller_mount",
+            "internal_midframe",
+            "pcb_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Apply thermal paste to Main SoC and attach vapor chamber to internal midframe, then affix graphite thermal sheets",
+          "partIds": [
+            "main_soc",
+            "vapor_chamber",
+            "internal_midframe",
+            "graphite_sheet_top",
+            "graphite_sheet_bottom"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount linear haptic vibrator into its 3D printed mount and secure to internal midframe",
+          "partIds": [
+            "linear_haptic_motor",
+            "vibration_motor_mount",
+            "internal_midframe"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Adhere Li-Po Battery to internal midframe using the battery adhesive strip",
+          "partIds": [
+            "li_po_battery",
+            "battery_adhesive_strip",
+            "internal_midframe"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Install USB-C port gasket, speaker grills, power button, volume rocker, and SIM tray into the unibody chassis",
+          "partIds": [
+            "usb_c_port_gasket",
+            "speaker_grill_top",
+            "speaker_grill_bottom",
+            "power_button",
+            "volume_rocker",
+            "sim_tray",
+            "unibody_chassis"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Install internal midframe assembly into the unibody chassis and secure with M1.2 screws",
+          "partIds": [
+            "internal_midframe",
+            "unibody_chassis",
+            "pcb_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Attach main, ultrawide, and telephoto camera modules with gaskets to internal midframe and secure respective lens covers to the rear glass panel, then adhere rear glass panel to unibody chassis",
+          "partIds": [
+            "main_camera_module",
+            "ultrawide_camera_module",
+            "telephoto_camera_module",
+            "camera_module_gasket_main",
+            "camera_module_gasket_ultrawide",
+            "camera_module_gasket_telephoto",
+            "main_camera_lens_cover",
+            "ultrawide_camera_lens_cover",
+            "telephoto_camera_lens_cover",
+            "rear_glass_panel",
+            "unibody_chassis"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Attach front camera module with its lens cover, apply display adhesive seal, and carefully secure the AMOLED display and display glass panel to the unibody chassis",
+          "partIds": [
+            "front_camera_module",
+            "front_camera_lens_cover",
+            "display_adhesive_seal",
+            "amoled_display",
+            "display_glass",
+            "unibody_chassis"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "The Apex Smartphone is a flagship mobile device integrating a powerful SoC with 128GB of LPDDR6 RAM and an unprecedented 3TB of UFS 4.0 storage. It features a multi-camera system, advanced connectivity, and robust thermal management within a precision-machined unibody chassis.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "3TB storage",
+      "128GB RAM",
+      "Mobile device"
+    ],
+    "description": "Fais un moi un téléphonne à 3to de stockage et 128 Go de RAM",
+    "technicalDescription": "The Apex Smartphone is a flagship mobile device integrating a powerful SoC with 128GB of LPDDR6 RAM and an unprecedented 3TB of UFS 4.0 storage. It features a multi-camera system, advanced connectivity, and robust thermal management within a precision-machined unibody chassis."
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG capable)",
+      "Precision screwdriver set (M1.2 compatible)",
+      "ESD safe tweezers (fine-tip)",
+      "Spudger tool set (plastic and metal)",
+      "Heat gun or equivalent for adhesive curing/softening",
+      "Thermal paste applicator",
+      "Adhesive applicator (for structural and thermal adhesives)",
+      "Multimeter",
+      "Microfiber cloth",
+      "ESD mat and wrist strap"
+    ],
+    "assumptions": [
+      "All electrical components are pre-assembled onto a main flexible PCB (FPCB) or rigid PCB, with interconnections designed for flex cables or ZIF connectors where applicable. No hand-soldering of SMD components is required.",
+      "The 'main_soc', 'integrated_ram', 'internal_storage', 'power_management_ic_main', 'wireless_module', 'gnss_module', 'audio_codec', 'accelerometer_gyro', 'magnetometer', 'ambient_light_proximity', 'fingerprint_sensor', and 'usb_c_controller' are factory-mounted on one or more PCBs.",
+      "The user has basic electronics assembly experience and familiarity with smartphone construction.",
+      "Required drivers and a host PC are available for initial bring-up and flashing."
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Battery to PMIC",
+      "source": "li_po_battery",
+      "target": "power_management_ic_main",
+      "current": "5A",
+      "voltage": "3.8V"
+    },
+    {
+      "type": "power",
+      "label": "SoC VCORE",
+      "source": "power_management_ic_main",
+      "target": "main_soc",
+      "current": "5A",
+      "voltage": "1.2V"
+    },
+    {
+      "type": "power",
+      "label": "SoC VLOGIC",
+      "source": "power_management_ic_main",
+      "target": "main_soc",
+      "current": "2A",
+      "voltage": "0.8V"
+    },
+    {
+      "type": "power",
+      "label": "LPDDR6 VDD",
+      "source": "power_management_ic_main",
+      "target": "integrated_ram",
+      "current": "2A",
+      "voltage": "1.1V"
+    },
+    {
+      "type": "power",
+      "label": "UFS VDD",
+      "source": "power_management_ic_main",
+      "target": "internal_storage",
+      "current": "500mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Display VDD",
+      "source": "power_management_ic_main",
+      "target": "amoled_display",
+      "current": "1A",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Wireless VDD",
+      "source": "power_management_ic_main",
+      "target": "wireless_module",
+      "current": "1.5A",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "GNSS VDD",
+      "source": "power_management_ic_main",
+      "target": "gnss_module",
+      "current": "100mA",
+      "voltage": "1.8V"
+    },
+    {
+      "type": "power",
+      "label": "Main Cam VDD",
+      "source": "power_management_ic_main",
+      "target": "main_camera_module",
+      "current": "150mA",
+      "voltage": "2.8V"
+    },
+    {
+      "type": "power",
+      "label": "Ultrawide Cam VDD",
+      "source": "power_management_ic_main",
+      "target": "ultrawide_camera_module",
+      "current": "150mA",
+      "voltage": "2.8V"
+    },
+    {
+      "type": "power",
+      "label": "Telephoto Cam VDD",
+      "source": "power_management_ic_main",
+      "target": "telephoto_camera_module",
+      "current": "150mA",
+      "voltage": "2.8V"
+    },
+    {
+      "type": "power",
+      "label": "Front Cam VDD",
+      "source": "power_management_ic_main",
+      "target": "front_camera_module",
+      "current": "150mA",
+      "voltage": "2.8V"
+    },
+    {
+      "type": "power",
+      "label": "Audio Codec VDD",
+      "source": "power_management_ic_main",
+      "target": "audio_codec",
+      "current": "200mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Accel/Gyro VDD",
+      "source": "power_management_ic_main",
+      "target": "accelerometer_gyro",
+      "current": "10mA",
+      "voltage": "1.8V"
+    },
+    {
+      "type": "power",
+      "label": "Magnetometer VDD",
+      "source": "power_management_ic_main",
+      "target": "magnetometer",
+      "current": "5mA",
+      "voltage": "1.8V"
+    },
+    {
+      "type": "power",
+      "label": "ALS/Proximity VDD",
+      "source": "power_management_ic_main",
+      "target": "ambient_light_proximity",
+      "current": "5mA",
+      "voltage": "1.8V"
+    },
+    {
+      "type": "power",
+      "label": "Fingerprint VDD",
+      "source": "power_management_ic_main",
+      "target": "fingerprint_sensor",
+      "current": "50mA",
+      "voltage": "1.8V"
+    },
+    {
+      "type": "power",
+      "label": "Haptic Motor VCC",
+      "source": "power_management_ic_main",
+      "target": "linear_haptic_motor",
+      "current": "200mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "label": "SoC to RAM",
+      "source": "main_soc",
+      "target": "integrated_ram",
+      "protocol": "lpddr",
+      "sourcePin": "LPDDR6_IF",
+      "targetPin": "LPDDR6_IF"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Storage",
+      "source": "main_soc",
+      "target": "internal_storage",
+      "protocol": "ufs",
+      "sourcePin": "UFS_IF",
+      "targetPin": "UFS_IF"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Display",
+      "source": "main_soc",
+      "target": "amoled_display",
+      "protocol": "mipi_dsi",
+      "sourcePin": "MIPI_DSI",
+      "targetPin": "MIPI_DSI"
+    },
+    {
+      "type": "data",
+      "label": "Display Backlight PWM",
+      "source": "main_soc",
+      "target": "amoled_display",
+      "protocol": "pwm",
+      "sourcePin": "GPIO",
+      "targetPin": "BL_PWM"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Wireless",
+      "source": "main_soc",
+      "target": "wireless_module",
+      "protocol": "pcie",
+      "sourcePin": "PCIe",
+      "targetPin": "PCIe"
+    },
+    {
+      "type": "data",
+      "label": "SoC to GNSS UART",
+      "source": "main_soc",
+      "target": "gnss_module",
+      "protocol": "uart",
+      "sourcePin": "GPIO",
+      "targetPin": "UART"
+    },
+    {
+      "type": "data",
+      "label": "SoC to GNSS I2C",
+      "source": "main_soc",
+      "target": "gnss_module",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Main Cam CSI",
+      "source": "main_soc",
+      "target": "main_camera_module",
+      "protocol": "mipi_csi",
+      "sourcePin": "CSI",
+      "targetPin": "MIPI_CSI"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Main Cam I2C",
+      "source": "main_soc",
+      "target": "main_camera_module",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Ultrawide Cam CSI",
+      "source": "main_soc",
+      "target": "ultrawide_camera_module",
+      "protocol": "mipi_csi",
+      "sourcePin": "CSI",
+      "targetPin": "MIPI_CSI"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Ultrawide Cam I2C",
+      "source": "main_soc",
+      "target": "ultrawide_camera_module",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Telephoto Cam CSI",
+      "source": "main_soc",
+      "target": "telephoto_camera_module",
+      "protocol": "mipi_csi",
+      "sourcePin": "CSI",
+      "targetPin": "MIPI_CSI"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Telephoto Cam I2C",
+      "source": "main_soc",
+      "target": "telephoto_camera_module",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Front Cam CSI",
+      "source": "main_soc",
+      "target": "front_camera_module",
+      "protocol": "mipi_csi",
+      "sourcePin": "CSI",
+      "targetPin": "MIPI_CSI"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Front Cam I2C",
+      "source": "main_soc",
+      "target": "front_camera_module",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Audio Codec I2S",
+      "source": "main_soc",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "GPIO",
+      "targetPin": "I2S"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Audio Codec I2C",
+      "source": "main_soc",
+      "target": "audio_codec",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Accel/Gyro SPI",
+      "source": "main_soc",
+      "target": "accelerometer_gyro",
+      "protocol": "spi",
+      "sourcePin": "SPI",
+      "targetPin": "SPI"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Magnetometer I2C",
+      "source": "main_soc",
+      "target": "magnetometer",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "SoC to ALS/Proximity I2C",
+      "source": "main_soc",
+      "target": "ambient_light_proximity",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Fingerprint SPI",
+      "source": "main_soc",
+      "target": "fingerprint_sensor",
+      "protocol": "spi",
+      "sourcePin": "SPI",
+      "targetPin": "SPI"
+    },
+    {
+      "type": "data",
+      "label": "SoC to Haptic Motor PWM",
+      "source": "main_soc",
+      "target": "linear_haptic_motor",
+      "protocol": "pwm",
+      "sourcePin": "GPIO",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "label": "SoC to USB-C Data",
+      "source": "main_soc",
+      "target": "usb_c_controller",
+      "protocol": "usb",
+      "sourcePin": "USB_C",
+      "targetPin": "USB_TX_RX"
+    },
+    {
+      "type": "data",
+      "label": "SoC to USB-C Control I2C",
+      "source": "main_soc",
+      "target": "usb_c_controller",
+      "protocol": "i2c",
+      "sourcePin": "I2C",
+      "targetPin": "I2C"
+    },
+    {
+      "type": "data",
+      "label": "PMIC to USB-C VBUS Control",
+      "source": "power_management_ic_main",
+      "target": "usb_c_controller",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "VBUS_CTRL"
+    },
+    {
+      "type": "power",
+      "label": "USB-C to Battery Charging",
+      "source": "usb_c_controller",
+      "target": "li_po_battery",
+      "current": "3A",
+      "voltage": "5-20V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M1.2 screws",
+      "source": "internal_midframe",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "structural adhesive",
+      "source": "display_glass",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "structural adhesive",
+      "source": "rear_glass_panel",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "snap-fit mechanism",
+      "source": "power_button",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "snap-fit mechanism",
+      "source": "volume_rocker",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "slides into slot",
+      "source": "sim_tray",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "press-fit seal",
+      "source": "usb_c_port_gasket",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "adhesive/press-fit",
+      "source": "speaker_grill_top",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "adhesive/press-fit",
+      "source": "speaker_grill_bottom",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "adhesive seal",
+      "source": "main_camera_lens_cover",
+      "target": "rear_glass_panel"
+    },
+    {
+      "label": "adhesive seal",
+      "source": "ultrawide_camera_lens_cover",
+      "target": "rear_glass_panel"
+    },
+    {
+      "label": "adhesive seal",
+      "source": "telephoto_camera_lens_cover",
+      "target": "rear_glass_panel"
+    },
+    {
+      "label": "integrated/adhesive",
+      "source": "front_camera_lens_cover",
+      "target": "display_glass"
+    },
+    {
+      "label": "thermal paste and M1.2 screws",
+      "source": "vapor_chamber",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "thermal adhesive",
+      "source": "graphite_sheet_top",
+      "target": "vapor_chamber"
+    },
+    {
+      "label": "thermal adhesive",
+      "source": "graphite_sheet_bottom",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "threaded holes",
+      "source": "pcb_mounting_screws",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "vibration_motor_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "adhesive seal",
+      "source": "camera_module_gasket_main",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "adhesive seal",
+      "source": "camera_module_gasket_ultrawide",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "adhesive seal",
+      "source": "camera_module_gasket_telephoto",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "adhesive layer",
+      "source": "display_adhesive_seal",
+      "target": "unibody_chassis"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "main_soc_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "integrated_ram_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "internal_storage_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "wireless_module_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "gnss_module_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "audio_codec_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "accelerometer_gyro_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "magnetometer_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "ambient_light_proximity_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "fingerprint_sensor_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "M1.2 screws",
+      "source": "usb_c_controller_mount",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "adhesive backing",
+      "source": "battery_adhesive_strip",
+      "target": "internal_midframe"
+    },
+    {
+      "label": "mount",
+      "source": "main_camera_lens_cover",
+      "target": "main_camera_module"
+    },
+    {
+      "label": "mount",
+      "source": "ultrawide_camera_lens_cover",
+      "target": "ultrawide_camera_module"
+    },
+    {
+      "label": "mount",
+      "source": "telephoto_camera_lens_cover",
+      "target": "telephoto_camera_module"
+    },
+    {
+      "label": "mount",
+      "source": "front_camera_lens_cover",
+      "target": "front_camera_module"
+    },
+    {
+      "label": "mount",
+      "source": "battery_adhesive_strip",
+      "target": "li_po_battery"
+    },
+    {
+      "label": "mount",
+      "source": "vibration_motor_mount",
+      "target": "linear_haptic_motor"
+    },
+    {
+      "label": "mount",
+      "source": "camera_module_gasket_main",
+      "target": "main_camera_module"
+    },
+    {
+      "label": "mount",
+      "source": "camera_module_gasket_ultrawide",
+      "target": "ultrawide_camera_module"
+    },
+    {
+      "label": "mount",
+      "source": "camera_module_gasket_telephoto",
+      "target": "telephoto_camera_module"
+    },
+    {
+      "label": "mount",
+      "source": "display_adhesive_seal",
+      "target": "amoled_display"
+    },
+    {
+      "label": "mount",
+      "source": "main_soc_mount",
+      "target": "main_soc"
+    },
+    {
+      "label": "mount",
+      "source": "integrated_ram_mount",
+      "target": "integrated_ram"
+    },
+    {
+      "label": "mount",
+      "source": "internal_storage_mount",
+      "target": "internal_storage"
+    },
+    {
+      "label": "mount",
+      "source": "wireless_module_mount",
+      "target": "wireless_module"
+    },
+    {
+      "label": "mount",
+      "source": "gnss_module_mount",
+      "target": "gnss_module"
+    },
+    {
+      "label": "mount",
+      "source": "audio_codec_mount",
+      "target": "audio_codec"
+    },
+    {
+      "label": "mount",
+      "source": "accelerometer_gyro_mount",
+      "target": "accelerometer_gyro"
+    },
+    {
+      "label": "mount",
+      "source": "magnetometer_mount",
+      "target": "magnetometer"
+    },
+    {
+      "label": "mount",
+      "source": "ambient_light_proximity_mount",
+      "target": "ambient_light_proximity"
+    },
+    {
+      "label": "mount",
+      "source": "fingerprint_sensor_mount",
+      "target": "fingerprint_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "usb_c_controller_mount",
+      "target": "usb_c_controller"
+    }
+  ],
+  "projectId": "94b0ced3-45df-413f-8f8d-7cfbe356f36e"
+}

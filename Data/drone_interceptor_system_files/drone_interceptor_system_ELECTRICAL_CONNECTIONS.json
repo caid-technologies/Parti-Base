@@ -1,0 +1,196 @@
+[
+  {
+    "type": "power",
+    "source": "missile_main_lipo",
+    "target": "missile_power_regulator_5v",
+    "voltage": "11.1V"
+  },
+  {
+    "type": "power",
+    "source": "missile_power_regulator_5v",
+    "target": "missile_gps_module",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "missile_power_regulator_5v",
+    "target": "missile_fin_servo_1",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "missile_power_regulator_5v",
+    "target": "missile_fin_servo_2",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "missile_power_regulator_5v",
+    "target": "missile_fin_servo_3",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "missile_power_regulator_5v",
+    "target": "missile_fin_servo_4",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "missile_power_regulator_5v",
+    "target": "missile_comm_module",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "radar_lipo_battery",
+    "target": "radar_power_regulator_3v3",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "source": "radar_power_regulator_3v3",
+    "target": "radar_mcu",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "source": "radar_power_regulator_3v3",
+    "target": "radar_mmwave_module",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "source": "radar_power_regulator_3v3",
+    "target": "radar_comm_module",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "radar_mcu",
+    "target": "radar_mmwave_module",
+    "protocol": "UART",
+    "sourcePin": "UART0_TX",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "source": "radar_mmwave_module",
+    "target": "radar_mcu",
+    "protocol": "UART",
+    "sourcePin": "TX",
+    "targetPin": "UART0_RX"
+  },
+  {
+    "type": "data",
+    "source": "radar_mcu",
+    "target": "radar_comm_module",
+    "protocol": "UART",
+    "sourcePin": "UART1_TX",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "source": "radar_comm_module",
+    "target": "radar_mcu",
+    "protocol": "UART",
+    "sourcePin": "TX",
+    "targetPin": "UART1_RX"
+  },
+  {
+    "type": "power",
+    "source": "missile_power_regulator_5v",
+    "target": "missile_mcu_esp32",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "missile_power_regulator_5v",
+    "target": "igniter_trigger_module",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "missile_main_lipo",
+    "target": "igniter_trigger_module",
+    "voltage": "11.1V"
+  },
+  {
+    "type": "data",
+    "source": "missile_mcu_esp32",
+    "target": "missile_gps_module",
+    "protocol": "UART",
+    "sourcePin": "TX",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "source": "missile_gps_module",
+    "target": "missile_mcu_esp32",
+    "protocol": "UART",
+    "sourcePin": "TX",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "source": "missile_mcu_esp32",
+    "target": "missile_fin_servo_1",
+    "protocol": "PWM",
+    "sourcePin": "IO1",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "source": "missile_mcu_esp32",
+    "target": "missile_fin_servo_2",
+    "protocol": "PWM",
+    "sourcePin": "IO2",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "source": "missile_mcu_esp32",
+    "target": "missile_fin_servo_3",
+    "protocol": "PWM",
+    "sourcePin": "IO3",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "source": "missile_mcu_esp32",
+    "target": "missile_fin_servo_4",
+    "protocol": "PWM",
+    "sourcePin": "IO4",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "source": "missile_mcu_esp32",
+    "target": "missile_comm_module",
+    "protocol": "UART",
+    "sourcePin": "IO5",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "source": "missile_comm_module",
+    "target": "missile_mcu_esp32",
+    "protocol": "UART",
+    "sourcePin": "TX",
+    "targetPin": "IO6"
+  },
+  {
+    "type": "data",
+    "source": "missile_mcu_esp32",
+    "target": "igniter_trigger_module",
+    "protocol": "Digital",
+    "sourcePin": "IO7",
+    "targetPin": "SIG"
+  },
+  {
+    "type": "power",
+    "source": "igniter_trigger_module",
+    "target": "solid_rocket_motor",
+    "voltage": "11.1V"
+  }
+]

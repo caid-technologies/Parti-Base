@@ -1,0 +1,1555 @@
+{
+  "plan": "- Microcontroller: ESP32 board for sensor reading and actuator control.\n- Sensors: Soil moisture sensor (capacitive or resistive) and DHT11/DHT22 for ambient temperature/humidity.\n- Actuators: Small 5V/12V DC water pump with a relay module, and a 5V/12V DC fan with a transistor/relay for control.\n- Power: Suitable power supply (e.g., 5V/2A or 12V/1A) and a breadboard/protoboard for connections.\n- Structure: Small greenhouse frame (e.g., mini polycarbonate or PVC frame) to house plants and components.\n- Custom Parts: 3D-printed enclosures for ESP32 and electronics, sensor mounts, and fan/pump brackets.",
+  "nodes": [
+    {
+      "id": "esp32_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "Vin",
+        "GND",
+        "GPIO34",
+        "GPIO23",
+        "GPIO19",
+        "GPIO18"
+      ],
+      "type": "mcu",
+      "partId": "abab37bb-d5cc-4e9b-99cb-fdb29eb128c9",
+      "category": "electrical",
+      "imageUrl": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/778/ESP32-DEVKITC-32D.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Type",
+            "value": "Transceiver; 802.11 b/g/n (Wi-Fi, WiFi, WLAN), Bluetooth® Smart Ready 4.x Dual Mode (BLE)"
+          },
+          {
+            "label": "pins",
+            "value": "GPIO16,GPIO17,GPIO18,GPIO19,GPIO21,GPIO22,GPIO23,GPIO25,GPIO26,GPIO27,3V3,5V,GND"
+          },
+          {
+            "label": "Contents",
+            "value": "Board(s)"
+          },
+          {
+            "label": "Frequency",
+            "value": "2.4GHz"
+          },
+          {
+            "label": "Antenna Type",
+            "value": "-"
+          },
+          {
+            "label": "Utilized IC / Part",
+            "value": "ESP-WROOM-32"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/5029",
+            "price": "$18.5",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32D/9356990",
+            "price": "$15",
+            "vendor": "DigiKey"
+          }
+        ],
+        "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x28x13mm",
+      "position3d": {
+        "x": -150,
+        "y": 40,
+        "z": -125
+      },
+      "boundingBox": {
+        "depth": 13,
+        "width": 55,
+        "height": 28
+      },
+      "description": "Microcontroller for overall system control, sensor reading, and actuator activation.",
+      "productName": "ESP32-WROOM-32D Development Board",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32D/9356990",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR6vbyXY2ppL9ObRmYh4w4AK032f6bBm9NDrp62dnlrDQlnlop8wQc5bP4qXfeJ276Yek60BQaZDYxId5Ukphk7sJJODgS1isRhZwKXDxwwiDFyENTPU35PqQK8lkODm1HaTad4RY4cP1wl45WTeh4RlPsVUHy4VlZIc1wB2PtjlQuLRD9hen7MaRbZW4t6zXUfC9bGHFbOF2gFiVJefzCXxYaTVzAVLAUvLSHkbqyQnqrFk1uqwOrOEbNP1LnoiHms9bNBTW9BnmuZ44dVxgrvfnPRrtF1DzjkV2MH7aZGrCLMYBexygMLfan7wIJiUJp4eIOAU63ETQxHQnhQQvMDIqXUQpIHv7ZeJ0RbYR4h6ZSCgjbqlf53uzTimPSlFbe9eC1rCOfbX7oPNipLwACODeOTiaCIO3enuw0oxwosWlviDGwFcQqVRTXhsNeyocPqKgRBrbSMdVuP2Ge1Q2IaEEkhh50Eg8BKvlCGSy32SrGjbmQcul0fMiQX1jWAuMkblVsvgxVG3UGecyBxwSKIQHPNhkDKAt2fnBrwReTsvwTT4maM3YA81857bt5dxvTzGWY6rbUnKbimW7cicOckKZZCq98HTyBfP4F2eHEUDXULYIyGjYr3bIldY9Oj4JLz05rZ5bvXrjNOlBdrQhrjV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D+Development+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "soil_moisture_sensor",
+      "name": "Soil Moisture Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "AOUT"
+      ],
+      "type": "sensor",
+      "partId": "7f3ef174-ee62-4cbc-b02b-38d8ba58f3de",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/_NodDEweE33euko2JUDd_pSxaSKmK9Zrawg8CqHj7WQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZWxlY3Jvdy5jb20v/bWVkaWEvY2F0YWxv/Zy9wcm9kdWN0L2Nh/Y2hlL2I2Yjk1Nzc5/MzdlNmE5NmY1MGU1/M2RkYzQyOTgzNjI4/L2Mvci9jcm93dGFp/bF9jYXBhY2l0aXZl/X3NvaWxfbW9pc3R1/cmVfc2Vuc29yXzEu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,AOUT"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07SYBSHGX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x23x7mm",
+      "position3d": {
+        "x": 50,
+        "y": 45,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 60,
+        "height": 23
+      },
+      "description": "Measures the volumetric water content in the soil.",
+      "productName": "Capacitive Soil Moisture Sensor v1.2",
+      "purchaseUrl": "https://www.amazon.com/s?k=capacitive+soil+moisture+sensor+v1.2",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHIvxp8xlDZ3yQpC3m2j2ZyXpVDK2m0yX9ckpPG581KTbrO1jLdV2T91LjO8Llr36hhmeMI56Qhytv31w0vjqR5y1X96FlICJVdi9nrRk68RH3A5zW6areWieqVxgl7AVf7h8k5wkBuJhP2sgUx6eafRosjLB4WFA7L00AkXuki4wYjhpiLocshsLVwjqrfv7CpOtrcb52jIuPPLNbe1nVKGA9s2L0XlKQpfzRGNxwxR4XG2RoH4vjMDdal8Sx3yXQV2DNbF7W2EZLz5TFw653slTS7YDjCKPcqgOVRctkZdLfR6Hvcox0oZ2GM4Hec203rrWwqYGrb7HQeGzrtOJIVLeNIdpzqIX9nCTTOBWj0Qx5MqzAPPKFEdU6BO6w0gBAuY4Nq8v99eTsIfd3hC6F6oVl7vxfciaT0r67hLSKBLPznmwPrrKmQL4ppIIoC5XJimcYI82ej735H9iQb8pAug076b2P2aNddz5cZCgISMkAIzEdeCfqUvH6ghHTELPm5468SV1sTsr58FsI97JbUm1ZYTvESmBR0URKpf6m6xvT75ZBWY5d1qLeqgrMmxxd6WOG1fNqlCUMp7tW1Joo3rAGKsPDNZwa33TBg6Tbx0RIR07Ll9jtfaPoSWEyTmlGBFSjTfIlAvxP5WIrkZyKFp",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Capacitive+Soil+Moisture+Sensor+v1.2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "dht22_sensor",
+      "name": "Ambient Temp/Humidity Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "Data"
+      ],
+      "type": "sensor",
+      "partId": "9be4bbd0-151f-4c5d-9973-5bb0f1cfa5d1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/6pUhpwW0DJlVLC_BmJC45YSIpuOTXNl8VsUlW8s7AcI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFWZG5RcWdTeEwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Data"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CPHQC9SF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x15x7mm",
+      "position3d": {
+        "x": 120,
+        "y": 155,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 25,
+        "height": 15
+      },
+      "description": "Measures ambient temperature and relative humidity of the air.",
+      "productName": "DHT22 Temperature and Humidity Sensor",
+      "purchaseUrl": "https://www.amazon.com/s?k=dht22+temperature+humidity+sensor",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw15LUlF8QNx11VN26OaU0avc7gStKAXCxERgIkrkXFEWF8c5xdViBEtxbr33TWfrBFCTY1D4lg3cOC208uOMHf5s3ymcNYr4eirgi4ed8lZfropGBrtc4LyrnhBgs1skdGKJqaDFMEB6AMMwyhEhMJhO4mR69Zh9cv8aiS2fHAxTdm5haPAsSMrfobbBDPaoSHh7mnhOBOb7SiiwB6qVShuzyfqKUaZCsfsXlNPhs7Ld08WGbfgZTNRX4fxP46ndxL2HgJVLNKy4DP3Ku6qxEgMEti3D2A8uWeg8EYFKaVrwJLE5SPXCy1rH42rAJ5p47U0B9YAbGDmcbz4CliFaVLSGJxxXOXgZfH3NJ918q1D24WZOQJF3VGAwlBRoT7iUnnAqnkcYVtKuPS6T8nWghX0zm8QZHBDQplV4LPllHDczIcBTHsyAkLUeiBQTPncrZZPuJUGUixybPjnaTsZIok720YuvrgvFTWOoHZyRMYLrkvd7fNlCbirxHuNbYfaFePxQ8uDFE7zQmKVJncgDwCkDFExcpMktseH25O2gaZ3cEHKk21xfrjSEMca5lcxc4rBtOkSQI9OFu3FDbuQz3Rkemfhzu9l8LxE3GP5bbJaGKLMEXG4s9jWDw5OzujrxQeJxU8mOlCMVY1nn5iCrFaT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DHT22+Temperature+and+Humidity+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "water_pump",
+      "name": "Water Pump",
+      "pins": [
+        "+",
+        "-",
+        "- "
+      ],
+      "type": "actuator",
+      "partId": "1512edd9-aa0a-4909-b555-22834e4e792a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/qH4gW_dQx6LoyzavmdWZSIF-jR-s85G5rPDGN3V9FWs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9raWNr/YXNzcHJvZHVjdHMu/Y29tL2Nkbi9zaG9w/L3Byb2R1Y3RzL0tB/UDEyTDM1UDIuanBn/P3Y9MTYyOTM0Njk5/MSZ3aWR0aD03MDA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "Power +,Power -"
+          }
+        ],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/1150",
+            "note": "Peristaltic Liquid Pump with Silicone Tubing - 12V DC Power. Comes with silicone tubing and barbed connectors.",
+            "price": "Not specified in search results (check product page)",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.amazon.com/SparkFun-Electronics-Vacuum-Pump-12V/dp/B089DMNSJW",
+            "note": "DC 12V Mini Food Grade Self Priming Diaphragm Fresh Water Transfer Pump 1.3LPM. Listed as a recommended alternative on a SparkFun vacuum pump listing.",
+            "price": "Not specified in search results (check product page)",
+            "vendor": "CrocSee (via Amazon)"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/dfrobot/FIT0563/8827828",
+            "note": "DC WATER PUMP (DC2.1 CONNECTOR). Check product page for 12V compatibility as DC2.1 connectors often imply 5V.",
+            "price": "2.50000",
+            "vendor": "DigiKey (DFRobot)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09XH1GYYQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x35x25mm",
+      "position3d": {
+        "x": -150,
+        "y": 25,
+        "z": 120
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 40,
+        "height": 35
+      },
+      "description": "Pumps water from an external container to water the plants.",
+      "productName": "Mini DC 12V Water Pump",
+      "purchaseUrl": "https://www.amazon.com/s?k=mini+dc+12v+water+pump",
+      "estimatedCost": 7,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgLnO2NP1k2XE1OTJiUx4GYf1cpQ8Cm32LXLCZKg1apt91fW1hBeu0PXQf24Rv7pUPUUclNDOeEoQ35U8fyDaYDcD1cTdmdmgeHRL0VtZ0CzMai1WlUL6M7iFoMs3ZBBa7a2zOLnUmRRjMQLfrkgRQUad1O94XGrTOQNlxf6d5sltHYSHzOJd9aZhpKxh2YQVCyBNtS3Jdrv0G284k144GR8s4yl1UkvDLJPuKRWQMyl9cVKeR1h7qWEaXkqZucRlv57VPE81k4RVWfuT5ZBwrqzmm9LWwnjHxy0rgbvI3STQHcjVknrQOsNWEY0DA9t7lmUJKIQsV7RVUU3PUySPSWzcrVhaFmvBY9ubk27EmahoWaV9gp4Fdvaj9zMCetP5qOa74tSV52ydnrjqZml2YErS6kP71OQvB4YkrgS9odDYRSHtaTpBhzmKE3iL7abLEEoc89pQcKpDe3IeLLe96M5xiaKL4Lb4W4i8cFXoA305M3yb6eOIKMUNcaz1TWCygjxlUl69sImbi1hozJvufeucGF8G1vfDDN7jQH2blbGYDvtmIedQWcHQ4Gdsk9oq4IApKfIXtQnDSjnHUgn6oOk2WzJvNlJeD8Xfk4ukFabwXFqRlKAZC9RYJEWIDeIlGqK8JjPmYB14LA6vbAQoFsJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+DC+12V+Water+Pump&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cooling_fan",
+      "name": "Cooling Fan",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "actuator",
+      "partId": "bd2dee7e-3d6f-4c2e-96b4-6c15034f839c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/GfVW1__xAfFzVWtEtlI71dY76YMeooNgN_umF4mt9YI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb21w/b25lbnRhdXRob3Jp/dHkuY29tL2Nkbi9z/aG9wL3Byb2R1Y3Rz/LzMzNzFkODZlNDJm/ZjVlZTQ4NGZiNDRl/ZDJmNDhhMDI1Lmpw/Zz92PTE2NzA2MTA2/MTMmd2lkdGg9MTQ0/NQ",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0C18FDMY2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "80x80x25mm",
+      "position3d": {
+        "x": -180,
+        "y": 200,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 80,
+        "height": 80
+      },
+      "description": "Circulates air to regulate ambient humidity and temperature.",
+      "productName": "12V DC Cooling Fan 80x80x25mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=12v+dc+cooling+fan+80mm",
+      "estimatedCost": 6,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHPzh2BsOFhuL9F72qTo5Aqs0GABflFlTsV02HVinUFSzMMC2leOwa8InGJtTuosPzvjRmi1KeJcngrjDGpBhhCE1OnwvJBs4pCBWIKtq9sD3YWeBU9CEHP8ccJw9BG4LN8oCVgPnKMXQaAPiB6Wzki638uZZ5RyD1obQNNpoguAbUdksosme7jE0l5mnuRblV3l9bWCtZhjWMq7mMl2s3Wi3mLUam0Els7BYuQVfDrBp6MR1B6oR3HB8QySr4IYmlzAlVs5sAsOOvyokFiLfcR3lzgHO4hKRU9SujWLP9tvLWiMGeW7T0tKSEuT4hzf8IFYS5eiq6IcywAocboOsvcITZ6eTKxibqOAMjSyFy1pnc5Qc7BHrTfMwzYuWVhr4NpN03jsTPswf207vXxRTn4BdAnQyHLrugwk7TscZhiBV31bhJN16D0qq208VV66YEUvrFOscXai7TCS7TbFx3GBBWmpEs00DI77WLibWInryRrdslueVKGircMi190nma11QH7imzil5Kwu2ZTWRoqWBONkPGe8EAtVal0cA6IfF6wqg6OyUfPvN2yOhwP9GPWGPtZidCncxORvyC3lrGzCjlljLaC0mWKCUXNXJea5sCWKsgkmqIgAG0i7Br6pYDKxyXkutvsDCVswFz9aoqzH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+DC+Cooling+Fan+80x80x25mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "pump_relay",
+      "name": "Pump Relay Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "IN",
+        "NO",
+        "COM"
+      ],
+      "type": "module",
+      "partId": "c57c6ee8-2abf-422b-8852-127770dc8195",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ImzHZncRKplWssqpt2edMGtpW2WBGrqjUYOPc78UI0U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcG93ZXJt/YXZlbGVjdHJvbmlj/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDMvUkww/MDA0XzFfY2hhbm5l/bF9yZWxheV81dl80/LmpwZz9maXQ9MTAw/MCwxMDAwJnNzbD0x",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,IN,NO,COM,NC"
+          }
+        ],
+        "summary": "",
+        "examples": [
+          {
+            "url": "https://randomnerdtutorials.com/esp32-relay-module-web-server/",
+            "title": "ESP32 Relay Module Tutorial",
+            "description": "A comprehensive tutorial on how to connect a 5V relay module to an ESP32 and control it remotely using a web server. This example demonstrates basic wiring, ESP32 code for relay control, and creating a simple web interface to toggle the relay, suitable for controlling devices like a water pump."
+          },
+          {
+            "url": "https://lastminuteengineers.com/esp32-relay-module-tutorial/",
+            "title": "Control a Relay Module with ESP32 – Arduino IDE",
+            "description": "This tutorial provides a clear guide on connecting a 1-channel 5V relay module to an ESP32 and programming it using the Arduino IDE. It covers the pin connections (VCC, GND, IN) and basic code to switch the relay on and off at set intervals, illustrating fundamental control of a connected device."
+          },
+          {
+            "url": "https://www.electronicshub.org/esp32-wifi-smart-switch-using-relay-module/",
+            "title": "ESP32 Wi-Fi Smart Switch using a Relay Module",
+            "description": "Learn to build an IoT smart switch with an ESP32 and a relay module that can be controlled over Wi-Fi. This project demonstrates how to set up an ESP32 as a web server to receive commands and activate the relay, effectively turning any connected appliance (like a water pump) into a smart device."
+          },
+          {
+            "url": "https://circuitdigest.com/microcontroller-projects/diy-smart-plug-using-esp32-relay-and-blynk",
+            "title": "DIY Smart Plug using ESP32, Relay and Blynk",
+            "description": "This example shows how to create a smart plug using an ESP32, a relay module, and the Blynk IoT platform. It's a great demonstration of integrating the relay into a full IoT ecosystem, allowing control of the relay (and thus the connected pump) from a smartphone app via the internet."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://automationroboticsarduino.com/products/5v-1-channel-relay-module",
+            "note": "5V 1-Channel Relay Module for Arduino, needs 15-20mA driver current.",
+            "price": "Price not found in snippet",
+            "vendor": "Goliath Automation & Robotics"
+          },
+          {
+            "url": "https://www.rajguruelectronics.com/ProductView?tokDatRef=MTMyNzg%3D&tokenId=NjE%3D",
+            "note": "5V 1-Channel Relay Module for reliable device control, compatible with most microcontrollers.",
+            "price": "Price not found in snippet",
+            "vendor": "Rajguru Electronics"
+          },
+          {
+            "url": "https://www.amazon.com/s?k=1-Channel+5V+Relay+Module",
+            "note": "General search for '1-Channel 5V Relay Module' on Amazon.",
+            "price": "Varies",
+            "vendor": "Amazon"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library?query=1-Channel%205V%20Relay%20Module",
+            "label": "GrabCAD",
+            "description": "Typically offers STEP, IGES, SolidWorks, and other native CAD models for mechanical integration."
+          },
+          {
+            "url": "https://www.snapeda.com/search/?q=1-Channel%205V%20Relay%20Module",
+            "label": "SnapEDA",
+            "description": "Primarily provides PCB footprints, schematic symbols, and 3D models (STEP, SAT) for electronics design."
+          },
+          {
+            "url": "https://www.ultralibrarian.com/search?q=1-Channel%205V%20Relay%20Module",
+            "label": "Ultra Librarian",
+            "description": "Offers PCB footprints, schematic symbols, and 3D models compatible with various ECAD tools."
+          },
+          {
+            "url": "https://www.thingiverse.com/search?q=1-Channel%205V%20Relay%20Module",
+            "label": "Thingiverse",
+            "description": "Community-driven platform for 3D printable designs, often in STL, OBJ, or Fusion 360 formats, suitable for enclosures or mounts."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B095YD3732?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x16x17mm",
+      "position3d": {
+        "x": -165,
+        "y": 20,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 17,
+        "width": 43,
+        "height": 16
+      },
+      "description": "Controls the 12V water pump using a 5V signal from the ESP32.",
+      "productName": "1-Channel 5V Relay Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=1+channel+5v+relay+module",
+      "estimatedCost": 2.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNLNupZt6pe0Fj5BfdHmqUJSr5yUY16IhaJBUuT3BDh2ionZiX61R0zOJQaygelAvy8ly4O0y7LzR4CHbdGzmoqixAS6qDqokiI5pXmzl5qoSafT7IRTxnR7MtkpECIu34uZltp3x9bwWU4j4z09CHn7AlTAXDqV0YOeehuLBnT7OMuaMD7bdHdHcexBBNOxwAyP3Xlo0ynafLUSJGyiSQ1bIO0g2jVv9Z6kGnMD7AdHLoaNRwDzUiTFC8fey5B1wHacrTqFSyr5NAA3vXs4eGkTCWlPNA5LUW3oWHjXPdmWIuv8BvsEBHqdokesPvr4R7GvQz5GYkwg3g0xP7God5OX54h9if6cyEFJ09W6JHEZycU3RNzY7W5rExWHIkuSP1wN77gwSInLCPD39YUZSXQOdxCUUtkU3SG8HiAWXHUyNqeQK02iTdgSpIsFOv7jD6Mkg3u2kCm9hQlDBYe5Owui9hGnQ9MB8IdwCaAWXzKCdoeRxCtFk1QEMrIccf1SwNyNmbmaPVraWVJDncLCqN8lUPRXsnwJrNjRXTy3O1iBHiuVeoxRIuZ8T0KWAIdUPdBGtf3dtZojCIy9Aiq1WA852tEk4XTP4FkuCGZw9EZ6u9BKClIaVPq05ymNU53wzo5HtTakBbRFGD6OUMoCOJD",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1-Channel+5V+Relay+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "fan_relay",
+      "name": "Fan Relay Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "IN",
+        "NO",
+        "COM"
+      ],
+      "type": "module",
+      "partId": "c57c6ee8-2abf-422b-8852-127770dc8195",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ImzHZncRKplWssqpt2edMGtpW2WBGrqjUYOPc78UI0U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcG93ZXJt/YXZlbGVjdHJvbmlj/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDMvUkww/MDA0XzFfY2hhbm5l/bF9yZWxheV81dl80/LmpwZz9maXQ9MTAw/MCwxMDAwJnNzbD0x",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,IN,NO,COM,NC"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B095YD3732?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x16x17mm",
+      "position3d": {
+        "x": -135,
+        "y": 20,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 17,
+        "width": 43,
+        "height": 16
+      },
+      "description": "Controls the 12V cooling fan using a 5V signal from the ESP32.",
+      "productName": "1-Channel 5V Relay Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=1+channel+5v+relay+module",
+      "estimatedCost": 2.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNLNupZt6pe0Fj5BfdHmqUJSr5yUY16IhaJBUuT3BDh2ionZiX61R0zOJQaygelAvy8ly4O0y7LzR4CHbdGzmoqixAS6qDqokiI5pXmzl5qoSafT7IRTxnR7MtkpECIu34uZltp3x9bwWU4j4z09CHn7AlTAXDqV0YOeehuLBnT7OMuaMD7bdHdHcexBBNOxwAyP3Xlo0ynafLUSJGyiSQ1bIO0g2jVv9Z6kGnMD7AdHLoaNRwDzUiTFC8fey5B1wHacrTqFSyr5NAA3vXs4eGkTCWlPNA5LUW3oWHjXPdmWIuv8BvsEBHqdokesPvr4R7GvQz5GYkwg3g0xP7God5OX54h9if6cyEFJ09W6JHEZycU3RNzY7W5rExWHIkuSP1wN77gwSInLCPD39YUZSXQOdxCUUtkU3SG8HiAWXHUyNqeQK02iTdgSpIsFOv7jD6Mkg3u2kCm9hQlDBYe5Owui9hGnQ9MB8IdwCaAWXzKCdoeRxCtFk1QEMrIccf1SwNyNmbmaPVraWVJDncLCqN8lUPRXsnwJrNjRXTy3O1iBHiuVeoxRIuZ8T0KWAIdUPdBGtf3dtZojCIy9Aiq1WA852tEk4XTP4FkuCGZw9EZ6u9BKClIaVPq05ymNU53wzo5HtTakBbRFGD6OUMoCOJD",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1-Channel+5V+Relay+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "buck_converter",
+      "name": "5V Step-Down Converter",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "power",
+      "partId": "bfc13bb2-cdcd-45ba-9387-4cffe44f6357",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fW4_GDBeL2rT8mg2Zb_Vxj_7Yepyy9vnmAidOfdgKg0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0ZDY0FB/ZVN3ZHBacFRZWDIv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN+,VIN-,VOUT+,VOUT-"
+          }
+        ],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.makerfabs.com/adjustable-mini-dc-dc-module-mp1584en.html",
+            "note": "Adjustable Mini DC-DC Module. Described as a high-frequency step-down switching regulator with an integrated internal high-side high voltage power MOSFET.",
+            "price": "$1.40",
+            "vendor": "Makerfabs"
+          },
+          {
+            "url": "https://www.ebay.com/itm/165434363045",
+            "note": "MP1584EN DC-DC Step Down Power Supply Module 3A Adjustable Buck Converter. Multiple sellers available on eBay.",
+            "price": "$1.99",
+            "vendor": "eBay"
+          },
+          {
+            "url": "https://robotpishop.com/products/mp1584en-dc-dc-3a-adjustable-step-down-buck-converter-module",
+            "note": "MP1584EN DC-DC 3A Adjustable Step Down Buck Converter Module. Features soft start, thermal shutdown, and under-voltage lockout (UVLO).",
+            "price": "RM 4.00",
+            "vendor": "Robot Pi Shop"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01MQGMOKI?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x17x4mm",
+      "position3d": {
+        "x": -150,
+        "y": 50,
+        "z": -105
+      },
+      "boundingBox": {
+        "depth": 4,
+        "width": 22,
+        "height": 17
+      },
+      "description": "Steps down 12V from the main power supply to 5V for the ESP32, sensors, and relays.",
+      "productName": "MP1584EN DC-DC Buck Converter Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=mp1584en+buck+converter",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHNSBmwrWAucJktiEiF7T0GrENZ2N7RQ8V7BzbnqVxsrMEtflOJAoWeKe8mUiCgYFPVMDIxu8NTz8jXT1itEaiw2BrvgnZAqoOdAQLXgy2xDI4IYHyjpfL1PV4yQQtYDMvEqzJqDLvhVGKAiCSoNBbLpErJsRrHybXqL0l95P6DX7YO2HSjDGZzgHtn95FpQWrCBaeHi8mwXRA392HGThUeR8kfMrad7zxJNs4Wg2T0t7wuWV5V0ENI4OHd1jio8uYGElxlSpMPYc58Rtneb6dVnW6HAoFjjbVTkbzE6wIaQO0p0dDdUMAz8L6voip9VmrtE2XEr72WJTQJfiPKq6SAonms8loTMoOZV9KO5vcSD3HDG5nUV35sivjQO2PqCTqp8QQB90S4pLGollmOTcjGuKYlWqZvfexTRMaa83ZWF1JFb8TO0pbHfuChtgvbsW8irolSiE8AZeCNB4sqPZEzMUkLSNi0kGsEUN0wrrxbn4CrgqeGbU0nDn1VvtED8DF3Re4CnzBgI9nPtR6WTQtEmUixcOYFGVsJEQLQS0kyvhcJNTdVBEBBlgPGhkho7fKPKL0JRD9HHJtuIZgNimr4thVY5Wd8sigUcUR7Mdn7Dkqua3w3GWm9txX9RP9JBhZiedF0vpmUtMMmD3KV0uGaX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MP1584EN+DC-DC+Buck+Converter+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "greenhouse_frame",
+      "name": "Mini Greenhouse Frame",
+      "type": "structural",
+      "partId": "27862821-c688-45ab-9652-d5d8061cb1b6",
+      "category": "mechanical",
+      "material": "Polycarbonate/Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FN3HYJG5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x300x300mm",
+      "position3d": {
+        "x": 0,
+        "y": 150,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 300,
+        "width": 400,
+        "height": 300
+      },
+      "description": "Compact frame to house plants and internal components, providing a controlled environment.",
+      "productName": "Mini Polycarbonate Greenhouse Kit",
+      "purchaseUrl": "https://www.amazon.com/s?k=mini+greenhouse+kit+polycarbonate",
+      "estimatedCost": 40,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaobATHFPXL6yA2StVX7fWundC2Ik3HEtkEwKTh2DeBAK0nPwPjPauJaIe8AjXQEVtJAEwK5lgN27fjOkr1ih11vzXjLvMqBrlTXLGlvOTw3K3yGH2B2tAluu88ljuFdxnWJHPpYdpzJW0YYvLTHpsESRPeLDg85fFDD2q8DLzscnbCB9kRw9B7YGw4fr3JQ3wwo4QrgOtvD3Lj8wA4Sirx4OCf2bqkrBhxnvSxqhmug1I1Z6jBCsvgmO7Xe2PjIEuv6NMVP0uIbk7fEfqlpNe38q9UNWXmEE50lzLdxJi3qgYzY3uwf6tOhQ6aceB23fD3aWuPIeOiku1a0ElUfMI6Z9Cm6C2Wq14p87zVbXyxiveluRo7llIvOwf8AvDUcwJcsxzZQCdijVpZ9PgWXutFQNEoORkMrA8aANY5JKQMSkSgC7EXTXoTpEWz1HMlRnAZSrEwq8T0ssQ8y47EA1YmZgu7KnMc8jusPsXrzeHAchfQNjoB4lglMRyZmswYSKpJ2Klgz5v09EN3E3Y5mxlOnQglsZz6L2HqKcbXi5gfGopmlZvLT8HqYop8SyBuVMhsTDn0rmsmFYMGf49aLLk8LdE5UZWABrH9Pn8B7FwANjgWwiILYvCOHAdDpZ07vgZzmWEu9yEYcIM08k0Kwo1Xz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Polycarbonate+Greenhouse+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "electronics_enclosure",
+      "name": "Electronics Enclosure",
+      "type": "3d_printed",
+      "partId": "97e7cd33-9904-4827-afe2-bb873a173192",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/136-09.jpg",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/136",
+            "price": "$100",
+            "vendor": "Adafruit"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08N1DD5WJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x70x40mm",
+      "position3d": {
+        "x": -150,
+        "y": 35,
+        "z": -120
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 100,
+        "height": 70
+      },
+      "description": "Custom enclosure to protect ESP32, relays, and power converter from humidity and physical damage.",
+      "productName": "Electronics Enclosure",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=esp32+enclosure",
+      "estimatedCost": 5,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgXqxTzdpKyAuKvJ9iQ5K6xY7w7wrIKQYQF1rBJQRbb55lJN25a05sbqVODhjoqtCY0RnvMyzmoUh759Dr0Xml2ZO89LwpfFt27bbXNmnBxY9EdEkQwInR4tEfQlFwqQZCIb8K2VLsEO0hED52D85gyUJUJpUrFI7YJQwqus3wt3uVnZ9Nfrwv7Vs7GkpArTYpLIEoMtGXggk2q9x1L77lc9e7PncxKuPX0lqN5hrEcjIssgGnxjhIOFKGv1dsXvQRCAyckCP60L2Jkk8OzdUHrgSfjstHcyrrLP2mgaM9SZ0VuyXZ2u1s5Sxjhwh8qEaMdQiCiVZMw6WJL7laUh0UKfk5WlzTl5WnhUyqKPo0gh98dwRJashPGXcnA0OBRwW3siNO5xCZi0BeSewoFtMRyC2rVPKVZ2uuql59LiXSxGQIUpF7odzyqyWRHbCpvolAus9jBLkOxmyopzlhX7DcrRtXBZsibAZHiBU2I9Rb5Rp1vgdO2A09wrv41ZbRRyBxKZEfYDV5yMtnmHiPiw6NLWZoXHlEQwLEY3AEHiKFcg7DtmUx5vkr70XKt0XSHSPTpsOhZPN1jKV1Xt7dQAROqrR2uJKQ1vQz7HjcPr9qpR2K883WTVJHUZJTJGuQQAxcotyTpIumBbManmqdsYnzbN"
+    },
+    {
+      "id": "soil_sensor_mount",
+      "name": "Soil Sensor Mount",
+      "type": "3d_printed",
+      "partId": "a239b2ec-768e-4062-b521-7b8b9f324b79",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/6mt1pyeTc2qvDKlFR8CQ716xr_fICpqcWiosGEIKuxU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZXBhLmdvdi9zaXRl/cy9kZWZhdWx0L2Zp/bGVzL3N0eWxlcy9z/bWFsbC9wdWJsaWMv/MjAxNy0xMi93cy1w/cm9kdWN0cy1odC1z/bXMuanBnP2l0b2s9/MGxDeWhWMGU",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "70x25x10mm",
+      "position3d": {
+        "x": 50,
+        "y": 35,
+        "z": -100
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 70,
+        "height": 25
+      },
+      "description": "Bracket to securely hold the capacitive soil moisture sensor in the soil at the desired depth.",
+      "productName": "Soil Sensor Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=capacitive+soil+sensor+mount",
+      "estimatedCost": 0.5,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "dht22_sensor_mount",
+      "name": "Ambient Sensor Mount",
+      "type": "3d_printed",
+      "partId": "985be723-0fcd-4fcb-b884-5d869cdf0bd2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/OodwfS_zhgWCCO1APifNjX8y7W_mqeDHdCVykuJh4vY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zbWFy/dHZpc2lvbmxpZ2h0/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/L1I4MC1QcmltYXJ5/LTMwMHgzMDAuanBn",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "30x20x10mm",
+      "position3d": {
+        "x": 120,
+        "y": 150,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 30,
+        "height": 20
+      },
+      "description": "Small mount for the DHT22 sensor to be positioned for accurate ambient readings.",
+      "productName": "Ambient Sensor Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=dht22+mount",
+      "estimatedCost": 0.2,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "pump_bracket",
+      "name": "Water Pump Bracket",
+      "type": "3d_printed",
+      "partId": "f2c2f0e2-42b6-40c3-9227-f82103780182",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/_NKNBr6-TqPcYIsBK5Ig0qlfW_JUwFxmv7i6huQVEYM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vd3d3LnBy/cHJhY2luZ3Byb2R1/Y3RzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxMi8wMS9Q/UlAtNjcxMC0xUEwu/anBnP2ZpdD0xNjAw/LDExNDMmc3NsPTE",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 25% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "45x40x30mm",
+      "position3d": {
+        "x": -150,
+        "y": 20,
+        "z": 120
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 45,
+        "height": 40
+      },
+      "description": "Mounting bracket to secure the 12V DC water pump within the greenhouse or near the external reservoir.",
+      "productName": "Water Pump Bracket",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=mini+water+pump+mount",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "fan_mount",
+      "name": "Cooling Fan Mount",
+      "type": "3d_printed",
+      "partId": "31aaa0b6-f13a-4a9f-a30a-1a1dbf8f40ab",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/qH0TwZyHNTPJgBc9dp_4_qGpyM3mlkqKc4lf_nDvct8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2NmUUFB/T1N3QU5wb1AxTTMv/cy1sMjI1LmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 30% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "85x85x30mm",
+      "position3d": {
+        "x": -180,
+        "y": 200,
+        "z": -130
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 85,
+        "height": 85
+      },
+      "description": "Bracket to integrate the 80mm cooling fan into the greenhouse structure for air circulation.",
+      "productName": "Cooling Fan Mount",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=80mm+fan+mount+greenhouse",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "m3_screws",
+      "name": "M3 Screws",
+      "type": "misc",
+      "partId": "4365d06f-5bb1-4def-9f55-e2da51e4ea9b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/9ZKhDYknpRltajqj75EdU2DRUYP70tDvss5eXUTJj1w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL1o4WUFB/ZVN3Y29SbnVZNH4v/cy1sNTAwLndlYnA",
+      "material": "Steel",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/dp/B01BBOZGKC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x8mm",
+      "description": "Fasteners for mounting PCBs and components to 3D-printed parts and the greenhouse frame.",
+      "productName": "M3x8mm Phillips Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3x8mm+screws",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3DuOTmz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x8mm+Phillips+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_inserts",
+      "name": "M3 Heat Set Inserts",
+      "type": "misc",
+      "partId": "a218c217-5ff2-453c-bf9b-0cb77fe40758",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/4255-02.jpg",
+      "material": "Brass",
+      "quantity": 10,
+      "research": {
+        "specs": [
+          {
+            "label": "material",
+            "value": "Brass"
+          },
+          {
+            "label": "length_mm",
+            "value": "6.4"
+          },
+          {
+            "label": "application",
+            "value": "Plastic"
+          },
+          {
+            "label": "insert_type",
+            "value": "Heat-Set"
+          },
+          {
+            "label": "thread_size",
+            "value": "M3"
+          },
+          {
+            "label": "mcmaster_url",
+            "value": "https://www.mcmaster.com/94180A333"
+          },
+          {
+            "label": "thread_pitch",
+            "value": "0.5"
+          },
+          {
+            "label": "mcmaster_part_number",
+            "value": "94180A333"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.mcmaster.com/94180A333",
+            "note": "M3-.5 Internal Thread, 6.4mm Length",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "https://www.adafruit.com/product/4255",
+            "price": "$5.95",
+            "vendor": "Adafruit"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "McMaster-Carr M3 Brass Heat-Set Insert, 3.8mm Length",
+            "reason": "A shorter M3 brass heat-set insert option from McMaster-Carr, part number 94180A331 (M3-.5 Internal Thread, 3.8mm Length)."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CS6VZYL8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x4mm",
+      "description": "Used in 3D-printed parts to provide strong, reusable threads for M3 screws.",
+      "productName": "M3 Brass Heat Set Inserts",
+      "purchaseUrl": "https://www.adafruit.com/product/4255",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRpTpv62RXR9sVfC98GmMLkJmXC4qpbJhcQvkbxptOmgDfhTbS0PHwVgmr0VhydRzMgIoquzg3yg5D05i1x7FPxzxIl3P5mtn3X76qprXJgmg8InDgseeFkYRIIwB95RGJoFep43tAYGEBIRAZZ6LvWcRuoiSpUrlsk0dOnD41f9DJE08hfuSws15ysCxPxduPqEdOBJqzG04NUdFJ3bWrfijdWCN43CSC9mYDkrFhwwBbQVz82VhOIzQnJDGqhjn3119Vw7ZBsbw5zNsuKCnHfhCbxRPNLdII35nubRaiPuAYxgMIty1KMm8HZY6F24WzUNGNr5Ay28BHTyNjrjgt37wwssKrFvlAkOc5eRVIfTsSPf00gPtpAnzrYCtO6pa4kt7Oim5FLl2fo9qzTlncqIyd0FnXRaj8FR9jadMKDscIUwEZtfGnXX3P4fbw1kDhD2QSSJMAn5RvUfmbQoftnN7hwclCo2YteNbSFQAlUTLnDvyAuTFcIVw4tUUdoYhbRuWVI1mNuQLwgrpJQ8M1sDLKul4ZypKQqK0WzxjP33EG9LwNWvX48ub96mvj0CpIbLhMAbjsoKwt5GdKy2tzmAgkWEcWjNuBrzPdW6qbqkvKztM8k9TpouDclbRaxH4aTLDpxLZe7KN7MOAMFYQW5H",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Brass+Heat+Set+Inserts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "water_hose",
+      "name": "Water Tubing",
+      "type": "misc",
+      "partId": "f31e70f4-46cd-477c-a56e-3530c73ac8a9",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/PrjmzPThl_XXwlrnymkSwOp1HB7YrQLWCCAdnrtOjNs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF5MFJONzV0dkwu/anBn",
+      "material": "Silicone",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B08BRGM9T8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6mm ID x 1000mm",
+      "description": "Flexible tubing for connecting the water pump to the external reservoir and to the plant area.",
+      "productName": "Silicone Tubing 6mm ID",
+      "purchaseUrl": "https://www.amazon.com/s?k=silicone+tubing+6mm+id",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwIGKZXqmRGRsM2waP0RAdb6YPdEqT5SgVcicMtJSNrPJWJf8QdImeG5T1lfzmjsQDiSYlOURoTHLdBpJcgSiBeOueCLTFwzON3MQ7SIgPpcsU73sF5Zq6eXKIL6UxvGadftz7U1wZIMr5y2cnFQNUEzc5DSyjvyM7ZtV68PoigBOF45KtGuUg52wLkdhhAfXkBJeexHeg1YC5EtuqjXpwBE3Wdj49xFpVD9Cx7o0SitFTnRIFDN2QFZbjMOjq67YaKyfjXKDMY0TNwUExznjHuNGEDjKKaaur1ubjpQ1nuCcz9tIkXyuhLa59Uax5MQpWPzn4einP5URMycBqi6KGif6ixWgjzFjflPgDQ0g7qOQC0x9yFQ0QDdxHCSldMiqkIl6om8c6NW24oqH6feE9aGAF38v7lbcUlZkZKsV7a1BwUFzGayvbGNLbenvbhkTPIcbLOTGuWmjqEBRCt1ZArgmQc4q3x0k4AVoATxghf9GeK2jQJMyRMQJ8WLf8kR9TRvD5vXD8eBJNmfAttdsSEOneJgobaWbzGZ6nLShmsbdvMvqYiVdiuwbsjBD9rvuu5Y5m9V0aK8r0A8zUjCkctP4uWnr7lluyk9nSNDSnOvCyp7sA3rOPYoROEArU2UZNBmYTMf0L53rWqBsUcSlJ4X",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Silicone+Tubing+6mm+ID&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "zip_ties",
+      "name": "Cable Zip Ties",
+      "type": "misc",
+      "partId": "1cd340ed-15ab-4202-b690-da9eab19bfb2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/xx8rgf9qz1LwWUU6N7-dfpwQHEna1PskP07DUA2-III/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vQUxC/Ty1XaGl0ZS1aaXAt/VGllcy04LUluY2gt/UGxhc3RpYy1DYWJs/ZS1UaWVzLTEwMDAt/UGFjay1UaWUtV3Jh/cHMtNDBsYi1VVi1S/ZXNpc3RhbnQtU21h/bGwtTnlsb24tV2ly/ZS1UaWVzXzMyZTYx/NGE5LTg1NjgtNDRi/NS04YmE4LTE4OGY3/YjdmMTBjZi4xYmVh/NDAzNmUzODNjODY0/MGQyZWMzNWZkOTFi/YTg3MC5wbmc_b2Ru/SGVpZ2h0PTU3MyZv/ZG5XaWR0aD01NzMm/b2RuQmc9RkZGRkZG",
+      "material": "Nylon",
+      "quantity": 30,
+      "amazonUrl": "https://www.amazon.com/dp/B0BC1VH4XB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "2.5x100mm",
+      "description": "For organizing and securing wiring within the greenhouse.",
+      "productName": "Small Nylon Zip Ties",
+      "purchaseUrl": "https://www.amazon.com/s?k=small+zip+ties",
+      "estimatedCost": 0.02,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxwr7BCIN1lpcvWYWPv21fhF3wrbip5LpsR3AlXofxNsNYokQDyNM6pVrq2zrziJB3e11ySaOjTbKe165Dc5HfKAc5M84AhcJu0qPYHz7dDj0T81p8hWQOXWXwKsIdp3afyVJ7kK87ujIQsNEStGVTLQTlPQgZ2o07pO4JiIVdaOYN4gkLFFbsi3qPxJJZr1fA7lRXKXcrEaQbRh6SvmzjmKH5v2m2ddPvtI9g4l2QzqC1M5YuxWaTOYYRFYjDqFooeTuTWyRVuKwYeDtLg4IYWizNA7GmaBdSPSvBecTXniKi3bhzZqRoQiNoqFByJkKojL7U6c3AEG32WtsaeN6XcuHeYdAC3Pf8uWlEwvXOmiukQGDtmSWzHD8zZ6L2tbRVRPGQ9kMJDpoTdaKFwKib0NsePPNIeCWxXaiF5I7SKVmlGcLGDV45C3Utl8vISXw6dp92HX6xzCDC7PfEl5H0dVzZXs1A0RYq67KDMk8cxJ56kIhcsRsR3Mxjw3TLEdIBnhN4B93rnaHYzEDcmvlLowH3KzFobhRiF4CRwY0LTBdcqiOSUcc0500zjk1L8Ch10s048nvdyHcFZzdnI3jcTkMlygbA0BlohsBgJWGcktXwLe5pySp61n7nMd31x5Xql3jgjYJ81Tmr3fFIZLKMX0r",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Small+Nylon+Zip+Ties&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "solar_panel",
+      "name": "Solar Panel",
+      "pins": [
+        "PV+",
+        "PV-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/7pwA5Cp8vkRuMPDIKlbqI738iJIwF5MANuSzXJi4xTw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb2Fz/dDJjb2FzdHNvbGFy/LmNvbS9kZXYvd3At/Y29udGVudC91cGxv/YWRzLzIwMjUvMDMv/MjBXLTEyVi1Nb25v/Y3J5c3RhbGxpbmUt/U29sYXItUGFuZWwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/detail/banner-engineering-corporation/BWA-SOLAR-PANEL-20W/10651133",
+            "note": "20W Monocrystalline Solar Cell from Banner Engineering Corporation. Order today, ships today.",
+            "price": "Price not specified in search results, check product page for current pricing",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.topbullshop.com/products/12v-20w-solar-panel-kit-monocrystalline-with-10a-solar-charge-controller-extension-cable-with-battery-clips-o-ring-terminal-for-rv-marine-boat-off-grid-system",
+            "note": "12V 20W Monocrystalline Solar Panel Kit with 10A Solar Charge Controller, extension cable, and battery clips. High-efficiency monocrystalline cell technology.",
+            "price": "Price not specified in search results, check product page for current pricing",
+            "vendor": "Topbullshop.com"
+          },
+          {
+            "url": "https://coast2coastsolar.com/product/20w-12v-monocrystalline-solar-panel/",
+            "note": "20W 12V Monocrystalline Solar Panel, perfect for powering small electronic devices when off the grid.",
+            "price": "Price not specified in search results, check product page for current pricing",
+            "vendor": "Coast 2 Coast Solar"
+          }
+        ]
+      },
+      "position3d": {
+        "x": 0,
+        "y": 320,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 350,
+        "height": 250
+      },
+      "description": "Converts sunlight into electrical energy to power the system and charge the battery.",
+      "productName": "12V 20W Monocrystalline Solar Panel",
+      "purchaseUrl": "https://www.amazon.com/s?k=12v+20w+monocrystalline+solar+panel",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+20W+Monocrystalline+Solar+Panel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "solar_charge_controller",
+      "name": "Solar Charge Controller",
+      "pins": [
+        "PV_IN+",
+        "PV_IN-",
+        "BAT+",
+        "BAT-",
+        "LOAD+",
+        "LOAD-"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/sgvR7nq3mJx7H4HR-D3pEutIVig06eMItkcU0HA2rBo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kMWhj/cTJxaXhlcTRqMS5j/bG91ZGZyb250Lm5l/dC9jeC8yMDIyLzA4/LzA4LzE2NTk5MzQz/OTUtX2QuanBn",
+      "quantity": 1,
+      "position3d": {
+        "x": -150,
+        "y": 25,
+        "z": -125
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 130,
+        "height": 70
+      },
+      "description": "Manages power flow from the solar panel to the battery and regulates output to the load.",
+      "productName": "PWM Solar Charge Controller 10A 12V/24V",
+      "purchaseUrl": "https://www.amazon.com/s?k=pwm+solar+charge+controller+10a",
+      "estimatedCost": 15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PWM+Solar+Charge+Controller+10A+12V%2F24V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "battery_12v",
+      "name": "12V Battery",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/WEjjk7CSv-sWwHXjw2_HNHAoGfns-bVrgjY75hjuEhA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjExWFNINlB5VUwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/detail/batteryguy/BG-1270F1/13162773",
+            "note": "BG-1270F1 - 12 V Sealed Lead Acid (SLA, VRLA) Battery Rechargeable (Secondary) 7Ah. Buy now, ships today.",
+            "vendor": "BatteryGuy (via DigiKey Marketplace)"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/b-b-battery/BP7-12-T1/653332",
+            "note": "BP7-12-T1 \n\t– 12 V Sealed Lead Acid (SLA, VRLA) Battery Rechargeable (Secondary) 7Ah. Order today, ships today.",
+            "vendor": "B B Battery (via DigiKey)"
+          },
+          {
+            "url": "https://batterysharks.com/12v-7ah-sealed-lead-acid-battery.html",
+            "note": "12V 7AH Sealed Lead Acid Battery. For help, call 1 (800) 657-1303 or email. Buy with confidence today!",
+            "vendor": "BatterySharks.com"
+          },
+          {
+            "url": "https://www.upsbatterycenter.com/12v-7ah-sealed-lead-acid-battery-with-f2-terminals",
+            "note": "12V 7Ah Sealed Lead Acid Battery with F2 Terminals - TLV1270F2. High quality fresh new battery, 1 year warranty included. Performance Guaranteed!",
+            "vendor": "UPSBatteryCenter.com"
+          }
+        ]
+      },
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 120
+      },
+      "boundingBox": {
+        "depth": 95,
+        "width": 150,
+        "height": 65
+      },
+      "description": "Stores energy from the solar panel for continuous power supply during low light or night.",
+      "productName": "12V 7Ah Sealed Lead Acid Battery",
+      "purchaseUrl": "https://www.amazon.com/s?k=12v+7ah+sealed+lead+acid+battery",
+      "estimatedCost": 20,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+7Ah+Sealed+Lead+Acid+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "solar_panel_mount",
+      "name": "Solar Panel Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 0,
+        "y": 310,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 200,
+        "height": 50
+      },
+      "description": "Bracket to securely attach the solar panel to the greenhouse frame.",
+      "productName": "Adjustable Solar Panel Mount Bracket",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=solar+panel+mount+bracket",
+      "estimatedCost": 2
+    },
+    {
+      "id": "charge_controller_mount",
+      "name": "Charge Controller Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": -150,
+        "y": 20,
+        "z": -125
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 140,
+        "height": 80
+      },
+      "description": "Mounting bracket to secure the solar charge controller inside the electronics enclosure.",
+      "productName": "Solar Charge Controller Mounting Bracket",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=solar+charge+controller+mount",
+      "estimatedCost": 1
+    },
+    {
+      "id": "battery_holder",
+      "name": "Battery Holder",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 120
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 160,
+        "height": 75
+      },
+      "description": "Tray or enclosure to securely hold the 12V battery.",
+      "productName": "12V Battery Holder/Tray",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=12v+battery+holder",
+      "estimatedCost": 1.5
+    }
+  ],
+  "notes": [
+    "Smart greenhouse",
+    "ESP32 control",
+    "Soil moisture sensor",
+    "Air humidity sensor",
+    "Water pump",
+    "Cooling fan"
+  ],
+  "projectName": "Smart Greenhouse (1)",
+  "originalPrompt": "voglio creare una serra smart con esp32, un sensore di umidita' e nel caso una pompa e una ventola per regolare umidita' della terra e dell'aria",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all custom mechanical components",
+          "partIds": [
+            "electronics_enclosure",
+            "soil_sensor_mount",
+            "dht22_sensor_mount",
+            "pump_bracket",
+            "fan_mount",
+            "solar_panel_mount",
+            "charge_controller_mount",
+            "battery_holder"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Install M3 heat-set inserts into all designated mounting points on 3D printed parts",
+          "partIds": [
+            "electronics_enclosure",
+            "soil_sensor_mount",
+            "dht22_sensor_mount",
+            "pump_bracket",
+            "fan_mount",
+            "solar_panel_mount",
+            "charge_controller_mount",
+            "battery_holder",
+            "m3_inserts"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Cut water tubing to the required length for pump connections",
+          "partIds": [
+            "water_hose"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Deburr and clean all 3D printed parts, then test-fit mechanical connections",
+          "partIds": [
+            "electronics_enclosure",
+            "soil_sensor_mount",
+            "dht22_sensor_mount",
+            "pump_bracket",
+            "fan_mount",
+            "solar_panel_mount",
+            "charge_controller_mount",
+            "battery_holder",
+            "greenhouse_frame"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Connect Solar Panel to Solar Charge Controller input terminals",
+          "partIds": [
+            "solar_panel",
+            "solar_charge_controller"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect 12V Battery to Solar Charge Controller battery terminals",
+          "partIds": [
+            "battery_12v",
+            "solar_charge_controller"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire Solar Charge Controller load output to 5V buck converter input and relay module COM pins",
+          "partIds": [
+            "solar_charge_controller",
+            "buck_converter",
+            "pump_relay",
+            "fan_relay"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect 5V buck converter output to ESP32, DHT22 sensor, soil moisture sensor, and both relay VCC pins",
+          "partIds": [
+            "buck_converter",
+            "esp32_mcu",
+            "dht22_sensor",
+            "soil_moisture_sensor",
+            "pump_relay",
+            "fan_relay"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Wire ESP32 data pins to DHT22 sensor, soil moisture sensor, and relay IN pins",
+          "partIds": [
+            "esp32_mcu",
+            "dht22_sensor",
+            "soil_moisture_sensor",
+            "pump_relay",
+            "fan_relay"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Wire fan relay NO output to Cooling Fan, and pump relay NO output to Water Pump",
+          "partIds": [
+            "fan_relay",
+            "cooling_fan",
+            "pump_relay",
+            "water_pump"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Connect shared system ground from solar charge controller LOAD- to water pump - terminal",
+          "partIds": [
+            "solar_charge_controller",
+            "water_pump"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Perform continuity checks on all power and data lines to ensure correct wiring",
+          "partIds": [
+            "esp32_mcu",
+            "soil_moisture_sensor",
+            "dht22_sensor",
+            "water_pump",
+            "cooling_fan",
+            "pump_relay",
+            "fan_relay",
+            "buck_converter",
+            "solar_panel",
+            "solar_charge_controller",
+            "battery_12v"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect ESP32 to computer and upload initial firmware",
+          "partIds": [
+            "esp32_mcu"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Verify ESP32 boots correctly and serial output is functional",
+          "partIds": [
+            "esp32_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test DHT22 sensor readings for ambient temperature and humidity",
+          "partIds": [
+            "esp32_mcu",
+            "dht22_sensor"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test soil moisture sensor readings and analog input functionality",
+          "partIds": [
+            "esp32_mcu",
+            "soil_moisture_sensor"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Actuate pump and fan relays individually and verify fan and water pump operation",
+          "partIds": [
+            "esp32_mcu",
+            "pump_relay",
+            "fan_relay",
+            "water_pump",
+            "cooling_fan"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Confirm solar charge controller is charging the battery and providing power to loads",
+          "partIds": [
+            "solar_charge_controller",
+            "solar_panel",
+            "battery_12v"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the Solar Panel Mount and Solar Panel to the exterior of the greenhouse frame",
+          "partIds": [
+            "greenhouse_frame",
+            "solar_panel_mount",
+            "solar_panel",
+            "m3_screws"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount the Battery Holder and 12V Battery to the interior base of the greenhouse frame",
+          "partIds": [
+            "greenhouse_frame",
+            "battery_holder",
+            "battery_12v",
+            "m3_screws"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount the Electronics Enclosure to the greenhouse frame",
+          "partIds": [
+            "greenhouse_frame",
+            "electronics_enclosure",
+            "m3_screws"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Install ESP32, both relay modules, 5V buck converter, and charge controller into the Electronics Enclosure",
+          "partIds": [
+            "electronics_enclosure",
+            "esp32_mcu",
+            "pump_relay",
+            "fan_relay",
+            "buck_converter",
+            "charge_controller_mount",
+            "solar_charge_controller",
+            "m3_screws"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount the Soil Sensor Mount and Soil Moisture Sensor in soil near plants, and the DHT22 Sensor Mount and DHT22 Sensor inside the greenhouse",
+          "partIds": [
+            "greenhouse_frame",
+            "soil_sensor_mount",
+            "soil_moisture_sensor",
+            "dht22_sensor_mount",
+            "dht22_sensor",
+            "m3_screws"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount the Pump Bracket and Water Pump near the water source, and the Fan Mount and Cooling Fan to the frame opening",
+          "partIds": [
+            "greenhouse_frame",
+            "pump_bracket",
+            "water_pump",
+            "fan_mount",
+            "cooling_fan",
+            "m3_screws"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Attach the water hose to the water pump and route all cables, securing with zip ties for strain relief and organization",
+          "partIds": [
+            "water_pump",
+            "water_hose",
+            "zip_ties"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A smart greenhouse system automatically monitors soil moisture and ambient temperature/humidity using an ESP32. It controls a 12V water pump and cooling fan via relays to maintain optimal conditions, powered by a solar panel and 12V battery.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG and PLA capable)",
+      "Soldering iron with fine tip",
+      "Wire strippers",
+      "Crimping tool (optional, for custom wire harnesses)",
+      "Multimeter",
+      "M3 hex key / screwdriver",
+      "Heat gun (for heat-set inserts)",
+      "Small pliers / tweezers",
+      "Utility knife / snips (for tubing and zip ties)"
+    ],
+    "assumptions": [
+      "Basic electronics knowledge and safety practices",
+      "Familiarity with 3D printing software and operation",
+      "Arduino IDE or ESP-IDF installed for firmware development",
+      "Access to a 12V power supply for initial testing (optional, can use battery/solar)"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "esp32_mcu",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "soil_moisture_sensor",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "dht22_sensor",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "5V Relay Logic Power",
+      "source": "buck_converter",
+      "target": "pump_relay",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "5V Relay Logic Power",
+      "source": "buck_converter",
+      "target": "fan_relay",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "soil_moisture_sensor",
+      "protocol": "Analog",
+      "sourcePin": "GPIO34",
+      "targetPin": "AOUT"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "dht22_sensor",
+      "protocol": "OneWire",
+      "sourcePin": "GPIO23",
+      "targetPin": "Data"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "pump_relay",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO19",
+      "targetPin": "IN"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "fan_relay",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO18",
+      "targetPin": "IN"
+    },
+    {
+      "type": "power",
+      "label": "Switched 12V",
+      "source": "fan_relay",
+      "target": "cooling_fan",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "source": "solar_panel",
+      "target": "solar_charge_controller",
+      "voltage": "12V",
+      "sourcePin": "PV+",
+      "targetPin": "PV_IN+"
+    },
+    {
+      "type": "power",
+      "source": "solar_panel",
+      "target": "solar_charge_controller",
+      "voltage": "12V",
+      "sourcePin": "PV-",
+      "targetPin": "PV_IN-"
+    },
+    {
+      "type": "power",
+      "source": "solar_charge_controller",
+      "target": "battery_12v",
+      "voltage": "12V",
+      "sourcePin": "BAT+",
+      "targetPin": "+"
+    },
+    {
+      "type": "power",
+      "source": "solar_charge_controller",
+      "target": "battery_12v",
+      "voltage": "12V",
+      "sourcePin": "BAT-",
+      "targetPin": "-"
+    },
+    {
+      "type": "power",
+      "source": "solar_charge_controller",
+      "target": "buck_converter",
+      "voltage": "12V",
+      "sourcePin": "LOAD+",
+      "targetPin": "VIN+"
+    },
+    {
+      "type": "power",
+      "source": "solar_charge_controller",
+      "target": "buck_converter",
+      "voltage": "12V",
+      "sourcePin": "LOAD-",
+      "targetPin": "VIN-"
+    },
+    {
+      "type": "power",
+      "source": "solar_charge_controller",
+      "target": "pump_relay",
+      "voltage": "12V",
+      "sourcePin": "LOAD+",
+      "targetPin": "COM"
+    },
+    {
+      "type": "power",
+      "source": "solar_charge_controller",
+      "target": "fan_relay",
+      "voltage": "12V",
+      "sourcePin": "LOAD+",
+      "targetPin": "COM"
+    },
+    {
+      "type": "power",
+      "source": "pump_relay",
+      "target": "water_pump",
+      "voltage": "12V",
+      "sourcePin": "NO",
+      "targetPin": "+"
+    },
+    {
+      "type": "power",
+      "source": "solar_charge_controller",
+      "target": "water_pump",
+      "voltage": "GND",
+      "sourcePin": "LOAD-",
+      "targetPin": "- "
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "Mounted to frame",
+      "source": "greenhouse_frame",
+      "target": "electronics_enclosure"
+    },
+    {
+      "label": "Positioned in soil near plants",
+      "source": "greenhouse_frame",
+      "target": "soil_sensor_mount"
+    },
+    {
+      "label": "Mounted inside greenhouse",
+      "source": "greenhouse_frame",
+      "target": "dht22_sensor_mount"
+    },
+    {
+      "label": "Mounted near water source",
+      "source": "greenhouse_frame",
+      "target": "pump_bracket"
+    },
+    {
+      "label": "Mounted to frame opening",
+      "source": "greenhouse_frame",
+      "target": "fan_mount"
+    },
+    {
+      "label": "Secured with M3 screws",
+      "source": "electronics_enclosure",
+      "target": "esp32_mcu"
+    },
+    {
+      "label": "Secured with M3 screws",
+      "source": "electronics_enclosure",
+      "target": "pump_relay"
+    },
+    {
+      "label": "Secured with M3 screws",
+      "source": "electronics_enclosure",
+      "target": "fan_relay"
+    },
+    {
+      "label": "Secured with M3 screws",
+      "source": "electronics_enclosure",
+      "target": "buck_converter"
+    },
+    {
+      "label": "Sensor inserted into mount",
+      "source": "soil_sensor_mount",
+      "target": "soil_moisture_sensor"
+    },
+    {
+      "label": "Sensor inserted into mount",
+      "source": "dht22_sensor_mount",
+      "target": "dht22_sensor"
+    },
+    {
+      "label": "Pump secured in bracket",
+      "source": "pump_bracket",
+      "target": "water_pump"
+    },
+    {
+      "label": "Fan mounted to bracket",
+      "source": "fan_mount",
+      "target": "cooling_fan"
+    },
+    {
+      "label": "Hose attached to pump inlet/outlet",
+      "source": "water_pump",
+      "target": "water_hose"
+    },
+    {
+      "label": "Mounted to exterior frame",
+      "source": "greenhouse_frame",
+      "target": "solar_panel_mount"
+    },
+    {
+      "label": "Secured to mount",
+      "source": "solar_panel_mount",
+      "target": "solar_panel"
+    },
+    {
+      "label": "Mounted inside enclosure",
+      "source": "electronics_enclosure",
+      "target": "charge_controller_mount"
+    },
+    {
+      "label": "Secured to mount",
+      "source": "charge_controller_mount",
+      "target": "solar_charge_controller"
+    },
+    {
+      "label": "Mounted to interior base",
+      "source": "greenhouse_frame",
+      "target": "battery_holder"
+    },
+    {
+      "label": "Secured in holder",
+      "source": "battery_holder",
+      "target": "battery_12v"
+    }
+  ],
+  "projectId": "4b1776f0-5be5-4ade-a2b4-d3acc128623e"
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "type": "power",
+    "label": "Power Bank to Pi Cable (USB-A)",
+    "source": "power_bank_usb_c",
+    "target": "usb_a_to_micro_usb_cable_pi",
+    "current": "2.5A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Pi Cable to Pi (Micro USB)",
+    "source": "usb_a_to_micro_usb_cable_pi",
+    "target": "rpi_main_controller",
+    "current": "2.5A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Power Bank to Display Power Cable (USB-A)",
+    "source": "power_bank_usb_c",
+    "target": "usb_a_to_micro_usb_cable_display_power",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Display Power Cable to Display (Micro USB)",
+    "source": "usb_a_to_micro_usb_cable_display_power",
+    "target": "elecrow_main_display",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Pi to HDMI Cable",
+    "source": "rpi_main_controller",
+    "target": "hdmi_to_hdmi_cable",
+    "protocol": "hdmi",
+    "sourcePin": "HDMI",
+    "targetPin": "HDMI Type A"
+  },
+  {
+    "type": "data",
+    "label": "HDMI Cable to Display",
+    "source": "hdmi_to_hdmi_cable",
+    "target": "elecrow_main_display",
+    "protocol": "hdmi",
+    "sourcePin": "HDMI Type A",
+    "targetPin": "HDMI (Input)"
+  },
+  {
+    "type": "data",
+    "label": "Pi to Keyboard (USB)",
+    "source": "rpi_main_controller",
+    "target": "hoopond_keyboard",
+    "protocol": "usb",
+    "sourcePin": "USB 2.0",
+    "targetPin": "USB (Data/Power)"
+  },
+  {
+    "type": "data",
+    "label": "Pi to Display Touch Cable (USB-A)",
+    "source": "rpi_main_controller",
+    "target": "usb_a_to_micro_usb_cable_display_touch",
+    "protocol": "usb",
+    "sourcePin": "USB 2.0",
+    "targetPin": "USB-A"
+  },
+  {
+    "type": "data",
+    "label": "Display Touch Cable to Display",
+    "source": "usb_a_to_micro_usb_cable_display_touch",
+    "target": "elecrow_main_display",
+    "protocol": "usb",
+    "sourcePin": "Micro USB",
+    "targetPin": "Micro USB (Touch)"
+  }
+]

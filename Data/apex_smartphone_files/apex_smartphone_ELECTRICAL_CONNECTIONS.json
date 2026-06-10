@@ -1,0 +1,379 @@
+[
+  {
+    "type": "power",
+    "label": "Battery to PMIC",
+    "source": "li_po_battery",
+    "target": "power_management_ic_main",
+    "current": "5A",
+    "voltage": "3.8V"
+  },
+  {
+    "type": "power",
+    "label": "SoC VCORE",
+    "source": "power_management_ic_main",
+    "target": "main_soc",
+    "current": "5A",
+    "voltage": "1.2V"
+  },
+  {
+    "type": "power",
+    "label": "SoC VLOGIC",
+    "source": "power_management_ic_main",
+    "target": "main_soc",
+    "current": "2A",
+    "voltage": "0.8V"
+  },
+  {
+    "type": "power",
+    "label": "LPDDR6 VDD",
+    "source": "power_management_ic_main",
+    "target": "integrated_ram",
+    "current": "2A",
+    "voltage": "1.1V"
+  },
+  {
+    "type": "power",
+    "label": "UFS VDD",
+    "source": "power_management_ic_main",
+    "target": "internal_storage",
+    "current": "500mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Display VDD",
+    "source": "power_management_ic_main",
+    "target": "amoled_display",
+    "current": "1A",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Wireless VDD",
+    "source": "power_management_ic_main",
+    "target": "wireless_module",
+    "current": "1.5A",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "GNSS VDD",
+    "source": "power_management_ic_main",
+    "target": "gnss_module",
+    "current": "100mA",
+    "voltage": "1.8V"
+  },
+  {
+    "type": "power",
+    "label": "Main Cam VDD",
+    "source": "power_management_ic_main",
+    "target": "main_camera_module",
+    "current": "150mA",
+    "voltage": "2.8V"
+  },
+  {
+    "type": "power",
+    "label": "Ultrawide Cam VDD",
+    "source": "power_management_ic_main",
+    "target": "ultrawide_camera_module",
+    "current": "150mA",
+    "voltage": "2.8V"
+  },
+  {
+    "type": "power",
+    "label": "Telephoto Cam VDD",
+    "source": "power_management_ic_main",
+    "target": "telephoto_camera_module",
+    "current": "150mA",
+    "voltage": "2.8V"
+  },
+  {
+    "type": "power",
+    "label": "Front Cam VDD",
+    "source": "power_management_ic_main",
+    "target": "front_camera_module",
+    "current": "150mA",
+    "voltage": "2.8V"
+  },
+  {
+    "type": "power",
+    "label": "Audio Codec VDD",
+    "source": "power_management_ic_main",
+    "target": "audio_codec",
+    "current": "200mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Accel/Gyro VDD",
+    "source": "power_management_ic_main",
+    "target": "accelerometer_gyro",
+    "current": "10mA",
+    "voltage": "1.8V"
+  },
+  {
+    "type": "power",
+    "label": "Magnetometer VDD",
+    "source": "power_management_ic_main",
+    "target": "magnetometer",
+    "current": "5mA",
+    "voltage": "1.8V"
+  },
+  {
+    "type": "power",
+    "label": "ALS/Proximity VDD",
+    "source": "power_management_ic_main",
+    "target": "ambient_light_proximity",
+    "current": "5mA",
+    "voltage": "1.8V"
+  },
+  {
+    "type": "power",
+    "label": "Fingerprint VDD",
+    "source": "power_management_ic_main",
+    "target": "fingerprint_sensor",
+    "current": "50mA",
+    "voltage": "1.8V"
+  },
+  {
+    "type": "power",
+    "label": "Haptic Motor VCC",
+    "source": "power_management_ic_main",
+    "target": "linear_haptic_motor",
+    "current": "200mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "label": "SoC to RAM",
+    "source": "main_soc",
+    "target": "integrated_ram",
+    "protocol": "lpddr",
+    "sourcePin": "LPDDR6_IF",
+    "targetPin": "LPDDR6_IF"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Storage",
+    "source": "main_soc",
+    "target": "internal_storage",
+    "protocol": "ufs",
+    "sourcePin": "UFS_IF",
+    "targetPin": "UFS_IF"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Display",
+    "source": "main_soc",
+    "target": "amoled_display",
+    "protocol": "mipi_dsi",
+    "sourcePin": "MIPI_DSI",
+    "targetPin": "MIPI_DSI"
+  },
+  {
+    "type": "data",
+    "label": "Display Backlight PWM",
+    "source": "main_soc",
+    "target": "amoled_display",
+    "protocol": "pwm",
+    "sourcePin": "GPIO",
+    "targetPin": "BL_PWM"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Wireless",
+    "source": "main_soc",
+    "target": "wireless_module",
+    "protocol": "pcie",
+    "sourcePin": "PCIe",
+    "targetPin": "PCIe"
+  },
+  {
+    "type": "data",
+    "label": "SoC to GNSS UART",
+    "source": "main_soc",
+    "target": "gnss_module",
+    "protocol": "uart",
+    "sourcePin": "GPIO",
+    "targetPin": "UART"
+  },
+  {
+    "type": "data",
+    "label": "SoC to GNSS I2C",
+    "source": "main_soc",
+    "target": "gnss_module",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Main Cam CSI",
+    "source": "main_soc",
+    "target": "main_camera_module",
+    "protocol": "mipi_csi",
+    "sourcePin": "CSI",
+    "targetPin": "MIPI_CSI"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Main Cam I2C",
+    "source": "main_soc",
+    "target": "main_camera_module",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Ultrawide Cam CSI",
+    "source": "main_soc",
+    "target": "ultrawide_camera_module",
+    "protocol": "mipi_csi",
+    "sourcePin": "CSI",
+    "targetPin": "MIPI_CSI"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Ultrawide Cam I2C",
+    "source": "main_soc",
+    "target": "ultrawide_camera_module",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Telephoto Cam CSI",
+    "source": "main_soc",
+    "target": "telephoto_camera_module",
+    "protocol": "mipi_csi",
+    "sourcePin": "CSI",
+    "targetPin": "MIPI_CSI"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Telephoto Cam I2C",
+    "source": "main_soc",
+    "target": "telephoto_camera_module",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Front Cam CSI",
+    "source": "main_soc",
+    "target": "front_camera_module",
+    "protocol": "mipi_csi",
+    "sourcePin": "CSI",
+    "targetPin": "MIPI_CSI"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Front Cam I2C",
+    "source": "main_soc",
+    "target": "front_camera_module",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Audio Codec I2S",
+    "source": "main_soc",
+    "target": "audio_codec",
+    "protocol": "i2s",
+    "sourcePin": "GPIO",
+    "targetPin": "I2S"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Audio Codec I2C",
+    "source": "main_soc",
+    "target": "audio_codec",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Accel/Gyro SPI",
+    "source": "main_soc",
+    "target": "accelerometer_gyro",
+    "protocol": "spi",
+    "sourcePin": "SPI",
+    "targetPin": "SPI"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Magnetometer I2C",
+    "source": "main_soc",
+    "target": "magnetometer",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "SoC to ALS/Proximity I2C",
+    "source": "main_soc",
+    "target": "ambient_light_proximity",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Fingerprint SPI",
+    "source": "main_soc",
+    "target": "fingerprint_sensor",
+    "protocol": "spi",
+    "sourcePin": "SPI",
+    "targetPin": "SPI"
+  },
+  {
+    "type": "data",
+    "label": "SoC to Haptic Motor PWM",
+    "source": "main_soc",
+    "target": "linear_haptic_motor",
+    "protocol": "pwm",
+    "sourcePin": "GPIO",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "label": "SoC to USB-C Data",
+    "source": "main_soc",
+    "target": "usb_c_controller",
+    "protocol": "usb",
+    "sourcePin": "USB_C",
+    "targetPin": "USB_TX_RX"
+  },
+  {
+    "type": "data",
+    "label": "SoC to USB-C Control I2C",
+    "source": "main_soc",
+    "target": "usb_c_controller",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C"
+  },
+  {
+    "type": "data",
+    "label": "PMIC to USB-C VBUS Control",
+    "source": "power_management_ic_main",
+    "target": "usb_c_controller",
+    "protocol": "gpio",
+    "sourcePin": "GPIO",
+    "targetPin": "VBUS_CTRL"
+  },
+  {
+    "type": "power",
+    "label": "USB-C to Battery Charging",
+    "source": "usb_c_controller",
+    "target": "li_po_battery",
+    "current": "3A",
+    "voltage": "5-20V"
+  }
+]

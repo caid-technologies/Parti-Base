@@ -1,0 +1,320 @@
+[
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "primary_display",
+    "protocol": "HDMI",
+    "sourcePin": "HDMI0",
+    "targetPin": "HDMI Input"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "primary_display",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "secondary_display",
+    "protocol": "SPI",
+    "sourcePin": "SPI0_MOSI",
+    "targetPin": "MOSI"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "secondary_display",
+    "protocol": "SPI",
+    "sourcePin": "SPI0_SCLK",
+    "targetPin": "SCLK"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "secondary_display",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO_CE0",
+    "targetPin": "CS"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "secondary_display",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO25",
+    "targetPin": "DC"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "secondary_display",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO24",
+    "targetPin": "RST"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "secondary_display",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO23",
+    "targetPin": "BUSY"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "secondary_display",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "tertiary_display",
+    "protocol": "SPI",
+    "sourcePin": "SPI0_MOSI",
+    "targetPin": "MOSI"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "tertiary_display",
+    "protocol": "SPI",
+    "sourcePin": "SPI0_SCLK",
+    "targetPin": "SCK"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "tertiary_display",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO_CE1",
+    "targetPin": "CS"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "tertiary_display",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO22",
+    "targetPin": "DC"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "tertiary_display",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO27",
+    "targetPin": "RST"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "tertiary_display",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "rotary_encoder",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO17",
+    "targetPin": "A"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "rotary_encoder",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO18",
+    "targetPin": "B"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "rotary_encoder",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO20",
+    "targetPin": "SW"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "gps_module",
+    "protocol": "UART",
+    "sourcePin": "GPIO14 (TXD)",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "gps_module",
+    "protocol": "UART",
+    "sourcePin": "GPIO15 (RXD)",
+    "targetPin": "TX"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "gps_module",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "environmental_sensor",
+    "protocol": "I2C",
+    "sourcePin": "SDA1",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "environmental_sensor",
+    "protocol": "I2C",
+    "sourcePin": "SCL1",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "environmental_sensor",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "imu_sensor",
+    "protocol": "I2C",
+    "sourcePin": "SDA1",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "imu_sensor",
+    "protocol": "I2C",
+    "sourcePin": "SCL1",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "imu_sensor",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "rugged_usb_hub",
+    "protocol": "USB 3.0",
+    "sourcePin": "USB 3.0",
+    "targetPin": "USB Input (Type A/B)"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "rugged_usb_hub",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "rugged_usb_hub",
+    "target": "rtl_sdr_dongle",
+    "protocol": "USB 2.0",
+    "sourcePin": "USB Output",
+    "targetPin": "USB Type A"
+  },
+  {
+    "type": "power",
+    "source": "rugged_usb_hub",
+    "target": "rtl_sdr_dongle",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "rugged_usb_hub",
+    "target": "audio_interface",
+    "protocol": "USB 2.0",
+    "sourcePin": "USB Output",
+    "targetPin": "USB Type A"
+  },
+  {
+    "type": "power",
+    "source": "rugged_usb_hub",
+    "target": "audio_interface",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Audio Out to Baofeng Mic",
+    "source": "audio_interface",
+    "target": "baofeng_radio",
+    "protocol": "Analog Audio",
+    "sourcePin": "3.5mm Audio Out",
+    "targetPin": "K-Type Audio/Mic Jack"
+  },
+  {
+    "type": "data",
+    "label": "Mic In from Baofeng Speaker",
+    "source": "audio_interface",
+    "target": "baofeng_radio",
+    "protocol": "Analog Audio",
+    "sourcePin": "3.5mm Mic In",
+    "targetPin": "K-Type Audio/Mic Jack"
+  },
+  {
+    "type": "power",
+    "source": "external_power_input",
+    "target": "battery_charger_module",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "battery_charger_module",
+    "target": "main_battery_pack",
+    "voltage": "11.1V"
+  },
+  {
+    "type": "power",
+    "source": "main_battery_pack",
+    "target": "power_toggle_main",
+    "voltage": "11.1V"
+  },
+  {
+    "type": "power",
+    "source": "power_toggle_main",
+    "target": "main_5v_buck",
+    "voltage": "11.1V"
+  },
+  {
+    "type": "power",
+    "source": "main_5v_buck",
+    "target": "main_mcu",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "main_5v_buck",
+    "target": "rugged_usb_hub",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "main_5v_buck",
+    "target": "power_toggle_leds",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "power_toggle_leds",
+    "target": "high_power_led_array",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "main_5v_buck",
+    "target": "charge_status_leds",
+    "voltage": "5V"
+  }
+]

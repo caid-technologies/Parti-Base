@@ -1,0 +1,1191 @@
+{
+  "plan": "- Electrical: Micro flight controller (MCU, IMU), micro brushless motors, ESCs, small LiPo battery, miniature radio receiver, FPV camera, tiny VTX, miniature microphone. - Mechanical: Ultra-light carbon fiber or plastic frame, micro propellers, motor mounts, vibration dampeners. - 3D-printed: Custom enclosure resembling a fly, battery holder, mounting points for electronics, camera mount, microphone housing. - Power management: Dedicated BEC for camera/VTX/mic to ensure stable voltage.",
+  "nodes": [
+    {
+      "id": "flight_controller",
+      "name": "Flight Controller",
+      "pins": [
+        "VBAT",
+        "GND",
+        "UART1 TX",
+        "UART1 RX",
+        "UART2 TX",
+        "UART2 RX",
+        "LED_STRIP",
+        "BUZZER-",
+        "BUZZER+"
+      ],
+      "type": "mcu",
+      "partId": "731f888d-0a6a-4955-9eba-da1a138497c2",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Happymodel+Crazybee+F4+Lite&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41LF9ygIfOL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08CRH9R8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$84.49",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008059439867.html?pdp_npi=6%40dis%21USD%2168.92%2156.51%21%21%21466.31%21382.37%21%402151fca717796152061821066e0f5c%2112000043492162377%21affd%21%21%21%211%210%21",
+            "price": "$56.51",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08CRH9R8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "28x28x7mm",
+      "description": "F4 MCU with integrated 4-in-1 ESCs, Betaflight compatible, designed for micro drones.",
+      "productName": "Happymodel Crazybee F4 Lite",
+      "purchaseUrl": "https://www.racedayquads.com/products/happymodel-crazybee-f4-lite-1s-brushless-flight-controller-w-20a-esc?variant=39498224523313",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQyoa1WJMJwDoFqaXKE2dxuGyPAxe7teBp1fe9tVrVOdWH1kQUZ8kIgQyszJTuO8EtUZ9RYmktK4sszBvWVmb1wvnEGL1xiOih7Aowcvyx8P5khh1QV7o7KmxnKGSSVmMCmTDW8VYEN6Wkk8G4D1EWeYRx3O8Bh8KUE0LQpFCYgTibIy6ylUs0M87E95St0ALCWLKHDgqyJr3s8QidDG8YfJuOLbE2kb1CRhkRXZCY5z63777elkPNvP1G45JasMhWWeE0a776xVDuLlal6KBmjEoxCPBnllrzyy3i9yWmN7mbp1IUeXv4376pdr8Hr8md6gZzNPdAQ4R6m5mxvaAFctdo8XO3Bl1zXm3HOKocsaowLiFKqW3ikhIDAWBZD7avTZdjchd1beXS2ET2rw0ODaCh97XRLYng3OlOnH5RorfIfPbLDktrEeGvpFSNf3Y0niounioXpnTUYCoBm5RlLdFAV88BOH2pZQ8cEFwKVJNnwyNCbwDolSYPSQpokAPw0ITZPITu6Ms1JQ4vsrEltsf0MbBpwUP40k1xAI94cmhJByqpMytGcuCu1TByq1GvvaqMIjWCUVWB5jac5AMul0mCwLRXyl2WhWbC8mybVtv2qVIdlE8hV8IfcEyWfOPQeJst9tSlb9oyEIRXJMflIT",
+      "estimatedCost": 40
+    },
+    {
+      "id": "motor_front_left",
+      "name": "Front Left Motor",
+      "pins": [
+        "Motor Wire 1",
+        "Motor Wire 2",
+        "Motor Wire 3"
+      ],
+      "type": "actuator",
+      "partId": "8d4cf8e9-a071-422a-b819-a46138a66d40",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Happymodel+EX0802+19000KV&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/GH1ZMgR7mFbZa5u20OV9SU0gigvg2hoVXgaaGWymnVI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aG9iYnlyYy5jby51/ay9pbWFnZXMvdGh1/bWJzLzAwMTM3NjFf/aGFwcHltb2RlbC1l/eDA4MDItMTkwMDBr/di1tb3Rvcl81NTAu/anBlZw",
+      "quantity": 1,
+      "dimensions": "10.5x10.5x13mm",
+      "description": "Small brushless motor suitable for tiny whoop drones.",
+      "productName": "Happymodel EX0802 19000KV",
+      "purchaseUrl": "https://www.racedayquads.com/products/happymodel-ex0802-19000kv-brushless-motor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4cII893",
+      "estimatedCost": 10,
+      "amazonUrl": "https://www.amazon.com/dp/B09N8JX4JT?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "motor_front_right",
+      "name": "Front Right Motor",
+      "pins": [
+        "Motor Wire 1",
+        "Motor Wire 2",
+        "Motor Wire 3"
+      ],
+      "type": "actuator",
+      "partId": "8d4cf8e9-a071-422a-b819-a46138a66d40",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Happymodel+EX0802+19000KV&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/GH1ZMgR7mFbZa5u20OV9SU0gigvg2hoVXgaaGWymnVI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aG9iYnlyYy5jby51/ay9pbWFnZXMvdGh1/bWJzLzAwMTM3NjFf/aGFwcHltb2RlbC1l/eDA4MDItMTkwMDBr/di1tb3Rvcl81NTAu/anBlZw",
+      "quantity": 1,
+      "dimensions": "10.5x10.5x13mm",
+      "description": "Small brushless motor suitable for tiny whoop drones.",
+      "productName": "Happymodel EX0802 19000KV",
+      "purchaseUrl": "https://www.racedayquads.com/products/happymodel-ex0802-19000kv-brushless-motor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4cII893",
+      "estimatedCost": 10,
+      "amazonUrl": "https://www.amazon.com/dp/B09N8JX4JT?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "motor_rear_left",
+      "name": "Rear Left Motor",
+      "pins": [
+        "Motor Wire 1",
+        "Motor Wire 2",
+        "Motor Wire 3"
+      ],
+      "type": "actuator",
+      "partId": "8d4cf8e9-a071-422a-b819-a46138a66d40",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Happymodel+EX0802+19000KV&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/GH1ZMgR7mFbZa5u20OV9SU0gigvg2hoVXgaaGWymnVI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aG9iYnlyYy5jby51/ay9pbWFnZXMvdGh1/bWJzLzAwMTM3NjFf/aGFwcHltb2RlbC1l/eDA4MDItMTkwMDBr/di1tb3Rvcl81NTAu/anBlZw",
+      "quantity": 1,
+      "dimensions": "10.5x10.5x13mm",
+      "description": "Small brushless motor suitable for tiny whoop drones.",
+      "productName": "Happymodel EX0802 19000KV",
+      "purchaseUrl": "https://www.racedayquads.com/products/happymodel-ex0802-19000kv-brushless-motor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4cII893",
+      "estimatedCost": 10,
+      "amazonUrl": "https://www.amazon.com/dp/B09N8JX4JT?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "motor_rear_right",
+      "name": "Rear Right Motor",
+      "pins": [
+        "Motor Wire 1",
+        "Motor Wire 2",
+        "Motor Wire 3"
+      ],
+      "type": "actuator",
+      "partId": "8d4cf8e9-a071-422a-b819-a46138a66d40",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Happymodel+EX0802+19000KV&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/GH1ZMgR7mFbZa5u20OV9SU0gigvg2hoVXgaaGWymnVI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aG9iYnlyYy5jby51/ay9pbWFnZXMvdGh1/bWJzLzAwMTM3NjFf/aGFwcHltb2RlbC1l/eDA4MDItMTkwMDBr/di1tb3Rvcl81NTAu/anBlZw",
+      "quantity": 1,
+      "dimensions": "10.5x10.5x13mm",
+      "description": "Small brushless motor suitable for tiny whoop drones.",
+      "productName": "Happymodel EX0802 19000KV",
+      "purchaseUrl": "https://www.racedayquads.com/products/happymodel-ex0802-19000kv-brushless-motor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4cII893",
+      "estimatedCost": 10,
+      "amazonUrl": "https://www.amazon.com/dp/B09N8JX4JT?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "lipo_battery",
+      "name": "LiPo Battery",
+      "pins": [
+        "XT30 (Power)",
+        "JST-PH 2.0 (Balance)"
+      ],
+      "type": "power",
+      "partId": "30d34446-572f-48ee-a7e6-4efe1c728146",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GNB+1S+380mAh+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/3ELPcS8TEFto4HC_WvlAEBb0jLwZQWb902KsrWqh5R0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9weXJv/ZHJvbmUuY29tL2Nk/bi9zaG9wL2ZpbGVz/L0dOQjM4MDFTOTBX/SFYtXzFfXzEwODB4/X2EyOTg4ZTY4LWYy/ODQtNGU3Mi1hNWU5/LThhOTcyOTBjM2E5/M183MDB4NzAwLndl/YnA_dj0xNjk4MjE1/ODQx",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07QC17GLT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x11x5mm",
+      "description": "Single-cell LiPo battery for powering the drone.",
+      "productName": "GNB 1S 380mAh LiPo Battery",
+      "purchaseUrl": "https://www.amazon.com/GNB-380mAh-LiPo-Battery-XT30/dp/B0B5Z8C2B3",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaeKJqCTDTcYJ62sPz7cG50CBoIo3Ar9rAOaYL9tddbHx6yngHhwVimbZi3r1y8SlLDIRG40CnvT0rZHzuH7IQGAwv71UimIbfOB5PVuMtAiEuF70IILUtP4ULZYjk1FPbKepw8pdXVNIGhcJl8p4dDZJvcfso5FgVoGXdzfg5UM387w99gKSa7i7yMlfp7kqyzg0EIST6iaO5o1XBJFH0bySZInzLPGvaq3wAnLlyGVoxLyBFyh3aamv8VIMcKMqXPbih6sPJhpkukQyAoNfT95yT0ZANDQHpAq3lDWYLIAWdmiAP5CIZaYZCw3DPPjXic4diQROYOXqjriekfHe4Kqb8CT47Ry8bPylp9yIyyOmAxdcbYuSoPbd7QiWrtQOodxrwlqOLPxyDV6S8sIrE9dTEWSALACmg9FCbann3a2Nqtp1NrKTcF5zD2Wmpn1fJYbmLOh9vW63aTOTUhjAClgwnj8buB6yS0rM17ZpLMtB7MWxTi2oSjVxcJygp5dppIMOzvUUCZNc6jUJNIZDbNU9cSTWpgVEpNwVwozHxq5wTQKMDlcCagBnAcGm0cB2XeXZ4PZRZ13hISoIWSzWKkk45vy8ilBXvolBU8LwYthAIeojfkCfrzWeR6rqwckGTl2RWBhRWLuYb2w6VPzbbzZ",
+      "estimatedCost": 5
+    },
+    {
+      "id": "radio_receiver",
+      "name": "Radio Receiver",
+      "pins": [
+        "3.3V",
+        "GND",
+        "RX",
+        "TX"
+      ],
+      "type": "module",
+      "partId": "bbd8b93b-a8ff-44cb-86a1-bce4952c6915",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Happymodel+EP2+ExpressLRS+Receiver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41ADt5shlEL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B092J1VP6S?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$25.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005002459185913.html?pdp_npi=6%40dis%21USD%217.98%213.99%21%21%217.98%213.99%21%402151fd2c17795530217655572e109c%2112000027030562827%21affd%21%21%21%211%210%21",
+            "price": "$3.99",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B092J1VP6S?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x3mm",
+      "description": "Receives control signals from the remote transmitter via serial protocol.",
+      "productName": "Happymodel EP2 ExpressLRS Receiver",
+      "purchaseUrl": "https://www.racedayquads.com/products/happymodel-ep2-expresslrs-2-4ghz-nano-receiver",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgMPSGqD6xJc6hBRZqmL6d5Bw89xrcB59Tprex2KXqgoLVLpXjzwdMQq3rGwKTjU7XKCnOOBQRDeTIEl1C492kfwelxLaDNVZBAMrlmqvy76uAXyPlMl8jT5vn9NlhqpeGD2QClxPnuUEFudGdJHSDmiCAnsjDj4N202vDiNkpzVIKIzFIft9bY7ufgPDf6ubqgFu6UIZBsCMv3TbVOpFfu4spqlSL5ZNogVKZvj1q7Tq5tIB5MdLyFuNYb36ukFy8GrXHsXo7oWjAp8Lc4FkDbJ3nMGPsWcdvuYmGMLANOUXr2Y9nIUBTSrZ80j8Yq5eAh7RTke3cpUuCTDgBu8peuuRTtw7mhj3Tpnfsl8Z4tc8kOH4CUxChVZgUOiEJ7rnyPIp1KP7n0qzwdnwcAliWI24D76kXKT5DPOVPEnjaMK6otA3loCCnGlPlKjB8LXdedAvxUvHRRitCj2iZqfvvrXhfjsCDQJq5gJKtEROSIfRHYuq3JkLnJGOx9D5ZJc1e1xibpq2lve1XDaxMJCQT1Ot8zXsyaTR0s9wLT3Zlfu3SPkvfYthui3swf7z22eBLeJXH6PyPYsxyxNtIDCQWFdl64CZRUyz6tjXeomAtgKBmLXnqTx9ST8WfNwAkesuAyWI65JEc6AQks7zQ0Q8zGB",
+      "estimatedCost": 15
+    },
+    {
+      "id": "camera_module",
+      "name": "Onboard Recording Camera",
+      "pins": [
+        "VBAT",
+        "GND",
+        "UART TX",
+        "UART RX",
+        "Video Out",
+        "Audio Out"
+      ],
+      "type": "module",
+      "partId": "b77467db-3f31-4525-9033-5d745435dc47",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RunCam+Split+3+Nano+Whoop+%28Board-only%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/apFaMyqwKDp6Yc84aEK-6eV3oE0YLWShPdDyUBkmcI0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvci91L3J1bmNh/bV9zcGxpdF8zX2xp/dGVfd2hvb3BfZnB2/X2hkX2NhbWVyYV8u/cG5n",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "14x14x15mm",
+      "productName": "RunCam Split 3 Nano Whoop (Board-only)",
+      "purchaseUrl": "https://www.runcam.com/runcam-split-3-nano-whoop-fpv-camera-p-320.html",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3NQhpVX",
+      "estimatedCost": 60
+    },
+    {
+      "id": "microphone",
+      "name": "Microphone",
+      "pins": [
+        "VCC",
+        "GND",
+        "OUT"
+      ],
+      "type": "sensor",
+      "partId": "64f7eecf-e0c4-48c6-8490-5357b9ae8583",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MAX9814+Electret+Microphone+Amplifier+%28Breakout%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/Sd3b65f6ba9e04a309cba3cbb46ed377cc.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0D3CXWBBT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006109706636.html?pdp_npi=6%40dis%21USD%219.39%213.08%21%21%2163.56%2120.86%21%402101611117796098624246734e0fea%2112000035789927030%21affd%21%21%21%211%210%21",
+            "price": "$3.08",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D3CXWBBT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x10x3mm",
+      "productName": "MAX9814 Electret Microphone Amplifier (Breakout)",
+      "purchaseUrl": "https://www.adafruit.com/product/1713",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHnklg4VRXMmAfRzHCJTOWEUAeJVkXmpYBUrfxuhZmkrYAquTFM6bByLNyvaSjYbKWE5gc3i1ACCQ2WdIB3acBg8nYtYGrplQFE8efi3gCPRa0jIzLgPSWNoZpd2U31YaQLRFJMDHH2fIQJ4iLFA9PkU2V9LOhQmornREhs2m8e5wgo1Qcr7kH5Czf2QblGx5K3OMZAe5Epf5cEcF6sppYX8nsoHuhGYVNQZto6d6seqXWEjm0ldphUgTMm79Mi2yNNolLr1LS09PlvbVrKPAlaDyi0lMy8yNDMEFhUwuxLgcay3MoZ7XaRC3O5h82hf9DrO8vDgcIpNstuQSYGrMbMTgLg5VaGzgptcBZJ4Yoo8G8yi1YJEXRm6pRvztUyhkgv0yluHz2GO13K2Rm42bYkoau159vFkTIZY8CbXA5SaIy8WJNt6kfpvDU0VtXRiTnHfuQrNKzUvuXyCvoNazihcgvE2Cl7bXqIsXohxtNfyjaFwT5YW5aBDPr3ysNySueSs1gb0gEb8BqOWZz1OOu0kDxD1F8LaoODssGzmT2r3u5ud6y6iXDy8pOKN5OVYXcmSVkB0Wjx3mULAiFUeUs3XfurW7NyavttBy0V70JO7LeFJqgwHLwQ4oyBbXMWx5qc3pvZIqOoajHDsQQXfZdrV",
+      "estimatedCost": 8
+    },
+    {
+      "id": "step_down_converter",
+      "name": "Step-Down Converter (BEC)",
+      "pins": [
+        "VBAT",
+        "GND",
+        "5V Out",
+        "12V Out (selectable)"
+      ],
+      "type": "power",
+      "partId": "c51ced66-9dd2-4bb2-aab4-13af7486c152",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Matek+Micro+BEC+5V%2F12V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31gPEUa1DBS._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B093WYTX37?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.49",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B093WYTX37?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "11x7x3mm",
+      "description": "Regulates battery voltage to 5V for servos and arm MCU.",
+      "productName": "Matek Micro BEC 5V/12V",
+      "purchaseUrl": "https://www.racedayquads.com/products/matek-micro-bec-5v-12v-adjustable-output",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhFBIGhy6iCPJ8NcmSdN1PYgMAY73XRkpGx32Ywgw9Y7YTrxSsgCK9PgeIZevVPHyXLa0RF3aAqtFuAlkp95jijP3t87mBbbRRPB6onoJJojv98g9ucdo0CNrEIGm7TgTVX7mR0fF3aWPm7M6HNlwjdJCpoeWypJhWbZQqKFG3iNFGWbK3zXjXEvi9fGgNBN6zKjWIfRAARKLnSkHgET4c3Fj8Aj9FQHBHmi2QEIq1u4hBH6Xr7ouRvkkZUUgQ5j4GESaHbHQpeoBGivoCgqFrSms6irB4UDWdgB0uYSjBMbq9h80Lgrxw6LVpvlHZbsiEqrmpk3YukwzW7FwpuIIa5Uy962Bng6kGhQzxjey6iBYnMu7ONTcmmgKpOQTAtcxYtMmi4ikDENIeuL3BHD5zi38c5yUQqj0Q4219bIiuew6zdbXKhhHYpYRVqoAofj4h9FZCp9a5RPzSYpaEiq4uPqXWyIv0vv2gfFXXZU7f0PCaRLhNWcdTcTUzuTgOWk3xU6Y3f41WDK8yTjswgBcCx7YdBtZc4BeikS66tUCICjHLE3Oh5CB0Vu6QKwk4TRcqxzcmnENpB5lY5n3PrxUN9ZhKTyE5VrMTEH2RGQSVBdnIThQEuyOQhaig9r8pyErzLjUbw6WdWivvPHOlX7gVhp",
+      "estimatedCost": 7
+    },
+    {
+      "id": "drone_frame",
+      "name": "Drone Frame",
+      "type": "structural",
+      "partId": "95fa2b29-e894-404c-9fdc-b7ddb144e362",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=65mm+Carbon+Fiber+Micro+Drone+Frame&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/61sCp+KruhL._SL500_.jpg",
+      "material": "Carbon Fiber",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B089N5Q94N?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$12.78",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B089N5Q94N?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x65x10mm",
+      "description": "Ultra-light carbon fiber frame for a micro drone, providing main structural support for all components.",
+      "productName": "65mm Carbon Fiber Micro Drone Frame",
+      "purchaseUrl": "https://www.amazon.com/dp/B089N5Q94N?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2u4tFCd",
+      "estimatedCost": 12
+    },
+    {
+      "id": "propeller_front_left",
+      "name": "Front Left Propeller",
+      "type": "mechanism",
+      "partId": "934f214b-61cf-4999-9e11-958eb70712b8",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=31mm+4-Blade+Micro+Propeller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31OpkIh5TVL._SL500_.jpg",
+      "material": "PC",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$11.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "31x31x5mm",
+      "description": "Propeller for the front left motor, designed for aggressive flight on micro drones.",
+      "productName": "31mm 4-Blade Micro Propeller",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgTAnsa1nbk9sEW6FR27jELQx1Hsh2XYMP9pRev1RpkXekeXZn57VUNYr29u4VbP8F9wMX75mXa2fIBu622aSfHAfGWITqERRtq5BdLXoBt8ay68qMzkD88WexDe4cCJroNMi7oEUnM0D1eePqqYLheBegSZFpzIKhbWtAJW9n05E5D23gjtUhMSqsUDJMjncLPU90COnBPx8qJOMfgA8v7iqMxWuKIDCuSsIi1LRjHRmEmPeXr9UA6gWi0m0SeeJlSWlZukC8ADFpgyFOgFiUFo0nF1HuebfZJChec5CAvzNXdwH3gwqhFLsRZdF4OSyh4bnJaYMGPzpHP2PxOFmnYp7RIaoG1TLobiLeuVRbNay5ZT9bHNkYZiET0JB8y0J23iUuRKGv2SbWJh4AKwLU8zDK964lX7G9Qeh9FZVhfPwJtISOwI1d3tJoU8C7g6s5oXb09k3vg8q02TZEBz8OoPddMxlqTGraM7ceAFE6kBdP37WLISxCrH9TmFxODpb2Rmed4goBbZuPBxpHF3vwy9ZohDbDjgrxBiHnzjGmBVmxrWcVwhKS1tOc8MEi0kqyvGrE8PrAYXeRgs5JfuZOy4oQSdoGEzGuEGD53BAJAaFRIJRL7Q2hd0n19lhIsImfJ9OkZVSrEI3cLfDIvTkMsT",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "propeller_front_right",
+      "name": "Front Right Propeller",
+      "type": "mechanism",
+      "partId": "934f214b-61cf-4999-9e11-958eb70712b8",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=31mm+4-Blade+Micro+Propeller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31OpkIh5TVL._SL500_.jpg",
+      "material": "PC",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$11.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "31x31x5mm",
+      "description": "Propeller for the front right motor, designed for aggressive flight on micro drones.",
+      "productName": "31mm 4-Blade Micro Propeller",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgTAnsa1nbk9sEW6FR27jELQx1Hsh2XYMP9pRev1RpkXekeXZn57VUNYr29u4VbP8F9wMX75mXa2fIBu622aSfHAfGWITqERRtq5BdLXoBt8ay68qMzkD88WexDe4cCJroNMi7oEUnM0D1eePqqYLheBegSZFpzIKhbWtAJW9n05E5D23gjtUhMSqsUDJMjncLPU90COnBPx8qJOMfgA8v7iqMxWuKIDCuSsIi1LRjHRmEmPeXr9UA6gWi0m0SeeJlSWlZukC8ADFpgyFOgFiUFo0nF1HuebfZJChec5CAvzNXdwH3gwqhFLsRZdF4OSyh4bnJaYMGPzpHP2PxOFmnYp7RIaoG1TLobiLeuVRbNay5ZT9bHNkYZiET0JB8y0J23iUuRKGv2SbWJh4AKwLU8zDK964lX7G9Qeh9FZVhfPwJtISOwI1d3tJoU8C7g6s5oXb09k3vg8q02TZEBz8OoPddMxlqTGraM7ceAFE6kBdP37WLISxCrH9TmFxODpb2Rmed4goBbZuPBxpHF3vwy9ZohDbDjgrxBiHnzjGmBVmxrWcVwhKS1tOc8MEi0kqyvGrE8PrAYXeRgs5JfuZOy4oQSdoGEzGuEGD53BAJAaFRIJRL7Q2hd0n19lhIsImfJ9OkZVSrEI3cLfDIvTkMsT",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "propeller_rear_left",
+      "name": "Rear Left Propeller",
+      "type": "mechanism",
+      "partId": "934f214b-61cf-4999-9e11-958eb70712b8",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=31mm+4-Blade+Micro+Propeller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31OpkIh5TVL._SL500_.jpg",
+      "material": "PC",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$11.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "31x31x5mm",
+      "description": "Propeller for the rear left motor, designed for aggressive flight on micro drones.",
+      "productName": "31mm 4-Blade Micro Propeller",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgTAnsa1nbk9sEW6FR27jELQx1Hsh2XYMP9pRev1RpkXekeXZn57VUNYr29u4VbP8F9wMX75mXa2fIBu622aSfHAfGWITqERRtq5BdLXoBt8ay68qMzkD88WexDe4cCJroNMi7oEUnM0D1eePqqYLheBegSZFpzIKhbWtAJW9n05E5D23gjtUhMSqsUDJMjncLPU90COnBPx8qJOMfgA8v7iqMxWuKIDCuSsIi1LRjHRmEmPeXr9UA6gWi0m0SeeJlSWlZukC8ADFpgyFOgFiUFo0nF1HuebfZJChec5CAvzNXdwH3gwqhFLsRZdF4OSyh4bnJaYMGPzpHP2PxOFmnYp7RIaoG1TLobiLeuVRbNay5ZT9bHNkYZiET0JB8y0J23iUuRKGv2SbWJh4AKwLU8zDK964lX7G9Qeh9FZVhfPwJtISOwI1d3tJoU8C7g6s5oXb09k3vg8q02TZEBz8OoPddMxlqTGraM7ceAFE6kBdP37WLISxCrH9TmFxODpb2Rmed4goBbZuPBxpHF3vwy9ZohDbDjgrxBiHnzjGmBVmxrWcVwhKS1tOc8MEi0kqyvGrE8PrAYXeRgs5JfuZOy4oQSdoGEzGuEGD53BAJAaFRIJRL7Q2hd0n19lhIsImfJ9OkZVSrEI3cLfDIvTkMsT",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "propeller_rear_right",
+      "name": "Rear Right Propeller",
+      "type": "mechanism",
+      "partId": "934f214b-61cf-4999-9e11-958eb70712b8",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=31mm+4-Blade+Micro+Propeller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31OpkIh5TVL._SL500_.jpg",
+      "material": "PC",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$11.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "31x31x5mm",
+      "description": "Propeller for the rear right motor, designed for aggressive flight on micro drones.",
+      "productName": "31mm 4-Blade Micro Propeller",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FCTBST32?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgTAnsa1nbk9sEW6FR27jELQx1Hsh2XYMP9pRev1RpkXekeXZn57VUNYr29u4VbP8F9wMX75mXa2fIBu622aSfHAfGWITqERRtq5BdLXoBt8ay68qMzkD88WexDe4cCJroNMi7oEUnM0D1eePqqYLheBegSZFpzIKhbWtAJW9n05E5D23gjtUhMSqsUDJMjncLPU90COnBPx8qJOMfgA8v7iqMxWuKIDCuSsIi1LRjHRmEmPeXr9UA6gWi0m0SeeJlSWlZukC8ADFpgyFOgFiUFo0nF1HuebfZJChec5CAvzNXdwH3gwqhFLsRZdF4OSyh4bnJaYMGPzpHP2PxOFmnYp7RIaoG1TLobiLeuVRbNay5ZT9bHNkYZiET0JB8y0J23iUuRKGv2SbWJh4AKwLU8zDK964lX7G9Qeh9FZVhfPwJtISOwI1d3tJoU8C7g6s5oXb09k3vg8q02TZEBz8OoPddMxlqTGraM7ceAFE6kBdP37WLISxCrH9TmFxODpb2Rmed4goBbZuPBxpHF3vwy9ZohDbDjgrxBiHnzjGmBVmxrWcVwhKS1tOc8MEi0kqyvGrE8PrAYXeRgs5JfuZOy4oQSdoGEzGuEGD53BAJAaFRIJRL7Q2hd0n19lhIsImfJ9OkZVSrEI3cLfDIvTkMsT",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "flight_controller_mount",
+      "name": "Flight Controller Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "TPU",
+      "quantity": 1,
+      "mountsFor": "flight_controller",
+      "dimensions": "25x25x5mm",
+      "description": "Custom 3D-printed mount to securely attach the micro flight controller to the drone frame, providing vibration isolation.",
+      "purchaseUrl": "https://www.amazon.com/s?k=TPU+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "100% infill, 0.2mm layer"
+    },
+    {
+      "id": "lipo_battery_holder",
+      "name": "LiPo Battery Holder",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "TPU",
+      "quantity": 1,
+      "mountsFor": "lipo_battery",
+      "dimensions": "25x15x10mm",
+      "description": "Custom 3D-printed holder to secure the small LiPo battery to the drone frame, preventing movement during aggressive flight.",
+      "purchaseUrl": "https://www.amazon.com/s?k=TPU+filament",
+      "estimatedCost": 0.08,
+      "printSettings": "50% infill, 0.2mm layer"
+    },
+    {
+      "id": "camera_module_mount",
+      "name": "Camera Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "TPU",
+      "quantity": 1,
+      "mountsFor": "camera_module",
+      "dimensions": "15x15x10mm",
+      "description": "Custom 3D-printed mount to securely position the onboard recording camera at an optimal angle on the drone frame.",
+      "purchaseUrl": "https://www.amazon.com/s?k=TPU+filament",
+      "estimatedCost": 0.07,
+      "printSettings": "75% infill, 0.2mm layer"
+    },
+    {
+      "id": "microphone_housing",
+      "name": "Microphone Housing",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "microphone",
+      "dimensions": "5x5x3mm",
+      "description": "Tiny 3D-printed enclosure for the miniature microphone, protecting it while allowing sound capture.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.02,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "fly_body_enclosure",
+      "name": "Fly Body Enclosure",
+      "type": "enclosure",
+      "partId": "717d3567-7f81-4b8a-824c-41505cf5b92b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Fly+Body+Enclosure&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DQ2XZN1T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "30x25x15mm",
+      "description": "Lightweight 3D-printed enclosure shaped like a fly's body, designed to house and protect internal electronics while maintaining a 'fly-like' aesthetic.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c37EpHc5",
+      "estimatedCost": 0.5,
+      "printSettings": "15% infill, 0.16mm layer"
+    },
+    {
+      "id": "m2_nylon_screws",
+      "name": "M2 Nylon Mounting Screws",
+      "type": "misc",
+      "partId": "37994071-3296-4d38-8799-f450940b4d77",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x5mm+Nylon+Standoff+Screw+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/GstgCkS9LubNUnOeBnkYQ9FdIgE-6mlj5LEtqE4OALc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFrcjhqbEJRQ0wu/anBn",
+      "quantity": 8,
+      "amazonUrl": "https://www.amazon.com/dp/B0FPMC9917?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x5mm",
+      "description": "Lightweight nylon screws used for mounting the flight controller and other small components to reduce overall weight.",
+      "productName": "M2x5mm Nylon Standoff Screw Kit",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2+nylon+screws",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c42HIrbT",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "m2_nylon_nuts",
+      "name": "M2 Nylon Nuts",
+      "type": "misc",
+      "partId": "a80e02de-0cc5-4344-b427-55a02c19af23",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Nylon+Nut+Kit&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 8,
+      "amazonUrl": "https://www.amazon.com/dp/B0D817NBYV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2",
+      "description": "Lightweight nylon nuts for securing M2 screws on the drone frame.",
+      "productName": "M2 Nylon Nut Kit",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2+nylon+nuts",
+      "estimatedCost": 0.03,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwRZzPyacKAkPdKDBDnPZUjhWXR2NqrwBtXaSouCM9FPNVOq7ofQWRP71TIPopaXdmydGA12iihDiBsjeuB2yAzscRgAATxu1f45BJr5t4Thbvq38F17oSZGIL5GWFMiuafRRjRuVY2wMMjv9blDVjAvwWoQ6ApvJ6fMZ3ebZsDmZ8p4d4vwUdX0Jbs6UgPbyKJ715C6iz3hDTn61eIdvF0q1DkLdtezBMMIQ2Ejw0Ya0QaBppG49OFK8IqQYFaqzE5lwOgHz20EccLZQoeC8QKBszeGUusJd9MaoGa4lV7oVABxmZQjz3SoEqut557PmC9u6cKZxqeymlggUP7Ax1l7nb9IZiD1AeXzg1mxRj30CebCYYPXfB4yuWTATcDvDzE70rIrYat0oYhttYeeGx1o7jtb3i5r7O0lLqifG8uHPiOcT00HnYUtnOVMhsRAqGQ4ocL4oCvFyyHi7Xsb7N4yfcOSwHQichW3nh8gQWIjEb8NWxtF6PHPg7DrLIVG82hPLoTvTxNaQXk9hPMXpPNCT0Oroazuupgupgyx98904OgBafi2Z2eMSLa0LXilWg8XbkhUxoIDANO3eEtZFA9se8NiQUVXRvP0MtWUI96NwAtUl6PEfujWH6cksTwgMc2lW2OMnqe0sJtXs8f7aHjV"
+    },
+    {
+      "id": "cable_tie_mini",
+      "name": "Miniature Cable Ties",
+      "type": "misc",
+      "partId": "8e5e7863-be4d-4827-ace5-3805dedf5bd1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=100mm+Mini+Zip+Ties&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/413rBv1IrAL._SL500_.jpg",
+      "quantity": 4,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005010338432274.html?pdp_npi=6%40dis%21USD%212.15%212.12%21%21%212.15%212.12%21%402140d36117793314819594382e0f77%2112000052530521179%21affd%21%21%21%211%210%21",
+            "price": "$2.12",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0BC1VH4XB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$3.49",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BC1VH4XB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x2mm",
+      "description": "Small cable ties for managing and securing wiring within the compact drone body.",
+      "productName": "100mm Mini Zip Ties",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNSoCLwHBa8DxswjwiPhshUcNoeimp0eMlhIfaZtdyM52xGvgYt9HfCY0ORZ7dHuTTm2nmEWObpsOVby64LJQIztbJtot34YtTouurRTXB3zWWZtXfY44yzLObXHsi908NKGwGTo1T0pJ7r9w08tuZ6beCS5MGB5634g3HViwumecua847ewIFyrPYU7nSUYqNTYjdv8qGK1xjkpoca7sMBinBUFJpfKF4FbiflcygwzZB2bEdlaaiJyFIfnTejWTeL3rycDR9l40pj1QoGBSKXQCd7jswsBQ2dEKPcxeDovzPA96XqkdsYTcK08pzeWDSxIfoBKIefm9BANwKczxMUjSbSKVaRtGrBWgNgbbEJQ89Jxg0hcWTgBftw7loI0qmo9iqhpw5lF4tduHZb8i7mzh1Q3KUh7sFjPxUGJsC734mNwvhrfhVWUe0rqbO6qBYdqosAcUEfYQZAnV84Qx1cfw25xNwHLDJWNAfdfI5bQvdQ5kRfjKpdq8SOoDdjXFme8peKVISUaMDn47pO0FnR3laFy5v4rNVrJmwalbXIhUvUp0maMpcf9Rwknh2dB307WrAQipewZyDvgPKTk52lHdJjMySpe71DaKYVQthQXNgjF0yo6nR3RqZoCi10MoqplcxA22y93wfxEpUu9B5D",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNSoCLwHBa8DxswjwiPhshUcNoeimp0eMlhIfaZtdyM52xGvgYt9HfCY0ORZ7dHuTTm2nmEWObpsOVby64LJQIztbJtot34YtTouurRTXB3zWWZtXfY44yzLObXHsi908NKGwGTo1T0pJ7r9w08tuZ6beCS5MGB5634g3HViwumecua847ewIFyrPYU7nSUYqNTYjdv8qGK1xjkpoca7sMBinBUFJpfKF4FbiflcygwzZB2bEdlaaiJyFIfnTejWTeL3rycDR9l40pj1QoGBSKXQCd7jswsBQ2dEKPcxeDovzPA96XqkdsYTcK08pzeWDSxIfoBKIefm9BANwKczxMUjSbSKVaRtGrBWgNgbbEJQ89Jxg0hcWTgBftw7loI0qmo9iqhpw5lF4tduHZb8i7mzh1Q3KUh7sFjPxUGJsC734mNwvhrfhVWUe0rqbO6qBYdqosAcUEfYQZAnV84Qx1cfw25xNwHLDJWNAfdfI5bQvdQ5kRfjKpdq8SOoDdjXFme8peKVISUaMDn47pO0FnR3laFy5v4rNVrJmwalbXIhUvUp0maMpcf9Rwknh2dB307WrAQipewZyDvgPKTk52lHdJjMySpe71DaKYVQthQXNgjF0yo6nR3RqZoCi10MoqplcxA22y93wfxEpUu9B5D",
+      "estimatedCost": 0.01
+    },
+    {
+      "id": "motor_front_left_mount",
+      "name": "Front Left Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "motor_front_left",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the Front Left Motor with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "motor_front_right_mount",
+      "name": "Front Right Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "motor_front_right",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the Front Right Motor with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "motor_rear_left_mount",
+      "name": "Rear Left Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "motor_rear_left",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the Rear Left Motor with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "motor_rear_right_mount",
+      "name": "Rear Right Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "motor_rear_right",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the Rear Right Motor with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "radio_receiver_mount",
+      "name": "Radio Receiver Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "radio_receiver",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the Radio Receiver that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    }
+  ],
+  "notes": [
+    "small drone",
+    "fly-like",
+    "with camera",
+    "with microphone"
+  ],
+  "projectName": "Micro Fly Drone",
+  "originalPrompt": "сделай маленького дрона муху с камерой и микрофоном",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all structural and mounting components",
+          "partIds": [
+            "flight_controller_mount",
+            "lipo_battery_holder",
+            "camera_module_mount",
+            "microphone_housing",
+            "fly_body_enclosure",
+            "motor_front_left_mount",
+            "motor_front_right_mount",
+            "motor_rear_left_mount",
+            "motor_rear_right_mount",
+            "radio_receiver_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Clean and deburr all 3D printed parts",
+          "partIds": [
+            "flight_controller_mount",
+            "lipo_battery_holder",
+            "camera_module_mount",
+            "microphone_housing",
+            "fly_body_enclosure",
+            "motor_front_left_mount",
+            "motor_front_right_mount",
+            "motor_rear_left_mount",
+            "motor_rear_right_mount",
+            "radio_receiver_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Test fit mounts and enclosures with their respective components and the drone frame",
+          "partIds": [
+            "drone_frame",
+            "flight_controller_mount",
+            "flight_controller",
+            "lipo_battery_holder",
+            "lipo_battery",
+            "camera_module_mount",
+            "camera_module",
+            "microphone_housing",
+            "microphone",
+            "fly_body_enclosure",
+            "motor_front_left_mount",
+            "motor_front_left",
+            "motor_front_right_mount",
+            "motor_front_right",
+            "motor_rear_left_mount",
+            "motor_rear_left",
+            "motor_rear_right_mount",
+            "motor_rear_right",
+            "radio_receiver_mount",
+            "radio_receiver"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder motor wires to the flight controller",
+          "partIds": [
+            "flight_controller",
+            "motor_front_left",
+            "motor_front_right",
+            "motor_rear_left",
+            "motor_rear_right"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder radio receiver power and data wires to the flight controller (3.3V, GND, UART1 TX/RX)",
+          "partIds": [
+            "radio_receiver",
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Solder LiPo battery main power (XT30) to the step-down converter input",
+          "partIds": [
+            "lipo_battery",
+            "step_down_converter"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder step-down converter 5V output to camera module and microphone power inputs",
+          "partIds": [
+            "step_down_converter",
+            "camera_module",
+            "microphone"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Solder camera module data (UART2 TX/RX) to flight controller, and microphone audio out to camera module audio in",
+          "partIds": [
+            "camera_module",
+            "flight_controller",
+            "microphone"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Solder LiPo battery main power (VBAT, GND) to flight controller power inputs",
+          "partIds": [
+            "lipo_battery",
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Perform continuity checks on all soldered connections, verify no shorts",
+          "partIds": [
+            "flight_controller",
+            "motor_front_left",
+            "motor_front_right",
+            "motor_rear_left",
+            "motor_rear_right",
+            "radio_receiver",
+            "lipo_battery",
+            "step_down_converter",
+            "camera_module",
+            "microphone"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect flight controller to computer and flash appropriate firmware",
+          "partIds": [
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Configure flight controller UARTs for radio receiver and camera module",
+          "partIds": [
+            "flight_controller",
+            "radio_receiver",
+            "camera_module"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Calibrate ESCs and verify motor spin direction using flight controller software",
+          "partIds": [
+            "flight_controller",
+            "motor_front_left",
+            "motor_front_right",
+            "motor_rear_left",
+            "motor_rear_right"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify radio receiver communication with the flight controller and configure channels",
+          "partIds": [
+            "radio_receiver",
+            "flight_controller"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test camera module and microphone functionality, verify video and audio output",
+          "partIds": [
+            "camera_module",
+            "microphone"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Configure failsafe settings on the flight controller",
+          "partIds": [
+            "flight_controller"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount flight controller, radio receiver, camera module, and microphone into their 3D printed mounts",
+          "partIds": [
+            "flight_controller_mount",
+            "flight_controller",
+            "radio_receiver_mount",
+            "radio_receiver",
+            "camera_module_mount",
+            "camera_module",
+            "microphone_housing",
+            "microphone"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount all motor mounts to the drone frame using M2 nylon screws and nuts",
+          "partIds": [
+            "drone_frame",
+            "motor_front_left_mount",
+            "motor_front_right_mount",
+            "motor_rear_left_mount",
+            "motor_rear_right_mount",
+            "m2_nylon_screws",
+            "m2_nylon_nuts"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Secure flight controller, radio receiver, camera module, and microphone assemblies to the drone frame using M2 nylon screws and nuts",
+          "partIds": [
+            "drone_frame",
+            "flight_controller_mount",
+            "radio_receiver_mount",
+            "camera_module_mount",
+            "microphone_housing",
+            "m2_nylon_screws",
+            "m2_nylon_nuts"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount motors into their respective motor mounts",
+          "partIds": [
+            "motor_front_left",
+            "motor_front_left_mount",
+            "motor_front_right",
+            "motor_front_right_mount",
+            "motor_rear_left",
+            "motor_rear_left_mount",
+            "motor_rear_right",
+            "motor_rear_right_mount"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Secure LiPo battery into its holder and mount the holder to the drone frame",
+          "partIds": [
+            "lipo_battery",
+            "lipo_battery_holder",
+            "drone_frame",
+            "m2_nylon_screws",
+            "m2_nylon_nuts"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Route all wires neatly, secure with miniature cable ties, and ensure strain relief",
+          "partIds": [
+            "flight_controller",
+            "motor_front_left",
+            "motor_front_right",
+            "motor_rear_left",
+            "motor_rear_right",
+            "radio_receiver",
+            "lipo_battery",
+            "step_down_converter",
+            "camera_module",
+            "microphone",
+            "cable_tie_mini"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Attach the fly body enclosure to the drone frame using M2 nylon screws",
+          "partIds": [
+            "fly_body_enclosure",
+            "drone_frame",
+            "m2_nylon_screws"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Install propellers on the motors, ensuring correct orientation",
+          "partIds": [
+            "propeller_front_left",
+            "propeller_front_right",
+            "propeller_rear_left",
+            "propeller_rear_right",
+            "motor_front_left",
+            "motor_front_right",
+            "motor_rear_left",
+            "motor_rear_right"
+          ]
+        }
+      ]
+    }
+  ],
+  "imagePromptSnapshot": {
+    "tags": [
+      "small drone",
+      "fly-like",
+      "with camera",
+      "with microphone"
+    ],
+    "description": "сделай маленького дрона муху с камерой и микрофоном",
+    "technicalDescription": ""
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (with PLA, PETG, TPU capability)",
+      "M2 hex driver",
+      "Small pliers",
+      "Soldering iron with fine tip",
+      "Fine gauge solder",
+      "Wire strippers",
+      "Precision tweezers",
+      "Multimeter",
+      "Hobby knife (for deburring)",
+      "Small side cutters",
+      "Heat gun (for heat shrink, if used)"
+    ],
+    "assumptions": [
+      "Basic soldering experience with small components",
+      "Familiarity with 3D printer operation and slicing software",
+      "Access to a computer with flight controller configuration software (e.g., Betaflight Configurator)",
+      "Basic understanding of drone flight controller firmware setup",
+      "Regulated 5V DC power supply for initial bench testing (or fully charged LiPo battery)"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main Flight Controller Power",
+      "source": "lipo_battery",
+      "target": "flight_controller",
+      "current": "2A",
+      "voltage": "3.7V-4.2V"
+    },
+    {
+      "type": "power",
+      "label": "BEC Input Power",
+      "source": "lipo_battery",
+      "target": "step_down_converter",
+      "current": "1A",
+      "voltage": "3.7V-4.2V"
+    },
+    {
+      "type": "power",
+      "label": "Camera Power",
+      "source": "step_down_converter",
+      "target": "camera_module",
+      "current": "200mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Microphone Power",
+      "source": "step_down_converter",
+      "target": "microphone",
+      "current": "10mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Radio Receiver Power",
+      "source": "flight_controller",
+      "target": "radio_receiver",
+      "current": "50mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "label": "Motor FL Signal",
+      "source": "flight_controller",
+      "target": "motor_front_left",
+      "protocol": "pwm",
+      "sourcePin": "Motor 1 Output",
+      "targetPin": "Motor Wire 1"
+    },
+    {
+      "type": "data",
+      "label": "Motor FR Signal",
+      "source": "flight_controller",
+      "target": "motor_front_right",
+      "protocol": "pwm",
+      "sourcePin": "Motor 2 Output",
+      "targetPin": "Motor Wire 1"
+    },
+    {
+      "type": "data",
+      "label": "Motor RL Signal",
+      "source": "flight_controller",
+      "target": "motor_rear_left",
+      "protocol": "pwm",
+      "sourcePin": "Motor 3 Output",
+      "targetPin": "Motor Wire 1"
+    },
+    {
+      "type": "data",
+      "label": "Motor RR Signal",
+      "source": "flight_controller",
+      "target": "motor_rear_right",
+      "protocol": "pwm",
+      "sourcePin": "Motor 4 Output",
+      "targetPin": "Motor Wire 1"
+    },
+    {
+      "type": "data",
+      "label": "Receiver Data to FC",
+      "source": "radio_receiver",
+      "target": "flight_controller",
+      "protocol": "uart",
+      "sourcePin": "TX",
+      "targetPin": "UART1 RX"
+    },
+    {
+      "type": "data",
+      "label": "FC Data to Receiver",
+      "source": "flight_controller",
+      "target": "radio_receiver",
+      "protocol": "uart",
+      "sourcePin": "UART1 TX",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "label": "Mic to Camera Audio",
+      "source": "microphone",
+      "target": "camera_module",
+      "protocol": "analog",
+      "sourcePin": "OUT",
+      "targetPin": "Audio Out"
+    },
+    {
+      "type": "data",
+      "label": "Camera Data to FC",
+      "source": "camera_module",
+      "target": "flight_controller",
+      "protocol": "uart",
+      "sourcePin": "UART TX",
+      "targetPin": "UART2 RX"
+    },
+    {
+      "type": "data",
+      "label": "FC Data to Camera",
+      "source": "flight_controller",
+      "target": "camera_module",
+      "protocol": "uart",
+      "sourcePin": "UART2 TX",
+      "targetPin": "UART RX"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "flight_controller_mount",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "lipo_battery_holder",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "camera_module_mount",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "microphone_housing",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws",
+      "source": "fly_body_enclosure",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "motor_front_left_mount",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "motor_front_right_mount",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "motor_rear_left_mount",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "motor_rear_right_mount",
+      "target": "drone_frame"
+    },
+    {
+      "label": "M2 nylon screws and nuts",
+      "source": "radio_receiver_mount",
+      "target": "drone_frame"
+    },
+    {
+      "label": "mount",
+      "source": "flight_controller_mount",
+      "target": "flight_controller"
+    },
+    {
+      "label": "mount",
+      "source": "lipo_battery_holder",
+      "target": "lipo_battery"
+    },
+    {
+      "label": "mount",
+      "source": "camera_module_mount",
+      "target": "camera_module"
+    },
+    {
+      "label": "mount",
+      "source": "microphone_housing",
+      "target": "microphone"
+    },
+    {
+      "label": "mount",
+      "source": "motor_front_left_mount",
+      "target": "motor_front_left"
+    },
+    {
+      "label": "mount",
+      "source": "motor_front_right_mount",
+      "target": "motor_front_right"
+    },
+    {
+      "label": "mount",
+      "source": "motor_rear_left_mount",
+      "target": "motor_rear_left"
+    },
+    {
+      "label": "mount",
+      "source": "motor_rear_right_mount",
+      "target": "motor_rear_right"
+    },
+    {
+      "label": "mount",
+      "source": "radio_receiver_mount",
+      "target": "radio_receiver"
+    }
+  ],
+  "projectId": "e74c5782-2a35-49f5-964f-3fbd0b7fdd70"
+}

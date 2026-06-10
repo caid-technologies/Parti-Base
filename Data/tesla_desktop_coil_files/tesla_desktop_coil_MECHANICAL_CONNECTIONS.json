@@ -1,0 +1,117 @@
+[
+  {
+    "label": "mounted with misc_fasteners_m4",
+    "source": "structural_base_plate",
+    "target": "3dprinted_hvps_mount"
+  },
+  {
+    "label": "secured by misc_fasteners_m4",
+    "source": "3dprinted_hvps_mount",
+    "target": "power_hvps"
+  },
+  {
+    "label": "mounted with misc_fasteners_m4",
+    "source": "structural_base_plate",
+    "target": "3dprinted_variac_mount"
+  },
+  {
+    "label": "secured by misc_fasteners_m4",
+    "source": "3dprinted_variac_mount",
+    "target": "power_variac"
+  },
+  {
+    "label": "mounted with misc_fasteners_m3",
+    "source": "structural_base_plate",
+    "target": "3dprinted_cap_bank_mount"
+  },
+  {
+    "label": "secured by misc_fasteners_m3",
+    "source": "3dprinted_cap_bank_mount",
+    "target": "cap_primary_bank"
+  },
+  {
+    "label": "mounted with misc_fasteners_m3",
+    "source": "structural_base_plate",
+    "target": "3dprinted_mcu_mount"
+  },
+  {
+    "label": "secured with misc_standoffs_m3_nylon",
+    "source": "3dprinted_mcu_mount",
+    "target": "mcu_main"
+  },
+  {
+    "label": "mounted with misc_fasteners_m3",
+    "source": "structural_base_plate",
+    "target": "3dprinted_spark_gap_mount"
+  },
+  {
+    "label": "secured and adjusted",
+    "source": "3dprinted_spark_gap_mount",
+    "target": "spark_gap"
+  },
+  {
+    "label": "mounted with misc_fasteners_m3",
+    "source": "structural_base_plate",
+    "target": "3dprinted_secondary_coil_base_mount"
+  },
+  {
+    "label": "supports and secures base",
+    "source": "3dprinted_secondary_coil_base_mount",
+    "target": "structural_secondary_coil_form"
+  },
+  {
+    "label": "secured to top",
+    "source": "structural_secondary_coil_form",
+    "target": "3dprinted_secondary_coil_top_mount"
+  },
+  {
+    "label": "holds top load rod",
+    "source": "3dprinted_secondary_coil_top_mount",
+    "target": "structural_top_load_rod"
+  },
+  {
+    "label": "connects to top load",
+    "source": "structural_top_load_rod",
+    "target": "mechanism_top_load_sphere"
+  },
+  {
+    "label": "primary coil wound around base",
+    "source": "structural_secondary_coil_form",
+    "target": "3dprinted_primary_coil_form"
+  },
+  {
+    "label": "mounted with misc_fasteners_m3",
+    "source": "structural_base_plate",
+    "target": "structural_vertical_support_rods"
+  },
+  {
+    "label": "panels attached to rods with misc_fasteners_m3",
+    "source": "structural_vertical_support_rods",
+    "target": "enclosure_safety_panels"
+  },
+  {
+    "label": "mounts secured to panel",
+    "source": "enclosure_safety_panels",
+    "target": "3dprinted_panel_mounts"
+  },
+  {
+    "label": "e-stop mounted into",
+    "source": "3dprinted_panel_mounts",
+    "target": "sensor_e_stop"
+  },
+  {
+    "label": "key switch mounted into",
+    "source": "3dprinted_panel_mounts",
+    "target": "sensor_key_switch"
+  },
+  {
+    "label": "mounted directly with misc_fasteners_m3",
+    "source": "structural_base_plate",
+    "target": "relay_main_power"
+  },
+  {
+    "label": "mounted directly with misc_fasteners_m3",
+    "source": "structural_base_plate",
+    "target": "inductor_ballast"
+  }
+]

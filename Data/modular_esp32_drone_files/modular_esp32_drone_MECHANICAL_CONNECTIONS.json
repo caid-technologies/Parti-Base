@@ -1,0 +1,172 @@
+[
+  {
+    "label": "M3 bolts",
+    "source": "central_frame_plate",
+    "target": "arm_front_left"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "central_frame_plate",
+    "target": "arm_front_right"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "central_frame_plate",
+    "target": "arm_rear_left"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "central_frame_plate",
+    "target": "arm_rear_right"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "central_frame_plate",
+    "target": "landing_skid_front"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "central_frame_plate",
+    "target": "landing_skid_rear"
+  },
+  {
+    "label": "M3 bolts and standoffs",
+    "source": "central_frame_plate",
+    "target": "fc_mount_tray"
+  },
+  {
+    "label": "M3 bolts and standoffs",
+    "source": "central_frame_plate",
+    "target": "pdb_mount"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "central_frame_plate",
+    "target": "battery_strap_holder"
+  },
+  {
+    "label": "M2 screws",
+    "source": "central_frame_plate",
+    "target": "rc_receiver_mount"
+  },
+  {
+    "label": "quick release/M3 bolts",
+    "source": "central_frame_plate",
+    "target": "payload_module_base_plate"
+  },
+  {
+    "label": "M2 screws",
+    "source": "arm_front_left",
+    "target": "motor_mount_front_left"
+  },
+  {
+    "label": "zip ties/adhesive",
+    "source": "arm_front_left",
+    "target": "esc_mount_front_left"
+  },
+  {
+    "label": "M2 screws",
+    "source": "arm_front_right",
+    "target": "motor_mount_front_right"
+  },
+  {
+    "label": "zip ties/adhesive",
+    "source": "arm_front_right",
+    "target": "esc_mount_front_right"
+  },
+  {
+    "label": "M2 screws",
+    "source": "arm_rear_left",
+    "target": "motor_mount_rear_left"
+  },
+  {
+    "label": "zip ties/adhesive",
+    "source": "arm_rear_left",
+    "target": "esc_mount_rear_left"
+  },
+  {
+    "label": "M2 screws",
+    "source": "arm_rear_right",
+    "target": "motor_mount_rear_right"
+  },
+  {
+    "label": "zip ties/adhesive",
+    "source": "arm_rear_right",
+    "target": "esc_mount_rear_right"
+  },
+  {
+    "label": "M2 screws",
+    "source": "fc_mount_tray",
+    "target": "imu_mount_vibration_damped"
+  },
+  {
+    "label": "strap routed through slots",
+    "source": "battery_strap_holder",
+    "target": "lipo_battery_strap"
+  },
+  {
+    "label": "mount",
+    "source": "motor_mount_front_left",
+    "target": "motor_front_left"
+  },
+  {
+    "label": "mount",
+    "source": "motor_mount_front_right",
+    "target": "motor_front_right"
+  },
+  {
+    "label": "mount",
+    "source": "motor_mount_rear_left",
+    "target": "motor_rear_left"
+  },
+  {
+    "label": "mount",
+    "source": "motor_mount_rear_right",
+    "target": "motor_rear_right"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_front_left",
+    "target": "esc_front_left"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_front_right",
+    "target": "esc_front_right"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_rear_left",
+    "target": "esc_rear_left"
+  },
+  {
+    "label": "mount",
+    "source": "esc_mount_rear_right",
+    "target": "esc_rear_right"
+  },
+  {
+    "label": "mount",
+    "source": "fc_mount_tray",
+    "target": "flight_controller"
+  },
+  {
+    "label": "mount",
+    "source": "imu_mount_vibration_damped",
+    "target": "imu_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "lipo_battery_strap",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mount",
+    "source": "pdb_mount",
+    "target": "power_distribution_board"
+  },
+  {
+    "label": "mount",
+    "source": "rc_receiver_mount",
+    "target": "rc_receiver"
+  }
+]

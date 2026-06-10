@@ -1,0 +1,1275 @@
+{
+  "plan": "- Microcontroller: ESP32 or Arduino Mega for control logic and communication.\n- Actuators: Four high-torque servo motors (e.g., MG996R or digital servos) for each axis, or stepper motors with drivers for higher precision.\n- Power System: 5V/10A power supply for servos, separate 5V regulator for MCU if needed, power distribution board.\n- Mechanical Frame: Sturdy base plate (e.g., aluminum or acrylic), custom laser-cut or 3D-printed arm links and joint brackets.\n- Fasteners & Bearings: M3/M4 screws, nuts, standoffs for assembly; small ball bearings at high-load joints for smooth movement.\n- End-Effector: Simple 2-finger gripper actuated by a micro servo, or custom tool mount.",
+  "nodes": [
+    {
+      "id": "main_controller",
+      "name": "Main Controller",
+      "pins": [
+        "GPIO",
+        "UART",
+        "SPI",
+        "I2C",
+        "ADC",
+        "DAC",
+        "PWM",
+        "3.3V",
+        "5V",
+        "GND"
+      ],
+      "type": "mcu",
+      "partId": "abab37bb-d5cc-4e9b-99cb-fdb29eb128c9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D+Development+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51tb1FyX5mL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Type",
+            "value": "Transceiver; 802.11 b/g/n (Wi-Fi, WiFi, WLAN), Bluetooth® Smart Ready 4.x Dual Mode (BLE)"
+          },
+          {
+            "label": "pins",
+            "value": "GPIO16,GPIO17,GPIO18,GPIO19,GPIO21,GPIO22,GPIO23,GPIO25,GPIO26,GPIO27,3V3,5V,GND"
+          },
+          {
+            "label": "Contents",
+            "value": "Board(s)"
+          },
+          {
+            "label": "Frequency",
+            "value": "2.4GHz"
+          },
+          {
+            "label": "Antenna Type",
+            "value": "-"
+          },
+          {
+            "label": "Utilized IC / Part",
+            "value": "ESP-WROOM-32"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/5029",
+            "price": "$18.5",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32D/9356990",
+            "price": "$15",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$16.79",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007096886808.html?pdp_npi=6%40dis%21USD%2111.25%215.62%21%21%2176.30%2138.15%21%40214114e317793253327663220e1277%2112000057697399037%21affd%21%21%21%211%210%21",
+            "price": "$5.62",
+            "vendor": "AliExpress"
+          }
+        ],
+        "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08D5ZD528?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "52x28x13mm",
+      "description": "EVAL BOARD FOR ESP-WROOM-32",
+      "productName": "ESP32-WROOM-32D Development Board",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32D/9356990",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR6vbyXY2ppL9ObRmYh4w4AK032f6bBm9NDrp62dnlrDQlnlop8wQc5bP4qXfeJ276Yek60BQaZDYxId5Ukphk7sJJODgS1isRhZwKXDxwwiDFyENTPU35PqQK8lkODm1HaTad4RY4cP1wl45WTeh4RlPsVUHy4VlZIc1wB2PtjlQuLRD9hen7MaRbZW4t6zXUfC9bGHFbOF2gFiVJefzCXxYaTVzAVLAUvLSHkbqyQnqrFk1uqwOrOEbNP1LnoiHms9bNBTW9BnmuZ44dVxgrvfnPRrtF1DzjkV2MH7aZGrCLMYBexygMLfan7wIJiUJp4eIOAU63ETQxHQnhQQvMDIqXUQpIHv7ZeJ0RbYR4h6ZSCgjbqlf53uzTimPSlFbe9eC1rCOfbX7oPNipLwACODeOTiaCIO3enuw0oxwosWlviDGwFcQqVRTXhsNeyocPqKgRBrbSMdVuP2Ge1Q2IaEEkhh50Eg8BKvlCGSy32SrGjbmQcul0fMiQX1jWAuMkblVsvgxVG3UGecyBxwSKIQHPNhkDKAt2fnBrwReTsvwTT4maM3YA81857bt5dxvTzGWY6rbUnKbimW7cicOckKZZCq98HTyBfP4F2eHEUDXULYIyGjYr3bIldY9Oj4JLz05rZ5bvXrjNOlBdrQhrjV",
+      "estimatedCost": 8
+    },
+    {
+      "id": "base_servo",
+      "name": "Base Rotary Servo",
+      "pins": [
+        "PWM Signal",
+        "5V",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "aa252634-2dbf-42aa-8fb8-ff474de9dd49",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TowerPro+MG996R+Digital+Servo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41vK0XrtSjL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "PWM Signal,VCC,GND"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005008125165971.html?pdp_npi=6%40dis%21USD%2177.04%2177.04%21%21%21521.22%21521.22%21%40212a7b8d17794215163098486e0ff8%2112000043892863114%21affd%21%21%21%211%210%21",
+            "price": "$77.04",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$17.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x19x43mm",
+      "description": "High-torque servo motor to provide rotational input to the planetary gear system.",
+      "productName": "TowerPro MG996R Digital Servo",
+      "purchaseUrl": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHQnBhS4zza5btyLtz5LmBvPLMihZBt3gYWbhHCn7eBxu1tUH1Cwn4XtzUljPfFoSCepmoKvA4r7AKpXRD9RDj6OSgDADqDexBzyIgQMDAhCuZCngYDhwn0QqZ8QTEu9FoF1VBJKoa6ntQ0ojSlUie34Mhrl3GQNPTwXIp4M0hcMHs1du7LnFrvDJ3EssybEH4HxNoFR1JUE4y63SFI9jFVzGksuelNw7M721iM4eW1AX2G7K4hNshFHiuVCam9LuoULNUL01NkG4NzgjrpO1m46qjoPRZ60dgFOeofYr1G5VY5iMsf2FWon39n8500IwJeRV0WmtTSIaMHSMGYWPnqli3LJcztVesvGdxFKzShqNyZVvX4V8Rz4cHbQjgjGk86wHyjKJ4AFq7Muxe6r7bsbZvURgn7e78uTpNbiMyhFtfPwr6H64hrY71NJZH64XWhdhho9mzIj9iyEtfAZkVMfFJYzeBuFaccJv4lKE2IzMLcVUgWjkElVkViR2INBdIhzTxBjQ2JwkFqURc3MnCvCCDcAc03IbPF3719TTieIFLJN8PKrjLadoTVNUk4mUVursJCmYCajFeMhxQcDYh65ns7FU0Ky7mjWiaUcbNUVnFVanhkzCfFsRWuakdejdy4gDEPbne0RWOsosfJ3icTD",
+      "estimatedCost": 12
+    },
+    {
+      "id": "shoulder_servo",
+      "name": "Shoulder Joint Servo",
+      "pins": [
+        "PWM Signal",
+        "5V",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "aa252634-2dbf-42aa-8fb8-ff474de9dd49",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TowerPro+MG996R+Digital+Servo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41vK0XrtSjL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "PWM Signal,VCC,GND"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005008125165971.html?pdp_npi=6%40dis%21USD%2177.04%2177.04%21%21%21521.22%21521.22%21%40212a7b8d17794215163098486e0ff8%2112000043892863114%21affd%21%21%21%211%210%21",
+            "price": "$77.04",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$17.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x19x43mm",
+      "description": "High-torque servo motor to provide rotational input to the planetary gear system.",
+      "productName": "TowerPro MG996R Digital Servo",
+      "purchaseUrl": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHQnBhS4zza5btyLtz5LmBvPLMihZBt3gYWbhHCn7eBxu1tUH1Cwn4XtzUljPfFoSCepmoKvA4r7AKpXRD9RDj6OSgDADqDexBzyIgQMDAhCuZCngYDhwn0QqZ8QTEu9FoF1VBJKoa6ntQ0ojSlUie34Mhrl3GQNPTwXIp4M0hcMHs1du7LnFrvDJ3EssybEH4HxNoFR1JUE4y63SFI9jFVzGksuelNw7M721iM4eW1AX2G7K4hNshFHiuVCam9LuoULNUL01NkG4NzgjrpO1m46qjoPRZ60dgFOeofYr1G5VY5iMsf2FWon39n8500IwJeRV0WmtTSIaMHSMGYWPnqli3LJcztVesvGdxFKzShqNyZVvX4V8Rz4cHbQjgjGk86wHyjKJ4AFq7Muxe6r7bsbZvURgn7e78uTpNbiMyhFtfPwr6H64hrY71NJZH64XWhdhho9mzIj9iyEtfAZkVMfFJYzeBuFaccJv4lKE2IzMLcVUgWjkElVkViR2INBdIhzTxBjQ2JwkFqURc3MnCvCCDcAc03IbPF3719TTieIFLJN8PKrjLadoTVNUk4mUVursJCmYCajFeMhxQcDYh65ns7FU0Ky7mjWiaUcbNUVnFVanhkzCfFsRWuakdejdy4gDEPbne0RWOsosfJ3icTD",
+      "estimatedCost": 12
+    },
+    {
+      "id": "elbow_servo",
+      "name": "Elbow Joint Servo",
+      "pins": [
+        "PWM Signal",
+        "5V",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "aa252634-2dbf-42aa-8fb8-ff474de9dd49",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TowerPro+MG996R+Digital+Servo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41vK0XrtSjL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "PWM Signal,VCC,GND"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005008125165971.html?pdp_npi=6%40dis%21USD%2177.04%2177.04%21%21%21521.22%21521.22%21%40212a7b8d17794215163098486e0ff8%2112000043892863114%21affd%21%21%21%211%210%21",
+            "price": "$77.04",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$17.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x19x43mm",
+      "description": "High-torque servo motor to provide rotational input to the planetary gear system.",
+      "productName": "TowerPro MG996R Digital Servo",
+      "purchaseUrl": "https://www.amazon.com/dp/B07MFK266B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHQnBhS4zza5btyLtz5LmBvPLMihZBt3gYWbhHCn7eBxu1tUH1Cwn4XtzUljPfFoSCepmoKvA4r7AKpXRD9RDj6OSgDADqDexBzyIgQMDAhCuZCngYDhwn0QqZ8QTEu9FoF1VBJKoa6ntQ0ojSlUie34Mhrl3GQNPTwXIp4M0hcMHs1du7LnFrvDJ3EssybEH4HxNoFR1JUE4y63SFI9jFVzGksuelNw7M721iM4eW1AX2G7K4hNshFHiuVCam9LuoULNUL01NkG4NzgjrpO1m46qjoPRZ60dgFOeofYr1G5VY5iMsf2FWon39n8500IwJeRV0WmtTSIaMHSMGYWPnqli3LJcztVesvGdxFKzShqNyZVvX4V8Rz4cHbQjgjGk86wHyjKJ4AFq7Muxe6r7bsbZvURgn7e78uTpNbiMyhFtfPwr6H64hrY71NJZH64XWhdhho9mzIj9iyEtfAZkVMfFJYzeBuFaccJv4lKE2IzMLcVUgWjkElVkViR2INBdIhzTxBjQ2JwkFqURc3MnCvCCDcAc03IbPF3719TTieIFLJN8PKrjLadoTVNUk4mUVursJCmYCajFeMhxQcDYh65ns7FU0Ky7mjWiaUcbNUVnFVanhkzCfFsRWuakdejdy4gDEPbne0RWOsosfJ3icTD",
+      "estimatedCost": 12
+    },
+    {
+      "id": "gripper_servo",
+      "name": "Gripper Actuation Servo",
+      "pins": [
+        "PWM Signal",
+        "5V",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "01957143-e736-40a2-933a-aa3748f2bb8e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51s3f9yyE-L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SIGNAL"
+          },
+          {
+            "label": "Function",
+            "value": "Servomotor"
+          },
+          {
+            "label": "Voltage - Rated",
+            "value": "4.8V"
+          },
+          {
+            "label": "Termination Style",
+            "value": "Cable with Connector"
+          },
+          {
+            "label": "Operating Temperature",
+            "value": "0°C ~ 55°C"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=puzKAaPtOPZLOlvFOhH8uFYHJSKg7E9Bdyhhw3QGOORTWZfYvmJGlvLJDW7WsurX-BrODr-MWYPHpdAfawzOFlUHO4gjTJjMbG2V42CdgFF3bMtc5xdgXjnddwL3lrwIMxIQ2ZIoXTwUm-St2Zxahvaw-hRG_M6rCRN3nVssJeOntwV65kw7Q5pvl0nqfem6mIOrNEfB9wKfnk_UXorv9EtdddC1fq-khpmC0n-NibpjsKBBmrIObNQ3w0nSLY__fI3gxaKOzQR-G-VPrQHFz46xnCqTQss",
+            "price": "$6",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/gearbox-labs/PART-MICRO-SERVO-SG-90-ANALOG/16159912",
+            "price": "$6",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007173214082.html?pdp_npi=6%40dis%21USD%212.28%212.24%21%21%2115.48%2115.20%21%402101611117793311805125015e100b%2112000039699110343%21affd%21%21%21%211%210%21",
+            "price": "$2.24",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/169",
+            "price": "$5.95",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.98",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12x29mm",
+      "description": "SG-90 ANALOG SERVO",
+      "productName": "SG90 Micro Servo",
+      "purchaseUrl": "https://octopart.com/opatz8j6/a1?t=puzKAaPtOPZLOlvFOhH8uFYHJSKg7E9Bdyhhw3QGOORTWZfYvmJGlvLJDW7WsurX-BrODr-MWYPHpdAfawzOFlUHO4gjTJjMbG2V42CdgFF3bMtc5xdgXjnddwL3lrwIMxIQ2ZIoXTwUm-St2Zxahvaw-hRG_M6rCRN3nVssJeOntwV65kw7Q5pvl0nqfem6mIOrNEfB9wKfnk_UXorv9EtdddC1fq-khpmC0n-NibpjsKBBmrIObNQ3w0nSLY__fI3gxaKOzQR-G-VPrQHFz46xnCqTQss",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5oxzwUHPFARFx7YnRX6uYu0j7lgbIz6iZTYNcS0VH9yQr4jcMCM0FegaMfY683nOFADtFTtfGvSf54gIPbjAhqcADDXCvqJUt39V5pMHXrOYKh8eMGPMFLJ88Kp2xUhAgmyjpxFjjCQXNEMXznSlJkRtrgRuZgpUAhK8anNQHUysAbOQ2VdSL85AXqgyoE2R3JyccAC8CWJ1G7wP3aIq01XN5EafFdnQiub1LwMvj6GrKYZK7LOU2REJNkrWEz2yBoQiIgLz4UX5pJYb6jneKsTt3W6se1UItXk51ir77NZDwYEvvq8RHUam3NxC21L7odDGp0lBu1wMtFlJkZCPz0rf8rXIz0QIB5BBJGelyuihuUWh0PiqEfHNXpSTqe1e79oN1JGJb1K8Z068wYCXPwDW3O0RQKChelR3HvYoBbbGljmEjzvg9rS2oha4bqwck9DGiPC1aiUmW83t",
+      "estimatedCost": 3
+    },
+    {
+      "id": "power_supply",
+      "name": "Main Power Supply",
+      "pins": [
+        "AC Input",
+        "DC 5V Output (+)",
+        "DC 5V Output (-)"
+      ],
+      "type": "power",
+      "partId": "4283645d-4fe6-482b-9431-1a44f93e4a71",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5V+10A+DC+Power+Supply+Adapter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41BAvkNZJlL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0D76F4W1C?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$21.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005005763465796.html?pdp_npi=6%40dis%21USD%214.05%214.04%21%21%214.05%214.04%21%402140d36117794389307371935e1187%2112000034265307542%21affd%21%21%21%211%210%21",
+            "price": "$4.04",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D76F4W1C?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "130x55x30mm",
+      "description": "Provides stable 5V DC power for the ESP32 microcontroller and the WS2812B LED strip.",
+      "productName": "5V 10A DC Power Supply Adapter",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8evkweh0rQLw1Ass2LtBZgPVqwRwxyy3SOBdLuDx4XpHatCoHQRyifjoGnodqYlUYWYkQ790qxWpeAcOeergVT4M5nPUgwljfyZ8mxyZNszYp3B1HKrTDLkdcTF6UBPGa1lssoqV7Rt1lkbnfRY5rGKOmYcAUSPTBgxBdgOk9X3qdRiMnM7kOxrUtD085CCxorIKAubKJcmOi90g7QfJ8Ye7tDlJs77Gtv2FslDool41ojKyWO1vdq6Kn4S0Pc1YxpKUqc4d3ECvNlwSuIKoJTmNnYL79giHtGW697uYM3UYsbabcWL38G4fPq9q4fVVLbPwukGRJxUwV84OU2ddLycVuBJnN0MfeMnpyy7NDqoLMQvkhHox86OxzYlBa2z5119qnShtaDHetDVH4evHa9D6LnBiO4dJ4UKEwECEiPSDArxUkauxEblvVCrzwuueqsJID1927v4HwRtHZoGmaxsT0tN1ZHIe0UQmvj85irOcE14tDPl3J7dV5btLl7YA48e7o8vlSKz1ej9ErDHzjAvFtfc8kAFpA9I8HCXqKzq2RrxVi7gvH1f7ybmhsexuzGuAX6R0TZnpuPFSgxOzvcBnKQnOpX3MTGw8cpfQaKOWcZN1yVuo9QboRR7JR2K6akbFKelEmjPQAM4FPvTXcX",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8evkweh0rQLw1Ass2LtBZgPVqwRwxyy3SOBdLuDx4XpHatCoHQRyifjoGnodqYlUYWYkQ790qxWpeAcOeergVT4M5nPUgwljfyZ8mxyZNszYp3B1HKrTDLkdcTF6UBPGa1lssoqV7Rt1lkbnfRY5rGKOmYcAUSPTBgxBdgOk9X3qdRiMnM7kOxrUtD085CCxorIKAubKJcmOi90g7QfJ8Ye7tDlJs77Gtv2FslDool41ojKyWO1vdq6Kn4S0Pc1YxpKUqc4d3ECvNlwSuIKoJTmNnYL79giHtGW697uYM3UYsbabcWL38G4fPq9q4fVVLbPwukGRJxUwV84OU2ddLycVuBJnN0MfeMnpyy7NDqoLMQvkhHox86OxzYlBa2z5119qnShtaDHetDVH4evHa9D6LnBiO4dJ4UKEwECEiPSDArxUkauxEblvVCrzwuueqsJID1927v4HwRtHZoGmaxsT0tN1ZHIe0UQmvj85irOcE14tDPl3J7dV5btLl7YA48e7o8vlSKz1ej9ErDHzjAvFtfc8kAFpA9I8HCXqKzq2RrxVi7gvH1f7ybmhsexuzGuAX6R0TZnpuPFSgxOzvcBnKQnOpX3MTGw8cpfQaKOWcZN1yVuo9QboRR7JR2K6akbFKelEmjPQAM4FPvTXcX",
+      "estimatedCost": 20
+    },
+    {
+      "id": "power_distribution_board",
+      "name": "Power Distribution Board",
+      "pins": [
+        "Input VCC",
+        "Input GND",
+        "Output VCC (xN)",
+        "Output GND (xN)"
+      ],
+      "type": "module",
+      "partId": "8b3aa692-3bd7-4dd0-9062-cff8401ecaed",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Terminal+Block+Power+Distribution+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/cMR0233o4sabWd5GQweWahslbPHLOKTCXcrPmEng6hU/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2M5UUFB/T1N3NU9Sa3BPRmMv/cy1sMTQwLndlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07DW2C4ZB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x30x15mm",
+      "description": "Distributes 12V power from the battery to high-power components.",
+      "productName": "Terminal Block Power Distribution Board",
+      "purchaseUrl": "https://www.amazon.com/s?k=terminal+block+power+distribution",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgTMLFB6kRyRhS8cKeS3gx2lMvzsYT1ZIRNmuOx0BcUaL4W5oXvdCMsVNKPR1zRniyrp897XMYo0eoPZAeJAitnPr6DJvvEVEyncBtKW6gZOJzOc6yQjCkSDUHOx5hnKAq6V6vZisFDlkKpuiCIzU9mLgdi4ODAphHZUf0VHmaPd84wVq2gRkJZn3PumSiipihT80muK046wxGRr6wjw3xPIn4S56QwZP2yioN6xIDumwxPhMQEKpnLkTEVNbWVmtWHMGKlTdtKjz5i4aMn2IwkRGROWgj8T8fcosTYtl0q7rs3Nz390XWKIP9rlYmmOFvaxEb2YCqQ0zWAtbRjSZzRMyoWL8kRjpARbJIa3vCpYrx5Xn55zEAZ5dUOftuVH1NcpbPa1X2kaV9UhCiwixOYMFgM2rMYkOWU4AcIsO80jAlXthyJLTQyZKxfH0hrvJyCbonnhLI7BB7nRmTQULypt6YtonSAqxi3rJIKddLX62bbAJsrp50wbvTpcyBgoHCWVymPHKGKwtEE0712XpYXy6tiuTS4lQYURT2mqRhn1JHg5Y9yKMr8Pfyy1pLbKYX7wiOBIHR5sGCYxVDVvTIvDEwfmdTbe9rr3H0mFpD7ydQLi93Psd3hXexOA0dXPs5wDWFvprSTQHE2VxRjPCjL9",
+      "estimatedCost": 5
+    },
+    {
+      "id": "base_plate",
+      "name": "Base Plate",
+      "type": "structural",
+      "partId": "f8d7a0be-4caf-4e2d-9e4b-311d752be03e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Plate&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/411ywKym7jL._SL500_.jpg",
+      "material": "Aluminum",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "form",
+            "value": "Plate"
+          },
+          {
+            "label": "material",
+            "value": "Aluminum 6061"
+          },
+          {
+            "label": "dimensions",
+            "value": "Various"
+          },
+          {
+            "label": "thickness_mm_range",
+            "value": "2,50"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.metricmetal.com/product/aluminum/plate-aluminum/",
+            "vendor": "Metric Metal"
+          },
+          {
+            "url": "https://www.midweststeelsupply.com/store/6061aluminumplate",
+            "vendor": "Midwest Steel & Aluminum"
+          },
+          {
+            "url": "https://www.adafruit.com/product/1220",
+            "price": "$4.95",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010114032498.html?pdp_npi=6%40dis%21USD%2116.96%218.14%21%21%21115.00%2155.20%21%402101611117793311807042719e0e3d%2112000051189918447%21affd%21%21%21%211%210%21",
+            "price": "$8.14",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0BF18PQJG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$22.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BF18PQJG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x200x3mm",
+      "description": "Sturdy base for the robotic arm, providing stability and mounting points for the first joint and electronics.",
+      "productName": "Aluminum Plate",
+      "purchaseUrl": "https://www.adafruit.com/product/1220",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgvMGqB7RETCbeJstmcS5YHjoGydccrKavQRRi1Qw5gBT75KQGdX5pUZg50yVJHy7qjf5Lg9bpMNSMEAoZkZb0Xq0FQl7M2cFXhU2GS2zfEmh9m47G2ZAdrAiQbXauxirvIqpDG5Hfuwu48eX5yQV8TK5JUATREcs5GekUSRyL0GgBcaku9DlqzA9P07aMTjFBPhxYXiiaMLPAiTH4Nl7XkkaIoTbKmbJBrOp1vOpAydEtzfk1IcvklyPMRqvIZyK05AhO7RzVAHhmEjrxA4p6YzEiwI4rnJSxM0vbQ4SQfW5NzbG7WdndLnaKB4NEpFUU8LcHsTdJLF26ESlcJsusYdmzmLpnzsxAA10LmjDPUxYgpCYRx7JM41XRQ2o0btszl5MgdwNmwcxCcoSQgoK9EWJZaty1LycPB43j2JFcOuclcKVfwydZyvlXcTvkW5iCN4SwjxRBGbzj0BrJuRgn8gF1vgaZhC19UaWDwXwOeTyhr8dIzT5mXRp9nGHAcjfsmVoQumM43wMNjO9KeXOmDLYSZdCaGefx3G1P9nGXm9KzSVYcK0RGOrCjo2xSitQjg6e06IX6QrOXY3xjxzcrdqNCBjL9AfyKwm9bjIPSbMcORTYt61yO8pel5Ny0BJzHbvWxAfGyUmmMiA19fPRHmb",
+      "estimatedCost": 15
+    },
+    {
+      "id": "base_servo_mount",
+      "name": "Base Servo Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "base_servo",
+      "dimensions": "65x65x30mm",
+      "description": "Mount for the base servo to attach to the base plate, allowing for horizontal rotation of the first arm segment.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.5,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "arm_segment_1",
+      "name": "Arm Segment 1 (Shoulder Link)",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "150x40x15mm",
+      "description": "Connects the base joint to the shoulder joint, forming the first major link of the SCARA arm.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "shoulder_servo_mount",
+      "name": "Shoulder Servo Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "shoulder_servo",
+      "dimensions": "65x65x30mm",
+      "description": "Mount for the shoulder servo, integrating it into Arm Segment 1 and connecting to Arm Segment 2.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.5,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "arm_segment_2",
+      "name": "Arm Segment 2 (Elbow Link)",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "120x35x15mm",
+      "description": "Connects the shoulder joint to the elbow joint, forming the second major link of the SCARA arm.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.8,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "elbow_servo_mount",
+      "name": "Elbow Servo Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "elbow_servo",
+      "dimensions": "65x65x30mm",
+      "description": "Mount for the elbow servo, integrating it into Arm Segment 2 and connecting to the wrist/end-effector.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.5,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "wrist_plate",
+      "name": "Wrist Plate",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "60x40x10mm",
+      "description": "Flat plate at the end of Arm Segment 2, serving as the attachment point for the gripper or other end-effector.",
+      "purchaseUrl": "",
+      "estimatedCost": 0.8,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "gripper_servo_mount",
+      "name": "Gripper Servo Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "gripper_servo",
+      "dimensions": "30x25x20mm",
+      "description": "Mount for the micro servo that actuates the gripper fingers.",
+      "purchaseUrl": "",
+      "estimatedCost": 0.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "gripper_body",
+      "name": "2-Finger Gripper Body",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "50x30x25mm",
+      "description": "Main frame of the 2-finger gripper, holding the servo and allowing finger attachment.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.2,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "gripper_finger_left",
+      "name": "Gripper Finger (Left)",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "40x10x8mm",
+      "description": "One of two fingers for the end-effector gripper, designed for light payload manipulation.",
+      "purchaseUrl": "",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "gripper_finger_right",
+      "name": "Gripper Finger (Right)",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "40x10x8mm",
+      "description": "One of two fingers for the end-effector gripper, designed for light payload manipulation.",
+      "purchaseUrl": "",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "m3_screw_12mm",
+      "name": "M3x12mm Screws",
+      "type": "misc",
+      "partId": "5f670846-f797-43d0-bce3-22ae16347ac2",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x12mm+Pan+Head+Machine+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/313i8J8nZxL._SL500_.jpg",
+      "quantity": 20,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0GC4D943W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-m3x12mm-pan-head-machine-screws.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GC4D943W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x12mm",
+      "description": "Standard M3 screws for general assembly of 3D-printed parts and servo mounting.",
+      "productName": "M3x12mm Pan Head Machine Screws",
+      "purchaseUrl": "https://www.amazon.com/dp/B0GC4D943W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4VtKUf3",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "m3_nut",
+      "name": "M3 Nuts",
+      "type": "misc",
+      "partId": "c3dca189-2353-43a1-b760-66b6cefe0032",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41pX1SHnmpL._SL500_.jpg",
+      "quantity": 20,
+      "research": {
+        "specs": [
+          {
+            "label": "Material",
+            "value": "18-8 Stainless Steel"
+          },
+          {
+            "label": "Standard",
+            "value": "DIN 934"
+          },
+          {
+            "label": "Thread Size",
+            "value": "M3"
+          },
+          {
+            "label": "Thickness_mm",
+            "value": "2.4"
+          },
+          {
+            "label": "mcmaster_url",
+            "value": "https://www.mcmaster.com/90591A121"
+          },
+          {
+            "label": "Thread Pitch_mm",
+            "value": "0.5"
+          },
+          {
+            "label": "mcmaster_part_number",
+            "value": "90591A121"
+          },
+          {
+            "label": "Width Across Flats_mm",
+            "value": "5.5"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/binifiMux-M1-6-Stainless-Steel-200pcs/dp/B08N68W9SP",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.mcmaster.com/90591A121",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://accu-components.com/us/hexagon-nuts/7888-HPN-M3-A2",
+            "vendor": "Accu"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007278965396.html?pdp_npi=6%40dis%21USD%216.21%216.08%21%21%2142.11%2141.23%21%40210152bd17793266883568522e1214%2112000040076085093%21affd%21%21%21%211%210%21",
+            "price": "$6.08",
+            "vendor": "AliExpress"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "MonsterBolts M3 Hex Nuts (A4/316 Stainless Steel)",
+            "reason": "Uses A4 (316) marine-grade stainless steel, which offers higher corrosion resistance than 18-8 (304) stainless steel, but is not the specified material."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F9FC4563?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "Standard M3 nuts for securing screws.",
+      "productName": "M3 Hex Nuts",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxheLVocLOesSj3YW9HVKSsjAuk0dhY8YT34rvUc5SPCcgI4QR7M5m7vL2CF1qaBN4YJaX2QCpde3asIqUTPZ7VH9jKyimAosVWo9rG6TlCDaJUGpnvxlaPEscouM2pHiy6Zxvpv1xT7pzOx6Fyo1keQHGdNb57GbSrrLl71Nratjl21Ld7kva7BOr6PkrmoRWaWh55AYomtd8Z3yTq04PvrqlY5YBlai14Zqqm1nwp3TV2K5uxs0EGrCrPfu4GYI7jNaPISs01eXJf41jhf0QpknTJxW8qBL9GcWbb9hfTnLyftpwrbKqPnF8dvx4RHQkb8ZP8BSR81V5Fu45b5wJbrDhRnyjz0RXWL5BXkBaEs3ZSp7WOwJEtZ1t3tvABpapsuJRrQbLqHwt6h8T28IiiGvsb55OJKTAhaiBPwnBWGJ74IpYm6mf32wB3kuuhALc6jRTSWG3Df4XHqSsoXkfwwzvcYwbVm6PDdgzJw7MEBaWEkQwFos1EuzSOsU3IDiG7r2kJf7eV9aInWlTwQ977gk6Q27AfFEY984k1lgT40XJlTIWPlMvK7GlvY7giUmMRlsr4ETykxB2EQ9k6wlIDNTUesgVotiHHythHgqnxfbJyf5h6w0WqBMIGaF0R88Tm1iWPDGAkRtRFuY5ke41QIn",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxheLVocLOesSj3YW9HVKSsjAuk0dhY8YT34rvUc5SPCcgI4QR7M5m7vL2CF1qaBN4YJaX2QCpde3asIqUTPZ7VH9jKyimAosVWo9rG6TlCDaJUGpnvxlaPEscouM2pHiy6Zxvpv1xT7pzOx6Fyo1keQHGdNb57GbSrrLl71Nratjl21Ld7kva7BOr6PkrmoRWaWh55AYomtd8Z3yTq04PvrqlY5YBlai14Zqqm1nwp3TV2K5uxs0EGrCrPfu4GYI7jNaPISs01eXJf41jhf0QpknTJxW8qBL9GcWbb9hfTnLyftpwrbKqPnF8dvx4RHQkb8ZP8BSR81V5Fu45b5wJbrDhRnyjz0RXWL5BXkBaEs3ZSp7WOwJEtZ1t3tvABpapsuJRrQbLqHwt6h8T28IiiGvsb55OJKTAhaiBPwnBWGJ74IpYm6mf32wB3kuuhALc6jRTSWG3Df4XHqSsoXkfwwzvcYwbVm6PDdgzJw7MEBaWEkQwFos1EuzSOsU3IDiG7r2kJf7eV9aInWlTwQ977gk6Q27AfFEY984k1lgT40XJlTIWPlMvK7GlvY7giUmMRlsr4ETykxB2EQ9k6wlIDNTUesgVotiHHythHgqnxfbJyf5h6w0WqBMIGaF0R88Tm1iWPDGAkRtRFuY5ke41QIn",
+      "estimatedCost": 0.02
+    },
+    {
+      "id": "ball_bearing_608",
+      "name": "608ZZ Ball Bearings",
+      "type": "mechanism",
+      "partId": "72058419-6567-4691-ba93-251b9ab5fe48",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=608ZZ+Skateboard+Bearings&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51+0FkMNlKL._SL500_.jpg",
+      "quantity": 2,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005012105402311.html?pdp_npi=6%40dis%21USD%2119.11%219.55%21%21%21129.22%2164.61%21%40210152bd17793911079072478e1164%2112000057529944755%21affd%21%21%21%211%210%21",
+            "price": "$9.55",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B07H83VV6B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$4.35",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07H83VV6B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x8x7mm",
+      "description": "Ball bearings for smooth rotation at high-load joints (e.g., base and shoulder pivots).",
+      "productName": "608ZZ Skateboard Bearings",
+      "purchaseUrl": "https://www.amazon.com/dp/B07H83VV6B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHSKSXyK5yYwPM9E9qyWyT2TyvReIhyP38ET7h9xPFw37ycwyBtJPgDkfBzx5PuZp8yeDfUWPGIdfu43heTyU3Hk1UlugIwLiwFY9y8x1fuQCFdJKwGyOTHXQSQYNXaQZGI3lCdGKnnBgF13vgWlFLKGzLEO18WaN04NW1iFgT1ZJeKoVgNvu5b0a6saM0P8gW5CeenFSsptCf0SChAbcAh6bFHEYKhQwMUCaEC9zfP0xWPIYTvtaKckeResPg5aYn1Gs6VG8kv6yGlIpQiYIeY8vgNYZGVreNsyfr1XMOIpxEllLtxMjCpAJPq1qQ7xVW7jzoUywGfMt07TWsKdouKDDCZRs2V6ZeLpDnIN4EIBayVmik0HuDc8BcM7XhsYYAvYgfYqe92TXwZYteOPsBxq8Dyj0Oq9E6ohfIQNSiRIlz0SFnaLTMiPnH2TOZKogHLYdPihErApvwQrL9xKoPAAtxz7JJfTQ0EFWCHKrVIMZX28a4zlkWlQ1IWE3rCnPhgiiat0qztNe4np0ojHtsoi7vcJmlgnc3sBMbiuIWH64YIJxKQtZgryUoInDL5OyFUR6i2VerNdNTCxHwTNsUkUaplU1O13ehP2u8pVx57Hn1wwVsomumunIQ0uN6VaBnQ8nJe6kbNVrhaPq2Z4yiJv",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "main_controller_mount",
+      "name": "Main Controller Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "main_controller",
+      "dimensions": "80x60x10mm",
+      "description": "Mounting bracket for the main microcontroller (ESP32/Arduino Mega) on the base plate.",
+      "purchaseUrl": "",
+      "estimatedCost": 0.75,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "power_supply_mount",
+      "name": "Power Supply Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "power_supply",
+      "dimensions": "120x60x15mm",
+      "description": "Mounting bracket for the main power supply on the base plate.",
+      "purchaseUrl": "",
+      "estimatedCost": 1,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "power_distribution_board_mount",
+      "name": "Power Distribution Board Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "power_distribution_board",
+      "dimensions": "60x40x10mm",
+      "description": "Mounting bracket for the power distribution board on the base plate.",
+      "purchaseUrl": "",
+      "estimatedCost": 0.6,
+      "printSettings": "20% infill, 0.2mm layer"
+    }
+  ],
+  "notes": [
+    "Four-axis design",
+    "Robotic arm",
+    "Customizable"
+  ],
+  "projectName": "SCARA Arm Robot",
+  "originalPrompt": "我想设计一款自己的四轴机械臂，外观要求精美一些可以用3D打印\n",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all PETG mechanical components",
+          "partIds": [
+            "base_servo_mount",
+            "arm_segment_1",
+            "shoulder_servo_mount",
+            "arm_segment_2",
+            "elbow_servo_mount",
+            "wrist_plate",
+            "gripper_servo_mount",
+            "gripper_body",
+            "gripper_finger_left",
+            "gripper_finger_right"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D print all PLA mounting components",
+          "partIds": [
+            "main_controller_mount",
+            "power_supply_mount",
+            "power_distribution_board_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Test fit servos into their respective mounts",
+          "partIds": [
+            "base_servo",
+            "base_servo_mount",
+            "shoulder_servo",
+            "shoulder_servo_mount",
+            "elbow_servo",
+            "elbow_servo_mount",
+            "gripper_servo",
+            "gripper_servo_mount"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test fit main controller, power supply, and PDB into their mounts",
+          "partIds": [
+            "main_controller",
+            "main_controller_mount",
+            "power_supply",
+            "power_supply_mount",
+            "power_distribution_board",
+            "power_distribution_board_mount"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Wire Main Power Supply to Power Distribution Board inputs (5V and GND)",
+          "partIds": [
+            "power_supply",
+            "power_distribution_board"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect Power Distribution Board to Main Controller for power (5V and GND)",
+          "partIds": [
+            "power_distribution_board",
+            "main_controller"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect Power Distribution Board to Base, Shoulder, and Elbow Servos for power (5V and GND)",
+          "partIds": [
+            "power_distribution_board",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect Power Distribution Board to Gripper Actuation Servo for power (5V and GND)",
+          "partIds": [
+            "power_distribution_board",
+            "gripper_servo"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect Main Controller PWM pins to Base, Shoulder, Elbow, and Gripper Servos signal pins",
+          "partIds": [
+            "main_controller",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "gripper_servo"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Perform continuity check on all power and signal connections",
+          "partIds": [
+            "power_supply",
+            "power_distribution_board",
+            "main_controller",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "gripper_servo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect Main Controller to computer via USB",
+          "partIds": [
+            "main_controller"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Upload initial firmware to Main Controller to test basic servo control",
+          "partIds": [
+            "main_controller"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Apply power to the system and verify all servos respond to basic commands",
+          "partIds": [
+            "power_supply",
+            "power_distribution_board",
+            "main_controller",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "gripper_servo"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify stable 5V output from Power Distribution Board at all servo connections",
+          "partIds": [
+            "power_distribution_board",
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "gripper_servo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount base_servo_mount, main_controller_mount, power_supply_mount, and power_distribution_board_mount to the Base Plate using M3 screws and nuts",
+          "partIds": [
+            "base_servo_mount",
+            "main_controller_mount",
+            "power_supply_mount",
+            "power_distribution_board_mount",
+            "base_plate",
+            "m3_screw_12mm",
+            "m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount Main Controller, Power Supply, and Power Distribution Board into their respective mounts",
+          "partIds": [
+            "main_controller",
+            "main_controller_mount",
+            "power_supply",
+            "power_supply_mount",
+            "power_distribution_board",
+            "power_distribution_board_mount"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount Base Servo into base_servo_mount, then attach Arm Segment 1 (Shoulder Link) with a 608ZZ Ball Bearing for rotation",
+          "partIds": [
+            "base_servo",
+            "base_servo_mount",
+            "arm_segment_1",
+            "ball_bearing_608"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount Shoulder Servo into shoulder_servo_mount, then attach arm_segment_2 (Elbow Link) with a 608ZZ Ball Bearing for rotation. Secure shoulder_servo_mount to Arm Segment 1.",
+          "partIds": [
+            "shoulder_servo",
+            "shoulder_servo_mount",
+            "arm_segment_2",
+            "arm_segment_1",
+            "ball_bearing_608",
+            "m3_screw_12mm",
+            "m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount Elbow Servo into elbow_servo_mount, then attach Wrist Plate with a 608ZZ Ball Bearing for rotation. Secure elbow_servo_mount to Arm Segment 2.",
+          "partIds": [
+            "elbow_servo",
+            "elbow_servo_mount",
+            "wrist_plate",
+            "arm_segment_2",
+            "ball_bearing_608",
+            "m3_screw_12mm",
+            "m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Assemble the gripper: Mount Gripper Servo into gripper_servo_mount, attach gripper_body to gripper_servo_mount, and connect gripper_finger_left and gripper_finger_right to gripper_body, driven by the gripper servo. Secure gripper_servo_mount to Wrist Plate.",
+          "partIds": [
+            "gripper_servo",
+            "gripper_servo_mount",
+            "gripper_body",
+            "gripper_finger_left",
+            "gripper_finger_right",
+            "wrist_plate",
+            "m3_screw_12mm",
+            "m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Route and secure all electrical wires to prevent snagging and ensure proper cable management.",
+          "partIds": []
+        },
+        {
+          "id": "assemble_8",
+          "title": "Perform a final system function test to verify all joints and the gripper operate smoothly through their full range of motion.",
+          "partIds": [
+            "base_servo",
+            "shoulder_servo",
+            "elbow_servo",
+            "gripper_servo",
+            "main_controller"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A four-axis SCARA robot arm, designed for customizable manipulation tasks. It integrates a main controller, base, shoulder, elbow, and gripper actuation servos, a 2-finger gripper, and robust structural components.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "Four-axis design",
+      "Robotic arm",
+      "Customizable"
+    ],
+    "description": "我想设计一款自己的四轴机械臂，外观要求精美一些可以用3D打印",
+    "technicalDescription": "A four-axis SCARA robot arm, designed for customizable manipulation tasks. It integrates a main controller, base, shoulder, elbow, and gripper actuation servos, a 2-finger gripper, and robust structural components."
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG/PLA capable)",
+      "M3 hex key / Screwdriver set",
+      "Wire strippers",
+      "Small Phillips screwdriver",
+      "Multimeter",
+      "Computer with USB port"
+    ],
+    "assumptions": [
+      "3D printer is calibrated and ready to print PETG and PLA",
+      "Basic understanding of electronics wiring and polarity",
+      "Familiarity with flashing firmware to microcontrollers",
+      "Basic mechanical assembly skills"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main 5V Power",
+      "source": "power_supply",
+      "target": "power_distribution_board",
+      "current": "3A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Main Ground",
+      "source": "power_supply",
+      "target": "power_distribution_board",
+      "current": "3A",
+      "voltage": "0V"
+    },
+    {
+      "type": "power",
+      "label": "MCU Power",
+      "source": "power_distribution_board",
+      "target": "main_controller",
+      "current": "200mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "MCU Ground",
+      "source": "power_distribution_board",
+      "target": "main_controller",
+      "current": "200mA",
+      "voltage": "0V"
+    },
+    {
+      "type": "power",
+      "label": "Base Servo Power",
+      "source": "power_distribution_board",
+      "target": "base_servo",
+      "current": "1A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Base Servo Ground",
+      "source": "power_distribution_board",
+      "target": "base_servo",
+      "current": "1A",
+      "voltage": "0V"
+    },
+    {
+      "type": "power",
+      "label": "Shoulder Servo Power",
+      "source": "power_distribution_board",
+      "target": "shoulder_servo",
+      "current": "1A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Shoulder Servo Ground",
+      "source": "power_distribution_board",
+      "target": "shoulder_servo",
+      "current": "1A",
+      "voltage": "0V"
+    },
+    {
+      "type": "power",
+      "label": "Elbow Servo Power",
+      "source": "power_distribution_board",
+      "target": "elbow_servo",
+      "current": "1A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Elbow Servo Ground",
+      "source": "power_distribution_board",
+      "target": "elbow_servo",
+      "current": "1A",
+      "voltage": "0V"
+    },
+    {
+      "type": "power",
+      "label": "Gripper Servo Power",
+      "source": "power_distribution_board",
+      "target": "gripper_servo",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Gripper Servo Ground",
+      "source": "power_distribution_board",
+      "target": "gripper_servo",
+      "current": "500mA",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Base Servo PWM",
+      "source": "main_controller",
+      "target": "base_servo",
+      "protocol": "pwm",
+      "sourcePin": "PWM1",
+      "targetPin": "PWM Signal"
+    },
+    {
+      "type": "data",
+      "label": "Shoulder Servo PWM",
+      "source": "main_controller",
+      "target": "shoulder_servo",
+      "protocol": "pwm",
+      "sourcePin": "PWM2",
+      "targetPin": "PWM Signal"
+    },
+    {
+      "type": "data",
+      "label": "Elbow Servo PWM",
+      "source": "main_controller",
+      "target": "elbow_servo",
+      "protocol": "pwm",
+      "sourcePin": "PWM3",
+      "targetPin": "PWM Signal"
+    },
+    {
+      "type": "data",
+      "label": "Gripper Servo PWM",
+      "source": "main_controller",
+      "target": "gripper_servo",
+      "protocol": "pwm",
+      "sourcePin": "PWM4",
+      "targetPin": "PWM Signal"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M3 bolts",
+      "source": "base_servo_mount",
+      "target": "base_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "main_controller_mount",
+      "target": "base_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "power_supply_mount",
+      "target": "base_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "power_distribution_board_mount",
+      "target": "base_plate"
+    },
+    {
+      "label": "rotates on servo output shaft, supported by ball_bearing_608",
+      "source": "arm_segment_1",
+      "target": "base_servo_mount"
+    },
+    {
+      "label": "press fit",
+      "source": "ball_bearing_608",
+      "target": "base_servo_mount"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "shoulder_servo_mount",
+      "target": "arm_segment_1"
+    },
+    {
+      "label": "rotates on servo output shaft, supported by ball_bearing_608",
+      "source": "arm_segment_2",
+      "target": "shoulder_servo_mount"
+    },
+    {
+      "label": "press fit",
+      "source": "ball_bearing_608",
+      "target": "shoulder_servo_mount"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "elbow_servo_mount",
+      "target": "arm_segment_2"
+    },
+    {
+      "label": "rotates on servo output shaft, supported by ball_bearing_608",
+      "source": "wrist_plate",
+      "target": "elbow_servo_mount"
+    },
+    {
+      "label": "press fit",
+      "source": "ball_bearing_608",
+      "target": "elbow_servo_mount"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "gripper_servo_mount",
+      "target": "wrist_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "gripper_body",
+      "target": "gripper_servo_mount"
+    },
+    {
+      "label": "pivots on pins/shafts driven by gripper_servo",
+      "source": "gripper_finger_left",
+      "target": "gripper_body"
+    },
+    {
+      "label": "pivots on pins/shafts driven by gripper_servo",
+      "source": "gripper_finger_right",
+      "target": "gripper_body"
+    },
+    {
+      "label": "threaded connection",
+      "source": "m3_screw_12mm",
+      "target": "m3_nut"
+    },
+    {
+      "label": "mount",
+      "source": "base_servo_mount",
+      "target": "base_servo"
+    },
+    {
+      "label": "mount",
+      "source": "shoulder_servo_mount",
+      "target": "shoulder_servo"
+    },
+    {
+      "label": "mount",
+      "source": "elbow_servo_mount",
+      "target": "elbow_servo"
+    },
+    {
+      "label": "mount",
+      "source": "gripper_servo_mount",
+      "target": "gripper_servo"
+    },
+    {
+      "label": "mount",
+      "source": "main_controller_mount",
+      "target": "main_controller"
+    },
+    {
+      "label": "mount",
+      "source": "power_supply_mount",
+      "target": "power_supply"
+    },
+    {
+      "label": "mount",
+      "source": "power_distribution_board_mount",
+      "target": "power_distribution_board"
+    }
+  ],
+  "projectId": "c6f7fd9e-86c3-4b81-9c00-6821bc2ab4fa"
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "label": "snapped into place",
+    "source": "main_enclosure_shell",
+    "target": "front_bezel"
+  },
+  {
+    "label": "secured by m2_screws_enclosure into heat_set_inserts_m2",
+    "source": "main_enclosure_shell",
+    "target": "back_cover_grille"
+  },
+  {
+    "label": "heat-pressed into main_enclosure_shell",
+    "source": "main_enclosure_shell",
+    "target": "heat_set_inserts_m2"
+  },
+  {
+    "label": "M2 screws",
+    "source": "oled_display_bezel_mount",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "M2 screws",
+    "source": "esp32_mount",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "M2 screws",
+    "source": "li_po_battery_tray",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "M2 screws",
+    "source": "battery_charger_module_mount",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "M2 screws",
+    "source": "microsd_card_module_mount",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "M2 screws",
+    "source": "headphone_jack_mount",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "M2 screws",
+    "source": "audio_dac_amplifier_mount",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "M2 screws",
+    "source": "internal_speaker_mount",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "M2 screws",
+    "source": "usb_c_breakout_mount",
+    "target": "main_enclosure_shell"
+  },
+  {
+    "label": "snap-fit into opening",
+    "source": "front_bezel",
+    "target": "play_button_cap"
+  },
+  {
+    "label": "snap-fit into opening",
+    "source": "front_bezel",
+    "target": "next_button_cap"
+  },
+  {
+    "label": "snap-fit into opening",
+    "source": "front_bezel",
+    "target": "prev_button_cap"
+  },
+  {
+    "label": "mount",
+    "source": "oled_display_bezel_mount",
+    "target": "oled_display"
+  },
+  {
+    "label": "mount",
+    "source": "esp32_mount",
+    "target": "esp32_main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "li_po_battery_tray",
+    "target": "li_po_battery"
+  },
+  {
+    "label": "mount",
+    "source": "battery_charger_module_mount",
+    "target": "battery_charger_module"
+  },
+  {
+    "label": "mount",
+    "source": "microsd_card_module_mount",
+    "target": "microsd_card_module"
+  },
+  {
+    "label": "mount",
+    "source": "headphone_jack_mount",
+    "target": "headphone_jack"
+  },
+  {
+    "label": "mount",
+    "source": "audio_dac_amplifier_mount",
+    "target": "audio_dac_amplifier"
+  },
+  {
+    "label": "mount",
+    "source": "internal_speaker_mount",
+    "target": "internal_speaker"
+  },
+  {
+    "label": "mount",
+    "source": "usb_c_breakout_mount",
+    "target": "usb_c_breakout"
+  },
+  {
+    "label": "mount",
+    "source": "play_button_cap",
+    "target": "play_button"
+  },
+  {
+    "label": "mount",
+    "source": "next_button_cap",
+    "target": "next_button"
+  },
+  {
+    "label": "mount",
+    "source": "prev_button_cap",
+    "target": "prev_button"
+  }
+]

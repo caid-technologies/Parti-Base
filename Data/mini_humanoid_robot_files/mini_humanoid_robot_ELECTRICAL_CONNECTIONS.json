@@ -1,0 +1,560 @@
+[
+  {
+    "type": "power",
+    "label": "Battery to Charger (Positive)",
+    "source": "battery_lipo",
+    "target": "charging_module",
+    "current": "2A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Battery to Charger (Negative/GND)",
+    "source": "battery_lipo",
+    "target": "charging_module",
+    "current": "2A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "Charger Output to Regulator Input (Positive)",
+    "source": "charging_module",
+    "target": "voltage_regulator",
+    "current": "2A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Charger Output to Regulator Input (Negative/GND)",
+    "source": "charging_module",
+    "target": "voltage_regulator",
+    "current": "2A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "Regulator Output to MCU Power",
+    "source": "voltage_regulator",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Regulator Output to MCU Ground",
+    "source": "voltage_regulator",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "Regulator Output to Servo Driver VCC",
+    "source": "voltage_regulator",
+    "target": "servo_driver",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Regulator Output to Servo Driver GND",
+    "source": "voltage_regulator",
+    "target": "servo_driver",
+    "current": "2A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "Regulator Output to Servo Driver V+",
+    "source": "voltage_regulator",
+    "target": "servo_driver",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "MCU 3V3 to IMU VCC",
+    "source": "main_mcu",
+    "target": "imu_sensor",
+    "current": "50mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "MCU GND to IMU GND",
+    "source": "main_mcu",
+    "target": "imu_sensor",
+    "current": "50mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "MCU SCL to IMU SCL",
+    "source": "main_mcu",
+    "target": "imu_sensor",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "label": "MCU SDA to IMU SDA",
+    "source": "main_mcu",
+    "target": "imu_sensor",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "label": "MCU SDA to Servo Driver SDA",
+    "source": "main_mcu",
+    "target": "servo_driver",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "label": "MCU SCL to Servo Driver SCL",
+    "source": "main_mcu",
+    "target": "servo_driver",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "label": "MCU GPIO to Servo Driver Output Enable",
+    "source": "main_mcu",
+    "target": "servo_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO1",
+    "targetPin": "OE"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Head Pan Servo VCC",
+    "source": "servo_driver",
+    "target": "head_pan_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Head Pan Servo GND",
+    "source": "servo_driver",
+    "target": "head_pan_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P0 to Head Pan Servo PWM",
+    "source": "servo_driver",
+    "target": "head_pan_servo",
+    "protocol": "pwm",
+    "sourcePin": "P0",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Head Tilt Servo VCC",
+    "source": "servo_driver",
+    "target": "head_tilt_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Head Tilt Servo GND",
+    "source": "servo_driver",
+    "target": "head_tilt_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P1 to Head Tilt Servo PWM",
+    "source": "servo_driver",
+    "target": "head_tilt_servo",
+    "protocol": "pwm",
+    "sourcePin": "P1",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Torso Yaw Servo VCC",
+    "source": "servo_driver",
+    "target": "torso_yaw_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Torso Yaw Servo GND",
+    "source": "servo_driver",
+    "target": "torso_yaw_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P2 to Torso Yaw Servo PWM",
+    "source": "servo_driver",
+    "target": "torso_yaw_servo",
+    "protocol": "pwm",
+    "sourcePin": "P2",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Right Shoulder Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "right_shoulder_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Right Shoulder Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "right_shoulder_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P3 to Right Shoulder Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "right_shoulder_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P3",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Right Shoulder Roll Servo VCC",
+    "source": "servo_driver",
+    "target": "right_shoulder_roll_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Right Shoulder Roll Servo GND",
+    "source": "servo_driver",
+    "target": "right_shoulder_roll_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P4 to Right Shoulder Roll Servo PWM",
+    "source": "servo_driver",
+    "target": "right_shoulder_roll_servo",
+    "protocol": "pwm",
+    "sourcePin": "P4",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Right Elbow Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "right_elbow_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Right Elbow Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "right_elbow_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P5 to Right Elbow Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "right_elbow_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P5",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Left Shoulder Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "left_shoulder_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Left Shoulder Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "left_shoulder_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P6 to Left Shoulder Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "left_shoulder_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P6",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Left Shoulder Roll Servo VCC",
+    "source": "servo_driver",
+    "target": "left_shoulder_roll_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Left Shoulder Roll Servo GND",
+    "source": "servo_driver",
+    "target": "left_shoulder_roll_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P7 to Left Shoulder Roll Servo PWM",
+    "source": "servo_driver",
+    "target": "left_shoulder_roll_servo",
+    "protocol": "pwm",
+    "sourcePin": "P7",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Left Elbow Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "left_elbow_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Left Elbow Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "left_elbow_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P8 to Left Elbow Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "left_elbow_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P8",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Right Hip Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "right_hip_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Right Hip Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "right_hip_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P9 to Right Hip Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "right_hip_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P9",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Right Hip Roll Servo VCC",
+    "source": "servo_driver",
+    "target": "right_hip_roll_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Right Hip Roll Servo GND",
+    "source": "servo_driver",
+    "target": "right_hip_roll_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P10 to Right Hip Roll Servo PWM",
+    "source": "servo_driver",
+    "target": "right_hip_roll_servo",
+    "protocol": "pwm",
+    "sourcePin": "P10",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Right Knee Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "right_knee_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Right Knee Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "right_knee_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P11 to Right Knee Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "right_knee_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P11",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Right Ankle Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "right_ankle_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Right Ankle Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "right_ankle_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P12 to Right Ankle Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "right_ankle_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P12",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Left Hip Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "left_hip_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Left Hip Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "left_hip_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P13 to Left Hip Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "left_hip_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P13",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Left Hip Roll Servo VCC",
+    "source": "servo_driver",
+    "target": "left_hip_roll_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Left Hip Roll Servo GND",
+    "source": "servo_driver",
+    "target": "left_hip_roll_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P14 to Left Hip Roll Servo PWM",
+    "source": "servo_driver",
+    "target": "left_hip_roll_servo",
+    "protocol": "pwm",
+    "sourcePin": "P14",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Left Knee Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "left_knee_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Left Knee Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "left_knee_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver P15 to Left Knee Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "left_knee_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "P15",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver V+ to Left Ankle Pitch Servo VCC",
+    "source": "servo_driver",
+    "target": "left_ankle_pitch_servo",
+    "current": "300mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Servo Driver GND to Left Ankle Pitch Servo GND",
+    "source": "servo_driver",
+    "target": "left_ankle_pitch_servo",
+    "current": "300mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Servo Driver (next available) to Left Ankle Pitch Servo PWM",
+    "source": "servo_driver",
+    "target": "left_ankle_pitch_servo",
+    "protocol": "pwm",
+    "sourcePin": "GPIO2",
+    "targetPin": "PWM"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "label": "M3 screws with gasket",
+    "source": "main_enclosure_front",
+    "target": "main_enclosure_rear"
+  },
+  {
+    "label": "sandwiches",
+    "source": "main_enclosure_front",
+    "target": "enclosure_gasket"
+  },
+  {
+    "label": "sandwiches",
+    "source": "main_enclosure_rear",
+    "target": "enclosure_gasket"
+  },
+  {
+    "label": "interlocks",
+    "source": "main_enclosure_front",
+    "target": "oled_display_bezel"
+  },
+  {
+    "label": "snaps into",
+    "source": "main_enclosure_front",
+    "target": "speaker_grille"
+  },
+  {
+    "label": "press-fit through",
+    "source": "main_enclosure_front",
+    "target": "control_buttons"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "main_enclosure_rear",
+    "target": "satellite_antenna_mount_adapter"
+  },
+  {
+    "label": "M3 heat-set inserts",
+    "source": "pcb_mounting_plate",
+    "target": "main_enclosure_rear"
+  },
+  {
+    "label": "M3 screws",
+    "source": "iridium_module_mount",
+    "target": "pcb_mounting_plate"
+  },
+  {
+    "label": "M3 screws",
+    "source": "battery_holder",
+    "target": "pcb_mounting_plate"
+  },
+  {
+    "label": "M3 screws",
+    "source": "microphone_mount",
+    "target": "main_enclosure_front"
+  },
+  {
+    "label": "M3 screws",
+    "source": "main_mcu_mount",
+    "target": "pcb_mounting_plate"
+  },
+  {
+    "label": "M3 screws",
+    "source": "audio_codec_mount",
+    "target": "pcb_mounting_plate"
+  },
+  {
+    "label": "mount",
+    "source": "iridium_module_mount",
+    "target": "iridium_sbd_module"
+  },
+  {
+    "label": "mount",
+    "source": "battery_holder",
+    "target": "li_ion_battery_pack"
+  },
+  {
+    "label": "mount",
+    "source": "oled_display_bezel",
+    "target": "oled_display"
+  },
+  {
+    "label": "mount",
+    "source": "speaker_grille",
+    "target": "speaker"
+  },
+  {
+    "label": "mount",
+    "source": "microphone_mount",
+    "target": "microphone"
+  },
+  {
+    "label": "mount",
+    "source": "main_mcu_mount",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "audio_codec_mount",
+    "target": "audio_codec"
+  }
+]

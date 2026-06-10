@@ -1,0 +1,132 @@
+[
+  {
+    "label": "mounted with M3 screw",
+    "source": "gimbal_yaw_base",
+    "target": "chassis_base"
+  },
+  {
+    "label": "fastens to chassis_base",
+    "source": "m3_screw_6mm",
+    "target": "gimbal_yaw_base"
+  },
+  {
+    "label": "secures connection",
+    "source": "m3_nut",
+    "target": "m3_screw_6mm"
+  },
+  {
+    "label": "mounted with M3 screws",
+    "source": "gimbal_pitch_mount",
+    "target": "gimbal_yaw_arm"
+  },
+  {
+    "label": "fastens to gimbal_yaw_arm",
+    "source": "m3_screw_6mm",
+    "target": "gimbal_pitch_mount"
+  },
+  {
+    "label": "secures connection",
+    "source": "m3_nut",
+    "target": "m3_screw_6mm"
+  },
+  {
+    "label": "secured in holder",
+    "source": "gimbal_pitch_mount",
+    "target": "laser_diode"
+  },
+  {
+    "label": "secured in holder",
+    "source": "gimbal_pitch_mount",
+    "target": "radar_module"
+  },
+  {
+    "label": "attaches with M3 screws",
+    "source": "enclosure_top_cover",
+    "target": "chassis_base"
+  },
+  {
+    "label": "fastens to chassis_base",
+    "source": "m3_screw_10mm",
+    "target": "enclosure_top_cover"
+  },
+  {
+    "label": "secures connection",
+    "source": "m3_nut",
+    "target": "m3_screw_10mm"
+  },
+  {
+    "label": "mounted with M3 screws",
+    "source": "mc_holder",
+    "target": "chassis_base"
+  },
+  {
+    "label": "holds microcontroller",
+    "source": "mc_holder",
+    "target": "mc_holder"
+  },
+  {
+    "label": "fastens to mc_holder",
+    "source": "m2_screw_4mm",
+    "target": "mc_holder"
+  },
+  {
+    "label": "mounted with M3 screws",
+    "source": "battery_holder",
+    "target": "chassis_base"
+  },
+  {
+    "label": "holds battery_pack",
+    "source": "battery_holder",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mounts to chassis_base",
+    "source": "m3_standoff_10mm",
+    "target": "chassis_base"
+  },
+  {
+    "label": "holds microcontroller",
+    "source": "mc_holder",
+    "target": "esp32_mcu"
+  },
+  {
+    "label": "secured with M2 screws",
+    "source": "gimbal_pitch_mount",
+    "target": "thermal_camera_mount"
+  },
+  {
+    "label": "fastens to gimbal_pitch_mount",
+    "source": "m2_screw_4mm",
+    "target": "thermal_camera_mount"
+  },
+  {
+    "label": "secured in holder",
+    "source": "thermal_camera_mount",
+    "target": "thermal_camera"
+  },
+  {
+    "label": "mounted with M3 screws",
+    "source": "chassis_base",
+    "target": "ai_module_holder"
+  },
+  {
+    "label": "fastens to chassis_base",
+    "source": "m3_screw_6mm",
+    "target": "ai_module_holder"
+  },
+  {
+    "label": "secures connection",
+    "source": "m3_nut",
+    "target": "m3_screw_6mm"
+  },
+  {
+    "label": "holds AI module",
+    "source": "ai_module_holder",
+    "target": "ai_module"
+  },
+  {
+    "label": "fastens to ai_module_holder",
+    "source": "m2_screw_4mm",
+    "target": "ai_module"
+  }
+]

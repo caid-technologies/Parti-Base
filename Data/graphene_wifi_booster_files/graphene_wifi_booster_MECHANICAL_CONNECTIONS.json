@@ -1,0 +1,97 @@
+[
+  {
+    "label": "M2x6mm mounting screws",
+    "source": "enclosure_bottom_half",
+    "target": "enclosure_top_half"
+  },
+  {
+    "label": "integrated standoffs",
+    "source": "enclosure_bottom_half",
+    "target": "pcb_standoff_main_mcu"
+  },
+  {
+    "label": "M2x6mm mounting screws",
+    "source": "enclosure_bottom_half",
+    "target": "rf_module_mount"
+  },
+  {
+    "label": "M2x6mm mounting screws",
+    "source": "enclosure_bottom_half",
+    "target": "antenna_24ghz_mount"
+  },
+  {
+    "label": "M2x6mm mounting screws",
+    "source": "enclosure_bottom_half",
+    "target": "antenna_5ghz_mount"
+  },
+  {
+    "label": "M2x6mm mounting screws",
+    "source": "enclosure_bottom_half",
+    "target": "usb_c_jack_retainer"
+  },
+  {
+    "label": "snap-fit",
+    "source": "enclosure_top_half",
+    "target": "button_actuator"
+  },
+  {
+    "label": "snap-fit",
+    "source": "enclosure_top_half",
+    "target": "status_led_power_mount"
+  },
+  {
+    "label": "snap-fit",
+    "source": "enclosure_top_half",
+    "target": "status_led_wifi_24ghz_mount"
+  },
+  {
+    "label": "snap-fit",
+    "source": "enclosure_top_half",
+    "target": "status_led_wifi_5ghz_mount"
+  },
+  {
+    "label": "mount",
+    "source": "pcb_standoff_main_mcu",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "rf_module_mount",
+    "target": "rf_front_end_module"
+  },
+  {
+    "label": "mount",
+    "source": "antenna_24ghz_mount",
+    "target": "graphene_antenna_24ghz"
+  },
+  {
+    "label": "mount",
+    "source": "antenna_5ghz_mount",
+    "target": "graphene_antenna_5ghz"
+  },
+  {
+    "label": "mount",
+    "source": "usb_c_jack_retainer",
+    "target": "usb_c_power_jack"
+  },
+  {
+    "label": "mount",
+    "source": "button_actuator",
+    "target": "mode_selection_button"
+  },
+  {
+    "label": "mount",
+    "source": "status_led_power_mount",
+    "target": "status_led_power"
+  },
+  {
+    "label": "mount",
+    "source": "status_led_wifi_24ghz_mount",
+    "target": "status_led_wifi_24ghz"
+  },
+  {
+    "label": "mount",
+    "source": "status_led_wifi_5ghz_mount",
+    "target": "status_led_wifi_5ghz"
+  }
+]

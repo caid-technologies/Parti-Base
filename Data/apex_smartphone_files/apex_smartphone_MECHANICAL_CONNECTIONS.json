@@ -1,0 +1,277 @@
+[
+  {
+    "label": "M1.2 screws",
+    "source": "internal_midframe",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "structural adhesive",
+    "source": "display_glass",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "structural adhesive",
+    "source": "rear_glass_panel",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "snap-fit mechanism",
+    "source": "power_button",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "snap-fit mechanism",
+    "source": "volume_rocker",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "slides into slot",
+    "source": "sim_tray",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "press-fit seal",
+    "source": "usb_c_port_gasket",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "adhesive/press-fit",
+    "source": "speaker_grill_top",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "adhesive/press-fit",
+    "source": "speaker_grill_bottom",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "adhesive seal",
+    "source": "main_camera_lens_cover",
+    "target": "rear_glass_panel"
+  },
+  {
+    "label": "adhesive seal",
+    "source": "ultrawide_camera_lens_cover",
+    "target": "rear_glass_panel"
+  },
+  {
+    "label": "adhesive seal",
+    "source": "telephoto_camera_lens_cover",
+    "target": "rear_glass_panel"
+  },
+  {
+    "label": "integrated/adhesive",
+    "source": "front_camera_lens_cover",
+    "target": "display_glass"
+  },
+  {
+    "label": "thermal paste and M1.2 screws",
+    "source": "vapor_chamber",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "thermal adhesive",
+    "source": "graphite_sheet_top",
+    "target": "vapor_chamber"
+  },
+  {
+    "label": "thermal adhesive",
+    "source": "graphite_sheet_bottom",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "threaded holes",
+    "source": "pcb_mounting_screws",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "vibration_motor_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "adhesive seal",
+    "source": "camera_module_gasket_main",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "adhesive seal",
+    "source": "camera_module_gasket_ultrawide",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "adhesive seal",
+    "source": "camera_module_gasket_telephoto",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "adhesive layer",
+    "source": "display_adhesive_seal",
+    "target": "unibody_chassis"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "main_soc_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "integrated_ram_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "internal_storage_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "wireless_module_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "gnss_module_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "audio_codec_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "accelerometer_gyro_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "magnetometer_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "ambient_light_proximity_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "fingerprint_sensor_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "M1.2 screws",
+    "source": "usb_c_controller_mount",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "adhesive backing",
+    "source": "battery_adhesive_strip",
+    "target": "internal_midframe"
+  },
+  {
+    "label": "mount",
+    "source": "main_camera_lens_cover",
+    "target": "main_camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "ultrawide_camera_lens_cover",
+    "target": "ultrawide_camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "telephoto_camera_lens_cover",
+    "target": "telephoto_camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "front_camera_lens_cover",
+    "target": "front_camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "battery_adhesive_strip",
+    "target": "li_po_battery"
+  },
+  {
+    "label": "mount",
+    "source": "vibration_motor_mount",
+    "target": "linear_haptic_motor"
+  },
+  {
+    "label": "mount",
+    "source": "camera_module_gasket_main",
+    "target": "main_camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "camera_module_gasket_ultrawide",
+    "target": "ultrawide_camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "camera_module_gasket_telephoto",
+    "target": "telephoto_camera_module"
+  },
+  {
+    "label": "mount",
+    "source": "display_adhesive_seal",
+    "target": "amoled_display"
+  },
+  {
+    "label": "mount",
+    "source": "main_soc_mount",
+    "target": "main_soc"
+  },
+  {
+    "label": "mount",
+    "source": "integrated_ram_mount",
+    "target": "integrated_ram"
+  },
+  {
+    "label": "mount",
+    "source": "internal_storage_mount",
+    "target": "internal_storage"
+  },
+  {
+    "label": "mount",
+    "source": "wireless_module_mount",
+    "target": "wireless_module"
+  },
+  {
+    "label": "mount",
+    "source": "gnss_module_mount",
+    "target": "gnss_module"
+  },
+  {
+    "label": "mount",
+    "source": "audio_codec_mount",
+    "target": "audio_codec"
+  },
+  {
+    "label": "mount",
+    "source": "accelerometer_gyro_mount",
+    "target": "accelerometer_gyro"
+  },
+  {
+    "label": "mount",
+    "source": "magnetometer_mount",
+    "target": "magnetometer"
+  },
+  {
+    "label": "mount",
+    "source": "ambient_light_proximity_mount",
+    "target": "ambient_light_proximity"
+  },
+  {
+    "label": "mount",
+    "source": "fingerprint_sensor_mount",
+    "target": "fingerprint_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "usb_c_controller_mount",
+    "target": "usb_c_controller"
+  }
+]

@@ -1,0 +1,10 @@
+Name,Product Name,Description,Category,Type,Quantity,Estimated Cost,Total Cost,URL
+"2.4GHz High Gain Antenna","2.4GHz 6dBi Omnidirectional Antenna","SMA-connected antenna for 2.4GHz signal propagation.","electrical","actuator",1,8.00,8.00,"https://www.digikey.com/en/products/result?keywords=2.4GHz+Omni+Antenna"
+"5GHz High Gain Antenna","5.8GHz 8dBi Omnidirectional Antenna","SMA-connected antenna for 5GHz signal propagation.","electrical","actuator",1,9.50,9.50,"https://www.digikey.com/en/products/result?keywords=5.8GHz+Omni+Antenna"
+"Main Power Source","2000mAh 3.7V LiPo Battery","Lithium Polymer battery providing portable power to the system.","electrical","power",1,12.00,12.00,"https://www.adafruit.com/product/1069"
+"LiPo Battery Cradle","3D Printed Battery Bracket","Protective cradle for the 2000mAh battery pack.","mechanical","3d_printed",1,0.80,0.80,"https://www.amazon.com/s?k=PLA+filament"
+"Chassis Screws","M3x10mm Button Head Hex Screw","M3 screws for securing the chassis lid and thermal plate.","mechanical","misc",12,0.10,1.20,"https://www.amazon.com/s?k=M3x10mm+button+head+screws"
+"Integrated 2.4G/5.8G RF Jammer Module","High Power 1W Dual Band RF Sweep Module","Single PCB containing VCOs and PAs for both bands with internal sweep generator.","electrical","module",1,18.50,18.50,"https://www.aliexpress.com/wholesale?SearchText=dual+band+rf+jammer+module"
+"All-in-One Power Module","TP5400 LiPo Charger and 5V 2A Boost Converter Board","Single chip solution for battery charging and 5V power output.","electrical","power",1,1.50,1.50,"https://www.amazon.com/s?k=TP5400+charger+boost"
+"ATTiny85 Controller","Digispark ATTiny85 Development Board","Low-cost logic to enable/disable and modulate the RF module.","electrical","mcu",1,2.50,2.50,"https://www.amazon.com/s?k=attiny85+digispark"
+"Budget Unibody Case","3D Printed PLA Enclosure","Single piece printed box with snap-on lid and internal PCB slots.","mechanical","3d_printed",1,2.00,2.00,"https://www.thingiverse.com/search?q=small+project+box"

@@ -1,0 +1,134 @@
+[
+  {
+    "type": "power",
+    "label": "Main 5V Power",
+    "source": "power_supply",
+    "target": "power_distribution_board",
+    "current": "3A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Main Ground",
+    "source": "power_supply",
+    "target": "power_distribution_board",
+    "current": "3A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "MCU Power",
+    "source": "power_distribution_board",
+    "target": "main_controller",
+    "current": "200mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "MCU Ground",
+    "source": "power_distribution_board",
+    "target": "main_controller",
+    "current": "200mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "Base Servo Power",
+    "source": "power_distribution_board",
+    "target": "base_servo",
+    "current": "1A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Base Servo Ground",
+    "source": "power_distribution_board",
+    "target": "base_servo",
+    "current": "1A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "Shoulder Servo Power",
+    "source": "power_distribution_board",
+    "target": "shoulder_servo",
+    "current": "1A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Shoulder Servo Ground",
+    "source": "power_distribution_board",
+    "target": "shoulder_servo",
+    "current": "1A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "Elbow Servo Power",
+    "source": "power_distribution_board",
+    "target": "elbow_servo",
+    "current": "1A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Elbow Servo Ground",
+    "source": "power_distribution_board",
+    "target": "elbow_servo",
+    "current": "1A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "Gripper Servo Power",
+    "source": "power_distribution_board",
+    "target": "gripper_servo",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Gripper Servo Ground",
+    "source": "power_distribution_board",
+    "target": "gripper_servo",
+    "current": "500mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Base Servo PWM",
+    "source": "main_controller",
+    "target": "base_servo",
+    "protocol": "pwm",
+    "sourcePin": "PWM1",
+    "targetPin": "PWM Signal"
+  },
+  {
+    "type": "data",
+    "label": "Shoulder Servo PWM",
+    "source": "main_controller",
+    "target": "shoulder_servo",
+    "protocol": "pwm",
+    "sourcePin": "PWM2",
+    "targetPin": "PWM Signal"
+  },
+  {
+    "type": "data",
+    "label": "Elbow Servo PWM",
+    "source": "main_controller",
+    "target": "elbow_servo",
+    "protocol": "pwm",
+    "sourcePin": "PWM3",
+    "targetPin": "PWM Signal"
+  },
+  {
+    "type": "data",
+    "label": "Gripper Servo PWM",
+    "source": "main_controller",
+    "target": "gripper_servo",
+    "protocol": "pwm",
+    "sourcePin": "PWM4",
+    "targetPin": "PWM Signal"
+  }
+]

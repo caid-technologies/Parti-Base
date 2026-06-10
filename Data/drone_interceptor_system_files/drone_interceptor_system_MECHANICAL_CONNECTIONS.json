@@ -1,0 +1,152 @@
+[
+  {
+    "label": "attached to front",
+    "source": "missile_body_front",
+    "target": "missile_nose_cone"
+  },
+  {
+    "label": "attached to rear",
+    "source": "missile_body_front",
+    "target": "missile_body_middle"
+  },
+  {
+    "label": "attached to rear",
+    "source": "missile_body_middle",
+    "target": "missile_body_rear"
+  },
+  {
+    "label": "mounted to body",
+    "source": "missile_body_rear",
+    "target": "missile_fin_1_struct"
+  },
+  {
+    "label": "mounted to body",
+    "source": "missile_body_rear",
+    "target": "missile_fin_2_struct"
+  },
+  {
+    "label": "mounted to body",
+    "source": "missile_body_rear",
+    "target": "missile_fin_3_struct"
+  },
+  {
+    "label": "mounted to body",
+    "source": "missile_body_rear",
+    "target": "missile_fin_4_struct"
+  },
+  {
+    "label": "mounted inside",
+    "source": "missile_body_rear",
+    "target": "fin_servo_mounts"
+  },
+  {
+    "label": "mounts servo 1",
+    "source": "fin_servo_mounts",
+    "target": "missile_fin_servo_1"
+  },
+  {
+    "label": "mounts servo 2",
+    "source": "fin_servo_mounts",
+    "target": "missile_fin_servo_2"
+  },
+  {
+    "label": "mounts servo 3",
+    "source": "fin_servo_mounts",
+    "target": "missile_fin_servo_3"
+  },
+  {
+    "label": "mounts servo 4",
+    "source": "fin_servo_mounts",
+    "target": "missile_fin_servo_4"
+  },
+  {
+    "label": "mounted inside",
+    "source": "missile_body_front",
+    "target": "electronics_tray_front"
+  },
+  {
+    "label": "mounted via m2_missile_screws",
+    "source": "electronics_tray_front",
+    "target": "missile_gps_module"
+  },
+  {
+    "label": "mounted via m2_missile_screws",
+    "source": "electronics_tray_front",
+    "target": "missile_comm_module"
+  },
+  {
+    "label": "secured to tray",
+    "source": "electronics_tray_front",
+    "target": "missile_main_lipo"
+  },
+  {
+    "label": "attached to exterior",
+    "source": "missile_body_middle",
+    "target": "missile_rail_guides"
+  },
+  {
+    "label": "mounted via screws",
+    "source": "launch_base_plate",
+    "target": "rail_mount_bracket"
+  },
+  {
+    "label": "secures rail",
+    "source": "rail_mount_bracket",
+    "target": "launch_rail"
+  },
+  {
+    "label": "mounted inside via m2_radar_standoffs",
+    "source": "radar_enclosure",
+    "target": "radar_mcu"
+  },
+  {
+    "label": "mounted inside via m2_radar_standoffs",
+    "source": "radar_enclosure",
+    "target": "radar_mmwave_module"
+  },
+  {
+    "label": "mounted inside via m2_radar_standoffs",
+    "source": "radar_enclosure",
+    "target": "radar_comm_module"
+  },
+  {
+    "label": "secured inside",
+    "source": "radar_enclosure",
+    "target": "radar_lipo_battery"
+  },
+  {
+    "label": "mounted inside via adhesive",
+    "source": "radar_enclosure",
+    "target": "radar_power_regulator_3v3"
+  },
+  {
+    "label": "secures lid",
+    "source": "radar_enclosure",
+    "target": "m2_enclosure_screws"
+  },
+  {
+    "label": "attached to exterior",
+    "source": "radar_enclosure",
+    "target": "radar_mounting_bracket"
+  },
+  {
+    "label": "mounted through enclosure",
+    "source": "radar_enclosure",
+    "target": "radar_whip_antenna"
+  },
+  {
+    "label": "mounted via m3_missile_standoffs",
+    "source": "electronics_tray_front",
+    "target": "missile_mcu_esp32"
+  },
+  {
+    "label": "mounted inside",
+    "source": "missile_body_rear",
+    "target": "rocket_motor_mount"
+  },
+  {
+    "label": "secures rocket motor",
+    "source": "rocket_motor_mount",
+    "target": "solid_rocket_motor"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "label": "M3 bolts",
+    "source": "base_servo_mount",
+    "target": "base_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "main_controller_mount",
+    "target": "base_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "power_supply_mount",
+    "target": "base_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "power_distribution_board_mount",
+    "target": "base_plate"
+  },
+  {
+    "label": "rotates on servo output shaft, supported by ball_bearing_608",
+    "source": "arm_segment_1",
+    "target": "base_servo_mount"
+  },
+  {
+    "label": "press fit",
+    "source": "ball_bearing_608",
+    "target": "base_servo_mount"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "shoulder_servo_mount",
+    "target": "arm_segment_1"
+  },
+  {
+    "label": "rotates on servo output shaft, supported by ball_bearing_608",
+    "source": "arm_segment_2",
+    "target": "shoulder_servo_mount"
+  },
+  {
+    "label": "press fit",
+    "source": "ball_bearing_608",
+    "target": "shoulder_servo_mount"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "elbow_servo_mount",
+    "target": "arm_segment_2"
+  },
+  {
+    "label": "rotates on servo output shaft, supported by ball_bearing_608",
+    "source": "wrist_plate",
+    "target": "elbow_servo_mount"
+  },
+  {
+    "label": "press fit",
+    "source": "ball_bearing_608",
+    "target": "elbow_servo_mount"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "gripper_servo_mount",
+    "target": "wrist_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "gripper_body",
+    "target": "gripper_servo_mount"
+  },
+  {
+    "label": "pivots on pins/shafts driven by gripper_servo",
+    "source": "gripper_finger_left",
+    "target": "gripper_body"
+  },
+  {
+    "label": "pivots on pins/shafts driven by gripper_servo",
+    "source": "gripper_finger_right",
+    "target": "gripper_body"
+  },
+  {
+    "label": "threaded connection",
+    "source": "m3_screw_12mm",
+    "target": "m3_nut"
+  },
+  {
+    "label": "mount",
+    "source": "base_servo_mount",
+    "target": "base_servo"
+  },
+  {
+    "label": "mount",
+    "source": "shoulder_servo_mount",
+    "target": "shoulder_servo"
+  },
+  {
+    "label": "mount",
+    "source": "elbow_servo_mount",
+    "target": "elbow_servo"
+  },
+  {
+    "label": "mount",
+    "source": "gripper_servo_mount",
+    "target": "gripper_servo"
+  },
+  {
+    "label": "mount",
+    "source": "main_controller_mount",
+    "target": "main_controller"
+  },
+  {
+    "label": "mount",
+    "source": "power_supply_mount",
+    "target": "power_supply"
+  },
+  {
+    "label": "mount",
+    "source": "power_distribution_board_mount",
+    "target": "power_distribution_board"
+  }
+]

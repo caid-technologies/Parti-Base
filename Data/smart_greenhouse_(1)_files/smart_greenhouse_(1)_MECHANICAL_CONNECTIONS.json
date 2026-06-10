@@ -1,0 +1,102 @@
+[
+  {
+    "label": "Mounted to frame",
+    "source": "greenhouse_frame",
+    "target": "electronics_enclosure"
+  },
+  {
+    "label": "Positioned in soil near plants",
+    "source": "greenhouse_frame",
+    "target": "soil_sensor_mount"
+  },
+  {
+    "label": "Mounted inside greenhouse",
+    "source": "greenhouse_frame",
+    "target": "dht22_sensor_mount"
+  },
+  {
+    "label": "Mounted near water source",
+    "source": "greenhouse_frame",
+    "target": "pump_bracket"
+  },
+  {
+    "label": "Mounted to frame opening",
+    "source": "greenhouse_frame",
+    "target": "fan_mount"
+  },
+  {
+    "label": "Secured with M3 screws",
+    "source": "electronics_enclosure",
+    "target": "esp32_mcu"
+  },
+  {
+    "label": "Secured with M3 screws",
+    "source": "electronics_enclosure",
+    "target": "pump_relay"
+  },
+  {
+    "label": "Secured with M3 screws",
+    "source": "electronics_enclosure",
+    "target": "fan_relay"
+  },
+  {
+    "label": "Secured with M3 screws",
+    "source": "electronics_enclosure",
+    "target": "buck_converter"
+  },
+  {
+    "label": "Sensor inserted into mount",
+    "source": "soil_sensor_mount",
+    "target": "soil_moisture_sensor"
+  },
+  {
+    "label": "Sensor inserted into mount",
+    "source": "dht22_sensor_mount",
+    "target": "dht22_sensor"
+  },
+  {
+    "label": "Pump secured in bracket",
+    "source": "pump_bracket",
+    "target": "water_pump"
+  },
+  {
+    "label": "Fan mounted to bracket",
+    "source": "fan_mount",
+    "target": "cooling_fan"
+  },
+  {
+    "label": "Hose attached to pump inlet/outlet",
+    "source": "water_pump",
+    "target": "water_hose"
+  },
+  {
+    "label": "Mounted to exterior frame",
+    "source": "greenhouse_frame",
+    "target": "solar_panel_mount"
+  },
+  {
+    "label": "Secured to mount",
+    "source": "solar_panel_mount",
+    "target": "solar_panel"
+  },
+  {
+    "label": "Mounted inside enclosure",
+    "source": "electronics_enclosure",
+    "target": "charge_controller_mount"
+  },
+  {
+    "label": "Secured to mount",
+    "source": "charge_controller_mount",
+    "target": "solar_charge_controller"
+  },
+  {
+    "label": "Mounted to interior base",
+    "source": "greenhouse_frame",
+    "target": "battery_holder"
+  },
+  {
+    "label": "Secured in holder",
+    "source": "battery_holder",
+    "target": "battery_12v"
+  }
+]

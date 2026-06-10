@@ -1,0 +1,228 @@
+[
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "power_distribution_board",
+    "current": "60A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "esc_front_left",
+    "current": "15A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "esc_front_right",
+    "current": "15A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "esc_rear_left",
+    "current": "15A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "esc_rear_right",
+    "current": "15A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "data",
+    "source": "esc_front_left",
+    "target": "motor_front_left",
+    "protocol": "gpio",
+    "sourcePin": "Motor Phases (3)",
+    "targetPin": "Phase A, Phase B, Phase C"
+  },
+  {
+    "type": "data",
+    "source": "esc_front_right",
+    "target": "motor_front_right",
+    "protocol": "gpio",
+    "sourcePin": "Motor Phases (3)",
+    "targetPin": "Phase A, Phase B, Phase C"
+  },
+  {
+    "type": "data",
+    "source": "esc_rear_left",
+    "target": "motor_rear_left",
+    "protocol": "gpio",
+    "sourcePin": "Motor Phases (3)",
+    "targetPin": "Phase A, Phase B, Phase C"
+  },
+  {
+    "type": "data",
+    "source": "esc_rear_right",
+    "target": "motor_rear_right",
+    "protocol": "gpio",
+    "sourcePin": "Motor Phases (3)",
+    "targetPin": "Phase A, Phase B, Phase C"
+  },
+  {
+    "type": "data",
+    "label": "Motor 1 Signal",
+    "source": "flight_controller",
+    "target": "esc_front_left",
+    "protocol": "pwm",
+    "sourcePin": "PWM/DShot Out",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "Motor 2 Signal",
+    "source": "flight_controller",
+    "target": "esc_front_right",
+    "protocol": "pwm",
+    "sourcePin": "PWM/DShot Out",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "Motor 3 Signal",
+    "source": "flight_controller",
+    "target": "esc_rear_left",
+    "protocol": "pwm",
+    "sourcePin": "PWM/DShot Out",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "Motor 4 Signal",
+    "source": "flight_controller",
+    "target": "esc_rear_right",
+    "protocol": "pwm",
+    "sourcePin": "PWM/DShot Out",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "flight_controller",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "gps_module",
+    "current": "100mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "GPS RX",
+    "source": "flight_controller",
+    "target": "gps_module",
+    "protocol": "uart",
+    "sourcePin": "UART",
+    "targetPin": "UART RX"
+  },
+  {
+    "type": "data",
+    "label": "GPS TX",
+    "source": "gps_module",
+    "target": "flight_controller",
+    "protocol": "uart",
+    "sourcePin": "UART TX",
+    "targetPin": "UART"
+  },
+  {
+    "type": "data",
+    "label": "Compass SDA",
+    "source": "flight_controller",
+    "target": "gps_module",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C SDA"
+  },
+  {
+    "type": "data",
+    "label": "Compass SCL",
+    "source": "flight_controller",
+    "target": "gps_module",
+    "protocol": "i2c",
+    "sourcePin": "I2C",
+    "targetPin": "I2C SCL"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "telemetry_radio",
+    "current": "200mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Telemetry RX",
+    "source": "flight_controller",
+    "target": "telemetry_radio",
+    "protocol": "uart",
+    "sourcePin": "UART",
+    "targetPin": "UART RX"
+  },
+  {
+    "type": "data",
+    "label": "Telemetry TX",
+    "source": "telemetry_radio",
+    "target": "flight_controller",
+    "protocol": "uart",
+    "sourcePin": "UART TX",
+    "targetPin": "UART"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "rc_receiver",
+    "current": "100mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "RC Input SBUS",
+    "source": "rc_receiver",
+    "target": "flight_controller",
+    "protocol": "uart",
+    "sourcePin": "SBUS",
+    "targetPin": "UART"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "optional_camera_module",
+    "current": "150mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "video_transmitter",
+    "current": "600mA",
+    "voltage": "12V"
+  },
+  {
+    "type": "data",
+    "label": "FPV Video",
+    "source": "optional_camera_module",
+    "target": "video_transmitter",
+    "protocol": "analog",
+    "sourcePin": "Video Out",
+    "targetPin": "Video In"
+  },
+  {
+    "type": "data",
+    "label": "VTX Control",
+    "source": "flight_controller",
+    "target": "video_transmitter",
+    "protocol": "uart",
+    "sourcePin": "UART",
+    "targetPin": "SmartAudio/IRC Tramp"
+  }
+]

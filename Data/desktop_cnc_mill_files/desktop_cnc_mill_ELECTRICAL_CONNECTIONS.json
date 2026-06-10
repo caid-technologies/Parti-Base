@@ -1,0 +1,202 @@
+[
+  {
+    "type": "power",
+    "source": "main_power_supply",
+    "target": "buck_converter_5v",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "main_power_supply",
+    "target": "x_stepper_driver",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "main_power_supply",
+    "target": "y_stepper_driver",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "main_power_supply",
+    "target": "z_stepper_driver",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "main_power_supply",
+    "target": "spindle_motor_driver",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "esp32_mcu",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "x_stepper_driver",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "y_stepper_driver",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "z_stepper_driver",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "x_end_stop",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "y_end_stop",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter_5v",
+    "target": "z_end_stop",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "x_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D14",
+    "targetPin": "STEP"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "x_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D12",
+    "targetPin": "DIR"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "x_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D13",
+    "targetPin": "EN"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "y_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D27",
+    "targetPin": "STEP"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "y_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D26",
+    "targetPin": "DIR"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "y_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D25",
+    "targetPin": "EN"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "z_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D33",
+    "targetPin": "STEP"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "z_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D32",
+    "targetPin": "DIR"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "z_stepper_driver",
+    "protocol": "GPIO",
+    "sourcePin": "D16",
+    "targetPin": "EN"
+  },
+  {
+    "type": "power",
+    "source": "x_stepper_driver",
+    "target": "x_stepper_motor",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "y_stepper_driver",
+    "target": "y_stepper_motor",
+    "voltage": "24V"
+  },
+  {
+    "type": "power",
+    "source": "z_stepper_driver",
+    "target": "z_stepper_motor",
+    "voltage": "24V"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "spindle_motor_driver",
+    "protocol": "PWM",
+    "sourcePin": "D4",
+    "targetPin": "PWM_in"
+  },
+  {
+    "type": "power",
+    "source": "spindle_motor_driver",
+    "target": "spindle_motor",
+    "voltage": "24V"
+  },
+  {
+    "type": "data",
+    "source": "x_end_stop",
+    "target": "esp32_mcu",
+    "protocol": "GPIO",
+    "sourcePin": "SIGNAL",
+    "targetPin": "D19"
+  },
+  {
+    "type": "data",
+    "source": "y_end_stop",
+    "target": "esp32_mcu",
+    "protocol": "GPIO",
+    "sourcePin": "SIGNAL",
+    "targetPin": "D18"
+  },
+  {
+    "type": "data",
+    "source": "z_end_stop",
+    "target": "esp32_mcu",
+    "protocol": "GPIO",
+    "sourcePin": "SIGNAL",
+    "targetPin": "D5"
+  }
+]

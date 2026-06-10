@@ -1,0 +1,234 @@
+[
+  {
+    "type": "power",
+    "label": "Battery to Power Management (Input)",
+    "source": "main_battery",
+    "target": "power_management",
+    "current": "1A",
+    "voltage": "3.7V",
+    "sourcePin": "VCC",
+    "targetPin": "BAT+"
+  },
+  {
+    "type": "power",
+    "label": "Battery to Power Management (Ground)",
+    "source": "main_battery",
+    "target": "power_management",
+    "current": "1A",
+    "voltage": "3.7V",
+    "sourcePin": "GND",
+    "targetPin": "BAT-"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Main Controller (VCC)",
+    "source": "power_management",
+    "target": "main_controller",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "OUT+",
+    "targetPin": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Main Controller (GND)",
+    "source": "power_management",
+    "target": "main_controller",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "OUT-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Base Servo (VCC)",
+    "source": "power_management",
+    "target": "base_servo",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "OUT+",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Base Servo (GND)",
+    "source": "power_management",
+    "target": "base_servo",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "OUT-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Shoulder Servo (VCC)",
+    "source": "power_management",
+    "target": "shoulder_servo",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "OUT+",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Shoulder Servo (GND)",
+    "source": "power_management",
+    "target": "shoulder_servo",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "OUT-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Elbow Servo (VCC)",
+    "source": "power_management",
+    "target": "elbow_servo",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "OUT+",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Elbow Servo (GND)",
+    "source": "power_management",
+    "target": "elbow_servo",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "OUT-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Wrist Rotate Servo (VCC)",
+    "source": "power_management",
+    "target": "wrist_rotate_servo",
+    "current": "300mA",
+    "voltage": "5V",
+    "sourcePin": "OUT+",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Wrist Rotate Servo (GND)",
+    "source": "power_management",
+    "target": "wrist_rotate_servo",
+    "current": "300mA",
+    "voltage": "5V",
+    "sourcePin": "OUT-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Gripper Servo (VCC)",
+    "source": "power_management",
+    "target": "gripper_servo",
+    "current": "300mA",
+    "voltage": "5V",
+    "sourcePin": "OUT+",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Gripper Servo (GND)",
+    "source": "power_management",
+    "target": "gripper_servo",
+    "current": "300mA",
+    "voltage": "5V",
+    "sourcePin": "OUT-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Joystick (VCC)",
+    "source": "power_management",
+    "target": "control_joystick",
+    "current": "50mA",
+    "voltage": "5V",
+    "sourcePin": "OUT+",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "label": "Power Management to Joystick (GND)",
+    "source": "power_management",
+    "target": "control_joystick",
+    "current": "50mA",
+    "voltage": "5V",
+    "sourcePin": "OUT-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "data",
+    "label": "Base Servo PWM Signal",
+    "source": "main_controller",
+    "target": "base_servo",
+    "protocol": "PWM",
+    "sourcePin": "PWM",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "label": "Shoulder Servo PWM Signal",
+    "source": "main_controller",
+    "target": "shoulder_servo",
+    "protocol": "PWM",
+    "sourcePin": "PWM",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "label": "Elbow Servo PWM Signal",
+    "source": "main_controller",
+    "target": "elbow_servo",
+    "protocol": "PWM",
+    "sourcePin": "PWM",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "label": "Wrist Rotate Servo PWM Signal",
+    "source": "main_controller",
+    "target": "wrist_rotate_servo",
+    "protocol": "PWM",
+    "sourcePin": "PWM",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "label": "Gripper Servo PWM Signal",
+    "source": "main_controller",
+    "target": "gripper_servo",
+    "protocol": "PWM",
+    "sourcePin": "PWM",
+    "targetPin": "PWM"
+  },
+  {
+    "type": "data",
+    "label": "Joystick X-axis Analog Read",
+    "source": "main_controller",
+    "target": "control_joystick",
+    "protocol": "Analog",
+    "sourcePin": "ADC",
+    "targetPin": "VRx"
+  },
+  {
+    "type": "data",
+    "label": "Joystick Y-axis Analog Read",
+    "source": "main_controller",
+    "target": "control_joystick",
+    "protocol": "Analog",
+    "sourcePin": "ADC",
+    "targetPin": "VRy"
+  },
+  {
+    "type": "data",
+    "label": "Joystick Button Digital Read",
+    "source": "main_controller",
+    "target": "control_joystick",
+    "protocol": "GPIO",
+    "sourcePin": "GPIO",
+    "targetPin": "SW"
+  }
+]

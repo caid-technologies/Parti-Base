@@ -1,0 +1,10 @@
+[
+  {
+    "type": "power",
+    "source": "engine_kill_switch",
+    "target": "go_kart_engine",
+    "voltage": "12V",
+    "sourcePin": "Ignition Kill Wire",
+    "targetPin": "Kill Switch Terminal"
+  }
+]

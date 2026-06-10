@@ -1,0 +1,889 @@
+{
+  "plan": "ESP32-S3 microcontroller for Wi-Fi, display control, and remote input. 10cm x 4cm LED matrix display (e.g., WS2812B based) with high pixel density. IR receiver module and small IR remote control. Custom 3D-printed enclosure with diffusers for display sections. Power supply: USB-C 5V input with step-down regulators. Temperature/humidity sensor (e.g., BME280) for outdoor readings.",
+  "nodes": [
+    {
+      "id": "esp32_s3_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "3V3",
+        "5V",
+        "GND",
+        "GPIO2",
+        "GPIO3",
+        "GPIO4",
+        "GPIO5",
+        "GPIO6",
+        "GPIO7",
+        "GPIO8",
+        "GPIO9",
+        "GPIO10",
+        "GPIO11",
+        "GPIO12",
+        "GPIO13",
+        "GPIO14",
+        "GPIO15",
+        "GPIO16",
+        "GPIO17",
+        "GPIO18",
+        "GPIO19",
+        "GPIO20",
+        "GPIO21",
+        "GPIO33",
+        "GPIO34",
+        "GPIO35",
+        "GPIO36",
+        "GPIO37",
+        "GPIO38",
+        "GPIO39",
+        "GPIO40",
+        "GPIO41",
+        "GPIO42",
+        "GPIO43",
+        "GPIO44",
+        "GPIO45",
+        "GPIO46"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/jkuoWUoTGGLi9wNxYduZ96sBnK1P591CZcEgpLlO4VE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxeExKSnFWMlFM/LmpwZw",
+      "quantity": 1,
+      "dimensions": "25x18x3mm",
+      "position3d": {
+        "x": -35,
+        "y": 15.5,
+        "z": 8
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 25,
+        "height": 18
+      },
+      "description": "ESP32-S3 WROOM-1 module for Wi-Fi, Bluetooth, display control, and processing.",
+      "productName": "ESP32-S3 WROOM-1",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=ESP32-S3+WROOM-1+module",
+      "estimatedCost": 5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-S3+WROOM-1&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "led_matrix_display",
+      "name": "Main Time Display",
+      "pins": [
+        "VCC",
+        "GND",
+        "DIN"
+      ],
+      "type": "display",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/b0eDLQaZhBZU9xEtzXp-kDedJ5qHoRLL0wELRI6W8jA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGlueXRyb25pY3Mu/bmwvaW1hZ2UvY2Fj/aGUvZGF0YS9wcm9k/dWN0LTIxMzAvV1My/ODEyQkZMRVgtMzJY/OF8zLTYwMHg2MDAu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [],
+        "summary": "",
+        "examples": [
+          {
+            "url": "https://learn.adafruit.com/adafruit-neopixel-matrices/neomatrix",
+            "title": "Adafruit NeoMatrix Library for NeoPixel Matrices",
+            "description": "This tutorial introduces the Adafruit NeoMatrix library, essential for handling WS2812B LED matrices. It covers basic setup, drawing text, shapes, and animations on various matrix configurations, providing foundational knowledge for graphics rendering."
+          },
+          {
+            "url": "https://randomnerdtutorials.com/esp32-ws2812b-led-matrix-clock-web-interface/",
+            "title": "ESP32 WS2812B LED Matrix Clock with Web Interface",
+            "description": "A comprehensive project demonstrating how to build a digital clock using an ESP32 and a WS2812B LED matrix. It includes displaying time, date, temperature, and humidity, with a web interface for configuration and settings, showcasing a complete display application."
+          },
+          {
+            "url": "https://www.instructables.com/DIY-Mini-LED-Matrix-Message-Board/",
+            "title": "DIY Mini LED Matrix Message Board",
+            "description": "This project guides you through creating a mini message board using an Arduino Nano and a WS2812B matrix. It focuses on displaying custom text messages, scrolling text, and basic animations, providing a practical example for text rendering and simple graphics."
+          },
+          {
+            "url": "https://www.instructables.com/WS2812B-Pixel-Art-Display-with-ESP32/",
+            "title": "WS2812B Pixel Art Display with ESP32",
+            "description": "Learn how to create a pixel art display using an ESP32 and WS2812B matrix. This tutorial demonstrates rendering custom images and animations (pixel art) on the matrix, allowing for graphical content beyond simple text and shapes."
+          },
+          {
+            "url": "https://www.hackster.io/Pjoter/esp32-cam-and-neopixel-matrix-for-simple-dashboard-display-a42e5a",
+            "title": "ESP32-CAM and NeoPixel Matrix for Simple Dashboard/Display",
+            "description": "A project showing how to integrate an ESP32-CAM with a NeoPixel (WS2812B) matrix to create a simple dashboard. It focuses on displaying information and could be adapted for menus or showing various data points, demonstrating basic dashboard capabilities."
+          },
+          {
+            "url": "https://learn.adafruit.com/adafruit-neopixel-matrices/neomatrix",
+            "title": "Adafruit NeoMatrix Library for NeoPixel Matrices",
+            "description": "This tutorial introduces the Adafruit NeoMatrix library, essential for handling WS2812B LED matrices. It covers basic setup, drawing text, shapes, and animations on various matrix configurations, providing foundational knowledge for graphics rendering."
+          },
+          {
+            "url": "https://randomnerdtutorials.com/esp32-ws2812b-led-matrix-clock-web-interface/",
+            "title": "ESP32 WS2812B LED Matrix Clock with Web Interface",
+            "description": "A comprehensive project demonstrating how to build a digital clock using an ESP32 and a WS2812B LED matrix. It includes displaying time, date, temperature, and humidity, with a web interface for configuration and settings, showcasing a complete display application."
+          },
+          {
+            "url": "https://www.instructables.com/DIY-Mini-LED-Matrix-Message-Board/",
+            "title": "DIY Mini LED Matrix Message Board",
+            "description": "This project guides you through creating a mini message board using an Arduino Nano and a WS2812B matrix. It focuses on displaying custom text messages, scrolling text, and basic animations, providing a practical example for text rendering and simple graphics."
+          },
+          {
+            "url": "https://www.instructables.com/WS2812B-Pixel-Art-Display-with-ESP32/",
+            "title": "WS2812B Pixel Art Display with ESP32",
+            "description": "Learn how to create a pixel art display using an ESP32 and WS2812B matrix. This tutorial demonstrates rendering custom images and animations (pixel art) on the matrix, allowing for graphical content beyond simple text and shapes."
+          },
+          {
+            "url": "https://www.hackster.io/Pjoter/esp32-cam-and-neopixel-matrix-for-simple-dashboard-display-a42e5a",
+            "title": "ESP32-CAM and NeoPixel Matrix for Simple Dashboard/Display",
+            "description": "A project showing how to integrate an ESP32-CAM with a NeoPixel (WS2812B) matrix to create a simple dashboard. It focuses on displaying information and could be adapted for menus or showing various data points, demonstrating basic dashboard capabilities."
+          }
+        ],
+        "sourcing": [],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library?query=WS2812B%20LED%20Matrix",
+            "label": "GrabCAD",
+            "description": "Search for various CAD formats like STEP, IGES, SolidWorks, and Fusion 360 models."
+          },
+          {
+            "url": "https://www.snapeda.com/search/?q=WS2812B%20LED%20Matrix",
+            "label": "SnapEDA",
+            "description": "Search for PCB footprints, schematic symbols, and 3D models in STEP format."
+          },
+          {
+            "url": "https://www.ultralibrarian.com/search?q=WS2812B%20LED%20Matrix",
+            "label": "Ultra Librarian",
+            "description": "Search for CAD models compatible with various EDA tools, including footprints, symbols, and 3D models."
+          },
+          {
+            "url": "https://www.thingiverse.com/search?q=WS2812B%20LED%20Matrix",
+            "label": "Thingiverse",
+            "description": "Search for 3D printable STL files, often including enclosures or mounts."
+          }
+        ],
+        "datasheetUrl": "",
+        "documentationUrls": [
+          {
+            "url": "https://github.com/FastLED/FastLED",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "FastLED library GitHub repository"
+          },
+          {
+            "url": "https://github.com/adafruit/Adafruit_NeoPixel",
+            "type": "repo",
+            "title": "Adafruit",
+            "description": "Adafruit NeoPixel library repository"
+          },
+          {
+            "url": "https://github.com/adafruit/Adafruit-GFX-Library",
+            "type": "repo",
+            "title": "Adafruit",
+            "description": "Adafruit GFX graphics library"
+          },
+          {
+            "url": "https://github.com/olikraus/u8g2",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "U8g2 graphics library repository"
+          },
+          {
+            "url": "https://github.com/FastLED/FastLED",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "FastLED library GitHub repository"
+          },
+          {
+            "url": "https://github.com/adafruit/Adafruit_NeoPixel",
+            "type": "repo",
+            "title": "Adafruit",
+            "description": "Adafruit NeoPixel library repository"
+          },
+          {
+            "url": "https://github.com/adafruit/Adafruit-GFX-Library",
+            "type": "repo",
+            "title": "Adafruit",
+            "description": "Adafruit GFX graphics library"
+          },
+          {
+            "url": "https://github.com/olikraus/u8g2",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "U8g2 graphics library repository"
+          },
+          {
+            "url": "https://github.com/FastLED/FastLED",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "FastLED library GitHub repository"
+          },
+          {
+            "url": "https://github.com/adafruit/Adafruit_NeoPixel",
+            "type": "repo",
+            "title": "Adafruit",
+            "description": "Adafruit NeoPixel library repository"
+          },
+          {
+            "url": "https://github.com/adafruit/Adafruit-GFX-Library",
+            "type": "repo",
+            "title": "Adafruit",
+            "description": "Adafruit GFX graphics library"
+          },
+          {
+            "url": "https://github.com/olikraus/u8g2",
+            "type": "repo",
+            "title": "GitHub",
+            "description": "U8g2 graphics library repository"
+          }
+        ]
+      },
+      "dimensions": "100x40x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 20,
+        "z": 12.5
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 100,
+        "height": 40
+      },
+      "description": "High-density WS2812B based LED matrix for time, date, and temperature display.",
+      "productName": "WS2812B LED Matrix",
+      "purchaseUrl": "https://www.amazon.com/s?k=WS2812B+LED+matrix+10x4cm",
+      "estimatedCost": 25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=WS2812B+LED+Matrix&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "voltage_regulator_3v3",
+      "name": "3.3V Voltage Regulator",
+      "pins": [
+        "VIN",
+        "VOUT",
+        "GND"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/R-ITZJeLf4HYrXP44fA8GQRrLFksTLLVF2oK2q72taU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vbWFrZXJz/ZWxlY3Ryb25pY3Mu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIzLzA3LzQ2NzAy/LTEwMDB4MTAwMC5q/cGc_Zml0PTEwMDAs/MTAwMCZzc2w9MQ",
+      "quantity": 1,
+      "dimensions": "10x10x3mm",
+      "position3d": {
+        "x": -70,
+        "y": 15.5,
+        "z": 8
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 10,
+        "height": 10
+      },
+      "description": "Linear voltage regulator for 3.3V power supply to MCU and sensors.",
+      "productName": "AMS1117-3.3",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=AMS1117+3.3V+regulator",
+      "estimatedCost": 1,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=AMS1117-3.3&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "esp32_s3_mount",
+      "name": "ESP32-S3 Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "35x25x5mm",
+      "position3d": {
+        "x": -35,
+        "y": 15.5,
+        "z": 7.5
+      },
+      "boundingBox": {
+        "depth": 5,
+        "width": 35,
+        "height": 25
+      },
+      "description": "Small 3D printed standoffs integrated into the main enclosure or as a separate piece, designed to secure the ESP32-S3 board.",
+      "purchaseUrl": "N/A - Custom Part",
+      "estimatedCost": 0.3,
+      "printSettings": "0.2mm layer height, 15% infill"
+    },
+    {
+      "id": "m2_5_screw",
+      "name": "M2.5 x 8mm Phillips Screw",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 8,
+      "dimensions": "M2.5x8mm",
+      "description": "Small Phillips head screws for securing PCBs and mounting components within the enclosure.",
+      "productName": "M2.5x8mm Phillips Pan Head Machine Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2.5x8mm+screws",
+      "estimatedCost": 0.05,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2.5x8mm+Phillips+Pan+Head+Machine+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_5_nut",
+      "name": "M2.5 Hex Nut",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 4,
+      "dimensions": "M2.5",
+      "description": "Standard hex nuts to be used with M2.5 screws for secure fastening.",
+      "productName": "M2.5 Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2.5+hex+nuts",
+      "estimatedCost": 0.03,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2.5+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw",
+      "name": "M3 x 6mm Flat Head Screw",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 4,
+      "dimensions": "M3x6mm",
+      "description": "Flat head screws for flush mounting of the back cover panel to the main enclosure.",
+      "productName": "M3x6mm Flat Head Machine Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3x6mm+flat+head+screws",
+      "estimatedCost": 0.06,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Flat+Head+Machine+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "tp4056_charger",
+      "name": "LiPo Charging Module",
+      "pins": [
+        "IN+",
+        "IN-",
+        "B+",
+        "B-",
+        "OUT+",
+        "OUT-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/X2NpRoXNzcZJNPGcZ1SA2YIrZ_v07QnPR8VGKVwx6-I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbnZp/c3RpYW1hbGwuY29t/L2Nkbi9zaG9wL3By/b2R1Y3RzL3RwNDA1/Ni1kdzAxYS1lbmhh/bmNlZC11c2ItYy1s/aXBvLWJhdHRlcnkt/Y2hhcmdlci1tb2R1/bGUtNXYtMWEtMXMt/NTAxNzk2LmpwZz92/PTE2NTMyNjkyOTkm/d2lkdGg9MTk0Ng",
+      "quantity": 1,
+      "dimensions": "25x19x4mm",
+      "position3d": {
+        "x": 75,
+        "y": 16,
+        "z": 8
+      },
+      "boundingBox": {
+        "depth": 4,
+        "width": 25,
+        "height": 19
+      },
+      "description": "TP4056 module with USB-C for charging the LiPo battery and providing protected output power.",
+      "productName": "TP4056 USB-C 1A Lipo Battery Charging Board",
+      "purchaseUrl": "https://www.amazon.com/dp/B08M3VD25B",
+      "estimatedCost": 2.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TP4056+USB-C+1A+Lipo+Battery+Charging+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_enclosure_body_v3",
+      "name": "Main Enclosure Body (Large)",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "180x40x30mm",
+      "position3d": {
+        "x": 0,
+        "y": 20,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 180,
+        "height": 40
+      },
+      "description": "A larger main enclosure to accommodate the new battery and components.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 4.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "front_diffuser_panel_v3",
+      "name": "Front Diffuser Panel (Large)",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "Translucent PLA",
+      "quantity": 1,
+      "dimensions": "180x40x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 20,
+        "z": 16.5
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 180,
+        "height": 40
+      },
+      "description": "A larger front diffuser panel to match the new enclosure.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1.2,
+      "printSettings": "0.2mm layer height, 100% infill"
+    },
+    {
+      "id": "back_cover_panel_v3",
+      "name": "Back Cover Panel (Large)",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "180x40x2mm",
+      "position3d": {
+        "x": 0,
+        "y": 20,
+        "z": -16
+      },
+      "boundingBox": {
+        "depth": 2,
+        "width": 180,
+        "height": 40
+      },
+      "description": "A larger back cover panel for the new enclosure.",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "lipo_battery_2500mah",
+      "name": "Large LiPo Battery",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/BSRLoT3YJMDsbvkNChbNC3vKD9_Ns-OaCjiMCcmqLGM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9saXR0/bGViaXJkZWxlY3Ry/b25pY3MuY29tLmF1/L2Nkbi9zaG9wL3By/b2R1Y3RzL2ltYWdl/X2Q0N2I4YTRhLWVi/MDktNGZlZS1iNzU4/LTBmZWJkYzk3M2Zk/NV83MDB4NzAwLmpw/Zz92PTE2OTg3NDgz/OTY",
+      "quantity": 1,
+      "dimensions": "60x50x8mm",
+      "position3d": {
+        "x": 0,
+        "y": 14,
+        "z": -6
+      },
+      "boundingBox": {
+        "depth": 8,
+        "width": 60,
+        "height": 50
+      },
+      "description": "A larger 2500mAh LiPo battery for extended runtime.",
+      "productName": "Lithium Ion Polymer Battery - 3.7V 2500mAh",
+      "purchaseUrl": "https://www.adafruit.com/product/328",
+      "estimatedCost": 9.95,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Lithium+Ion+Polymer+Battery+-+3.7V+2500mAh&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ds3231_rtc",
+      "name": "Real-Time Clock Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "SDA",
+        "SCL"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OBlKkEbFE6bdu7q87XZ86kU7FoGYAwmNxrPlWrwQ_PY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFGdlhUTEhvd0wu/anBn",
+      "quantity": 1,
+      "dimensions": "38x22x14mm",
+      "position3d": {
+        "x": 40,
+        "y": 17,
+        "z": 8
+      },
+      "boundingBox": {
+        "depth": 14,
+        "width": 38,
+        "height": 22
+      },
+      "description": "A high-precision DS3231 real-time clock module to maintain time during power loss.",
+      "productName": "DS3231 AT24C32 IIC Precision RTC",
+      "purchaseUrl": "https://www.amazon.com/dp/B07R11VB1F",
+      "estimatedCost": 3.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DS3231+AT24C32+IIC+Precision+RTC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "piezo_speaker",
+      "name": "Alarm Speaker",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/UP7lR5MKpKAG0gcjUy_nfu7Z6B0VXlgvdiMMya_MICo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9waWV6/b2J1enplci5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MDIvTWluaS1waWV6/by1idXp6ZXItMzAw/eDMwMC5qcGc",
+      "quantity": 1,
+      "dimensions": "12mm diameter",
+      "position3d": {
+        "x": -75,
+        "y": 14.5,
+        "z": -8
+      },
+      "boundingBox": {
+        "depth": 5,
+        "width": 12,
+        "height": 12
+      },
+      "description": "A simple piezo speaker for generating alarm sounds.",
+      "productName": "Piezo Buzzer",
+      "purchaseUrl": "https://www.adafruit.com/product/160",
+      "estimatedCost": 1.25,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Piezo+Buzzer&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "medium size",
+    "digital clock",
+    "day, time, date, temperature",
+    "remote control",
+    "change color",
+    "4cm x 10cm"
+  ],
+  "projectName": "Digital Desk Clock",
+  "originalPrompt": "DIY a medium size digital clock: on the left short day eg mon sun. middle big font time on the right degrees outside and date. it is powered by a remote to change the color, time, where you are (to check the degrees outside), date etc. Size: 4cm x 10cm",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D Print ESP32-S3 Mount",
+          "partIds": [
+            "esp32_s3_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D Print Main Enclosure Body",
+          "partIds": [
+            "main_enclosure_body_v3"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "3D Print Front Diffuser Panel",
+          "partIds": [
+            "front_diffuser_panel_v3"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "3D Print Back Cover Panel",
+          "partIds": [
+            "back_cover_panel_v3"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Test Fit 3D Printed Enclosure Parts",
+          "partIds": [
+            "main_enclosure_body_v3",
+            "front_diffuser_panel_v3",
+            "back_cover_panel_v3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder LiPo Battery to Charging Module Input",
+          "partIds": [
+            "lipo_battery_2500mah",
+            "tp4056_charger"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect Charging Module Output to Voltage Regulator Input",
+          "partIds": [
+            "tp4056_charger",
+            "voltage_regulator_3v3"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect Charging Module Output to LED Matrix Display Power",
+          "partIds": [
+            "tp4056_charger",
+            "led_matrix_display"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect Voltage Regulator Output to ESP32-S3 and RTC Module Power",
+          "partIds": [
+            "voltage_regulator_3v3",
+            "esp32_s3_mcu",
+            "ds3231_rtc"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect ESP32-S3 GPIO4 to LED Matrix Display Data Input",
+          "partIds": [
+            "esp32_s3_mcu",
+            "led_matrix_display"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect ESP32-S3 to RTC Module via I2C (GPIO8, GPIO9)",
+          "partIds": [
+            "esp32_s3_mcu",
+            "ds3231_rtc"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Connect ESP32-S3 GPIO10 to Piezo Speaker",
+          "partIds": [
+            "esp32_s3_mcu",
+            "piezo_speaker"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Verify All Electrical Connections with Multimeter",
+          "partIds": [
+            "esp32_s3_mcu",
+            "led_matrix_display",
+            "voltage_regulator_3v3",
+            "tp4056_charger",
+            "lipo_battery_2500mah",
+            "ds3231_rtc",
+            "piezo_speaker"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Flash Initial Firmware to ESP32-S3 Microcontroller",
+          "partIds": [
+            "esp32_s3_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test LED Matrix Display Functionality",
+          "partIds": [
+            "esp32_s3_mcu",
+            "led_matrix_display"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test RTC Module Communication and Time Setting",
+          "partIds": [
+            "esp32_s3_mcu",
+            "ds3231_rtc"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test Piezo Speaker Alarm Function",
+          "partIds": [
+            "esp32_s3_mcu",
+            "piezo_speaker"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Verify LiPo Charging Functionality",
+          "partIds": [
+            "lipo_battery_2500mah",
+            "tp4056_charger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount ESP32-S3 Microcontroller to 3D Printed Mount",
+          "partIds": [
+            "esp32_s3_mcu",
+            "esp32_s3_mount",
+            "m2_5_screw",
+            "m2_5_nut"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Secure LiPo Battery within Main Enclosure Body",
+          "partIds": [
+            "lipo_battery_2500mah",
+            "main_enclosure_body_v3"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Carefully Route Wires and Place Components inside Main Enclosure Body",
+          "partIds": [
+            "esp32_s3_mcu",
+            "led_matrix_display",
+            "voltage_regulator_3v3",
+            "tp4056_charger",
+            "ds3231_rtc",
+            "piezo_speaker",
+            "main_enclosure_body_v3"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Slide Front Diffuser Panel into Main Enclosure Body",
+          "partIds": [
+            "main_enclosure_body_v3",
+            "front_diffuser_panel_v3"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Attach Back Cover Panel to Main Enclosure Body with Screws",
+          "partIds": [
+            "main_enclosure_body_v3",
+            "back_cover_panel_v3",
+            "m3_screw"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Perform Final System Functionality Test",
+          "partIds": [
+            "main_enclosure_body_v3",
+            "front_diffuser_panel_v3",
+            "back_cover_panel_v3",
+            "esp32_s3_mcu",
+            "led_matrix_display",
+            "ds3231_rtc"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "This medium-sized digital desk clock displays time, date, day, and temperature with remote control color adjustments. Key components include an ESP32-S3, a real-time clock module, and a LiPo charging module, all housed within a 4cm x 10cm enclosure. An alarm speaker provides auditory alerts.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PLA capable)",
+      "Soldering iron with fine tip",
+      "Solder",
+      "Wire strippers",
+      "Flush cutters",
+      "Small Phillips head screwdriver",
+      "M3 Phillips head screwdriver",
+      "Multimeter"
+    ],
+    "assumptions": [
+      "Basic soldering experience",
+      "Familiarity with ESP32 development environment (e.g., Arduino IDE, PlatformIO)",
+      "Access to a computer with USB port for firmware flashing",
+      "Basic understanding of electronics components and wiring"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "3.3V to MCU",
+      "source": "voltage_regulator_3v3",
+      "target": "esp32_s3_mcu",
+      "current": "300mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "label": "Data to LED Matrix",
+      "source": "esp32_s3_mcu",
+      "target": "led_matrix_display",
+      "protocol": "NeoPixel",
+      "sourcePin": "GPIO4",
+      "targetPin": "DIN"
+    },
+    {
+      "type": "power",
+      "source": "tp4056_charger",
+      "target": "voltage_regulator_3v3",
+      "voltage": "3.7V-4.2V"
+    },
+    {
+      "type": "power",
+      "source": "tp4056_charger",
+      "target": "led_matrix_display",
+      "voltage": "3.7V-4.2V"
+    },
+    {
+      "type": "power",
+      "label": "3.7V-4.2V",
+      "source": "lipo_battery_2500mah",
+      "target": "tp4056_charger",
+      "voltage": "3.7V-4.2V"
+    },
+    {
+      "type": "data",
+      "source": "esp32_s3_mcu",
+      "target": "ds3231_rtc",
+      "protocol": "I2C",
+      "sourcePin": "GPIO8",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "data",
+      "source": "esp32_s3_mcu",
+      "target": "ds3231_rtc",
+      "protocol": "I2C",
+      "sourcePin": "GPIO9",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "power",
+      "label": "3.3V Power",
+      "source": "voltage_regulator_3v3",
+      "target": "ds3231_rtc",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "esp32_s3_mcu",
+      "target": "piezo_speaker",
+      "voltage": "3.3V",
+      "protocol": "PWM",
+      "sourcePin": "GPIO10",
+      "targetPin": "+"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounts_via_m2_5_screws",
+      "source": "esp32_s3_mount",
+      "target": "esp32_s3_microcontroller"
+    },
+    {
+      "label": "secures",
+      "source": "m2_5_screw",
+      "target": "esp32_s3_microcontroller"
+    },
+    {
+      "label": "front_slot_fit",
+      "source": "main_enclosure_body_v3",
+      "target": "front_diffuser_panel_v3"
+    },
+    {
+      "label": "screws_into",
+      "source": "main_enclosure_body_v3",
+      "target": "back_cover_panel_v3"
+    },
+    {
+      "label": "secures",
+      "source": "m3_screw",
+      "target": "back_cover_panel_v3"
+    },
+    {
+      "label": "holds_in_place",
+      "source": "main_enclosure_body_v3",
+      "target": "lipo_battery_2500mah"
+    }
+  ],
+  "projectId": "d8a44c08-f4dc-4203-bd7f-7b512d029fae"
+}

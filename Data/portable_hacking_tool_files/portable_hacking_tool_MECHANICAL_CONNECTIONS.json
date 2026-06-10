@@ -1,0 +1,157 @@
+[
+  {
+    "label": "press-fitted",
+    "source": "enclosure_bottom_shell",
+    "target": "m3_brass_heat_set_insert"
+  },
+  {
+    "label": "M2.5 screws",
+    "source": "enclosure_bottom_shell",
+    "target": "sbc_mount"
+  },
+  {
+    "label": "M2.5 screws",
+    "source": "enclosure_bottom_shell",
+    "target": "lipo_battery_tray"
+  },
+  {
+    "label": "M2.5 screws",
+    "source": "enclosure_bottom_shell",
+    "target": "power_management_mount"
+  },
+  {
+    "label": "M2.5 screws",
+    "source": "enclosure_bottom_shell",
+    "target": "wifi_adapter_mount"
+  },
+  {
+    "label": "M3 flat head screws into heat-set inserts",
+    "source": "enclosure_top_bezel",
+    "target": "enclosure_bottom_shell"
+  },
+  {
+    "label": "clips/M2.5 screws",
+    "source": "enclosure_top_bezel",
+    "target": "display_frame"
+  },
+  {
+    "label": "clips/snap-fit",
+    "source": "enclosure_top_bezel",
+    "target": "joystick_bezel"
+  },
+  {
+    "label": "clips/snap-fit",
+    "source": "enclosure_top_bezel",
+    "target": "button_up_bezel"
+  },
+  {
+    "label": "clips/snap-fit",
+    "source": "enclosure_top_bezel",
+    "target": "button_down_bezel"
+  },
+  {
+    "label": "clips/snap-fit",
+    "source": "enclosure_top_bezel",
+    "target": "button_left_bezel"
+  },
+  {
+    "label": "clips/snap-fit",
+    "source": "enclosure_top_bezel",
+    "target": "button_right_bezel"
+  },
+  {
+    "label": "clips/snap-fit",
+    "source": "enclosure_top_bezel",
+    "target": "button_enter_bezel"
+  },
+  {
+    "label": "passes through",
+    "source": "m3_flat_head_screw_10mm",
+    "target": "enclosure_top_bezel"
+  },
+  {
+    "label": "threaded connection",
+    "source": "m3_flat_head_screw_10mm",
+    "target": "m3_brass_heat_set_insert"
+  },
+  {
+    "label": "threaded connection",
+    "source": "m2_5_flat_head_screw_6mm",
+    "target": "sbc_mount"
+  },
+  {
+    "label": "threaded connection",
+    "source": "m2_5_flat_head_screw_6mm",
+    "target": "lipo_battery_tray"
+  },
+  {
+    "label": "threaded connection",
+    "source": "m2_5_flat_head_screw_6mm",
+    "target": "power_management_mount"
+  },
+  {
+    "label": "threaded connection",
+    "source": "m2_5_flat_head_screw_6mm",
+    "target": "wifi_adapter_mount"
+  },
+  {
+    "label": "threaded connection",
+    "source": "m2_5_flat_head_screw_6mm",
+    "target": "display_frame"
+  },
+  {
+    "label": "mount",
+    "source": "sbc_mount",
+    "target": "main_sbc"
+  },
+  {
+    "label": "mount",
+    "source": "display_frame",
+    "target": "touch_display"
+  },
+  {
+    "label": "mount",
+    "source": "lipo_battery_tray",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mount",
+    "source": "power_management_mount",
+    "target": "power_management"
+  },
+  {
+    "label": "mount",
+    "source": "wifi_adapter_mount",
+    "target": "external_wifi_adapter"
+  },
+  {
+    "label": "mount",
+    "source": "joystick_bezel",
+    "target": "joystick_input"
+  },
+  {
+    "label": "mount",
+    "source": "button_up_bezel",
+    "target": "button_up"
+  },
+  {
+    "label": "mount",
+    "source": "button_down_bezel",
+    "target": "button_down"
+  },
+  {
+    "label": "mount",
+    "source": "button_left_bezel",
+    "target": "button_left"
+  },
+  {
+    "label": "mount",
+    "source": "button_right_bezel",
+    "target": "button_right"
+  },
+  {
+    "label": "mount",
+    "source": "button_enter_bezel",
+    "target": "button_enter"
+  }
+]

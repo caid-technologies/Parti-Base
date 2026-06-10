@@ -1,0 +1,56 @@
+[
+  {
+    "type": "power",
+    "source": "power_variac",
+    "target": "relay_main_power",
+    "voltage": "0-120V AC@60Hz (variable)"
+  },
+  {
+    "type": "power",
+    "source": "relay_main_power",
+    "target": "inductor_ballast",
+    "voltage": "0-120V AC@60Hz"
+  },
+  {
+    "type": "power",
+    "source": "inductor_ballast",
+    "target": "power_hvps",
+    "voltage": "0-120V AC@60Hz"
+  },
+  {
+    "type": "power",
+    "source": "power_hvps",
+    "target": "cap_primary_bank",
+    "voltage": "15kV AC"
+  },
+  {
+    "type": "power",
+    "source": "power_hvps",
+    "target": "spark_gap",
+    "voltage": "15kV AC"
+  },
+  {
+    "type": "data",
+    "source": "mcu_main",
+    "target": "relay_main_power",
+    "protocol": "Digital",
+    "sourcePin": "D4",
+    "targetPin": "DC_IN+"
+  },
+  {
+    "type": "data",
+    "source": "sensor_e_stop",
+    "target": "mcu_main",
+    "protocol": "Digital",
+    "sourcePin": "NC1",
+    "targetPin": "D2"
+  },
+  {
+    "type": "data",
+    "source": "sensor_key_switch",
+    "target": "mcu_main",
+    "protocol": "Digital",
+    "sourcePin": "NO",
+    "targetPin": "D3"
+  }
+]

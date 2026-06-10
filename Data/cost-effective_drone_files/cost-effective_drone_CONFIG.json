@@ -1,0 +1,1202 @@
+{
+  "plan": "- Utilize ESP32-C3 Super Mini for flight control and WiFi communication.\n- Implement MPU6050 for 6-axis IMU (gyroscope and accelerometer) for stabilization.\n- Control four 7x16mm coreless brushed motors via SI2302 MOSFETs as ESCs.\n- Design a lightweight, custom drone frame (e.g., from carbon fiber, G10, or 3D-printed).\n- Power the drone with a small LiPo battery (e.g., 1S).\n- Integrate propellers compatible with 7x16mm motors.",
+  "nodes": [
+    {
+      "id": "esp32_c3_mini",
+      "name": "Flight Controller",
+      "pins": [
+        "5V",
+        "3V3",
+        "GND",
+        "GPIO0",
+        "GPIO1",
+        "GPIO2",
+        "GPIO3",
+        "GPIO8",
+        "GPIO9"
+      ],
+      "type": "mcu",
+      "partId": "5e9638fd-9299-457c-97c7-1dc914508112",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/0o547GJymUIfPVcZ_seCYtEVw3Z31XNitT0nu_zZ-lk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFnVGRaQTF6Zkwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D47G24W3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x18x5mm",
+      "position3d": {
+        "x": 0,
+        "y": 29.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 18,
+        "width": 25,
+        "height": 5
+      },
+      "description": "Main microcontroller for flight control, sensor data processing, and motor command generation via WiFi.",
+      "productName": "ESP32-C3 Super Mini Development Board",
+      "purchaseUrl": "https://www.amazon.com/s?k=ESP32-C3+Super+Mini",
+      "estimatedCost": 4,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jya5bLqNJgLC8FE1d4KvXJxofjABHylyQz5J85FFtwhENf8akRQVSfH1vaoqPANgfEY1dtQE4FlPLEtnUBjzK0b9gzYxMwXAgKyDmE7HeOse52jBzchR6Idxck7Ylqfda2zrRHPwAcJ8fR8fR3txnimyxkXDzIgnskSqahumS5kvKeUQM9hIHjlyABPLD1UGY1PAJLnetslVS2ITzqviCn3lFmOeSdfmyFex5qx5Bwuh6GZlKgUbeguYcKDordqvavgOmb6YTxRrvNbk3LvFTg9tFuQQQ6SQtdC4qbJKdEPLQPzaaFn3QtFAlQiLPuNz0bpcfgws9pd0rvOW3u2s1o5HWqsH5l4YtQc5H2DqFaP2uSsenlUcg21nnnowwl4iQAd9gcH9chTxv7SLjAw33OPtxInvIEHksZW7cnBs219RZGwA6wnnNWl3NHZZE2bhY3N8HC3aEOdlFyRDIJ1ejJax8movzg7fTTnmRjqdYuNttvTArA1zkWs6Kn0KRR7upnphDatnt0N68rdAP5KZFNEvRYEgVCC1iAkLduY1DmGrh783XOMwiXzLeqLHleRwHIXHCSTXvHbAbbyTd7jdeOOCrqrIam1tPeMGuxDK16PG8c4JFNZapVFF47EBKJaNQIwbeUbdqurEG0CygOi4k5ICj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-C3+Super+Mini+Development+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mpu6050_imu",
+      "name": "Gyro/Accelerometer",
+      "pins": [
+        "VCC",
+        "GND",
+        "SCL",
+        "SDA"
+      ],
+      "type": "sensor",
+      "partId": "dfcb9fb6-39e6-4e01-8594-3a7dd53727c4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/LoLCmhtlj0YqP0aoxlDGjgwp1p0hxmMhi3RtmBZgi9w/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLzlVSUFB/T1N3b2paaVFuTHEv/cy1sMTQwLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,SDA,SCL"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B00LP25V1A?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 34,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 20,
+        "height": 3
+      },
+      "description": "Provides 6-axis motion data (3-axis gyroscope, 3-axis accelerometer) for flight stabilization.",
+      "productName": "MPU6050 Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=MPU6050+module",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwX2riMegVivyOdXeirJqoSBQyaavXhdq6mOTcHU0HDp9fGMr0CMDB4MLFbBmnWl5YPV6UTJ3j1w1UZnz9gCQRlOSPW4ynQkhc52CvlZf0V3tOtnJ11shcHcL3eLDBXNGmFXnt0w5pN53JgvWtbFdfVHqSzqcTWq0aBacNuhNq4EFxwu7DvAPgNk9dDEO3AlKhnkQwhAOgvMVqYhP6yNVEHQHW4Ytq4IZ53hOPml4csAKpPYyyCzG7KEmmOdpuiFpakYLsRb5TzvK1WRylg1uxLeDwpKuWGAcqjQR7oVjzAjOtHCARM43jUlvmCAHHiCQLH0sWMJmHz5ANE9NjW61Dcb0uoFd6MprqUagDIR2RmW5ff6PeY7TKqbTvxxBeUDDvs3ae0Jv9DjXZcgNDyK1U0zFCyay5KX4xDhhQqAQOmLk0D7fbQ2M04GirUYNDToMP83DJYniI9LYXwHiuRq2LDfkKfTL1KNk181zVILMktDdA3fgqzIMczZenvXG2zNS9F4zaYEhWLk5jP7fJhQ6l1FVFK5Ci6flpNKZC5wlHd9rKlEoC8GA3gdXU7RfzUM0IYSDSKGcYRBjqt7ilfB2DojPpEt7eKQYIawSIaFbKQtEOLNUmsgyLuMmXeii4DGmTzMXkpyIWsqb9zzdbLq16Qf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MPU6050+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_fl",
+      "name": "Front Left Motor",
+      "pins": [
+        "Positive",
+        "Negative"
+      ],
+      "type": "actuator",
+      "partId": "62bb82eb-0895-41fa-9c9f-298e96bcb396",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8g0qHi9q4WmXtc-4W9X8mds1vd6bkCsE6c4QmxBkx78/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hcGV4/Y29taW5nLmNvbS9j/ZG4vc2hvcC9maWxl/cy80XzNhNjExOGIy/LWQyMGYtNDYzNi05/NmIzLWIwMDFmNzg3/MmYwN18xNDQ1eC5q/cGc_dj0xNjkxMzkw/MjY0",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BZPKM738?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "7x16mm",
+      "position3d": {
+        "x": -40,
+        "y": 20,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 7,
+        "height": 16
+      },
+      "description": "Brushed DC motor for propulsion (front left arm).",
+      "productName": "7x16mm Coreless Brushed Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=7x16mm+coreless+motor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIDhSOZHMoMqpbixdKn3DjEE45bVPXh5kQ8WLtKqxe1wpDwWwQhGxSnRPX4CbLFGqNEjrRJyXzeHoiyC83LS3gNAk4ritEBe3i7Txlp6q1FlG7DsF6FrDNsU5fCSAGMZRB6EX6rJ5MyZ3bAzZxJvcFvcKcCgIX6nv897VmA4oqy3qrCPpOOa9SJdHm3EPZmGP7VZIobRkjNWA859pDcKCfenJQCTQtrPd4Z8hVSnRYScoIczWJyJBxF0PogjbZY3ar7f7nfiDZ0GKViHyF6wZhKoo8gf61lK7wriKj6wv1TEzYVNqtSj908IceEVSmlnMbdvz035p3P8qjXtgeAqCYP2UpW0WlLGZcmN79ulDYDRnu8dBsJxVpEIBBmruOJNlJ3OBYhsvtdJYVoO9J8GJJ4Mm2qN7cZdIP3CjGpFHzFKkfi9s7rEGwxdUnsUnudrdsou6hl08w3teFi6u1nmY8xzeyF0leoGYRNRNjlkIRYK2qMDqvYgKC9ZALM2ZCx7oSENmZr85ptUut58VGb87fyPzpPTgFU9SoOQVi2KZy7fRhRKXX6iDyBDJSKo1WIrBNMw1RFG0nlgcMouhgKZpMo3FWBZfsDUUhQyINET8JDIAQ2MMTsOYOG2WqjM3i0uVBsx2GwbsXwgPQBep2HkTlBV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7x16mm+Coreless+Brushed+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_fr",
+      "name": "Front Right Motor",
+      "pins": [
+        "Positive",
+        "Negative"
+      ],
+      "type": "actuator",
+      "partId": "62bb82eb-0895-41fa-9c9f-298e96bcb396",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8g0qHi9q4WmXtc-4W9X8mds1vd6bkCsE6c4QmxBkx78/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hcGV4/Y29taW5nLmNvbS9j/ZG4vc2hvcC9maWxl/cy80XzNhNjExOGIy/LWQyMGYtNDYzNi05/NmIzLWIwMDFmNzg3/MmYwN18xNDQ1eC5q/cGc_dj0xNjkxMzkw/MjY0",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BZPKM738?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "7x16mm",
+      "position3d": {
+        "x": 40,
+        "y": 20,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 7,
+        "height": 16
+      },
+      "description": "Brushed DC motor for propulsion (front right arm).",
+      "productName": "7x16mm Coreless Brushed Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=7x16mm+coreless+motor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIDhSOZHMoMqpbixdKn3DjEE45bVPXh5kQ8WLtKqxe1wpDwWwQhGxSnRPX4CbLFGqNEjrRJyXzeHoiyC83LS3gNAk4ritEBe3i7Txlp6q1FlG7DsF6FrDNsU5fCSAGMZRB6EX6rJ5MyZ3bAzZxJvcFvcKcCgIX6nv897VmA4oqy3qrCPpOOa9SJdHm3EPZmGP7VZIobRkjNWA859pDcKCfenJQCTQtrPd4Z8hVSnRYScoIczWJyJBxF0PogjbZY3ar7f7nfiDZ0GKViHyF6wZhKoo8gf61lK7wriKj6wv1TEzYVNqtSj908IceEVSmlnMbdvz035p3P8qjXtgeAqCYP2UpW0WlLGZcmN79ulDYDRnu8dBsJxVpEIBBmruOJNlJ3OBYhsvtdJYVoO9J8GJJ4Mm2qN7cZdIP3CjGpFHzFKkfi9s7rEGwxdUnsUnudrdsou6hl08w3teFi6u1nmY8xzeyF0leoGYRNRNjlkIRYK2qMDqvYgKC9ZALM2ZCx7oSENmZr85ptUut58VGb87fyPzpPTgFU9SoOQVi2KZy7fRhRKXX6iDyBDJSKo1WIrBNMw1RFG0nlgcMouhgKZpMo3FWBZfsDUUhQyINET8JDIAQ2MMTsOYOG2WqjM3i0uVBsx2GwbsXwgPQBep2HkTlBV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7x16mm+Coreless+Brushed+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_rl",
+      "name": "Rear Left Motor",
+      "pins": [
+        "Positive",
+        "Negative"
+      ],
+      "type": "actuator",
+      "partId": "62bb82eb-0895-41fa-9c9f-298e96bcb396",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8g0qHi9q4WmXtc-4W9X8mds1vd6bkCsE6c4QmxBkx78/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hcGV4/Y29taW5nLmNvbS9j/ZG4vc2hvcC9maWxl/cy80XzNhNjExOGIy/LWQyMGYtNDYzNi05/NmIzLWIwMDFmNzg3/MmYwN18xNDQ1eC5q/cGc_dj0xNjkxMzkw/MjY0",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BZPKM738?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "7x16mm",
+      "position3d": {
+        "x": -40,
+        "y": 20,
+        "z": -40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 7,
+        "height": 16
+      },
+      "description": "Brushed DC motor for propulsion (rear left arm).",
+      "productName": "7x16mm Coreless Brushed Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=7x16mm+coreless+motor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIDhSOZHMoMqpbixdKn3DjEE45bVPXh5kQ8WLtKqxe1wpDwWwQhGxSnRPX4CbLFGqNEjrRJyXzeHoiyC83LS3gNAk4ritEBe3i7Txlp6q1FlG7DsF6FrDNsU5fCSAGMZRB6EX6rJ5MyZ3bAzZxJvcFvcKcCgIX6nv897VmA4oqy3qrCPpOOa9SJdHm3EPZmGP7VZIobRkjNWA859pDcKCfenJQCTQtrPd4Z8hVSnRYScoIczWJyJBxF0PogjbZY3ar7f7nfiDZ0GKViHyF6wZhKoo8gf61lK7wriKj6wv1TEzYVNqtSj908IceEVSmlnMbdvz035p3P8qjXtgeAqCYP2UpW0WlLGZcmN79ulDYDRnu8dBsJxVpEIBBmruOJNlJ3OBYhsvtdJYVoO9J8GJJ4Mm2qN7cZdIP3CjGpFHzFKkfi9s7rEGwxdUnsUnudrdsou6hl08w3teFi6u1nmY8xzeyF0leoGYRNRNjlkIRYK2qMDqvYgKC9ZALM2ZCx7oSENmZr85ptUut58VGb87fyPzpPTgFU9SoOQVi2KZy7fRhRKXX6iDyBDJSKo1WIrBNMw1RFG0nlgcMouhgKZpMo3FWBZfsDUUhQyINET8JDIAQ2MMTsOYOG2WqjM3i0uVBsx2GwbsXwgPQBep2HkTlBV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7x16mm+Coreless+Brushed+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "motor_rr",
+      "name": "Rear Right Motor",
+      "pins": [
+        "Positive",
+        "Negative"
+      ],
+      "type": "actuator",
+      "partId": "62bb82eb-0895-41fa-9c9f-298e96bcb396",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8g0qHi9q4WmXtc-4W9X8mds1vd6bkCsE6c4QmxBkx78/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hcGV4/Y29taW5nLmNvbS9j/ZG4vc2hvcC9maWxl/cy80XzNhNjExOGIy/LWQyMGYtNDYzNi05/NmIzLWIwMDFmNzg3/MmYwN18xNDQ1eC5q/cGc_dj0xNjkxMzkw/MjY0",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BZPKM738?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "7x16mm",
+      "position3d": {
+        "x": 40,
+        "y": 20,
+        "z": -40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 7,
+        "height": 16
+      },
+      "description": "Brushed DC motor for propulsion (rear right arm).",
+      "productName": "7x16mm Coreless Brushed Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=7x16mm+coreless+motor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIDhSOZHMoMqpbixdKn3DjEE45bVPXh5kQ8WLtKqxe1wpDwWwQhGxSnRPX4CbLFGqNEjrRJyXzeHoiyC83LS3gNAk4ritEBe3i7Txlp6q1FlG7DsF6FrDNsU5fCSAGMZRB6EX6rJ5MyZ3bAzZxJvcFvcKcCgIX6nv897VmA4oqy3qrCPpOOa9SJdHm3EPZmGP7VZIobRkjNWA859pDcKCfenJQCTQtrPd4Z8hVSnRYScoIczWJyJBxF0PogjbZY3ar7f7nfiDZ0GKViHyF6wZhKoo8gf61lK7wriKj6wv1TEzYVNqtSj908IceEVSmlnMbdvz035p3P8qjXtgeAqCYP2UpW0WlLGZcmN79ulDYDRnu8dBsJxVpEIBBmruOJNlJ3OBYhsvtdJYVoO9J8GJJ4Mm2qN7cZdIP3CjGpFHzFKkfi9s7rEGwxdUnsUnudrdsou6hl08w3teFi6u1nmY8xzeyF0leoGYRNRNjlkIRYK2qMDqvYgKC9ZALM2ZCx7oSENmZr85ptUut58VGb87fyPzpPTgFU9SoOQVi2KZy7fRhRKXX6iDyBDJSKo1WIrBNMw1RFG0nlgcMouhgKZpMo3FWBZfsDUUhQyINET8JDIAQ2MMTsOYOG2WqjM3i0uVBsx2GwbsXwgPQBep2HkTlBV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7x16mm+Coreless+Brushed+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mosfet_fl_esc",
+      "name": "FL Motor MOSFET ESC",
+      "pins": [
+        "Gate",
+        "Drain",
+        "Source"
+      ],
+      "type": "actuator",
+      "partId": "900230d2-ddf2-41f2-9213-05a5cb619e21",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/zw5SPL5u7uskL4hcmqoArx8EN3MhoRHiozdtz_wio70/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGljY2xpY2tpbWcu/Y29tL1ZWOEFBT1N3/RE05Z2N6RWMvMjBw/Y3MtU0kyMzAyQS1O/LUNoYW5uZWwtRW5o/YW5jZW1lbnQtTU9T/RkVULVJEU29uLTQ1/bSVDRSVBOS53ZWJw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08M3ZL14K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x2mm",
+      "position3d": {
+        "x": -25,
+        "y": 25,
+        "z": 25
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 2
+      },
+      "description": "N-channel MOSFET acting as a low-side switch for Front Left motor speed control via PWM.",
+      "productName": "SI2302 N-Channel MOSFET",
+      "purchaseUrl": "https://www.amazon.com/s?k=SI2302+MOSFET+breakout",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHqlgcEI3xWvbivmYwv6bcH9tSzNR7CPtZQICSNsiVHSvXhMxcexqugJhDceXADpLtBydEhZS8Pq58yostkzSBqGfFMqwRSpuxSEt6k4EURIkSBDaDV87YA2SW1m4O4dvGESAaYR3FacfMgrJZM8a6GHv1lT4NRSqxmlOLrhL1k46lJ9oJi59yNSycn9qo60sa1bWpQsML6Bw6NbdMa1bnt9uZJ3QVjLuZrRfln5enrXmSzW2fs6NxMBSwiJSwAhY2WJiIr6w1nvK6kJ6R1hct4HcqL5ky2vzaUK77DmpXetHFLy6nxzqJZ1XCyjWUNhgTY6TTLLcipcyCEhbmGnyT2I8d8sVQE5GypHYHW9KcxUyGYjwerMQr6o6rro2yqeQSfgZlrxklRIWLiT0nTznAeNKZ8b3iSCfdJEqzkBIwj2BlQsQkmgd4EjFFSUzQQxjUfq3TAwzIduy6GRyBg1tV0ovScHrPa7pgXsYz1rvwvFkhbhdT4AAA5iVKSlTTPRhYqBRspgnfTsuL3YA0brAN0OCriATZXRy3SH5zT2s1IZ3aBFP4U4n2IvGOtIDoLWgSVRAq6GGX8BujHYOLWKUSXPAMq0tnxgQ4qsBMqQpnuKfZihEeIclaJgNnkmBuxcyGZqENys1ISumxbc75NMATIb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SI2302+N-Channel+MOSFET&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mosfet_fr_esc",
+      "name": "FR Motor MOSFET ESC",
+      "pins": [
+        "Gate",
+        "Drain",
+        "Source"
+      ],
+      "type": "actuator",
+      "partId": "900230d2-ddf2-41f2-9213-05a5cb619e21",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/zw5SPL5u7uskL4hcmqoArx8EN3MhoRHiozdtz_wio70/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGljY2xpY2tpbWcu/Y29tL1ZWOEFBT1N3/RE05Z2N6RWMvMjBw/Y3MtU0kyMzAyQS1O/LUNoYW5uZWwtRW5o/YW5jZW1lbnQtTU9T/RkVULVJEU29uLTQ1/bSVDRSVBOS53ZWJw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08M3ZL14K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x2mm",
+      "position3d": {
+        "x": 25,
+        "y": 25,
+        "z": 25
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 2
+      },
+      "description": "N-channel MOSFET acting as a low-side switch for Front Right motor speed control via PWM.",
+      "productName": "SI2302 N-Channel MOSFET",
+      "purchaseUrl": "https://www.amazon.com/s?k=SI2302+MOSFET+breakout",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHqlgcEI3xWvbivmYwv6bcH9tSzNR7CPtZQICSNsiVHSvXhMxcexqugJhDceXADpLtBydEhZS8Pq58yostkzSBqGfFMqwRSpuxSEt6k4EURIkSBDaDV87YA2SW1m4O4dvGESAaYR3FacfMgrJZM8a6GHv1lT4NRSqxmlOLrhL1k46lJ9oJi59yNSycn9qo60sa1bWpQsML6Bw6NbdMa1bnt9uZJ3QVjLuZrRfln5enrXmSzW2fs6NxMBSwiJSwAhY2WJiIr6w1nvK6kJ6R1hct4HcqL5ky2vzaUK77DmpXetHFLy6nxzqJZ1XCyjWUNhgTY6TTLLcipcyCEhbmGnyT2I8d8sVQE5GypHYHW9KcxUyGYjwerMQr6o6rro2yqeQSfgZlrxklRIWLiT0nTznAeNKZ8b3iSCfdJEqzkBIwj2BlQsQkmgd4EjFFSUzQQxjUfq3TAwzIduy6GRyBg1tV0ovScHrPa7pgXsYz1rvwvFkhbhdT4AAA5iVKSlTTPRhYqBRspgnfTsuL3YA0brAN0OCriATZXRy3SH5zT2s1IZ3aBFP4U4n2IvGOtIDoLWgSVRAq6GGX8BujHYOLWKUSXPAMq0tnxgQ4qsBMqQpnuKfZihEeIclaJgNnkmBuxcyGZqENys1ISumxbc75NMATIb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SI2302+N-Channel+MOSFET&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mosfet_rl_esc",
+      "name": "RL Motor MOSFET ESC",
+      "pins": [
+        "Gate",
+        "Drain",
+        "Source"
+      ],
+      "type": "actuator",
+      "partId": "900230d2-ddf2-41f2-9213-05a5cb619e21",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/zw5SPL5u7uskL4hcmqoArx8EN3MhoRHiozdtz_wio70/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGljY2xpY2tpbWcu/Y29tL1ZWOEFBT1N3/RE05Z2N6RWMvMjBw/Y3MtU0kyMzAyQS1O/LUNoYW5uZWwtRW5o/YW5jZW1lbnQtTU9T/RkVULVJEU29uLTQ1/bSVDRSVBOS53ZWJw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08M3ZL14K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x2mm",
+      "position3d": {
+        "x": -25,
+        "y": 25,
+        "z": -25
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 2
+      },
+      "description": "N-channel MOSFET acting as a low-side switch for Rear Left motor speed control via PWM.",
+      "productName": "SI2302 N-Channel MOSFET",
+      "purchaseUrl": "https://www.amazon.com/s?k=SI2302+MOSFET+breakout",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHqlgcEI3xWvbivmYwv6bcH9tSzNR7CPtZQICSNsiVHSvXhMxcexqugJhDceXADpLtBydEhZS8Pq58yostkzSBqGfFMqwRSpuxSEt6k4EURIkSBDaDV87YA2SW1m4O4dvGESAaYR3FacfMgrJZM8a6GHv1lT4NRSqxmlOLrhL1k46lJ9oJi59yNSycn9qo60sa1bWpQsML6Bw6NbdMa1bnt9uZJ3QVjLuZrRfln5enrXmSzW2fs6NxMBSwiJSwAhY2WJiIr6w1nvK6kJ6R1hct4HcqL5ky2vzaUK77DmpXetHFLy6nxzqJZ1XCyjWUNhgTY6TTLLcipcyCEhbmGnyT2I8d8sVQE5GypHYHW9KcxUyGYjwerMQr6o6rro2yqeQSfgZlrxklRIWLiT0nTznAeNKZ8b3iSCfdJEqzkBIwj2BlQsQkmgd4EjFFSUzQQxjUfq3TAwzIduy6GRyBg1tV0ovScHrPa7pgXsYz1rvwvFkhbhdT4AAA5iVKSlTTPRhYqBRspgnfTsuL3YA0brAN0OCriATZXRy3SH5zT2s1IZ3aBFP4U4n2IvGOtIDoLWgSVRAq6GGX8BujHYOLWKUSXPAMq0tnxgQ4qsBMqQpnuKfZihEeIclaJgNnkmBuxcyGZqENys1ISumxbc75NMATIb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SI2302+N-Channel+MOSFET&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mosfet_rr_esc",
+      "name": "RR Motor MOSFET ESC",
+      "pins": [
+        "Gate",
+        "Drain",
+        "Source"
+      ],
+      "type": "actuator",
+      "partId": "900230d2-ddf2-41f2-9213-05a5cb619e21",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/zw5SPL5u7uskL4hcmqoArx8EN3MhoRHiozdtz_wio70/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGljY2xpY2tpbWcu/Y29tL1ZWOEFBT1N3/RE05Z2N6RWMvMjBw/Y3MtU0kyMzAyQS1O/LUNoYW5uZWwtRW5o/YW5jZW1lbnQtTU9T/RkVULVJEU29uLTQ1/bSVDRSVBOS53ZWJw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08M3ZL14K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x2mm",
+      "position3d": {
+        "x": 25,
+        "y": 25,
+        "z": -25
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 2
+      },
+      "description": "N-channel MOSFET acting as a low-side switch for Rear Right motor speed control via PWM.",
+      "productName": "SI2302 N-Channel MOSFET",
+      "purchaseUrl": "https://www.amazon.com/s?k=SI2302+MOSFET+breakout",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHqlgcEI3xWvbivmYwv6bcH9tSzNR7CPtZQICSNsiVHSvXhMxcexqugJhDceXADpLtBydEhZS8Pq58yostkzSBqGfFMqwRSpuxSEt6k4EURIkSBDaDV87YA2SW1m4O4dvGESAaYR3FacfMgrJZM8a6GHv1lT4NRSqxmlOLrhL1k46lJ9oJi59yNSycn9qo60sa1bWpQsML6Bw6NbdMa1bnt9uZJ3QVjLuZrRfln5enrXmSzW2fs6NxMBSwiJSwAhY2WJiIr6w1nvK6kJ6R1hct4HcqL5ky2vzaUK77DmpXetHFLy6nxzqJZ1XCyjWUNhgTY6TTLLcipcyCEhbmGnyT2I8d8sVQE5GypHYHW9KcxUyGYjwerMQr6o6rro2yqeQSfgZlrxklRIWLiT0nTznAeNKZ8b3iSCfdJEqzkBIwj2BlQsQkmgd4EjFFSUzQQxjUfq3TAwzIduy6GRyBg1tV0ovScHrPa7pgXsYz1rvwvFkhbhdT4AAA5iVKSlTTPRhYqBRspgnfTsuL3YA0brAN0OCriATZXRy3SH5zT2s1IZ3aBFP4U4n2IvGOtIDoLWgSVRAq6GGX8BujHYOLWKUSXPAMq0tnxgQ4qsBMqQpnuKfZihEeIclaJgNnkmBuxcyGZqENys1ISumxbc75NMATIb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SI2302+N-Channel+MOSFET&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_1s",
+      "name": "Main LiPo Battery",
+      "pins": [
+        "JST_Positive",
+        "JST_Negative"
+      ],
+      "type": "power",
+      "partId": "b694f642-78c8-4415-a7a7-3b5343b9dd54",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8Ml9KRpJPSg6xhwpk9ODskmslNvJsm2R3x7t9mVmS8M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tYXhh/bXBzLmNvbS9jZG4v/c2hvcC9maWxlcy8z/NTAwMG1haC1saXBv/LTMuN3YtMXMtYmF0/dGVyeS1wYWNrLmpw/Zz9jcm9wPWNlbnRl/ciZoZWlnaHQ9MjA0/OCZ2PTE3NjA3MTQ5/MDEmd2lkdGg9MjA0/OA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "+,-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FH9XHXRT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x20x8mm",
+      "position3d": {
+        "x": 0,
+        "y": 8.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 8
+      },
+      "description": "Single cell Lithium Polymer battery providing main power for the drone.",
+      "productName": "1S 3.7V LiPo Battery",
+      "purchaseUrl": "https://www.amazon.com/s?k=1s+lipo+battery",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgqlARVCNuIgBJbvxnOnSRoOuz34IL5w7MvixngSX4r4ZPmO644gnCSGUAOjXoXlXXaaVWDnjFtPsDdKEiN9fBt5aXOQ4OJpkrWLiljFYgx5MDFdS77iJmGkmKzWAzng2nQwotDZxC8EBkrvsJRV2rAVKb7wTHzTIyMUqqf8GVik0UdPuLJqY6IDIfAxxx671FomoJTwB1y3wIhUNy23J8wLpMSMeLpNBgHIAeY4hv0IMJUqAdlzcmG3914mkMX6nBkiCHieoa0fd38bT1RWY66qNIwVjOsr3PSWAGdWCIZO6rEQvGWQEtdYcwuQBRt9s1N946lQ3LCfM6mz8qUakffWQ1qOTQ9KpYjG7QwwRRRNtPxDhudwDBCsUiRmV33d4j8sDPhzE5W4vfJ7DaWhorjYeJuyAhsfda6CJ9CnuUTGMUBrntjLAPnzKSlMTsnXEaDHlVfKTQjmR1N3zF4PWWoCE1wm6pBPRtYWjEe4KFA6EQAMQXl90YizIBlltyX7AK9hlInPtIAtv7SMqrOEWHebkvNf15MNfyxbwvNvP0q58DZkWgndKcBSNs6oT1l5mgvpNDVQGy2amNtVMs4kvLD4RmLd7yuy1FoHTkLECjazbAB8enc47XQFfmvWhHS0wM7wge13TZakT51BdqDu73Pz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1S+3.7V+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "drone_frame_3d",
+      "name": "Main Drone Frame",
+      "type": "3d_printed",
+      "partId": "f693ac23-fa88-4db9-9270-1d2949c29235",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/BxJ-HWSbQ48rc5YQ8Vf1vrY1uORGthGMxo2fkl2lHyM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/djIuZ2V0ZnB2LmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNjMwNTU5/NjQ3OTgzNmMzYmZl/ZjhiMzY5YzJkMDU1/NzYvcC9yL3Byb21l/dGhldXNfMy5qcGc",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill, no supports"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "100x100x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 12.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 100,
+        "height": 25
+      },
+      "description": "Lightweight 3D-printed frame integrating motor arms, flight controller mount, battery tray, and ESC mounting points.",
+      "productName": "Main Drone Frame",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "propeller_cw_fl",
+      "name": "FL CW Propeller",
+      "type": "mechanism",
+      "partId": "f3210433-de61-4257-ae0f-648912437909",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/hIY4C_ptUWtayISbE7h4HsHO1sGjWuIKxZWJQeQ29EE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZGVrbWFrZS5jb20v/d3AtY29udGVudC91/cGxvYWRzL1doYXQt/aXMtYS1tYXJpbmUt/cHJvcGVsbGVyLXNo/YWZ0LmpwZw",
+      "material": "Stainless Steel 316",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B092PXN4D5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x7x5mm",
+      "position3d": {
+        "x": -40,
+        "y": 29.5,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 40,
+        "height": 5
+      },
+      "description": "Clockwise rotating propeller for the front-left motor.",
+      "productName": "40mm 0.8mm Shaft CW Propeller",
+      "purchaseUrl": "https://www.amazon.com/s?k=40mm+propeller+0.8mm+shaft+cw",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRnbGulp0zfZLnGgbjpfvYg60F4kl2tWUf7PbyExR5EXwYVcYWhsCFnILlThGaQbbq2MqiTfssE3mpb0K08NvmnIlcF7EwrnU8Au2qwKs8Fd0xvmiqtDvzx3eU7rF8gYM86YASBWpX4tCrWi3dApbNN6d7Edr7naIya90CqJBgRLhLzD5JAGC9lFG1O4xqiOO19D2wlVHls6mgzsNuZ5EATGkMyl1Tnlv2U7bQnquP84bSUoX7GMQg3wnbHcdP788bEImLzy1VMJi8J1yhD45iOOOG8vAvEe8f5KOHhOvGtPpU89Znod4b3wErhxW2OHMRSsT52XbAYJ9SrErrzNXhFk2bnrTduTyXCqm69xwjNxIBN1jTCm0RP7zuEYjn7unifk4ccRig9zf6hwfEI5cV5ZstkL4D26q3DGVd9UhSbvi1xqBuI6RSaX582CwnBOqzshWGgFoELI9y4SLWCyIMhmXP23Z8asqvkJJyVPoGJBPa1ubIvbC94nGR4lS2J3LatfHg0CupxRo6jLnaVv2yHpCMfT0AFLS7BgCbvHL1oL2rIskXd8mDD84nGcyx7QpKHBYMT2QvzJuOgm9j1CFZMLwaqSk8k82keHOhBOfePRMJfg9yU4Fk84KM4FlMQiY1vgPFVe2cUjoWINJujLUS8j",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=40mm+0.8mm+Shaft+CW+Propeller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "propeller_ccw_fr",
+      "name": "FR CCW Propeller",
+      "type": "mechanism",
+      "partId": "f3210433-de61-4257-ae0f-648912437909",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/hIY4C_ptUWtayISbE7h4HsHO1sGjWuIKxZWJQeQ29EE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZGVrbWFrZS5jb20v/d3AtY29udGVudC91/cGxvYWRzL1doYXQt/aXMtYS1tYXJpbmUt/cHJvcGVsbGVyLXNo/YWZ0LmpwZw",
+      "material": "Stainless Steel 316",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B092PXN4D5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x7x5mm",
+      "position3d": {
+        "x": 40,
+        "y": 29.5,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 40,
+        "height": 5
+      },
+      "description": "Counter-clockwise rotating propeller for the front-right motor.",
+      "productName": "40mm 0.8mm Shaft CCW Propeller",
+      "purchaseUrl": "https://www.amazon.com/s?k=40mm+propeller+0.8mm+shaft+ccw",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRnbGulp0zfZLnGgbjpfvYg60F4kl2tWUf7PbyExR5EXwYVcYWhsCFnILlThGaQbbq2MqiTfssE3mpb0K08NvmnIlcF7EwrnU8Au2qwKs8Fd0xvmiqtDvzx3eU7rF8gYM86YASBWpX4tCrWi3dApbNN6d7Edr7naIya90CqJBgRLhLzD5JAGC9lFG1O4xqiOO19D2wlVHls6mgzsNuZ5EATGkMyl1Tnlv2U7bQnquP84bSUoX7GMQg3wnbHcdP788bEImLzy1VMJi8J1yhD45iOOOG8vAvEe8f5KOHhOvGtPpU89Znod4b3wErhxW2OHMRSsT52XbAYJ9SrErrzNXhFk2bnrTduTyXCqm69xwjNxIBN1jTCm0RP7zuEYjn7unifk4ccRig9zf6hwfEI5cV5ZstkL4D26q3DGVd9UhSbvi1xqBuI6RSaX582CwnBOqzshWGgFoELI9y4SLWCyIMhmXP23Z8asqvkJJyVPoGJBPa1ubIvbC94nGR4lS2J3LatfHg0CupxRo6jLnaVv2yHpCMfT0AFLS7BgCbvHL1oL2rIskXd8mDD84nGcyx7QpKHBYMT2QvzJuOgm9j1CFZMLwaqSk8k82keHOhBOfePRMJfg9yU4Fk84KM4FlMQiY1vgPFVe2cUjoWINJujLUS8j",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=40mm+0.8mm+Shaft+CCW+Propeller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "propeller_ccw_rl",
+      "name": "RL CCW Propeller",
+      "type": "mechanism",
+      "partId": "f3210433-de61-4257-ae0f-648912437909",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/hIY4C_ptUWtayISbE7h4HsHO1sGjWuIKxZWJQeQ29EE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZGVrbWFrZS5jb20v/d3AtY29udGVudC91/cGxvYWRzL1doYXQt/aXMtYS1tYXJpbmUt/cHJvcGVsbGVyLXNo/YWZ0LmpwZw",
+      "material": "Stainless Steel 316",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B092PXN4D5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x7x5mm",
+      "position3d": {
+        "x": -40,
+        "y": 29.5,
+        "z": -40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 40,
+        "height": 5
+      },
+      "description": "Counter-clockwise rotating propeller for the rear-left motor.",
+      "productName": "40mm 0.8mm Shaft CCW Propeller",
+      "purchaseUrl": "https://www.amazon.com/s?k=40mm+propeller+0.8mm+shaft+ccw",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRnbGulp0zfZLnGgbjpfvYg60F4kl2tWUf7PbyExR5EXwYVcYWhsCFnILlThGaQbbq2MqiTfssE3mpb0K08NvmnIlcF7EwrnU8Au2qwKs8Fd0xvmiqtDvzx3eU7rF8gYM86YASBWpX4tCrWi3dApbNN6d7Edr7naIya90CqJBgRLhLzD5JAGC9lFG1O4xqiOO19D2wlVHls6mgzsNuZ5EATGkMyl1Tnlv2U7bQnquP84bSUoX7GMQg3wnbHcdP788bEImLzy1VMJi8J1yhD45iOOOG8vAvEe8f5KOHhOvGtPpU89Znod4b3wErhxW2OHMRSsT52XbAYJ9SrErrzNXhFk2bnrTduTyXCqm69xwjNxIBN1jTCm0RP7zuEYjn7unifk4ccRig9zf6hwfEI5cV5ZstkL4D26q3DGVd9UhSbvi1xqBuI6RSaX582CwnBOqzshWGgFoELI9y4SLWCyIMhmXP23Z8asqvkJJyVPoGJBPa1ubIvbC94nGR4lS2J3LatfHg0CupxRo6jLnaVv2yHpCMfT0AFLS7BgCbvHL1oL2rIskXd8mDD84nGcyx7QpKHBYMT2QvzJuOgm9j1CFZMLwaqSk8k82keHOhBOfePRMJfg9yU4Fk84KM4FlMQiY1vgPFVe2cUjoWINJujLUS8j",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=40mm+0.8mm+Shaft+CCW+Propeller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "propeller_cw_rr",
+      "name": "RR CW Propeller",
+      "type": "mechanism",
+      "partId": "f3210433-de61-4257-ae0f-648912437909",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/hIY4C_ptUWtayISbE7h4HsHO1sGjWuIKxZWJQeQ29EE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZGVrbWFrZS5jb20v/d3AtY29udGVudC91/cGxvYWRzL1doYXQt/aXMtYS1tYXJpbmUt/cHJvcGVsbGVyLXNo/YWZ0LmpwZw",
+      "material": "Stainless Steel 316",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B092PXN4D5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x7x5mm",
+      "position3d": {
+        "x": 40,
+        "y": 29.5,
+        "z": -40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 40,
+        "height": 5
+      },
+      "description": "Clockwise rotating propeller for the rear-right motor.",
+      "productName": "40mm 0.8mm Shaft CW Propeller",
+      "purchaseUrl": "https://www.amazon.com/s?k=40mm+propeller+0.8mm+shaft+cw",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRnbGulp0zfZLnGgbjpfvYg60F4kl2tWUf7PbyExR5EXwYVcYWhsCFnILlThGaQbbq2MqiTfssE3mpb0K08NvmnIlcF7EwrnU8Au2qwKs8Fd0xvmiqtDvzx3eU7rF8gYM86YASBWpX4tCrWi3dApbNN6d7Edr7naIya90CqJBgRLhLzD5JAGC9lFG1O4xqiOO19D2wlVHls6mgzsNuZ5EATGkMyl1Tnlv2U7bQnquP84bSUoX7GMQg3wnbHcdP788bEImLzy1VMJi8J1yhD45iOOOG8vAvEe8f5KOHhOvGtPpU89Znod4b3wErhxW2OHMRSsT52XbAYJ9SrErrzNXhFk2bnrTduTyXCqm69xwjNxIBN1jTCm0RP7zuEYjn7unifk4ccRig9zf6hwfEI5cV5ZstkL4D26q3DGVd9UhSbvi1xqBuI6RSaX582CwnBOqzshWGgFoELI9y4SLWCyIMhmXP23Z8asqvkJJyVPoGJBPa1ubIvbC94nGR4lS2J3LatfHg0CupxRo6jLnaVv2yHpCMfT0AFLS7BgCbvHL1oL2rIskXd8mDD84nGcyx7QpKHBYMT2QvzJuOgm9j1CFZMLwaqSk8k82keHOhBOfePRMJfg9yU4Fk84KM4FlMQiY1vgPFVe2cUjoWINJujLUS8j",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=40mm+0.8mm+Shaft+CW+Propeller&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2x6_screws",
+      "name": "M2x6mm Screws",
+      "type": "misc",
+      "partId": "b5be54f9-c25f-4e52-a65b-e109b0a87746",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/160iH02RiCwQ9XqlQagJ2dlZQ0Pu6Pn_NpdnlzzBtsc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tMWhv/YmJ5c3RvcmUuY29t/LmF1L3dwLWNvbnRl/bnQvdXBsb2Fkcy9P/U0hNNFgwMzctU2Vs/Zi1UYXBwaW5nLVNj/cmV3LTh4LU0yeDZt/bS5qcGc",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B01FXGHO2M?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x6mm",
+      "description": "Small screws for mounting electronics to the 3D-printed frame.",
+      "productName": "M2x6mm Self-Tapping Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2x6mm+self+tapping+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9djn5hqcn5eiz59QLSqGniXp8mL2a5X6S8FmRKmesnsvuIta9oFWYUBvK3XARQ5ovQ4sVFNCvQWPvG5oJlpGOYaOnw9xNSkO9LqmIQMLuK8d7XscVpa2my7ZqyqbCpoch6YjvEA2pj8NQZ3HcWjO5RedSpuZ6RQJZQrDsdKFujLv4pVQ2eulAkaq2pkLIgjcTojYJcvs5JAo4TdagbojzFFYN7uLuzkBkgzjnESyIlAtdmBWb4o7LrEvP33WiBFAOCIeNcOD6Ofd9yLwF6hg9NBNpYEosXqJJ9SQSVB6DK65PYR9ZyMoaiG5jUvb5x1QAzoMIJuI3mfnfaNIovCov4nrDkcz8zkyMrlWo54wSnlsDSyx67Bsk47q2ZVwD6NfpGS1yoHEVUaNTCja2aQCP6qpGU01Tu2ZdONseZ6UbkAul32YZNpqL7smXrvs8APTh7grSEJ3LdTud82YMcX1QLkbNBwQz1GGdH3fey27yiynAnMytLXqnhugOxTxTgsvwwqTdce93rdx9RCFW6Zvk2Bfihhj1p3ITzEoRoeSQxB6SYSzWgDnxO8p0JxtDct6rvk4cX9sKvRe7pGQFJ2QzqypZSravdPILxWAedXaWnvW8aozCp9noe9wT9LtvUrngKDGzUnvSprWCU9n1u9oFpxYn",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x6mm+Self-Tapping+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "velcro_strap",
+      "name": "Battery Velcro Strap",
+      "type": "misc",
+      "partId": "fec24b1d-7a5f-4417-a6be-137dae0e8c09",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/-o9mjekyy1a3SdcyiR4PiJEjvHVqYYsOJyS7YPC1j8E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tYXJj/dW10ZWNoLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxNy8w/Ny9WZWxjcm8tQmF0/dGVyeS1TdHJhcC10/aGVnZW0tcHJvZHVj/dC10aHVtYm5haWwu/anBn",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "100x10x1mm",
+      "description": "Used to secure the LiPo battery to the drone frame.",
+      "productName": "Mini Velcro Battery Strap",
+      "purchaseUrl": "https://www.amazon.com/s?k=mini+velcro+battery+strap",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9djWC2yWSvUgIpU0hYd9V08VScJMz1JIKSYQo002sXjDKFW4TColK2AtDX2HCSe8m3vwVYYOyxKOMh6kYsqDoAThE7qm8JpRKvHorUVloJ616DnG4RvtFmue2TdbojpH53RDWTB38uPCSCiromvq3hHcTdahkq9juDkIMf7MA520deBMTk7I5wl6orFcnnUB6jHIznpinueSen4OH8zLTPnRKf09xs78y5PClNhmUVfpUuPVZvbchKRTI7ANLHDoneNckAne6x6eu6fjfeRtQaQntYrh4IeAhcywodp3bWfOrHw2ZKEOdG1D0zBwfJBsqz2kfXRk0xiNpqJeWWimHVV2dq9t4cK6PQXkfpB6fi4zWAO7aaeGsvF6a7fxvz1ByS5FcSOoISShrA1edOWwTM7DUTyY8mxUA4wuLvcYsct84IKYQiaxDKIk62iOqwLklgKMBQCbbz6dBGwktHrTSpDcL6uJwzJsVqGCvnzYEt8LZCy4FyWMoPFzbBAuA4aGgJ4Xg6FXFUHEhBE2TFiCYg0dQKk3ABag9A4JgcD9bw5sPdiDerCJvG4wXm7C9frLn8r1j9OQ90CrqYFaTP0Nprqg85hROFYKtaPoPUHJSLv1DL7rZ9PvQiP7Hiald6yGtSvCKR3aVnZw6JH4QzE4aPfuP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Velcro+Battery+Strap&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "cost-effective drone",
+    "MPU6050 sensor",
+    "ESP32-C3 Super Mini",
+    "7x16 coreless motors",
+    "SI2302 MOSFETs",
+    "brushed motors"
+  ],
+  "projectName": "Cost-Effective Drone",
+  "originalPrompt": "build a small drone using these, mpu6050, esp32 c3 super mini, 7x16 coreless brushed motor with propellers, si2302 mosfet. this things are ok to make a cost effective drone ig",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Print the main drone frame",
+          "partIds": [
+            "drone_frame_3d"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Deburr and clean the 3D printed frame",
+          "partIds": [
+            "drone_frame_3d"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Test fit coreless motors into frame arms",
+          "partIds": [
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "drone_frame_3d"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder individual SI2302 MOSFETs to motor negative leads and LiPo negative bus",
+          "detail": {
+            "steps": [
+              "For each motor, solder the Negative lead of the Front Left Motor, Front Right Motor, Rear Left Motor, and Rear Right Motor to the Drain pin of its respective MOSFET (FL Motor MOSFET ESC, FR Motor MOSFET ESC, RL Motor MOSFET ESC, RR Motor MOSFET ESC).",
+              "Gather the Source pins from all four MOSFETs and create a common negative bus.",
+              "Solder the common negative bus from the MOSFET Sources directly to the JST_Negative terminal of the Main LiPo Battery.",
+              "Insulate all exposed solder joints with heat shrink tubing or electrical tape to prevent short circuits."
+            ],
+            "summary": "Solder motor negative leads to MOSFET drains, and all MOSFET sources to the LiPo negative."
+          },
+          "partIds": [
+            "mosfet_fl_esc",
+            "mosfet_fr_esc",
+            "mosfet_rl_esc",
+            "mosfet_rr_esc",
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "lipo_1s"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect all motor positive leads directly to the LiPo battery's positive terminal",
+          "detail": {
+            "steps": [
+              "Gather the Positive leads from the Front Left Motor, Front Right Motor, Rear Left Motor, and Rear Right Motor.",
+              "Twist the four motor positive leads together to form a common positive bus.",
+              "Solder this common positive motor bus directly to the JST_Positive terminal of the Main LiPo Battery.",
+              "Insulate the soldered connection with heat shrink tubing or electrical tape."
+            ],
+            "summary": "Solder all motor positive leads to the LiPo battery's positive terminal."
+          },
+          "partIds": [
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "lipo_1s"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire the MPU6050 IMU to the ESP32-C3 (SCL to GPIO8, SDA to GPIO9, VCC to 3V3, GND to GND)",
+          "detail": {
+            "steps": [
+              "Connect the SCL pin of the Gyro/Accelerometer to GPIO8 on the Flight Controller.",
+              "Connect the SDA pin of the Gyro/Accelerometer to GPIO9 on the Flight Controller.",
+              "Connect the VCC pin of the Gyro/Accelerometer to the 3V3 pin on the Flight Controller.",
+              "Connect the GND pin of the Gyro/Accelerometer to a GND pin on the Flight Controller."
+            ],
+            "summary": "Wire the Gyro/Accelerometer to the Flight Controller via I2C and power."
+          },
+          "partIds": [
+            "mpu6050_imu",
+            "esp32_c3_mini"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect ESP32-C3 power (5V pin) and GND to the LiPo battery's positive and negative terminals",
+          "detail": {
+            "steps": [
+              "Solder a wire from the JST_Positive terminal of the Main LiPo Battery to the 5V pin on the Flight Controller.",
+              "Solder a wire from the JST_Negative terminal of the Main LiPo Battery to a GND pin on the Flight Controller.",
+              "Ensure both soldered connections are secure and properly insulated."
+            ],
+            "summary": "Connect Flight Controller's 5V and GND to LiPo battery's positive and negative."
+          },
+          "partIds": [
+            "esp32_c3_mini",
+            "lipo_1s"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect each MOSFET Gate pin to its respective ESP32-C3 GPIO pin (GPIO0, GPIO1, GPIO2, GPIO3) for PWM control",
+          "detail": {
+            "tip": "Keep these signal wires as short as possible to minimize electrical noise, and ensure good solder joints for reliable PWM control.",
+            "steps": [
+              "Solder a wire from the Gate pin of the FL Motor MOSFET ESC to GPIO0 on the Flight Controller.",
+              "Solder a wire from the Gate pin of the FR Motor MOSFET ESC to GPIO1 on the Flight Controller.",
+              "Solder a wire from the Gate pin of the RL Motor MOSFET ESC to GPIO2 on the Flight Controller.",
+              "Solder a wire from the Gate pin of the RR Motor MOSFET ESC to GPIO3 on the Flight Controller."
+            ],
+            "summary": "Connect each MOSFET Gate to its dedicated Flight Controller GPIO pin."
+          },
+          "partIds": [
+            "mosfet_fl_esc",
+            "mosfet_fr_esc",
+            "mosfet_rl_esc",
+            "mosfet_rr_esc",
+            "esp32_c3_mini"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Perform continuity checks and verify for any short circuits on all power and data lines",
+          "detail": {
+            "steps": [
+              "Disconnect the Main LiPo Battery before performing any electrical tests.",
+              "Use a multimeter in continuity mode to confirm all positive power connections: from the Main LiPo Battery JST_Positive to the Flight Controller 5V pin, and to the Positive lead of each Front Left, Front Right, Rear Left, and Rear Right Motor.",
+              "Verify continuity for all ground connections: from the Main LiPo Battery JST_Negative to all Flight Controller GND pins, and to the Source pins of each FL, FR, RL, and RR Motor MOSFET ESC.",
+              "Confirm continuity for data lines: Flight Controller GPIO8 to Gyro/Accelerometer SCL, GPIO9 to Gyro/Accelerometer SDA, and Flight Controller GPIO0-GPIO3 to the Gate pins of their respective MOSFETs.",
+              "Switch the multimeter to resistance mode and check for short circuits (near 0 Ohms) between positive and negative terminals on the Main LiPo Battery, Flight Controller (5V/GND, 3V3/GND), and Gyro/Accelerometer (VCC/GND); all should read high resistance or open circuit."
+            ],
+            "summary": "Verify all power and data line continuity and check for short circuits."
+          },
+          "partIds": [
+            "esp32_c3_mini",
+            "mpu6050_imu",
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "mosfet_fl_esc",
+            "mosfet_fr_esc",
+            "mosfet_rl_esc",
+            "mosfet_rr_esc",
+            "lipo_1s"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect ESP32-C3 to computer and install necessary drivers",
+          "detail": {
+            "steps": [
+              "Connect the Flight Controller (ESP32-C3 Super Mini) to your computer using a USB-C cable.",
+              "Check your operating system's Device Manager for new COM ports.",
+              "If a COM port is not detected, identify the USB-to-UART bridge chip on your Flight Controller (commonly CH340 or CP210x) and download/install the appropriate drivers from the chip manufacturer's website.",
+              "Verify the Flight Controller is recognized as a COM port in Device Manager once drivers are installed."
+            ],
+            "summary": "Connect Flight Controller to PC and install USB drivers."
+          },
+          "partIds": [
+            "esp32_c3_mini"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Upload initial firmware to ESP32-C3 for basic communication and sensor testing",
+          "detail": {
+            "tip": "Ensure you have the ESP32 boards manager installed in your Arduino IDE or the correct platform installed in PlatformIO to recognize the ESP32-C3 board.",
+            "steps": [
+              "Open your preferred IDE (e.g., Arduino IDE, PlatformIO) and select the 'ESP32-C3 Dev Module' board.",
+              "Select the COM port identified in the previous step for the Flight Controller.",
+              "Upload a simple sketch, such as an I2C scanner or a basic 'blink' program if I2C devices are not yet initialized, to verify communication.",
+              "Confirm that the firmware upload completes successfully and the Flight Controller reboots as expected."
+            ],
+            "summary": "Upload basic firmware to the Flight Controller for initial testing."
+          },
+          "partIds": [
+            "esp32_c3_mini"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Verify MPU6050 IMU communication and data output via serial monitor",
+          "detail": {
+            "steps": [
+              "Ensure the Flight Controller (ESP32-C3 Super Mini) is connected to your computer via USB.",
+              "Upload an I2C scanner sketch or a basic MPU6050 example sketch (e.g., from an MPU6050 library) to the Flight Controller.",
+              "Open the Serial Monitor in your IDE (e.g., Arduino IDE) and set the baud rate to 115200.",
+              "Observe the serial output: confirm that the I2C address for the Gyro/Accelerometer (MPU6050) is detected (typically 0x68 or 0x69).",
+              "If using an MPU6050 example, verify that gyroscope and accelerometer data values are streaming and respond to physical movement of the sensor."
+            ],
+            "summary": "Verify Gyro/Accelerometer communication and data output via serial monitor."
+          },
+          "partIds": [
+            "esp32_c3_mini",
+            "mpu6050_imu"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test individual motor functionality and PWM control using simple code sketches",
+          "detail": {
+            "tip": "Always start with low PWM values and increase gradually to prevent sudden motor surges. Disconnect the LiPo battery before making any changes or re-uploading firmware.",
+            "steps": [
+              "**ENSURE ALL PROPELLERS ARE REMOVED** for safety before proceeding.",
+              "Write a simple Arduino sketch for the Flight Controller (ESP32-C3 Super Mini) that applies a low PWM signal (e.g., analogWrite(GPIO0, 50)) to GPIO0, leaving other motor GPIOs off.",
+              "Upload this sketch to the Flight Controller.",
+              "Carefully connect the Main LiPo Battery to power the system.",
+              "Observe the Front Left Motor: it should spin slowly. Vary the PWM value in the code (e.g., from 0 to 255) and re-upload to verify speed control for the Front Left Motor.",
+              "Repeat steps 2-5 for the Front Right Motor (GPIO1), Rear Left Motor (GPIO2), and Rear Right Motor (GPIO3) one by one, ensuring each motor responds correctly to PWM signals."
+            ],
+            "summary": "Test individual motor functionality and PWM control with simple code."
+          },
+          "partIds": [
+            "esp32_c3_mini",
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "mosfet_fl_esc",
+            "mosfet_fr_esc",
+            "mosfet_rl_esc",
+            "mosfet_rr_esc",
+            "lipo_1s"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Calibrate IMU sensor for accurate orientation data",
+          "detail": {
+            "steps": [
+              "Upload an MPU6050 calibration sketch (available in common libraries like 'MPU6050_light' or 'i2cdevlib') to the Flight Controller (ESP32-C3 Super Mini).",
+              "Place the Gyro/Accelerometer (MPU6050) module on a perfectly flat and stable surface, ensuring no movement, for initial accelerometer bias calibration.",
+              "Follow the instructions provided by the calibration sketch, which typically involves holding the drone completely still for a period, then slowly rotating it through all axes to calibrate the gyroscope.",
+              "Record the generated accelerometer and gyroscope offset values from the serial monitor.",
+              "Integrate these calibration offsets into your main flight control firmware to correct raw sensor readings."
+            ],
+            "summary": "Calibrate Gyro/Accelerometer for accurate orientation data."
+          },
+          "partIds": [
+            "mpu6050_imu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the ESP32-C3 flight controller to the main drone frame using M2x6mm screws",
+          "partIds": [
+            "esp32_c3_mini",
+            "drone_frame_3d",
+            "m2x6_screws"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Secure the MPU6050 IMU to the drone frame, ensuring correct orientation, using M2x6mm screws",
+          "partIds": [
+            "mpu6050_imu",
+            "drone_frame_3d",
+            "m2x6_screws"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount the 7x16mm coreless motors into their designated slots on the drone frame",
+          "partIds": [
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "drone_frame_3d"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Attach the CW and CCW propellers to their respective motors, ensuring correct rotation direction",
+          "partIds": [
+            "propeller_cw_fl",
+            "propeller_ccw_fr",
+            "propeller_ccw_rl",
+            "propeller_cw_rr",
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Secure the 1S LiPo battery to the drone frame using the Velcro strap",
+          "partIds": [
+            "lipo_1s",
+            "drone_frame_3d",
+            "velcro_strap"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Perform final checks of all connections, cable routing, and propeller security",
+          "partIds": [
+            "drone_frame_3d",
+            "esp32_c3_mini",
+            "mpu6050_imu",
+            "motor_fl",
+            "motor_fr",
+            "motor_rl",
+            "motor_rr",
+            "mosfet_fl_esc",
+            "mosfet_fr_esc",
+            "mosfet_rl_esc",
+            "mosfet_rr_esc",
+            "lipo_1s",
+            "propeller_cw_fl",
+            "propeller_ccw_fr",
+            "propeller_ccw_rl",
+            "propeller_cw_rr"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A compact, cost-effective drone using an ESP32-C3 Super Mini as the flight controller and an MPU6050 for stabilization. Four 7x16mm coreless brushed motors, driven by SI2302 MOSFETs, provide propulsion for this lightweight, 3D-printed aerial platform. Power is supplied by a 1S LiPo battery.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PLA filament)",
+      "Soldering iron with fine tip",
+      "Solder wire",
+      "Wire strippers",
+      "Flush cutters",
+      "Small Phillips/flathead screwdriver",
+      "Multimeter",
+      "Heat shrink gun (optional, for insulated connections)",
+      "Deburring tool (for 3D printed parts)",
+      "Computer with USB-C cable (for ESP32-C3)"
+    ],
+    "assumptions": [
+      "Basic 3D printing knowledge",
+      "Basic soldering skills",
+      "Familiarity with ESP32 development environment (e.g., Arduino IDE or ESP-IDF)",
+      "Basic understanding of brushed motor control with MOSFETs",
+      "Basic understanding of drone flight principles for calibration"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "lipo_1s",
+      "target": "esp32_c3_mini",
+      "voltage": "3.7V-4.2V",
+      "sourcePin": "JST_Positive",
+      "targetPin": "5V"
+    },
+    {
+      "type": "power",
+      "source": "lipo_1s",
+      "target": "esp32_c3_mini",
+      "voltage": "0V",
+      "sourcePin": "JST_Negative",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "esp32_c3_mini",
+      "target": "mpu6050_imu",
+      "voltage": "3.3V",
+      "sourcePin": "3V3",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "source": "esp32_c3_mini",
+      "target": "mpu6050_imu",
+      "voltage": "0V",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "data",
+      "source": "esp32_c3_mini",
+      "target": "mpu6050_imu",
+      "voltage": "3.3V-0V",
+      "sourcePin": "GPIO8",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "data",
+      "source": "esp32_c3_mini",
+      "target": "mpu6050_imu",
+      "voltage": "3.3V-0V",
+      "sourcePin": "GPIO9",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "power",
+      "source": "lipo_1s",
+      "target": "motor_fl",
+      "voltage": "3.7V-4.2V",
+      "sourcePin": "JST_Positive",
+      "targetPin": "Positive"
+    },
+    {
+      "type": "power",
+      "source": "motor_fl",
+      "target": "mosfet_fl_esc",
+      "voltage": "0V",
+      "sourcePin": "Negative",
+      "targetPin": "Drain"
+    },
+    {
+      "type": "power",
+      "source": "mosfet_fl_esc",
+      "target": "lipo_1s",
+      "voltage": "0V",
+      "sourcePin": "Source",
+      "targetPin": "JST_Negative"
+    },
+    {
+      "type": "data",
+      "source": "esp32_c3_mini",
+      "target": "mosfet_fl_esc",
+      "voltage": "3.3V-0V",
+      "sourcePin": "GPIO0",
+      "targetPin": "Gate"
+    },
+    {
+      "type": "power",
+      "source": "lipo_1s",
+      "target": "motor_fr",
+      "voltage": "3.7V-4.2V",
+      "sourcePin": "JST_Positive",
+      "targetPin": "Positive"
+    },
+    {
+      "type": "power",
+      "source": "motor_fr",
+      "target": "mosfet_fr_esc",
+      "voltage": "0V",
+      "sourcePin": "Negative",
+      "targetPin": "Drain"
+    },
+    {
+      "type": "power",
+      "source": "mosfet_fr_esc",
+      "target": "lipo_1s",
+      "voltage": "0V",
+      "sourcePin": "Source",
+      "targetPin": "JST_Negative"
+    },
+    {
+      "type": "data",
+      "source": "esp32_c3_mini",
+      "target": "mosfet_fr_esc",
+      "voltage": "3.3V-0V",
+      "sourcePin": "GPIO1",
+      "targetPin": "Gate"
+    },
+    {
+      "type": "power",
+      "source": "lipo_1s",
+      "target": "motor_rl",
+      "voltage": "3.7V-4.2V",
+      "sourcePin": "JST_Positive",
+      "targetPin": "Positive"
+    },
+    {
+      "type": "power",
+      "source": "motor_rl",
+      "target": "mosfet_rl_esc",
+      "voltage": "0V",
+      "sourcePin": "Negative",
+      "targetPin": "Drain"
+    },
+    {
+      "type": "power",
+      "source": "mosfet_rl_esc",
+      "target": "lipo_1s",
+      "voltage": "0V",
+      "sourcePin": "Source",
+      "targetPin": "JST_Negative"
+    },
+    {
+      "type": "data",
+      "source": "esp32_c3_mini",
+      "target": "mosfet_rl_esc",
+      "voltage": "3.3V-0V",
+      "sourcePin": "GPIO2",
+      "targetPin": "Gate"
+    },
+    {
+      "type": "power",
+      "source": "lipo_1s",
+      "target": "motor_rr",
+      "voltage": "3.7V-4.2V",
+      "sourcePin": "JST_Positive",
+      "targetPin": "Positive"
+    },
+    {
+      "type": "power",
+      "source": "motor_rr",
+      "target": "mosfet_rr_esc",
+      "voltage": "0V",
+      "sourcePin": "Negative",
+      "targetPin": "Drain"
+    },
+    {
+      "type": "power",
+      "source": "mosfet_rr_esc",
+      "target": "lipo_1s",
+      "voltage": "0V",
+      "sourcePin": "Source",
+      "targetPin": "JST_Negative"
+    },
+    {
+      "type": "data",
+      "source": "esp32_c3_mini",
+      "target": "mosfet_rr_esc",
+      "voltage": "3.3V-0V",
+      "sourcePin": "GPIO3",
+      "targetPin": "Gate"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounts using",
+      "source": "drone_frame_3d",
+      "target": "esp32_c3_mini"
+    },
+    {
+      "label": "fastens to",
+      "source": "m2x6_screws",
+      "target": "esp32_c3_mini"
+    },
+    {
+      "label": "mounts using",
+      "source": "drone_frame_3d",
+      "target": "mpu6050_imu"
+    },
+    {
+      "label": "fastens to",
+      "source": "m2x6_screws",
+      "target": "mpu6050_imu"
+    },
+    {
+      "label": "holds in place",
+      "source": "drone_frame_3d",
+      "target": "motor_fl"
+    },
+    {
+      "label": "holds in place",
+      "source": "drone_frame_3d",
+      "target": "motor_fr"
+    },
+    {
+      "label": "holds in place",
+      "source": "drone_frame_3d",
+      "target": "motor_rl"
+    },
+    {
+      "label": "holds in place",
+      "source": "drone_frame_3d",
+      "target": "motor_rr"
+    },
+    {
+      "label": "drives",
+      "source": "motor_fl",
+      "target": "propeller_cw_fl"
+    },
+    {
+      "label": "drives",
+      "source": "motor_fr",
+      "target": "propeller_ccw_fr"
+    },
+    {
+      "label": "drives",
+      "source": "motor_rl",
+      "target": "propeller_ccw_rl"
+    },
+    {
+      "label": "drives",
+      "source": "motor_rr",
+      "target": "propeller_cw_rr"
+    },
+    {
+      "label": "secures with",
+      "source": "drone_frame_3d",
+      "target": "lipo_1s"
+    },
+    {
+      "label": "secures",
+      "source": "velcro_strap",
+      "target": "lipo_1s"
+    },
+    {
+      "label": "mounts",
+      "source": "drone_frame_3d",
+      "target": "mosfet_fl_esc"
+    },
+    {
+      "label": "mounts",
+      "source": "drone_frame_3d",
+      "target": "mosfet_fr_esc"
+    },
+    {
+      "label": "mounts",
+      "source": "drone_frame_3d",
+      "target": "mosfet_rl_esc"
+    },
+    {
+      "label": "mounts",
+      "source": "drone_frame_3d",
+      "target": "mosfet_rr_esc"
+    }
+  ],
+  "projectId": "8bf596b1-4b4f-4b4c-a9bc-89bb55b1f635"
+}

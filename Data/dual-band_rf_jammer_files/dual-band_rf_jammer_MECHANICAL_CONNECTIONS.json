@@ -1,0 +1,37 @@
+[
+  {
+    "label": "mount",
+    "source": "mount_battery",
+    "target": "battery_pack"
+  },
+  {
+    "label": "friction fit slots",
+    "source": "unibody_chassis",
+    "target": "unified_rf_module"
+  },
+  {
+    "label": "double-sided tape",
+    "source": "unibody_chassis",
+    "target": "budget_mcu"
+  },
+  {
+    "label": "snap-fit tabs",
+    "source": "unibody_chassis",
+    "target": "integrated_power_board"
+  },
+  {
+    "label": "foam tape",
+    "source": "unibody_chassis",
+    "target": "battery_pack"
+  },
+  {
+    "label": "direct screw-in",
+    "source": "unibody_chassis",
+    "target": "antenna_24"
+  },
+  {
+    "label": "direct screw-in",
+    "source": "unibody_chassis",
+    "target": "antenna_50"
+  }
+]

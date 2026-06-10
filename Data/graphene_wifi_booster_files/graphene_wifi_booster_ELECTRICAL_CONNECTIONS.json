@@ -1,0 +1,199 @@
+[
+  {
+    "type": "power",
+    "label": "USB-C VBUS to 5V Regulator VIN",
+    "source": "usb_c_power_jack",
+    "target": "voltage_regulator_5v",
+    "current": "2A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "USB-C GND to 5V Regulator GND",
+    "source": "usb_c_power_jack",
+    "target": "voltage_regulator_5v",
+    "current": "2A",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "5V Regulator VOUT to 3.3V Regulator VIN",
+    "source": "voltage_regulator_5v",
+    "target": "voltage_regulator_3v3",
+    "current": "1A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Regulator GND to 3.3V Regulator GND",
+    "source": "voltage_regulator_5v",
+    "target": "voltage_regulator_3v3",
+    "current": "1A",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "MCU Power (5V)",
+    "source": "voltage_regulator_5v",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "MCU Ground",
+    "source": "voltage_regulator_5v",
+    "target": "main_mcu",
+    "current": "500mA",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "RF Module VCC",
+    "source": "voltage_regulator_3v3",
+    "target": "rf_front_end_module",
+    "current": "700mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "RF Module Ground",
+    "source": "voltage_regulator_3v3",
+    "target": "rf_front_end_module",
+    "current": "700mA",
+    "voltage": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Power LED Anode (with current limiting resistor)",
+    "source": "voltage_regulator_3v3",
+    "target": "status_led_power",
+    "current": "20mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "Power LED Cathode to GND",
+    "source": "status_led_power",
+    "target": "voltage_regulator_3v3",
+    "current": "20mA",
+    "voltage": "GND"
+  },
+  {
+    "type": "data",
+    "label": "MCU 2.4GHz RF out to Antenna",
+    "source": "main_mcu",
+    "target": "graphene_antenna_24ghz",
+    "protocol": "gpio",
+    "sourcePin": "RF_2_4GHz_OUT",
+    "targetPin": "Antenna_Feed (2.4GHz)"
+  },
+  {
+    "type": "data",
+    "label": "MCU 5GHz RF out to Antenna",
+    "source": "main_mcu",
+    "target": "graphene_antenna_5ghz",
+    "protocol": "gpio",
+    "sourcePin": "RF_5GHz_OUT",
+    "targetPin": "Antenna_Feed (5GHz)"
+  },
+  {
+    "type": "data",
+    "label": "MCU to RF Module Control 1",
+    "source": "main_mcu",
+    "target": "rf_front_end_module",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_RF_CTL1",
+    "targetPin": "CTL1"
+  },
+  {
+    "type": "data",
+    "label": "MCU to RF Module Control 2",
+    "source": "main_mcu",
+    "target": "rf_front_end_module",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_RF_CTL2",
+    "targetPin": "CTL2"
+  },
+  {
+    "type": "data",
+    "label": "RF Module Output to MCU RF Input",
+    "source": "main_mcu",
+    "target": "rf_front_end_module",
+    "protocol": "gpio",
+    "sourcePin": "RF_Module_In",
+    "targetPin": "RF_OUT (To ESP32)"
+  },
+  {
+    "type": "data",
+    "label": "RF Module Input to 2.4GHz Antenna",
+    "source": "rf_front_end_module",
+    "target": "graphene_antenna_24ghz",
+    "protocol": "gpio",
+    "sourcePin": "RF_IN (To Antenna)",
+    "targetPin": "Antenna_Feed (2.4GHz)"
+  },
+  {
+    "type": "data",
+    "label": "RF Module Input to 5GHz Antenna",
+    "source": "rf_front_end_module",
+    "target": "graphene_antenna_5ghz",
+    "protocol": "gpio",
+    "sourcePin": "RF_IN (To Antenna)",
+    "targetPin": "Antenna_Feed (5GHz)"
+  },
+  {
+    "type": "data",
+    "label": "MCU Control for 2.4GHz LED (with resistor)",
+    "source": "main_mcu",
+    "target": "status_led_wifi_24ghz",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_LED_2_4GHz",
+    "targetPin": "Anode"
+  },
+  {
+    "type": "data",
+    "label": "2.4GHz LED Cathode to MCU GND",
+    "source": "status_led_wifi_24ghz",
+    "target": "main_mcu",
+    "protocol": "gpio",
+    "sourcePin": "Cathode",
+    "targetPin": "GND"
+  },
+  {
+    "type": "data",
+    "label": "MCU Control for 5GHz LED (with resistor)",
+    "source": "main_mcu",
+    "target": "status_led_wifi_5ghz",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_LED_5GHz",
+    "targetPin": "Anode"
+  },
+  {
+    "type": "data",
+    "label": "5GHz LED Cathode to MCU GND",
+    "source": "status_led_wifi_5ghz",
+    "target": "main_mcu",
+    "protocol": "gpio",
+    "sourcePin": "Cathode",
+    "targetPin": "GND"
+  },
+  {
+    "type": "data",
+    "label": "MCU Input for Mode Button",
+    "source": "main_mcu",
+    "target": "mode_selection_button",
+    "protocol": "gpio",
+    "sourcePin": "GPIO_Button",
+    "targetPin": "Switch_1"
+  },
+  {
+    "type": "data",
+    "label": "Mode Button to MCU GND (Pull-up/down assumed on MCU)",
+    "source": "mode_selection_button",
+    "target": "main_mcu",
+    "protocol": "gpio",
+    "sourcePin": "Switch_2",
+    "targetPin": "GND"
+  }
+]

@@ -1,0 +1,1503 @@
+{
+  "plan": "- Electrical Components: ESP32-S3 Dev Board, dedicated RF front-end module for 2.4/5GHz, Graphene-enhanced antenna elements (e.g., printed on substrate), USB-C power input, voltage regulators, status indicator LEDs.\n- Mechanical Components: Custom enclosure, internal standoffs for PCB, small assembly screws.\n- 3D-Printed Parts: Main enclosure halves (top/bottom) designed for graphene antenna integration, PCB mounting brackets, potential heatsink mounting.\n- Power System: USB-C for primary power; optional integrated LiPo battery with charging circuit for portable operation.\n- User Interface: Simple push-button for mode selection (e.g., repeater, client) and multi-color status LEDs for signal strength/connection.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main WiFi Controller",
+      "pins": [
+        "USB-C (Power/UART)",
+        "GPIO (RF Module)",
+        "GPIO (LEDs)",
+        "GPIO (Button)"
+      ],
+      "type": "mcu",
+      "partId": "74657be4-0b2c-4ef4-95da-5757ffb12d25",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/7jgtXcHiZHDECaalu1OAGG_BKCVScnFw5aG6jF783tQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzgxcnM2MkotMW5M/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GPIO1,GPIO2,GPIO3,GPIO4,5V,3V3,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CNGF6S3F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "68x27x10mm",
+      "position3d": {
+        "x": 50,
+        "y": 15,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 27,
+        "width": 68,
+        "height": 10
+      },
+      "description": "ESP32-S3 development board with Wi-Fi, Bluetooth LE, and USB-C for power and programming. Handles sound processing and LED control.",
+      "productName": "ESP32-S3-DevKitC-1-N8R2",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-DevKitC-1-N8R2/15312389",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRywSGe9S9uiq6Wo80h5kTMUZXv7MBrAWPYHpr8wG7khLyUBU0A7FKOvFCqo3enAECwkHZqAbPjOsf2vpyGBa1Aqz1UHZU0OScdiq8IdGUK76DjdO6jp44AY0ka8w2dnjAmsvRqtNinC0IZR8wD765Uybb6M3dqy1bzcQezV1MOeV2ceQwXyS8zoV3g20vaLp8F3rU1EGsvPiNNtgHw0mwHjGqpI0T9uLjNQBxEsltqBCWSydfSdYzar4T7msFI7TkN0BjWKLUX9PxRE5ZTwkKiq5u07sy1yKsJm8BKbr15hSxgZfj9I1uzbm9V7SvSd02EAkath2HDviEOzvMxRSfQd7ulHrQKWZI9tdmgNOavq9fkWFqsMVkNoKMgKgue92tFrfdFdES9xFnQ6UnFYMYSY2GjeenD2dEJ1LFxfWF6NyPHVRm1H99PeZeDI7TL3JYzfjSLB8YKvTav4QKP5mouUXhMwtQ0M6wxwA5wErekNTsQNPrIbWDY7qnmUwpCievkl2UTOJq9PC1BmEFN2rQQbyVqNehCqV8ePPcmaHwIQsLxI0bR0LnyKMUIjleBxTdhWUW0XVD8RZ3cpodpZnVRGUkciOvRotBRALYVa4gsWCD3Q5RAU3EgrAmOvMdrjjeQEKtuoOzQAqErreGeBr539",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-S3-DevKitC-1-N8R2&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rf_front_end_module",
+      "name": "RF Front-End Module",
+      "pins": [
+        "RF_IN (To Antenna)",
+        "RF_OUT (To ESP32)",
+        "VCC",
+        "GND",
+        "CTL1",
+        "CTL2"
+      ],
+      "type": "module",
+      "partId": "b5634516-015b-4ecc-8a3a-b49500f27cce",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/L7n30fnirQfDUq1f1CLQuYhEXKE0n2C5NvyyfyRY5jg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kMWVo/YXgwbXFzZDRyei5j/bG91ZGZyb250Lm5l/dC8tL21lZGlhL1Nr/eVdvcmtzL0ltYWdl/cy9Qcm9kdWN0cy8y/MDIxL1NLWTY2MTEy/LTExLnBuZz9yZXY9/MDJhNjZmY2ZlOTFl/NDVkNGFhZjU0YmUz/MDMyNjE4Yzk",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "6x6x1.1mm",
+      "position3d": {
+        "x": 25,
+        "y": 14.25,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 1.1
+      },
+      "description": "Integrated RF Front-End Module (FEM) with Power Amplifier (PA) and Low Noise Amplifier (LNA) to extend Wi-Fi range to 500m+.",
+      "productName": "SKY66420-11",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/skyworks-solutions-inc/SKY66420-11/10464673",
+      "estimatedCost": 3.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3oHLAzP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SKY66420-11&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "graphene_antenna_24ghz",
+      "name": "Graphene Antenna 2.4GHz",
+      "pins": [
+        "Antenna_Feed (2.4GHz)"
+      ],
+      "type": "module",
+      "partId": "4f9ceca4-b522-48d5-a983-7bf4ab05fe34",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/awT6NyJnbKgySCbXk-LqlXdMBcKfaqOOrcK2Fxc8TPM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Z3JhcGhlbmVhLmNv/bS9jZG4vc2hvcC9w/cm9kdWN0cy8xNDA0/X0dyYXBoZW5lYV9w/cm9kdWN0bzEyODg0/XzdkNWJmODFjLTk0/MDItNDNhNi05YTlm/LTI4MWJhNjI5MTVi/N18yMDQ4eDIwNDgu/anBnP3Y9MTYwMTAy/ODY2MA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DYG2H1QH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x10x0.5mm",
+      "position3d": {
+        "x": 75,
+        "y": 26,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 20,
+        "height": 0.5
+      },
+      "productName": "Custom Graphene Coated Antenna",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=2.4GHz+graphene+antenna",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3IXP84V",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Graphene+Coated+Antenna&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "graphene_antenna_5ghz",
+      "name": "Graphene Antenna 5GHz",
+      "pins": [
+        "Antenna_Feed (5GHz)"
+      ],
+      "type": "module",
+      "partId": "4f9ceca4-b522-48d5-a983-7bf4ab05fe34",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/awT6NyJnbKgySCbXk-LqlXdMBcKfaqOOrcK2Fxc8TPM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Z3JhcGhlbmVhLmNv/bS9jZG4vc2hvcC9w/cm9kdWN0cy8xNDA0/X0dyYXBoZW5lYV9w/cm9kdWN0bzEyODg0/XzdkNWJmODFjLTk0/MDItNDNhNi05YTlm/LTI4MWJhNjI5MTVi/N18yMDQ4eDIwNDgu/anBnP3Y9MTYwMTAy/ODY2MA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DYG2H1QH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x7x0.5mm",
+      "position3d": {
+        "x": 75,
+        "y": 26,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 7,
+        "width": 15,
+        "height": 0.5
+      },
+      "productName": "Custom Graphene Coated Antenna",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=5GHz+graphene+antenna",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3IXP84V",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Graphene+Coated+Antenna&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "usb_c_power_jack",
+      "name": "USB-C Power Input",
+      "pins": [
+        "VBUS",
+        "GND",
+        "CC1",
+        "CC2"
+      ],
+      "type": "power",
+      "partId": "dbb22a1e-2a5a-4ee2-9763-cf70479ddc8f",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Bkp5sMvou7HrYP79JeJg8xz6xQ37t5en72PusI8o9Fk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFJS0JXNythSEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FXMF82WJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x8x3mm",
+      "position3d": {
+        "x": 50,
+        "y": 11.5,
+        "z": 2
+      },
+      "boundingBox": {
+        "depth": 8,
+        "width": 10,
+        "height": 3
+      },
+      "productName": "USB-C Jack (Female)",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=usb-c+female+connector",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH1oeeTUt7iXQzLr20SBoGrTSzSYPByY4SI9HfugbnIUQwaHMJP1ADNmWnpE6jP9l9hWRsASFp4Pu24g61gfphA9GNybDOiYrkITvmZbGJlnmXyNUIzTboE75xnWSUncWh7FsoiWzv7oAeP5F93cdZzQkhori60Pesd470K2VWz5aM27VMaKpy5mQ1ahc4HAuxh12xjY7lfbFCIrOvgfyOQ3Bjf5ZolTwInSEN7ZAhQQ1LijjDhOU4Q01HbDR3gslpCS8xqy9ufH0NLQTOkWr8yO4xZG1TlpiMcCDLOc5sMeSkidPdtuUJJ6GhNmryl0Cx8OP0kmUwoO7I660hi9lywwMFBTy0gWPUKGVeXchKzz4950tENWeUU4S56O6B1IVXsndekvR0VBzb4rkCbnXc8LueC6ejIVLCFu5jfoJj0b3YZueQAMo7o5puNP4qDedcxeMekeDaIWf9muzOcrNjExPfauoN64PediLpLX1QrLZtuaKdZyVb0ux5bnNdYlFDO0k9bqW5IYI1REwEOVzUPOSMZeUw404SxHatcYPrhWLeeTxJN71NBO9OOkI4TIkCZiiTYzppPMhv762QtYq7guMiOX5N6mAivLLzFg68HTm26IgzpLxG5ssdPsuD9q1LfGmcnb6bhq94okqLOwWi0L",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=USB-C+Jack+%28Female%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "voltage_regulator_5v",
+      "name": "5V Voltage Regulator",
+      "pins": [
+        "VIN (USB-C)",
+        "VOUT (5V)",
+        "GND"
+      ],
+      "type": "power",
+      "partId": "c196c23f-6c24-469f-bda1-cea042bd51d0",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/qdIaw93jgFtLhsJshEAzpaEN_D9gRxLybGapKoiNNg4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuZGF0YXNoZWV0/cy5jb20vaW1hZ2Uv/MjM5MDI5NDQtdGV4/YXMtaW5zdHJ1bWVu/dHMtbG0xMTE3dC01/LjAtaW1hZ2UuanBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CPFSGK2T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x4x2mm",
+      "position3d": {
+        "x": 40,
+        "y": 14,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 4,
+        "width": 10,
+        "height": 2
+      },
+      "description": "Second stage for logic power, stabilizes to 5.0V.",
+      "productName": "LM1117-5.0",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/stmicroelectronics/LM1117-5.0V/251341",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIqdlIBZohzYfmQhFDnEhCYncLWqY7PqRshMHBRN3NDqhSBs8WLqZvFst7qaD8zR2xg46LUMYX2ivVOhVlPg5c5BJg54euNd5vg4fEOHL6TfXPSt8GyCEkvM2CMyvdrLHfDk2QHhyZ8UxhWP6x8Nb1ZAQSRrZWETN31TUSG0xbUwTJDM88IcXw7GzDxTBjb9H6lrX32VDeoBZMvfWXWA5ybUR3HfKnU1uF2gkIsemNrPAsBmeSoCk0eTkzugW0WWM9ZPEH4vrUdVQAciRL0yVwRkNypqfI8rWHcJcgD5unUkbMyJYduO8MX7i2VfpT38mrVu3iM4LMa18jkfr0f8uxEJJglu8oCDak0Dw79VOwV3UQ1WRh4ymdzqdUWJZ9Y3i5i8uMpCuqnP591NmF5wPvouwVho5pyMoGuNOUnWYW67QH3gmT5r9ulrLdJmVpQi03S6qa0gqu54dBTE0utBd49Y665T8uWhriTUGPjBHfiuh2yc7k0NJpLIaC7wkIDga5DZpA9dELio7gapHatEycdP9NNAT4g6MIBPkgv1QsGdzWcF8UKcVydknE0ux3TA4epfxajH4sTtf6GGtZWUaBEvt3rXW10FSfLyjztZJ5ABDBUsFkJcBFQknrCWPTR8Ub1TUhYpqpboTgPp99Suip2b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM1117-5.0&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "voltage_regulator_3v3",
+      "name": "3.3V Voltage Regulator",
+      "pins": [
+        "VIN (5V)",
+        "VOUT (3.3V)",
+        "GND"
+      ],
+      "type": "power",
+      "partId": "b4fa3a07-c1df-4e85-92e8-da2def5b64e0",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/SsOHXmNLKte5-LivbD71LipXbJ57-FAQmoZKKUVoQRs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb21w/b25lbnRzMTAxLmNv/bS9zaXRlcy9kZWZh/dWx0L2ZpbGVzL2Nv/bXBvbmVudF9waW4v/QU1TMTExNy1MRE8t/UmVndWxhdG9yLVBp/bm91dC5wbmc",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN,VOUT,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0881X2YGB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x4x2mm",
+      "position3d": {
+        "x": 40,
+        "y": 16,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 4,
+        "width": 10,
+        "height": 2
+      },
+      "description": "Low Dropout 3.3V Linear Voltage Regulator.",
+      "productName": "AMS1117-3.3",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/advanced-monolithic-systems/AMS1117-3.3/269179",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHRTSZTZZylMZrRnOmlQEy7iiT2kJdnGsU9NRKVhEcBzSMmvx5GgvP4skaildTopY3dz3t6B6IrUnV0cBe7uThmbHFDcu8UNBGSe6hXyy6u1eObUJFIfQVr9tW89pLGFllr9PXxaFxnrGZG6vKEOPoxFQPzdxAPrQzBBCmEj0OGrQ32dsF1KKCwt8phanyesrKqZilxZPE29EXL5oc4f43NRkmC4G7lVmJQ6LXDIsaE9GMCqUqOoDUULfxN7htLbV9JipigiDlFeaa5BsJqzwLByLFvF0K3DBU9D8fpcETzjKEj2BpycfTYlaBxFApB40WzmWfiKVcFvhgGSN3utDA4wo4ZoFnjqAKUQF2pDXgB8cum5SWXMer1qWlsZKf5459KqFcOoq9petwuXBJbDJQZN3F7nSUQdegIknEdWTFKnMwJ6nJmXsxtNOvshNFjFB6m0Yxg6qlDVMUvs9DT5QIq5Hl1QBnMfX8xB5JC4Sqxe4To5l0Gk3GLObGNFZJxAAigtM9vXrm8llE88bbDrCnyIiM708qhDHKeBC5cx8TLvhyqcBeaRnf28gA7WjrUdcqmV6apjcajZpJ9xKQbqXclk4ycZxMvjHs0OtbIIlpfnPtbiAWX9I71kNWHSRSFlswJRzMB3OjrpI7pKa197QT5p",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=AMS1117-3.3&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "status_led_power",
+      "name": "Power Status LED",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "display",
+      "partId": "4e81c1da-107c-436a-9945-601548afa18e",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/FRNxdDCik0ejdQGNyNOs5DqsylQLut9QSoveLAiAmb0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9nb3Jz/dWVsZWt0cm9uaWsu/Y29tL2VuLXByb2R1/Y3QtM21tLWdyZWVu/LWxlZC1vdGhlci1s/ZWQtdHlwZXMtaHFn/LTkwOTA0LTU0LUsu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DHX6P882?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x3x5mm",
+      "position3d": {
+        "x": 20,
+        "y": 25,
+        "z": 57
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 3,
+        "height": 5
+      },
+      "description": "Indicator for medium heat setting.",
+      "productName": "LED 3mm Green",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=3mm+green+led",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHX4XkUIACHeL1e31u3iLxkALwGbKN9HGE0Fk1GBGeg7jjOreyyhV7v6dPNb8SE9G79qtf2raKdgL3kXM5epODc5CsyoaBLKu7Zw7quBzN6IeeVGtsJmFR4ptthOaUMOtkvPrpLzjOUyRXIDmJFAkye5GtV9QS2Rph3rKGMWjj2FN78v77rwGoid7VcGDq3sOBiRg3l151eSXSRPvJOKyhwBIkFPRzW2Y9OHqhiyhzDIbGJg1IhDOxQBDDl2oHv7oML5xcVSWzayP5VHEn9uR1FBBzC0IMEBXgIC285kG3qs3VI9A5HWP1yXlZVLeibCBRW1KVBrJYa7VjISlYGoQXEZO8xuRII7LccVxHpkDw8Cw2o9iElNroQy7kKhPAnuNwvjhchd8QEcimj5QrpabTWLxv6Y3iXMjiJr4trt4KdIuiFXBmoK3ilDcM0d7veGSgQGOXOfCofLE7zGvzfhnc9WXItILr6mUZ7jTYyDfUb9fvLJrnB65NG4mzF5Yk1En2gu6CXbaS76bNQiGN2X6gg3FeuH84ZFG7JU5ytbzGCazuyQOrGtZ1WwwqD4NrlbcyoeKbPsfhxfS2L9CURZCxy32AYw5dz6nN2TuCdWAIWwUsO3WOjKuXynxLmNagSs8P0JB5y5IzAD0qegsBLNgEt9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LED+3mm+Green&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "status_led_wifi_24ghz",
+      "name": "WiFi 2.4GHz Status LED",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "display",
+      "partId": "d5fa2996-6944-4fc8-8d2b-d9833a48211d",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ryZIH5zG0HVlUGv4XLVqWHIonRY4dxBdO3E1Q-_iT-4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9saWdo/dGhvdXNlbGVkcy5j/b20vbWVkaWEvY2F0/YWxvZy9wcm9kdWN0/L2NhY2hlL2ExZTY2/Zjg4YmU1NGExYjk5/YjM1Y2I4NjhkOTk4/MmUxLzMvbS8zbW0t/cm91bmQtdG9wLWJs/aW5raW5nLWZsYXNo/aW5nLWxlZHMtYnJp/Z2h0LWJsdWUuanBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DHX8Q58F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x3x5mm",
+      "position3d": {
+        "x": 30,
+        "y": 25,
+        "z": 57
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 3,
+        "height": 5
+      },
+      "description": "Indicator for high heat setting.",
+      "productName": "LED 3mm Blue",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=3mm+blue+led",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHX4XkUIACHeL1e31u3iLxkALwGbKN9HGE0Fk1GBGeg7jjOreyyhV7v6dPNb8SE9G79qtf2raKdgL3kXM5epODc5CsyoaBLKu7Zw7quBzN6IeeVGtsJmFR4ptthOaUMOtkvPrpLzjOUyRXIDmJFAkye5GtV9QS2Rph3rKGMWjj2FN78v77rwGoid7VcGDq3sOBiRg3l151cL3JZL1hucZkfrUpUIUfe1ZZXQSVHeGEaMJsBr6ZJIgXEwmBduQfRDGwoPWI0IUaGk0bj3e02p7DJuJjDMXw77p7vAkx2vo1SX7Kp8yAqJkkDgLK7WFochtSoCMkLNheAnOR6K5ENilJ05W37dZ61X3Ph9klpzGmSsae8WNvKeYMLfHGhLR4Phl75bksgm2suflOzV2FPy516LeZ55Tgon6mtCzoOb2SREZqnNhm8rCbax5JEkzN7waVZNtJfjQKz1ay3wWwayzN62GUdTZ65fHn16fElZffXT1SwB6VWN73ympoeLB4Juqsnjwm1i15TF1G8OhFQvuOokPQ3HHomkzs4hibWCSyRhxaa0VMRepdKrYSBlIdE8kS3VtdOn8OQvBaY1P4zqI053SqyaGN4deglCo1WtxWn6oH4uPk4dFzjco1R28FMzU4nmB2Qnj0R52ghqBhHkcfLl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LED+3mm+Blue&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "status_led_wifi_5ghz",
+      "name": "WiFi 5GHz Status LED",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "display",
+      "partId": "21433879-13b6-4def-89bc-c09a089cdb36",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/SHJd6dBiZ-EhyMXUcdzQIlcXN1Te37Uab17VRUNva0g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGFydHMtZXhwcmVz/cy5jb20vU1NQJTIw/QXBwbGljYXRpb25z/L1BhcnRzRXhwcmVz/c0BTdWl0ZUNlbnRy/aWMvU0NBJTIwMjAx/OS4xL2ltZy8wNzAt/NTIzX0hSXzAuZGVm/YXVsdC5qcGc_cmVz/aXplaWQ9MTA0JnJl/c2l6ZWg9NjAwJnJl/c2l6ZXc9NjAw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B01AUI4VWO?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x3x5mm",
+      "position3d": {
+        "x": 40,
+        "y": 25,
+        "z": 57
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 3,
+        "height": 5
+      },
+      "description": "LED to indicate network activity (data transmission).",
+      "productName": "LED 3mm Yellow",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=3mm+yellow+led",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHX4XkUIACHeL1e31u3iLxkALwGbKN9HGE0Fk1GBGeg7jjOreyyhV7v6dPNb8SE9G79qtf2raKdgL3kXM5epODc5CsyoaBLKu7Zw7quBzN6IeeVGtsJmFR4ptthOaUMOtkvPrpLzjOUyRXIDmJFAkye5GtV9QS2Rph3rKGMWjj2FN78v77rwGoid7VcGDq3sOBiRg3l151mh94PXrP2FySVz2ZFBXUUDeZdJQlt5ldt9INEEovMpQ6gfnAUNmGNj7zvJqcxbBYuT6BRMKWMmo3G8tgvaTJvfHetaASTQTR7EaHJNOMnv0XxGDR55x6zaxTYl3gQNonF3YLZjjIIqClcgPaJApu0TTRv32LkI6wtYbggpRXe74U6akLU4I2jEWSClv3ZLvgmb4iKFhmR7COUSdhqbKiuq8b2j7x38gC8w0y2040x2LheTnW03Ws0g2hZdt1jmsS4o6gMFjQtUeLxogib3LZLOVOvdEcAbE493yA85jvliVu2EYofCgrBq5mCd8uscDVn0fii46roJFCZxBTHhGPX8k4fDktLQkdkeSo3cv8RnJwFAQyva55SFpKvTc6oxiN9pbLT39ZfjBkDVNnThtuVvL6trIQPBzKTen08Sr9No6uuZ9ZlLQhi4i6HrL0Oum1y8QeanTKAPOJ0J",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LED+3mm+Yellow&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mode_selection_button",
+      "name": "Mode Selection Button",
+      "pins": [
+        "Switch_1",
+        "Switch_2"
+      ],
+      "type": "module",
+      "partId": "9430d0af-0ccf-48be-af1e-187cf4d74b34",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/-f1bItaMVyK747Z9CZKA_4-5pZXI_1nH5-z0c3yCLYA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9xdWFy/dHpjb21wb25lbnRz/LmNvbS9jZG4vc2hv/cC9wcm9kdWN0cy82/UGluU3F1YXJlN21t/eDdtbU5ld1Byb2R1/Y3QtRFBEVE1pbmlQ/dXNoQnV0dG9uU2Vs/Zi1sb2NraW5nU3dp/dGNoXzUzM3guanBn/P3Y9MTczNzczNDg2/Ng",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "PIN1,PIN2,GND_A,GND_B"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01MRP025V?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 80,
+        "y": 20,
+        "z": 57
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "description": "Provides physical input for manual control or configuration of the smart switch.",
+      "productName": "Tactile Push Button Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=tactile+push+button+6x6",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHdNTskFvYUAGWZ2YRNrOqrXN66T8zS2k5nJKtkubvYUspSigSK56GvsDQk0yvSQ8D1vdtRoXC5EX80zgULFL3YFjRhvbmkDa3A611kML6n1mg4c13eH0MMyuJmJXAYxGGeQuxBv9kxWhqaN7Jh9aU8abVSMcjjeIik7g7k0i1eUCU1jdCJu3py7U9FOlTqYOrZKToXNPSR1CUY5ySzCMgJXpyOJJnuCLV5FXhbbIu9S9OCBmYWrOQtN2KRz3x1ARripkAYpAMiSpbWr6g2LLr23y5NnXIWQ5dCey0ZkO53ndPBghi1WNjPcAPCt6OIXtXYuc7YM3T15Ok0uAgPNPdUwCTGDBbZdXSAvYNUbi5ud0imJNcB2oyWgowtsN2o3b3iX4RNbbnC7As8BIG5Ys4uRtoRKsephb7luuhRbCAWSBCY8c3gQvPodNTUXPLt4NYPHJM0FolUEMLdlpvsKuXwGmyP4Hb2z6fcNX3dPnhlGdBKpiCnwKwO8t3qTkGvMoXJQdFoZg1kOrGjhh7GAwhZ767Bind1sdKRbuYPeFIevp9q55dEXUciMd5VKB326GIrgoxFpk51GuhXHouxKGm6YsAGXTb2cD3kwBnlD2xb5L2DfJFI6c5HCXpYkC5zLXf6G2PfFU9R1JnoGNRnXbfL5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Push+Button+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "enclosure_bottom_half",
+      "name": "Enclosure Bottom Half",
+      "type": "3d_printed",
+      "partId": "c4e0ddbf-3db0-4f48-b53b-19aa5c4d18bb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/2bXj-mK8-QBOqL9k1wNpngC2n1xNZ3vAEQZe5iFwlXA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9uZW1h/c3VwcGx5LmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9hdHRhYm94/LXdhbGwtbW91bnQt/ZW5jbG9zdXJlcy1o/ZWFydGxhbmQtcG9s/eWNhcmJvbmF0ZS1l/bmNsb3N1cmUtd2l0/aC1jbGVhci1jb3Zl/ci1hbmQtcG9seWNh/cmJvbmF0ZS1sYXRj/aGVzLTExNTg4NzQu/anBnP3Y9MTc1MjQ0/NzE4OCZ3aWR0aD05/NTA",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "100x60x20mm",
+      "position3d": {
+        "x": 50,
+        "y": 10,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 100,
+        "height": 20
+      },
+      "description": "3D-printed bottom half of the enclosure with integrated standoffs and mounting points for main PCB and components. Designed for USB-C and button access.",
+      "productName": "Enclosure Bottom Half",
+      "estimatedCost": 3.5,
+      "printSettings": "25% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "enclosure_top_half",
+      "name": "Enclosure Top Half",
+      "type": "3d_printed",
+      "partId": "35c0b32b-3321-4352-b551-dcd33339e802",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Qa3QHfNnCoqpmybcDmuTL-hBlXlHia3zFbhEbXy698E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS52aXNhYmxlLmNv/bS9odHRwczovL3N1/cHBsaWVyLW9mZmVy/cy1tZWRpYS1wcm9k/dWN0aW9uLnMzLmV1/LWNlbnRyYWwtMS5h/bWF6b25hd3MuY29t/LzdjYzkzYmE2LTZj/ZTItMTFlZi04YmZi/LTBhNThhOWZlYWMw/Mi5qcGVnP3c9MzUw/Jmg9MzUwJmF1dG89/Zm9ybWF0LGNvbXBy/ZXNzJmZpdD1maWxs/bWF4JnRyYW5zcGFy/ZW5jeT1ncmlkJmdy/aWQtY29sb3JzPWZm/ZmZmZixmZmZmZmY",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "100x60x15mm",
+      "position3d": {
+        "x": 50,
+        "y": 27.5,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 100,
+        "height": 15
+      },
+      "description": "3D-printed top half of the enclosure with integrated light pipes for LEDs and space for graphene antenna elements. Designed to snap or screw onto the bottom half.",
+      "productName": "Enclosure Top Half",
+      "estimatedCost": 2.5,
+      "printSettings": "25% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "pcb_standoff_main_mcu",
+      "name": "PCB Standoff for Main MCU",
+      "type": "3d_printed",
+      "partId": "382e4a70-f079-405f-b177-7076f1625e5e",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "main_mcu",
+      "dimensions": "5x5x8mm",
+      "description": "Custom 3D-printed standoff integrated into the bottom enclosure for mounting the main MCU board.",
+      "productName": "PCB Standoff for Main MCU",
+      "estimatedCost": 0.1,
+      "printSettings": "100% infill, 0.15mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "rf_module_mount",
+      "name": "RF Module Mount",
+      "type": "3d_printed",
+      "partId": "b0f4dd7c-38ed-4c71-91a7-d349aa697de3",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/h5XxV6kveOpePoGUQEM1M1_RQN0UWLWRNhXHzI-zTcI/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL285a0FB/T1N3OURKbG40ekcv/cy1sMTQwLmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "rf_front_end_module",
+      "dimensions": "20x20x5mm",
+      "position3d": {
+        "x": 25,
+        "y": 12.5,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 5
+      },
+      "description": "Custom 3D-printed bracket for securing the RF front-end module within the enclosure.",
+      "productName": "RF Module Mount",
+      "estimatedCost": 0.2,
+      "printSettings": "50% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "antenna_24ghz_mount",
+      "name": "2.4GHz Antenna Mount",
+      "type": "3d_printed",
+      "partId": "d9772d4e-d06d-42d0-883b-4bd4e2fa91b7",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/gsoCKl0gUwUdz8jzJe87a7xQuWLuGXn-URM2cLcdMF4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWlyODAyLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxNi8w/NS9wcm9kdWN0cy1B/Tk1NMjQwNy0yMDE2/LXNjYWxlZC0zMDB4/MzAwLmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "graphene_antenna_24ghz",
+      "dimensions": "30x10x3mm",
+      "position3d": {
+        "x": 75,
+        "y": 27,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 30,
+        "height": 3
+      },
+      "description": "Custom 3D-printed fixture to securely hold the 2.4GHz graphene antenna within the top enclosure half, optimizing signal path.",
+      "productName": "2.4GHz Antenna Mount",
+      "estimatedCost": 0.15,
+      "printSettings": "100% infill, 0.15mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "antenna_5ghz_mount",
+      "name": "5GHz Antenna Mount",
+      "type": "3d_printed",
+      "partId": "77d1f526-5b75-4bd8-9866-484d6492d301",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "graphene_antenna_5ghz",
+      "dimensions": "30x10x3mm",
+      "position3d": {
+        "x": 75,
+        "y": 27,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 30,
+        "height": 3
+      },
+      "description": "Custom 3D-printed fixture to securely hold the 5GHz graphene antenna within the top enclosure half, optimizing signal path.",
+      "productName": "5GHz Antenna Mount",
+      "estimatedCost": 0.15,
+      "printSettings": "100% infill, 0.15mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "usb_c_jack_retainer",
+      "name": "USB-C Jack Retainer",
+      "type": "3d_printed",
+      "partId": "362c54a9-bf2f-474a-9b1b-66d08b1dcf16",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "usb_c_power_jack",
+      "dimensions": "15x10x5mm",
+      "position3d": {
+        "x": 50,
+        "y": 12.5,
+        "z": 2
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 15,
+        "height": 5
+      },
+      "description": "Small 3D-printed part to retain the USB-C power jack securely against the enclosure opening.",
+      "productName": "USB-C Jack Retainer",
+      "estimatedCost": 0.05,
+      "printSettings": "100% infill, 0.15mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "button_actuator",
+      "name": "Mode Button Actuator",
+      "type": "3d_printed",
+      "partId": "7b1b4280-2453-4d60-92d7-f56b5556cac3",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "mode_selection_button",
+      "dimensions": "8x8x10mm",
+      "position3d": {
+        "x": 80,
+        "y": 28,
+        "z": 57
+      },
+      "boundingBox": {
+        "depth": 8,
+        "width": 8,
+        "height": 10
+      },
+      "description": "3D-printed plunger-style button to extend the mode selection button through the enclosure for user access.",
+      "productName": "Mode Button Actuator",
+      "estimatedCost": 0.08,
+      "printSettings": "100% infill, 0.15mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "m2_x_6mm_mounting_screws",
+      "name": "M2x6mm Mounting Screws",
+      "type": "misc",
+      "partId": "911936c7-76d6-42d8-b1e2-a5e2066f443f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/i9KS47r5y30PlgCriBXCignOxyjj-WfREzB7al_DfrY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0o3WUFB/T1N3cUY5WmNzU3Ev/cy1sNTAwLmpwZw",
+      "quantity": 4,
+      "research": {
+        "specs": [
+          {
+            "label": "head_type",
+            "value": "Various"
+          },
+          {
+            "label": "length_mm",
+            "value": "6"
+          },
+          {
+            "label": "drive_type",
+            "value": "Phillips"
+          },
+          {
+            "label": "thread_size",
+            "value": "M2"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.extreme-bolt.com/store/peek-pan-head-screws-phillips-metric/m2-2/peek-pan-head-screw-m2-0-4-x-6mm-phillips",
+            "note": "PEEK material, Pan Head",
+            "vendor": "Extreme Bolt & Fastener"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B082XXW76M?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x6mm",
+      "description": "Small M2 screws for securing the main PCB to integrated standoffs and the enclosure halves together.",
+      "productName": "M2x6mm Phillips Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2x6mm+phillips+screws",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9djn5hqcn5eiz59QLSqGniXp8mL2a5X6S8FmRKmesnsvuIta9oFWYUBvK3XARQ5ovQ4sVFNCvQWPvG5oJlpGOYaOnw9xNSkO9LqmIQMLuK8d7XscVpa2my7ZqyqbCpoch6YjvEA2pj8NQZ3HcWjO5RedSpuZ6RQJZQrDsdKFujLv4pUzkjHN0F1KZEBurIiJgKVg2YdlUerHCCy0waMeMviH2f6Id4QXLk5YHjOUm3u29v9EC7CYtEGZvNj1vjB5XISsBk2kAULMwI1lV3N2mTUHiEIJYQ7M5Mo8hontVyc4u5Drw7FFwzr9GhMHJUrWAsOgqrw57xCPwBs0hMR56OHWYVjGhVuWHZP0dh6bmDweDESW9XxcjBE4lZulqqkJ8pIw1nSIvNzo45zhtCwdRMX7k3pvG24icFoFuWxwAbseqvL3XUMnfEwFsITT0HsjfGuk5SBzuy0ul9Fhupc9fRd7l7F46tZM4Cp6E8m1N6hbGFjmw3OxCWgP5D0hWPhaI0vYaJl1ZUWE1StSz2C6AgBAuYM3OhIQBSCZKKpt9Kn9A4uG4GdauK0oEPphLGF8BRgSGbLSwuH0zvdMCkMYxE52aiwSW94PWRaKESnEKdgoZf141K9W5ElKIMbh1k7yKt8yK9YeSA3rQMICPHq2dY2Zl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x6mm+Phillips+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "status_led_power_mount",
+      "name": "Power Status LED Mount",
+      "type": "3d_printed",
+      "partId": "88538124-4e32-42c8-9ec8-67785a298a6d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/0f3LiTeHG0v42_GHErUyw2btzcjTNCUFqbd0hirLM8Y/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/aW5kaWNhdG9ybGln/aHQuY29tL3dwLWNv/bnRlbnQvdGhlbWVz/L2luZGljYXRvL3Rp/bXRodW1iLnBocD9z/cmM9aHR0cHM6Ly93/d3cuaW5kaWNhdG9y/bGlnaHQuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE5LzEy/LzEwTU0tTEVELWlu/ZGljYXRvcnMuanBn/Jnc9ODA7Jmg9ODA7/JnpjPTE",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "status_led_power",
+      "dimensions": "90x60x10mm",
+      "position3d": {
+        "x": 50,
+        "y": 28,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 90,
+        "height": 10
+      },
+      "description": "Front-bezel mount for the Power Status LED with a flush face and rear standoffs for the PCB. Cable relief on the bottom.",
+      "productName": "Power Status LED Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "status_led_wifi_24ghz_mount",
+      "name": "WiFi 2.4GHz Status LED Mount",
+      "type": "3d_printed",
+      "partId": "e4cbabe1-59a5-4c6b-b394-d9f25cdde59d",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "status_led_wifi_24ghz",
+      "dimensions": "90x60x10mm",
+      "position3d": {
+        "x": 50,
+        "y": 28,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 90,
+        "height": 10
+      },
+      "description": "Front-bezel mount for the WiFi 2.4GHz Status LED with a flush face and rear standoffs for the PCB. Cable relief on the bottom.",
+      "productName": "WiFi Status LED Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "status_led_wifi_5ghz_mount",
+      "name": "WiFi 5GHz Status LED Mount",
+      "type": "3d_printed",
+      "partId": "e4cbabe1-59a5-4c6b-b394-d9f25cdde59d",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "status_led_wifi_5ghz",
+      "dimensions": "90x60x10mm",
+      "position3d": {
+        "x": 50,
+        "y": 28,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 90,
+        "height": 10
+      },
+      "description": "Front-bezel mount for the WiFi 5GHz Status LED with a flush face and rear standoffs for the PCB. Cable relief on the bottom.",
+      "productName": "WiFi Status LED Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    }
+  ],
+  "notes": [
+    "Graphene WiFi booster",
+    "graphene antenna elements",
+    "USB-C power",
+    "3D-printed enclosure",
+    "portable operation",
+    "status LEDs"
+  ],
+  "projectName": "Graphene WiFi Booster",
+  "originalPrompt": "Graphene WiFi booster",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all mechanical components",
+          "detail": {
+            "tip": "Orient parts on the print bed to minimize support material and optimize surface finish for visible or mating surfaces.",
+            "steps": [
+              "Print the Enclosure Bottom Half and Enclosure Top Half using PETG filament, 25% infill, and a 0.2mm layer height.",
+              "Print the PCB Standoff for Main MCU, 2.4GHz Antenna Mount, 5GHz Antenna Mount, USB-C Jack Retainer, and Mode Button Actuator using PETG filament, 100% infill, and a 0.15mm layer height.",
+              "Print the RF Module Mount using PETG filament, 50% infill, and a 0.2mm layer height.",
+              "Print the Power Status LED Mount, WiFi 2.4GHz Status LED Mount, and WiFi 5GHz Status LED Mount using PETG filament, 30% infill, a 0.2mm layer height, and 4 perimeters."
+            ],
+            "summary": "3D print all custom mechanical components as specified."
+          },
+          "partIds": [
+            "enclosure_bottom_half",
+            "enclosure_top_half",
+            "pcb_standoff_main_mcu",
+            "rf_module_mount",
+            "antenna_24ghz_mount",
+            "antenna_5ghz_mount",
+            "usb_c_jack_retainer",
+            "button_actuator",
+            "status_led_power_mount",
+            "status_led_wifi_24ghz_mount",
+            "status_led_wifi_5ghz_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Clean and deburr all 3D printed parts",
+          "detail": {
+            "tip": "Pay close attention to mating surfaces and critical dimensions during deburring to ensure components fit together smoothly during assembly.",
+            "steps": [
+              "Remove all support material from the Enclosure Bottom Half, Enclosure Top Half, PCB Standoff for Main MCU, RF Module Mount, 2.4GHz Antenna Mount, 5GHz Antenna Mount, USB-C Jack Retainer, Mode Button Actuator, Power Status LED Mount, WiFi 2.4GHz Status LED Mount, and WiFi 5GHz Status LED Mount.",
+              "Carefully trim or sand away any stringing, rough edges, or plastic imperfections from all surfaces using a hobby knife or fine-grit sandpaper.",
+              "Clear any debris from screw holes and openings, ensuring they are free from obstructions and correctly sized for component fit.",
+              "Wipe down all cleaned parts with a lint-free cloth to remove any dust or plastic particles."
+            ],
+            "summary": "Clean and deburr all 3D-printed parts for proper fit and finish."
+          },
+          "partIds": [
+            "enclosure_bottom_half",
+            "enclosure_top_half",
+            "pcb_standoff_main_mcu",
+            "rf_module_mount",
+            "antenna_24ghz_mount",
+            "antenna_5ghz_mount",
+            "usb_c_jack_retainer",
+            "button_actuator",
+            "status_led_power_mount",
+            "status_led_wifi_24ghz_mount",
+            "status_led_wifi_5ghz_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Test fit the enclosure halves and mounts for proper alignment",
+          "detail": {
+            "tip": "If components fit too loosely, consider adjusting print settings for dimensional accuracy or adding a thin layer of adhesive in final assembly. If too tight, use fine-grit sandpaper or a small file.",
+            "steps": [
+              "Insert the RF Module Mount, 2.4GHz Antenna Mount, 5GHz Antenna Mount, and USB-C Jack Retainer into their designated slots or mounting points within the Enclosure Bottom Half.",
+              "Verify that the Mode Button Actuator and the Power Status LED Mount, WiFi 2.4GHz Status LED Mount, and WiFi 5GHz Status LED Mount snap into their respective openings on the Enclosure Top Half.",
+              "Carefully align and attempt to mate the Enclosure Top Half with the Enclosure Bottom Half, ensuring any screw holes or interlocking features align correctly.",
+              "Check for any tight spots, excessive gaps, or interferences that might prevent a smooth and complete closure of the enclosure. Adjust print settings or minor sanding may be needed if tolerances are too tight."
+            ],
+            "summary": "Test fit all 3D-printed mechanical components for alignment."
+          },
+          "partIds": [
+            "enclosure_bottom_half",
+            "enclosure_top_half",
+            "pcb_standoff_main_mcu",
+            "rf_module_mount",
+            "antenna_24ghz_mount",
+            "antenna_5ghz_mount",
+            "usb_c_jack_retainer",
+            "button_actuator",
+            "status_led_power_mount",
+            "status_led_wifi_24ghz_mount",
+            "status_led_wifi_5ghz_mount"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder USB-C Power Jack to 5V Voltage Regulator VIN/GND",
+          "detail": {
+            "tip": "Use appropriately gauged wires (e.g., 24 AWG) for power connections to handle potential current draws effectively.",
+            "steps": [
+              "Tin the VBUS and GND pads on the USB-C Power Input.",
+              "Tin the VIN (USB-C) and GND pads on the 5V Voltage Regulator.",
+              "Carefully solder a wire from the VBUS pin of the USB-C Power Input to the VIN (USB-C) pin of the 5V Voltage Regulator.",
+              "Solder a separate wire from the GND pin of the USB-C Power Input to the GND pin of the 5V Voltage Regulator.",
+              "Visually inspect all solder joints for good adhesion and no shorts."
+            ],
+            "summary": "Solder USB-C power input to 5V Voltage Regulator."
+          },
+          "partIds": [
+            "usb_c_power_jack",
+            "voltage_regulator_5v"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder 5V Voltage Regulator VOUT to 3.3V Voltage Regulator VIN and Main MCU 5V/GND",
+          "detail": {
+            "tip": "Ensure adequate wire length for clean routing and strain relief, especially for the Main WiFi Controller which will be mounted later.",
+            "steps": [
+              "Solder a wire from the VOUT (5V) pin of the 5V Voltage Regulator to the VIN (5V) pin of the 3.3V Voltage Regulator.",
+              "Solder a wire from the GND pin of the 5V Voltage Regulator to the GND pin of the 3.3V Voltage Regulator.",
+              "Solder a wire from the VOUT (5V) pin of the 5V Voltage Regulator to the 5V power input of the Main WiFi Controller.",
+              "Solder a wire from the GND pin of the 5V Voltage Regulator to the GND pin of the Main WiFi Controller.",
+              "Visually inspect all soldered connections for clean joints and to ensure no short circuits are present."
+            ],
+            "summary": "Connect 5V regulator output to 3.3V regulator and Main MCU."
+          },
+          "partIds": [
+            "voltage_regulator_5v",
+            "voltage_regulator_3v3",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Solder 3.3V Voltage Regulator VOUT to RF Front-End Module VCC/GND and Power Status LED Anode/GND",
+          "detail": {
+            "tip": "Ensure correct polarity when connecting the Power Status LED (Anode to positive, Cathode to ground via resistor) to prevent damage.",
+            "steps": [
+              "Solder a wire from the VOUT (3.3V) pin of the 3.3V Voltage Regulator to the VCC pin of the RF Front-End Module.",
+              "Solder a wire from the GND pin of the 3.3V Voltage Regulator to the GND pin of the RF Front-End Module.",
+              "Solder a current-limiting resistor (e.g., 220 Ohm for a standard LED) in series with the Anode pin of the Power Status LED.",
+              "Solder a wire from the free end of the resistor connected to the Power Status LED's Anode to the VOUT (3.3V) pin of the 3.3V Voltage Regulator.",
+              "Solder a wire from the Cathode pin of the Power Status LED to the GND pin of the 3.3V Voltage Regulator."
+            ],
+            "summary": "Solder 3.3V power to RF Module and Power Status LED."
+          },
+          "partIds": [
+            "voltage_regulator_3v3",
+            "rf_front_end_module",
+            "status_led_power"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder Main MCU GPIOs to RF Front-End Module CTL1/CTL2/RF_OUT and Graphene Antennas",
+          "detail": {
+            "tip": "For RF connections, use very short, impedance-matched coaxial cables or carefully designed PCB traces to minimize signal loss and maximize booster performance.",
+            "steps": [
+              "Solder a wire from the Main WiFi Controller's GPIO_RF_CTL1 pin to the RF Front-End Module's CTL1 pin.",
+              "Solder a wire from the Main WiFi Controller's GPIO_RF_CTL2 pin to the RF Front-End Module's CTL2 pin.",
+              "Solder a wire from the RF Front-End Module's RF_OUT (To ESP32) pin to the Main WiFi Controller's RF_Module_In pin.",
+              "Solder a short RF coaxial cable or appropriate trace from the Main WiFi Controller's RF_2_4GHz_OUT pin to the Graphene Antenna 2.4GHz's Antenna_Feed (2.4GHz) pin.",
+              "Solder a short RF coaxial cable or appropriate trace from the Main WiFi Controller's RF_5GHz_OUT pin to the Graphene Antenna 5GHz's Antenna_Feed (5GHz) pin.",
+              "Solder a short RF coaxial cable or appropriate trace from the RF Front-End Module's RF_IN (To Antenna) pin to the Graphene Antenna 2.4GHz's Antenna_Feed (2.4GHz) and Graphene Antenna 5GHz's Antenna_Feed (5GHz) if a diplexer is integrated or separate paths are used."
+            ],
+            "summary": "Solder Main WiFi Controller GPIOs to RF Module and Graphene Antennas."
+          },
+          "partIds": [
+            "main_mcu",
+            "rf_front_end_module",
+            "graphene_antenna_24ghz",
+            "graphene_antenna_5ghz"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Solder RF Front-End Module RF_IN to Graphene Antennas",
+          "partIds": [
+            "rf_front_end_module",
+            "graphene_antenna_24ghz",
+            "graphene_antenna_5ghz"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Solder Main MCU GPIOs to WiFi 2.4GHz and 5GHz Status LEDs Anodes, connect LED Cathodes to Main MCU GND",
+          "detail": {
+            "tip": "Always use a current-limiting resistor with LEDs to prevent damage to the LED and the microcontroller's GPIO pin. The exact resistor value depends on the LED's forward voltage and the MCU's output voltage.",
+            "steps": [
+              "Identify the Anode (longer leg) and Cathode (shorter leg, flat edge) of both the WiFi 2.4GHz Status LED and WiFi 5GHz Status LED.",
+              "Solder a suitable current-limiting resistor (e.g., 220-470 Ohm) in series with the Anode of the WiFi 2.4GHz Status LED.",
+              "Connect the resistor-equipped Anode of the WiFi 2.4GHz Status LED to the Main WiFi Controller's GPIO_LED_2_4GHz pin, and its Cathode to the Main WiFi Controller's GND pin.",
+              "Repeat the process: solder a current-limiting resistor to the Anode of the WiFi 5GHz Status LED.",
+              "Connect the resistor-equipped Anode of the WiFi 5GHz Status LED to the Main WiFi Controller's GPIO_LED_5GHz pin, and its Cathode to the Main WiFi Controller's GND pin.",
+              "Perform a visual inspection to ensure correct polarity, secure solder joints, and no short circuits between pins."
+            ],
+            "summary": "Wire WiFi status LEDs to Main MCU GPIOs and GND."
+          },
+          "partIds": [
+            "main_mcu",
+            "status_led_wifi_24ghz",
+            "status_led_wifi_5ghz"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Solder Mode Selection Button to Main MCU GPIO and GND",
+          "detail": {
+            "tip": "The Main WiFi Controller's firmware should configure the GPIO (Button) pin with an internal pull-up or pull-down resistor to ensure a defined state when the button is not pressed.",
+            "steps": [
+              "Identify the two active pins (Switch_1, Switch_2) on the Mode Selection Button.",
+              "Solder a wire from one active pin (Switch_1) of the Mode Selection Button to the GPIO (Button) pin on the Main WiFi Controller.",
+              "Solder a wire from the other active pin (Switch_2) of the Mode Selection Button to a GND pin on the Main WiFi Controller.",
+              "Inspect all solder connections to ensure they are firm, clean, and free of shorts."
+            ],
+            "summary": "Solder Mode Selection Button to Main MCU GPIO and GND."
+          },
+          "partIds": [
+            "main_mcu",
+            "mode_selection_button"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Perform continuity checks on all power and ground connections with a multimeter",
+          "detail": {
+            "steps": [
+              "Set your multimeter to continuity mode.",
+              "Confirm continuity between the USB-C Power Input's VBUS pin and the 5V Voltage Regulator's VIN pin.",
+              "Confirm continuity between the 5V Voltage Regulator's VOUT pin and the 3.3V Voltage Regulator's VIN pin, as well as the Main WiFi Controller's 5V input.",
+              "Confirm continuity between the 3.3V Voltage Regulator's VOUT pin and the RF Front-End Module's VCC pin, and the Power Status LED's Anode (through its current-limiting resistor, if present).",
+              "Check all ground connections by confirming continuity between the USB-C Power Input's GND pin and the GND pins of the 5V Voltage Regulator, 3.3V Voltage Regulator, Main WiFi Controller, RF Front-End Module, and the Cathodes of all Status LEDs and Mode Selection Button's Switch_2 pin."
+            ],
+            "summary": "Verify continuity for all power and ground connections using a multimeter."
+          },
+          "partIds": [
+            "usb_c_power_jack",
+            "voltage_regulator_5v",
+            "voltage_regulator_3v3",
+            "main_mcu",
+            "rf_front_end_module",
+            "status_led_power",
+            "status_led_wifi_24ghz",
+            "status_led_wifi_5ghz",
+            "mode_selection_button"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect USB-C power and verify 5V and 3.3V rails with multimeter",
+          "detail": {
+            "tip": "Always verify power rails before connecting sensitive components like the Main WiFi Controller or RF Front-End Module to prevent damage from overvoltage or reverse polarity.",
+            "steps": [
+              "Connect a USB-C power source to the USB-C Power Input.",
+              "Set your multimeter to measure DC voltage.",
+              "Place the multimeter's positive probe on the VOUT (5V) pin of the 5V Voltage Regulator and the negative probe on its GND pin; verify the reading is approximately 5V.",
+              "Place the multimeter's positive probe on the VOUT (3.3V) pin of the 3.3V Voltage Regulator and the negative probe on its GND pin; verify the reading is approximately 3.3V.",
+              "If voltage readings are incorrect, immediately disconnect power and re-check all power wiring for shorts or open circuits."
+            ],
+            "summary": "Verify 5V and 3.3V power rails using a multimeter."
+          },
+          "partIds": [
+            "usb_c_power_jack",
+            "voltage_regulator_5v",
+            "voltage_regulator_3v3"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Connect Main MCU to computer and flash initial test firmware",
+          "detail": {
+            "steps": [
+              "Connect the Main WiFi Controller to your computer using a USB-C cable.",
+              "Ensure you have the necessary development environment (e.g., Arduino IDE with ESP32-S3 board support) and drivers installed.",
+              "Open a basic test firmware (e.g., a simple blink sketch or a custom 'hello world' program that initializes Wi-Fi) in your chosen IDE.",
+              "Select the correct board type (ESP32-S3 Dev Module) and the associated serial port in the IDE's tools menu.",
+              "Initiate the firmware upload process and confirm that the firmware successfully uploads to the Main WiFi Controller."
+            ],
+            "summary": "Flash initial test firmware to Main WiFi Controller."
+          },
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test Power Status LED functionality via firmware",
+          "detail": {
+            "tip": "Ensure the polarity of the Power Status LED is correct; the Anode (longer leg, usually connected to GPIO via resistor) should be connected differently from the Cathode (shorter leg, usually connected to GND).",
+            "steps": [
+              "Connect the Main WiFi Controller to your computer via its USB-C port.",
+              "Upload a test firmware to the Main WiFi Controller that configures the GPIO pin connected to the Power Status LED as an output and cycles the LED on and off (e.g., a 1-second blink pattern).",
+              "Observe the Power Status LED. It should illuminate and blink according to the firmware pattern.",
+              "If the LED does not function as expected, verify the correct GPIO pin assignment in the firmware and check the physical wiring of the LED, including its current-limiting resistor, to the Main WiFi Controller."
+            ],
+            "summary": "Verify Power Status LED functionality using firmware."
+          },
+          "partIds": [
+            "main_mcu",
+            "status_led_power"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test WiFi 2.4GHz and 5GHz Status LEDs functionality via firmware",
+          "detail": {
+            "tip": "Ensure current-limiting resistors are properly connected to the LEDs to prevent damage to the Main WiFi Controller's GPIO pins or the LEDs themselves.",
+            "steps": [
+              "Upload a basic firmware sketch to the Main WiFi Controller that successively illuminates the WiFi 2.4GHz Status LED and the WiFi 5GHz Status LED, using GPIO_LED_2_4GHz and GPIO_LED_5GHz respectively.",
+              "Observe if the blue WiFi 2.4GHz Status LED illuminates when its corresponding GPIO pin is set HIGH.",
+              "Observe if the yellow WiFi 5GHz Status LED illuminates when its corresponding GPIO pin is set HIGH.",
+              "Verify that both LEDs turn OFF when their respective GPIO pins are set LOW."
+            ],
+            "summary": "Test WiFi status LEDs functionality using a test firmware sketch."
+          },
+          "partIds": [
+            "main_mcu",
+            "status_led_wifi_24ghz",
+            "status_led_wifi_5ghz"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test Mode Selection Button response via firmware serial output",
+          "detail": {
+            "tip": "Ensure the button is debounced in your firmware to prevent multiple readings from a single physical press, which can lead to unexpected behavior.",
+            "steps": [
+              "Connect the Main WiFi Controller to your computer via USB-C.",
+              "Upload a firmware sketch that initializes the GPIO (Button) pin on the Main WiFi Controller as an input (with an internal pull-up resistor if required by your button wiring) and prints 'Button Pressed' or 'Button Released' to the serial console upon state change.",
+              "Open the serial monitor in your IDE (e.g., Arduino Serial Monitor) and ensure the baud rate matches your firmware setting.",
+              "Press and release the Mode Selection Button multiple times.",
+              "Verify that the serial monitor displays messages indicating button presses and releases, confirming correct functionality."
+            ],
+            "summary": "Test Mode Selection Button input with serial feedback."
+          },
+          "partIds": [
+            "main_mcu",
+            "mode_selection_button"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Verify basic communication with RF Front-End Module (e.g., register reads/writes)",
+          "partIds": [
+            "main_mcu",
+            "rf_front_end_module"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount Main MCU onto PCB Standoffs in the Enclosure Bottom Half using M2 screws",
+          "partIds": [
+            "main_mcu",
+            "pcb_standoff_main_mcu",
+            "enclosure_bottom_half",
+            "m2_x_6mm_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount RF Front-End Module into RF Module Mount, then secure mount to Enclosure Bottom Half",
+          "partIds": [
+            "rf_front_end_module",
+            "rf_module_mount",
+            "enclosure_bottom_half",
+            "m2_x_6mm_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount Graphene 2.4GHz and 5GHz Antennas into their respective mounts, then secure mounts to Enclosure Bottom Half",
+          "partIds": [
+            "graphene_antenna_24ghz",
+            "graphene_antenna_5ghz",
+            "antenna_24ghz_mount",
+            "antenna_5ghz_mount",
+            "enclosure_bottom_half",
+            "m2_x_6mm_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount USB-C Power Input into USB-C Jack Retainer, then secure retainer to Enclosure Bottom Half",
+          "partIds": [
+            "usb_c_power_jack",
+            "usb_c_jack_retainer",
+            "enclosure_bottom_half",
+            "m2_x_6mm_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Insert Mode Selection Button into Enclosure Bottom Half and attach Button Actuator to Enclosure Top Half (snap-fit over button)",
+          "partIds": [
+            "mode_selection_button",
+            "button_actuator",
+            "enclosure_bottom_half",
+            "enclosure_top_half"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Install Power and WiFi Status LEDs into their respective mounts, then snap-fit mounts into Enclosure Top Half",
+          "detail": {
+            "steps": [
+              "Carefully insert the green Power Status LED into the Power Status LED Mount.",
+              "Insert the blue WiFi 2.4GHz Status LED into the WiFi 2.4GHz Status LED Mount.",
+              "Insert the yellow WiFi 5GHz Status LED into the WiFi 5GHz Status LED Mount.",
+              "Snap-fit the Power Status LED Mount, WiFi 2.4GHz Status LED Mount, and WiFi 5GHz Status LED Mount into their corresponding openings on the Enclosure Top Half, ensuring they are flush."
+            ],
+            "summary": "Install Status LEDs into mounts, then snap-fit into Enclosure Top Half."
+          },
+          "partIds": [
+            "status_led_power",
+            "status_led_wifi_24ghz",
+            "status_led_wifi_5ghz",
+            "status_led_power_mount",
+            "status_led_wifi_24ghz_mount",
+            "status_led_wifi_5ghz_mount",
+            "enclosure_top_half"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Route and organize all internal wiring to prevent strain and interference",
+          "partIds": [
+            "main_mcu",
+            "rf_front_end_module",
+            "graphene_antenna_24ghz",
+            "graphene_antenna_5ghz",
+            "usb_c_power_jack",
+            "voltage_regulator_5v",
+            "voltage_regulator_3v3",
+            "status_led_power",
+            "status_led_wifi_24ghz",
+            "status_led_wifi_5ghz",
+            "mode_selection_button"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Close the Enclosure Top Half onto the Enclosure Bottom Half and secure with M2 screws",
+          "partIds": [
+            "enclosure_bottom_half",
+            "enclosure_top_half",
+            "m2_x_6mm_mounting_screws"
+          ]
+        },
+        {
+          "id": "assemble_9",
+          "title": "Perform final system power-on and functional test of all features",
+          "partIds": []
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A portable Graphene WiFi Booster, featuring an ESP3",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG capable)",
+      "Soldering iron with fine tip",
+      "Solder (fine gauge)",
+      "Wire strippers",
+      "Flush cutters",
+      "Small Phillips screwdriver (for M2 screws)",
+      "Tweezers",
+      "Multimeter",
+      "USB-C power supply (for testing)"
+    ],
+    "assumptions": [
+      "Familiarity with 3D printing and post-processing prints",
+      "Basic soldering skills",
+      "Understanding of fundamental electronics and circuit diagrams",
+      "Ability to flash firmware to microcontrollers (e.g., via Arduino IDE or ESP-IDF)",
+      "Access to a computer for firmware flashing and testing"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "USB-C VBUS to 5V Regulator VIN",
+      "source": "usb_c_power_jack",
+      "target": "voltage_regulator_5v",
+      "current": "2A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "USB-C GND to 5V Regulator GND",
+      "source": "usb_c_power_jack",
+      "target": "voltage_regulator_5v",
+      "current": "2A",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "5V Regulator VOUT to 3.3V Regulator VIN",
+      "source": "voltage_regulator_5v",
+      "target": "voltage_regulator_3v3",
+      "current": "1A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "5V Regulator GND to 3.3V Regulator GND",
+      "source": "voltage_regulator_5v",
+      "target": "voltage_regulator_3v3",
+      "current": "1A",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "MCU Power (5V)",
+      "source": "voltage_regulator_5v",
+      "target": "main_mcu",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "MCU Ground",
+      "source": "voltage_regulator_5v",
+      "target": "main_mcu",
+      "current": "500mA",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "RF Module VCC",
+      "source": "voltage_regulator_3v3",
+      "target": "rf_front_end_module",
+      "current": "700mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "RF Module Ground",
+      "source": "voltage_regulator_3v3",
+      "target": "rf_front_end_module",
+      "current": "700mA",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Power LED Anode (with current limiting resistor)",
+      "source": "voltage_regulator_3v3",
+      "target": "status_led_power",
+      "current": "20mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Power LED Cathode to GND",
+      "source": "status_led_power",
+      "target": "voltage_regulator_3v3",
+      "current": "20mA",
+      "voltage": "GND"
+    },
+    {
+      "type": "data",
+      "label": "MCU 2.4GHz RF out to Antenna",
+      "source": "main_mcu",
+      "target": "graphene_antenna_24ghz",
+      "protocol": "gpio",
+      "sourcePin": "RF_2_4GHz_OUT",
+      "targetPin": "Antenna_Feed (2.4GHz)"
+    },
+    {
+      "type": "data",
+      "label": "MCU 5GHz RF out to Antenna",
+      "source": "main_mcu",
+      "target": "graphene_antenna_5ghz",
+      "protocol": "gpio",
+      "sourcePin": "RF_5GHz_OUT",
+      "targetPin": "Antenna_Feed (5GHz)"
+    },
+    {
+      "type": "data",
+      "label": "MCU to RF Module Control 1",
+      "source": "main_mcu",
+      "target": "rf_front_end_module",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_RF_CTL1",
+      "targetPin": "CTL1"
+    },
+    {
+      "type": "data",
+      "label": "MCU to RF Module Control 2",
+      "source": "main_mcu",
+      "target": "rf_front_end_module",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_RF_CTL2",
+      "targetPin": "CTL2"
+    },
+    {
+      "type": "data",
+      "label": "RF Module Output to MCU RF Input",
+      "source": "main_mcu",
+      "target": "rf_front_end_module",
+      "protocol": "gpio",
+      "sourcePin": "RF_Module_In",
+      "targetPin": "RF_OUT (To ESP32)"
+    },
+    {
+      "type": "data",
+      "label": "RF Module Input to 2.4GHz Antenna",
+      "source": "rf_front_end_module",
+      "target": "graphene_antenna_24ghz",
+      "protocol": "gpio",
+      "sourcePin": "RF_IN (To Antenna)",
+      "targetPin": "Antenna_Feed (2.4GHz)"
+    },
+    {
+      "type": "data",
+      "label": "RF Module Input to 5GHz Antenna",
+      "source": "rf_front_end_module",
+      "target": "graphene_antenna_5ghz",
+      "protocol": "gpio",
+      "sourcePin": "RF_IN (To Antenna)",
+      "targetPin": "Antenna_Feed (5GHz)"
+    },
+    {
+      "type": "data",
+      "label": "MCU Control for 2.4GHz LED (with resistor)",
+      "source": "main_mcu",
+      "target": "status_led_wifi_24ghz",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_LED_2_4GHz",
+      "targetPin": "Anode"
+    },
+    {
+      "type": "data",
+      "label": "2.4GHz LED Cathode to MCU GND",
+      "source": "status_led_wifi_24ghz",
+      "target": "main_mcu",
+      "protocol": "gpio",
+      "sourcePin": "Cathode",
+      "targetPin": "GND"
+    },
+    {
+      "type": "data",
+      "label": "MCU Control for 5GHz LED (with resistor)",
+      "source": "main_mcu",
+      "target": "status_led_wifi_5ghz",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_LED_5GHz",
+      "targetPin": "Anode"
+    },
+    {
+      "type": "data",
+      "label": "5GHz LED Cathode to MCU GND",
+      "source": "status_led_wifi_5ghz",
+      "target": "main_mcu",
+      "protocol": "gpio",
+      "sourcePin": "Cathode",
+      "targetPin": "GND"
+    },
+    {
+      "type": "data",
+      "label": "MCU Input for Mode Button",
+      "source": "main_mcu",
+      "target": "mode_selection_button",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_Button",
+      "targetPin": "Switch_1"
+    },
+    {
+      "type": "data",
+      "label": "Mode Button to MCU GND (Pull-up/down assumed on MCU)",
+      "source": "mode_selection_button",
+      "target": "main_mcu",
+      "protocol": "gpio",
+      "sourcePin": "Switch_2",
+      "targetPin": "GND"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M2x6mm mounting screws",
+      "source": "enclosure_bottom_half",
+      "target": "enclosure_top_half"
+    },
+    {
+      "label": "integrated standoffs",
+      "source": "enclosure_bottom_half",
+      "target": "pcb_standoff_main_mcu"
+    },
+    {
+      "label": "M2x6mm mounting screws",
+      "source": "enclosure_bottom_half",
+      "target": "rf_module_mount"
+    },
+    {
+      "label": "M2x6mm mounting screws",
+      "source": "enclosure_bottom_half",
+      "target": "antenna_24ghz_mount"
+    },
+    {
+      "label": "M2x6mm mounting screws",
+      "source": "enclosure_bottom_half",
+      "target": "antenna_5ghz_mount"
+    },
+    {
+      "label": "M2x6mm mounting screws",
+      "source": "enclosure_bottom_half",
+      "target": "usb_c_jack_retainer"
+    },
+    {
+      "label": "snap-fit",
+      "source": "enclosure_top_half",
+      "target": "button_actuator"
+    },
+    {
+      "label": "snap-fit",
+      "source": "enclosure_top_half",
+      "target": "status_led_power_mount"
+    },
+    {
+      "label": "snap-fit",
+      "source": "enclosure_top_half",
+      "target": "status_led_wifi_24ghz_mount"
+    },
+    {
+      "label": "snap-fit",
+      "source": "enclosure_top_half",
+      "target": "status_led_wifi_5ghz_mount"
+    },
+    {
+      "label": "mount",
+      "source": "pcb_standoff_main_mcu",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "rf_module_mount",
+      "target": "rf_front_end_module"
+    },
+    {
+      "label": "mount",
+      "source": "antenna_24ghz_mount",
+      "target": "graphene_antenna_24ghz"
+    },
+    {
+      "label": "mount",
+      "source": "antenna_5ghz_mount",
+      "target": "graphene_antenna_5ghz"
+    },
+    {
+      "label": "mount",
+      "source": "usb_c_jack_retainer",
+      "target": "usb_c_power_jack"
+    },
+    {
+      "label": "mount",
+      "source": "button_actuator",
+      "target": "mode_selection_button"
+    },
+    {
+      "label": "mount",
+      "source": "status_led_power_mount",
+      "target": "status_led_power"
+    },
+    {
+      "label": "mount",
+      "source": "status_led_wifi_24ghz_mount",
+      "target": "status_led_wifi_24ghz"
+    },
+    {
+      "label": "mount",
+      "source": "status_led_wifi_5ghz_mount",
+      "target": "status_led_wifi_5ghz"
+    }
+  ],
+  "projectId": "e715cc69-5952-4f2d-9be4-c80832e208ea"
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "lipo_charger",
+    "voltage": "3.7V",
+    "sourcePin": "BAT_POS",
+    "targetPin": "BAT_POS"
+  },
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "lipo_charger",
+    "voltage": "3.7V",
+    "sourcePin": "BAT_NEG",
+    "targetPin": "BAT_NEG"
+  },
+  {
+    "type": "power",
+    "source": "lipo_charger",
+    "target": "power_regulator_3v3",
+    "voltage": "3.7V",
+    "sourcePin": "OUT_POS",
+    "targetPin": "VIN"
+  },
+  {
+    "type": "power",
+    "source": "lipo_charger",
+    "target": "power_regulator_3v3",
+    "voltage": "3.7V",
+    "sourcePin": "OUT_NEG",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "main_mcu",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "3V3"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "main_mcu",
+    "voltage": "3.3V",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "oled_display",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "oled_display",
+    "voltage": "3.3V",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "button_up",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "button_down",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "button_left",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "button_right",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "button_select",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "sub_ghz_rf_module",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "sub_ghz_rf_module",
+    "voltage": "3.3V",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "nfc_rfid_module",
+    "voltage": "3.3V",
+    "sourcePin": "VOUT",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "source": "power_regulator_3v3",
+    "target": "nfc_rfid_module",
+    "voltage": "3.3V",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "oled_display",
+    "voltage": "3.3V_logic_I2C_clock_line_signal_transmission_rate_of_up_to_400kHz",
+    "sourcePin": "SCL",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "oled_display",
+    "voltage": "3.3V_logic_I2C_data_line_signal_transmission_rate_of_up_to_400kHz",
+    "sourcePin": "SDA",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "nfc_rfid_module",
+    "voltage": "3.3V_logic_I2C_clock_line_signal_transmission_rate_of_up_to_400kHz",
+    "sourcePin": "SCL",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "nfc_rfid_module",
+    "voltage": "3.3V_logic_I2C_data_line_signal_transmission_rate_of_up_to_400kHz",
+    "sourcePin": "SDA",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "button_up",
+    "voltage": "3.3V_digital_input_with_pull-up",
+    "sourcePin": "GPIO16",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "button_down",
+    "voltage": "3.3V_digital_input_with_pull-up",
+    "sourcePin": "GPIO17",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "button_left",
+    "voltage": "3.3V_digital_input_with_pull-up",
+    "sourcePin": "GPIO18",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "button_right",
+    "voltage": "3.3V_digital_input_with_pull-up",
+    "sourcePin": "GPIO19",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "button_select",
+    "voltage": "3.3V_digital_input_with_pull-up",
+    "sourcePin": "GPIO23",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "lipo_battery",
+    "voltage": "3.7V_analog_input_for_battery_monitoring_via_voltage_divider",
+    "sourcePin": "ADC0",
+    "targetPin": "V_SENSE_POS"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "sub_ghz_rf_module",
+    "voltage": "3.3V_logic_SPI_data_output",
+    "sourcePin": "MOSI",
+    "targetPin": "MOSI"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "sub_ghz_rf_module",
+    "voltage": "3.3V_logic_SPI_data_input",
+    "sourcePin": "MISO",
+    "targetPin": "MISO"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "sub_ghz_rf_module",
+    "voltage": "3.3V_logic_SPI_clock_line",
+    "sourcePin": "SCK",
+    "targetPin": "SCK"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "sub_ghz_rf_module",
+    "voltage": "3.3V_logic_SPI_chip_select",
+    "sourcePin": "CS_RF",
+    "targetPin": "CS"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "wifi_bt_antenna",
+    "voltage": "RF_Signal_2.4GHz",
+    "sourcePin": "U.FL_Connector",
+    "targetPin": "U.FL_Connector"
+  },
+  {
+    "type": "data",
+    "source": "sub_ghz_rf_module",
+    "target": "sub_ghz_antenna",
+    "voltage": "RF_Signal_433MHz",
+    "sourcePin": "ANT_OUT",
+    "targetPin": "Antenna_Input"
+  }
+]

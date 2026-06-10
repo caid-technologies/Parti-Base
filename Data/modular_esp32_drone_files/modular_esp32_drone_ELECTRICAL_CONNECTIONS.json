@@ -1,0 +1,317 @@
+[
+  {
+    "type": "power",
+    "label": "Main Battery to PDB",
+    "source": "lipo_battery",
+    "target": "power_distribution_board",
+    "current": "10A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "label": "Main Battery Ground",
+    "source": "lipo_battery",
+    "target": "power_distribution_board",
+    "current": "10A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to 5V Reg Input",
+    "source": "power_distribution_board",
+    "target": "voltage_regulator_5v",
+    "current": "1A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "label": "PDB Ground to 5V Reg Input",
+    "source": "power_distribution_board",
+    "target": "voltage_regulator_5v",
+    "current": "1A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "5V Reg to FC",
+    "source": "voltage_regulator_5v",
+    "target": "flight_controller",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Reg Ground to FC",
+    "source": "voltage_regulator_5v",
+    "target": "flight_controller",
+    "current": "500mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "5V Reg to IMU VCC",
+    "source": "voltage_regulator_5v",
+    "target": "imu_sensor",
+    "current": "50mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Reg Ground to IMU",
+    "source": "voltage_regulator_5v",
+    "target": "imu_sensor",
+    "current": "50mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "5V Reg to RC Receiver VCC",
+    "source": "voltage_regulator_5v",
+    "target": "rc_receiver",
+    "current": "100mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "5V Reg Ground to RC Receiver",
+    "source": "voltage_regulator_5v",
+    "target": "rc_receiver",
+    "current": "100mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to FL ESC VBAT",
+    "source": "power_distribution_board",
+    "target": "esc_front_left",
+    "current": "5A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to FL ESC GND",
+    "source": "power_distribution_board",
+    "target": "esc_front_left",
+    "current": "5A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to FR ESC VBAT",
+    "source": "power_distribution_board",
+    "target": "esc_front_right",
+    "current": "5A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to FR ESC GND",
+    "source": "power_distribution_board",
+    "target": "esc_front_right",
+    "current": "5A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to RL ESC VBAT",
+    "source": "power_distribution_board",
+    "target": "esc_rear_left",
+    "current": "5A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to RL ESC GND",
+    "source": "power_distribution_board",
+    "target": "esc_rear_left",
+    "current": "5A",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to RR ESC VBAT",
+    "source": "power_distribution_board",
+    "target": "esc_rear_right",
+    "current": "5A",
+    "voltage": "14.8V"
+  },
+  {
+    "type": "power",
+    "label": "PDB to RR ESC GND",
+    "source": "power_distribution_board",
+    "target": "esc_rear_right",
+    "current": "5A",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "FL ESC to FL Motor Phase A",
+    "source": "esc_front_left",
+    "target": "motor_front_left",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_A_OUT",
+    "targetPin": "Motor_Phase_A"
+  },
+  {
+    "type": "data",
+    "label": "FL ESC to FL Motor Phase B",
+    "source": "esc_front_left",
+    "target": "motor_front_left",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_B_OUT",
+    "targetPin": "Motor_Phase_B"
+  },
+  {
+    "type": "data",
+    "label": "FL ESC to FL Motor Phase C",
+    "source": "esc_front_left",
+    "target": "motor_front_left",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_C_OUT",
+    "targetPin": "Motor_Phase_C"
+  },
+  {
+    "type": "data",
+    "label": "FR ESC to FR Motor Phase A",
+    "source": "esc_front_right",
+    "target": "motor_front_right",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_A_OUT",
+    "targetPin": "Motor_Phase_A"
+  },
+  {
+    "type": "data",
+    "label": "FR ESC to FR Motor Phase B",
+    "source": "esc_front_right",
+    "target": "motor_front_right",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_B_OUT",
+    "targetPin": "Motor_Phase_B"
+  },
+  {
+    "type": "data",
+    "label": "FR ESC to FR Motor Phase C",
+    "source": "esc_front_right",
+    "target": "motor_front_right",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_C_OUT",
+    "targetPin": "Motor_Phase_C"
+  },
+  {
+    "type": "data",
+    "label": "RL ESC to RL Motor Phase A",
+    "source": "esc_rear_left",
+    "target": "motor_rear_left",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_A_OUT",
+    "targetPin": "Motor_Phase_A"
+  },
+  {
+    "type": "data",
+    "label": "RL ESC to RL Motor Phase B",
+    "source": "esc_rear_left",
+    "target": "motor_rear_left",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_B_OUT",
+    "targetPin": "Motor_Phase_B"
+  },
+  {
+    "type": "data",
+    "label": "RL ESC to RL Motor Phase C",
+    "source": "esc_rear_left",
+    "target": "motor_rear_left",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_C_OUT",
+    "targetPin": "Motor_Phase_C"
+  },
+  {
+    "type": "data",
+    "label": "RR ESC to RR Motor Phase A",
+    "source": "esc_rear_right",
+    "target": "motor_rear_right",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_A_OUT",
+    "targetPin": "Motor_Phase_A"
+  },
+  {
+    "type": "data",
+    "label": "RR ESC to RR Motor Phase B",
+    "source": "esc_rear_right",
+    "target": "motor_rear_right",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_B_OUT",
+    "targetPin": "Motor_Phase_B"
+  },
+  {
+    "type": "data",
+    "label": "RR ESC to RR Motor Phase C",
+    "source": "esc_rear_right",
+    "target": "motor_rear_right",
+    "protocol": "gpio",
+    "sourcePin": "Motor_Phase_C_OUT",
+    "targetPin": "Motor_Phase_C"
+  },
+  {
+    "type": "data",
+    "label": "FC to FL ESC PWM",
+    "source": "flight_controller",
+    "target": "esc_front_left",
+    "protocol": "pwm",
+    "sourcePin": "GPIO_PWM_Motor1",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "label": "FC to FR ESC PWM",
+    "source": "flight_controller",
+    "target": "esc_front_right",
+    "protocol": "pwm",
+    "sourcePin": "GPIO_PWM_Motor2",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "label": "FC to RL ESC PWM",
+    "source": "flight_controller",
+    "target": "esc_rear_left",
+    "protocol": "pwm",
+    "sourcePin": "GPIO_PWM_Motor3",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "label": "FC to RR ESC PWM",
+    "source": "flight_controller",
+    "target": "esc_rear_right",
+    "protocol": "pwm",
+    "sourcePin": "GPIO_PWM_Motor4",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "data",
+    "label": "FC I2C SCL to IMU",
+    "source": "flight_controller",
+    "target": "imu_sensor",
+    "protocol": "i2c",
+    "sourcePin": "I2C_SCL_IMU",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "label": "FC I2C SDA to IMU",
+    "source": "flight_controller",
+    "target": "imu_sensor",
+    "protocol": "i2c",
+    "sourcePin": "I2C_SDA_IMU",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "label": "RC Receiver to FC UART RX",
+    "source": "rc_receiver",
+    "target": "flight_controller",
+    "protocol": "uart",
+    "sourcePin": "iBUS_OUT",
+    "targetPin": "UART_RX_RC"
+  }
+]

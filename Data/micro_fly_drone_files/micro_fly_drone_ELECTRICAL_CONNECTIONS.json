@@ -1,0 +1,123 @@
+[
+  {
+    "type": "power",
+    "label": "Main Flight Controller Power",
+    "source": "lipo_battery",
+    "target": "flight_controller",
+    "current": "2A",
+    "voltage": "3.7V-4.2V"
+  },
+  {
+    "type": "power",
+    "label": "BEC Input Power",
+    "source": "lipo_battery",
+    "target": "step_down_converter",
+    "current": "1A",
+    "voltage": "3.7V-4.2V"
+  },
+  {
+    "type": "power",
+    "label": "Camera Power",
+    "source": "step_down_converter",
+    "target": "camera_module",
+    "current": "200mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Microphone Power",
+    "source": "step_down_converter",
+    "target": "microphone",
+    "current": "10mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Radio Receiver Power",
+    "source": "flight_controller",
+    "target": "radio_receiver",
+    "current": "50mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "label": "Motor FL Signal",
+    "source": "flight_controller",
+    "target": "motor_front_left",
+    "protocol": "pwm",
+    "sourcePin": "Motor 1 Output",
+    "targetPin": "Motor Wire 1"
+  },
+  {
+    "type": "data",
+    "label": "Motor FR Signal",
+    "source": "flight_controller",
+    "target": "motor_front_right",
+    "protocol": "pwm",
+    "sourcePin": "Motor 2 Output",
+    "targetPin": "Motor Wire 1"
+  },
+  {
+    "type": "data",
+    "label": "Motor RL Signal",
+    "source": "flight_controller",
+    "target": "motor_rear_left",
+    "protocol": "pwm",
+    "sourcePin": "Motor 3 Output",
+    "targetPin": "Motor Wire 1"
+  },
+  {
+    "type": "data",
+    "label": "Motor RR Signal",
+    "source": "flight_controller",
+    "target": "motor_rear_right",
+    "protocol": "pwm",
+    "sourcePin": "Motor 4 Output",
+    "targetPin": "Motor Wire 1"
+  },
+  {
+    "type": "data",
+    "label": "Receiver Data to FC",
+    "source": "radio_receiver",
+    "target": "flight_controller",
+    "protocol": "uart",
+    "sourcePin": "TX",
+    "targetPin": "UART1 RX"
+  },
+  {
+    "type": "data",
+    "label": "FC Data to Receiver",
+    "source": "flight_controller",
+    "target": "radio_receiver",
+    "protocol": "uart",
+    "sourcePin": "UART1 TX",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "label": "Mic to Camera Audio",
+    "source": "microphone",
+    "target": "camera_module",
+    "protocol": "analog",
+    "sourcePin": "OUT",
+    "targetPin": "Audio Out"
+  },
+  {
+    "type": "data",
+    "label": "Camera Data to FC",
+    "source": "camera_module",
+    "target": "flight_controller",
+    "protocol": "uart",
+    "sourcePin": "UART TX",
+    "targetPin": "UART2 RX"
+  },
+  {
+    "type": "data",
+    "label": "FC Data to Camera",
+    "source": "flight_controller",
+    "target": "camera_module",
+    "protocol": "uart",
+    "sourcePin": "UART2 TX",
+    "targetPin": "UART RX"
+  }
+]

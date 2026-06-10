@@ -1,0 +1,2435 @@
+{
+  "plan": "- Missile: Small flight controller (e.g., STM32-based) with IMU for stabilization, GPS for navigation (500-1000m range), small motor/thruster for propulsion, fin actuators (servos), small battery.- Radar Unit: Millimeter-wave radar module for detection/guidance, dedicated microcontroller (e.g., ESP32) for processing and communication, power source.- Interceptor guidance system: Wireless data link (e.g., LoRa or 2.4GHz module) for communication between radar and missile, guidance algorithms on missile FC.- Missile Structure: 3-inch diameter body (e.g., PVC or 3D-printed composite), aerodynamic fins (3D-printed), nose cone, internal component mounts.- Launch System: Simple rail launcher or pneumatic system for initial boost, safety interlocks.- Custom 3D-printed parts: Missile body sections, fin mounts, nose cone, internal electronics trays, radar enclosure.",
+  "nodes": [
+    {
+      "id": "missile_gps_module",
+      "name": "Missile GPS Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "TX",
+        "RX"
+      ],
+      "type": "sensor",
+      "partId": "dd050375-fed4-47e5-a091-9e01cded59d4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fBWaydVLtsLAX1fPuIPLPTNuT-XniH_n071xTp4CaR8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zcGVl/ZHlmcHYuY29tL2Nk/bi9zaG9wL3Byb2R1/Y3RzLzEwMDBYMTAw/MF80XzcwMHhfZTEz/NzM2MWEtMmU4OS00/MDNkLWFiMmUtMTkz/MjBlYzUwMGJiX2xh/cmdlLndlYnA_dj0x/NzUwNzkzNzIy",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,TX,RX"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07PRDY6DS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "18x18x6mm",
+      "position3d": {
+        "x": 0,
+        "y": 279,
+        "z": -15
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 18,
+        "height": 18
+      },
+      "description": "Provides position and velocity data for 500m-1000m navigation range.",
+      "productName": "BN-180 Micro GPS Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=BN-180+GPS",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH8E9bjGmdewCOMS1RZLjy6z1Wst5KgwIaTRdimcedffQaAq5lYHafN8FeAuuTGBfacXFJzslJ3wfvNVlwu0SfJhtULBS6NoVmnPLI5iy6QlcnC34lCiRSsr4Sg4X4sygWbxdm56FyWzX3whcEtbusZCICtZqn0yxZSZnvIgMLky7KqjIA33Xnep2Ksum6J0yIan5lreCmE8VftSJjrgLyP04WnLkEWF7pqVF2Ry6escHFbZqgapfV1YsZuRgws8OP6AT9RIP3GQ0yUzl3lWwPL70t11jvfEvNePdarxL1OXowvPL4Z0zwZEi0UwFkURPOK4JxQeuEaMA87VpOyuyfVaKBT0SgZbBP8ERQDzPrBPA4TOcYunQyI5x7ivwuQvBksM4Qy5MHX7M6h6ZUzTH6XparHAvQsXoFk6iZMreHmEcNPE4uCJ1xRaoI1yUDk8Px7uaWUyJcI6wQ9utUSm2m5cIylfCQcGNvIMn0sqqLSLR5qM6zUBI8jv1e2DsICdycWz6mMEUJt4Qd6dH20vF94vz3bF0zwu6NGTFYuyMPQnYqFc0nW2O08Zu7UrKmjegtZOj8qA7V2oPeRrjjRB3f2V3Ku6CaNDCEVDsHRZzxhbtBB1bgBVV5AboMpkc6kWRM8WXqP5aePe5tJsqU0XDKmP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BN-180+Micro+GPS+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_fin_servo_1",
+      "name": "Fin Actuator Servo 1",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/xt1y9HFcA7IBnBlrZQIJy2b8zMtSZVQepRwTtqz26Rc/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/c3VuZm91bmRlci5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvc3Vu/Zm91bmRlci1kZWZh/dWx0LXRpdGxlLTIt/cGFjay1zZzkwLW1p/Y3JvLWRpZ2l0YWwt/c2Vydm8tbW90b3It/c2YwMTgwLXRvd2Vy/cHJvLXJjLTlnLTEx/MDI4MDE1MDIyMjQx/XzEzMHguanBnP3Y9/MTc2ODQ0NzEzMQ",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.jsumo.com/sg90-micro-servo-motor",
+            "vendor": "JSumo"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/gearbox-labs/PART-MICRO-SERVO-SG-90-ANALOG/16159912",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.amazon.com/DiGiYes-SG90-Micro-Control-Degree/dp/B0BHYMVH4B",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.pishop.us/product/sg90-180-degrees-9g-micro-servo-motor-tower-pro/",
+            "vendor": "PiShop.us"
+          },
+          {
+            "url": "https://www.adafruit.com/search?q=SG90+Micro+Servo+Motor",
+            "vendor": "Adafruit"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12x29mm",
+      "position3d": {
+        "x": -38,
+        "y": 50,
+        "z": -10
+      },
+      "boundingBox": {
+        "depth": 29,
+        "width": 23,
+        "height": 12
+      },
+      "description": "Micro servo for controlling one of the missile's aerodynamic fins.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.jsumo.com/sg90-micro-servo-motor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_fin_servo_2",
+      "name": "Fin Actuator Servo 2",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/xt1y9HFcA7IBnBlrZQIJy2b8zMtSZVQepRwTtqz26Rc/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/c3VuZm91bmRlci5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvc3Vu/Zm91bmRlci1kZWZh/dWx0LXRpdGxlLTIt/cGFjay1zZzkwLW1p/Y3JvLWRpZ2l0YWwt/c2Vydm8tbW90b3It/c2YwMTgwLXRvd2Vy/cHJvLXJjLTlnLTEx/MDI4MDE1MDIyMjQx/XzEzMHguanBnP3Y9/MTc2ODQ0NzEzMQ",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.jsumo.com/sg90-micro-servo-motor",
+            "vendor": "JSumo"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/gearbox-labs/PART-MICRO-SERVO-SG-90-ANALOG/16159912",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.amazon.com/DiGiYes-SG90-Micro-Control-Degree/dp/B0BHYMVH4B",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.pishop.us/product/sg90-180-degrees-9g-micro-servo-motor-tower-pro/",
+            "vendor": "PiShop.us"
+          },
+          {
+            "url": "https://www.adafruit.com/search?q=SG90+Micro+Servo+Motor",
+            "vendor": "Adafruit"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12x29mm",
+      "position3d": {
+        "x": 38,
+        "y": 50,
+        "z": -10
+      },
+      "boundingBox": {
+        "depth": 29,
+        "width": 23,
+        "height": 12
+      },
+      "description": "Micro servo for controlling one of the missile's aerodynamic fins.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.jsumo.com/sg90-micro-servo-motor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_fin_servo_3",
+      "name": "Fin Actuator Servo 3",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/xt1y9HFcA7IBnBlrZQIJy2b8zMtSZVQepRwTtqz26Rc/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/c3VuZm91bmRlci5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvc3Vu/Zm91bmRlci1kZWZh/dWx0LXRpdGxlLTIt/cGFjay1zZzkwLW1p/Y3JvLWRpZ2l0YWwt/c2Vydm8tbW90b3It/c2YwMTgwLXRvd2Vy/cHJvLXJjLTlnLTEx/MDI4MDE1MDIyMjQx/XzEzMHguanBnP3Y9/MTc2ODQ0NzEzMQ",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.jsumo.com/sg90-micro-servo-motor",
+            "vendor": "JSumo"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/gearbox-labs/PART-MICRO-SERVO-SG-90-ANALOG/16159912",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.amazon.com/DiGiYes-SG90-Micro-Control-Degree/dp/B0BHYMVH4B",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.pishop.us/product/sg90-180-degrees-9g-micro-servo-motor-tower-pro/",
+            "vendor": "PiShop.us"
+          },
+          {
+            "url": "https://www.adafruit.com/search?q=SG90+Micro+Servo+Motor",
+            "vendor": "Adafruit"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12x29mm",
+      "position3d": {
+        "x": -10,
+        "y": 50,
+        "z": -38
+      },
+      "boundingBox": {
+        "depth": 29,
+        "width": 23,
+        "height": 12
+      },
+      "description": "Micro servo for controlling one of the missile's aerodynamic fins.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.jsumo.com/sg90-micro-servo-motor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_fin_servo_4",
+      "name": "Fin Actuator Servo 4",
+      "pins": [
+        "VCC",
+        "GND",
+        "PWM"
+      ],
+      "type": "actuator",
+      "partId": "fa7c42c2-f7e1-4aac-8bc3-d33b66ad3ffc",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/xt1y9HFcA7IBnBlrZQIJy2b8zMtSZVQepRwTtqz26Rc/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/c3VuZm91bmRlci5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvc3Vu/Zm91bmRlci1kZWZh/dWx0LXRpdGxlLTIt/cGFjay1zZzkwLW1p/Y3JvLWRpZ2l0YWwt/c2Vydm8tbW90b3It/c2YwMTgwLXRvd2Vy/cHJvLXJjLTlnLTEx/MDI4MDE1MDIyMjQx/XzEzMHguanBnP3Y9/MTc2ODQ0NzEzMQ",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Signal"
+          },
+          {
+            "label": "weight",
+            "value": "9g"
+          },
+          {
+            "label": "gear_type",
+            "value": "Nylon gears"
+          },
+          {
+            "label": "idle_current",
+            "value": "~10mA"
+          },
+          {
+            "label": "stall_torque",
+            "value": "1.8 kg-cm"
+          },
+          {
+            "label": "stall_current",
+            "value": "Up to 360mA"
+          },
+          {
+            "label": "required_pulse",
+            "value": "3.3 ~ 5 Volt Peak to Peak Square Wave"
+          },
+          {
+            "label": "rotation_angle",
+            "value": "180 degrees (90 degrees in each direction)"
+          },
+          {
+            "label": "dimensions_lxwxh",
+            "value": "22.8mm x 12.2mm x 28.5mm"
+          },
+          {
+            "label": "operating_current",
+            "value": "100mA - 250mA"
+          },
+          {
+            "label": "operating_voltage",
+            "value": "4.8V - 6V DC"
+          },
+          {
+            "label": "working_frequency",
+            "value": "1520μs / 50hz"
+          },
+          {
+            "label": "operating_speed_6v",
+            "value": "0.13 Sec/60 Degrees"
+          },
+          {
+            "label": "operating_speed_4_8v",
+            "value": "0.15 Sec/60 Degrees"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://mschoeffler.com/2017/09/25/tutorial-how-to-control-a-servo-motor-sg90-with-the-arduino-uno/",
+            "title": "Tutorial: How to control a servo motor (SG90) with the Arduino Uno",
+            "description": "Demonstrates wiring and basic code for controlling an SG90 servo with an Arduino Uno using PWM signals."
+          },
+          {
+            "url": "https://lastminuteengineers.com/servo-motor-arduino-tutorial/",
+            "title": "How Servo Motor Works & Interface It With Arduino",
+            "description": "Provides an in-depth explanation of servo motor operation and a tutorial for interfacing the SG90 with Arduino."
+          },
+          {
+            "url": "https://arduinoexpert.com/blog/how-to-use-sg90-servo-motor-with-arduino/",
+            "title": "How to use Sg90 Servo Motor with Arduino",
+            "description": "Offers a complete tutorial with wiring diagrams, sample code, and beginner-friendly explanations for Arduino users."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.jsumo.com/sg90-micro-servo-motor",
+            "vendor": "JSumo"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/gearbox-labs/PART-MICRO-SERVO-SG-90-ANALOG/16159912",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.amazon.com/DiGiYes-SG90-Micro-Control-Degree/dp/B0BHYMVH4B",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.pishop.us/product/sg90-180-degrees-9g-micro-servo-motor-tower-pro/",
+            "vendor": "PiShop.us"
+          },
+          {
+            "url": "https://www.adafruit.com/search?q=SG90+Micro+Servo+Motor",
+            "vendor": "Adafruit"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STEP file (SG90)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/tower-pro-sg90/",
+            "label": "STL file (SG90)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "TowerPro MG90S",
+            "reason": "Metal geared version for higher durability and slightly better performance, often pin-compatible."
+          },
+          {
+            "name": "FS90 Micro Servo",
+            "reason": "A common alternative with similar size and functionality, though some variants may have a 120-degree operating angle."
+          }
+        ],
+        "datasheetUrl": "http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B0BB6FNF97",
+            "title": "SG90 Micro Servo Motor User Manual"
+          },
+          {
+            "url": "https://stufin.in/V/documentation_main?documentation_id=2143",
+            "title": "SG90 Micro Servo Motor Documentation (Stufin)"
+          },
+          {
+            "url": "https://robocraze.com/blogs/post/all-about-servo-motor-sg90",
+            "title": "SG90 Servo Motor – Specs, Wiring and Projects (Robocraze)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07MLR1498?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "23x12x29mm",
+      "position3d": {
+        "x": -10,
+        "y": 50,
+        "z": 38
+      },
+      "boundingBox": {
+        "depth": 29,
+        "width": 23,
+        "height": 12
+      },
+      "description": "Micro servo for controlling one of the missile's aerodynamic fins.",
+      "productName": "SG90 Micro Servo Motor",
+      "purchaseUrl": "https://www.jsumo.com/sg90-micro-servo-motor",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw8lzcOrtLTvgqNE4A9PsQ5QJFVl6NB9iN4vYpDTxpNG2t32KXiyf3qgDEKKn0sisxUAZFO4HZUzwxhCMYJOIZmvTeXninPibZKyUqwCZLOxVfi2DYYXvws7lHXmNp5BNm2wfE3YzYnKJINvrrfbjDaxoYJ65CVuA8TINbg8824ohuPIVRyJy43YArl3t0neu9DjMiqI5ospebfvjUd8goIdfCq0E5fOtowaPLXnT5QDc5CbURTmiBm8FLVeWG90QtQkzKuZ2inZHxEZSEfsK1y8C4v75FQDTuxdcbOz1EGGAt98srhGZfydgo62sjYDNrlB09MU1rlCjLJiAIxOG8MNgRPIYwyS5PwvgHxAJYESzrjOIT1tdUC53torf147TPQTQgLTQyxq1zJBHKVay5xv8fBnGFfaotvcXjqBbkexeFmoRlI3Ya0Fd2DBHnECFqZYL4yMZFiXGKgtimi5UHZaR8Z96Xu76TH02IBcIFfoqNhbK3Ve8oQhhtG6CXKF6nznhfWU5D5LTARO8HTugmYNzKiWQMQw8evzbvJJYzGAzuT3elaxDg2kODRGQiIEFGiXyg9BkeMDnpg3cQTsVmNpOiH5I0017BJJUWGh5XNsTd1uppXoliOF0aOWq4MqilukoX7ovUo1w1UwtMLlKZS3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SG90+Micro+Servo+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_main_lipo",
+      "name": "Missile Main LiPo Battery",
+      "pins": [
+        "XT30",
+        "Balance_Plug"
+      ],
+      "type": "power",
+      "partId": "73c009ae-4cf1-469a-90d4-2f165707f225",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/L4uFbeQTWb83NsUCeyUcg11R_zlYcVOROdyY-3j7UZk/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/cm90b3JhbWEuY29t/L2Fzc2V0cy9pbWFn/ZXMvMGJjOGY1YjI1/YjIwOTQzNmNkN2Q3/ZDZjMjAxMWMyOTMv/MTM5NjAtZmlsbC0x/MDBfMTAwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07LGXMZN6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x30x15mm",
+      "position3d": {
+        "x": 0,
+        "y": 270,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 60,
+        "height": 30
+      },
+      "description": "Primary power source for missile flight controller, GPS, servos, and communication module.",
+      "productName": "Tattu R-Line 3S 550mAh LiPo",
+      "purchaseUrl": "https://www.amazon.com/s?k=tattu+3s+550mah",
+      "estimatedCost": 20,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3lRtKYd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tattu+R-Line+3S+550mAh+LiPo&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_comm_module",
+      "name": "Missile Wireless Comm Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "TX",
+        "RX",
+        "SET"
+      ],
+      "type": "module",
+      "partId": "5ec55ca3-099a-44b8-8492-77ff9ee4e518",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/MoUBasPzd2hEnTlS9WhTTt1MCBieKG_yvRCr9zyat0g/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3VVTUFB/T1N3M1doa2J2a1Iv/cy1sMTQwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CGTZW9VN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x13x3mm",
+      "description": "Receives guidance commands and data from the separate radar unit.",
+      "productName": "HC-12 433MHz Wireless Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=HC-12+433MHz+module",
+      "estimatedCost": 6,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRr9inHmKsre4JdBXTNSOjmEqEzuy9AoV7613CyIuJ2LbfadfhUtqw1z5DBwMWy9UowuZCC9lc6yN9wGA3BisTPCqidefypTQSRjG3TIbqmmxgACAjKJ0K6Y0pDrDmNZcyreesOAw361GusCmXtOLJ1cKPw6OUnSTn3l0sHXkUujXWpgBnpVQyEM5ssLQZXCZTmtzy32mYVpaU7lZ5WI1k0Vt22FNWq8j1xscTRaPhsIxRGAd5RaOzDiPMVOpsQIDNmZWcxNDntA3aVXLH6n2tay2qwIpF5M4yvbwds7FIaCEf1DkTVoGPiXuiDtXwjz1K1NgzJn08LTLfXrrKgWNGWUPCTYtL2GcaJ3p4tIoIvyTZTGvjANbdf5yVKX9yOd4nRTZKMgrceOsVqs9jfvZQGm2sO3ZKYidI60OXlBaJYvhaWiQ8av3iSB211xSrCVwlZlUsHvWLkbwdggk6kSrdzT6NuJ3WWc6UNSKplpmBfjynB1iWq6xUjNri0B66IN1LB5e0obrmhJ3RfLrkW6PVnfdariaXW0sBW1SKPsnoiAvwfQSfdwMvBOrKaRd6uHtVmoziLSONSTffWeSKzjyX9nqsL1xdV9HmZ0DTnAw97w61fkpBZRWuGNBybtWA3wqtg4ENNRGm2CDdjxnjEY35gJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HC-12+433MHz+Wireless+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_power_regulator_5v",
+      "name": "Missile 5V Regulator",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "power",
+      "partId": "62dfce21-01e4-4535-9148-2c33654dc67b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/6Kb5Fn461i1UMVT4prY3G0JPCZJpUoJ7BD5t6TZ7nec/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTEzK3FZN3BMUUwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN+,VIN-,VOUT+,VOUT-"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://randomnerdtutorials.com/mp1584en-dc-dc-buck-converter-module-tutorial/",
+            "title": "Basic MP1584EN DC-DC Buck Converter Module Tutorial",
+            "description": "This tutorial provides a fundamental guide on how to use the MP1584EN buck converter module, covering its input/output connections, voltage adjustment using the onboard potentiometer, and basic testing procedures. It's a great starting point for understanding its operation before integration into more complex projects."
+          },
+          {
+            "url": "https://www.electronicshub.org/esp32-power-supply-schematic-and-design-guide/",
+            "title": "Powering ESP32 and Sensors with MP1584EN",
+            "description": "While not exclusively about MP1584EN, this guide details power supply considerations for ESP32 and related sensors, often recommending buck converters like the MP1584EN to step down higher voltages (e.g., 12V) to the required 5V or 3.3V for microcontrollers and peripherals. It demonstrates practical application in a common MCU project scenario."
+          },
+          {
+            "url": "https://www.instructables.com/Simple-Adjustable-Bench-Power-Supply-From-a-Wall-W/",
+            "title": "Making a Simple Bench Power Supply with MP1584EN",
+            "description": "This Instructable demonstrates building a compact, adjustable bench power supply using the MP1584EN module. It showcases the converter's ability to take a higher input voltage (e.g., from a laptop charger) and provide a regulated, adjustable output for prototyping and testing various electronic circuits, illustrating its versatility."
+          },
+          {
+            "url": "https://raspberrypi.stackexchange.com/questions/59664/powering-raspberry-pi-from-12v-source-with-mp1584en",
+            "title": "MP1584EN Buck Converter for Raspberry Pi Power Supply",
+            "description": "This forum discussion and related resources illustrate how the MP1584EN is used to convert a 12V input, typically from a car battery or a 12V power adapter, down to the stable 5V required by a Raspberry Pi. It highlights practical considerations for ensuring sufficient current delivery and stable voltage for SBCs."
+          },
+          {
+            "url": "https://www.hackster.io/hackers-hub/diy-car-charger-using-mp1584-712854",
+            "title": "Automotive 12V to 5V USB Charger using MP1584EN",
+            "description": "This project details how to construct a simple 12V to 5V USB charger for automotive use employing the MP1584EN. It demonstrates a common application where the converter efficiently steps down the vehicle's 12V supply to charge USB-powered devices, providing a robust solution for mobile power needs."
+          }
+        ],
+        "datasheetUrl": "https://cdn.ozdisan.com/ETicaret_Dosya/626534_924471.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://www.openhardware.io/view/770/MP1584EN-DC-DC-Buck-Converter-Power-Module",
+            "type": "reference",
+            "title": "OpenHardware.io",
+            "description": "Module design, BOM, files"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01MQGMOKI?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "17x11x4mm",
+      "position3d": {
+        "x": 0,
+        "y": 270,
+        "z": 25
+      },
+      "boundingBox": {
+        "depth": 4,
+        "width": 17,
+        "height": 11
+      },
+      "description": "Regulates main battery voltage down to 5V for FC, GPS, servos, and comm module.",
+      "productName": "MP1584EN DC-DC Buck Converter",
+      "purchaseUrl": "https://www.amazon.com/s?k=MP1584EN+buck+converter",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHNSBmwrWAucJktiEiF7T0GrENZ2N7RQ8V7BzbnqVxsrMEtflOJAoWeKe8mUiCgYFPVMDIxu8NTz8jXT1itEaiw2BrvgnZAqoOdAQLXgy2xDI4IYHyjpfL1PV4yQQtYDMvEqzJqDLvhVGKAiCSoNBbLpErJsRrHybXqL0l95P6DX7YO2HSjDGZzgHtn95FpQWrCBaeHi8mx944vsSryVj7eT6Sb8xcDO8fqvWx7F1j8AKh3uGoTCPCuLrbXmc6sUvaQ7m8LFUe2g4xh1tUuHiGIndZopaYEfnCEMBScuOplFQbDjkUTZgOTXPax18bkqbgbOTLzY7SJbKckFuhGz3UYNOnSBJYDXhzVqpusBKLPYjCGa6rwwFNbZFpzgOCkuq6c4CkD4rSRTCuU9IvhYBlbdG7aC7YuVTaor0egpSUNkR9QroJ07FQP8h2lGRRe6rgZbJJdEmfo8Ve3kcPJbrVhVi0loBcaeIwK0NjJjvOVHjKWtY0urT5Hu0uWtcTHyZyPGuEDMvvs9pHxae4swLUh5pimh4FsowdUq0tkXzTOJ5httDvzODWZl3fgJZ83aRBKEOKkHhr59k1BAFqvCssspNs4XD1ifkCRgito1iuOuvlDhqnHvxUXY3HN9y095u3bUEAt8Bf9I8Gdiq13osKer",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MP1584EN+DC-DC+Buck+Converter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "radar_mcu",
+      "name": "Radar System MCU",
+      "pins": [
+        "GPIO16",
+        "GPIO17",
+        "UART0_TX",
+        "UART0_RX",
+        "UART1_TX",
+        "UART1_RX",
+        "3V3",
+        "GND",
+        "VIN"
+      ],
+      "type": "mcu",
+      "partId": "62498f44-3918-4358-af26-2bb7b3843b79",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/BbtaPy02rXW8ehIadtdBFldmPTxvpcwdplJShbb2mvM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZWxlY3Jvdy5jb20v/bWVkaWEvY2F0YWxv/Zy9wcm9kdWN0L2Nh/Y2hlL2I2Yjk1Nzc5/MzdlNmE5NmY1MGU1/M2RkYzQyOTgzNjI4/L2Uvcy9lc3AzMi13/cm9vbS0zMmQuanBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CNYK7WT2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "18x25x3mm",
+      "position3d": {
+        "x": 150,
+        "y": 10,
+        "z": -5
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 18,
+        "height": 25
+      },
+      "description": "Dedicated microcontroller for radar data processing and communication with the missile.",
+      "productName": "ESP32-WROOM-32D",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32D/9474939",
+      "estimatedCost": 7,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR6vbyXY2ppL9ObRmYh4w4AK032f6bBm9NDrp62dnlrDQlnlop8wQc5bP4qXfeJ276Yek60BQaZDYxId5Ukphk7sJJODgS1isRhZwKXDxwwiDFyENTPU35PqQK8lkODm1HaTad4RY4cP1wl45WTeh4RlPsVUHy4VlZIc1wB2PtjlQuLRD9hen7MaRbZW4t6zXUfC9bGHFbZO99FRfx32LJcnsAglj8iEpa0FYOpROTLFaROhQznuW3X9vOzm5wlVVdyh7hQjCf3ATakMy4TttoksF9nF4t6E6a4eF5Hnf8zMPEYPcHQOn1L27IMuSdcOaAQB1VPeCoYVQbyEUQp5PoFnOWtb5pwJGqEfhk91mq6rCc9Ur5f0hVYt6t5Ow1MkFKchag9pH1g45iYUClMtZ0fJJmbDxkolvzifAV5cKKXZbb2YUbNjllsxAsNglRTqp23oExPoNBgX5vWN9VX4j55vYEnmBjJNmf9ppb2qDwsU6vSNGqxySllonU9FkAKMJ4sEDeBzSGgup3OZLkv73W104aUZ5nfnu9UpuKjDGYbx6Cr9f2hgKPcGLyVJtGFt62SI8jzbARy1Ww0Wi4OhX4gF16AS47LVjb0djtQnUAWdAXM7STZZx0D1xqSvLe4al1sHezc4T0vf9Kz2PVHqwimJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "radar_mmwave_module",
+      "name": "Millimeter-wave Radar Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "TX",
+        "RX"
+      ],
+      "type": "sensor",
+      "partId": "62b6012b-16dc-4031-b6bc-100095b7a61d",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ZTbpnHEopaMO4q5VRe7JIzttLoKtA_1h92p77BC_l8s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFxWTh3Q21TWEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BXDP2C8L?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "16x22x4mm",
+      "position3d": {
+        "x": 150,
+        "y": 10,
+        "z": 5
+      },
+      "boundingBox": {
+        "depth": 4,
+        "width": 16,
+        "height": 22
+      },
+      "description": "24GHz radar for target drone detection and range-finding, provides data to the radar MCU.",
+      "productName": "HLK-LD2410C 24GHz Radar",
+      "purchaseUrl": "https://www.amazon.com/s?k=HLK-LD2410C+24GHz+Radar",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxwq2TI2Kqnyj0UFw2ijdoFDKhWZSkiHz4g5IFe8C4kdgu8SV00mi0wU79ngczIRo3duFZ6F2mEzTLHR8L4vx86Y09669crdsRM0FfqTuSrNcBDIPXa5nHWz4ewcPYTmd20DtGlN6RU5W5l6nuMDe7S0Be7dKT6hQsu9BfeynKXyiPXWggjpEouPZ3QWOUdSf6gYCAHR6xL5Ghxo6ayDYJ8Ns7OCjFfKeyy5mZKcNpeVTgC0yZtlzuVxAJjLx83Hs2RGaw8jimZGV9u7psksOSrXZ5SqVmgigGVnzl0sNhAgBpC87u9slVLxYCd4TwqT7NECflIjy6iNEq8dBMkuHLtMHxDvQglqgJblFZPKih5j1aGKNiXKHd7ZrJjPsrzcEdDTC4MfZjlLKwJVFkwYSHHc7RcGouJdAYKJmtYrxaTspq5q0BAQNXlqrJh9OLjLGSZ4MwzDHGkbYo1zgugjz4WlUrzrdk1cGNLugBQF4lEVGmV1E8mZ5pvy1UWNy0XEcLlZfVTyz3oqPXdIHuNYaLZ6VUfDq4ImBTSfEYc19KIlCMtifUYGAL65pRKoi7cBvNYuAgNjJ5hOAAQs746RuVsMlmqN9hfBn55b4S3I6ove2uFjyCsUzJ31EPFpj5rNYaMIadGSSWvoPbZB9sBMIEsSX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HLK-LD2410C+24GHz+Radar&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "radar_comm_module",
+      "name": "Radar Wireless Comm Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "TX",
+        "RX",
+        "SET"
+      ],
+      "type": "module",
+      "partId": "5ec55ca3-099a-44b8-8492-77ff9ee4e518",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/MoUBasPzd2hEnTlS9WhTTt1MCBieKG_yvRCr9zyat0g/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3VVTUFB/T1N3M1doa2J2a1Iv/cy1sMTQwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CGTZW9VN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x13x3mm",
+      "description": "Transmits guidance commands and data to the interceptor missile.",
+      "productName": "HC-12 433MHz Wireless Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=HC-12+433MHz+module",
+      "estimatedCost": 6,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRr9inHmKsre4JdBXTNSOjmEqEzuy9AoV7613CyIuJ2LbfadfhUtqw1z5DBwMWy9UowuZCC9lc6yN9wGA3BisTPCqidefypTQSRjG3TIbqmmxgACAjKJ0K6Y0pDrDmNZcyreesOAw361GusCmXtOLJ1cKPw6OUnSTn3l0sHXkUujXWpgBnpVQyEM5ssLQZXCZTmtzy32mYVpaU7lZ5WI1k0Vt22FNWq8j1xscTRaPhsIxRGAd5RaOzDiPMVOpsQIDNmZWcxNDntA3aVXLH6n2tay2qwIpF5M4yvbwds7FIaCEf1DkTVoGPiXuiDtXwjz1K1NgzJn08LTLfXrrKgWNGWUPCTYtL2GcaJ3p4tIoIvyTZTGvjANbdf5yVKX9yOd4nRTZKMgrceOsVqs9jfvZQGm2sO3ZKYidI60OXlBaJYvhaWiQ8av3iSB211xSrCVwlZlUsHvWLkbwdggk6kSrdzT6NuJ3WWc6UNSKplpmBfjynB1iWq6xUjNri0B66IN1LB5e0obrmhJ3RfLrkW6PVnfdariaXW0sBW1SKPsnoiAvwfQSfdwMvBOrKaRd6uHtVmoziLSONSTffWeSKzjyX9nqsL1xdV9HmZ0DTnAw97w61fkpBZRWuGNBybtWA3wqtg4ENNRGm2CDdjxnjEY35gJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HC-12+433MHz+Wireless+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "radar_lipo_battery",
+      "name": "Radar LiPo Battery",
+      "pins": [
+        "JST_PH2.0"
+      ],
+      "type": "power",
+      "partId": "21e38949-82b5-443b-b61c-ed00cd3207a0",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/KN3mCmtS6ZWpNPySMEUjODicGJ5eei9qvvpCV5tj8W0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idXp6/ZnB2LmNvbS5hdS9j/ZG4vc2hvcC9wcm9k/dWN0cy9wcm9kdWN0/cy0xXzAyMzViNDBj/LTY0YjMtNDZjZi05/MGNlLTE1NGQ5NjRh/MWRmOC5qcGc_dj0x/NzEwNzY5MzU3Jndp/ZHRoPTE0NDU",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "BAT+,BAT-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D3F67LVM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x25x10mm",
+      "position3d": {
+        "x": 150,
+        "y": 10,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 45,
+        "height": 25
+      },
+      "description": "Small dedicated power source for the separate radar unit.",
+      "productName": "1S 500mAh LiPo Battery",
+      "purchaseUrl": "https://www.amazon.com/s?k=1S+500mAh+LiPo",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxvwhy2AIKo4l1ufAFjsZBJlf2smIeJ9uGJZaF0KTIUry4vxbPKKU9ztiJmOwJQno852s1bxEm0p7doLufQawPmiykwdTIEeZ7lGgkD2TQoo9j0RW3W3zjZQb6uSx4jJ0jCPtHCEvvUjGPfbCndzGyJ6jDMaNGkVqeZn9otUJp31f9b3Ky7vixoq3uX5fU6qUK8jWkltw9Yfw0IDWa6XLKRIrdlewYSR7aN92jbsvaKhds1TZFPiQUjUwxKpB9AuVeprm4klte8JUkFJ3Mi6y1K79xL7vdmwQgNlUd0YmiAzIdEZ1qIjnSzEOvDtyzxi9aH6xaH4D4TyyNutZEBvquZn1rwif9rXKEL7Wh7vmDCcill3de77p1e0k4pYtTKXmFP2FwapcJY4RFhwvRkg5bBH5VBTPSFX20F7580rzvw1EG5g827zWmP3jtUNJennh4znXUjV64Z7hNvrdKXG1pAQ6yLPtV7OhweCaxUf42wELCBG7QeTOwhrJS1TNiaHR1tyOCBcsk1FfdmPs8WIcRcRJKwMkIbrU983vHZFMCQLbgjy6hyZJifv9k5oCL3c321XOWrHQasNIrbBb4D56u6HCRhX9O1fLtlPXxQMm3hqsYXrK2tMwzVzGd50WkwyPB29HIK3RRJSeXu5OIlF0Ofmb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1S+500mAh+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "radar_power_regulator_3v3",
+      "name": "Radar 3.3V Regulator",
+      "pins": [
+        "VIN",
+        "GND",
+        "VOUT"
+      ],
+      "type": "power",
+      "partId": "c1b7be36-d71a-440d-88cf-efdede14893e",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/-_6VVor2CZMB08IsH2oF8rT5ZftpotELIaqjSXbbNAM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdXBw/b3J0LmVudmlzdGlh/bWFsbC5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMTIv/RUxFLURDLURDLTQu/NS0xMlYtMy4zVi1B/RS1ITy0xLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN,GND_IN,VOUT,GND_OUT"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07CP4P5XJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x3mm",
+      "position3d": {
+        "x": 150,
+        "y": 10,
+        "z": 18
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 10,
+        "height": 10
+      },
+      "description": "Regulates battery voltage down to 3.3V for the radar MCU and module.",
+      "productName": "AMS1117 3.3V Regulator Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=AMS1117+3.3V+regulator",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRyyqL9n17Z7IMB36CfEywHEBDJBhFNPdPSbOqBO5bsiPebNkjk1JDE0WUq2NkTdZzLPtTLRDBXDHXPBK513dmCDu41kih0hzVOYld5G5rwpOyj2GfppRJmJJ6hR95u1QUx3sWSzTZkmBuLvDJBJdhZ5Hhyl9kmL0EMAjCu7bfDxhPRVhN5Wm3NWhUPf0HLqbVQ4J7JUdro60XzaJfNTWQyTjEOj94IJbbqd41SzOKlCRRLSyjfpUUvpSNySTRynRPEtWeCB8VYUJt4QScf1QWr4GD1nEu9YhdiXocOYgus86ko7CQPQXsLFFY2OeX6izFpSTHQH4AaswJ5MzJh8doCVlEHioiAQeWi9sZyiMpRODAy1i0ONdhKfMRxF1uDWJYB1YVbOVuXP48LdlHp9hdIU5lRRQmsBciTd8GPQspxKDrfGrreyPDQW50u9dJ84116nY62S4BWFJU6jZG7tZtbdtzQ7dNRw7nQFsvIGrGI1IKUaA4wzjuaZzqFvUvKB53L5M8BmcuTeYsmFvp7BYFXmusvqEuj2A8GzUq3bmsVkryr5GanYca23u3il4PqCghhOuDrrbLnC9LON3ILRf9AalgSEjkdCNlaFfl5kRjiSmdSCDQaZZQFgYDpfC4GfR284IaHIR02G1StOadf875zh",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=AMS1117+3.3V+Regulator+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_body_front",
+      "name": "Missile Front Body Section",
+      "type": "3d_printed",
+      "partId": "07eb89a9-984f-4049-b0b4-8a65e606a5a8",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/y1I4nsPH49sNdenOK1mqL1bpK8Y30lVPiasGMj6ewT8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxS3lnNFJoWVFM/LmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill, support where necessary"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "76x76x100mm",
+      "position3d": {
+        "x": 0,
+        "y": 288,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 76,
+        "height": 76
+      },
+      "description": "3D-printed front section of the missile body, housing electronics.",
+      "productName": "Blended Wing Body Front Section",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+missile+body+tube",
+      "estimatedCost": 5,
+      "printSettings": "0.2mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "missile_body_middle",
+      "name": "Missile Middle Body Section",
+      "type": "3d_printed",
+      "partId": "ecdd3bd3-59cc-4d7a-9a8a-942c59d18eb1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/WFkIZjnziLBJ1ocC3h1xnF9V42OdtrL7u833l9PAuP8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFCWCs4NlQ5WEwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "76x76x120mm",
+      "position3d": {
+        "x": 0,
+        "y": 178,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 120,
+        "width": 76,
+        "height": 76
+      },
+      "description": "3D-printed middle section of the missile body, housing turbine and fuel tank.",
+      "productName": "Middle Keel Section",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+missile+body+tube",
+      "estimatedCost": 7,
+      "printSettings": "0.2mm layer height, 50% infill",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4afTe09"
+    },
+    {
+      "id": "missile_body_rear",
+      "name": "Missile Rear Body Section",
+      "type": "3d_printed",
+      "partId": "cc47fae8-0436-4bc5-90da-1948c165ae5e",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill, support where necessary"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "76x76x80mm",
+      "position3d": {
+        "x": 0,
+        "y": 78,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 80,
+        "width": 76,
+        "height": 76
+      },
+      "description": "3D-printed rear section of the missile body, housing fin mounts and exhaust.",
+      "productName": "Blended Wing Body Rear Section",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+missile+body+tube",
+      "estimatedCost": 4,
+      "printSettings": "0.2mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "missile_nose_cone",
+      "name": "Missile Nose Cone",
+      "type": "3d_printed",
+      "partId": "2cafacf5-d2ef-45e2-86ee-c5f31276eac3",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "76x76x50mm",
+      "position3d": {
+        "x": 0,
+        "y": 363,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 76,
+        "height": 76
+      },
+      "description": "Aerodynamic nose cone for the missile, designed for kinetic impact.",
+      "productName": "Nose Cone",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+missile+nose+cone",
+      "estimatedCost": 3,
+      "printSettings": "0.15mm layer height, 100% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "missile_fin_1_struct",
+      "name": "Missile Fin 1",
+      "type": "3d_printed",
+      "partId": "c74104b1-2acc-4c38-b339-520cc5044cb5",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "40x20x3mm",
+      "position3d": {
+        "x": -57,
+        "y": 85,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 40,
+        "height": 20
+      },
+      "description": "Aerodynamic control fin for the missile.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+missile+fins",
+      "estimatedCost": 1,
+      "printSettings": "0.15mm layer height, 100% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "missile_fin_2_struct",
+      "name": "Missile Fin 2",
+      "type": "3d_printed",
+      "partId": "f8ea940a-d39b-4a26-9af6-15fc91ca8f18",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "40x20x3mm",
+      "position3d": {
+        "x": 57,
+        "y": 85,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 40,
+        "height": 20
+      },
+      "description": "Aerodynamic control fin for the missile.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+missile+fins",
+      "estimatedCost": 1,
+      "printSettings": "0.15mm layer height, 100% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "missile_fin_3_struct",
+      "name": "Missile Fin 3",
+      "type": "3d_printed",
+      "partId": "eb4d794e-9a08-4bcf-85c5-f8e97d9622fb",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "40x20x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 85,
+        "z": -57
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 40,
+        "height": 20
+      },
+      "description": "Aerodynamic control fin for the missile.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+missile+fins",
+      "estimatedCost": 1,
+      "printSettings": "0.15mm layer height, 100% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "missile_fin_4_struct",
+      "name": "Missile Fin 4",
+      "type": "3d_printed",
+      "partId": "382ec879-151d-4598-a530-8b7e88f421e8",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "40x20x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 85,
+        "z": 57
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 40,
+        "height": 20
+      },
+      "description": "Aerodynamic control fin for the missile.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+missile+fins",
+      "estimatedCost": 1,
+      "printSettings": "0.15mm layer height, 100% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "fin_servo_mounts",
+      "name": "Fin Servo Mounts",
+      "type": "3d_printed",
+      "partId": "f00b43b6-80ad-4685-8f1b-69c7129a0633",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "60x60x15mm",
+      "position3d": {
+        "x": 0,
+        "y": 50,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 60,
+        "height": 60
+      },
+      "description": "Internal 3D-printed mounts for the fin control servos.",
+      "productName": "Finger Servo Mounts",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+servo+mounts",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "electronics_tray_front",
+      "name": "Front Electronics Tray",
+      "type": "3d_printed",
+      "partId": "fb2bdb93-b88e-4c20-8824-e863bd06efe7",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "Infill: 20%, Layer Height: 0.2mm, Supports: No"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "70x70x20mm",
+      "position3d": {
+        "x": 0,
+        "y": 270,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 70,
+        "height": 70
+      },
+      "description": "3D-printed internal tray for mounting flight controller, GPS, and comm module.",
+      "productName": "Electronics Tray",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+electronics+tray",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "m2_missile_screws",
+      "name": "M2 Missile Screws",
+      "type": "misc",
+      "partId": "f3d16c57-f905-4fc0-b79b-0019f759ed42",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/W-dQ-Ta5hr_5HwuCROLoyHO9d8fROOEukWAR7JeZkyU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aG9iYnlyZWNyZWF0/aW9ucHJvZHVjdHMu/Y29tL2Nkbi9zaG9w/L3Byb2R1Y3RzL2hw/aS1yYWNpbmctZmxh/dC1oZWFkLXNjcmV3/LW0yNXg2bW0taGV4/LXNvY2tldC0xMHBj/cy0yMzU0MjlfNDM2/eDQzNi5qcGc_dj0x/NzEwODExMzY2",
+      "material": "Steel",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B0FG2BYJSR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x6mm",
+      "description": "Small screws for mounting internal electronics and securing body sections.",
+      "productName": "M2 Hex Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2+hex+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvwxYfcKO8oJEk51ZQQZRDk2F3yoX8GB0MixKlFBHcp5EY5RMaocSSEWvr5ej1GhiwUhADFhMkholZfZt92d3MOLPJ4VCMcCueJDoK7JaGWf0ElK3AyxAIFy6FVl07Wh7L6BPRbvKRuFmUjzYJfjxdPQta4JSutPwChFk53JtRxHN8JxUGQrCi0Yd0ieKuquias3PbWDGWZaULyQZdnUMYkJEAMM0kyHDDTYFzBnpAJxWaBfzwjHIY9pDmDq8pegUBDAyRS4VkFGC4nujb74ITi57PfAiqvytronAYViguFVzLbaVNc29cUP8pDhvqHZiZakEV5PkDd8OXuqhjWRiVdJoyPjJ9QB5WFbtEJAlQcwYOPRo7T6iDV5uTDaoPxX8wMWQcSoTTfoWTveE8HuUUz486vVLrgsOu67ooV2DQdtB3NZR0wS4l35meCsvk8bkIFSyhfLfa4kbjXcoAHN8gTriLPBuKAmp1aRXq5bsMuPkd3QQn5S7oba53W3svCCtnn9z27tsqS0kx1cG0YAwdXcZC6IiWRpgft9SIicTEJoxkMsRsSfTnsknweuNzPKuJeDuAPFq74r5YozH77mOz7UFl1Rg4sfJpD4KNB49fr2regcrEX97IO0k1hZrXxWpRpV4zuny8K3GMKkd4HpiEmX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Hex+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_missile_standoffs",
+      "name": "M3 Missile Standoffs",
+      "type": "misc",
+      "partId": "ed312af7-817c-410e-9365-a0b1b39f7cc6",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/e78dUTj_w1CSymsif5WTJYQCNImgdKCTikLS4Kkr7S4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFPU2VQUW9oZEwu/anBn",
+      "material": "Nylon",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0F297R23T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "Nylon standoffs for mounting components to the internal electronics tray.",
+      "productName": "M3 Nylon Standoffs Assortment",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+nylon+standoffs",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwaAYknHsSWnQdgKlp0bsWsEsYSKpRwtZtb44WQ2k2nWaVUcWQ4IuhbWyxAPg8E9W8STUEWLZmmVZB0umF7v8xTAI7RSGS7SvVkrNNx0o4oZZ8LpTPfFy1J51Meu1fJ7YiCNCa9bUEA6kxImecOo3TLAYeeWU47sI5fmlWlSC1cqPkCXgU3w3sPhTtBtEwk7GS3Xgt8AEwOtjXbJL8vaDhyYLQgPyjADaDlYdtIb8Sy0xeTmCm0zieCKK0uuvWEMX6dobz5rcxD1hI0SFV8P4LnIc4eZYVpsWdDr7X1PMCyitZH22vXzo6sLV0VBlvnCuEwloQPAYCqvxu49zblnblh9kLb8Jc6OsLviphB6m6GSBpotx4EAYeyIvYFAi900ugh1iKGKGahlgKVuBWJ91g3bI8LPmAyAbvtN4sQ5VEJz5sbkkKGoDxj5Ak2xRhk9j2jmTIgNKnM4YrphhIMIsBwnzjHl0xp7RaWY5EKnFPPW0LOleZHKygOU7VZRXXjAoNxjrwkMiHwIga0nhungAjCOxjq8Td6yxYswMyFLrGhpYB705AQDqNepYlVj0CJ0SBOUtqhNyreqAw2afuC0foIVIxjIfb07FDz47lxdAbFBZDyYZ0d8T8EUuDM5stDY12ZDzy2qp9Y0R6aw9wJzOHAL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Nylon+Standoffs+Assortment&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "launch_rail",
+      "name": "Missile Launch Rail",
+      "type": "structural",
+      "partId": "cd88741b-e264-49dd-a3b7-29c3368ed134",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/JZbFPT1OZuaTuSLPISjy678PXNuo0PaDGZhOYD6i-Mg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFOaHRNdHVxZFMu/anBn",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FFSXSJTK?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x1000mm",
+      "position3d": {
+        "x": 0,
+        "y": 512,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 1000,
+        "width": 10,
+        "height": 10
+      },
+      "description": "Aluminum rod serving as the primary launch rail for the missile.",
+      "productName": "10mm Diameter Aluminum Rod (1m)",
+      "purchaseUrl": "https://www.amazon.com/s?k=10mm+aluminum+rod+1m",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRs8iBpoC3lPZoYw3MxvFY07MwkIxYpVSEKG6c5r6tVQKhUfLFmqnnNwLDGaky02QatzGWxXMojfXmiFdDv6ylGqzPxZWRcbSzONI2HGvyup0aa9h5Nh7OGbMHd2RVor3zfaEPkAYEHVdsqABbCbIRAk6DLDa843sVbBJHKsaZuv6zXtRZIfOsir5UOgVZi7IYxp8SYSrbRXLGLA0bQaRXypybyRNwL8XLdHNydd0y0n76qpBD6MjCIdNZcS57DBQdFPvzOj02T951LUD9MoQ5oH2Rn2LvsQYfXco49IhbjAANkI85D7oSwQFw9ehn2hA7DEVXkJxlGj0GlD0j4QQ1jIixgACCV1h22rcl3VnpOiChr9XIrK3k7yjecm9ddkIYHmsmCAji2UxF13F38flWzGrhdxHltkvCO7WRnfEny7ABHfhGp9ORO8JtQpY6YbR6i383XL2IAVSsl4EfiRoE0Im0cDWyAfoPtleBPVgNhTJZBWyT7B3hf7w5ZHfwcRrdqEZvMaPeXz9tLCom2bEQuwNPr1vx8CRhZ2UQYC6qGT8jIQMycOBqRuhvyRSe0awAiBDkxvmzW3qF4p8Cj0xXAze1ry7fMnRGFs5694hbU82UZ9Wyhsp4C5wVQP4JRu1wFMbBmiAQCJK40enzeeTHsX",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=10mm+Diameter+Aluminum+Rod+%281m%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "launch_base_plate",
+      "name": "Launch Rail Base Plate",
+      "type": "structural",
+      "partId": "3058cb65-a451-42ac-8a94-5a96d131e2a4",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Z3udnbWG8Cyj8wh3mjPtMwEzOsFKz7tpZJpQ4M2eKVA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YnVpbGRhc3VyZmFj/ZS5jb20vbWVkaWEv/Y2F0YWxvZy9wcm9k/dWN0L2IvYS9iYWx0/aWMtYmlyY2gtcGx5/d29vZC0xMzc3MC04/MTAyOS1jcC0xLmpw/Zz9xdWFsaXR5PTgw/JmJnLWNvbG9yPTI1/NSwyNTUsMjU1JmZp/dD1ib3VuZHMmaGVp/Z2h0PTcwMCZ3aWR0/aD03MDAmY2FudmFz/PTcwMDo3MDA",
+      "material": "Plywood",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D491GJ5T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x300x12mm",
+      "position3d": {
+        "x": 0,
+        "y": 6,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 300,
+        "width": 300,
+        "height": 12
+      },
+      "description": "Stable base for mounting the launch rail.",
+      "productName": "Plywood Sheet (30x30cm)",
+      "purchaseUrl": "https://www.homedepot.com/s/plywood+sheet+30x30cm",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxxl6Zj0ywrfMcBH7KTBM9YOvuJl7VLY6OHK3dbvaGM98Duk0wf5aIo74TOuopAVEjABugoNjwMpX7mL4DO7QZrCHO19rTOPh6ZOIkPgx3xiuzH4JVqi02CX1RUfAzdkX5WjiEYL8PiKnwaP4I0xVD9xOHV9ZNr6m3o78IqqABkogZZfPH3u6D0cXNqITCTHOuzBJOyIOiaw8NDFCgo9faEhn0Q5B87ZT4uDUE1QdKD84vSjRpGO3t54h47aLwz1qz0I4r8JGob8fkeGVSxMxeoJVkN923lGrUwI38c7CJh7hZK2JAAk7gLRqeioEGJymGxF2Qiq1PSr2ce7gdwjVMG80SWr0nqc0wIXUECXfHXVh8HqFiKRxX8EgXKfnZ8mcI1lOxrsLDsAQ7luUJS2J3FogqhflnXHKHxfuVxo4qcWe2yLqrJ2aeE1IEJnWRFRxG2szmqSXoTYijQv5SKas8pVsNzKIyYSqjwsVLbTX3fIuh7CTFuhm1I5akc8SbtZzWQqSmdeMS64rqWmShP3lCFddR7cncXSlJ4sWAq1mQNlbZtvNXTlQrDf45VzZW5s2dvkSvFmEoFrI1qkdDYAcghSLv27TT0OnBdEeCRGhJy9SLnEJ66NlfLXOPZEh0wzioavAYwXZWD4KtKdnQGS4FBIx",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Plywood+Sheet+%2830x30cm%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rail_mount_bracket",
+      "name": "Rail Mount Bracket",
+      "type": "3d_printed",
+      "partId": "857b8bd2-dc1b-4866-91e2-0d542854e44c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/DK7De3Ax6m7jaUJ5pTFhQoZJrXBtS0iJ6a1qwiuQFDI/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3hSa0FB/ZVN3Y0NkcGluRmMv/cy1sMTQwLmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "50x30x40mm",
+      "position3d": {
+        "x": 0,
+        "y": 25,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 50,
+        "height": 30
+      },
+      "description": "Bracket to securely attach the launch rail to the base plate.",
+      "productName": "MCU Mount Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+rail+mount",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer height, 30% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "missile_rail_guides",
+      "name": "Missile Rail Guides",
+      "type": "3d_printed",
+      "partId": "36563348-85b6-4ccf-abb4-b163c086d85b",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "amazonUrl": null,
+      "dimensions": "20x10x15mm",
+      "position3d": {
+        "x": 0,
+        "y": 178,
+        "z": -38
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 20,
+        "height": 10
+      },
+      "description": "Small 3D-printed guides attached to the missile body to slide along the launch rail.",
+      "productName": "Missile Guide Rails",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+rail+guides",
+      "estimatedCost": 0.5,
+      "printSettings": "0.2mm layer height, 50% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "radar_enclosure",
+      "name": "Separate Radar Enclosure",
+      "type": "enclosure",
+      "partId": "c9b5ee3c-c84f-4a25-bb9c-02a720830f4b",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill, no supports"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "40x30x20mm",
+      "position3d": {
+        "x": 150,
+        "y": 12,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 30
+      },
+      "description": "Compact housing for the radar module, MCU, and battery.",
+      "productName": "Rain Sensor Enclosure",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+small+enclosure",
+      "estimatedCost": 5,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Rain+Sensor+Enclosure&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_radar_standoffs",
+      "name": "M2 Radar Standoffs",
+      "type": "misc",
+      "partId": "129e4cec-b94e-4c2c-9d3d-aa24cb0eb98d",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0FPMC9917?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x5mm",
+      "description": "Mounts radar MCU and module inside the radar enclosure.",
+      "productName": "M2 Nylon Standoffs Assortment",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2+nylon+standoffs",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR3Rm13vAQJOOBbPDzUzAH5gItuWzpJ8kmRRRAPYVYicqibVGVwOX1i74wmKz8mSioE434PqqE10h3IPssOBfrt47p00K23JWhYBU1jm6CMNJ9YX432dwwTHvHnEy32nMea84bWHF1DnJQ7jKzVBPbySJw3xpDchzyyHkYsVqIpHFYueygf2sIo4pkSPcBpB3pTzmXHHO4m7wUoMJUylnCwHq7bCYG3tj1HebgfX5g8UxgXZlJ2dpVPLJ5NSRxZkE4v59G01FziM7vCZvQ9Zz1aOmCrWxIaeyNc78gwKmwjGSQQY2xZ3vk1qulvJ8cOlYx6xl7fLahWNx6fOzZ4Btx9Qmi2Ksnmyn2BKfqLLppphfPCosfd1ZWIBY4nJ1V9GeNBBhVYMUWbgurl4tRy6P9boNKCRZCgn0sCryVNQCBj9TLjgIiigg85j7eqBx28LF5y79qgfpq3Wk9nqaVGG9RopdC2FSIDe05GXVwhMO0hIbuHrWQSzQsT7T28qD4OvI8q3tum8ppm4iSYVvSrA3TZHh44vtxaev17LeH1cHtvKwP2luV1abpxPMA6lnCIAe8gkZf0SquKoBiacRAcOciZvRiob5wiqVjpVFbOM3tkV7BRph2S0plGbx3KhLSAcs8GDtgnfu6xtpRoMErgs2Zr9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Nylon+Standoffs+Assortment&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_enclosure_screws",
+      "name": "M2 Enclosure Screws",
+      "type": "misc",
+      "partId": "61d6022f-9cf9-4c56-b3ef-3e842015e8d0",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/2P6tzN4XPSXvxHJtlVFvW6cp01pjYH6rl6yCsKFbB9M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxiYW55Y291bnR5/ZmFzdGVuZXJzLmNv/bS9tZWRpYS9ncmFw/aGljcy8wMDAwMDAw/MS9QaGlsbGlwcy1Q/YW4tSGVhZC1NYWNo/aW5lLVNjcmV3cy0x/OC04U1MtUHJvZHVj/dC00LShSRVNJWkUp/LW1pbi5qcGc_dHM9/MTc1NTkwOTE5OQ",
+      "material": "Steel",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0FG2DQYY7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x6mm",
+      "description": "Secures the radar enclosure lid/body.",
+      "productName": "M2 Pan Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2+pan+head+screws",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4cXXna5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Pan+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "radar_mounting_bracket",
+      "name": "Radar Mounting Bracket",
+      "type": "3d_printed",
+      "partId": "1bd74f23-be23-436d-8dc4-587e4d9562db",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0B9M3R3NL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "30x20x10mm",
+      "position3d": {
+        "x": 150,
+        "y": 28,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 30,
+        "height": 20
+      },
+      "description": "Bracket to attach the separate radar enclosure to an external surface or tripod.",
+      "productName": "Radar Panel Mounting Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printed+small+bracket",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 25% infill",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3JieVNx"
+    },
+    {
+      "id": "radar_whip_antenna",
+      "name": "Radar Comm Whip Antenna",
+      "type": "misc",
+      "partId": "827700f1-65f0-4a7a-adf0-c1c3da2ae376",
+      "category": "mechanical",
+      "material": "Copper/Plastic",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B01CGMOYYM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "80x5x5mm",
+      "description": "External whip antenna for the radar's wireless communication module.",
+      "productName": "433MHz Helical Antenna",
+      "purchaseUrl": "https://www.amazon.com/s?k=433mhz+helical+antenna",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHHxpi03LDB8QISDMNf5KVvBKHCU3n4sSJau3om0z4dFlEwuBEsRfueHUtIMpQxKXa1PLwMJqZzFKK29sF2t0UTPDCed4lKEt7IctvaNTBzgs1WyDPS0MvTcthhlU7TDzgV6959j8OnS7w2dolt5E5YXIHoSrkjKpqmdVt4P2hEKkkAhFymVZtYoPeAknmL0nSyDsiYIHgJbgwgTANlnYS3SSIxwAN6N9tEoFl5s3OWduxjiAhpCenTvA4Y00iK9DnxieLwyApJhvLcDrzMJJlvUmqXPfrUO2Wy8dmDLDr3qWV4YTkG1zvY6Db06QSBIYpR4tVSYRvGVJIRplni5ZEsho0ZwEV28WSTDVdgG9eevk7sOVEIzaEAu6kFCUQZPoGx2jEVQM4lioosa4djE7AZJBjOZv8wYmSAXgWQBWrTlOW6L74j2cYjwdgxZ1cMsiHBTXeZx0pBkAvgUlPv5NRL5TNzjqBHlFVdiU1lT69GuUgLBPfEvvhQod9zpjVS4WILR3DWWMA21w1JV4khZU9cKbalbFOvAihhmVFTsKQxLCeLG64Fnk1YaHtASnTVTK1qVF3kTuZmDc9znJy2jjJaaxvUx4tv6YWXyoR03idobtX5MReOQMVvdbKdd9bOwvJBANU1O65OLTVam88Ctxiub",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=433MHz+Helical+Antenna&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "missile_mcu_esp32",
+      "name": "Missile Guidance MCU",
+      "pins": [
+        "3V3",
+        "GND",
+        "TX",
+        "RX",
+        "IO1",
+        "IO2",
+        "IO3",
+        "IO4",
+        "IO5",
+        "IO6",
+        "IO7",
+        "IO8",
+        "SDA",
+        "SCL"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/BoaTmoKwujDVc8PQyknao9a4KGn9-ybYoEzwQ7frPZc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zbmFw/ZWRhLnMzLmFtYXpv/bmF3cy5jb20vcGFy/dHBpY3MvRXNwcmVz/c2lmX1N5c3RlbXNf/RVNQMzItUzMtTUlO/SS0xLU44XzMxNjku/anBn",
+      "quantity": 1,
+      "dimensions": "20x15x3mm",
+      "position3d": {
+        "x": 0,
+        "y": 279,
+        "z": -5
+      },
+      "boundingBox": {
+        "depth": 3,
+        "width": 20,
+        "height": 15
+      },
+      "description": "Cost-effective ESP32-S3 microcontroller to handle all missile flight control, navigation, and guidance tasks.",
+      "productName": "ESP32-S3-MINI-1-N8",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-MINI-1-N8/15004455",
+      "estimatedCost": 8,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-S3-MINI-1-N8&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "solid_rocket_motor",
+      "name": "Solid-Fuel Rocket Motor",
+      "pins": [
+        "IGNITER_1",
+        "IGNITER_2"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/QC_ojvX8vTIVPAY4XAiky98V-KGMkNCOQS9l04Qimtk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vRXN0/ZXMtQzYtNy1TdGFu/ZGFyZC1FbmdpbmUt/My1FU1QxNjE1LVJv/Y2tldC1Nb3RvcnMt/Q19hNTFhOTcyMS1j/ZmQ5LTQ1NjUtYmJk/Ni1jNDI0YjgzY2I0/NDkuNjM1MzUzOGQx/Y2I5OWNkMGE1MTA0/N2E2MzZhNjBiMWQu/anBlZz9vZG5IZWln/aHQ9NTczJm9kbldp/ZHRoPTU3MyZvZG5C/Zz1GRkZGRkY",
+      "quantity": 1,
+      "dimensions": "24x70x24mm",
+      "position3d": {
+        "x": 0,
+        "y": 40,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 24,
+        "width": 24,
+        "height": 70
+      },
+      "description": "Provides propulsion for the missile. Fired by an electrical igniter.",
+      "productName": "Estes C6-5 Solid Rocket Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=estes+c6-5+rocket+motor",
+      "estimatedCost": 4,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Estes+C6-5+Solid+Rocket+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "igniter_trigger_module",
+      "name": "Igniter Trigger Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIG",
+        "VIN_LOAD",
+        "GND_LOAD"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/FGNsJcUnLO6XS8X5cteSzPZN9frgSKPHnp3uooCJbmE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGhpcHBzZWxlY3Ry/b25pY3MuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzEy/L1BISTEwNzIyMjYt/TU9TRkVULVRyaWdn/ZXItU3dpdGNoLURy/aXZlci1QV00tQ29u/dHJvbC1Cb2FyZC1N/b2R1bGUtMDIuanBn",
+      "quantity": 1,
+      "dimensions": "33x16x10mm",
+      "position3d": {
+        "x": -15,
+        "y": 105,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 33,
+        "height": 16
+      },
+      "description": "Safely allows the low-power MCU to trigger the high-current igniter for the rocket motor.",
+      "productName": "MOSFET Trigger Switch Drive Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=mosfet+trigger+switch+module",
+      "estimatedCost": 2.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MOSFET+Trigger+Switch+Drive+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rocket_motor_mount",
+      "name": "Rocket Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "70x70x40mm",
+      "position3d": {
+        "x": 0,
+        "y": 40,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 70,
+        "height": 70
+      },
+      "description": "A 3D-printed mount to securely hold the solid-fuel rocket motor within the missile's rear body section.",
+      "productName": "Custom Rocket Motor Mount",
+      "purchaseUrl": "https://www.example.com/3d-model",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer height, 50% infill, 4 walls"
+    }
+  ],
+  "notes": [
+    "3 inch missile",
+    "separate radar",
+    "500m-1000m range",
+    "destroy drone"
+  ],
+  "projectName": "Drone Interceptor System",
+  "originalPrompt": "i want a interceptor system that destroy done the size of missile is 3 inch and a seperate radar that guide interceptor to destroy drone and the range of interceptor is 500m to 1000m",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all missile body sections, nose cone, fins, and internal mounts",
+          "detail": {
+            "tip": "Ensure proper bed adhesion and temperature settings for PETG to prevent warping, especially for larger missile body sections.",
+            "steps": [
+              "Print the Missile Front, Middle, and Rear Body Sections using PETG with 0.2mm layer height and 50% infill.",
+              "Print the Missile Nose Cone and all four Missile Fins using PETG with 0.15mm layer height and 100% infill.",
+              "Print the Fin Servo Mounts using PETG with 0.2mm layer height and 30% infill.",
+              "Print the Front Electronics Tray using PETG with 0.2mm layer height and 20% infill.",
+              "Print the Rocket Motor Mount using PETG with 0.2mm layer height, 50% infill, and 4 walls.",
+              "Inspect all 3D printed parts for defects and carefully remove any support material."
+            ],
+            "summary": "3D print all custom missile structural and internal components."
+          },
+          "partIds": [
+            "missile_body_front",
+            "missile_body_middle",
+            "missile_body_rear",
+            "missile_nose_cone",
+            "missile_fin_1_struct",
+            "missile_fin_2_struct",
+            "missile_fin_3_struct",
+            "missile_fin_4_struct",
+            "fin_servo_mounts",
+            "electronics_tray_front",
+            "rocket_motor_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D print the Missile Rail Guides for the launch rail",
+          "detail": {
+            "steps": [
+              "Load PLA filament into your 3D printer.",
+              "Print the Missile Rail Guides using PLA material with a 0.2mm layer height and 50% infill.",
+              "Allow the printed parts to cool completely on the build plate.",
+              "Carefully remove the printed Missile Rail Guides and inspect them for any imperfections."
+            ],
+            "summary": "3D print the small guides for the missile launch rail."
+          },
+          "partIds": [
+            "missile_rail_guides"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "3D print the Radar Enclosure and Mounting Bracket",
+          "detail": {
+            "tip": "Ensure printer calibration is good for small details on the enclosure, as it houses sensitive electronics.",
+            "steps": [
+              "Print the Separate Radar Enclosure using PETG with 0.2mm layer height and 20% infill.",
+              "Print the Radar Mounting Bracket using PETG with 0.2mm layer height and 25% infill.",
+              "Carefully remove any support material and inspect both parts for print quality."
+            ],
+            "summary": "3D print the radar enclosure and its mounting bracket."
+          },
+          "partIds": [
+            "radar_enclosure",
+            "radar_mounting_bracket"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Cut and prepare the Missile Launch Rail and Launch Rail Base Plate",
+          "detail": {
+            "steps": [
+              "Measure and cut the aluminum Missile Launch Rail to 1000mm length (if needed).",
+              "Deburr the cut ends of the Missile Launch Rail to remove any sharp edges.",
+              "Measure and cut the Plywood Launch Rail Base Plate to 300x300mm dimensions (if needed).",
+              "Mark and drill mounting holes on the Launch Rail Base Plate for attaching the Rail Mount Bracket."
+            ],
+            "summary": "Cut and prepare the aluminum launch rail and plywood base plate."
+          },
+          "partIds": [
+            "launch_rail",
+            "launch_base_plate"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Test-fit the Missile Guidance MCU, GPS, and Comm Module onto the Front Electronics Tray",
+          "detail": {
+            "tip": "Avoid tightening screws or standoffs fully during test-fitting to prevent stripping plastic threads or damaging components.",
+            "steps": [
+              "Place the Missile Guidance MCU onto the Front Electronics Tray, aligning its mounting holes with the M3 Missile Standoff locations.",
+              "Loosely insert the M3 Missile Standoffs through the tray and into the Missile Guidance MCU to confirm fit.",
+              "Position the Missile GPS Module on its designated spot on the tray and align its mounting holes.",
+              "Position the Missile Wireless Comm Module on its designated spot on the tray and align its mounting holes.",
+              "Use M2 Missile Screws to loosely secure the Missile GPS Module and Missile Wireless Comm Module to the tray.",
+              "Verify that all components fit well on the Front Electronics Tray without interference."
+            ],
+            "summary": "Test-fit missile electronics onto the front tray."
+          },
+          "partIds": [
+            "missile_mcu_esp32",
+            "missile_gps_module",
+            "missile_comm_module",
+            "electronics_tray_front",
+            "m3_missile_standoffs",
+            "m2_missile_screws"
+          ]
+        },
+        {
+          "id": "fabricate_6",
+          "title": "Test-fit the Radar MCU, mmWave Radar Module, and Comm Module into the Radar Enclosure",
+          "partIds": [
+            "radar_mcu",
+            "radar_mmwave_module",
+            "radar_comm_module",
+            "radar_enclosure",
+            "m2_radar_standoffs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder Missile 5V Regulator to Missile Main LiPo Battery's power leads",
+          "partIds": [
+            "missile_main_lipo",
+            "missile_power_regulator_5v"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect Missile GPS Module, Fin Actuator Servos, and Missile Comm Module to the 5V Regulator and Missile Guidance MCU",
+          "partIds": [
+            "missile_power_regulator_5v",
+            "missile_gps_module",
+            "missile_fin_servo_1",
+            "missile_fin_servo_2",
+            "missile_fin_servo_3",
+            "missile_fin_servo_4",
+            "missile_comm_module",
+            "missile_mcu_esp32"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire the Igniter Trigger Module to the Missile Guidance MCU and Missile Main LiPo Battery",
+          "partIds": [
+            "igniter_trigger_module",
+            "missile_mcu_esp32",
+            "missile_main_lipo"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder Radar 3.3V Regulator to Radar LiPo Battery",
+          "partIds": [
+            "radar_lipo_battery",
+            "radar_power_regulator_3v3"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect Millimeter-wave Radar Module and Radar Comm Module to the 3.3V Regulator and Radar System MCU",
+          "partIds": [
+            "radar_power_regulator_3v3",
+            "radar_mmwave_module",
+            "radar_comm_module",
+            "radar_mcu"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Attach the Radar Comm Whip Antenna to the Radar Wireless Comm Module",
+          "partIds": [
+            "radar_whip_antenna",
+            "radar_comm_module"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Flash and configure firmware for the Missile Guidance MCU",
+          "partIds": [
+            "missile_mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Verify Missile GPS Module functionality and calibrate servos",
+          "partIds": [
+            "missile_gps_module",
+            "missile_fin_servo_1",
+            "missile_fin_servo_2",
+            "missile_fin_servo_3",
+            "missile_fin_servo_4",
+            "missile_mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test missile wireless communication link",
+          "partIds": [
+            "missile_comm_module",
+            "missile_mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Perform a safe functional test of the Igniter Trigger Module (without Solid-Fuel Rocket Motor connected)",
+          "partIds": [
+            "igniter_trigger_module",
+            "missile_mcu_esp32"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Flash and configure firmware for the Radar System MCU",
+          "partIds": [
+            "radar_mcu"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Test data acquisition from the Millimeter-wave Radar Module",
+          "partIds": [
+            "radar_mmwave_module",
+            "radar_mcu"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Test radar system's wireless communication link",
+          "partIds": [
+            "radar_comm_module",
+            "radar_mcu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the Missile Guidance MCU, GPS, Comm Module, and 5V Regulator onto the Front Electronics Tray",
+          "detail": {
+            "steps": [
+              "Secure the Missile Guidance MCU to the Front Electronics Tray using M3 Missile Standoffs.",
+              "Mount the Missile GPS Module onto the Front Electronics Tray using M2 Missile Screws.",
+              "Mount the Missile Wireless Comm Module onto the Front Electronics Tray using M2 Missile Screws.",
+              "Affix the Missile 5V Regulator to the Front Electronics Tray using a strong adhesive, ensuring proper orientation.",
+              "Confirm all components are securely fastened and aligned on the tray."
+            ],
+            "summary": "Mount missile electronics and regulator to the front tray."
+          },
+          "partIds": [
+            "missile_mcu_esp32",
+            "missile_gps_module",
+            "missile_comm_module",
+            "missile_power_regulator_5v",
+            "electronics_tray_front",
+            "m3_missile_standoffs",
+            "m2_missile_screws"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Assemble the Missile Fin Actuator Servos into the Fin Servo Mounts and attach to the Missile Rear Body Section with Fins",
+          "partIds": [
+            "missile_fin_servo_1",
+            "missile_fin_servo_2",
+            "missile_fin_servo_3",
+            "missile_fin_servo_4",
+            "fin_servo_mounts",
+            "missile_body_rear",
+            "missile_fin_1_struct",
+            "missile_fin_2_struct",
+            "missile_fin_3_struct",
+            "missile_fin_4_struct"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Integrate the Rocket Motor Mount and Solid-Fuel Rocket Motor into the Missile Rear Body Section",
+          "partIds": [
+            "rocket_motor_mount",
+            "solid_rocket_motor",
+            "missile_body_rear"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Assemble the Missile Body Sections, Nose Cone, and internal components (electronics tray, main LiPo)",
+          "partIds": [
+            "missile_body_front",
+            "missile_body_middle",
+            "missile_body_rear",
+            "missile_nose_cone",
+            "electronics_tray_front",
+            "missile_main_lipo"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Assemble the Radar System components into the Radar Enclosure and attach the mounting bracket and antenna",
+          "partIds": [
+            "radar_enclosure",
+            "radar_mcu",
+            "radar_mmwave_module",
+            "radar_comm_module",
+            "radar_lipo_battery",
+            "radar_power_regulator_3v3",
+            "m2_enclosure_screws",
+            "radar_mounting_bracket",
+            "radar_whip_antenna",
+            "m2_radar_standoffs"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount the Launch Rail to the Launch Rail Base Plate using the Rail Mount Bracket, and attach Missile Rail Guides to the missile body",
+          "partIds": [
+            "launch_rail",
+            "launch_base_plate",
+            "rail_mount_bracket",
+            "missile_body_middle",
+            "missile_rail_guides"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Perform final checks of all connections, cable routing, and mechanical fastenings for both systems",
+          "partIds": []
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A missile interceptor system designed to destroy target drones with a 500m-1000m range. It features a 3-inch guided missile with GPS, fin servos, and a solid-fuel rocket motor. A separate radar unit with an MCU and millimeter-wave module provides guidance data.",
+  "instructionPreamble": {
+    "tools": [
+      "Soldering iron with fine tip",
+      "Wire strippers",
+      "Heat gun (for heat shrink)",
+      "M3 hex key",
+      "M2 hex key",
+      "3D printer (PETG and PLA capable)",
+      "Multimeter",
+      "Hobby knife / Precision cutters",
+      "Tweezers",
+      "Screwdriver set",
+      "Adhesive (e.g., CA glue, epoxy for servos/mounts)"
+    ],
+    "assumptions": [
+      "Basic soldering experience",
+      "Familiarity with 3D printing processes and materials (PETG, PLA)",
+      "Ability to flash firmware to microcontrollers (ESP32)",
+      "Basic understanding of UART, I2C, and PWM communication protocols",
+      "Access to a computer with necessary software for configuration and programming"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "missile_main_lipo",
+      "target": "missile_power_regulator_5v",
+      "voltage": "11.1V"
+    },
+    {
+      "type": "power",
+      "source": "missile_power_regulator_5v",
+      "target": "missile_gps_module",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "missile_power_regulator_5v",
+      "target": "missile_fin_servo_1",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "missile_power_regulator_5v",
+      "target": "missile_fin_servo_2",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "missile_power_regulator_5v",
+      "target": "missile_fin_servo_3",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "missile_power_regulator_5v",
+      "target": "missile_fin_servo_4",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "missile_power_regulator_5v",
+      "target": "missile_comm_module",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "radar_lipo_battery",
+      "target": "radar_power_regulator_3v3",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "source": "radar_power_regulator_3v3",
+      "target": "radar_mcu",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "source": "radar_power_regulator_3v3",
+      "target": "radar_mmwave_module",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "source": "radar_power_regulator_3v3",
+      "target": "radar_comm_module",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "radar_mcu",
+      "target": "radar_mmwave_module",
+      "protocol": "UART",
+      "sourcePin": "UART0_TX",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "source": "radar_mmwave_module",
+      "target": "radar_mcu",
+      "protocol": "UART",
+      "sourcePin": "TX",
+      "targetPin": "UART0_RX"
+    },
+    {
+      "type": "data",
+      "source": "radar_mcu",
+      "target": "radar_comm_module",
+      "protocol": "UART",
+      "sourcePin": "UART1_TX",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "source": "radar_comm_module",
+      "target": "radar_mcu",
+      "protocol": "UART",
+      "sourcePin": "TX",
+      "targetPin": "UART1_RX"
+    },
+    {
+      "type": "power",
+      "source": "missile_power_regulator_5v",
+      "target": "missile_mcu_esp32",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "missile_power_regulator_5v",
+      "target": "igniter_trigger_module",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "missile_main_lipo",
+      "target": "igniter_trigger_module",
+      "voltage": "11.1V"
+    },
+    {
+      "type": "data",
+      "source": "missile_mcu_esp32",
+      "target": "missile_gps_module",
+      "protocol": "UART",
+      "sourcePin": "TX",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "source": "missile_gps_module",
+      "target": "missile_mcu_esp32",
+      "protocol": "UART",
+      "sourcePin": "TX",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "source": "missile_mcu_esp32",
+      "target": "missile_fin_servo_1",
+      "protocol": "PWM",
+      "sourcePin": "IO1",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "source": "missile_mcu_esp32",
+      "target": "missile_fin_servo_2",
+      "protocol": "PWM",
+      "sourcePin": "IO2",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "source": "missile_mcu_esp32",
+      "target": "missile_fin_servo_3",
+      "protocol": "PWM",
+      "sourcePin": "IO3",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "source": "missile_mcu_esp32",
+      "target": "missile_fin_servo_4",
+      "protocol": "PWM",
+      "sourcePin": "IO4",
+      "targetPin": "PWM"
+    },
+    {
+      "type": "data",
+      "source": "missile_mcu_esp32",
+      "target": "missile_comm_module",
+      "protocol": "UART",
+      "sourcePin": "IO5",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "source": "missile_comm_module",
+      "target": "missile_mcu_esp32",
+      "protocol": "UART",
+      "sourcePin": "TX",
+      "targetPin": "IO6"
+    },
+    {
+      "type": "data",
+      "source": "missile_mcu_esp32",
+      "target": "igniter_trigger_module",
+      "protocol": "Digital",
+      "sourcePin": "IO7",
+      "targetPin": "SIG"
+    },
+    {
+      "type": "power",
+      "source": "igniter_trigger_module",
+      "target": "solid_rocket_motor",
+      "voltage": "11.1V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "attached to front",
+      "source": "missile_body_front",
+      "target": "missile_nose_cone"
+    },
+    {
+      "label": "attached to rear",
+      "source": "missile_body_front",
+      "target": "missile_body_middle"
+    },
+    {
+      "label": "attached to rear",
+      "source": "missile_body_middle",
+      "target": "missile_body_rear"
+    },
+    {
+      "label": "mounted to body",
+      "source": "missile_body_rear",
+      "target": "missile_fin_1_struct"
+    },
+    {
+      "label": "mounted to body",
+      "source": "missile_body_rear",
+      "target": "missile_fin_2_struct"
+    },
+    {
+      "label": "mounted to body",
+      "source": "missile_body_rear",
+      "target": "missile_fin_3_struct"
+    },
+    {
+      "label": "mounted to body",
+      "source": "missile_body_rear",
+      "target": "missile_fin_4_struct"
+    },
+    {
+      "label": "mounted inside",
+      "source": "missile_body_rear",
+      "target": "fin_servo_mounts"
+    },
+    {
+      "label": "mounts servo 1",
+      "source": "fin_servo_mounts",
+      "target": "missile_fin_servo_1"
+    },
+    {
+      "label": "mounts servo 2",
+      "source": "fin_servo_mounts",
+      "target": "missile_fin_servo_2"
+    },
+    {
+      "label": "mounts servo 3",
+      "source": "fin_servo_mounts",
+      "target": "missile_fin_servo_3"
+    },
+    {
+      "label": "mounts servo 4",
+      "source": "fin_servo_mounts",
+      "target": "missile_fin_servo_4"
+    },
+    {
+      "label": "mounted inside",
+      "source": "missile_body_front",
+      "target": "electronics_tray_front"
+    },
+    {
+      "label": "mounted via m2_missile_screws",
+      "source": "electronics_tray_front",
+      "target": "missile_gps_module"
+    },
+    {
+      "label": "mounted via m2_missile_screws",
+      "source": "electronics_tray_front",
+      "target": "missile_comm_module"
+    },
+    {
+      "label": "secured to tray",
+      "source": "electronics_tray_front",
+      "target": "missile_main_lipo"
+    },
+    {
+      "label": "attached to exterior",
+      "source": "missile_body_middle",
+      "target": "missile_rail_guides"
+    },
+    {
+      "label": "mounted via screws",
+      "source": "launch_base_plate",
+      "target": "rail_mount_bracket"
+    },
+    {
+      "label": "secures rail",
+      "source": "rail_mount_bracket",
+      "target": "launch_rail"
+    },
+    {
+      "label": "mounted inside via m2_radar_standoffs",
+      "source": "radar_enclosure",
+      "target": "radar_mcu"
+    },
+    {
+      "label": "mounted inside via m2_radar_standoffs",
+      "source": "radar_enclosure",
+      "target": "radar_mmwave_module"
+    },
+    {
+      "label": "mounted inside via m2_radar_standoffs",
+      "source": "radar_enclosure",
+      "target": "radar_comm_module"
+    },
+    {
+      "label": "secured inside",
+      "source": "radar_enclosure",
+      "target": "radar_lipo_battery"
+    },
+    {
+      "label": "mounted inside via adhesive",
+      "source": "radar_enclosure",
+      "target": "radar_power_regulator_3v3"
+    },
+    {
+      "label": "secures lid",
+      "source": "radar_enclosure",
+      "target": "m2_enclosure_screws"
+    },
+    {
+      "label": "attached to exterior",
+      "source": "radar_enclosure",
+      "target": "radar_mounting_bracket"
+    },
+    {
+      "label": "mounted through enclosure",
+      "source": "radar_enclosure",
+      "target": "radar_whip_antenna"
+    },
+    {
+      "label": "mounted via m3_missile_standoffs",
+      "source": "electronics_tray_front",
+      "target": "missile_mcu_esp32"
+    },
+    {
+      "label": "mounted inside",
+      "source": "missile_body_rear",
+      "target": "rocket_motor_mount"
+    },
+    {
+      "label": "secures rocket motor",
+      "source": "rocket_motor_mount",
+      "target": "solid_rocket_motor"
+    }
+  ],
+  "projectId": "feb6323c-c8aa-4ac4-b15f-638903f67475"
+}

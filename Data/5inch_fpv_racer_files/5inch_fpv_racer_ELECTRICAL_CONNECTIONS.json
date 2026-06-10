@@ -1,0 +1,163 @@
+[
+  {
+    "type": "power",
+    "label": "Main Power",
+    "source": "lipo_battery",
+    "target": "esc_4in1",
+    "current": "80A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "Ripple Filter",
+    "source": "lipo_battery",
+    "target": "capacitor_main",
+    "current": "80A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "FC Power",
+    "source": "esc_4in1",
+    "target": "flight_controller",
+    "current": "5A",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Motor 1 Power",
+    "source": "esc_4in1",
+    "target": "motor_fl",
+    "current": "55A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "Motor 2 Power",
+    "source": "esc_4in1",
+    "target": "motor_fr",
+    "current": "55A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "Motor 3 Power",
+    "source": "esc_4in1",
+    "target": "motor_rl",
+    "current": "55A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "power",
+    "label": "Motor 4 Power",
+    "source": "esc_4in1",
+    "target": "motor_rr",
+    "current": "55A",
+    "voltage": "22.2V"
+  },
+  {
+    "type": "data",
+    "label": "Motor 1 Signal",
+    "source": "flight_controller",
+    "target": "esc_4in1",
+    "protocol": "DShot600",
+    "sourcePin": "Motor 1 Signal",
+    "targetPin": "Motor 1 Signal"
+  },
+  {
+    "type": "data",
+    "label": "Motor 2 Signal",
+    "source": "flight_controller",
+    "target": "esc_4in1",
+    "protocol": "DShot600",
+    "sourcePin": "Motor 2 Signal",
+    "targetPin": "Motor 2 Signal"
+  },
+  {
+    "type": "data",
+    "label": "Motor 3 Signal",
+    "source": "flight_controller",
+    "target": "esc_4in1",
+    "protocol": "DShot600",
+    "sourcePin": "Motor 3 Signal",
+    "targetPin": "Motor 3 Signal"
+  },
+  {
+    "type": "data",
+    "label": "Motor 4 Signal",
+    "source": "flight_controller",
+    "target": "esc_4in1",
+    "protocol": "DShot600",
+    "sourcePin": "Motor 4 Signal",
+    "targetPin": "Motor 4 Signal"
+  },
+  {
+    "type": "data",
+    "label": "ESC Telemetry",
+    "source": "esc_4in1",
+    "target": "flight_controller",
+    "protocol": "UART",
+    "sourcePin": "Telemetry",
+    "targetPin": "ESC Telemetry"
+  },
+  {
+    "type": "data",
+    "label": "Crossfire Data",
+    "source": "flight_controller",
+    "target": "crossfire_rx",
+    "protocol": "CRSF",
+    "sourcePin": "UART2 RX",
+    "targetPin": "CRSF_TX"
+  },
+  {
+    "type": "data",
+    "label": "Crossfire Data",
+    "source": "flight_controller",
+    "target": "crossfire_rx",
+    "protocol": "CRSF",
+    "sourcePin": "UART2 TX",
+    "targetPin": "CRSF_RX"
+  },
+  {
+    "type": "power",
+    "label": "RX Power",
+    "source": "flight_controller",
+    "target": "crossfire_rx",
+    "current": "100mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "SmartAudio",
+    "source": "flight_controller",
+    "target": "vtx",
+    "protocol": "SmartAudio",
+    "sourcePin": "UART1 TX",
+    "targetPin": "SmartAudio"
+  },
+  {
+    "type": "data",
+    "label": "Video Signal",
+    "source": "fpv_camera",
+    "target": "vtx",
+    "protocol": "Analog Video",
+    "sourcePin": "Video Out",
+    "targetPin": "Video In"
+  },
+  {
+    "type": "power",
+    "label": "VTX Power",
+    "source": "flight_controller",
+    "target": "vtx",
+    "current": "500mA",
+    "voltage": "9V"
+  },
+  {
+    "type": "power",
+    "label": "Camera Power",
+    "source": "flight_controller",
+    "target": "fpv_camera",
+    "current": "100mA",
+    "voltage": "5V"
+  }
+]

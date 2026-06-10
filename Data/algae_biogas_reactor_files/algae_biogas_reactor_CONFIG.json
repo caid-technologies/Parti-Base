@@ -1,0 +1,2727 @@
+{
+  "plan": "- Electrical: Microcontroller (e.g., Arduino Mega, ESP32) for process control; pH, temperature, and gas composition (CH4, CO2) sensors; peristaltic pumps for nutrient/algae circulation; heating/cooling elements; gas flow sensor; gas storage level sensor; power supply and relays.\n- Mechanical/Structural: Transparent bioreactor vessel(s) (e.g., acrylic, glass) for algae growth; mixing/aeration system (air pump, diffusers); gas collection manifold; gas storage tank (approx. 100L capacity); nutrient reservoir; plumbing (tubing, valves, connectors, check valves); support frame.\n- 3D-printed parts: Custom mounts for pH/temperature probes; bioreactor lid with sealed ports for sensors, gas collection, and liquid transfer; specialized gas manifold connectors; pump enclosures; fittings for plumbing integration.\n- Key processes: Algae cultivation in bioreactor, nutrient delivery, CO2 introduction, gas collection (biogas), simple gas purification (e.g., H2S removal).\n- Safety: Pressure relief valves for gas storage; gas leak detection (methane sensor); proper ventilation; flame arrestors for gas lines.\n- Maintenance considerations: Easy access for cleaning bioreactor, nutrient replenishment, algae harvesting, and system calibration.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "VIN",
+        "GND",
+        "3V3",
+        "GPIO_0",
+        "GPIO_1",
+        "GPIO_2",
+        "GPIO_3",
+        "GPIO_4",
+        "GPIO_5",
+        "GPIO_12",
+        "GPIO_13",
+        "GPIO_14",
+        "GPIO_15",
+        "GPIO_16",
+        "GPIO_17",
+        "GPIO_18",
+        "GPIO_19",
+        "GPIO_21",
+        "GPIO_22",
+        "GPIO_23",
+        "GPIO_25",
+        "GPIO_26",
+        "GPIO_27",
+        "GPIO_32",
+        "GPIO_33",
+        "GPIO_34",
+        "GPIO_35",
+        "GPIO_36",
+        "GPIO_39"
+      ],
+      "type": "mcu",
+      "partId": "67f2f26b-4ba2-4324-9b1b-3dcf0e80228c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D+Dev+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/5312-03.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GPIOs,UART,I2C,SPI,AnalogIn"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0DF2YJSHN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006613312645.html?pdp_npi=6%40dis%21USD%2113.45%214.30%21%21%2191.20%2129.18%21%402140d33617793278390533892e0eb8%2112000037826262416%21affd%21%21%21%211%210%21",
+            "price": "$4.3",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/5312",
+            "price": "$15.95",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/5312",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DF2YJSHN?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x28x13mm",
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 300
+      },
+      "boundingBox": {
+        "depth": 28,
+        "width": 55,
+        "height": 13
+      },
+      "description": "Main microcontroller for flight guidance, sensor data processing, and actuator control.",
+      "productName": "ESP32-WROOM-32D Dev Board",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHUQ6O5G4o7qoHEJis6EwjOejJStoz9oxzZi9lZIHPbwKWbYUBoP3e7i04iXBxEJ2CFroL0BFYHSUjaeYPho0IED3Fx3qSNwUbgsjlbANHX1Dsy0cVBJwg5imFh5XuYcESiAfMO4sz4DyLatDI9LSnNiIMfDv1qs7tuzGHI9pnrzJ5ThPn0G7rvIP8O4VevFNUZlJMezveK6YJfbSKieXDI0fafjUcmxcKn9Ri67dM1SA9Jj6gaqsErFXSlwtIkQGQZNXi292k1yzpZ9MDgsp3uYXtuGI9S2IX2bCd9PZWRql7j5So8NKktHQPLcJe6eWP2lL7ex04XjHAddgWeh7lU9MeodBTJkAHzcMGwEIYxb5boNds31rPv7t4VKaGHQOEBrzV8jOuNyAtqdMyZJQK3shiIBixOYVz7XvcUChUboBKyd0ikohjESWc6cmfL3G5VKLGSkFRpYW2Nxkz9xsDvfBGtOY0ari9dHlow8SqAIC9kEn0Cdiek2hepo7e2gDSZU0JyPX0VOtdQdyELxRXnDFA6wQjgynnS0HWVfUIxW9mUnSE11cFYrDD6CQ0RFlIN8ASEOUfuLo6DrGG05XDJRu6ek2XkOIfEfuhtRHvADkfTMDKsi4lQAZPMaIic03DvydJWGBaBJYJfCj6xzoko3",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHUQ6O5G4o7qoHEJis6EwjOejJStoz9oxzZi9lZIHPbwKWbYUBoP3e7i04iXBxEJ2CFroL0BFYHSUjaeYPho0IED3Fx3qSNwUbgsjlbANHX1Dsy0cVBJwg5imFh5XuYcESiAfMO4sz4DyLatDI9LSnNiIMfDv1qs7tuzGHI9pnrzJ5ThPn0G7rvIP8O4VevFNUZlJMezveK6YJfbSKieXDI0fafjUcmxcKn9Ri67dM1SA9Jj6gaqsErFXSlwtIkQGQZNXi292k1yzpZ9MDgsp3uYXtuGI9S2IX2bCd9PZWRql7j5So8NKktHQPLcJe6eWP2lL7ex04XjHAddgWeh7lU9MeodBTJkAHzcMGwEIYxb5boNds31rPv7t4VKaGHQOEBrzV8jOuNyAtqdMyZJQK3shiIBixOYVz7XvcUChUboBKyd0ikohjESWc6cmfL3G5VKLGSkFRpYW2Nxkz9xsDvfBGtOY0ari9dHlow8SqAIC9kEn0Cdiek2hepo7e2gDSZU0JyPX0VOtdQdyELxRXnDFA6wQjgynnS0HWVfUIxW9mUnSE11cFYrDD6CQ0RFlIN8ASEOUfuLo6DrGG05XDJRu6ek2XkOIfEfuhtRHvADkfTMDKsi4lQAZPMaIic03DvydJWGBaBJYJfCj6xzoko3",
+      "estimatedCost": 8
+    },
+    {
+      "id": "ph_sensor",
+      "name": "Bioreactor pH Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "Analog_OUT"
+      ],
+      "type": "sensor",
+      "partId": "49093487-14d1-4d01-9643-5faf46556e6d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Analog+pH+Sensor+Kit+BNC&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41u3ZUwyCBL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08GYF269Y?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$33.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010536790785.html?pdp_npi=6%40dis%21USD%2181.99%2177.89%21%21%21554.33%21526.61%21%4021013cc617794162148307717e0f99%2112000052739866327%21affd%21%21%21%211%210%21",
+            "price": "$77.89",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08GYF269Y?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x32x10mm",
+      "position3d": {
+        "x": 300,
+        "y": 450,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 32,
+        "width": 43,
+        "height": 10
+      },
+      "description": "Measures water pH levels for automated adjustments. Requires calibration.",
+      "productName": "Analog pH Sensor Kit BNC",
+      "purchaseUrl": "https://www.amazon.com/dp/B08GYF269Y?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgqBVlPB87mSoDRVviaYh2uWLuEtyyV5itPVGjAH8p7xI4kIIydA4KAzYEXJ53IJW5XESyl6PCetSM5JzSkPFVS3lBT7G3eMHN7CqO45dudRPr5XOvfkVnbvA26DI86X6pN56loWdMEh7L4tdtJtixfeDLOwPSJWvDfTLQKjalRoAh45QvRZOz9d2Xnpq1bTiIz1R4C8uhGZtIaNlfXUQZI6uRXs3b58qPdeBFsXPvWPvh880d2zekt1XK5cVOYpUX3zKPgcAMURuY7L3GupWCpqnJkw8HUmUOT4qJZObGyvvLmTifYrWqOn3YYLt5AcGYA01nmhspZZTuczBmIVL6TNbcCFXf73qIrjQcz0jniZXWehdVJzK2e02pBndTGgBpLrydOFgMPH6kMYAxZyOAGocowaYxZ3AlOtlciAjaXyDV7PNSq7d2Xyr0xy7PmSqhcmY3rziYYUBcwEUJAXHK9RjPWi3iXMRcDfHHtkFGlkh4h5c9PExvpWuMEDq9hkFZIlisl3H0zx1cJnzo2lSWLeQHAyThEOhmr6RWW7PLekD7fO9U7KZ6vKBsMzt0rXl6lRV24BWVRFKD81gwjHfPOccUCVxfuOvfgFIop2bWtNGMOl9VEIdYZFSYEIYtcXvDwkWL7C2M10dcTyRZbEZkin",
+      "estimatedCost": 25
+    },
+    {
+      "id": "temp_sensor_bioreactor",
+      "name": "Bioreactor Temperature Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "Data"
+      ],
+      "type": "sensor",
+      "partId": "f7a78b41-9cd3-4362-9165-f377f60d34ab",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DS18B20+Waterproof+Temperature+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/381-01.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Data"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B00M1PM55K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$10.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007038546046.html?pdp_npi=6%40dis%21USD%216.35%213.18%21%21%2143.04%2121.52%21%4021013cc617793284184247991e101d%2112000039179671896%21affd%21%21%21%211%210%21",
+            "price": "$3.18",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/381",
+            "price": "$9.95",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/381",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B00M1PM55K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x50x6mm (probe)",
+      "position3d": {
+        "x": 400,
+        "y": 420,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 50
+      },
+      "description": "Waterproof DS18B20 temperature sensor for monitoring pillow block bearing temperature.",
+      "productName": "DS18B20 Waterproof Temperature Sensor",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaFkPjb63QZKoCmuxARXDkLY1Of3teSDg42cZV6siCMuuY7DHmjIM8gz2Go4oBGkbR33bH6cVH8fp25Rfl75NExqA0Kq9giFIONDYqwoIfNU2uOCBW65BCdYWD5510ybK8ZnL57bYav8UHOh5tNCv5RxUb6YhnJdZ9nUvV9GksT7ARSUDb87d8buBjhqaroQdVWJZMEQodwe3plwDHi61j0Df8oKA3MR4e4DuGTkPMfUIr1FUn8o5PDNPiqt0vkz48tAVifmny38NlbVciTeyAD4W80UFf3OwHaZKF1KaVyHqMnY3HvTjAAgvB94TRtA091V3QPVWHMnqvT7zFHnXdbIhQ9ljk5tbScsg0j6OTv1JRKMWuMXHne5wVcJdvTJnas7bzpvA2qHUji4r2h50RU4RJABEcXszzd5PFFpeH2OpAXKgqGnNLmW82DcksGW2raj9Rve0qwIbx0sx6JjddS6xnt4ypErVt6WE61kC12CVZfLu7K61dlAdWy31SWWkfZB8kjXhfhjTjSPm8zCj66gYXVTKnKuZBGZ5VWJlj1itidltGtCOJdoUEXqm1mucaQT37eWduN0u0Tyy9OwiueHifwiKpOmUc0aTOkDcoBx0KO36FD9aZRx3H2HybzU19gYg2sIdehSy0U8gXeTfTzD",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyaFkPjb63QZKoCmuxARXDkLY1Of3teSDg42cZV6siCMuuY7DHmjIM8gz2Go4oBGkbR33bH6cVH8fp25Rfl75NExqA0Kq9giFIONDYqwoIfNU2uOCBW65BCdYWD5510ybK8ZnL57bYav8UHOh5tNCv5RxUb6YhnJdZ9nUvV9GksT7ARSUDb87d8buBjhqaroQdVWJZMEQodwe3plwDHi61j0Df8oKA3MR4e4DuGTkPMfUIr1FUn8o5PDNPiqt0vkz48tAVifmny38NlbVciTeyAD4W80UFf3OwHaZKF1KaVyHqMnY3HvTjAAgvB94TRtA091V3QPVWHMnqvT7zFHnXdbIhQ9ljk5tbScsg0j6OTv1JRKMWuMXHne5wVcJdvTJnas7bzpvA2qHUji4r2h50RU4RJABEcXszzd5PFFpeH2OpAXKgqGnNLmW82DcksGW2raj9Rve0qwIbx0sx6JjddS6xnt4ypErVt6WE61kC12CVZfLu7K61dlAdWy31SWWkfZB8kjXhfhjTjSPm8zCj66gYXVTKnKuZBGZ5VWJlj1itidltGtCOJdoUEXqm1mucaQT37eWduN0u0Tyy9OwiueHifwiKpOmUc0aTOkDcoBx0KO36FD9aZRx3H2HybzU19gYg2sIdehSy0U8gXeTfTzD",
+      "estimatedCost": 5
+    },
+    {
+      "id": "ch4_sensor",
+      "name": "Methane Gas Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "DO",
+        "AO"
+      ],
+      "type": "sensor",
+      "partId": "82eccce1-fa6e-40db-80c9-cd8fe082719e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MQ-4+Methane+Gas+Sensor+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/317hTH6rRNL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005008248207022.html?pdp_npi=6%40dis%21USD%216.91%213.25%21%21%2146.76%2121.98%21%402141149b17794590807665978e11bb%2112000044371553299%21affd%21%21%21%211%210%21",
+            "price": "$3.25",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FN44TT3G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FN44TT3G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "32x20x22mm",
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 32,
+        "height": 22
+      },
+      "description": "Detects the concentration of methane in the purified biogas.",
+      "productName": "MQ-4 Methane Gas Sensor Module",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfQ3MegG5QwcuwbTpX43nYuSo7LfYAtDbJiZVdhC67s6cfKT8RstZdP227Ax9TDG7Nvmx4c3nXdrMOnylcnw6x6b2xVMcEMJI7hRJfQKdC8UUxo0tsFYmycOp1t4DFFXUENhueqR3xoRH4IkCY1zmQ190S4GqKnrHrkfaGhIkhoJiAi69NisODKCcCuXJrgIo4uKf4j9jCETooxE5xkS3w0nCG0HIJr0S9ShC6QiCRbEKOLBMLDo8qYfn3aqZOXmzr4aXp4aJ8SlSwsV02p7Cps47r5L3e0Ko02WH0iH9GUXwlFtryJ1MyPNgs5ooXNvfHQ3xjEjE1j5Q7t8cGMAd6T7mXkYUXaPF8C68Ik16mrQAZP3klGITtWaW1ZWMR3n8ZEwHHLpZ0u7743VihdAXTRpGKOCFydH0yjRMFOgGdh6zMKLKg2s3dFApyGKeZyEA7wtMSS4BDCjAZ1mkQ0h1CFMCCqTT0vUya0brWSJq3qnrYDhEFve4NVJ1cCkMJEoFMVsqBsrN7jv5mCsKhQUoJlBykCjE4dyF3e5nbyb9srveTfkhNKt0lhPS7xrg2JkyYhzjZWQDS7U2P8APotCqLIf7qbdnDvQVAeOU1tgYE5zzFmuQsAlYxNdXq5ayGa0G7GWblglq2RWcStHeWYkiu2X",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfQ3MegG5QwcuwbTpX43nYuSo7LfYAtDbJiZVdhC67s6cfKT8RstZdP227Ax9TDG7Nvmx4c3nXdrMOnylcnw6x6b2xVMcEMJI7hRJfQKdC8UUxo0tsFYmycOp1t4DFFXUENhueqR3xoRH4IkCY1zmQ190S4GqKnrHrkfaGhIkhoJiAi69NisODKCcCuXJrgIo4uKf4j9jCETooxE5xkS3w0nCG0HIJr0S9ShC6QiCRbEKOLBMLDo8qYfn3aqZOXmzr4aXp4aJ8SlSwsV02p7Cps47r5L3e0Ko02WH0iH9GUXwlFtryJ1MyPNgs5ooXNvfHQ3xjEjE1j5Q7t8cGMAd6T7mXkYUXaPF8C68Ik16mrQAZP3klGITtWaW1ZWMR3n8ZEwHHLpZ0u7743VihdAXTRpGKOCFydH0yjRMFOgGdh6zMKLKg2s3dFApyGKeZyEA7wtMSS4BDCjAZ1mkQ0h1CFMCCqTT0vUya0brWSJq3qnrYDhEFve4NVJ1cCkMJEoFMVsqBsrN7jv5mCsKhQUoJlBykCjE4dyF3e5nbyb9srveTfkhNKt0lhPS7xrg2JkyYhzjZWQDS7U2P8APotCqLIf7qbdnDvQVAeOU1tgYE5zzFmuQsAlYxNdXq5ayGa0G7GWblglq2RWcStHeWYkiu2X",
+      "estimatedCost": 8
+    },
+    {
+      "id": "co2_sensor",
+      "name": "Carbon Dioxide Gas Sensor",
+      "pins": [
+        "VIN",
+        "GND",
+        "TX",
+        "RX"
+      ],
+      "type": "sensor",
+      "partId": "31c18b34-b1f3-47f6-96b8-264d11644e17",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MH-Z19C+NDIR+CO2+Sensor+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/dQCgmxqnl0-jbEDgvhaxAhXiH-V50N2iluOBd0D3fQU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hZTAx/LmFsaWNkbi5jb20v/a2YvSGIyM2Q3OTZi/NTM1NjQ1YTlhNDIx/YWU4ZWNmZTU2N2Vh/RS5qcGdfcTUwLmpw/Zw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CRKH5XVX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "33x20x9mm",
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 250
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 33,
+        "height": 9
+      },
+      "description": "Measures CO2 levels after the water scrubbing stage to assess purification efficiency.",
+      "productName": "MH-Z19C NDIR CO2 Sensor Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=MH-Z19C+CO2+sensor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvRICeHsZO7GXyKkPHVCfp7E3JTYi2NXyhxpGS6q4glCGSGfXXxs3VzRGrFwPvQpFjdHQodeqzUi0ID2wrbbFMGy15qaY0fuMBF2KP4iivgyKyW4FBUzr9AzS7ycp5kPizxQKfDgh98RteAUnXkK7dwKYR7uwZZ5aJnYlKxG3g4MXqF1FcKKz8OxdThGWgINAobvjpFEZjXsrfIeOQe36Krqg2Ni9Ri0wpZALDRi6PPVRzr3Bm5QU1IiWVsUMuAnlvU7PxO6QeY8xa1uLrwD1JNV2hUnz3e9jgdh4uXGqw9F2sTKnb1SdnNSSG9dOCLNH8MNdpWbuDaELIArkRUcJeBajcEXoIyd8nSx5qgZIWx1JVIchhilkjNRNoPuUaAa3q4dyDLrzWmgy1G2jUrYNMMwLgDeAmrKNmOVSY42u28Kry8pbtkoNWpBI01IE2nF9SLOAFhZWvYuLytAj2Ehy16hc9mU7Rmzp2HyukAM7WylKvc6tDtAfYxY4Cosp39QxQooV3xVfDldDBzTItCPUfKYfSXIg54gmLc18H3vyYyXXcbNJk3tkvlhsoq6Fy8RXkND6LI3SkAco7nbtTLe1XV3HEFHbeviguderzjaNGDSecVinMN9wnPixlIHgjwKiLIlnpCSM81ukUOsLr0SGap9",
+      "estimatedCost": 30
+    },
+    {
+      "id": "gas_flow_sensor",
+      "name": "Gas Flow Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "Pulse_OUT"
+      ],
+      "type": "sensor",
+      "partId": "5bbea751-43df-474f-b6d9-3d01812ffd11",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=YF-S201+Water+Flow+Sensor+%28repurposed+for+gas%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/Sf072900ea36f493285771f38aba480499.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07HQ8RGTY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x35x30mm",
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 350
+      },
+      "boundingBox": {
+        "depth": 35,
+        "width": 60,
+        "height": 30
+      },
+      "productName": "YF-S201 Water Flow Sensor (repurposed for gas)",
+      "purchaseUrl": "https://www.amazon.com/s?k=YF-S201+flow+sensor",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxx4wxMVlxpJQxbrGloY1gDmK4tDSCWc6v3ZemBSBDqdGfwXPIk2fuSV0p4Wlp3xadTRVg1kgQWraby64TuxzJcAgXlHW8Towggci9Dmf17JbEruek6DQMCeusLz2P3RO8Llb2jad06e7VGQSvWbsWECQjd2T6AmGCIzJ7IJoDObR6POMrONv3RwarNQY4EtrUzOzpGZf7PZu1kUNqAzGEZXkquXwBsgmqhceKRs3MxgIQNYNMfq60UAnvpn1C4sxgTiwG0Pw5LcPecLNN3oFOjokLElmAOMKc1LxxinycKVV7CafB369xZXRwLKzTlgi2QMDTEqNzFnVo5znC4tRTPFuCyHQzExy7Ev93EiDdaDinfO2KnEEAiK6ApPrfNUErvFTPG1iSrCWyLmnhN4FGNRkmeBqbu19tGxCoQCctVun1NEyRZCR6iMJiev7UXgwwjcLCEQqhr2UJ535Hk2gl10Ply7lEQjA8EGxKWb4zzLYPtqiOcbt7eyL6JZ8zpLCV38mBQU7soSe5XSKZBWf823a7VyWmGWN5ZxtThruEM3KV9OKu1lwr3ylsRoWqUnbs0U24aBO3iQUQguCDWXfv5EYDcam7kLMgl6XgkmBE6CJWlkLoaifeCBqgToXPfg9Q1JhxX1WMz2RTkqBzlylO9WF",
+      "estimatedCost": 7
+    },
+    {
+      "id": "gas_level_sensor",
+      "name": "Gas Storage Level Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "Trig",
+        "Echo"
+      ],
+      "type": "sensor",
+      "partId": "5720ae52-aafd-472f-8a20-fcf8eaf6db3a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HC-SR04+Ultrasonic+Sensor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51URQD0XzuL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,Trig,Echo"
+          },
+          {
+            "label": "Contents",
+            "value": "Board(s)"
+          },
+          {
+            "label": "Sensor Type",
+            "value": "Ultrasonic"
+          },
+          {
+            "label": "Sensing Range",
+            "value": "2cm ~ 400cm"
+          },
+          {
+            "label": "Voltage - Supply",
+            "value": "5V"
+          },
+          {
+            "label": "Utilized IC / Part",
+            "value": "HC-SR04"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/4007",
+            "price": "$3.95",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/soldered-electronics/333001/21293659",
+            "price": "$9.08",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0B1MJJLJP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$6.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007170009596.html?pdp_npi=6%40dis%21USD%216.48%213.05%21%21%2143.92%2120.64%21%402151fd2c17793297358373334e1032%2112000039686348564%21affd%21%21%21%211%210%21",
+            "price": "$3.05",
+            "vendor": "AliExpress"
+          }
+        ],
+        "datasheetUrl": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5858/333001%20Ultrasonic%20sensor%20with%20easyC%20datasheet.pdf"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0B1MJJLJP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x20x15mm",
+      "position3d": {
+        "x": 375,
+        "y": 210,
+        "z": 1000
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 45,
+        "height": 15
+      },
+      "description": "ULTRASONIC HC-SR04 SENSOR EASYC",
+      "productName": "HC-SR04 Ultrasonic Sensor",
+      "purchaseUrl": "https://www.adafruit.com/product/4007",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhFmZrr0JgHYcwcufIA1DDZQuBnLnV7ZqBLlazNTbnN4mQzacCimG01nJ4xGjcEndA473hcYGKINVppzr3Xgw8AwVc3PQzF3MvNkreKkq849ZOISOrqq1qHQ2amcPtjEMpxBil076D8n5xwehzzQqDpuiMtp8xwn5ODvbK2cWyFhwxx289NVy2vEozXJyECSMRJm2M4chgRMS29CPrefQdEefr09rmXnZ2M3vGMcAv0sle9OzTPUOCFt2xG07GHCmugFhnbT9U29j1CVaHxb3m3u5B46S0KpFfZDFT8HtqwcKqiANRYWEQUq1VGXLnjgHUBG4tgG0eY9o4jMZIlGBeI5whyoEMHjNXWVrgwaUKjKcR5hOOslO5bNBWit4lcTJl4GlZx3NG8eXhD5alxBNR2mXah25Fikf8RgVrmXsTT7p0Xfl9gymBVBP0D3GP9qUvSqttO6JpiIzdUFvpGpTqj21ZY1aLivMnutvMkBeOLwDZqgWFVRovvpoaYC4B9U6gfRbsJhJi8iONymYIth0a0fcIZRewxmJynmsa6Yjv4ZnfjZjH6yh9UxmRFq2oD1h4IzAzzqRhXzm9MPD8QCyJt36RzZag04Cbg2DO3rEPYdrdRCsn2SzytDRDSDFtnT7YEWo7J1tnudqTx0zwv5Emk3",
+      "estimatedCost": 3
+    },
+    {
+      "id": "nutrient_pump",
+      "name": "Nutrient Dosing Pump",
+      "pins": [
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "b68423db-eceb-46b6-8149-d896080fa0e4",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Peristaltic+Dosing+Pump+12V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/aMUIk-aLOcWJwEfupLxvvIVgLyRuTlOjho0W_5Cf8-A/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWJi/bGUtbWFndXMubmV0/L2Nkbi9zaG9wL2Zp/bGVzLzIzXzEuanBn/P3Y9MTczNjEzNTY5/NSZ3aWR0aD0xMDkw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07Q1C3PW2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x55x40mm",
+      "description": "Dispenses precise amounts of liquid additives into the aquarium.",
+      "productName": "Peristaltic Dosing Pump 12V",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+peristaltic+pump",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfurBI2tkXPh9lZkZ72Vmzmj8PdwthHQoVJIcHUpXnQ7A1jMm2vLCISUVuIPC5vHAhAE3NGi3WW2clRGK3Qa43ipp8nR3GsYjoMmKgsAEjBiwvRpoQ7EfuY6lsnjHCbZ9UOzDSY4WW4VxrpvAi6xaSn3h9NVGwxDUwHwxTkzfpWzqPW1IoEQiuhTnO0pmeua9eJGe4auGgn7OwlzxCErJNI3DlOGcEYXRJ49zX11BKjQCosvs79CqIIcyoBcezTsQSIcccl9ADuG5IHHQKQn0X6aOqduVuUDKGjnhY9YHz8aaiAxse1LsEUF1G6Ep7XKQS67B2FAvlnSjj4hcg0jUsC1lefri7FS5nGQjbm4BxqCAbcN6vsqArAE2UXmQ0INkyjCvOvMnpxgOmTyKPm4NZYxbcANB5EJ9XC14BRVAgs3oYRK7aX6MbxVYEXIqw3T93b75oNXFDz5FSKZq5RzDRUuQ29zsp2XFPHmu7BstH46c54fOZPQ96YWWmrN92IxM2BoxzsOn0doGsCrb9r31shpOJVcapFw6pY63hgbBaTDE9Wt3ytDkx4OSU231Z3lf08egXQmJAHKop2RairksZeaqrpGTzcKbKuvnH1IvjRFGJy0sziCSq8ScqSjL5u1gjVfgI4u6DQPYtGMYywu5eR1",
+      "estimatedCost": 15
+    },
+    {
+      "id": "algae_circulation_pump",
+      "name": "Algae Circulation Pump",
+      "pins": [
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "b68423db-eceb-46b6-8149-d896080fa0e4",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Peristaltic+Dosing+Pump+12V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/aMUIk-aLOcWJwEfupLxvvIVgLyRuTlOjho0W_5Cf8-A/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWJi/bGUtbWFndXMubmV0/L2Nkbi9zaG9wL2Zp/bGVzLzIzXzEuanBn/P3Y9MTczNjEzNTY5/NSZ3aWR0aD0xMDkw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07Q1C3PW2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x55x40mm",
+      "position3d": {
+        "x": 180,
+        "y": 50,
+        "z": 300
+      },
+      "boundingBox": {
+        "depth": 55,
+        "width": 65,
+        "height": 40
+      },
+      "description": "Dispenses precise amounts of liquid additives into the aquarium.",
+      "productName": "Peristaltic Dosing Pump 12V",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+peristaltic+pump",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfurBI2tkXPh9lZkZ72Vmzmj8PdwthHQoVJIcHUpXnQ7A1jMm2vLCISUVuIPC5vHAhAE3NGi3WW2clRGK3Qa43ipp8nR3GsYjoMmKgsAEjBiwvRpoQ7EfuY6lsnjHCbZ9UOzDSY4WW4VxrpvAi6xaSn3h9NVGwxDUwHwxTkzfpWzqPW1IoEQiuhTnO0pmeua9eJGe4auGgn7OwlzxCErJNI3DlOGcEYXRJ49zX11BKjQCosvs79CqIIcyoBcezTsQSIcccl9ADuG5IHHQKQn0X6aOqduVuUDKGjnhY9YHz8aaiAxse1LsEUF1G6Ep7XKQS67B2FAvlnSjj4hcg0jUsC1lefri7FS5nGQjbm4BxqCAbcN6vsqArAE2UXmQ0INkyjCvOvMnpxgOmTyKPm4NZYxbcANB5EJ9XC14BRVAgs3oYRK7aX6MbxVYEXIqw3T93b75oNXFDz5FSKZq5RzDRUuQ29zsp2XFPHmu7BstH46c54fOZPQ96YWWmrN92IxM2BoxzsOn0doGsCrb9r31shpOJVcapFw6pY63hgbBaTDE9Wt3ytDkx4OSU231Z3lf08egXQmJAHKop2RairksZeaqrpGTzcKbKuvnH1IvjRFGJy0sziCSq8ScqSjL5u1gjVfgI4u6DQPYtGMYywu5eR1",
+      "estimatedCost": 15
+    },
+    {
+      "id": "heating_element",
+      "name": "Bioreactor Heating Element",
+      "pins": [
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "038a7815-ec27-4fc6-baa7-17804175f118",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+50W+Ceramic+Heater+Cartridge&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ToX-7G_-DfgwaX5KzYTV-TfwWSfcWHL_AVyt7dlsgKs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2xHY0FB/T1N3NDV4Y2tLZkQv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08R5BYM8F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x20x6mm (element)",
+      "position3d": {
+        "x": 200,
+        "y": 300,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 6,
+        "height": 6
+      },
+      "description": "High-temperature heating element for burning weeds.",
+      "productName": "12V 50W Ceramic Heater Cartridge",
+      "purchaseUrl": "https://www.amazon.com/s?k=12V+50W+ceramic+heater+cartridge",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdNZVN5NXMyndb7vp2IqLBSyXOclU7pwp3GjrKsNz9REV6LJfgMZRsIcKgoBYJBp6iOBvdZJqW92ZIucvLh3Rsa1JvDNJBhhReejr48S3WOaw94AieIQRPZP3byQVuhpb9lPIz51FXAn3Bfx0ryE3qIJhMlxKzSBXdSFafBismtR882u2pv5mspLtM0X7OJwKvlT2FUgDWWPADpzEcVGmvQQu8zNd7j6xbFapXgAGwSnRs8IXRpQXoDyF3mRlsigd46Gwg4WC36z3zVe7Z66hiR61UrUaS2xAd1YFvFJhRPBktElP2PBciYp1kIoIWzF5DfwJzGJkX0B4X1P02a8uY3xdEsaxr3ZXVXHzzGY2byHcKcWkOLeoZ8AXtM3P0JbxBzgcHmjb0smWOTdBztd8pL6W632iBItmoRAhohYEW3KIrsGYX4HYKnEZHj7y2pPPpHzCZUG04mKwpqHfgnP2BVy6P3fkPahhrA4qGWGDM7NlxQKgu2bDFftoXA75ongcidCYhR6LC9gMlaDzQ4K5FAv1x5n4Y9DEepU9l4appkQ3bFXrMaZgY7eSPPHWvYt6JolIdS7DgPml3ghFzXEmVEfejGVhZBOc5NYxjxzCJyBvikqTreDjYBduofZpHeko4Klt1DllnfxNOlAdohNO",
+      "estimatedCost": 10
+    },
+    {
+      "id": "cooling_fan",
+      "name": "Bioreactor Cooling Fan",
+      "pins": [
+        "VCC",
+        "GND"
+      ],
+      "type": "actuator",
+      "partId": "bd2dee7e-3d6f-4c2e-96b4-6c15034f839c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+DC+Cooling+Fan+80x80x25mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41y1pW-kh9L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0C18FDMY2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006196076525.html?pdp_npi=6%40dis%21USD%2111.20%215.49%21%21%2175.91%2137.20%21%402140d33617793285957086179e0f5c%2112000050758790620%21affd%21%21%21%211%210%21",
+            "price": "$5.49",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0C18FDMY2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "80x80x25mm",
+      "position3d": {
+        "x": 450,
+        "y": 470,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 80,
+        "width": 80,
+        "height": 25
+      },
+      "description": "Provides active airflow over the heatsink for improved thermal management.",
+      "productName": "12V DC Cooling Fan 80x80x25mm",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHPzh2BsOFhuL9F72qTo5Aqs0GABflFlTsV02HVinUFSzMMC2leOwa8InGJtTuosPzvjRmi1KeJcngrjDGpBhhCE1OnwvJBs4pCBWIKtq9sD3YWeBU9CEHP8ccJw9BG4LN8oCVgPnKMXQaAPiB6Wzki638uZZ5RyD1obQNNpoguAbUdksosme7jE0l5mnuRblV3l9bWCtZhjWMq7mMl2s3Wi3mLUam0Els7BYuQVfDrBp6MR1B6oR3HB8QySr4IYmlzAlVs5sAsOOvyokFiLfcR3lzgHO4hKRU9SujWLP9tvLWiMGeW7T0tKSEuT4hzf8IFYS5eiq6IcywAocboOsvcITZ6eTKxibqOAMjSyFy1pnc5Qc7BHrTfMwzYuWVhr4NpN03jsTPswf207vXxRTn4BdAnQyHLrugwk7TscZhiBV31bhJN16D0qq208VV66YEUvrFOscXai7TCS7TbFx3GBBWmpEs00DI77WLibWInryRrdslueVKGircMi190nma11QH7imzil5Kwu2ZTWRoqWBONkPGe8EAtVal0cA6IfF6wqg6OyUfPvN2yOhwP9GPWGPtZidCncxORvyC3lrGzCjlljLaC0mWKCUXNXJea5sCWKsgkmqIgAG0i7Br6pYDKxyXkutvsDCVswFz9aoqzH",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHPzh2BsOFhuL9F72qTo5Aqs0GABflFlTsV02HVinUFSzMMC2leOwa8InGJtTuosPzvjRmi1KeJcngrjDGpBhhCE1OnwvJBs4pCBWIKtq9sD3YWeBU9CEHP8ccJw9BG4LN8oCVgPnKMXQaAPiB6Wzki638uZZ5RyD1obQNNpoguAbUdksosme7jE0l5mnuRblV3l9bWCtZhjWMq7mMl2s3Wi3mLUam0Els7BYuQVfDrBp6MR1B6oR3HB8QySr4IYmlzAlVs5sAsOOvyokFiLfcR3lzgHO4hKRU9SujWLP9tvLWiMGeW7T0tKSEuT4hzf8IFYS5eiq6IcywAocboOsvcITZ6eTKxibqOAMjSyFy1pnc5Qc7BHrTfMwzYuWVhr4NpN03jsTPswf207vXxRTn4BdAnQyHLrugwk7TscZhiBV31bhJN16D0qq208VV66YEUvrFOscXai7TCS7TbFx3GBBWmpEs00DI77WLibWInryRrdslueVKGircMi190nma11QH7imzil5Kwu2ZTWRoqWBONkPGe8EAtVal0cA6IfF6wqg6OyUfPvN2yOhwP9GPWGPtZidCncxORvyC3lrGzCjlljLaC0mWKCUXNXJea5sCWKsgkmqIgAG0i7Br6pYDKxyXkutvsDCVswFz9aoqzH",
+      "estimatedCost": 7
+    },
+    {
+      "id": "power_supply",
+      "name": "Main 12V Power Supply",
+      "pins": [
+        "AC_IN",
+        "DC_OUT+"
+      ],
+      "type": "power",
+      "partId": "ad98ea1e-8d1b-4dfe-b44f-027cc8e99aaa",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+5A+Power+Supply+Adapter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41ydr1cvbtL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B01GEA8PQA?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$12.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007300651252.html?pdp_npi=6%40dis%21USD%2111.56%216.82%21%21%2178.17%2146.12%21%402141149b17793739015683957e11dc%2112000040124931294%21affd%21%21%21%211%210%21",
+            "price": "$6.82",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B01GEA8PQA?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "115x50x30mm",
+      "position3d": {
+        "x": 640,
+        "y": 50,
+        "z": 475
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 115,
+        "height": 30
+      },
+      "description": "Provides 12V power for motors and main electronics.",
+      "productName": "12V 5A Power Supply Adapter",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRLnzGNSQYJr0eC25nbiEU3gndPmoNzcNUqtQIdd5KeEBkCBgr0y3XwOqUtz5aWVm4gedaV2Rtz1sEMv7rcU8U559voh5B5BywEiEAMDMWL6edsw49fDz1GFN6Co2A7rm7eq9D6IcWTmj3M1MM0ygWvuD5agzXvVWtkpTUaWOomi7BJakWnOYnZeDLOxBMSgq0v4wmcfZoXOr1xOtMQuejSA20RH0l7V8BhjOitrnutUr7GAi5Z3UyPWa3kzGWGZeoBsPT971j6gQUBpeYkfKSrwlCrD5RtfGekNKej91BZwnWjmFj43jXxDQuvLClnfDjVV7rLQl4uiM9MTTSTaDVsngY57MrIkZdz5yOjg87Y2xV2MSKeaCJ3QDQ1mzdfxccZBGtLtBzNOLMMSsFbAq6VzMvGtPm45aFKOnlvdPTixwvaWo2mfaZgBZtaCMgfMnC9ULKJJlsufmUNHz9FOcAb9rhSowQTYkXJh3MYsEXo0GF9719EJjTiFSkWM3LV3V5zPAcEF8nzLtkKfMeqa4uCOAwiyjVYNmHKAr9bYeUi8Umhnva1OyzNNGwMgsz0XaLKxECkIYEnJk8PQQQXLyCqw93593IwKI5TcDjbFg3GpuZYMlTaljkATRRMEXEDwWjoi6oxgioozIudfygao8fzh",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRLnzGNSQYJr0eC25nbiEU3gndPmoNzcNUqtQIdd5KeEBkCBgr0y3XwOqUtz5aWVm4gedaV2Rtz1sEMv7rcU8U559voh5B5BywEiEAMDMWL6edsw49fDz1GFN6Co2A7rm7eq9D6IcWTmj3M1MM0ygWvuD5agzXvVWtkpTUaWOomi7BJakWnOYnZeDLOxBMSgq0v4wmcfZoXOr1xOtMQuejSA20RH0l7V8BhjOitrnutUr7GAi5Z3UyPWa3kzGWGZeoBsPT971j6gQUBpeYkfKSrwlCrD5RtfGekNKej91BZwnWjmFj43jXxDQuvLClnfDjVV7rLQl4uiM9MTTSTaDVsngY57MrIkZdz5yOjg87Y2xV2MSKeaCJ3QDQ1mzdfxccZBGtLtBzNOLMMSsFbAq6VzMvGtPm45aFKOnlvdPTixwvaWo2mfaZgBZtaCMgfMnC9ULKJJlsufmUNHz9FOcAb9rhSowQTYkXJh3MYsEXo0GF9719EJjTiFSkWM3LV3V5zPAcEF8nzLtkKfMeqa4uCOAwiyjVYNmHKAr9bYeUi8Umhnva1OyzNNGwMgsz0XaLKxECkIYEnJk8PQQQXLyCqw93593IwKI5TcDjbFg3GpuZYMlTaljkATRRMEXEDwWjoi6oxgioozIudfygao8fzh",
+      "estimatedCost": 15
+    },
+    {
+      "id": "4_channel_relay",
+      "name": "4-Channel Relay Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "IN1",
+        "IN2",
+        "IN3",
+        "IN4",
+        "NO1",
+        "NC1",
+        "COM1",
+        "NO2",
+        "NC2",
+        "COM2",
+        "NO3",
+        "NC3",
+        "COM3",
+        "NO4",
+        "NC4",
+        "COM4"
+      ],
+      "type": "module",
+      "partId": "7bd3b416-83db-498b-814b-87fab4a821a0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=KY-019+4-Channel+Relay+Module+5V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8WMdtBif25axeLPnjNwCq7_85tgdG16voVe6yNwDq7E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmFyYW51eC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjUv/MDQvNzFncXd4VVhJ/UUwuX1NYNDI1Xy5q/cGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FMJXBS21?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "73x50x20mm",
+      "position3d": {
+        "x": 570,
+        "y": 60,
+        "z": 475
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 73,
+        "height": 20
+      },
+      "productName": "KY-019 4-Channel Relay Module 5V",
+      "purchaseUrl": "https://www.amazon.com/s?k=4+channel+relay+module+5V",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGvhtwioUC6XHi3uhnWFVPncO4D07T0dMECXiUmozKo4NZbfmV5OUCtGfASb2lyuPYyS3S3tJmIwrDmWTJQ23Kf6wVaO9MOKpIAdyHgl8bLkbQ6fp9awwRkoi95wYijMR0tff2jr7WvJk6jX2Xyn2gw1yyCYjbtld0DZEDOdYe2pbLPBuAvkfzewPCmBHGclJUza2tv8SJBUcoqnkEcWhnE8LdsnSviZErB65fINh1hvYLyn1Ez0SOpyUdGE22dPzUaloQ11eLpq2ScGwPwKpnOSmzHMX0Bk5II9wgTXiYp5HwNkk7cMrDux5rwBgcxTf6UPEr3bbOPYBL3IDCZa2AgUDm8LNiOq4Amqgy9LMMoNbsNl6l1xHiJY2VBoIpdt9CeCtU3fWkpUJ0R3fAas93KHMQ3LQwF9LTytRy8l4CZpGfPGHmfytXtxDlgvvVMqlupf3OcXbXhaZcKOCA96jixHaLr7ZpHXl4OMJQv8Zm0caRxUabxeuMR6bHPc9lKQEiz4e5rUvjsXP5e4pn0XSEvs65X6Gbx0q3M4W4PEVyLGvh1yvx4fy8M4Xm77E99OMkk2nGDjWgLRVRg6dRunNmEhBQtpocs9YWP1HA9nk9ccZS0oPGCwTYCXvUbbrjYflEAbufCJkTPIq5mCP6ST4Xcf",
+      "estimatedCost": 6
+    },
+    {
+      "id": "dc_dc_buck_converter",
+      "name": "5V Step-Down Converter",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "power",
+      "partId": "44aa018e-da6c-4bee-a41d-27a3d701be93",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM2596+DC-DC+Buck+Converter+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51BMWf4VE0L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN+,VIN-,VOUT+,VOUT-"
+          },
+          {
+            "label": "regulation",
+            "value": "Excellent line and load regulation"
+          },
+          {
+            "label": "input_voltage",
+            "value": "DC 3V-40V (max 40V, recommended ≤40V)"
+          },
+          {
+            "label": "rectification",
+            "value": "Non-synchronous"
+          },
+          {
+            "label": "output_current",
+            "value": "3A (max)"
+          },
+          {
+            "label": "output_voltage",
+            "value": "DC 1.25V-37V (adjustable via multi-turn trimpot)"
+          },
+          {
+            "label": "module_property",
+            "value": "Non-isolated buck module"
+          },
+          {
+            "label": "switching_frequency",
+            "value": "65KHz"
+          },
+          {
+            "label": "conversion_efficiency",
+            "value": "Up to 92%"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://www.instructables.com/How-to-Use-DC-to-DC-Buck-Converter-LM2596/",
+            "title": "How to Use DC to DC Buck Converter LM2596",
+            "description": "This tutorial shows how to use the LM2596 Buck Converter to power devices requiring different voltages, including battery considerations and multiple outputs."
+          },
+          {
+            "url": "https://forums.adafruit.com/viewtopic.php?t=151449",
+            "title": "24V-5V Step-down Converter to Run ESP8266 & Motor Controller",
+            "description": "An Adafruit forum discussion providing guidance on using step-down converters like the LM2596 for specific microcontroller and motor driver applications."
+          },
+          {
+            "url": "https://kitsguru.com/products/lm2596-dc-dc-step-down-adjustable-cc-cv-power-supply-module-converter-led-driver",
+            "title": "LM2596 DC-DC Buck Converter for LED Drivers & DIY Electronics",
+            "description": "This product page also highlights its use in LED drivers and general DIY electronics projects due to its adjustable voltage and current capabilities."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005007171095432.html?pdp_npi=6%40dis%21USD%219.15%214.30%21%21%2162.04%2129.16%21%40214114e317793288361692996e0eba%2112000039691568366%21affd%21%21%21%211%210%21",
+            "price": "$4.3",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/LM2596-Converter-3-0-40V-1-5-35V-Supply/dp/B08NV3JCBC",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://store.rokland.com/products/lm2596-buck-converter-4-40v-to-1-25-37v-dc-dc-power-supply-module",
+            "vendor": "Rokland"
+          },
+          {
+            "url": "https://www.addicore.com/products/lm2596-step-down-adjustable-dc-dc-switching-buck-converter",
+            "vendor": "Addicore"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/result?keywords=LM2596%20DC-DC%20Buck%20Converter%20Module",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-lm2596-module.html",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0DBVYP91F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.99",
+            "vendor": "Amazon"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://marathon-os.com/library/lm2596-dcdc-buck-converter-module-3d-6811d70143b4d50b11a59159",
+            "label": "STEP (.step, .stp)"
+          },
+          {
+            "url": "https://grabcad.com/library/lm2596-dc-dc-buck-converter-module-1",
+            "label": "3D Model (GrabCAD)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "MP1584EN DC-DC Buck Converter",
+            "reason": "Smaller footprint, often cheaper, but typically lower maximum current output (around 2A)."
+          },
+          {
+            "name": "XL6009 Boost/Buck Converter",
+            "reason": "Offers both step-up (boost) and step-down (buck) capabilities, providing more flexibility for various voltage requirements."
+          },
+          {
+            "name": "Linear Voltage Regulator (e.g., LM7805)",
+            "reason": "Simpler to use and less noisy, but much less efficient for large voltage differences, dissipating excess energy as heat, and lower current output."
+          }
+        ],
+        "datasheetUrl": "https://www.ti.com/lit/ds/symlink/lm2596.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://manuals.plus/asin/B008BHBEE0",
+            "title": "LM2596 DC-DC Buck Converter Step Down Module User Manual"
+          },
+          {
+            "url": "https://www.ti.com/lit/ds/symlink/lm2596.pdf",
+            "title": "LM2596 SIMPLE SWITCHER® Power Converter Datasheet"
+          },
+          {
+            "url": "https://www.addicore.com/products/lm2596-step-down-adjustable-dc-dc-switching-buck-converter",
+            "title": "Addicore LM2596 Adjustable DC-DC Switching Buck Converter Product Page"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DBVYP91F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x23x14mm",
+      "position3d": {
+        "x": 640,
+        "y": 85,
+        "z": 475
+      },
+      "boundingBox": {
+        "depth": 23,
+        "width": 45,
+        "height": 14
+      },
+      "description": "Step-down voltage regulator to convert 12V to 5V for the microcontroller and sensors.",
+      "productName": "LM2596 DC-DC Buck Converter Module",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfxyvZuXFg7GymQIiWhjuNtVTPqj3Lo4XOZwXfyPinxUunYhcnzsECmhQXvQMwBZFO7y8k7xoMt4iHjuv8bTZiSwN9PdOaJjeEstgI5aHcGyrbRTjMrq76aa3rCOGKKow9ilh4RN26OW5032Q8A2ovdeUBL8On7LAmb3PpqilGVbgAqyzJUf4vUSlpGbWyNwnHJQC59F7HfkNmMAbPGABOWfsLqrZyZnZpqGsAlYm4qo9o0CbR4CekVi511lmJV8Db7lnVqPdeSTULq9VwHuUzF26qVb4pJCOMLfP7CIucHT9JWns8gVz4mtI0hRZhC8Jq2LuwiNZWltkCBtPSqDc0aZfVDWEOwgYoz6Hr748Ujnb5MOghxGRrBLUcy1LNcH5ZyAsLAXTvKAUcghaQSTKKvZUmZhR8K2ZGkHHmSldb5Yt0GmRQtYidPrxgtubvF2SnZnKozGziLBfNzSYLU3rFNe3hBX2PFWrC37l3APka3ZBboyS8GLDuvJm4fmdzPqpKq6kueHSuP60R9uG5WESQJX0Ge2eV4AEkfIx0X0PoUJiNlx46vSzJoLOLXhwWDSJEtQxuumz5cjZlkCCKXHEzPDNmz0Lj1VEy7wFMfoLK9HLd7EPxb3AerDlrYOFhG642RU4SSptpu2AL1rESpj2ryf",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfxyvZuXFg7GymQIiWhjuNtVTPqj3Lo4XOZwXfyPinxUunYhcnzsECmhQXvQMwBZFO7y8k7xoMt4iHjuv8bTZiSwN9PdOaJjeEstgI5aHcGyrbRTjMrq76aa3rCOGKKow9ilh4RN26OW5032Q8A2ovdeUBL8On7LAmb3PpqilGVbgAqyzJUf4vUSlpGbWyNwnHJQC59F7HfkNmMAbPGABOWfsLqrZyZnZpqGsAlYm4qo9o0CbR4CekVi511lmJV8Db7lnVqPdeSTULq9VwHuUzF26qVb4pJCOMLfP7CIucHT9JWns8gVz4mtI0hRZhC8Jq2LuwiNZWltkCBtPSqDc0aZfVDWEOwgYoz6Hr748Ujnb5MOghxGRrBLUcy1LNcH5ZyAsLAXTvKAUcghaQSTKKvZUmZhR8K2ZGkHHmSldb5Yt0GmRQtYidPrxgtubvF2SnZnKozGziLBfNzSYLU3rFNe3hBX2PFWrC37l3APka3ZBboyS8GLDuvJm4fmdzPqpKq6kueHSuP60R9uG5WESQJX0Ge2eV4AEkfIx0X0PoUJiNlx46vSzJoLOLXhwWDSJEtQxuumz5cjZlkCCKXHEzPDNmz0Lj1VEy7wFMfoLK9HLd7EPxb3AerDlrYOFhG642RU4SSptpu2AL1rESpj2ryf",
+      "estimatedCost": 5
+    },
+    {
+      "id": "main_frame_base",
+      "name": "Main Frame Base",
+      "type": "structural",
+      "partId": "f595c270-13d2-4fad-879b-b94e3f3d1630",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41ONp7usK1L._SL500_.jpg",
+      "material": "Aluminum",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$74.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007342221792.html?pdp_npi=6%40dis%21USD%218.56%214.79%21%21%2157.94%2132.45%21%402141149b17794338321065808e123f%2112000040344397854%21affd%21%21%21%211%210%21",
+            "price": "$4.79",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "750x500x20mm",
+      "position3d": {
+        "x": 375,
+        "y": 10,
+        "z": 250
+      },
+      "boundingBox": {
+        "depth": 500,
+        "width": 750,
+        "height": 20
+      },
+      "description": "Base frame for supporting the entire bioreactor system, providing stability and structure.",
+      "productName": "Aluminum Extrusion",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFA7eyFFi9szxbsSKSgikglrBP9Qhwb4ZNSIppiX5EPe0zw3HuAqyQaPZLpnVNrpXE7o3FBJ4K0FKuyf2t5FYJk2JzVFnD00D7w80890wIESVOvAFp6G669PJuQcPSzUv0HWpW2EsRqr0ADzV0kJ6vQn8sSMdCadklHJnslMT0bhag4VdFI8q8n0sYVGtm2RjXjhmZQuCLdZzfbIZRlZpef4Li93HShbNy9y8YGed6WEPVdPtIuiDQ2oGUNbLvSfpdIkJqDAByAQ6jlSvqSv6IujqA8k6XoU3alOkreJ2ntn81WQgOVPqZag6aqXmc1FYFo1ajkwHEKgUgsEc5h5L5QOm7eEKJU1zLDdpXkDlW5GkESBZriLwk3QiX22k7tj1p7PCwwasquaa60VRHzOQ2KiyTr6e6bI1Gx1eq1siSo7NrBLIg0uRik1cnR5MgCRlV4wj3TYMsc1kRBH",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFA7eyFFi9szxbsSKSgikglrBP9Qhwb4ZNSIppiX5EPe0zw3HuAqyQaPZLpnVNrpXE7o3FBJ4K0FKuyf2t5FYJk2JzVFnD00D7w80890wIESVOvAFp6G669PJuQcPSzUv0HWpW2EsRqr0ADzV0kJ6vQn8sSMdCadklHJnslMT0bhag4VdFI8q8n0sYVGtm2RjXjhmZQuCLdZzfbIZRlZpef4Li93HShbNy9y8YGed6WEPVdPtIuiDQ2oGUNbLvSfpdIkJqDAByAQ6jlSvqSv6IujqA8k6XoU3alOkreJ2ntn81WQgOVPqZag6aqXmc1FYFo1ajkwHEKgUgsEc5h5L5QOm7eEKJU1zLDdpXkDlW5GkESBZriLwk3QiX22k7tj1p7PCwwasquaa60VRHzOQ2KiyTr6e6bI1Gx1eq1siSo7NrBLIg0uRik1cnR5MgCRlV4wj3TYMsc1kRBH",
+      "estimatedCost": 45
+    },
+    {
+      "id": "main_frame_vertical_front",
+      "name": "Main Frame Vertical (Front)",
+      "type": "structural",
+      "partId": "f595c270-13d2-4fad-879b-b94e3f3d1630",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41ONp7usK1L._SL500_.jpg",
+      "material": "Aluminum",
+      "quantity": 2,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$74.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007342221792.html?pdp_npi=6%40dis%21USD%218.56%214.79%21%21%2157.94%2132.45%21%402141149b17794338321065808e123f%2112000040344397854%21affd%21%21%21%211%210%21",
+            "price": "$4.79",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x20x20mm",
+      "position3d": {
+        "x": 50,
+        "y": 220,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 400
+      },
+      "description": "Vertical supports for the main frame, holding up the bioreactor vessel and other components.",
+      "productName": "Aluminum Extrusion",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFA7eyFFi9szxbsSKSgikglrBP9Qhwb4ZNSIppiX5EPe0zw3HuAqyQaPZLpnVNrpXE7o3FBJ4K0FKuyf2t5FYJk2JzVFnD00D7w80890wIESVOvAFp6G669PJuQcPSzUv0HWpW2EsRqr0ADzV0kJ6vQn8sSMdCadklHJnslMT0bhag4VdFI8q8n0sYVGtm2RjXjhmZQuCLdZzfbIZRlZpef4Li93HShbNy9y8YGed6WEPVdPtIuiDQ2oGUNbLvSfpdIkJqDAByAQ6jlSvqSv6IujqA8k6XoU3alOkreJ2ntn81WQgOVPqZag6aqXmc1FYFo1ajkwHEKgUgsEc5h5L5QOm7eEKJU1zLDdpXkDlW5GkESBZriLwk3QiX22k7tj1p7PCwwasquaa60VRHzOQ2KiyTr6e6bI1Gx1eq1siSo7NrBLIg0uRik1cnR5MgCRlV4wj3TYMsc1kRBH",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFA7eyFFi9szxbsSKSgikglrBP9Qhwb4ZNSIppiX5EPe0zw3HuAqyQaPZLpnVNrpXE7o3FBJ4K0FKuyf2t5FYJk2JzVFnD00D7w80890wIESVOvAFp6G669PJuQcPSzUv0HWpW2EsRqr0ADzV0kJ6vQn8sSMdCadklHJnslMT0bhag4VdFI8q8n0sYVGtm2RjXjhmZQuCLdZzfbIZRlZpef4Li93HShbNy9y8YGed6WEPVdPtIuiDQ2oGUNbLvSfpdIkJqDAByAQ6jlSvqSv6IujqA8k6XoU3alOkreJ2ntn81WQgOVPqZag6aqXmc1FYFo1ajkwHEKgUgsEc5h5L5QOm7eEKJU1zLDdpXkDlW5GkESBZriLwk3QiX22k7tj1p7PCwwasquaa60VRHzOQ2KiyTr6e6bI1Gx1eq1siSo7NrBLIg0uRik1cnR5MgCRlV4wj3TYMsc1kRBH",
+      "estimatedCost": 15
+    },
+    {
+      "id": "main_frame_vertical_back",
+      "name": "Main Frame Vertical (Back)",
+      "type": "structural",
+      "partId": "f595c270-13d2-4fad-879b-b94e3f3d1630",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41ONp7usK1L._SL500_.jpg",
+      "material": "Aluminum",
+      "quantity": 2,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$74.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007342221792.html?pdp_npi=6%40dis%21USD%218.56%214.79%21%21%2157.94%2132.45%21%402141149b17794338321065808e123f%2112000040344397854%21affd%21%21%21%211%210%21",
+            "price": "$4.79",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "700x20x20mm",
+      "position3d": {
+        "x": 50,
+        "y": 360,
+        "z": 450
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 700
+      },
+      "description": "Vertical supports for the main frame, holding up the bioreactor vessel and other components.",
+      "productName": "Aluminum Extrusion",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFA7eyFFi9szxbsSKSgikglrBP9Qhwb4ZNSIppiX5EPe0zw3HuAqyQaPZLpnVNrpXE7o3FBJ4K0FKuyf2t5FYJk2JzVFnD00D7w80890wIESVOvAFp6G669PJuQcPSzUv0HWpW2EsRqr0ADzV0kJ6vQn8sSMdCadklHJnslMT0bhag4VdFI8q8n0sYVGtm2RjXjhmZQuCLdZzfbIZRlZpef4Li93HShbNy9y8YGed6WEPVdPtIuiDQ2oGUNbLvSfpdIkJqDAByAQ6jlSvqSv6IujqA8k6XoU3alOkreJ2ntn81WQgOVPqZag6aqXmc1FYFo1ajkwHEKgUgsEc5h5L5QOm7eEKJU1zLDdpXkDlW5GkESBZriLwk3QiX22k7tj1p7PCwwasquaa60VRHzOQ2KiyTr6e6bI1Gx1eq1siSo7NrBLIg0uRik1cnR5MgCRlV4wj3TYMsc1kRBH",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFA7eyFFi9szxbsSKSgikglrBP9Qhwb4ZNSIppiX5EPe0zw3HuAqyQaPZLpnVNrpXE7o3FBJ4K0FKuyf2t5FYJk2JzVFnD00D7w80890wIESVOvAFp6G669PJuQcPSzUv0HWpW2EsRqr0ADzV0kJ6vQn8sSMdCadklHJnslMT0bhag4VdFI8q8n0sYVGtm2RjXjhmZQuCLdZzfbIZRlZpef4Li93HShbNy9y8YGed6WEPVdPtIuiDQ2oGUNbLvSfpdIkJqDAByAQ6jlSvqSv6IujqA8k6XoU3alOkreJ2ntn81WQgOVPqZag6aqXmc1FYFo1ajkwHEKgUgsEc5h5L5QOm7eEKJU1zLDdpXkDlW5GkESBZriLwk3QiX22k7tj1p7PCwwasquaa60VRHzOQ2KiyTr6e6bI1Gx1eq1siSo7NrBLIg0uRik1cnR5MgCRlV4wj3TYMsc1kRBH",
+      "estimatedCost": 25
+    },
+    {
+      "id": "bioreactor_vessel",
+      "name": "Bioreactor Vessel",
+      "type": "structural",
+      "partId": "ee1e8418-bdbb-4b67-823c-898c9e7c871b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=50L+Acrylic+Tank&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B06XXVQ427?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x300x420mm",
+      "position3d": {
+        "x": 375,
+        "y": 220,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 300,
+        "width": 400,
+        "height": 420
+      },
+      "description": "Primary transparent vessel for algae cultivation, allowing light penetration for photosynthesis.",
+      "productName": "50L Acrylic Tank",
+      "purchaseUrl": "https://www.amazon.com/s?k=50L+acrylic+tank",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgxfvQ5CReFNWwSlLG3C8TVlVgSJ7oRRF8oAU6IvfgvGcLdcm91j1eHwgbkVLon8Su4p3asvVkvYusy019phZARtgPHyQRHKUoCwZxwlETePqBpGlg5ZPiGcIsJq5X2UvLqcAxO4luhZepO4QozIwClLJXJHSUSkaRCts7NxCuAc1KdgEE4vjCPGLBmagbbN4PbbeXJch8cFJjg2npDq4hRvYejlOtnoQzNVsa1Xx0u8Ec5g4SAKqInShAXGXdhOW6TPuycDbzX7Fxk1xvizEqa1hQ7QIqbfRsrAQYLQMk1BRJ3ZGLoOcBPiYqDM5WMggNqBfNpa6eKJNfyrEQLxD2pjKUKzQCSZsnj1hs6Ym9U9LKIVvgiq0eMTcyqCwzlqd5rFLuk9POLCiOX4ZvJRB6ZlG5px8FU3D0QfVJtI3iIf39jmyAa2QwTcVf9Mg4q7sjk83l5829Kt4q2XTFatKGZ17guPF9PWdLd4tsWd6yTPSQvWuwW5OgPer8WlIPI2PbZqglPm0JvWV1vGNiqKBFZgpBTNWGxbb9KdFdh70ULIlnI29gPK4XD8uRdMTnwzTlmPlj2aC0RSFhzDUFYOwpE0fQGOOxw0oEwR6t09YkUGPLtDLHhWrEjHj9jFTwZbMMh8q4uqrek1GuNFrwEuzTwT",
+      "estimatedCost": 120
+    },
+    {
+      "id": "air_pump",
+      "name": "Aeration Air Pump",
+      "type": "mechanism",
+      "partId": "858cb29a-3c8b-4a94-a98b-195909f3cfdf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aquarium+Air+Pump+%28100L%2Fmin%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09JKHPT2S?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x100x80mm",
+      "position3d": {
+        "x": 375,
+        "y": 50,
+        "z": 400
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 150,
+        "height": 80
+      },
+      "description": "Provides air circulation and CO2 supply to the bioreactor for algae growth and mixing.",
+      "productName": "Aquarium Air Pump (100L/min)",
+      "purchaseUrl": "https://www.amazon.com/s?k=aquarium+air+pump+100L/min",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRv5beG6ZSaX7epBPjraFTqvg997GgFA8sAT0TIPqdp1ZyPtOex0HuCmmCetBEtqrKBDJ4jTcmFobyVfSJ1WpEdf26oAe4mJrg9Pf6DE3flkFVdDbbuWffE1R9aX56V9cGVenTUzHtu1jUzuj6sKTx6nTLnIQGIBtfAl9khsch3CkO6DcUfvn0LVGB9gk0Ri2wIXDupgaTkv0gF85vsa8Lu7QM10QX7aBvXUvwPMT0eBei52jI5mFWzydOXWduJIr3zF89VJ47doSxPx6U2JPFTbc1dxnpiQjTpTPxF6ks2DX5pgS6DPaUfqsEuQvGXHFziiK97a0odaUmYCrnfgWVBNj8eN1rH4WLnxwfuefDIyGbKmjpGb8iIsLhBPpQnbbqR05pmGuquz3mWRl1BgWydA8uv1GNUt6bbIWTkeohUdKpnGAhJ0aBtgtBPMODyETtP04lcGQgTQBwyqFvDyKACAKwc1n9v1Z6fUCtO1LVr2I4h1g79PkdSADUGkVHUvsp61k67GfOIzwoOMP5s14CJABzWtAfom5GodmbyVfZquCEKEDqv7bW9MBatC5KFjDvRd1SHGNPVJ53drQ2fbFXSaXEqtXxnjkjlbdDb5oi0bVJyyiFiHxUjgJ9eoIib65qBuBIWfpG78mrGxUXfL8Ald",
+      "estimatedCost": 30
+    },
+    {
+      "id": "air_diffuser",
+      "name": "Air Diffuser Stone",
+      "type": "mechanism",
+      "partId": "c078a207-02f2-41bf-a002-c4176503b9ae",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Ceramic+Air+Stone&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "Ceramic",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B06X6FT8MK?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x30x30mm",
+      "position3d": {
+        "x": 375,
+        "y": 20,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 50,
+        "height": 30
+      },
+      "description": "Generates fine bubbles from the air pump to efficiently aerate and mix the algae culture.",
+      "productName": "Ceramic Air Stone",
+      "purchaseUrl": "https://www.amazon.com/s?k=ceramic+air+stone+aquarium",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQQ8o3fbpb88ZLTIw2wsxdKtsarExDFjp99JodKvdgUsypstZhNCJqzokgAo5dHaXiGBPKzGp2sETlqRcfYSXkpytvLodIO5Lgb2yoMbrUPzEpM00z2NyRSgD9WCQvAadJ7JGxNXQQwuHjRu7Q7V9DhNWeg3s7INaqYLQH8wvs2YcdnanweXgDiUyuyP1r07pcxHdnKsiNAdAuaNZ6eXiDsZtFOvgpMvCZMYf15q2gQIoLUtKpUXVWI9lPo2KfxDFSXi7HRkDKKX3PPdZGPw1zwFriW43FkMN2F068Cwk11v8AASGf5vU187xU52ffQXKg7l5m1b5RQ9cTj4SKHsmZKw1cx9cYY4KXsutLzi8mbjTZhB43fnpj5rlSgWug6JvwErwjOWnDm8KThYU3REBYkC2dPpPo1hXDFuXypUAItwoVqnK0RAZmRbmQgDYaMYvbElM4avVzJDd77NdwuFigHNzj0axbYsxLMGj72lad6I3uVHeWDegPjt5X7deN7SHKLwn51tXMMef6C6dF3ilX2z1LqWothm60Oq6iYTqClzGwAKMwswjce072yKaQOP0PmYBkWsgMr2wT5U2TlGICFy1bjXQaE4SbO9LEEZf2y5nJ5bbR6iiDImga8OkXZeFqjvDkojo2ODFAHXZwGM6s0b",
+      "estimatedCost": 5
+    },
+    {
+      "id": "gas_collection_manifold",
+      "name": "Gas Collection Manifold",
+      "type": "structural",
+      "partId": "ad8800b3-8c0d-4bb1-9bf4-f4dedfe068d0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PVC+Pipe+Manifold&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/X00mjTwQNJBPOyTXbx3EqAt6CRuxHNlx4pFNQsIJ0zs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFHLTN2UDBXRkwu/anBn",
+      "material": "PVC",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "200x50x50mm",
+      "position3d": {
+        "x": 375,
+        "y": 475,
+        "z": 300
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 200,
+        "height": 50
+      },
+      "description": "Collects biogas from the bioreactor, channeling it towards purification and storage.",
+      "productName": "PVC Pipe Manifold",
+      "purchaseUrl": "https://www.homedepot.com/s/PVC+pipe+manifold",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgT1y1I1Wk2Zdz3W7Vb56iXJFmc3JFfq9TOYWln2A3dcuTeCP2Esbn2Q1hNXuPKUsYX03P1vtC4Q6yDVoLkaaUegMGLMUsyE5uJdVm3K1VfV50XCutAXxRtKl0QtqRlMRTPJsEKT5Wgcwrd5txrXJ1nccSfhGA8lZOo0AzyN318CoeYtYkrR0weD5ggCEB0aQzuOicXsdFPDHB91ksxqugfTjQgEgJCZBvntmOET6i0uj9myiNJCnk0b915aoQsJpx8DxPJd2sZQZK1sr8l584hmoktuFidVXqPrx5PyrtLvQEh58zowBdWdTlfEte1mz2rf6l2UWgcxaP7eaedJkH9che7Rl848zsv07hxoiila8NXERTqFRaH1N2sBrSW3zYwW3DRExU8bbAi4soytgfBlLHTiviBzipWzMAf180peNAfdxdjm1a54f2JfSSEu5d6LaRaBqVRttHb5PePde845bniwLa3GkvnKrUPy0AacuBhRdIP1mymNFoilmFPTSW6irn1wRQ8CqEDNAnoJ28rJv5hFmnfVc1CfiNi1xl0GcqabrwtFEtW7o9znXSGxqA3wE8D8K0T0eiHP2VYmsh6cAtge7zTJ2cHZESIG53KOykFWmRzqqCTzSSxIlrOUBSQfWrg5tpn3Z3rDf9sR95EF",
+      "estimatedCost": 15
+    },
+    {
+      "id": "gas_storage_tank",
+      "name": "Gas Storage Tank",
+      "type": "structural",
+      "partId": "ada6cecb-1d3c-48bf-a8f4-9f5d8efd98be",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=100L+Biogas+Storage+Bag&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "800x800x200mm",
+      "position3d": {
+        "x": 375,
+        "y": 110,
+        "z": 1000
+      },
+      "boundingBox": {
+        "depth": 800,
+        "width": 800,
+        "height": 200
+      },
+      "description": "Flexible bag for temporary storage of produced biogas, allowing for pressure accumulation.",
+      "productName": "100L Biogas Storage Bag",
+      "purchaseUrl": "https://www.amazon.com/s?k=100L+biogas+storage+bag",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxh3L1byvuBkVu1srbPHAplEBj4jn0QPneZVm61hoAx15BBASnAUKcbrSvPxqoY0kF9TwHnJ3zh3wDc2KODyfKGITZlfBDW1eX7pznswy0wXfjnFPkUabRArNkcpL7vk31CF4ZbLWCkXiHVzVvHlA4cylerQMukN9KZwV7XO0kb1Moo56BPGwrjq6EU44G6tom7SawAsowQooR1PkjnSq0puq0uF5WkXimAD4lIoiuccPMSma5jKl8r057qatudPa1ahnT2AFl8vLZXP1tlJf3uHmFXo3zqdOS0rGfhfIT0L4R9ABoAn3bE9yf66yvpPeEkNRojo3Qe2wOKMzmF3B1f6FIDCDPiJgJQVuDy3VIWRlGqyzxeFeOarmutDGUFdlGo3VqBU3GUMPvVJ7r8aZOosIoTJrzT9eA4RBshFT0xyEAnxk0avs74NV8tHrwSMd8ZFuqoZY5OKyYUqsLwXTRL6phk4nfBhod3MZK2igMC4B5Sa07lYgGhe4O0skaSZWmLu5H0h6kJy9Db2KsKhpjlzEjgxMqybBqTW85G7Esjg7xOedWP1V83Xy0t562EcEvYv4mX5XKfpZu35rivaUd2giktHdsFPuC1hiOOaOMZ6QLTaMuTZZb43ip1aAQUPFEk12x71Q0hBceVvxevGlcvbd",
+      "estimatedCost": 60
+    },
+    {
+      "id": "nutrient_reservoir",
+      "name": "Nutrient Reservoir",
+      "type": "structural",
+      "partId": "2467267a-8a51-4eaf-9d48-df9ee694f7db",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5L+Plastic+Container&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41UCtdMF7lL._SL500_.jpg",
+      "material": "HDPE Plastic",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B00284AG5K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.55",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010285363957.html?pdp_npi=6%40dis%21USD%2116.25%218.12%21%21%21109.88%2154.94%21%402101611117793545016798706e106e%2112000051791975592%21affd%21%21%21%211%210%21",
+            "price": "$8.12",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B00284AG5K?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x150x200mm",
+      "description": "Container for storing nutrient solution to be periodically added to the bioreactor.",
+      "productName": "5L Plastic Container",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfRGj0rwAyHKPVXcCSa1hY5uzWY3v4JEaKgEM0jSWNkrVhzHkkSkoyuiuiHjhsRZh8FEYgCtpm2KLKYnS2rg8QVlUNB1UAxro68d4UPnPj3s3PBYikItx6wApkjezjtsZMQt026kth3r64VFWNUsYP5nXidIBLzZnj6QK3Hssd6oIZLpyudtTe5IwPWYbbYASTHsvBflWCJ2K5Lzcz263kW2RJ3iI0u7NduuHHhu9qrcO9fKM2QGQY8TpP865h9Al19QgzoBO5H1uo5MfTAML2EflDgHeUYKcK5k2VA4amIkRCkWPpeECSUfCx5Yd9kdwXQori1FbLTv3LEiUw9oT3x5h5QFEQAFjTKfCiKeDTZorKqwm9rpzpVvyIBXhfPjwSbmhHD9A3gXhserxcrR6BCQeqfFe8CyvBxTohxWaPErU86wVM2dgHwFzsvY35nUT33NHdbTd0zdgLKkeWoP8M0rYg28XbFE5aaS6ur9UdYOI33mYM0uTJcjjNdY4lKfvugsiswmZRZIPMtcetmAUptWK17gMxncKyDwqisgc1SfDg1tn22nq8pg0iE3EcHkkDYsOMxU4N2kJlknbdz2iCZR5qBkLWnuNiaJuUPzt7btNC4vjWuYFZZmCZos0iNqJmfUBYmkxf2h84arIW1JSSzd",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfRGj0rwAyHKPVXcCSa1hY5uzWY3v4JEaKgEM0jSWNkrVhzHkkSkoyuiuiHjhsRZh8FEYgCtpm2KLKYnS2rg8QVlUNB1UAxro68d4UPnPj3s3PBYikItx6wApkjezjtsZMQt026kth3r64VFWNUsYP5nXidIBLzZnj6QK3Hssd6oIZLpyudtTe5IwPWYbbYASTHsvBflWCJ2K5Lzcz263kW2RJ3iI0u7NduuHHhu9qrcO9fKM2QGQY8TpP865h9Al19QgzoBO5H1uo5MfTAML2EflDgHeUYKcK5k2VA4amIkRCkWPpeECSUfCx5Yd9kdwXQori1FbLTv3LEiUw9oT3x5h5QFEQAFjTKfCiKeDTZorKqwm9rpzpVvyIBXhfPjwSbmhHD9A3gXhserxcrR6BCQeqfFe8CyvBxTohxWaPErU86wVM2dgHwFzsvY35nUT33NHdbTd0zdgLKkeWoP8M0rYg28XbFE5aaS6ur9UdYOI33mYM0uTJcjjNdY4lKfvugsiswmZRZIPMtcetmAUptWK17gMxncKyDwqisgc1SfDg1tn22nq8pg0iE3EcHkkDYsOMxU4N2kJlknbdz2iCZR5qBkLWnuNiaJuUPzt7btNC4vjWuYFZZmCZos0iNqJmfUBYmkxf2h84arIW1JSSzd",
+      "estimatedCost": 10
+    },
+    {
+      "id": "silicone_tubing_6mm",
+      "name": "Silicone Tubing (6mm ID)",
+      "type": "misc",
+      "partId": "e2e19f7c-5d96-4d3d-bddb-8e1e9eb78b36",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6mm+ID+Silicone+Tubing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/4662-00.jpg",
+      "material": "Silicone",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08BRGM9T8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$6.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008700320641.html?pdp_npi=6%40dis%21USD%213.13%213.09%21%21%2121.20%2120.94%21%402151fd3a17794522410327829e1071%2112000046304093563%21affd%21%21%21%211%210%21",
+            "price": "$3.09",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/4662",
+            "price": "$4.5",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/4662",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08BRGM9T8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6mm ID x 9mm OD x 5m L",
+      "description": "Flexible tubing for liquid and gas transfer, connecting pumps, sensors, and vessels.",
+      "productName": "6mm ID Silicone Tubing",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwOZtzQgH4ymOvqpyMTtvAa1M1AADspBF4M2kOYfJ1p1q4OtqofN3qVpG3zXSa45PqMwDawK0xLNzojY5eTMWmrPhYo5VRFJW6EZ58W28G42yttnitI9H3VjHK42XSdhSDZbG6goFwoOy1tHom4MuxU6wcaJFtMLbueQxFEw4UThz3voPdwSXzVSeeeDCD0BJ9yKuQX8SXoeF1zYbO52207npRZeBZ4W41fgMm49qmHDqvsA35aBataZKecFunoyJjb06FCUZatr07BhKgvsD95dHzYsS8hHw1CS1n29XgjXmHyw5WVc4XcujZKMa8j9UmiD6DH1LZfOgiFpfpSun3HxPpUhadeS566y1z3rzpOICyp3Y0SR0qxD3sKDhNIsdaauYfLLgiyKzz3cq7qm3s9McjQS4XqAtBPOqLMVLTlOYcZl9w0krVLnLGSOqj3PqpVxlvOiI9KXjz2wcFr4yPCTrSI5lKFg27w8UE86slxdqZIfp2ubIgEs5LoQR31izWlmvlDHkkJgmALElZSX7pWFiww1GctG253sQfR8jkA2kdWxLZ4adsh8jsmqCk1xvJ7RFsIXBFgCPoZfcgLBc0wp8B2VNzvMoEDv9QuT7HjPCsNxZ0pujqrFiSUe13YgP057AfhKcV0PdIaI9o9F8I9V",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwOZtzQgH4ymOvqpyMTtvAa1M1AADspBF4M2kOYfJ1p1q4OtqofN3qVpG3zXSa45PqMwDawK0xLNzojY5eTMWmrPhYo5VRFJW6EZ58W28G42yttnitI9H3VjHK42XSdhSDZbG6goFwoOy1tHom4MuxU6wcaJFtMLbueQxFEw4UThz3voPdwSXzVSeeeDCD0BJ9yKuQX8SXoeF1zYbO52207npRZeBZ4W41fgMm49qmHDqvsA35aBataZKecFunoyJjb06FCUZatr07BhKgvsD95dHzYsS8hHw1CS1n29XgjXmHyw5WVc4XcujZKMa8j9UmiD6DH1LZfOgiFpfpSun3HxPpUhadeS566y1z3rzpOICyp3Y0SR0qxD3sKDhNIsdaauYfLLgiyKzz3cq7qm3s9McjQS4XqAtBPOqLMVLTlOYcZl9w0krVLnLGSOqj3PqpVxlvOiI9KXjz2wcFr4yPCTrSI5lKFg27w8UE86slxdqZIfp2ubIgEs5LoQR31izWlmvlDHkkJgmALElZSX7pWFiww1GctG253sQfR8jkA2kdWxLZ4adsh8jsmqCk1xvJ7RFsIXBFgCPoZfcgLBc0wp8B2VNzvMoEDv9QuT7HjPCsNxZ0pujqrFiSUe13YgP057AfhKcV0PdIaI9o9F8I9V",
+      "estimatedCost": 12
+    },
+    {
+      "id": "silicone_tubing_10mm",
+      "name": "Silicone Tubing (10mm ID)",
+      "type": "misc",
+      "partId": "9fc6ef9f-d625-4b74-9a86-4c61c8af3d4c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=10mm+ID+Silicone+Tubing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/U0qgEewnBhmadgX3aMSV0aR1jum1doOGqlmlAKL6EpE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3hVRUFB/T1N3d2xGa0RVUnEv/cy1sNTAwLmpwZw",
+      "material": "Silicone",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07MQK7SQH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10mm ID x 14mm OD x 2m L",
+      "description": "Larger diameter tubing for primary gas lines, ensuring adequate flow to the storage tank.",
+      "productName": "10mm ID Silicone Tubing",
+      "purchaseUrl": "https://www.amazon.com/s?k=10mm+ID+silicone+tubing+2m",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JyapCW8q9r17wrRqV2TqRggQCquQrqHs8cjHUgI0uw5AdGSDbV37HTTT8qqefZwdT3l3D9Rcx3K6xciLhL1DTIBI5tx80LxToUNeVSKzo3I18fpad1QHthqRJ5QiUVSOBZb4KmjGxIsqsqQbhGgRVACD0saPiiKkvXaDEtfuS2XScYY1CGMKmCXJDKRGx2sC3Rg43qvUnAMKYNuKZGTPqP9MKjAu8kWrYEC7fEzXGeXrnwmO2V2lf4ns0xTEqGieX5fWq0XDphTb73sYzHjfCSbMVeLR5nBiRExLyYsG2jHO1tdxNX3BXZywr81fVUy7y40AyMQwptMJgR5G7KxcKzwgpzmAUXu7ZvxTrOxg3EUaSm7pt5T6IoWQ2JsUOpvt9raw34OvxbuNM4xFM41zep37Ury6di18callQDUFoi3IT1GNH6NkinCyBGIWN6I0csqGFw8p78hunvX6IVHyfjTyrfTAa7PwtTCTV3rypnG4y1d02vbX2cPc2PfFWJREcJhgwpBbKJJC1X8tZb5xxLsiOPYF72KOQPPWYy0NTEmRS9gzfTuIMY2qamix6l8D81ho4fGSSuOVjfRXnTETFHLKmdfbFXWQf18IYUCVe7OliUBAN66lziXd2mOqFEHPGJLavEB4XGNy3aJfgm1EXjWGF",
+      "estimatedCost": 8
+    },
+    {
+      "id": "ball_valve_6mm",
+      "name": "Ball Valve (6mm)",
+      "type": "misc",
+      "partId": "4444afb4-a91d-4c89-85b8-070abdcdc17a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6mm+Barb+Ball+Valve&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0F9VC899F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6mm Barb",
+      "description": "Manual shut-off valve for liquid and gas lines, allowing isolation of sections.",
+      "productName": "6mm Barb Ball Valve",
+      "purchaseUrl": "https://www.amazon.com/s?k=6mm+barb+ball+valve",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIaYsmyWIMLORQzbGiiucL2Uz5suijlEG4GSszLVpmYcXUIJCpzOtXAHMtPnVNIoEQN9iPVFStjT5607e8Kd4WabcBbadT9z1xPbYhLSnNZ2WrrVtbFnDTkSmFPfSDYy0pkQJy8CTjdjX6aYW3vngBDjyneC3n7FpLnm42c0rC7nQ0oJr7QRL6Q6DFeAMTQzYfGlEU2MUnLgLsXCaLVqegNubYFBnIaxe62bXnre11jVqr9SLdtFYc1nNk6ibZ8HKjelX3R3WrkE1kZpYwUrl6onGWIPYEBADyNAIZvLRoMMDto4yKWzahf98hM1pfTMkrnkVnWb8r2YwslXhqtu3DVQ9H3dVuv0sQQyAID4hDjtaRDFpn4oPVR6IpThSgHy0dDe1AlL48QWmrFjMiE34rbQ7TKuX4XrwlwvPeDLFnlBUwJfaDLAMuyvkXCOI5x9176Z9Xs953VPhDkWdied5GAQj1cMgRvwBvmfhlbvQ3kSQ8MmTAOWeDUYmUGnTLNo1gH2X6acfhFcgYURDgrW8my6FJBGn67blrI1xITel5dFvmAG1GedG5YCMwfZCmUYN1kkDGnaTTnthn5Dmqr63daBik19BGpDolGflSVzmoE5uTNdZNWLv29XHt2hnfbc74xx3pxfaC1P8O75AbFsuZph",
+      "estimatedCost": 4
+    },
+    {
+      "id": "check_valve_6mm",
+      "name": "Check Valve (6mm)",
+      "type": "misc",
+      "partId": "9cdd6ef3-78b8-4a37-a815-83d588751a28",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6mm+Plastic+Check+Valve&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 3,
+      "amazonUrl": "https://www.amazon.com/dp/B0G4491KQC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6mm Barb",
+      "description": "Prevents backflow in liquid and gas lines, ensuring one-way flow.",
+      "productName": "6mm Plastic Check Valve",
+      "purchaseUrl": "https://www.amazon.com/s?k=6mm+plastic+check+valve",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwWcyDUXVhiHGV44KEcoURD2vN7Va8ImsnNTKv0DorQ9EyERbB4IgB05GYov5wyZAlshfETIlj4hHIpxHnXhzCpu3nzCinrpUt1W8tv0ouaNuoxnp7avY6ncJh3PnI5wSQSYrSKFzX8MGOQJ2y3g7kx8IsajH7xedXt3boa62xfb001OyjTrM5bET0oygl6ThhHHObcOv8p1Fv5LNpcSGxSVy1sMrLqGSjmdXpdysANGBdQaCX8GlDxgTndcit47UC39OT1fVKcvyJBCsUPqWNyhwNuyxlFugrSPK9Fb6JKuI5rPU547ZwI551RKWZiyBeFgjxv9BwUJKebeWy88lVAn2NVifOBiJJnbwOst77ktls9CW793nkaHZrcoBD0oTr3riSeW6JqUUcFsw8ipH4fr9K3kJYPz9Meg6MNZLQrZPJwDid2X5Pu2YaxoYPhj8iqDsup3cUIGS88UGaPNkaZ3VG6F2cChkJNx7Ws2JBmLk1gul7mZEzDKjH5jA1QJ1oCeD54okvOtdNe36JCfW2WMHIC7qXzlcz9B5xckjMuBDKIjpWDAsiJGtkbITMukYpfeAhUuFhpbcJddI9zcgRWI46WptPaQlpOhRBi9pnhiMmqBec20uqLbeiXRHWhbMxqMqVBK84mQZIodUhgn6s03",
+      "estimatedCost": 3
+    },
+    {
+      "id": "tubing_connector_t_6mm",
+      "name": "Tubing T-Connector (6mm)",
+      "type": "misc",
+      "partId": "266a3736-621c-4f93-83a2-6ca66b91e2d0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6mm+Barbed+T+Connector&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41ywtOPvbrL._SL500_.jpg",
+      "material": "Plastic",
+      "quantity": 5,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07KPV93V4?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005005571643758.html?pdp_npi=6%40dis%21USD%212.21%212.21%21%21%212.21%212.21%21%4021013cc017795131969021744e0e4f%2112000033596541995%21affd%21%21%21%211%210%21",
+            "price": "$2.21",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07KPV93V4?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6mm Barb",
+      "description": "Splits or merges tubing lines for plumbing system flexibility.",
+      "productName": "6mm Barbed T Connector",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHq2l413B1rouSzsE0ndbTVxsqR24m4i3ovZvAjjZQuyy9bPdJ663A34wZmVKu1Iy6oHqHTq23FXGlC0qHfkSHrbYpYE8BDslfrdU889oa9Jm8w142TjkUR2gad6QcDOEsElXD5JUKphCOHhoFu5MWxRxYo85TaZUgGCscuL0JBPEBAhFTCm7kSkvVYRhBGtxhavi0Bnhl4F6CJXoPqmUuMz73Q42bmwpBOxJ7upVhArh7TbhE4V4j2cgOcOZI7z5AOVERN3WYFRV7YEErJRzCygvC7eA1VMhVmnnfV0SndnqPRX8HRmv79hait4Mlr23QV5aTr031H2W85BGTgazxJ3MmsRTbS7mrLl6OUG7GzyDMLnxcryFxT2xIjL7JznibmMLFBGXXLqamTDuOnXJLJxhUXx2hLQ8TgQAvBk2TnccsUAkdL5mSsVZkXWCXefjBqVtv9rCulfqsHavrtFu1z3zMmNJN3tJmYedgu4hDaaaf7qGvHBGaaaamWlQZw3l3M7BfTNyqNGT4W5HqI7afqswjYt3HsfmDiM9O4RVlgbmZdOhxMNXAE2BFKmQT2wU0RiPPCDjx15ekdD3ssJBpNmXZSyBNmL9ohobJTdKyAl8aYa2JTiVXLUzusfT1NTybWLrDnl6fUcc07i17jm19Gn",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHq2l413B1rouSzsE0ndbTVxsqR24m4i3ovZvAjjZQuyy9bPdJ663A34wZmVKu1Iy6oHqHTq23FXGlC0qHfkSHrbYpYE8BDslfrdU889oa9Jm8w142TjkUR2gad6QcDOEsElXD5JUKphCOHhoFu5MWxRxYo85TaZUgGCscuL0JBPEBAhFTCm7kSkvVYRhBGtxhavi0Bnhl4F6CJXoPqmUuMz73Q42bmwpBOxJ7upVhArh7TbhE4V4j2cgOcOZI7z5AOVERN3WYFRV7YEErJRzCygvC7eA1VMhVmnnfV0SndnqPRX8HRmv79hait4Mlr23QV5aTr031H2W85BGTgazxJ3MmsRTbS7mrLl6OUG7GzyDMLnxcryFxT2xIjL7JznibmMLFBGXXLqamTDuOnXJLJxhUXx2hLQ8TgQAvBk2TnccsUAkdL5mSsVZkXWCXefjBqVtv9rCulfqsHavrtFu1z3zMmNJN3tJmYedgu4hDaaaf7qGvHBGaaaamWlQZw3l3M7BfTNyqNGT4W5HqI7afqswjYt3HsfmDiM9O4RVlgbmZdOhxMNXAE2BFKmQT2wU0RiPPCDjx15ekdD3ssJBpNmXZSyBNmL9ohobJTdKyAl8aYa2JTiVXLUzusfT1NTybWLrDnl6fUcc07i17jm19Gn",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "tubing_connector_straight_6mm",
+      "name": "Tubing Straight Connector (6mm)",
+      "type": "misc",
+      "partId": "104d15ec-e8e4-4bbd-a24c-569da0067513",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6mm+Barbed+Straight+Connector&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41MLtgM-R9L._SL500_.jpg",
+      "material": "Plastic",
+      "quantity": 5,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0GJCRV7YG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$12.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/4001213960454.html?pdp_npi=6%40dis%21USD%212.45%212.45%21%21%2116.60%2116.60%21%4021013cc017795131969051609e101d%2112000041927508990%21affd%21%21%21%211%210%21",
+            "price": "$2.45",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GJCRV7YG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6mm Barb",
+      "description": "Connects two lengths of 6mm tubing.",
+      "productName": "6mm Barbed Straight Connector",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTzLg9j1rQvki4BMy7a3mCjMCdU2Nl74cQZTPTHYXe4MURJvY8lShpxYzEqk13jyiMog5HwjrFMfsPknxP85IySaMus5qd6Mwyx9bZy4GvPQcUzKBLpSv6jtJ3R8cRryxLyc7x5f3xgiz2ri2dFqx4t0qEhlMCHdnMtrsTgFJ2LBFZPAwr15ijVn6QmtsD0PaLpBDchGNKM5vqdHrRawgRwKf7mQAjVq1zBziB9L86zSJUgyH4whTANYCc75F9TqyHhAGIHIfOJemNZPW5pz08t8XXWVlGr8jQ1kq1uFPuIki6JPTK1BoGBRJB4z4szPSryucwFq3aIwkZu8JrlyQzm0jql55dgYsbbrrZ9vaV6fDi2noPw1uUNIBjIqjYFxVqqMrDDNzIlDFXR9pYPMuCDMQQfHWmQmPF7fXcgQ88MekevgnmxLdXmRYKspVrhG3wRpdKAuz9OsVpDGuM88QENKeEIVcTtRjb8z7JbiEGSTR1RqplcOLzkMfUh9aMSQkwShQeknlwk7BXOju6FeExyLNqkNI2Wp6yCvKkGmMF88JN5NVHFOmK5WipYdaQ8vw2xjMJZUayf4X3HBU0O5ODOWJWB3YW3WN2ryEcMMMXhUY6xj1EvvrNJeWdsklzZ0YBH4w4hiOr9bYEntM6ypCSPv",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9dTzLg9j1rQvki4BMy7a3mCjMCdU2Nl74cQZTPTHYXe4MURJvY8lShpxYzEqk13jyiMog5HwjrFMfsPknxP85IySaMus5qd6Mwyx9bZy4GvPQcUzKBLpSv6jtJ3R8cRryxLyc7x5f3xgiz2ri2dFqx4t0qEhlMCHdnMtrsTgFJ2LBFZPAwr15ijVn6QmtsD0PaLpBDchGNKM5vqdHrRawgRwKf7mQAjVq1zBziB9L86zSJUgyH4whTANYCc75F9TqyHhAGIHIfOJemNZPW5pz08t8XXWVlGr8jQ1kq1uFPuIki6JPTK1BoGBRJB4z4szPSryucwFq3aIwkZu8JrlyQzm0jql55dgYsbbrrZ9vaV6fDi2noPw1uUNIBjIqjYFxVqqMrDDNzIlDFXR9pYPMuCDMQQfHWmQmPF7fXcgQ88MekevgnmxLdXmRYKspVrhG3wRpdKAuz9OsVpDGuM88QENKeEIVcTtRjb8z7JbiEGSTR1RqplcOLzkMfUh9aMSQkwShQeknlwk7BXOju6FeExyLNqkNI2Wp6yCvKkGmMF88JN5NVHFOmK5WipYdaQ8vw2xjMJZUayf4X3HBU0O5ODOWJWB3YW3WN2ryEcMMMXhUY6xj1EvvrNJeWdsklzZ0YBH4w4hiOr9bYEntM6ypCSPv",
+      "estimatedCost": 1
+    },
+    {
+      "id": "relief_valve_biogas",
+      "name": "Biogas Pressure Relief Valve",
+      "type": "misc",
+      "partId": "f1328900-d6a0-444c-989d-6ab5099fe766",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Gas+Pressure+Relief+Valve&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31xocI1FvTL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0GLMQ5CYG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$22.97",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GLMQ5CYG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "1/4 inch NPT",
+      "description": "Ensures safe operating pressure in the gas collection and storage system.",
+      "productName": "Gas Pressure Relief Valve",
+      "purchaseUrl": "https://www.amazon.com/dp/B0GLMQ5CYG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR9ouSBn7MwwzHqzemfXVnQH8U66G5njpap8NFzGKCgsjWoqpyUPn0i9VlETWnvoX67qNtFXZ2xy3uFH9ruWlrnKtdUxkkfbWKuJzBb4RRneeWSJQxoA8VO1TiDuHhQbYIvqawgk2Hxe24dMbIuyR40hKQN1Ep3l9FtL8YHAXSZSOMdFTBcOtdnGeoAHzFBMbqFUHokhMzqmDCd6iJacTycph2lPbH4C3vLt9LmYvzIuUzvNF9hAjwAj4CX6FBrWTeM4e2Utw51GltxJeOfJ73dYH49b2B2xhfvAAsQEP4zLgo14i9H6Kk6PXf2LNKNCYCqaAnTCDQr5aNzsu3gMPj8QEwiwLhCxFca4kNRltqqcdxSSpivysJmcVyzYoWF5ofMxeBsSsNDP704947geKX4C6GLx0WDu1FvxYQXy7bKGENzbn3meo0OzkZWvuv5FPuxhIdEbjjtTZtOpmsh1gTauuTKlGqvar2GUZrEqRowUQU9HeuNNFGdGKcVvBqU9U4eDO41N5XNa327eBL8epUW0gvNtKe4n8pp2zjtQ95pgis31hs5jSZQu1lbsc3VbxhTTlzD5t3oXLKUzcHk0MTMQCrqy2FYeg8wAbI7zCrneHnXzZ9KOATRcF1JJvp7CutfTZpodA8ahOzC2OxMniadH",
+      "estimatedCost": 18
+    },
+    {
+      "id": "water_scrubber_vessel",
+      "name": "Water Scrubber Vessel",
+      "type": "structural",
+      "partId": "fcc69235-fcbe-4afd-a012-3f360d0b37c2",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5L+Cylindrical+Tank&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B093LCF8BF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x150x300mm",
+      "position3d": {
+        "x": 125,
+        "y": 160,
+        "z": 425
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 150,
+        "height": 300
+      },
+      "description": "Container for the water scrubbing process to remove H2S and CO2 from biogas.",
+      "productName": "5L Cylindrical Tank",
+      "purchaseUrl": "https://www.amazon.com/s?k=5L+cylindrical+plastic+tank",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw9N7QjZiNvByQ9RojjsXMBldOpmQYlSJwiT4FZnf2xLnNLUiEdSWdOi6yWovGu6Cfoj0PZAPqACsBsGerKTSyuG8SC3Xrar9tUSBA8n5ppPjukx6q59xdO9uuIFJDYCASoy3S0y1MpNgfnCe1p801lghvNuWx9ogaOAahf3EYLRSRZSbu3WjhSBxp9fv6ckjR4lIaNVuXu4qQBzdKoCeJ0x3SxNjKWyc9wSMbUPtSITEU1Z3xx2k1kW0rwaT571O8aSFJCagtd2EAm3NbTHex0jF9lHxXZX8Xd3oLAsepxIiH3sFbmYw1NXnN1QoHnRqbFKud22XH9jWY4d11TlZoly7pzWRaxdbZ78U9Ly5fJKC4yPWmXEQYyVyVtBS3OKW5YKE273dKVS4KTGwOZhAj7E61sjpzoMWXCnnLLxmJ9yT1PwZ5rPYQdQi821h0Waozi1WCJiEdTaJlFO9cNH1Cj9wwbQpfqIPG7TTlvBpkQTTMQ9xC5AiunBPkSNxJ4yaetEhDSMzsYFmUYYbiHkvkimAm7Q9lHH4RjhL6vt39mcRdM8CxxmR7Z9OEWcVoT8ucYSY6onwfs03FlOGrSPQOA1wtn6FqvJnkVG7Oz5ATs37RGna2dYGJAirwLN9XA6iAxG3bbXLtPDxe7iJ1BYIciJ",
+      "estimatedCost": 25
+    },
+    {
+      "id": "water_scrubber_diffuser",
+      "name": "Water Scrubber Diffuser",
+      "type": "mechanism",
+      "partId": "5b27f3e1-828c-4fc9-a32f-f4b13c6927a9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Fine+Bubble+Diffuser&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08P82BKR7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x50x10mm",
+      "position3d": {
+        "x": 125,
+        "y": 30,
+        "z": 425
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 10
+      },
+      "description": "Introduces biogas into the water scrubber as fine bubbles for efficient purification.",
+      "productName": "Fine Bubble Diffuser",
+      "purchaseUrl": "https://www.amazon.com/s?k=fine+bubble+diffuser+air+stone",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgH7aRsCXExn016nl9NxW3xg6ExFsq50k554wvu3xZyjfUOCLLvNqnCyLcac9trqB69Ebna5HfPPrMCnPKOBv1h2UTqeaEiVrvfVGggHmoYvixYzbFPrcmeldO6EAdAHzMXS9XNHdys1j5vjoXag8FW8Gny1BfHbGIxdjMP8M0cvhK98IwWCa64rZeGZXnBElMUdOKkg3oGE3kUdnq9zw2K74F3SwUbUzDSdZeuCH53GofNGH1Cl71FJnbrRRjR6EWmoTnULok4NhOUQsrOcnZBbz8YbknFN6DXNeLtYRxctXSUfagn7rzeEzdVTzWtvTYeoGdYqRFMRtNWKxX62oZphsbt9hvl6NfIrtf2IKc30qNb4sljcDsxUQcdYuKBQTglfdfZEks7PDHkVuKman5CsFCTmMCtEUyITQeRIUfd8roLkQqYZlnNRikW5FQ87FHoRU6YeuIMg7zRkvOvGcbgdGvQC7AAKH8ySXAJ2dR5IYaTGB1p4aHliiLYInzzsUjbZjBVyZK6L7odFlRwSNCOZd8eWqaCn56ilFY4QPgC7V3XvfabR7XlPNWTUAYEznGvRhQg1DUMLNEyIm4eKb1fi5OnRYrLZl3vWuvGOXz2bZl8U5YTagzGKXTBd4klZwTlUUfdAHYnWHIm5oxqiTSaB",
+      "estimatedCost": 8
+    },
+    {
+      "id": "bioreactor_lid_main",
+      "name": "Bioreactor Lid (Main)",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "405x305x20mm",
+      "position3d": {
+        "x": 375,
+        "y": 440,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 305,
+        "width": 405,
+        "height": 20
+      },
+      "description": "Sealed lid for the bioreactor with integrated ports for sensors, gas collection, and liquid transfer lines.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 8,
+      "printSettings": "30% infill, 0.2mm layer, watertight"
+    },
+    {
+      "id": "ph_sensor_mount",
+      "name": "pH Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "ph_sensor",
+      "dimensions": "40x30x25mm",
+      "position3d": {
+        "x": 300,
+        "y": 450,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 40,
+        "height": 25
+      },
+      "description": "Custom mount to securely hold the pH sensor within the bioreactor lid or side wall.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "temp_sensor_mount",
+      "name": "Temperature Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "temp_sensor_bioreactor",
+      "dimensions": "30x20x20mm",
+      "position3d": {
+        "x": 400,
+        "y": 420,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 30,
+        "height": 20
+      },
+      "description": "Custom mount to hold the temperature sensor in position within the bioreactor.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "gas_manifold_connector",
+      "name": "Gas Manifold Connector",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 2,
+      "dimensions": "50x30x30mm",
+      "position3d": {
+        "x": 325,
+        "y": 460,
+        "z": 270
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 30,
+        "height": 30
+      },
+      "description": "Specialized connectors to interface bioreactor gas ports with the external gas collection manifold.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2,
+      "printSettings": "40% infill, 0.2mm layer"
+    },
+    {
+      "id": "nutrient_pump_enclosure",
+      "name": "Nutrient Pump Enclosure",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "nutrient_pump",
+      "dimensions": "80x60x50mm",
+      "description": "Protective enclosure for the nutrient dosing pump, shielding it from environment and splashes.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 2.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "algae_pump_enclosure",
+      "name": "Algae Circulation Pump Enclosure",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "algae_circulation_pump",
+      "dimensions": "80x60x50mm",
+      "position3d": {
+        "x": 180,
+        "y": 50,
+        "z": 300
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 80,
+        "height": 50
+      },
+      "description": "Protective enclosure for the algae circulation pump.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 2.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "mcu_housing",
+      "name": "MCU Housing",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "main_mcu",
+      "dimensions": "120x80x40mm",
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 300
+      },
+      "boundingBox": {
+        "depth": 80,
+        "width": 120,
+        "height": 40
+      },
+      "description": "Enclosure for the main microcontroller, protecting it from moisture and physical damage.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 3,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "ch4_sensor_housing",
+      "name": "Methane Sensor Housing",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "ch4_sensor",
+      "dimensions": "60x40x30mm",
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 60,
+        "height": 30
+      },
+      "description": "Housing for the methane sensor, designed for gas sampling and connection to tubing.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "co2_sensor_housing",
+      "name": "CO2 Sensor Housing",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "co2_sensor",
+      "dimensions": "60x40x30mm",
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 250
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 60,
+        "height": 30
+      },
+      "description": "Housing for the CO2 sensor, designed for gas sampling and connection to tubing.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "gas_flow_sensor_mount",
+      "name": "Gas Flow Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "gas_flow_sensor",
+      "dimensions": "50x40x30mm",
+      "position3d": {
+        "x": 100,
+        "y": 50,
+        "z": 350
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 50,
+        "height": 30
+      },
+      "description": "Mounting bracket for the gas flow sensor, integrating it into the gas line.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.8,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "relay_module_mount",
+      "name": "Relay Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "4_channel_relay",
+      "dimensions": "80x40x15mm",
+      "position3d": {
+        "x": 570,
+        "y": 60,
+        "z": 475
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 80,
+        "height": 15
+      },
+      "description": "Bracket to mount the 4-channel relay module securely within the main enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 1,
+      "printSettings": "15% infill, 0.2mm layer"
+    },
+    {
+      "id": "power_supply_mount",
+      "name": "Power Supply Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "power_supply",
+      "dimensions": "150x60x20mm",
+      "position3d": {
+        "x": 640,
+        "y": 50,
+        "z": 475
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 150,
+        "height": 20
+      },
+      "description": "Mounting bracket for the main 12V power supply, securing it to the frame.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 2,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "dc_dc_buck_converter_mount",
+      "name": "DC-DC Buck Converter Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "dc_dc_buck_converter",
+      "dimensions": "50x30x10mm",
+      "position3d": {
+        "x": 640,
+        "y": 85,
+        "z": 475
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 50,
+        "height": 10
+      },
+      "description": "Small bracket to mount the 5V step-down converter.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "15% infill, 0.2mm layer"
+    },
+    {
+      "id": "cooling_fan_mount",
+      "name": "Cooling Fan Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "cooling_fan",
+      "dimensions": "70x70x15mm",
+      "position3d": {
+        "x": 450,
+        "y": 470,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 70,
+        "width": 70,
+        "height": 15
+      },
+      "description": "Mounting bracket to attach the cooling fan to the bioreactor lid or side.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 1.2,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "m5_t_nut",
+      "name": "M5 T-Nut",
+      "type": "misc",
+      "partId": "3b8404a1-a47d-45eb-b1c5-af093b75b7bf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+T-Slot+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/S23ce4b85b39a4dedabaa08e503b22780q.jpg",
+      "quantity": 50,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005007342221792.html?pdp_npi=6%40dis%21USD%218.57%214.80%21%21%2157.94%2132.45%21%4021013cc617793330455471203e0f15%2112000040344397854%21affd%21%21%21%211%210%21",
+            "price": "$4.8",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0BK75LJNF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$6.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BK75LJNF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5",
+      "description": "Used with M5 bolts to attach components to aluminum extrusion profiles.",
+      "productName": "M5 T-Slot Nut",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFvdgmo8EWBh0zKIoXHgGnB13eryK4WPPLHNQvVryOwvyf0eC5HLD9k58WjSPdOhzwNdw7nQnHJjoHnUriJv62so3DYlMYVxkc7cNrlecVVBWw1Xx0iF3xywbkYIJU5zuYbcS3sFIhciQ5QrXeNZeEsHNYI0fVndUrEo3M8g0d7RpIGQnnfc1iO2xcNJf3g4Q462wWaAmbBvTD71oaZQqwxf1u9LU3DpNXp9WV0XGfNPob5EoGzMiPcY8tsJjXe6l6tsBhtYLtYdM8N6fO8xifLfDn7FEuWc0N86S8RtVs49tV9J5qfCPpO3GGgGTkCOqP2ZEwpv58jZgyd3Rj8AFP9HGKW8eBRCCxDswKnTmv3qQyCsRkaCFjQG0yxXYztQQcZN4RUguCyy4LgQP580UvY1XWm0AlOKoAGFZUagX2z2LXjRfpPW99mzHcoktALzgkMWtW9y7LWQ16hH",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFvdgmo8EWBh0zKIoXHgGnB13eryK4WPPLHNQvVryOwvyf0eC5HLD9k58WjSPdOhzwNdw7nQnHJjoHnUriJv62so3DYlMYVxkc7cNrlecVVBWw1Xx0iF3xywbkYIJU5zuYbcS3sFIhciQ5QrXeNZeEsHNYI0fVndUrEo3M8g0d7RpIGQnnfc1iO2xcNJf3g4Q462wWaAmbBvTD71oaZQqwxf1u9LU3DpNXp9WV0XGfNPob5EoGzMiPcY8tsJjXe6l6tsBhtYLtYdM8N6fO8xifLfDn7FEuWc0N86S8RtVs49tV9J5qfCPpO3GGgGTkCOqP2ZEwpv58jZgyd3Rj8AFP9HGKW8eBRCCxDswKnTmv3qQyCsRkaCFjQG0yxXYztQQcZN4RUguCyy4LgQP580UvY1XWm0AlOKoAGFZUagX2z2LXjRfpPW99mzHcoktALzgkMWtW9y7LWQ16hH",
+      "estimatedCost": 0.2
+    },
+    {
+      "id": "m5_x_10_screw",
+      "name": "M5x10mm Screw",
+      "type": "misc",
+      "partId": "04417603-83d4-4b0c-8ad2-0d152183d5ab",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5x10mm+Button+Head+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41WBvgwqJgL._SL500_.jpg",
+      "quantity": 50,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FY5V6RC5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.09",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/32822606376.html?pdp_npi=6%40dis%21USD%215.19%214.36%21%21%215.19%214.36%21%402140d33617793594504167125e0f1a%2164872518467%21affd%21%21%21%211%210%21",
+            "price": "$4.36",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FY5V6RC5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5x10mm",
+      "description": "Used for general assembly with M5 T-nuts and attaching 3D-printed parts to the frame.",
+      "productName": "M5x10mm Button Head Screw",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdNZVN5NXMyndb7vp2IqLBSyXOclU73SXYam1YYNvfyP19Nv8M0TLzNyd8SBQMGf8uqdwo8UfYHSwvOW43qlWwqepliMilaTZHawFyvYaWNrRHPJCsFll3kqi7UQ8vfooBxtHUtIc1B7KgYvRdZNVvEMeLDGFIUUivKcbMl3tSVgMscbrUshK5O1SIaoLdWxf5GAGyK5ZCpTgdGd6iZES8ZCDlab2lGTYswyXi9tfDtoPFjQEPUfF7SGdwttnii30ERH8P0V5nATzQOjFAgPVzBJsryLovTOC0YWTxq39cXh9LEwSYmBGKn26nepgxmRqaKRNpqnOvTyJFCmAsrtomzmZx80QnowlUJT0G60jNNQjTAzmb50TrKlecDclvX8a0KXd9gcjaQ8vWiLaFX8ssi7h3jrH8XSNlzSdPhtVjdzz4kzyHOkvxDUDnxdu4ek3loXNC4TIQBIoV7notmN0YQZbRpuMPUhYTO32jgjIfooefWrjBsFL7kjkkppaoPXztGuhqsSZacTrBj2bu8VDETVR3u1K9I8kH5Ygh6gBni5e0Bfy40Q3Wen6CLmWlnM5c0VqW6PJCNTi7bLEd1pn73V1PcyAsQvDF0UcuAhz4BJSSxwlBsGUHhrvZe5tX6NRxl4jewIME4q5CdEaXVGp",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdNZVN5NXMyndb7vp2IqLBSyXOclU73SXYam1YYNvfyP19Nv8M0TLzNyd8SBQMGf8uqdwo8UfYHSwvOW43qlWwqepliMilaTZHawFyvYaWNrRHPJCsFll3kqi7UQ8vfooBxtHUtIc1B7KgYvRdZNVvEMeLDGFIUUivKcbMl3tSVgMscbrUshK5O1SIaoLdWxf5GAGyK5ZCpTgdGd6iZES8ZCDlab2lGTYswyXi9tfDtoPFjQEPUfF7SGdwttnii30ERH8P0V5nATzQOjFAgPVzBJsryLovTOC0YWTxq39cXh9LEwSYmBGKn26nepgxmRqaKRNpqnOvTyJFCmAsrtomzmZx80QnowlUJT0G60jNNQjTAzmb50TrKlecDclvX8a0KXd9gcjaQ8vWiLaFX8ssi7h3jrH8XSNlzSdPhtVjdzz4kzyHOkvxDUDnxdu4ek3loXNC4TIQBIoV7notmN0YQZbRpuMPUhYTO32jgjIfooefWrjBsFL7kjkkppaoPXztGuhqsSZacTrBj2bu8VDETVR3u1K9I8kH5Ygh6gBni5e0Bfy40Q3Wen6CLmWlnM5c0VqW6PJCNTi7bLEd1pn73V1PcyAsQvDF0UcuAhz4BJSSxwlBsGUHhrvZe5tX6NRxl4jewIME4q5CdEaXVGp",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "m3_x_12_screw",
+      "name": "M3x12mm Screw",
+      "type": "misc",
+      "partId": "b6ff8731-8d2f-4676-8f5e-acdcf5ebd62b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x12mm+Pan+Head+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31qPKMuPJbL._SL500_.jpg",
+      "quantity": 30,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0G58MCGXP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-m3x12mm-pan-head-screw.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0G58MCGXP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x12mm",
+      "description": "Used for mounting smaller components like PCBs and 3D-printed sensor housings.",
+      "productName": "M3x12mm Pan Head Screw",
+      "purchaseUrl": "https://www.amazon.com/dp/B0G58MCGXP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c310hxsh",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "m3_nut",
+      "name": "M3 Nut",
+      "type": "misc",
+      "partId": "d73269cd-cb20-4d1f-b725-473d4d15d123",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41pX1SHnmpL._SL500_.jpg",
+      "material": "Steel",
+      "quantity": 30,
+      "research": {
+        "specs": [
+          {
+            "label": "grade",
+            "value": "Class 8"
+          },
+          {
+            "label": "material",
+            "value": "Steel"
+          },
+          {
+            "label": "standard",
+            "value": "DIN 934"
+          },
+          {
+            "label": "thread_size",
+            "value": "M3"
+          },
+          {
+            "label": "mcmaster_url",
+            "value": "https://www.mcmaster.com/90591A121"
+          },
+          {
+            "label": "thickness_mm",
+            "value": "2.4"
+          },
+          {
+            "label": "thread_pitch_mm",
+            "value": "0.5"
+          },
+          {
+            "label": "mcmaster_part_number",
+            "value": "90591A121"
+          },
+          {
+            "label": "width_across_flats_mm",
+            "value": "5.5"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/binifiMux-M1-6-Stainless-Steel-200pcs/dp/B08N68W9SP",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007278965396.html?pdp_npi=6%40dis%21USD%216.21%216.08%21%21%2142.11%2141.23%21%4021013cc617793271470865688e0fdb%2112000040076085093%21affd%21%21%21%211%210%21",
+            "price": "$6.08",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.mcmaster.com/90591A121",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "https://accu-components.com/us/hexagon-nuts/7888-HPN-M3-A2",
+            "vendor": "Accu"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "Stainless Steel M3 Hex Nut",
+            "reason": "Common alternative material offering increased corrosion resistance, suitable for environments where rust is a concern."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F9FC4563?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "General purpose nuts for M3 screws.",
+      "productName": "M3 Hex Nut",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxheLVocLOesSj3YW9HVKSsjAuk0dhY8YT34rvUc5SPCcgI4QR7M5m7vL2CF1qaBN4YJaX2QCpde3asIqUTPZ7VH9jKyimAosVWo9rG6TlCDaJUGpnvxlaPEscouM2pHiy6Zxvpv1xT7pzOx6Fyo1keQHGdNb57GbSrrLl71Nratjl21Ld7kva7BOr6PkrmoRWaWh55AYolzU1dOLoDySfy5xqzSNdCl8glehlwejzSjdBWWTy455YHy3CX2I7X2ObZVmbtMcf1ZUKuy3taFB42G8QQY84Qc4A1f3VRgrR0nJqOWvy3goW5gegX5b2bBZ1k2czC8zEVqH7rPoznKC20B59KhVc4PoJpxOQAUNtDVHQdHjBsNGXv95tkExStXJLEG11lQ9xv22J4JnI1vii0Nu3EQIdxtejAVyHJWNqCT13JRh7KcER1qIRKfChSyklB9j8OCgppqg2vy43gHOXb4m1bC5PKWwlS0VmszjTySRubVMcAX5jP3Nq7SzwDa9fENTb8qipCz0RPBfMDKJI7gfNImum5INc6y6pnW04vDsv2RseqfgSSq1QxKiQmekKGaoRFqdbfvKRAdH95QjwG2ahskUOMyHg56bFgmRJ7WDpoYcDIBiuvNSPqvIBj08Id1dQEYcaic7Lr6FyPp6BfRl",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxheLVocLOesSj3YW9HVKSsjAuk0dhY8YT34rvUc5SPCcgI4QR7M5m7vL2CF1qaBN4YJaX2QCpde3asIqUTPZ7VH9jKyimAosVWo9rG6TlCDaJUGpnvxlaPEscouM2pHiy6Zxvpv1xT7pzOx6Fyo1keQHGdNb57GbSrrLl71Nratjl21Ld7kva7BOr6PkrmoRWaWh55AYolzU1dOLoDySfy5xqzSNdCl8glehlwejzSjdBWWTy455YHy3CX2I7X2ObZVmbtMcf1ZUKuy3taFB42G8QQY84Qc4A1f3VRgrR0nJqOWvy3goW5gegX5b2bBZ1k2czC8zEVqH7rPoznKC20B59KhVc4PoJpxOQAUNtDVHQdHjBsNGXv95tkExStXJLEG11lQ9xv22J4JnI1vii0Nu3EQIdxtejAVyHJWNqCT13JRh7KcER1qIRKfChSyklB9j8OCgppqg2vy43gHOXb4m1bC5PKWwlS0VmszjTySRubVMcAX5jP3Nq7SzwDa9fENTb8qipCz0RPBfMDKJI7gfNImum5INc6y6pnW04vDsv2RseqfgSSq1QxKiQmekKGaoRFqdbfvKRAdH95QjwG2ahskUOMyHg56bFgmRJ7WDpoYcDIBiuvNSPqvIBj08Id1dQEYcaic7Lr6FyPp6BfRl",
+      "estimatedCost": 0.03
+    },
+    {
+      "id": "cable_tie",
+      "name": "Cable Ties",
+      "type": "misc",
+      "partId": "28b819b9-cbc9-4205-ac65-4d61dcdc4350",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Assorted+Cable+Ties&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51EcOheXK5L._SL500_.jpg",
+      "material": "Nylon",
+      "quantity": 100,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08TVLYB3Q?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$6.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008497914267.html?pdp_npi=6%40dis%21USD%2124.96%2112.23%21%21%21168.73%2182.68%21%402140d36117793671309922081e0f98%2112000045417459713%21affd%21%21%21%211%210%21",
+            "price": "$12.23",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08TVLYB3Q?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100mm, 200mm",
+      "description": "For organizing and securing wiring and tubing throughout the system.",
+      "productName": "Assorted Cable Ties",
+      "purchaseUrl": "https://www.amazon.com/dp/B08TVLYB3Q?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHMKViBib2YgPQERCShc9o3LOQyJYJ2NL8JvZa9c56vgK2dqqQOt81feaOgfeTzhtdbclpI6UlpKAhBcmRBzJq7jqqJ0rVRwh7Xz5e3y6SCkP3EduUNVkn5fgI3tAisTtoQbYyonpf50scmaTn6fvd1TGt0Ti8vrfp7SKCSdRK1pf4IC4u8NVCmaxzy8j0rUFR5J4Xp05ucw8GRp6lS4qkHptBiMKtqghEDCkOXVld9ntRfnDLRtnXEGO6GZKFFu8OOMe03TFevxKTC4E0R58Wf6LzkBoI6uQDmdVpjq9GCbkkTU9L4N29elluSEAjEE6aaUSEbVeYuqnhTK632JrNih70BfILMVVNtDYniE3DohSHKXpfTiPjXFZZ3GCpZWWC3UScfTZrfilNhKxBU4x3qJ0G7gzQN5Bz4mqSZF08r8EI0WQC8nP29p7aWEPZOzt0ENrcmCEQl1bsiRSlQCYxucQdjIlFbI3l8TXDpO7cM9cCFIvAc3apD27AYm77927Jb2zdXP4r3OkW6j8bhOA2EkedjlodGcQVOKuL3REXJDQm4OP3bTWGW26rCYp0Z5JODYhMK2lTHE06e5YR5KW5bCGV1ghbzABcCKU5Zr8YjQppHywd8TzkUNDNHT0PD2sLJv0n4MFpKbGkk0YkkwBSEJ",
+      "estimatedCost": 0.02
+    },
+    {
+      "id": "gas_level_sensor_mount",
+      "name": "Gas Storage Level Sensor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "gas_level_sensor",
+      "dimensions": "30x30x15mm",
+      "position3d": {
+        "x": 375,
+        "y": 210,
+        "z": 1000
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 30,
+        "height": 15
+      },
+      "description": "Form-fitting cradle for the Gas Storage Level Sensor that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "heating_element_mount",
+      "name": "Bioreactor Heating Element Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "heating_element",
+      "dimensions": "50x50x20mm",
+      "position3d": {
+        "x": 200,
+        "y": 300,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 50,
+        "height": 20
+      },
+      "description": "Per-position bracket for the Bioreactor Heating Element with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    }
+  ],
+  "notes": [
+    "personal use",
+    "algae-to-gas",
+    "100L/week",
+    "bioreactor",
+    "gas collection",
+    "nutrient delivery"
+  ],
+  "projectName": "Algae Biogas Reactor",
+  "originalPrompt": "fait moi une petite usine pour usage personelle pour la fabrication de gaz à partir d'algue pour produire 100 litre semaine",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print bioreactor lid, sensor mounts, and gas manifold connector",
+          "detail": {
+            "steps": [
+              "Print the Bioreactor Lid (Main) using PETG with 30% infill, 0.2mm layer height, ensuring watertightness.",
+              "Print the pH Sensor Mount and Temperature Sensor Mount using PETG with 20% infill and 0.2mm layer height.",
+              "Print two Gas Manifold Connectors using PETG with 40% infill and 0.2mm layer height.",
+              "Print the Gas Storage Level Sensor Mount and Bioreactor Heating Element Mount using PETG with 30% infill, 0.2mm layer height, and 4 perimeters.",
+              "Inspect all printed parts for dimensional accuracy, layer adhesion, and any printing defects."
+            ],
+            "summary": "3D print the bioreactor lid and all sensor/actuator mounts."
+          },
+          "partIds": [
+            "bioreactor_lid_main",
+            "ph_sensor_mount",
+            "temp_sensor_mount",
+            "gas_manifold_connector",
+            "gas_level_sensor_mount",
+            "heating_element_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D print pump enclosures and main controller housing",
+          "partIds": [
+            "nutrient_pump_enclosure",
+            "algae_pump_enclosure",
+            "mcu_housing",
+            "cooling_fan_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "3D print sensor housings and mounts for gas system components",
+          "partIds": [
+            "ch4_sensor_housing",
+            "co2_sensor_housing",
+            "gas_flow_sensor_mount"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "3D print mounts for power distribution components",
+          "partIds": [
+            "relay_module_mount",
+            "power_supply_mount",
+            "dc_dc_buck_converter_mount"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Prepare power supply wiring and connect to DC-DC converter and relay module",
+          "partIds": [
+            "power_supply",
+            "dc_dc_buck_converter",
+            "4_channel_relay",
+            "cable_tie"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire 5V power from DC-DC converter to all sensors and the main controller",
+          "partIds": [
+            "dc_dc_buck_converter",
+            "main_mcu",
+            "ph_sensor",
+            "temp_sensor_bioreactor",
+            "ch4_sensor",
+            "co2_sensor",
+            "gas_flow_sensor",
+            "gas_level_sensor"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect main controller data pins to sensors",
+          "partIds": [
+            "main_mcu",
+            "ph_sensor",
+            "temp_sensor_bioreactor",
+            "ch4_sensor",
+            "co2_sensor",
+            "gas_flow_sensor",
+            "gas_level_sensor"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Wire main controller GPIOs to 4-channel relay module inputs",
+          "partIds": [
+            "main_mcu",
+            "4_channel_relay"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect 12V power through relay module to pumps, heating element, and cooling fan",
+          "partIds": [
+            "4_channel_relay",
+            "nutrient_pump",
+            "algae_circulation_pump",
+            "heating_element",
+            "cooling_fan",
+            "power_supply"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Organize and secure all wiring with cable ties",
+          "partIds": [
+            "cable_tie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Verify all power connections and voltage outputs with a multimeter",
+          "partIds": [
+            "power_supply",
+            "dc_dc_buck_converter",
+            "main_mcu",
+            "ph_sensor",
+            "temp_sensor_bioreactor",
+            "ch4_sensor",
+            "co2_sensor",
+            "gas_flow_sensor",
+            "gas_level_sensor",
+            "nutrient_pump",
+            "algae_circulation_pump",
+            "heating_element",
+            "cooling_fan",
+            "4_channel_relay"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Flash initial firmware to the main controller and verify basic functionality",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test individual sensor readings and calibrate if necessary",
+          "partIds": [
+            "ph_sensor",
+            "temp_sensor_bioreactor",
+            "ch4_sensor",
+            "co2_sensor",
+            "gas_flow_sensor",
+            "gas_level_sensor",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test relay control of actuators (pumps, heating element, fan)",
+          "partIds": [
+            "4_channel_relay",
+            "nutrient_pump",
+            "algae_circulation_pump",
+            "heating_element",
+            "cooling_fan",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Verify serial communication with CO2 sensor",
+          "partIds": [
+            "main_mcu",
+            "co2_sensor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Assemble the main frame using aluminum profiles and M5 hardware",
+          "partIds": [
+            "main_frame_base",
+            "main_frame_vertical_front",
+            "main_frame_vertical_back",
+            "m5_t_nut",
+            "m5_x_10_screw"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount the bioreactor vessel, nutrient reservoir, gas storage tank, and water scrubber vessel to the frame",
+          "partIds": [
+            "bioreactor_vessel",
+            "nutrient_reservoir",
+            "gas_storage_tank",
+            "water_scrubber_vessel"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Install 3D printed mounts and house electrical components on the frame",
+          "partIds": [
+            "nutrient_pump_enclosure",
+            "nutrient_pump",
+            "algae_pump_enclosure",
+            "algae_circulation_pump",
+            "mcu_housing",
+            "main_mcu",
+            "ch4_sensor_housing",
+            "ch4_sensor",
+            "co2_sensor_housing",
+            "co2_sensor",
+            "gas_flow_sensor_mount",
+            "gas_flow_sensor",
+            "relay_module_mount",
+            "4_channel_relay",
+            "power_supply_mount",
+            "power_supply",
+            "dc_dc_buck_converter_mount",
+            "dc_dc_buck_converter",
+            "cooling_fan_mount",
+            "cooling_fan",
+            "m5_t_nut",
+            "m5_x_10_screw",
+            "m3_x_12_screw"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Attach sensor mounts, heating element mount, and gas manifold to the bioreactor lid and vessel",
+          "partIds": [
+            "bioreactor_lid_main",
+            "bioreactor_vessel",
+            "ph_sensor_mount",
+            "ph_sensor",
+            "temp_sensor_mount",
+            "temp_sensor_bioreactor",
+            "heating_element_mount",
+            "heating_element",
+            "gas_collection_manifold",
+            "gas_manifold_connector",
+            "m3_x_12_screw",
+            "m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount the air pump and gas level sensor to the frame and gas storage tank",
+          "partIds": [
+            "air_pump",
+            "gas_level_sensor_mount",
+            "gas_level_sensor",
+            "gas_storage_tank",
+            "m3_x_12_screw"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Connect all tubing for liquid and gas pathways, ensuring secure fittings with check valves and relief valve",
+          "partIds": [
+            "silicone_tubing_6mm",
+            "silicone_tubing_10mm",
+            "air_diffuser",
+            "water_scrubber_diffuser",
+            "ball_valve_6mm",
+            "check_valve_6mm",
+            "tubing_connector_t_6mm",
+            "tubing_connector_straight_6mm",
+            "relief_valve_biogas",
+            "air_pump",
+            "nutrient_pump",
+            "algae_circulation_pump",
+            "bioreactor_vessel",
+            "nutrient_reservoir",
+            "water_scrubber_vessel",
+            "gas_collection_manifold",
+            "gas_storage_tank",
+            "gas_flow_sensor"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Perform final cable routing, strain relief, and enclosure closing",
+          "partIds": [
+            "mcu_housing",
+            "nutrient_pump_enclosure",
+            "algae_pump_enclosure",
+            "ch4_sensor_housing",
+            "co2_sensor_housing",
+            "cable_tie"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "This Algae Biogas Reactor is a personal system designed to produce 100 liters of natural gas weekly from algae. It features a controlled bioreactor with pH, temperature, and gas sensors, integrated pumps for nutrient delivery, and a gas collection manifold feeding into a storage tank, all managed by a microcontroller.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "personal use",
+      "algae-to-gas",
+      "100L/week",
+      "bioreactor",
+      "gas collection",
+      "nutrient delivery"
+    ],
+    "description": "Project idea: fait moi une petite usine pour usage personelle pour la fabrication de gaz à partir d'algue pour produire 100 litre semaine\n\nDesign notes: personal use, algae-to-gas, 100L/week, bioreactor, gas collection, nutrient delivery\n\nElectrical components (current): Main Controller (mcu, 55x28x13mm); 6x sensor: Bioreactor pH Sensor, Bioreactor Temperature Sensor, Methane Gas Sensor, Carbon Dioxide Gas Sensor +2 more; 4x actuator: Nutrient Dosing Pump, Algae Circulation Pump, Bioreactor Heating Element, Bioreactor Cooling Fan; 2x power: Main 12V Power Supply, 5V Step-Down Converter; 4-Channel Relay Module (module, 73x50x20mm)\n\nMechanical/structural parts (current): 8x structural: Main Frame Base, Main Frame Vertical (Front), Main Frame Vertical (Back), Bioreactor Vessel +4 more; 3x mechanism: Aeration Air Pump, Air Diffuser Stone, Water Scrubber Diffuser; 12x misc: Silicone Tubing (6mm ID), Silicone Tubing (10mm ID), Ball Valve (6mm), Check Valve (6mm) +8 more; 16x 3d_printed: Bioreactor Lid (Main), pH Sensor Mount, Temperature Sensor Mount, Gas Manifold Connector +12 more\n\nAssembly: Main Frame Vertical (Front) → Main Frame Base (M5 bolts via M5 T-Nuts); Main Frame Vertical (Back) → Main Frame Base (M5 bolts via M5 T-Nuts); Bioreactor Vessel → Main Frame Base (Mounted to frame with brackets (not listed)); Bioreactor Lid (Main) → Bioreactor Vessel (Gasket and clamps/screws); Nutrient Reservoir → Main Frame Base (Mounted to frame with brackets (not listed)); Gas Storage Tank → Main Frame Base (Mounted to frame with straps/brackets); Water Scrubber Vessel → Main Frame Base (Mounted to frame with brackets (not listed)); Aeration Air Pump → Main Frame Base (M3 bolts); Gas Collection Manifold → Bioreactor Lid (Main) (Gasket and M3 bolts); pH Sensor Mount → Bioreactor Lid (Main) (M3 bolts); Temperature Sensor Mount → Bioreactor Lid (Main) (M3 bolts); Gas Manifold Connector → Gas Collection Manifold (Threaded connection); Gas Manifold Connector → Bioreactor Lid (Main) (Gasket and M3 bolts); Nutrient Pump Enclosure → Main Frame Vertical (Front) (M5 bolts via M5 T-Nuts); Algae Circulation Pump Enclosure → Main Frame Vertical (Back) (M5 bolts via M5 T-Nuts) (+31 more connections)"
+  },
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG and PLA capable)",
+      "M5 hex key",
+      "M3 hex key",
+      "Small Phillips screwdriver",
+      "Wire strippers",
+      "Multimeter",
+      "Utility knife or tubing cutter",
+      "Hose clamps (assumed to be used with tubing barbs, not explicitly listed but necessary)"
+    ],
+    "assumptions": [
+      "Basic understanding of electronics and wiring practices",
+      "Familiarity with 3D printing software and operation",
+      "Microcontroller programming environment (e.g., Arduino IDE, PlatformIO) installed",
+      "Basic command-line interface (CLI) knowledge for firmware flashing",
+      "Access to a computer for programming and monitoring"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "12V to Buck Converter",
+      "source": "power_supply",
+      "target": "dc_dc_buck_converter",
+      "current": "2A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Relay Module 12V Power",
+      "source": "power_supply",
+      "target": "4_channel_relay",
+      "current": "100mA",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "MCU 5V Power",
+      "source": "dc_dc_buck_converter",
+      "target": "main_mcu",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "pH Sensor Power",
+      "source": "dc_dc_buck_converter",
+      "target": "ph_sensor",
+      "current": "50mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Temp Sensor Power",
+      "source": "dc_dc_buck_converter",
+      "target": "temp_sensor_bioreactor",
+      "current": "20mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "CH4 Sensor Power",
+      "source": "dc_dc_buck_converter",
+      "target": "ch4_sensor",
+      "current": "150mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "CO2 Sensor Power",
+      "source": "dc_dc_buck_converter",
+      "target": "co2_sensor",
+      "current": "100mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Gas Flow Sensor Power",
+      "source": "dc_dc_buck_converter",
+      "target": "gas_flow_sensor",
+      "current": "30mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Gas Level Sensor Power",
+      "source": "dc_dc_buck_converter",
+      "target": "gas_level_sensor",
+      "current": "20mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "pH Sensor Analog Read",
+      "source": "main_mcu",
+      "target": "ph_sensor",
+      "protocol": "analog",
+      "sourcePin": "GPIO_36",
+      "targetPin": "Analog_OUT"
+    },
+    {
+      "type": "data",
+      "label": "Temperature Sensor Data",
+      "source": "main_mcu",
+      "target": "temp_sensor_bioreactor",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_4",
+      "targetPin": "Data"
+    },
+    {
+      "type": "data",
+      "label": "CH4 Sensor Analog Read",
+      "source": "main_mcu",
+      "target": "ch4_sensor",
+      "protocol": "analog",
+      "sourcePin": "GPIO_39",
+      "targetPin": "AO"
+    },
+    {
+      "type": "data",
+      "label": "CH4 Sensor Digital Read",
+      "source": "main_mcu",
+      "target": "ch4_sensor",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_35",
+      "targetPin": "DO"
+    },
+    {
+      "type": "data",
+      "label": "CO2 Sensor TX",
+      "source": "main_mcu",
+      "target": "co2_sensor",
+      "protocol": "uart",
+      "sourcePin": "RX",
+      "targetPin": "TX"
+    },
+    {
+      "type": "data",
+      "label": "CO2 Sensor RX",
+      "source": "main_mcu",
+      "target": "co2_sensor",
+      "protocol": "uart",
+      "sourcePin": "TX",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "label": "Gas Flow Sensor Pulse",
+      "source": "main_mcu",
+      "target": "gas_flow_sensor",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_27",
+      "targetPin": "Pulse_OUT"
+    },
+    {
+      "type": "data",
+      "label": "Gas Level Sensor Trig",
+      "source": "main_mcu",
+      "target": "gas_level_sensor",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_26",
+      "targetPin": "Trig"
+    },
+    {
+      "type": "data",
+      "label": "Gas Level Sensor Echo",
+      "source": "main_mcu",
+      "target": "gas_level_sensor",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_25",
+      "targetPin": "Echo"
+    },
+    {
+      "type": "data",
+      "label": "Relay 1 Control (Nutrient Pump)",
+      "source": "main_mcu",
+      "target": "4_channel_relay",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_12",
+      "targetPin": "IN1"
+    },
+    {
+      "type": "data",
+      "label": "Relay 2 Control (Algae Circulation Pump)",
+      "source": "main_mcu",
+      "target": "4_channel_relay",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_13",
+      "targetPin": "IN2"
+    },
+    {
+      "type": "data",
+      "label": "Relay 3 Control (Heating Element)",
+      "source": "main_mcu",
+      "target": "4_channel_relay",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_14",
+      "targetPin": "IN3"
+    },
+    {
+      "type": "data",
+      "label": "Relay 4 Control (Cooling Fan)",
+      "source": "main_mcu",
+      "target": "4_channel_relay",
+      "protocol": "gpio",
+      "sourcePin": "GPIO_15",
+      "targetPin": "IN4"
+    },
+    {
+      "type": "power",
+      "label": "Nutrient Pump 12V Power",
+      "source": "power_supply",
+      "target": "nutrient_pump",
+      "current": "500mA",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Nutrient Pump Switched Power",
+      "source": "4_channel_relay",
+      "target": "nutrient_pump",
+      "current": "500mA",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Algae Circulation Pump 12V Power",
+      "source": "power_supply",
+      "target": "algae_circulation_pump",
+      "current": "1A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Algae Circulation Pump Switched Power",
+      "source": "4_channel_relay",
+      "target": "algae_circulation_pump",
+      "current": "1A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Heating Element 12V Power",
+      "source": "power_supply",
+      "target": "heating_element",
+      "current": "2A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Heating Element Switched Power",
+      "source": "4_channel_relay",
+      "target": "heating_element",
+      "current": "2A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Cooling Fan 12V Power",
+      "source": "power_supply",
+      "target": "cooling_fan",
+      "current": "300mA",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Cooling Fan Switched Power",
+      "source": "4_channel_relay",
+      "target": "cooling_fan",
+      "current": "300mA",
+      "voltage": "12V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "main_frame_vertical_front",
+      "target": "main_frame_base"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "main_frame_vertical_back",
+      "target": "main_frame_base"
+    },
+    {
+      "label": "Mounted to frame with brackets (not listed)",
+      "source": "bioreactor_vessel",
+      "target": "main_frame_base"
+    },
+    {
+      "label": "Gasket and clamps/screws",
+      "source": "bioreactor_lid_main",
+      "target": "bioreactor_vessel"
+    },
+    {
+      "label": "Mounted to frame with brackets (not listed)",
+      "source": "nutrient_reservoir",
+      "target": "main_frame_base"
+    },
+    {
+      "label": "Mounted to frame with straps/brackets",
+      "source": "gas_storage_tank",
+      "target": "main_frame_base"
+    },
+    {
+      "label": "Mounted to frame with brackets (not listed)",
+      "source": "water_scrubber_vessel",
+      "target": "main_frame_base"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "air_pump",
+      "target": "main_frame_base"
+    },
+    {
+      "label": "Gasket and M3 bolts",
+      "source": "gas_collection_manifold",
+      "target": "bioreactor_lid_main"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "ph_sensor_mount",
+      "target": "bioreactor_lid_main"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "temp_sensor_mount",
+      "target": "bioreactor_lid_main"
+    },
+    {
+      "label": "Threaded connection",
+      "source": "gas_manifold_connector",
+      "target": "gas_collection_manifold"
+    },
+    {
+      "label": "Gasket and M3 bolts",
+      "source": "gas_manifold_connector",
+      "target": "bioreactor_lid_main"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "nutrient_pump_enclosure",
+      "target": "main_frame_vertical_front"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "algae_pump_enclosure",
+      "target": "main_frame_vertical_back"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "mcu_housing",
+      "target": "main_frame_vertical_front"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "ch4_sensor_housing",
+      "target": "main_frame_vertical_front"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "co2_sensor_housing",
+      "target": "main_frame_vertical_front"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "gas_flow_sensor_mount",
+      "target": "main_frame_vertical_front"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "relay_module_mount",
+      "target": "main_frame_vertical_back"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "power_supply_mount",
+      "target": "main_frame_vertical_back"
+    },
+    {
+      "label": "M5 bolts via M5 T-Nuts",
+      "source": "dc_dc_buck_converter_mount",
+      "target": "main_frame_vertical_back"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "cooling_fan_mount",
+      "target": "mcu_housing"
+    },
+    {
+      "label": "Barbed fitting, hose clamp",
+      "source": "air_diffuser",
+      "target": "silicone_tubing_6mm"
+    },
+    {
+      "label": "Barbed fitting, hose clamp",
+      "source": "water_scrubber_diffuser",
+      "target": "silicone_tubing_6mm"
+    },
+    {
+      "label": "Barbed fitting, hose clamp",
+      "source": "ball_valve_6mm",
+      "target": "silicone_tubing_6mm"
+    },
+    {
+      "label": "Barbed fitting, hose clamp",
+      "source": "check_valve_6mm",
+      "target": "silicone_tubing_6mm"
+    },
+    {
+      "label": "Barbed fitting, hose clamp",
+      "source": "tubing_connector_t_6mm",
+      "target": "silicone_tubing_6mm"
+    },
+    {
+      "label": "Barbed fitting, hose clamp",
+      "source": "tubing_connector_straight_6mm",
+      "target": "silicone_tubing_6mm"
+    },
+    {
+      "label": "Barbed fitting, hose clamp",
+      "source": "relief_valve_biogas",
+      "target": "silicone_tubing_10mm"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "gas_level_sensor_mount",
+      "target": "gas_storage_tank"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "heating_element_mount",
+      "target": "bioreactor_vessel"
+    },
+    {
+      "label": "mount",
+      "source": "ph_sensor_mount",
+      "target": "ph_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "temp_sensor_mount",
+      "target": "temp_sensor_bioreactor"
+    },
+    {
+      "label": "mount",
+      "source": "nutrient_pump_enclosure",
+      "target": "nutrient_pump"
+    },
+    {
+      "label": "mount",
+      "source": "algae_pump_enclosure",
+      "target": "algae_circulation_pump"
+    },
+    {
+      "label": "mount",
+      "source": "mcu_housing",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "ch4_sensor_housing",
+      "target": "ch4_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "co2_sensor_housing",
+      "target": "co2_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "gas_flow_sensor_mount",
+      "target": "gas_flow_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "relay_module_mount",
+      "target": "4_channel_relay"
+    },
+    {
+      "label": "mount",
+      "source": "power_supply_mount",
+      "target": "power_supply"
+    },
+    {
+      "label": "mount",
+      "source": "dc_dc_buck_converter_mount",
+      "target": "dc_dc_buck_converter"
+    },
+    {
+      "label": "mount",
+      "source": "cooling_fan_mount",
+      "target": "cooling_fan"
+    },
+    {
+      "label": "mount",
+      "source": "gas_level_sensor_mount",
+      "target": "gas_level_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "heating_element_mount",
+      "target": "heating_element"
+    }
+  ],
+  "projectId": "01d26fdf-8537-4f42-967e-e4ad5a077456"
+}

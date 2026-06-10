@@ -1,0 +1,1049 @@
+{
+  "plan": "小型相控阵雷达模块用于蚊虫跟踪。双轴云台（舵机或步进电机）用于激光炮台的精确指向。微控制器（如ESP32或Raspberry Pi Zero 2 W）进行雷达数据处理和云台控制。小型高功率激光二极管和驱动电路。电源管理模块和电池组（如锂聚合物电池）。定制3D打印外壳用于所有组件的集成和保护。",
+  "nodes": [
+    {
+      "id": "radar_module",
+      "name": "Phased Array Radar Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "UART_TX",
+        "UART_RX",
+        "UART_TX, UART_RX"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/QMMmrYLBUp8fN7_TocYsxqbsuD2MGEcuMEHTM4S8H9Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zbWFy/dGhvbWVzY2VuZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjQvMDYvbW13YXZl/LXJhZGFyLW1vZHVs/ZXMtbGVhcG1tdy1I/UzI2NDNBLmpwZw",
+      "quantity": 1,
+      "dimensions": "40x30x5mm",
+      "description": "Micro phased array radar for mosquito detection and tracking within 1-3 meters.",
+      "productName": "mmWave Radar Module",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=mmWave+phased+array+radar+module",
+      "estimatedCost": 180,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=mmWave+Radar+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_stepper_motor",
+      "name": "X-Axis Stepper Motor",
+      "pins": [
+        "A+",
+        "A-",
+        "B+",
+        "B-"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/QBtAdSiMmlwL7VfwSfRUXUny4_DjiaRD37CIVlnAYCw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cm9ib3RzaG9wLmNv/bS9jZG4vc2hvcC9m/aWxlcy81N2FjNjFm/YV8yLndlYnA_dj0x/NzIwNDg4NzYyJndp/ZHRoPTEwMjQ",
+      "quantity": 1,
+      "dimensions": "28x28x30mm",
+      "description": "Stepper motor for precise horizontal (X-axis) positioning of the laser gimbal.",
+      "productName": "NEMA 11 Stepper Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=NEMA+11+stepper+motor",
+      "estimatedCost": 15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+11+Stepper+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_stepper_motor",
+      "name": "Y-Axis Stepper Motor",
+      "pins": [
+        "A+",
+        "A-",
+        "B+",
+        "B-"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/QBtAdSiMmlwL7VfwSfRUXUny4_DjiaRD37CIVlnAYCw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cm9ib3RzaG9wLmNv/bS9jZG4vc2hvcC9m/aWxlcy81N2FjNjFm/YV8yLndlYnA_dj0x/NzIwNDg4NzYyJndp/ZHRoPTEwMjQ",
+      "quantity": 1,
+      "dimensions": "28x28x30mm",
+      "description": "Stepper motor for precise vertical (Y-axis) positioning of the laser gimbal.",
+      "productName": "NEMA 11 Stepper Motor",
+      "purchaseUrl": "https://www.amazon.com/s?k=NEMA+11+stepper+motor",
+      "estimatedCost": 15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+11+Stepper+Motor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_stepper_driver",
+      "name": "X-Axis Stepper Driver",
+      "pins": [
+        "VMOT",
+        "GND",
+        "VDD",
+        "DIR",
+        "STEP",
+        "EN",
+        "RST",
+        "SLP",
+        "STEP, DIR"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/4BNCNnMmGKk7uuWcIy5LOjNXsHudNFqXGhbw8fW9fgU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sYXN0/bWludXRlZW5naW5l/ZXJzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvYXJkdWluby9E/UlY4ODI1LVN0ZXBw/ZXItTW90b3ItRHJp/dmVyLU1vZHVsZS5q/cGc",
+      "quantity": 1,
+      "dimensions": "20x15x10mm",
+      "description": "Driver module for controlling the X-axis stepper motor, providing microstepping and current control.",
+      "productName": "DRV8825 Stepper Driver",
+      "purchaseUrl": "https://www.amazon.com/s?k=DRV8825+stepper+motor+driver",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DRV8825+Stepper+Driver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_stepper_driver",
+      "name": "Y-Axis Stepper Driver",
+      "pins": [
+        "VMOT",
+        "GND",
+        "VDD",
+        "DIR",
+        "STEP",
+        "EN",
+        "RST",
+        "SLP",
+        "STEP, DIR"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/4BNCNnMmGKk7uuWcIy5LOjNXsHudNFqXGhbw8fW9fgU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sYXN0/bWludXRlZW5naW5l/ZXJzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvYXJkdWluby9E/UlY4ODI1LVN0ZXBw/ZXItTW90b3ItRHJp/dmVyLU1vZHVsZS5q/cGc",
+      "quantity": 1,
+      "dimensions": "20x15x10mm",
+      "description": "Driver module for controlling the Y-axis stepper motor, providing microstepping and current control.",
+      "productName": "DRV8825 Stepper Driver",
+      "purchaseUrl": "https://www.amazon.com/s?k=DRV8825+stepper+motor+driver",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=DRV8825+Stepper+Driver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "laser_diode",
+      "name": "High Power Laser Diode",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/4kKbXOuLikbzzGTPb4w1h_nKQE2DU_l7FD1dq38rODc/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/bGFzZXJkaW9kZXNv/dXJjZS5jb20vZmls/ZXMvcGRmcy9sYXNl/cmRpb2Rlc291cmNl/X2NvbS9wcm9kdWN0/LTg2NC9zbWFsbC04/MDhubV8xMDBXX2Zp/YmVyX2NvdXBsZWRf/bW9kdWxlX0RJTEFT/LTE0MTYyODUyMjct/MC5wbmc",
+      "quantity": 1,
+      "dimensions": "9x9x10mm",
+      "description": "High power (>20W) laser diode for rapid mosquito elimination.",
+      "productName": "20W+ 808nm Laser Diode",
+      "purchaseUrl": "https://www.amazon.com/s?k=high+power+laser+diode+808nm+20W",
+      "estimatedCost": 100,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=20W%2B+808nm+Laser+Diode&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "laser_driver",
+      "name": "High Power Laser Diode Driver",
+      "pins": [
+        "VIN",
+        "GND",
+        "Laser+",
+        "Laser-",
+        "PWM_IN"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/OmpL-H0faJsz_YYWCOVbCXWEfJcB_9L_WZoRYZGdE0Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaG9w/Lmxhc2VyZGlvZGVz/b3VyY2UuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIyLzA5/L2xhc2VyLWRpb2Rl/LWRyaXZlci1MREkt/ODI0LW1haW4tcHJv/ZHVjdC1pbWctMzAw/eDQwMC5qcGc",
+      "quantity": 1,
+      "dimensions": "50x30x15mm",
+      "description": "Current-regulated driver for the high-power laser diode, enabling PWM control.",
+      "productName": "High Current Laser Driver",
+      "purchaseUrl": "https://www.amazon.com/s?k=high+current+laser+diode+driver",
+      "estimatedCost": 50,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=High+Current+Laser+Driver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "buck_converter",
+      "name": "Voltage Regulator (Buck)",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fW4_GDBeL2rT8mg2Zb_Vxj_7Yepyy9vnmAidOfdgKg0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0ZDY0FB/ZVN3ZHBacFRZWDIv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "dimensions": "25x15x8mm",
+      "description": "Buck converter to step down battery voltage to 5V for MCU and peripherals.",
+      "productName": "LM2596 DC-DC Buck Converter",
+      "purchaseUrl": "https://www.amazon.com/s?k=DC-DC+buck+converter+12V+to+5V",
+      "estimatedCost": 5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM2596+DC-DC+Buck+Converter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lipo_battery",
+      "name": "LiPo Battery Pack",
+      "pins": [
+        "Positive",
+        "Negative"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/mkUugx4xr_HoG1hevjc9DNuj05JAE-ltoadimYtSMSE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/b3Zvbmljc2hvcC5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvTy01/MEMtNTAwMC0zUzFQ/LVhUNjAtNS1fMl83/MDB4NzAwLmpwZz92/PTE3NDQ4NTU1NjI",
+      "quantity": 1,
+      "dimensions": "135x45x25mm",
+      "description": "High-capacity Lithium Polymer battery pack for portable power.",
+      "productName": "3S LiPo Battery 5000mAh",
+      "purchaseUrl": "https://www.amazon.com/s?k=3S+Lipo+battery+5000mAh",
+      "estimatedCost": 35,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3S+LiPo+Battery+5000mAh&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "chassis_base",
+      "name": "Main Chassis Base",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "150x100x15mm",
+      "description": "Base structure for mounting all components and bottom part of the enclosure.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2.5,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "gimbal_yaw_base",
+      "name": "Gimbal Yaw Base",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "60x60x30mm",
+      "description": "Mounts to the chassis base and holds the yaw stepper motor.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "0.2mm layer height, 30% infill"
+    },
+    {
+      "id": "gimbal_yaw_arm",
+      "name": "Gimbal Yaw Arm",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "80x20x25mm",
+      "description": "Arm extending from the yaw motor, holding the pitch axis assembly.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.2,
+      "printSettings": "0.2mm layer height, 25% infill"
+    },
+    {
+      "id": "gimbal_pitch_mount",
+      "name": "Gimbal Pitch Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "70x50x35mm",
+      "description": "Mounts to the yaw arm, holds the pitch stepper motor, laser, and radar module.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer height, 30% infill"
+    },
+    {
+      "id": "enclosure_top_cover",
+      "name": "Enclosure Top Cover",
+      "type": "enclosure",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "150x100x60mm",
+      "description": "Top cover for the main chassis, protecting internal components.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 3,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Enclosure+Top+Cover&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_6mm",
+      "name": "M3 Button Head Screw",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 16,
+      "dimensions": "M3x6mm",
+      "description": "General purpose screws for mounting components.",
+      "productName": "M3x6mm Button Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x6mm+button+head+screws",
+      "estimatedCost": 0.05,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Button+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screw_10mm",
+      "name": "M3 Button Head Screw",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 8,
+      "dimensions": "M3x10mm",
+      "description": "Longer screws for specific mounting points.",
+      "productName": "M3x10mm Button Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x10mm+button+head+screws",
+      "estimatedCost": 0.06,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Button+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_nut",
+      "name": "M3 Hex Nut",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 16,
+      "dimensions": "M3",
+      "description": "Used with M3 screws for secure fastening.",
+      "productName": "M3 Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+hex+nuts",
+      "estimatedCost": 0.03,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_screw_4mm",
+      "name": "M2 Flat Head Screw",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 4,
+      "dimensions": "M2x4mm",
+      "description": "Small screws for mounting circuit boards or light components.",
+      "productName": "M2x4mm Flat Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2x4mm+screws",
+      "estimatedCost": 0.04,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x4mm+Flat+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_standoff_10mm",
+      "name": "M3 Brass Standoff",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 4,
+      "dimensions": "M3x10mm+6mm",
+      "description": "Standoffs for mounting PCBs securely above the base.",
+      "productName": "M3x10mm Brass Standoffs",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+10mm+brass+standoffs",
+      "estimatedCost": 0.2,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Brass+Standoffs&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mc_holder",
+      "name": "Microcontroller Holder",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "60x30x10mm",
+      "description": "Holder for the microcontroller (ESP32/RPi Zero 2 W) inside the chassis.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.8,
+      "printSettings": "0.2mm layer height, 15% infill"
+    },
+    {
+      "id": "battery_holder",
+      "name": "Battery Pack Holder",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "80x40x25mm",
+      "description": "Holder for the LiPo battery pack inside the chassis.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "esp32_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "3.3V",
+        "GND",
+        "GPIOs",
+        "UART",
+        "SPI",
+        "I2C",
+        "ADC",
+        "PWM",
+        "GPIO16 (RX), GPIO17 (TX)",
+        "GPIO14 (STEP), GPIO12 (DIR)",
+        "GPIO27 (STEP), GPIO26 (DIR)",
+        "GPIO25",
+        "GPIO21",
+        "GPIO22",
+        "GPIO21 (SDA), GPIO22 (SCL)",
+        "GPIO4",
+        "GPIO5",
+        "GPIO4 (RX), GPIO5 (TX)"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/5364-00.jpg",
+      "quantity": 1,
+      "description": "Microcontroller for radar data processing, gimbal control, and overall system management.",
+      "productName": "ESP32-WROOM-32D",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32D/9829281",
+      "estimatedCost": 5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "thermal_camera",
+      "name": "Thermal Camera Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "SDA",
+        "SCL",
+        "SDA, SCL"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/FVgg98UAhwQ_M-O5Bqmya5Y646KwpWEzXejtSHg6mn4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy0zZmQz/bWQxZ2hzL2ltYWdl/cy9zdGVuY2lsLzUw/MHg2NTkvcHJvZHVj/dHMvMzA0NzIvMjcz/MzkvRVMtMTIxNDJf/MDAzX184MjMwMy4x/NzY2NDA1NjU3Lmpw/Zz9jPTI",
+      "quantity": 1,
+      "description": "Infrared thermal sensor array for detecting mosquito heat signatures.",
+      "productName": "MLX90640 Thermal Camera Array",
+      "purchaseUrl": "https://www.adafruit.com/product/4407",
+      "estimatedCost": 60,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MLX90640+Thermal+Camera+Array&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "thermal_camera_mount",
+      "name": "Thermal Camera Mount",
+      "pins": [],
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "A custom 3D printed bracket to securely attach the thermal camera to the gimbal pitch mount.",
+      "productName": "Custom 3D Printed Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "ai_module",
+      "name": "AI Processor Module",
+      "pins": [
+        "VIN",
+        "GND",
+        "UART_RX",
+        "UART_TX",
+        "UART_TX, UART_RX"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ukS8AZlEY9iGtlC_9MYFlegPPbJpcB68yxxKi8B4fHM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzUxRDNWVC1kek9M/LmpwZw",
+      "quantity": 1,
+      "description": "AI processor for accelerating neural network inference, offloading object detection tasks from the ESP32.",
+      "productName": "Sipeed Maix Bit (K210)",
+      "purchaseUrl": "https://www.seeedstudio.com/Sipeed-Maix-Bit-K210-Development-Board-p-4235.html",
+      "estimatedCost": 20,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Sipeed+Maix+Bit+%28K210%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ai_module_holder",
+      "name": "AI Module Holder",
+      "pins": [],
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "A custom 3D printed bracket to securely mount the AI module to the chassis base.",
+      "productName": "Custom 3D Printed Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 0.8
+    }
+  ],
+  "notes": [
+    "微型相控阵雷达",
+    "两个自由度",
+    "激光炮台",
+    "消杀蚊虫",
+    "小型设备"
+  ],
+  "projectName": "Mosquito Eliminator",
+  "originalPrompt": "一个用微型相控阵雷达跟踪蚊虫，并利用两个自由度激光炮台进行消杀的小型设备",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D Print all mechanical components",
+          "partIds": [
+            "chassis_base",
+            "gimbal_yaw_base",
+            "gimbal_yaw_arm",
+            "gimbal_pitch_mount",
+            "enclosure_top_cover",
+            "mc_holder",
+            "battery_holder",
+            "thermal_camera_mount",
+            "ai_module_holder"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Deburr and clean 3D printed parts",
+          "partIds": [
+            "chassis_base",
+            "gimbal_yaw_base",
+            "gimbal_yaw_arm",
+            "gimbal_pitch_mount",
+            "enclosure_top_cover",
+            "mc_holder",
+            "battery_holder",
+            "thermal_camera_mount",
+            "ai_module_holder"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Pre-assemble gimbal mechanical parts for fitment",
+          "partIds": [
+            "gimbal_yaw_base",
+            "gimbal_yaw_arm",
+            "gimbal_pitch_mount",
+            "m3_screw_6mm",
+            "m3_nut"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Wire main power distribution from LiPo Battery",
+          "partIds": [
+            "lipo_battery",
+            "buck_converter",
+            "x_stepper_driver",
+            "y_stepper_driver",
+            "laser_driver"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire 5V power from Buck Converter to ESP32, Radar, Thermal Camera, and AI Module",
+          "partIds": [
+            "buck_converter",
+            "esp32_mcu",
+            "radar_module",
+            "thermal_camera",
+            "ai_module"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect Stepper Motors to their respective Drivers",
+          "partIds": [
+            "x_stepper_motor",
+            "x_stepper_driver",
+            "y_stepper_motor",
+            "y_stepper_driver"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect Laser Diode to Laser Driver",
+          "partIds": [
+            "laser_diode",
+            "laser_driver"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect ESP32 MCU to Radar Module via UART",
+          "partIds": [
+            "esp32_mcu",
+            "radar_module"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect ESP32 MCU to Stepper Drivers (STEP/DIR)",
+          "partIds": [
+            "esp32_mcu",
+            "x_stepper_driver",
+            "y_stepper_driver"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Connect ESP32 MCU to Laser Driver (PWM)",
+          "partIds": [
+            "esp32_mcu",
+            "laser_driver"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Connect ESP32 MCU to Thermal Camera via I2C",
+          "partIds": [
+            "esp32_mcu",
+            "thermal_camera"
+          ]
+        },
+        {
+          "id": "wire_9",
+          "title": "Connect ESP32 MCU to AI Module via UART",
+          "partIds": [
+            "esp32_mcu",
+            "ai_module"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Verify power supply connections with multimeter",
+          "partIds": [
+            "lipo_battery",
+            "buck_converter",
+            "esp32_mcu",
+            "thermal_camera",
+            "radar_module",
+            "ai_module"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Install ESP32 board definitions and libraries in IDE",
+          "partIds": [
+            "esp32_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Upload initial test firmware to ESP32 MCU",
+          "partIds": [
+            "esp32_mcu"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test radar module communication via serial monitor",
+          "partIds": [
+            "esp32_mcu",
+            "radar_module"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test thermal camera communication and data acquisition",
+          "partIds": [
+            "esp32_mcu",
+            "thermal_camera"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Upload AI model and test AI module functionality",
+          "partIds": [
+            "ai_module",
+            "esp32_mcu"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Test X and Y stepper motor movement and calibration",
+          "partIds": [
+            "esp32_mcu",
+            "x_stepper_motor",
+            "y_stepper_motor",
+            "x_stepper_driver",
+            "y_stepper_driver"
+          ]
+        },
+        {
+          "id": "bringup_8",
+          "title": "Safely test laser diode activation with short pulses",
+          "partIds": [
+            "esp32_mcu",
+            "laser_diode",
+            "laser_driver"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount ESP32 MCU into its holder and secure to chassis base",
+          "partIds": [
+            "esp32_mcu",
+            "mc_holder",
+            "chassis_base",
+            "m2_screw_4mm"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount AI Module into its holder and secure to chassis base",
+          "partIds": [
+            "ai_module",
+            "ai_module_holder",
+            "chassis_base",
+            "m2_screw_4mm",
+            "m3_screw_6mm",
+            "m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount power modules and stepper drivers to chassis base using standoffs",
+          "partIds": [
+            "buck_converter",
+            "x_stepper_driver",
+            "y_stepper_driver",
+            "laser_driver",
+            "m3_standoff_10mm",
+            "m3_screw_6mm",
+            "chassis_base"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount gimbal yaw base to chassis base",
+          "partIds": [
+            "gimbal_yaw_base",
+            "chassis_base",
+            "m3_screw_6mm",
+            "m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Mount X-Axis Stepper Motor to gimbal yaw base and attach yaw arm",
+          "partIds": [
+            "x_stepper_motor",
+            "gimbal_yaw_base",
+            "gimbal_yaw_arm"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount Y-Axis Stepper Motor and gimbal pitch mount to yaw arm",
+          "partIds": [
+            "y_stepper_motor",
+            "gimbal_pitch_mount",
+            "gimbal_yaw_arm",
+            "m3_screw_6mm",
+            "m3_nut"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Secure Radar Module, Thermal Camera, and Laser Diode into gimbal pitch mount",
+          "partIds": [
+            "radar_module",
+            "thermal_camera",
+            "laser_diode",
+            "gimbal_pitch_mount",
+            "thermal_camera_mount",
+            "m2_screw_4mm"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Mount LiPo battery into its holder and secure to chassis base",
+          "partIds": [
+            "lipo_battery",
+            "battery_holder",
+            "chassis_base"
+          ]
+        },
+        {
+          "id": "assemble_9",
+          "title": "Route and secure all cables for strain relief and neatness, then attach enclosure top cover",
+          "partIds": [
+            "enclosure_top_cover",
+            "chassis_base",
+            "m3_screw_10mm",
+            "m3_nut"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A compact mosquito eliminator featuring a micro phased array radar and thermal camera for advanced detection. An AI processor handles object detection, guiding a two-axis laser gimbal to precisely eliminate pests with a high-power laser diode. An ESP32 microcontroller orchestrates the system.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG and PLA capable)",
+      "M3 hex key",
+      "M2 screwdriver",
+      "Soldering iron with fine tip",
+      "Solder",
+      "Wire strippers",
+      "Flush cutters",
+      "Multimeter",
+      "Deburring tool or sandpaper"
+    ],
+    "assumptions": [
+      "Basic familiarity with 3D printing processes",
+      "Competence in basic soldering techniques",
+      "ESP32 development environment (e.g., Arduino IDE with ESP32 board support) installed",
+      "Understanding of basic electronics safety, especially with high-power lasers and LiPo batteries",
+      "Ability to upload firmware to ESP32 microcontrollers",
+      "Familiarity with AI module programming (e.g., MaixPy for K210)"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "buck_converter",
+      "voltage": "11.1V-12.6V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "radar_module",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "x_stepper_driver",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "y_stepper_driver",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "x_stepper_driver",
+      "voltage": "11.1V-12.6V"
+    },
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "y_stepper_driver",
+      "voltage": "11.1V-12.6V"
+    },
+    {
+      "type": "power",
+      "source": "lipo_battery",
+      "target": "laser_driver",
+      "voltage": "11.1V-12.6V"
+    },
+    {
+      "type": "power",
+      "source": "laser_driver",
+      "target": "laser_diode",
+      "voltage": "Varies (e.g., 2V-5V for diode operation, regulated by driver)"
+    },
+    {
+      "type": "power",
+      "source": "x_stepper_driver",
+      "target": "x_stepper_motor",
+      "voltage": "Varies (motor dependent, from driver)"
+    },
+    {
+      "type": "power",
+      "source": "y_stepper_driver",
+      "target": "y_stepper_motor",
+      "voltage": "Varies (motor dependent, from driver)"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "esp32_mcu",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "radar_module",
+      "voltage": "3.3V/5V (level shift if needed)115200bps (common)UART",
+      "sourcePin": "GPIO16 (RX), GPIO17 (TX)",
+      "targetPin": "UART_TX, UART_RX"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "x_stepper_driver",
+      "voltage": "3.3V/5VDigital",
+      "sourcePin": "GPIO14 (STEP), GPIO12 (DIR)",
+      "targetPin": "STEP, DIR"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "y_stepper_driver",
+      "voltage": "3.3V/5VDigital",
+      "sourcePin": "GPIO27 (STEP), GPIO26 (DIR)",
+      "targetPin": "STEP, DIR"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "laser_driver",
+      "voltage": "3.3V/5VPWM",
+      "sourcePin": "GPIO25",
+      "targetPin": "PWM_IN"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "thermal_camera",
+      "voltage": "3.3V or 5V (module dependent)"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "thermal_camera",
+      "voltage": "3.3V (level shift if needed)I2C",
+      "sourcePin": "GPIO21 (SDA), GPIO22 (SCL)",
+      "targetPin": "SDA, SCL"
+    },
+    {
+      "type": "power",
+      "source": "buck_converter",
+      "target": "ai_module",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "esp32_mcu",
+      "target": "ai_module",
+      "voltage": "3.3V (level shift if needed)UART",
+      "sourcePin": "GPIO4 (RX), GPIO5 (TX)",
+      "targetPin": "UART_TX, UART_RX"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounted with M3 screw",
+      "source": "gimbal_yaw_base",
+      "target": "chassis_base"
+    },
+    {
+      "label": "fastens to chassis_base",
+      "source": "m3_screw_6mm",
+      "target": "gimbal_yaw_base"
+    },
+    {
+      "label": "secures connection",
+      "source": "m3_nut",
+      "target": "m3_screw_6mm"
+    },
+    {
+      "label": "mounted with M3 screws",
+      "source": "gimbal_pitch_mount",
+      "target": "gimbal_yaw_arm"
+    },
+    {
+      "label": "fastens to gimbal_yaw_arm",
+      "source": "m3_screw_6mm",
+      "target": "gimbal_pitch_mount"
+    },
+    {
+      "label": "secures connection",
+      "source": "m3_nut",
+      "target": "m3_screw_6mm"
+    },
+    {
+      "label": "secured in holder",
+      "source": "gimbal_pitch_mount",
+      "target": "laser_diode"
+    },
+    {
+      "label": "secured in holder",
+      "source": "gimbal_pitch_mount",
+      "target": "radar_module"
+    },
+    {
+      "label": "attaches with M3 screws",
+      "source": "enclosure_top_cover",
+      "target": "chassis_base"
+    },
+    {
+      "label": "fastens to chassis_base",
+      "source": "m3_screw_10mm",
+      "target": "enclosure_top_cover"
+    },
+    {
+      "label": "secures connection",
+      "source": "m3_nut",
+      "target": "m3_screw_10mm"
+    },
+    {
+      "label": "mounted with M3 screws",
+      "source": "mc_holder",
+      "target": "chassis_base"
+    },
+    {
+      "label": "holds microcontroller",
+      "source": "mc_holder",
+      "target": "mc_holder"
+    },
+    {
+      "label": "fastens to mc_holder",
+      "source": "m2_screw_4mm",
+      "target": "mc_holder"
+    },
+    {
+      "label": "mounted with M3 screws",
+      "source": "battery_holder",
+      "target": "chassis_base"
+    },
+    {
+      "label": "holds battery_pack",
+      "source": "battery_holder",
+      "target": "lipo_battery"
+    },
+    {
+      "label": "mounts to chassis_base",
+      "source": "m3_standoff_10mm",
+      "target": "chassis_base"
+    },
+    {
+      "label": "holds microcontroller",
+      "source": "mc_holder",
+      "target": "esp32_mcu"
+    },
+    {
+      "label": "secured with M2 screws",
+      "source": "gimbal_pitch_mount",
+      "target": "thermal_camera_mount"
+    },
+    {
+      "label": "fastens to gimbal_pitch_mount",
+      "source": "m2_screw_4mm",
+      "target": "thermal_camera_mount"
+    },
+    {
+      "label": "secured in holder",
+      "source": "thermal_camera_mount",
+      "target": "thermal_camera"
+    },
+    {
+      "label": "mounted with M3 screws",
+      "source": "chassis_base",
+      "target": "ai_module_holder"
+    },
+    {
+      "label": "fastens to chassis_base",
+      "source": "m3_screw_6mm",
+      "target": "ai_module_holder"
+    },
+    {
+      "label": "secures connection",
+      "source": "m3_nut",
+      "target": "m3_screw_6mm"
+    },
+    {
+      "label": "holds AI module",
+      "source": "ai_module_holder",
+      "target": "ai_module"
+    },
+    {
+      "label": "fastens to ai_module_holder",
+      "source": "m2_screw_4mm",
+      "target": "ai_module"
+    }
+  ],
+  "projectId": "a26376f6-df2c-4a96-b062-4d91181de4f1"
+}

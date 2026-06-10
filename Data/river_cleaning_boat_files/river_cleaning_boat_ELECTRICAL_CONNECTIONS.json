@@ -1,0 +1,159 @@
+[
+  {
+    "type": "data",
+    "label": "MCU to Left ESC Signal",
+    "source": "main_mcu",
+    "target": "esc_left",
+    "protocol": "pwm",
+    "sourcePin": "GPIO16",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Right ESC Signal",
+    "source": "main_mcu",
+    "target": "esc_right",
+    "protocol": "pwm",
+    "sourcePin": "GPIO17",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "RC Receiver to MCU iBUS",
+    "source": "rc_receiver",
+    "target": "main_mcu",
+    "protocol": "uart",
+    "sourcePin": "iBUS",
+    "targetPin": "GPIO18"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Conveyor Driver IN1",
+    "source": "main_mcu",
+    "target": "conveyor_motor_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO25",
+    "targetPin": "IN1"
+  },
+  {
+    "type": "data",
+    "label": "MCU to Conveyor Driver IN2",
+    "source": "main_mcu",
+    "target": "conveyor_motor_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO26",
+    "targetPin": "IN2"
+  },
+  {
+    "type": "power",
+    "source": "conveyor_motor_driver",
+    "target": "conveyor_motor",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "voltage_regulator_5v",
+    "target": "rc_receiver",
+    "sourcePin": "Vout-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "voltage_regulator_5v",
+    "target": "conveyor_motor_driver",
+    "sourcePin": "Vout-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "voltage_regulator_5v",
+    "target": "main_mcu",
+    "sourcePin": "Vout-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "solar_panel",
+    "target": "mppt_charge_controller",
+    "voltage": "12V-18V (nominal 12V), 1A-5A (peak 5A, nominal 1A)"
+  },
+  {
+    "type": "power",
+    "source": "mppt_charge_controller",
+    "target": "lipo_battery",
+    "voltage": "12.6V"
+  },
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "mppt_charge_controller",
+    "voltage": "12.6V"
+  },
+  {
+    "type": "power",
+    "source": "mppt_charge_controller",
+    "target": "power_distribution_board",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "esc_left",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "esc_right",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "esc_left",
+    "target": "propulsion_motor_left",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "esc_right",
+    "target": "propulsion_motor_right",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "conveyor_motor_driver",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "conveyor_motor_driver",
+    "target": "conveyor_motor",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "voltage_regulator_5v",
+    "target": "rc_receiver",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "power_distribution_board",
+    "target": "voltage_regulator_5v",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "voltage_regulator_5v",
+    "target": "conveyor_motor_driver",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "voltage_regulator_5v",
+    "target": "main_mcu",
+    "voltage": "5V"
+  }
+]

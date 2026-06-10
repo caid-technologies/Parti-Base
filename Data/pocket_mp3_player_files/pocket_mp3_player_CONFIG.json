@@ -1,0 +1,1839 @@
+{
+  "plan": "- Utilize an ESP32 as the main controller, leveraging its integrated Bluetooth for wireless audio. - Incorporate a color OLED display for track information and status, along with physical buttons for control. - Implement power management with a rechargeable Li-Po battery and USB-C for charging and data transfer. - Integrate a MicroSD card module for music storage and a 3.5mm headphone jack for wired audio. - Design a 3D-printed, slim, rectangular enclosure with rounded edges, a speaker grille, and internal component mounts. - Connect an audio DAC with amplifier to the ESP32 for high-quality audio output to both headphones and a small internal speaker.",
+  "nodes": [
+    {
+      "id": "esp32_main_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "GPIOs for Buttons",
+        "SPI for OLED",
+        "I2S for DAC",
+        "UART for USB",
+        "Power"
+      ],
+      "type": "mcu",
+      "partId": "7ef84618-ff71-45ff-9934-914ef8de585d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32E+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Og3w_qMc4YOxYE-dV-VMnHZngQSlW92h4-Wz-u_CFXw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTF1UnVtLXpLQkwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,UART_RX,UART_TX,GPIO_ETH_RXD0,GPIO_ETH_TX_EN"
+          }
+        ],
+        "summary": "",
+        "sourcing": [
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32E-N4/11613125",
+            "note": "ESP32-WROOM-32E-N4 variant (4MB Flash).",
+            "price": "$2.49",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32E-N8/13159522",
+            "note": "ESP32-WROOM-32E-N8 variant (8MB Flash).",
+            "price": "$2.55",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32E-N16/11613144",
+            "note": "ESP32-WROOM-32E-N16 variant (16MB Flash).",
+            "price": "$2.50",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.adafruit.com/product/3269",
+            "note": "Development board featuring the ESP32-WROOM-32E module (rev E).",
+            "price": "$12.50",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.sparkfun.com/sparkfun-thing-plus-esp32-wroom-usb-c.html",
+            "note": "Development board featuring the ESP32-WROOM module, with USB-C. (Check specific revision for 'E' variant).",
+            "price": "$19.95",
+            "vendor": "SparkFun"
+          }
+        ]
+      },
+      "dimensions": "25x18x3mm",
+      "position3d": {
+        "x": 30,
+        "y": 6,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 18,
+        "width": 25,
+        "height": 3
+      },
+      "description": "Provides Wi-Fi and Ethernet connectivity for app and web interface.",
+      "productName": "ESP32-WROOM-32E Module",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=ESP32-WROOM-32E",
+      "estimatedCost": 5.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGuUuwfyIRoxlnBx6JEpQzWEj7oqdi3YalVSVHTpoVOwOWJfZE7lon3IW5DN64a8EYSgsg0kDOLJiZ8NdDxtEWwIcC1019cVx1NVW0Ql0hwgXuf1v6OxKers8Q6hTx2WtdXhJc8J13ZR4SdjOmdrdU9s8iZu19UmlwMqvLlw169FIX1FbxY8sFOAiHECALSNWARpgF0Xf7mvLmdSVB4U1e2UPeNaMZbxsbnJIGafwQ7wmBO6yq2XbonbKlQxiMuI3dVo4sVPPEKGLhDHFL89f10ERaBF5bx4we0X4FPRFMoXCbo0UqJRjz0ledZ30NojpNEhm6KIO21z9JYlRqsNJfL5zi4BeTmZCDpNMuBHGDn7DRDi9xivJLRx94KOnuZMJvPXMdcfPS69KVHMFabwxw2ScbiNCHrhFM2DmBwQfnwKqNY1DUuh8Jnyu4IR1l8Bq7vTb7XmL5yJWVTd0II1nG9rOEKUC4LE1dk1n28QEYLJV8d1bMEwJhqXgTGOHJluGE2DOLxvfWwBFiNQR1AyORGo2pi0UhB7zhVsXudZ68QHhU1xN1H6d1qqYt51I5yIuGyqke6zdyJx0Tkva3uggqlxwfoIljpHNMFvko4RxfDGfzFeUON4y7BcaY7aQkASTSvhDG4nSehfDUNtnZRTTPun",
+      "amazonUrl": "https://www.amazon.com/dp/B0GF1ZJCCN?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "oled_display",
+      "name": "Track Information Display",
+      "pins": [
+        "VCC",
+        "GND",
+        "SCL (CLK)",
+        "SDA (MOSI)",
+        "RES",
+        "DC"
+      ],
+      "type": "display",
+      "partId": "c70a97d0-f429-4541-8ec6-6ea383aad10c",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=0.96+inch+128x64+OLED+%28SPI%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/LiKlDa8rXQAhJuCN19l2yG5Qc6AX-nGbvTvy2psAhPo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWFrZXJmYWJzLmNv/bS9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvNTA4MjYx/OWU4M2FmNTAyYjFj/ZjI4NTcyNzMzNTc2/YTAvMC9fLzAuOTZf/c3BpX29sZWRfMTI4/eDY0LV9ibHVlXzEu/cG5n",
+      "quantity": 1,
+      "dimensions": "27x27x4mm",
+      "position3d": {
+        "x": 50,
+        "y": 16,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 27,
+        "width": 27,
+        "height": 4
+      },
+      "description": "0.96 inch 128x64 OLED display via SPI.",
+      "productName": "0.96 inch 128x64 OLED (SPI)",
+      "purchaseUrl": "https://www.amazon.com/s?k=0.96+inch+128x64+oled+spi",
+      "estimatedCost": 7,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jya25eyLEnymLb4Wq5iZ3SvBaUWWii3rP2XvKGIs7GkmqcTlw8uR1d0E6AbEqggOKzfkBsjuTz7LK7qdDGkULOTc3Qapfh7qJ9OhQLICNPZq67ZH1cN90t5797GcSrAvZ2wJtY9cPfC8PYZ5BXxJTXRQvVlkUldtoIOFO4QIqANFEaGHmsi4glw1xer22ldVTPBCv7ftsSYgLfb5F61dL5nPxT8wsoEnmS3zoSBNDLhYfMhZsOdtZiIl8jCVInsk9FHSV3x5hmgSYnpC0YcZe9X3AEanDnczKchywD4AcFXHkM1pIDwAeqS3E32CpLW93G80ZEDtrshnOjY0khONUawbbrjWQWVC0KhDtJqoZCpttq6qWnqgJrxpgfz0uhEPWWS5TanZJEzWavQNupXWKLYJubLufSoqPAuiH8trbwUmZkt6k9ksB220bZaflZjDT4x8l6KtSAagpAwePBr7C3ISWVYKHQfh6BeENpFI3nuqCLgE8869ZvjeWWcLtoCEPM8UMaAkle8lb04FFROCkmX2yttSH6IuKtxCx7u4btXia0AGeJ2xhfxcrZVt5bWaG1YoqB1DFh6odNorKS2Wpce4gWOyKvVBPahMOM4DpgGzHtBnoISTlJMrPDZu3guhDYN65AapFaIVrXF9j9lLTcswJ",
+      "amazonUrl": "https://www.amazon.com/dp/B08SJWH539?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "play_button",
+      "name": "Play/Pause Button",
+      "pins": [
+        "GPIO Input",
+        "GND"
+      ],
+      "type": "module",
+      "partId": "d72d0c0d-5771-448b-92c3-00a8b5e131b2",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Push+Button&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/d5PfwmXPM3b9-Zo6qnAadLmRxu-g0ZTGGzH70LbMjFE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL01BTUFB/T1N3NUk1bGptZDMv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GPIO,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 30,
+        "y": 16.5,
+        "z": 38
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "description": "Tactile push button for changing watch modes (e.g., time, radio).",
+      "productName": "6x6x5mm Tactile Push Button",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=6x6x5mm+tactile+switch",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw3GvVjkRifuFKjishP3YWAIrgfpDBvMfcPRtXSbzf0wVra48hF7MPvMGmVFmVlzhAfMO7jqU78fGYZVko16x6y3vGDD5ml053YkNgp90D3HN258lPwlyrTMauiOF6VSYzHWMMPBOj1Md1NBzv39GDFWGZOqGInaKHozZjc9dx3dQIpQOaAe0b9dSYAck9l9wAEKIfWUV6S9Ex7gryo6nuWH8UVtvMk0YWYBOMjBrpPNIPtI8vqwW87YQaMAa1PVC3PttI3uEXHZ0SetP8hg9BjBPlp1gj8FP9BdzoJWoXkxDLfFpNAGnKdHgMlbsYCU5R9Al6LMjQXrgjiwgQBoGJIJVeGdoqpYm2FzIDadxTB94yTvtjfAAoGRunQRyyQvZZkD3xBfOzPu8F4BRJBspEruunefiuFh8jl04lNJw0w3DfhyEXBDSjUSwBPfCTmUsciK2gUMheLOeIeC31Rung9he8T6WDsm23dlhILClseQGyvo5KMegSYkjnQBFwO5Hd7OdDd6z3OjsYMvYTJG5xFxSK19LenZ88qFkisY6WJB4SVtQPXbqUrARHVJuswYcAUTZxqQ86yN8wM7Z7dNYisrDP0WamUOcnQIBJu0MPMT7efWsXV0ZpIKFFFBSbb182wPAO3TlgX9Hm914iI7h2Yj",
+      "estimatedCost": 0.15
+    },
+    {
+      "id": "next_button",
+      "name": "Next Track Button",
+      "pins": [
+        "GPIO Input",
+        "GND"
+      ],
+      "type": "module",
+      "partId": "d72d0c0d-5771-448b-92c3-00a8b5e131b2",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Push+Button&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/d5PfwmXPM3b9-Zo6qnAadLmRxu-g0ZTGGzH70LbMjFE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL01BTUFB/T1N3NUk1bGptZDMv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GPIO,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 50,
+        "y": 16.5,
+        "z": 38
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 5,
+        "height": 5
+      },
+      "description": "Tactile push button for changing watch modes (e.g., time, radio).",
+      "productName": "6x6x5mm Tactile Push Button",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=6x6x5mm+tactile+switch",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw3GvVjkRifuFKjishP3YWAIrgfpDBvMfcPRtXSbzf0wVra48hF7MPvMGmVFmVlzhAfMO7jqU78fGYZVko16x6y3vGDD5ml053YkNgp90D3HN258lPwlyrTMauiOF6VSYzHWMMPBOj1Md1NBzv39GDFWGZOqGInaKHozZjc9dx3dQIpQOaAe0b9dSYAck9l9wAEKIfWUV6S9Ex7gryo6nuWH8UVtvMk0YWYBOMjBrpPNIPtI8vqwW87YQaMAa1PVC3PttI3uEXHZ0SetP8hg9BjBPlp1gj8FP9BdzoJWoXkxDLfFpNAGnKdHgMlbsYCU5R9Al6LMjQXrgjiwgQBoGJIJVeGdoqpYm2FzIDadxTB94yTvtjfAAoGRunQRyyQvZZkD3xBfOzPu8F4BRJBspEruunefiuFh8jl04lNJw0w3DfhyEXBDSjUSwBPfCTmUsciK2gUMheLOeIeC31Rung9he8T6WDsm23dlhILClseQGyvo5KMegSYkjnQBFwO5Hd7OdDd6z3OjsYMvYTJG5xFxSK19LenZ88qFkisY6WJB4SVtQPXbqUrARHVJuswYcAUTZxqQ86yN8wM7Z7dNYisrDP0WamUOcnQIBJu0MPMT7efWsXV0ZpIKFFFBSbb182wPAO3TlgX9Hm914iI7h2Yj",
+      "estimatedCost": 0.15
+    },
+    {
+      "id": "prev_button",
+      "name": "Previous Track Button",
+      "pins": [
+        "GPIO Input",
+        "GND"
+      ],
+      "type": "module",
+      "partId": "d72d0c0d-5771-448b-92c3-00a8b5e131b2",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=6x6x5mm+Tactile+Push+Button&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/d5PfwmXPM3b9-Zo6qnAadLmRxu-g0ZTGGzH70LbMjFE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL01BTUFB/T1N3NUk1bGptZDMv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "GPIO,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VSNN9S2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "6x6x5mm",
+      "position3d": {
+        "x": 70,
+        "y": 16.5,
+        "z": 38
+      },
+      "boundingBox": {
+        "depth": 6,
+        "width": 6,
+        "height": 5
+      },
+      "description": "Tactile push button for changing watch modes (e.g., time, radio).",
+      "productName": "6x6x5mm Tactile Push Button",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=6x6x5mm+tactile+switch",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw3GvVjkRifuFKjishP3YWAIrgfpDBvMfcPRtXSbzf0wVra48hF7MPvMGmVFmVlzhAfMO7jqU78fGYZVko16x6y3vGDD5ml053YkNgp90D3HN258lPwlyrTMauiOF6VSYzHWMMPBOj1Md1NBzv39GDFWGZOqGInaKHozZjc9dx3dQIpQOaAe0b9dSYAck9l9wAEKIfWUV6S9Ex7gryo6nuWH8UVtvMk0YWYBOMjBrpPNIPtI8vqwW87YQaMAa1PVC3PttI3uEXHZ0SetP8hg9BjBPlp1gj8FP9BdzoJWoXkxDLfFpNAGnKdHgMlbsYCU5R9Al6LMjQXrgjiwgQBoGJIJVeGdoqpYm2FzIDadxTB94yTvtjfAAoGRunQRyyQvZZkD3xBfOzPu8F4BRJBspEruunefiuFh8jl04lNJw0w3DfhyEXBDSjUSwBPfCTmUsciK2gUMheLOeIeC31Rung9he8T6WDsm23dlhILClseQGyvo5KMegSYkjnQBFwO5Hd7OdDd6z3OjsYMvYTJG5xFxSK19LenZ88qFkisY6WJB4SVtQPXbqUrARHVJuswYcAUTZxqQ86yN8wM7Z7dNYisrDP0WamUOcnQIBJu0MPMT7efWsXV0ZpIKFFFBSbb182wPAO3TlgX9Hm914iI7h2Yj",
+      "estimatedCost": 0.15
+    },
+    {
+      "id": "li_po_battery",
+      "name": "Rechargeable Power Source",
+      "pins": [
+        "BAT+",
+        "BAT-"
+      ],
+      "type": "power",
+      "partId": "d79bce8b-5c9b-4390-917c-44196c39aa90",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3.7V+500mAh+Li-Po+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/n1X7qQ6WZp3I_UK5IEtc7jqzvzu71PD-mIK65AkwTyc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFHR251cWQrWkwu/anBn",
+      "quantity": 1,
+      "dimensions": "40x25x5mm",
+      "position3d": {
+        "x": 50,
+        "y": 3.5,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 40,
+        "height": 5
+      },
+      "description": "Small battery for the wireless sensor module.",
+      "productName": "3.7V 500mAh Li-Po Battery",
+      "purchaseUrl": "https://www.amazon.com/s?k=3.7V+500mAh+Li-Po+battery",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHM0RsEbJnBR137WfTXu5Ne3vVeET5ZSUUy5a32VmbedcOwyUE8c6aSjDydjqxPXOpi5svxI8PQcH7Uw60yHqYGT4ghScbSUrKJ8O0WT33Aqas6o7qIyjuPlrcuG88fjrVxNCqUvmDOjOaA3jNgO7ICVbUDufb97B8oHFVvC0ebY6rO59N6voQhW19a553DyFnQYsb5J3pVqtb7W5IfDCVrHK2IvrMvEs5AZU2Iye4iRFD3SybMAEk9lharFQ5mInIIdfdFwTOop8FqPJkt8j1eflRi7rJHCBxWDuWMdIsz76etcQa4zSoBcAzw49nwqiu3NzTFZ2ycRNJxAZlLvyQ9vy0LZNhlqxY8FdEnHONU9z6QY0cZr7AdtEOadRgrx3OMCtUVFlXHOqCm4pyF1YQr8C1LkZlPfoc19F5yuYds3lfEANcAIW2ZslNEK2BMmzYZ4cN1w6SxDNk45cfaQZONOJ2blaBu8Drk6uxxXR9vEVjCyrW2c46G6evOq5G7QWcJJLqL9p3zc8IxEj7K1JMmJXvSj5YGV6B6fyvK5vJ3KNr5dKEFH3xyCMd45E37TYOjpfEV3wZKrp5v0kroX09dAvmeivVVbET0rHZGiQYj3MZlFSgK334kxcCtnz6Z7RXb8KvxBKI1RRdHgp0IMQv7H",
+      "amazonUrl": "https://www.amazon.com/dp/B094FTLRGD?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "battery_charger_module",
+      "name": "Li-Po Charging & Power Management",
+      "pins": [
+        "USB-C IN",
+        "BAT+",
+        "BAT-",
+        "OUT+",
+        "OUT-"
+      ],
+      "type": "power",
+      "partId": "95066b8b-c1e1-4060-8100-95c5640a1c5e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TP4056+USB-C+Li-Ion+Charger+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/xoiUva_-EXwVVdSb8hXo0SDpNRIJ1L3mwaDUYuLWRGU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFMRDZTNWt0NEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0GR5TYR4W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "26x17x5mm",
+      "position3d": {
+        "x": 15,
+        "y": 3.5,
+        "z": 42
+      },
+      "boundingBox": {
+        "depth": 17,
+        "width": 26,
+        "height": 5
+      },
+      "description": "Charges the Li-ion battery and provides overcharge/discharge protection.",
+      "productName": "TP4056 USB-C Li-Ion Charger Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=TP4056+USB-C+charger+module",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvQX2PaMKEijrGaYF1ZLFwdpu3eEaXbPOXehM2LkYI4vJn67Og4u6U02sXmEYOuY1gLdOYYdKZE6Ceg47FcZjXRvA81OPuC5DSOGuqAMz8Dl2UhAAql71MkjiSeFIGR2zkDlJyeIW5tUFiM1XcCDcwa6ZxfJ6GiptGIBxOyp1zeYf3453ND2xnrXAb27HKMdzr0IN2j8bBB84hq5AJF4Quy2SguTj0b8rsDONByqOWcUJ6QqJDtpuFplbEKsFH4ClgH5yMed3ZoSjrO0c1za7vmvoXGb1JU6Es87SFUE5wqErxAEFNMTnxUw0KsdGf0bgtusmLU8cPru1RrvVP0n8WC8dXrDyqtt7Dp8NH81HDOOcP7En1EG7WekVs3JE0TKOROwWdoiWUBY66E22swYSAjESthY2RoxhP28Jq5MB4D978gcqeOqh9zpuD19JVkMf8OQVJCTbMt5b9l9EQqbDk4jaRMbpKNOxgDQ0OgJBTDzOmBgYrMBKHPhK3aFR9Z1gaSqHWfctGkiewRUprUdIf47q4moEk3OsY7xuU9hshfADwZVwUi6I2gzWl6bc3FnoAoxPSpcrALvOqOxle5PsFGOfCArkjqfHAKbop2nshRWSeLNrPENyllO7UbT1EzI9fE3kTAOt0tfxHMddzjaVRnN"
+    },
+    {
+      "id": "microsd_card_module",
+      "name": "Expandable Storage Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "CS",
+        "MOSI",
+        "MISO",
+        "SCK"
+      ],
+      "type": "module",
+      "partId": "fea4a011-5c8c-48dd-a4e3-62c6c2fce807",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MicroSD+Card+Module+%28SPI%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/LW23AcsdLcTk7ZiIcSxu3fjOsxAOduRFMhPewDogdIY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/cm9ib2tpdHMuY28u/aW4vZC9kNWViZjM1/MDQ1MTA2MmRiZjg1/MjAzNzEwMjc4NTgx/Zi5pbWFnZS4xMDY2/eDgwMC5qcGc",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VCC,GND,MOSI,MISO,SCK,CS"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0B779R5TZ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "18x19x12mm",
+      "position3d": {
+        "x": 85,
+        "y": 6,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 19,
+        "width": 18,
+        "height": 12
+      },
+      "description": "Module to interface with a MicroSD card for local storage of audio recordings, using SPI protocol.",
+      "productName": "MicroSD Card Module (SPI)",
+      "purchaseUrl": "https://www.amazon.com/s?k=microsd+card+module+spi",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgSt4m3OTetnaQQV2cCDYtE3JQRhmWNS4AeQ4J3yrMtpltEzGgOnajshHcoZAahkawdTPLkTE9ACTci4SdWgwZ08SpV5pKecdp4mgRdAKHtWX5uEcd3CXRY3xYpVd7RBBksfgMTeOzwJ0RmBRfzYWKPHy2fo0Rxelw9lfCaUzaC0lyVpsmfd9vrlq3YHy3CIHF4rPRj1nvn9EDyFMdWIskYNl9hWz8V3iv03NUjekyGySAZcJ4a8WcBDM4uvnsBiStYypXoXKadhpJ0KbSnK3lCarkvxewXNHnjOnFP6H1PUiFlpJ7BBlVjjJpcX6zWzqT22NIjHbjTrgr7QxaeFpD5O3w4rcO3ZqNzTk3eCNNWczjCMd382vJVyWScPuAO6hXfX1hgaWw0NAmLNfTBscrr62qrCcFzyyNctwrVvJnucrEgTF5qWr2jk2abBhTcgzGfTnbnp5bZuqxe2LseIElzSAS4nLFWhKhvC6rMvZ5wmYp3tt7O9tHHLPxZy6403ZjtE3rFgzib60wJ8JSvwxPU7NQ3Be7rbRfn0uKklz6NDHRLJU6rNIOmTRbMbDG5CUFrbHvy7FobXaeo1HpV4guKKLZgBdfC0JsQcekJTkPedtnpaznCkF39ZubDPVnwcbsDZfiN5lozLY9fmGZjVO4qf",
+      "estimatedCost": 2.5
+    },
+    {
+      "id": "headphone_jack",
+      "name": "3.5mm Headphone Output",
+      "pins": [
+        "Left",
+        "Right",
+        "Ground",
+        "Detect"
+      ],
+      "type": "module",
+      "partId": "c67f8c44-9697-4a81-b607-4906278a927d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3.5mm+Audio+Jack+%28SMT%2FThrough-hole%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/0GsFynygYUKerN_iIhiTJGszvsKW82BEhZgEQbXIRPI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmlyZ2VsbGlhdXRv/LmNvbS9jZG4vc2hv/cC9wcm9kdWN0cy9U/aHJvdWdoLWhvbGVf/M0YwN19BdWRpb19K/YWNrX1NvY2tldF8z/MDI0eC5qcGc_dj0x/NDk1NTk5MjAy",
+      "quantity": 1,
+      "dimensions": "14x12x7mm",
+      "position3d": {
+        "x": 15,
+        "y": 5.5,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 12,
+        "width": 14,
+        "height": 7
+      },
+      "productName": "3.5mm Audio Jack (SMT/Through-hole)",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=3.5mm+audio+jack",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH15YnRW5i6ZNijUC7yronKOTVrz7DmzhCRa8Vv25OrXGiUdCEmUvhVWBtYhrY4ALekjB7rP06tkyv1iwx7317ydseBG0SjPqx9D4cdmK6aSuz0fbKyUXR8qEqRmWdqKGsov7dz2o89TfPagqL1SR7XbNAXijX7t6ESJfg3nmLAuQEwR1Ncjrc1tMatasbFh3Y1t909QVSBsG6tVZcg7p7g6yLSmvsmlVo9pUHHGukv8KicW59oa55VWB1MFHgnUPrEDNSj08QPTRxbgBDlpRuBk70yz8fWaBWtg0x4nGRXEPHumskM7SqOFHdscMUPvkOWyXLjQsHM4QTxjCy4fDN1wUudTPTlfpEa9W7QAPQh8jZUCBXJAlJbwuKJf1wOra0Q1bTJCsOMwl9cqW4dMGOBk74u5LUdKtBzaH45BrQPPRJ1h6lxOkFrwXbNqszn8b2ni9WMqlcJiiYOC9xI5vpT8M7FWuqSs8MBoCmCBg6CFLSrg5M1fU8zs9CUSM064OAXzkfEXJXU35O3mZFWxqcRlJvxtuqyP9nvSevQx5nU2ipT0Fw7pznZ1FUb1OTDO3ZyW0sSwuDilg10FybP9XdyqQYyGlHvg6AGucT06Y7j1D390o8ae06rRY0WcseLtDdCgrGynik8K13O4gRKdW8UF",
+      "amazonUrl": "https://www.amazon.com/dp/B0FPLSGY8N?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "audio_dac_amplifier",
+      "name": "Audio DAC with Amplifier",
+      "pins": [
+        "VCC",
+        "GND",
+        "BCK",
+        "LRCK",
+        "DATA",
+        "OUT_L",
+        "OUT_R"
+      ],
+      "type": "module",
+      "partId": "53a2b3a2-5f2e-4c19-a89b-7ba14867d492",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PCM5102A+I2S+DAC+Module+with+Amplifier&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/GTQktkhdyFpT586OofSRxBS_qnMnTgsMMw6-V50o-qc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcm9i/b3RzLmNvLmluL3B1/Yi9tZWRpYS9jYXRh/bG9nL3Byb2R1Y3Qv/Y2FjaGUvZDhkZGQw/ZjliMGNkMDA4YjU3/MDg1Y2QyMThiNDg4/MzIvcC9jL3BjbTUx/MDJhX2RhY19kZWNv/ZGVfaTJzX2F1ZGlv/X3BsYXllcl9tbG9k/dWxlMS5qcGc",
+      "quantity": 1,
+      "dimensions": "30x20x5mm",
+      "position3d": {
+        "x": 65,
+        "y": 6,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 30,
+        "height": 5
+      },
+      "description": "High-quality audio digital-to-analog converter with integrated headphone amplifier for 3.5mm jack output.",
+      "productName": "PCM5102A I2S DAC Module with Amplifier",
+      "purchaseUrl": "https://www.amazon.com/s?k=PCM5102A+I2S+DAC+module",
+      "estimatedCost": 7,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQQTiM0t0yRKLumEuOYizRChMQ5y8SxoD4GoNC5xHT4TUYGOGDal3adb21Q6WnePKMdMMJGzMGEByiKxmAQL5dcTPo3GVmHKepsErj1ja4RVsyEFjbDA62NjMO1y2phYYib1gmrHxlvt0IDTr14IhpHz8x5g3QMY54hoF8kXMVgxJE0qgOf2T1J7UKXFC8XkiBockHU8itAT1pJEMs6wRZSrMF9dZ88pdPU6lEDyZkrA2wXkFUn24NNN7IkxvwB9MdyPjyTlQi55OGc4k4xHvc0BKmUIz9EewW6a9fERCYd4p5LJDqw1AGrRE8MBNI4Uj4K77s6SYKE5iIKiRCNxx2tRBIsu8MBQxVZbenKZvwX1S0I7bdrFk99cFFEJSo32IW7E78cnrfTTTMFwX7vXZYnHglWcDgm6JhRRnv33wQOQP1lcIUQe54DBfaxmsringZf2W9s35nJKfE8pj1n7tEmdkTbdLXALb9QhnLDnZVkAw7DMaXN5G92eP4DNUMEGcf5SGujgUhwi9gbzDKCUHlNEpJ9TCwyxW5YcPriyHXzsTYJ3zbpclg4alyxQYWGMP0NumgNDlawBKc6Tp74eVbezLwMC2WFPucW3PAkGHPEwmUK9TWasrqNmaNWHg6co1eycYJON4FqIhlKtzIaQBZMR",
+      "amazonUrl": "https://www.amazon.com/dp/B0DNW32Y46?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "internal_speaker",
+      "name": "Small Internal Speaker",
+      "pins": [
+        "SPK+",
+        "SPK-"
+      ],
+      "type": "actuator",
+      "partId": "1f81b031-821b-43e9-b607-a387c69a68ba",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8+Ohm+1W+Mini+Speaker&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/SkWoYZ5p6BH5HaMM5T4QN2zQx6M6i-LpP-3Z7bkjwbk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFSdzRTUFhTekwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "+,-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D7S8FFKY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x5mm",
+      "position3d": {
+        "x": 50,
+        "y": 4,
+        "z": 42
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 5
+      },
+      "description": "Small 8 Ohm 1W speaker for audio playback.",
+      "productName": "8 Ohm 1W Mini Speaker",
+      "purchaseUrl": "https://www.amazon.com/s?k=8+ohm+1w+mini+speaker",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jya4zV3KFOPT3EZTa7jPSvwFQM49F275Q7lgbrJFfGDE27HVz5Pv5Q0xXjiYuHld8JSYQ0MiFJUriWIK4WjT1GuZWtKGvpJSShqqX0nQ8CIH0EUTXKFJ9ru5dKSDuCOwZJX4ktk4B3kiry70BS7Yn0vfoxA5nGcYXbNyKdpdyx0xN1hLBL96qbmBzsUxiX7e8S8NgsKquPcTkWQGoHOX2kYTnrGk2E4K4kCNeWlnI52IHNSy5XJ2GrYvSAhzsQwf1rRN32YwFZd5PZpDyHCkwlzOag8ZSJQvcb6xDQtzLLp1tZiGXg8H4WAia314tehImXz5NKMTgJZjldd46FFFXo37HGt9GStAsNhOSnA3ak78FUyVKaqVwONyQEFB1mds8kjVxvqwBKHeBAIoWQyIrfMDs5bBrGN1P0c5bb9dqQSAzFkmw9mX13SwhKCgcKa54wODsWcW80PUmN8HfKEG4zcPIMaFy8CojMqg9IZ526eXnYq7Yx89Xk9GqNOtx2TvsqL42hpemzdFYBx2a8sUxxB0LYUYK17k8K8roqgcsDPBZxFq2gxPXZFA07amlsNpeHZr3dO0xLvoOxZjDR5Ms4nx4pR0he2nBYAuHruhiaBxkiyBLoXmFOeWM6Hx8K16nvPYvQ89ifChhf5YrVc8uT9or",
+      "estimatedCost": 2
+    },
+    {
+      "id": "usb_c_breakout",
+      "name": "USB-C Data & Charging Port",
+      "pins": [
+        "VBUS",
+        "GND",
+        "D+",
+        "D-"
+      ],
+      "type": "module",
+      "partId": "d1d41620-50bc-410b-99d5-1de140b9c2da",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=USB-C+Breakout+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/CbHkGrEb3sxhO7XMYEVNud-ltRytD9Y-R0HDT6Wgk_s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/c2hvcC5hZGFmcnVp/dC5jb20veXRpbWcv/dmkvOF9VQnRCNnlP/ZWMvaHFkZWZhdWx0/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VBUS,GND,D+,D-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09KC1SMGD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x10x4mm",
+      "position3d": {
+        "x": 50,
+        "y": 3,
+        "z": 48
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 15,
+        "height": 4
+      },
+      "description": "USB-C breakout board for programming and optional external power.",
+      "productName": "USB-C Breakout Board",
+      "purchaseUrl": "https://www.amazon.com/s?k=usb+c+breakout+board",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw1CjI3mZ1QLrz9FttVzHdmyEzqwVWIty8wQ7ePGxoOaR8QEkLg4M3MapO3zc6ajmgvBRaHxeQEN45PDFXfrxfYcRm4jvOWoSI9K5phxD22B6gI5dsfcpdsXuKMRJZXr2ENAg4aryN2K0vF0hOziwki1efKJkELTTnE3kwIJTzrSokMalml0d8toWR6NVWDNoW8i5KckMaioaoCd4vl2d6eeozHuolKeHSvFgyLXRwSswdTtiaXSQPZ51VAzYg7d0tdsKKV49Ge7NhEvja8Glx75alizIBMXQAZeCS8aVE99XfcvAaDgQn6ZFe5FwifQzJpqwa1Le8BumntpyDsNLmBaFSZshXS8pE2OS6z6sMu2uaXff6qMY1ocBcxNQZWJ66UWRa85LUKfHEdM0i7kuarONIc365Zle9C3SvTd8sd7gYdXQMDTE8S8ylvu2rZB9GrHEd8SRffdMqQ43pa73KsjSkYYguchkH4vQZ0OHUJpJrVqVGr8ipb7JoBv8oQf9O5N4YahZ4fC8GdaqsBpuPPP8FV1m6T0ON9VZrZQsCorS4GwMeJWiyRAWNbqHLEpzcw872sFPDh7P86NVr1TIRS92xi9DraY2SNGghfYt1WSB8obHExLBcgTvKFRuR4FfARJbAHjhjeyjotz4cuk8nOj",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "main_enclosure_shell",
+      "name": "Main Enclosure Shell",
+      "type": "3d_printed",
+      "partId": "d674ba4b-48aa-4070-b32f-83514d3b4d8b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/QEkPNnkniOsWA25sT4JYvpn4FUNxHKezSY1gWq98oo4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFGbmJISnNhMUwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "SLA/DLP, 0.02mm layer height, 100% infill for strength"
+          }
+        ]
+      },
+      "dimensions": "100x50x15mm",
+      "position3d": {
+        "x": 50,
+        "y": 10.5,
+        "z": 25
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 100,
+        "height": 15
+      },
+      "description": "The primary 3D-printed housing for all internal components, featuring cutouts for ports (USB-C, headphone jack, MicroSD) and internal mounting points.",
+      "productName": "Main Enclosure Shell",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 2.5,
+      "printSettings": "25% infill, 0.2mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c431bbKd",
+      "amazonUrl": "https://www.amazon.com/dp/B09DRFJPC7?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "front_bezel",
+      "name": "Front Bezel",
+      "type": "3d_printed",
+      "partId": "e6293254-5a5b-4d36-9334-7a5986a65ed2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Y9YqBTPiYllCnoyq0wlGbaQNd9iO2FrUum0U12X0sYE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzAw/MDYvMzAyOS8yNTQw/L2ZpbGVzL3FfN2Yy/MTM4OGMtMDA0ZS00/YWY0LTgyMzItNmIy/M2E2MDE2ZjBhLmpw/Zz92PTE3MzY0NDYz/NTYmd2lkdGg9MjQw/JmhlaWdodD0yNDAm/Y3JvcD1jZW50ZXI",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "100x50x3mm",
+      "position3d": {
+        "x": 50,
+        "y": 19.5,
+        "z": 25
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 100,
+        "height": 3
+      },
+      "description": "A 3D-printed front cover that snaps or screws onto the main enclosure, with openings for the OLED display and physical buttons.",
+      "productName": "Front Bezel",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "25% infill, 0.2mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "back_cover_grille",
+      "name": "Back Cover with Speaker Grille",
+      "type": "3d_printed",
+      "partId": "f60ff218-c6fc-4bb5-a955-733143d36372",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "100x50x2mm",
+      "position3d": {
+        "x": 50,
+        "y": 1,
+        "z": 25
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 100,
+        "height": 2
+      },
+      "description": "A smooth 3D-printed back cover for the enclosure, featuring an integrated grille for the internal speaker.",
+      "purchaseUrl": "https://www.amazon.com/s?k=PETG+filament",
+      "estimatedCost": 1,
+      "printSettings": "25% infill, 0.2mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "oled_display_bezel_mount",
+      "name": "OLED Display Bezel Mount",
+      "type": "3d_printed",
+      "partId": "dd3ad02e-1060-48c6-a510-e246148af759",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/zXWHUh3BDEnWlmKnxyzgOYYiLCXkCeAnYpfQr32YVc4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YmV6ZWxzYW5kZGlz/cGxheXMuY28udWsv/d3AtY29udGVudC91/cGxvYWRzLzIwMjEv/MDMvUENCLTEyOHg2/NC1iZXplbC1zb2Np/YWwtNzUweDQxMC5q/cGc",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 3 walls, 20% infill"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://help.prusa3d.com/article/3d-printing-tolerances_196321",
+            "title": "3D Printing Tolerances: Designing for a Perfect Fit",
+            "description": "This guide from Prusa Research provides a comprehensive overview of 3D printing tolerances, including recommended clearance fits for various applications (e.g., loose, snug, press fit), and considerations for hole dimensions, pin sizes, and general dimensional accuracy to achieve precise mechanical assemblies, highly relevant for ensuring an OLED display fits snugly."
+          },
+          {
+            "url": "https://ultimaker.com/learn/how-to-design-snap-fits-for-3d-printing/",
+            "title": "How to design snap fits for 3D printing",
+            "description": "This Ultimaker article details best practices for designing functional snap-fit mechanisms specifically for 3D printed parts. It covers various snap-fit types (cantilever, annular), material considerations, stress concentrations, and optimal dimensions to ensure secure, repeatable assembly for components like display bezels without requiring screws."
+          },
+          {
+            "url": "https://all3dp.com/2/3d-print-wall-thickness-overhangs-bridging-all-you-need-to-know/",
+            "title": "3D Print Wall Thickness, Overhangs, & Bridging: All You Need to Know",
+            "description": "This guide from All3DP provides essential design rules for FDM 3D printing, focusing on optimal wall thickness for structural integrity, limitations and best practices for bridging unsupported gaps, and managing overhang angles without requiring excessive support structures, crucial for clean and functional bezel designs around an OLED display."
+          },
+          {
+            "url": "https://www.proto-pasta.com/blogs/news/designing-for-3d-printing-a-practical-guide",
+            "title": "Designing For 3D Printing: A Practical Guide",
+            "description": "This practical guide offers general design tips for FDM 3D printing, covering aspects like minimum feature size, effective use of fillets and chamfers to reduce stress concentrations, and practical considerations for creating robust parts. It's valuable for understanding how to design strong, reliable bezels and mounts that avoid common print failures."
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library?query=OLED%20Display%20Bezel%2FMount",
+            "label": "GrabCAD",
+            "description": "STEP/IGES and various other 3D CAD models"
+          },
+          {
+            "url": "https://www.snapeda.com/search/?q=OLED%20Display%20Bezel%2FMount",
+            "label": "SnapEDA",
+            "description": "Typically PCB footprint and 3D models for electronic components"
+          },
+          {
+            "url": "https://www.ultralibrarian.com/search?q=OLED%20Display%20Bezel%2FMount",
+            "label": "Ultra Librarian",
+            "description": "Typically PCB footprints, schematics, and 3D models"
+          },
+          {
+            "url": "https://www.thingiverse.com/search?q=OLED%20Display%20Bezel%2FMount",
+            "label": "Thingiverse",
+            "description": "STL files for 3D printing and other user-contributed designs"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://help.prusa3d.com/article/the-most-common-3d-printer-filament-types-compared_128994",
+            "type": "guide",
+            "title": "Prusa Research",
+            "description": "Comparison of common 3D print filaments"
+          },
+          {
+            "url": "https://ultimaker.com/learn/3d-printing-materials-guide-what-filament-to-use-and-when/",
+            "type": "guide",
+            "title": "Ultimaker",
+            "description": "Comprehensive guide to 3D printing materials"
+          },
+          {
+            "url": "https://www.matterhackers.com/3d-printer-filament-comparison-guide",
+            "type": "reference",
+            "title": "MatterHackers",
+            "description": "Detailed 3D printer filament comparison chart"
+          },
+          {
+            "url": "https://ultimaker.com/materials/abs/",
+            "type": "reference",
+            "title": "Ultimaker",
+            "description": "ABS filament material specifications"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "oled_display",
+      "dimensions": "30x30x5mm",
+      "position3d": {
+        "x": 50,
+        "y": 15.5,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 30,
+        "height": 5
+      },
+      "description": "A custom 3D-printed frame or bracket to securely mount the OLED display behind the front bezel opening.",
+      "productName": "OLED Display Bezel/Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "esp32_mount",
+      "name": "ESP32 Main Controller Mount",
+      "type": "3d_printed",
+      "partId": "083468d1-dffe-4f06-9dc1-63c15ed5565d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/o090vTEIe3lHzKmTZFoTEtvwPGwSecGj36xEy0YVV_Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwLmhvd3RvZ2Vl/a2ltYWdlcy5jb20v/d29yZHByZXNzL3dw/LWNvbnRlbnQvdXBs/b2Fkcy93bS8yMDI2/LzAxL2FuLWVzcDMy/LW1pY3JvY29udHJv/bGxlci1vbi1hLWRl/c2sucG5nP3E9NDkm/Zml0PWNyb3Amdz04/MjUmZHByPTI",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "esp32_main_mcu",
+      "dimensions": "40x25x5mm",
+      "position3d": {
+        "x": 30,
+        "y": 6.5,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 28,
+        "height": 5
+      },
+      "description": "A small 3D-printed bracket or standoff system to secure the ESP32 main controller board inside the enclosure.",
+      "productName": "ESP32 Main Controller Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.2,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "li_po_battery_tray",
+      "name": "Li-Po Battery Tray",
+      "type": "3d_printed",
+      "partId": "468cfd13-3c5d-47b4-a4d0-ed5a18822c06",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/y_jZGWCIGu1zf5rhp9IUMmaiATQiFWulERtldHDm8ck/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/YmF0dGVyeW1hbGwu/Y29tL2Nkbi9zaG9w/L2ZpbGVzL0R1by1R/aW4tRjIxLVByby1Q/aG9uZS1CYXR0ZXJ5/LTAxXzE1MHgxNTAu/anBnP3Y9MTc0OTgw/MDI2MQ",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "mountsFor": "li_po_battery",
+      "dimensions": "40x30x8mm",
+      "position3d": {
+        "x": 50,
+        "y": 5,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 40,
+        "height": 8
+      },
+      "description": "A 3D-printed tray or compartment designed to hold the Li-Po battery securely within the enclosure, preventing movement.",
+      "productName": "Li-Po Battery Tray",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "battery_charger_module_mount",
+      "name": "Battery Charger Module Mount",
+      "type": "3d_printed",
+      "partId": "e6ef602f-dc11-4025-99ce-67f5df942998",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/0eU-Yw4S1EtaPHv-1dVzU-C7iHfF5KuA7PJRK_GokBc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zbWFy/dHhwcm9raXRzLmlu/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzEwL0lNUE9SVEFO/VC1JTkZPUk1BVElP/Ti1CVVktSElHSC1R/VUFMSVRZLVBST0RV/Q1RTLU9OTFktRlJP/TS1QUklOVEVELUJP/VFMuLVdFLUFSRS1O/T1QtUkVTUE9OU0lC/TEUtRk9SLVRIRS1M/T1ctUVVBTElUWS1Q/Uk9EVUNUUy1TT0xE/LU9OLUFNQVpPTi1C/WS1PVEhFUi1TRUxM/RVJTLTYwLnBuZw",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "battery_charger_module",
+      "dimensions": "20x15x5mm",
+      "position3d": {
+        "x": 15,
+        "y": 3.5,
+        "z": 42
+      },
+      "boundingBox": {
+        "depth": 19,
+        "width": 28,
+        "height": 5
+      },
+      "description": "A custom 3D-printed mount for the Li-Po charging and power management module.",
+      "productName": "Battery Charger Module Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "microsd_card_module_mount",
+      "name": "MicroSD Card Module Mount",
+      "type": "3d_printed",
+      "partId": "54cd61bd-d05c-4620-b7d5-581f4e1f35e6",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/h11bsU5NgS0Hsoi-VvwDvRJRs8aeeBcQClVdVyIea_o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFVZENpRTlVZEwu/anBn",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill"
+          }
+        ]
+      },
+      "mountsFor": "microsd_card_module",
+      "dimensions": "15x15x4mm",
+      "position3d": {
+        "x": 85,
+        "y": 6,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 4
+      },
+      "description": "A 3D-printed bracket to hold the MicroSD card module in alignment with the enclosure's slot.",
+      "productName": "MicroSD Card Module Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "headphone_jack_mount",
+      "name": "Headphone Jack Mount",
+      "type": "3d_printed",
+      "partId": "12b4ac20-21fc-478d-bfe3-6c5c00a014ae",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "headphone_jack",
+      "dimensions": "12x10x5mm",
+      "position3d": {
+        "x": 15,
+        "y": 5.5,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 13,
+        "width": 15,
+        "height": 5
+      },
+      "description": "A small 3D-printed support to secure the 3.5mm headphone jack, aligning it with the enclosure's opening.",
+      "productName": "Headphone Jack Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 0.05,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "audio_dac_amplifier_mount",
+      "name": "Audio DAC Amplifier Mount",
+      "type": "3d_printed",
+      "partId": "205193c5-df01-4b3d-a3aa-6f2ecf471c69",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "audio_dac_amplifier",
+      "dimensions": "25x20x5mm",
+      "position3d": {
+        "x": 65,
+        "y": 6,
+        "z": 10
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 30,
+        "height": 5
+      },
+      "description": "A 3D-printed bracket to hold the audio DAC with amplifier module within the enclosure.",
+      "productName": "Audio DAC Amplifier Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.15,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "internal_speaker_mount",
+      "name": "Internal Speaker Mount",
+      "type": "3d_printed",
+      "partId": "1ded721e-e55b-4354-b878-c523614b6334",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/j9MtNs5xEpCJPL2nCm0OZc47H5lOH-deVKb98WUJG_M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YmFzaHNtdXNpYy5j/b20uYXUvd3AtY29u/dGVudC91cGxvYWRz/L1NTQjEwLTMwMHgz/MDAuanBn",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "internal_speaker",
+      "dimensions": "20x20x3mm",
+      "position3d": {
+        "x": 50,
+        "y": 3.5,
+        "z": 42
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 3
+      },
+      "description": "A 3D-printed frame or clip to secure the small internal speaker against the back cover's grille.",
+      "productName": "Internal Speaker Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.1,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwOAxvXpTsWbSmUqQnXE98AkreEoqst3hFyd0sXRIxmoVl6Vq2bfCM8RHwlcltPlSBOWpV0JHGTx735Di5hLpASkbNR4KwlTiuqIla4wDdEDcfQAAYPdmoogY1VuHPNbvK2OajUYAJPXPOVsoE7UxehrqOLcDj5w52dc5VSGkWq8ZLNoX5BaRcVoj6TZPf1IMlGDR6lWbH0R8vZQDGhlApq93ubjUtoxcug00Y0QJB4DrNOsyHWfCXSpq8giOXktW2j74V6fywj3WHv55tdotDt97YJPRJUHV5g4LSVjtRrEvoT17GXodl72W3eYu5ArptrEH69Rf1ZVszaKEwjG0IcbjQU0iJ3PqWPNlm3wi33MegBjHmDif2Sly1GNy1FudC1eKttrRatVBWDE96033AovkLDAmcIbOGQd2Iqk3FaeqWTBufgZteWniUvyST5Cg4H0lMumWEOd96mPSy0BFnRjmBXtd2JnEnnxRQr3BOOKPoE4onMGHHmoMuF8zAvOfBmWie9yQO0vCDVRXmvxVsWAnyOhCqnexX6x2csqjmVuZr2bh2vTj0mSBjCBBNGxom9tRIQTSFwBcJEq8AsOfDu9NI186uvzz99yfGFyCOlR0wDBVLHbhCuAq1rFpvKj7zRjCvKp088hZ8oCL0ShQdEj",
+      "amazonUrl": "https://www.amazon.com/dp/B0FJ8PNHJ6?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "usb_c_breakout_mount",
+      "name": "USB-C Breakout Mount",
+      "type": "3d_printed",
+      "partId": "6eb636c6-de16-4417-bfac-0cfcfd967903",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/wxjkIiRdbRLBYdJQP6lHs12h2qdnmWq_St6ZtHYGDBA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90ZW1w/ZXJvc3lzdGVtcy5j/b20uYXUvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMTIvVVNC/LUMtcGFuZWwtTW91/bnQtNjAweDQ1MC5q/cGc",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "usb_c_breakout",
+      "dimensions": "15x10x5mm",
+      "position3d": {
+        "x": 50,
+        "y": 3,
+        "z": 48
+      },
+      "boundingBox": {
+        "depth": 12,
+        "width": 18,
+        "height": 5
+      },
+      "description": "A small 3D-printed support to align and secure the USB-C breakout board with the enclosure's port opening.",
+      "productName": "USB-C Breakout Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 0.05,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "play_button_cap",
+      "name": "Play/Pause Button Cap",
+      "type": "misc",
+      "partId": "571871bd-35ff-4f47-8fcd-36ae28f78c94",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Push+Button+Cap+6x6mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "play_button",
+      "dimensions": "7x7x5mm",
+      "description": "A custom 3D-printed cap for the tactile play/pause button, designed for ergonomic feel.",
+      "productName": "Tactile Push Button Cap 6x6mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=tactile+button+cap+round",
+      "estimatedCost": 0.05,
+      "printSettings": "100% infill, 0.1mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw2jIe4nGu4GRvTnaT9XOOtLpFvQlxWr2eBSmV3XztcvGq7dIm5ZVYm0aXe7PoWyABF6HZ1rgA2KUehRZd2WfGS8fCm1G3xDr7kxGKSrb2yX2pkkpaYfOAzVDGymOZNrhSaqHmNVoQXTH01QXWYh8lbhuHUEbHHdOSbM8g79g3L54I3PsL11YTI2DLMHoORCe5EGSBWNJOBE4XTNn4ahKIPxkvE5tnQgc2lUkZQemWlpom8WQRFuJWYlbnHrvsycSsvM9HqqEkxsBPqExSj4nSz7FIoXxDrwOvQ0k0tredAFlI07tBHBczjBhIs2Nsr3ab0HzsbHj3ZcOcLt0IuymBKWP25ZNFEASG3isuWjh4rqhM2XmjbvC8eFDWA6Kcn8qDTPGs3w6y7LzbLjedsdXJSf34BB7rxFVlIqQyqNxGtAmmnS4IBjrvrSj7BgwyZvHg0TYfsKAMTEun4gllxUwB7tSKC71unjDMfuNgqIcZzMNTtg9mMobjeGyxuBYZc6BZujTQDFkVI0XiQQKwAkGTH6E65uKgWP7hk72gAfmGJyu5ZsPoXpJsbMlcBI7CzimDts2yFmSB2CFm2OxwZGvmYvlnMCODzDKVTi4qD1j1JObN2MGLZaQ0eRLNivsykwTD1Te4uI6fiQkZb0bFNlNx7H",
+      "amazonUrl": "https://www.amazon.com/dp/B07NVRHYHL?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "next_button_cap",
+      "name": "Next Track Button Cap",
+      "type": "misc",
+      "partId": "571871bd-35ff-4f47-8fcd-36ae28f78c94",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Push+Button+Cap+6x6mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "next_button",
+      "dimensions": "7x7x5mm",
+      "description": "A custom 3D-printed cap for the tactile next track button, designed for ergonomic feel.",
+      "productName": "Tactile Push Button Cap 6x6mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=tactile+button+cap+round",
+      "estimatedCost": 0.05,
+      "printSettings": "100% infill, 0.1mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw2jIe4nGu4GRvTnaT9XOOtLpFvQlxWr2eBSmV3XztcvGq7dIm5ZVYm0aXe7PoWyABF6HZ1rgA2KUehRZd2WfGS8fCm1G3xDr7kxGKSrb2yX2pkkpaYfOAzVDGymOZNrhSaqHmNVoQXTH01QXWYh8lbhuHUEbHHdOSbM8g79g3L54I3PsL11YTI2DLMHoORCe5EGSBWNJOBE4XTNn4ahKIPxkvE5tnQgc2lUkZQemWlpom8WQRFuJWYlbnHrvsycSsvM9HqqEkxsBPqExSj4nSz7FIoXxDrwOvQ0k0tredAFlI07tBHBczjBhIs2Nsr3ab0HzsbHj3ZcOcLt0IuymBKWP25ZNFEASG3isuWjh4rqhM2XmjbvC8eFDWA6Kcn8qDTPGs3w6y7LzbLjedsdXJSf34BB7rxFVlIqQyqNxGtAmmnS4IBjrvrSj7BgwyZvHg0TYfsKAMTEun4gllxUwB7tSKC71unjDMfuNgqIcZzMNTtg9mMobjeGyxuBYZc6BZujTQDFkVI0XiQQKwAkGTH6E65uKgWP7hk72gAfmGJyu5ZsPoXpJsbMlcBI7CzimDts2yFmSB2CFm2OxwZGvmYvlnMCODzDKVTi4qD1j1JObN2MGLZaQ0eRLNivsykwTD1Te4uI6fiQkZb0bFNlNx7H",
+      "amazonUrl": "https://www.amazon.com/dp/B07NVRHYHL?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "prev_button_cap",
+      "name": "Previous Track Button Cap",
+      "type": "misc",
+      "partId": "571871bd-35ff-4f47-8fcd-36ae28f78c94",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Push+Button+Cap+6x6mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "prev_button",
+      "dimensions": "7x7x5mm",
+      "description": "A custom 3D-printed cap for the tactile previous track button, designed for ergonomic feel.",
+      "productName": "Tactile Push Button Cap 6x6mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=tactile+button+cap+round",
+      "estimatedCost": 0.05,
+      "printSettings": "100% infill, 0.1mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw2jIe4nGu4GRvTnaT9XOOtLpFvQlxWr2eBSmV3XztcvGq7dIm5ZVYm0aXe7PoWyABF6HZ1rgA2KUehRZd2WfGS8fCm1G3xDr7kxGKSrb2yX2pkkpaYfOAzVDGymOZNrhSaqHmNVoQXTH01QXWYh8lbhuHUEbHHdOSbM8g79g3L54I3PsL11YTI2DLMHoORCe5EGSBWNJOBE4XTNn4ahKIPxkvE5tnQgc2lUkZQemWlpom8WQRFuJWYlbnHrvsycSsvM9HqqEkxsBPqExSj4nSz7FIoXxDrwOvQ0k0tredAFlI07tBHBczjBhIs2Nsr3ab0HzsbHj3ZcOcLt0IuymBKWP25ZNFEASG3isuWjh4rqhM2XmjbvC8eFDWA6Kcn8qDTPGs3w6y7LzbLjedsdXJSf34BB7rxFVlIqQyqNxGtAmmnS4IBjrvrSj7BgwyZvHg0TYfsKAMTEun4gllxUwB7tSKC71unjDMfuNgqIcZzMNTtg9mMobjeGyxuBYZc6BZujTQDFkVI0XiQQKwAkGTH6E65uKgWP7hk72gAfmGJyu5ZsPoXpJsbMlcBI7CzimDts2yFmSB2CFm2OxwZGvmYvlnMCODzDKVTi4qD1j1JObN2MGLZaQ0eRLNivsykwTD1Te4uI6fiQkZb0bFNlNx7H",
+      "amazonUrl": "https://www.amazon.com/dp/B07NVRHYHL?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "m2_screws_enclosure",
+      "name": "M2 Enclosure Screws",
+      "type": "misc",
+      "partId": "a502dff0-4ae6-4e31-85df-53a5fbbc6602",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x6mm+Flat+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/-JHzVEK2OhQ8_rM7ANfbOZgne9LGn64XH-LpCsEouxA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzIyOTcxMjAzL3Iv/aWwvNWRhNjRiLzI1/NTM2ODYxNzgvaWxf/Nzk0eE4uMjU1MzY4/NjE3OF9tajVrLmpw/Zw",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0CY5J4NZ5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x6mm",
+      "description": "Small M2 screws to secure the front bezel and back cover to the main enclosure body.",
+      "productName": "M2x6mm Flat Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2x6mm+screws",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxICJPuE2R5Z2mukGwZWvsO3MYtwz1YEsFqXYNsd3XQsfc5mDDNfvzqF4sUqnrX4TbCKYBaq9sSt8mJQOBXAqVVc3YjNDjNTeSnlVRFVMd9kqRsY7agAML35QGD56tCbJrB9PqPsIP1jNok55qDzwjdIfcf12InvmKFKLmAtdkJThLiHMy5ql3ZDJYVpSp2mjbYmuppORviuPYlaU0JwzMzLojKBjWtEqPOIUhqA0E1jxizUOhCqFCIdR1cFzwlsU7CcNDgJZ9vXTPiajlqnyXlkY6FLCU3RUvcE7XdHRzNBx0yjwWsOFa6XYzPmMMk0NRpEbux0CrAQvALKUr5NggRgN6nr4MVcJ3ko2G7PusNdLxslMwChHWLDhr3P6C9vgLQO1xExsNAbftIdNNejmUGE1F7TlE37YVKR2pCc0pYeU1UrM7i6Q91c7lOWfiPYmSU75lLm1NxjQZzhkp33QRQbX8PebKAv6JpmUQpwAeSyLUIMevquDY6N8UyjTf1lc0SR6iIGklXYDVPSAlUPEGBQvpvi9GilzA9luIlVeMpBOHddtfi0UITJ0cJ9MIyoNqMkcIq4jUvmdnM6BlwehYJPuCcMyNhZ463CCaP4qmh7rJYmcWxf5vuttQqvN7Bw4lpB02KGVJokj1ZE6Ihkd4cub",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "heat_set_inserts_m2",
+      "name": "M2 Heat-Set Inserts",
+      "type": "misc",
+      "partId": "daf7eec4-212d-45e1-80fc-f23f200bac29",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Brass+Heat+Set+Inserts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/4255-02.jpg",
+      "material": "Brass",
+      "quantity": 4,
+      "research": {
+        "specs": [
+          {
+            "label": "type",
+            "value": "Heat Set"
+          },
+          {
+            "label": "material",
+            "value": "Brass"
+          },
+          {
+            "label": "length_mm",
+            "value": "3"
+          },
+          {
+            "label": "thread_size",
+            "value": "M2"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://vector3d.shop/products/heat-set-insert-m2-standard",
+            "note": "100pcs set of genuine CNCKitchen M2 x 3.0mm 100% Lead and Cadmium free brass alloy high quality CNC machined heat set inserts",
+            "vendor": "Vector 3D"
+          },
+          {
+            "url": "https://www.adafruit.com/product/4255",
+            "price": "$5.95",
+            "vendor": "Adafruit"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CS6XJSSL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x3.5mm",
+      "description": "Brass heat-set inserts for M2 screws, providing durable threads in the 3D-printed enclosure.",
+      "productName": "M2 Brass Heat Set Inserts",
+      "purchaseUrl": "https://www.adafruit.com/product/4255",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRpTpv62RXR9sVfC98GmMLkJmXC4qpbJhcQvkbxptOmgDfhTbS0PHwVgmr0VhydRzMgIoquzg3yg5D05i1x7FPxzxIl3P5mtn3X76qprXJgmg8InDgseeFkYRIIwB95RGJoFep43tAYGEBIRAZZ6LvWcRuoiSpUrlsk0dOnD41f9DJE08hfuSws15ysCxPxduPqEdOBJqzU5FbcT4r87S9pRNqEz1lIvqGk7CAWaFPWCfEmyhwfJeZhyotpqAKBEctCutEnTkheil2BxKIvRK5wXM289ycXJx4fSbLhmzszMs2qcFLR13Wi4UnbxDD6WoLWN4JoGn2r0OhAiiRT4qjn0FYprDlHrME0i509kbi4K203jbbPK9kFZ6PlwxDGU1J3GIXNW9QMDdlachODSkFRPFiDWiBcqMh9E9VewLyHRZ0tHMAGQpwkKKwsA5Tunu4ysqc1L9X4slCg9lEp6zE1GFP3YUH6qJbHtcd5XefYaFmvAkfUXtI520kwTLxNJmZx7ca9KPzqFfBNo5i1Qgx0sLz0E7Bavlxk7D2cPZ0EQcKeHqTXt6giYhETtDqDBfydKhkK5yZSYoABmdFbjUApWm1nnctVpHC5FaxdLlT3hF5zra1BCPJw499DItDavuMeDgdYGHeYUpXeNCpVCdSjv",
+      "estimatedCost": 0.1
+    }
+  ],
+  "notes": [
+    "Slim and portable",
+    "Pocket-sized",
+    "Rectangular body",
+    "Rounded edges",
+    "Color display",
+    "Physical buttons",
+    "USB-C connectivity",
+    "Bluetooth integration",
+    "Minimalist design",
+    "Lightweight",
+    "Ergonomic"
+  ],
+  "projectName": "Pocket MP3 Player",
+  "originalPrompt": "Slim and portable MP3 player, designed to fit easily in a pocket. The body is rectangular and flat, with slightly rounded edges for comfortable handling. On the front, a small OLED display shows track information, battery level, and Bluetooth status. Below the screen there are physical buttons for: The bottom side includes a USB-C port for charging and data transfer. The top side features a 3.5 mm headphone jack and a MicroSD card slot for expandable storage. Inside the device, an integrated Bluetooth module allows the MP3 player to connect wirelessly to other ices, such as Bluetooth headpho..., earbuds, and portable speakers. The back surface is smooth, with a small speaker grille. The overall design is minimalistic, lightweight, and ergonomic,",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all enclosure and mounting parts",
+          "partIds": [
+            "main_enclosure_shell",
+            "front_bezel",
+            "back_cover_grille",
+            "oled_display_bezel_mount",
+            "esp32_mount",
+            "li_po_battery_tray",
+            "battery_charger_module_mount",
+            "microsd_card_module_mount",
+            "headphone_jack_mount",
+            "audio_dac_amplifier_mount",
+            "internal_speaker_mount",
+            "usb_c_breakout_mount",
+            "play_button_cap",
+            "next_button_cap",
+            "prev_button_cap"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Deburr and clean all 3D printed parts",
+          "partIds": [
+            "main_enclosure_shell",
+            "front_bezel",
+            "back_cover_grille",
+            "oled_display_bezel_mount",
+            "esp32_mount",
+            "li_po_battery_tray",
+            "battery_charger_module_mount",
+            "microsd_card_module_mount",
+            "headphone_jack_mount",
+            "audio_dac_amplifier_mount",
+            "internal_speaker_mount",
+            "usb_c_breakout_mount",
+            "play_button_cap",
+            "next_button_cap",
+            "prev_button_cap"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Heat-set M2 inserts into the main enclosure shell",
+          "partIds": [
+            "heat_set_inserts_m2",
+            "main_enclosure_shell"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test fit all mechanical mounts within the main enclosure",
+          "partIds": [
+            "oled_display_bezel_mount",
+            "esp32_mount",
+            "li_po_battery_tray",
+            "battery_charger_module_mount",
+            "microsd_card_module_mount",
+            "headphone_jack_mount",
+            "audio_dac_amplifier_mount",
+            "internal_speaker_mount",
+            "usb_c_breakout_mount",
+            "main_enclosure_shell"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Test fit button caps into front bezel",
+          "partIds": [
+            "play_button_cap",
+            "next_button_cap",
+            "prev_button_cap",
+            "front_bezel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder battery to battery charger module",
+          "partIds": [
+            "li_po_battery",
+            "battery_charger_module"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder USB-C breakout to battery charger module and ESP32",
+          "partIds": [
+            "usb_c_breakout",
+            "battery_charger_module",
+            "esp32_main_mcu"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire power distribution from battery charger to all components",
+          "partIds": [
+            "battery_charger_module",
+            "esp32_main_mcu",
+            "oled_display",
+            "microsd_card_module",
+            "audio_dac_amplifier"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder ESP32 to OLED display (SPI, GPIOs)",
+          "partIds": [
+            "esp32_main_mcu",
+            "oled_display"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Solder ESP32 to buttons (GPIOs) and buttons to ground",
+          "partIds": [
+            "esp32_main_mcu",
+            "play_button",
+            "next_button",
+            "prev_button",
+            "battery_charger_module"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Solder ESP32 to MicroSD card module (SPI)",
+          "partIds": [
+            "esp32_main_mcu",
+            "microsd_card_module"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Solder ESP32 to Audio DAC (I2S) and Audio DAC to Headphone Jack and Internal Speaker",
+          "partIds": [
+            "esp32_main_mcu",
+            "audio_dac_amplifier",
+            "headphone_jack",
+            "internal_speaker"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Flash initial firmware to the ESP32 via USB-C",
+          "partIds": [
+            "esp32_main_mcu",
+            "usb_c_breakout"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Verify OLED display functionality with a test sketch",
+          "partIds": [
+            "oled_display",
+            "esp32_main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test button inputs and confirm responses on ESP32",
+          "partIds": [
+            "play_button",
+            "next_button",
+            "prev_button",
+            "esp32_main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test MicroSD card detection and basic read/write operations",
+          "partIds": [
+            "microsd_card_module",
+            "esp32_main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test Audio DAC output to internal speaker and headphone jack",
+          "partIds": [
+            "audio_dac_amplifier",
+            "internal_speaker",
+            "headphone_jack",
+            "esp32_main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Verify battery charging and power management functionality",
+          "partIds": [
+            "battery_charger_module",
+            "li_po_battery",
+            "usb_c_breakout"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Integrate and test all software subsystems on ESP32",
+          "partIds": [
+            "esp32_main_mcu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the OLED display into its bezel mount",
+          "partIds": [
+            "oled_display_bezel_mount",
+            "oled_display"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount all electrical modules onto their respective 3D printed mounts",
+          "partIds": [
+            "esp32_mount",
+            "esp32_main_mcu",
+            "li_po_battery_tray",
+            "li_po_battery",
+            "battery_charger_module_mount",
+            "battery_charger_module",
+            "microsd_card_module_mount",
+            "microsd_card_module",
+            "headphone_jack_mount",
+            "headphone_jack",
+            "audio_dac_amplifier_mount",
+            "audio_dac_amplifier",
+            "internal_speaker_mount",
+            "internal_speaker",
+            "usb_c_breakout_mount",
+            "usb_c_breakout",
+            "play_button_cap",
+            "play_button",
+            "next_button_cap",
+            "next_button",
+            "prev_button_cap",
+            "prev_button"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Secure all mounted modules and the display bezel mount into the main enclosure shell with M2 screws",
+          "partIds": [
+            "main_enclosure_shell",
+            "oled_display_bezel_mount",
+            "esp32_mount",
+            "li_po_battery_tray",
+            "battery_charger_module_mount",
+            "microsd_card_module_mount",
+            "headphone_jack_mount",
+            "audio_dac_amplifier_mount",
+            "internal_speaker_mount",
+            "usb_c_breakout_mount",
+            "m2_screws_enclosure"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Insert button caps onto their respective buttons and snap the front bezel into place on the main enclosure",
+          "partIds": [
+            "front_bezel",
+            "play_button_cap",
+            "next_button_cap",
+            "prev_button_cap",
+            "main_enclosure_shell"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Route and secure all wires neatly within the enclosure",
+          "partIds": [
+            "main_enclosure_shell"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Attach the back cover with speaker grille using M2 screws",
+          "partIds": [
+            "back_cover_grille",
+            "main_enclosure_shell",
+            "m2_screws_enclosure"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Perform final power-on and full system functional test",
+          "partIds": [
+            "esp32_main_mcu",
+            "oled_display",
+            "play_button",
+            "next_button",
+            "prev_button",
+            "li_po_battery",
+            "battery_charger_module",
+            "microsd_card_module",
+            "headphone_jack",
+            "audio_dac_amplifier",
+            "internal_speaker",
+            "usb_c_breakout"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A slim, portable MP3 player powered by an ESP",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG and PLA capable)",
+      "Soldering iron with fine tip",
+      "Solder",
+      "Wire strippers",
+      "Flush cutters",
+      "Small Phillips head screwdriver",
+      "Multimeter (for continuity checks)",
+      "Heat gun (for heat-set inserts if not using soldering iron)",
+      "Pliers/tweezers",
+      "Deburring tool"
+    ],
+    "assumptions": [
+      "Basic soldering experience",
+      "Familiarity with ESP32 development environment (e.g., Arduino IDE or PlatformIO)",
+      "Access to necessary libraries for OLED, SD card, DAC, buttons, and USB communication",
+      "3D printer calibrated for PETG and PLA materials",
+      "Ability to upload firmware to ESP32 via USB"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Charge Li-Po",
+      "source": "battery_charger_module",
+      "target": "li_po_battery",
+      "current": "1A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "Power from Li-Po",
+      "source": "li_po_battery",
+      "target": "battery_charger_module",
+      "current": "1A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "USB-C Charge Input",
+      "source": "usb_c_breakout",
+      "target": "battery_charger_module",
+      "current": "1A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Regulated Power to ESP32",
+      "source": "battery_charger_module",
+      "target": "esp32_main_mcu",
+      "current": "200mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Power to OLED",
+      "source": "battery_charger_module",
+      "target": "oled_display",
+      "current": "20mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Power to MicroSD",
+      "source": "battery_charger_module",
+      "target": "microsd_card_module",
+      "current": "50mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "Power to Audio DAC",
+      "source": "battery_charger_module",
+      "target": "audio_dac_amplifier",
+      "current": "100mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "label": "OLED SPI CLK",
+      "source": "esp32_main_mcu",
+      "target": "oled_display",
+      "protocol": "spi",
+      "sourcePin": "GPIO18",
+      "targetPin": "SCL (CLK)"
+    },
+    {
+      "type": "data",
+      "label": "OLED SPI MOSI",
+      "source": "esp32_main_mcu",
+      "target": "oled_display",
+      "protocol": "spi",
+      "sourcePin": "GPIO23",
+      "targetPin": "SDA (MOSI)"
+    },
+    {
+      "type": "data",
+      "label": "OLED Reset",
+      "source": "esp32_main_mcu",
+      "target": "oled_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO16",
+      "targetPin": "RES"
+    },
+    {
+      "type": "data",
+      "label": "OLED Data/Command",
+      "source": "esp32_main_mcu",
+      "target": "oled_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO17",
+      "targetPin": "DC"
+    },
+    {
+      "type": "data",
+      "label": "Play Button Input",
+      "source": "esp32_main_mcu",
+      "target": "play_button",
+      "protocol": "gpio",
+      "sourcePin": "GPIO32",
+      "targetPin": "GPIO Input"
+    },
+    {
+      "type": "power",
+      "label": "Play Button GND",
+      "source": "play_button",
+      "target": "battery_charger_module",
+      "current": "0mA",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Next Button Input",
+      "source": "esp32_main_mcu",
+      "target": "next_button",
+      "protocol": "gpio",
+      "sourcePin": "GPIO33",
+      "targetPin": "GPIO Input"
+    },
+    {
+      "type": "power",
+      "label": "Next Button GND",
+      "source": "next_button",
+      "target": "battery_charger_module",
+      "current": "0mA",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Previous Button Input",
+      "source": "esp32_main_mcu",
+      "target": "prev_button",
+      "protocol": "gpio",
+      "sourcePin": "GPIO34",
+      "targetPin": "GPIO Input"
+    },
+    {
+      "type": "power",
+      "label": "Previous Button GND",
+      "source": "prev_button",
+      "target": "battery_charger_module",
+      "current": "0mA",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "MicroSD CS",
+      "source": "esp32_main_mcu",
+      "target": "microsd_card_module",
+      "protocol": "spi",
+      "sourcePin": "GPIO5",
+      "targetPin": "CS"
+    },
+    {
+      "type": "data",
+      "label": "MicroSD CLK",
+      "source": "esp32_main_mcu",
+      "target": "microsd_card_module",
+      "protocol": "spi",
+      "sourcePin": "GPIO18",
+      "targetPin": "SCK"
+    },
+    {
+      "type": "data",
+      "label": "MicroSD MOSI",
+      "source": "esp32_main_mcu",
+      "target": "microsd_card_module",
+      "protocol": "spi",
+      "sourcePin": "GPIO23",
+      "targetPin": "MOSI"
+    },
+    {
+      "type": "data",
+      "label": "MicroSD MISO",
+      "source": "esp32_main_mcu",
+      "target": "microsd_card_module",
+      "protocol": "spi",
+      "sourcePin": "GPIO19",
+      "targetPin": "MISO"
+    },
+    {
+      "type": "data",
+      "label": "I2S Bit Clock",
+      "source": "esp32_main_mcu",
+      "target": "audio_dac_amplifier",
+      "protocol": "i2s",
+      "sourcePin": "GPIO26",
+      "targetPin": "BCK"
+    },
+    {
+      "type": "data",
+      "label": "I2S Word Clock",
+      "source": "esp32_main_mcu",
+      "target": "audio_dac_amplifier",
+      "protocol": "i2s",
+      "sourcePin": "GPIO25",
+      "targetPin": "LRCK"
+    },
+    {
+      "type": "data",
+      "label": "I2S Data Out",
+      "source": "esp32_main_mcu",
+      "target": "audio_dac_amplifier",
+      "protocol": "i2s",
+      "sourcePin": "GPIO22",
+      "targetPin": "DATA"
+    },
+    {
+      "type": "data",
+      "label": "Analog Audio Left",
+      "source": "audio_dac_amplifier",
+      "target": "headphone_jack",
+      "protocol": "analog",
+      "sourcePin": "OUT_L",
+      "targetPin": "Left"
+    },
+    {
+      "type": "data",
+      "label": "Analog Audio Right",
+      "source": "audio_dac_amplifier",
+      "target": "headphone_jack",
+      "protocol": "analog",
+      "sourcePin": "OUT_R",
+      "targetPin": "Right"
+    },
+    {
+      "type": "data",
+      "label": "Audio Ground",
+      "source": "audio_dac_amplifier",
+      "target": "headphone_jack",
+      "protocol": "analog",
+      "sourcePin": "GND",
+      "targetPin": "Ground"
+    },
+    {
+      "type": "data",
+      "label": "Headphone Detect",
+      "source": "headphone_jack",
+      "target": "esp32_main_mcu",
+      "protocol": "gpio",
+      "sourcePin": "Detect",
+      "targetPin": "GPIO35"
+    },
+    {
+      "type": "data",
+      "label": "Speaker Output +",
+      "source": "audio_dac_amplifier",
+      "target": "internal_speaker",
+      "protocol": "analog",
+      "sourcePin": "OUT_L",
+      "targetPin": "SPK+"
+    },
+    {
+      "type": "data",
+      "label": "Speaker Output -",
+      "source": "audio_dac_amplifier",
+      "target": "internal_speaker",
+      "protocol": "analog",
+      "sourcePin": "GND",
+      "targetPin": "SPK-"
+    },
+    {
+      "type": "data",
+      "label": "USB Data +",
+      "source": "usb_c_breakout",
+      "target": "esp32_main_mcu",
+      "protocol": "usb",
+      "sourcePin": "D+",
+      "targetPin": "D+"
+    },
+    {
+      "type": "data",
+      "label": "USB Data -",
+      "source": "usb_c_breakout",
+      "target": "esp32_main_mcu",
+      "protocol": "usb",
+      "sourcePin": "D-",
+      "targetPin": "D-"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "snapped into place",
+      "source": "main_enclosure_shell",
+      "target": "front_bezel"
+    },
+    {
+      "label": "secured by m2_screws_enclosure into heat_set_inserts_m2",
+      "source": "main_enclosure_shell",
+      "target": "back_cover_grille"
+    },
+    {
+      "label": "heat-pressed into main_enclosure_shell",
+      "source": "main_enclosure_shell",
+      "target": "heat_set_inserts_m2"
+    },
+    {
+      "label": "M2 screws",
+      "source": "oled_display_bezel_mount",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "M2 screws",
+      "source": "esp32_mount",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "M2 screws",
+      "source": "li_po_battery_tray",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "M2 screws",
+      "source": "battery_charger_module_mount",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "M2 screws",
+      "source": "microsd_card_module_mount",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "M2 screws",
+      "source": "headphone_jack_mount",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "M2 screws",
+      "source": "audio_dac_amplifier_mount",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "M2 screws",
+      "source": "internal_speaker_mount",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "M2 screws",
+      "source": "usb_c_breakout_mount",
+      "target": "main_enclosure_shell"
+    },
+    {
+      "label": "snap-fit into opening",
+      "source": "front_bezel",
+      "target": "play_button_cap"
+    },
+    {
+      "label": "snap-fit into opening",
+      "source": "front_bezel",
+      "target": "next_button_cap"
+    },
+    {
+      "label": "snap-fit into opening",
+      "source": "front_bezel",
+      "target": "prev_button_cap"
+    },
+    {
+      "label": "mount",
+      "source": "oled_display_bezel_mount",
+      "target": "oled_display"
+    },
+    {
+      "label": "mount",
+      "source": "esp32_mount",
+      "target": "esp32_main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "li_po_battery_tray",
+      "target": "li_po_battery"
+    },
+    {
+      "label": "mount",
+      "source": "battery_charger_module_mount",
+      "target": "battery_charger_module"
+    },
+    {
+      "label": "mount",
+      "source": "microsd_card_module_mount",
+      "target": "microsd_card_module"
+    },
+    {
+      "label": "mount",
+      "source": "headphone_jack_mount",
+      "target": "headphone_jack"
+    },
+    {
+      "label": "mount",
+      "source": "audio_dac_amplifier_mount",
+      "target": "audio_dac_amplifier"
+    },
+    {
+      "label": "mount",
+      "source": "internal_speaker_mount",
+      "target": "internal_speaker"
+    },
+    {
+      "label": "mount",
+      "source": "usb_c_breakout_mount",
+      "target": "usb_c_breakout"
+    },
+    {
+      "label": "mount",
+      "source": "play_button_cap",
+      "target": "play_button"
+    },
+    {
+      "label": "mount",
+      "source": "next_button_cap",
+      "target": "next_button"
+    },
+    {
+      "label": "mount",
+      "source": "prev_button_cap",
+      "target": "prev_button"
+    }
+  ],
+  "projectId": "0639f9cf-71ef-4344-a4ac-03f114c9cc69"
+}

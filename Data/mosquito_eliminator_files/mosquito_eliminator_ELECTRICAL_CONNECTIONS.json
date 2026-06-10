@@ -1,0 +1,128 @@
+[
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "buck_converter",
+    "voltage": "11.1V-12.6V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "radar_module",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "x_stepper_driver",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "y_stepper_driver",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "x_stepper_driver",
+    "voltage": "11.1V-12.6V"
+  },
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "y_stepper_driver",
+    "voltage": "11.1V-12.6V"
+  },
+  {
+    "type": "power",
+    "source": "lipo_battery",
+    "target": "laser_driver",
+    "voltage": "11.1V-12.6V"
+  },
+  {
+    "type": "power",
+    "source": "laser_driver",
+    "target": "laser_diode",
+    "voltage": "Varies (e.g., 2V-5V for diode operation, regulated by driver)"
+  },
+  {
+    "type": "power",
+    "source": "x_stepper_driver",
+    "target": "x_stepper_motor",
+    "voltage": "Varies (motor dependent, from driver)"
+  },
+  {
+    "type": "power",
+    "source": "y_stepper_driver",
+    "target": "y_stepper_motor",
+    "voltage": "Varies (motor dependent, from driver)"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "esp32_mcu",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "radar_module",
+    "voltage": "3.3V/5V (level shift if needed)115200bps (common)UART",
+    "sourcePin": "GPIO16 (RX), GPIO17 (TX)",
+    "targetPin": "UART_TX, UART_RX"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "x_stepper_driver",
+    "voltage": "3.3V/5VDigital",
+    "sourcePin": "GPIO14 (STEP), GPIO12 (DIR)",
+    "targetPin": "STEP, DIR"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "y_stepper_driver",
+    "voltage": "3.3V/5VDigital",
+    "sourcePin": "GPIO27 (STEP), GPIO26 (DIR)",
+    "targetPin": "STEP, DIR"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "laser_driver",
+    "voltage": "3.3V/5VPWM",
+    "sourcePin": "GPIO25",
+    "targetPin": "PWM_IN"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "thermal_camera",
+    "voltage": "3.3V or 5V (module dependent)"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "thermal_camera",
+    "voltage": "3.3V (level shift if needed)I2C",
+    "sourcePin": "GPIO21 (SDA), GPIO22 (SCL)",
+    "targetPin": "SDA, SCL"
+  },
+  {
+    "type": "power",
+    "source": "buck_converter",
+    "target": "ai_module",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "esp32_mcu",
+    "target": "ai_module",
+    "voltage": "3.3V (level shift if needed)UART",
+    "sourcePin": "GPIO4 (RX), GPIO5 (TX)",
+    "targetPin": "UART_TX, UART_RX"
+  }
+]

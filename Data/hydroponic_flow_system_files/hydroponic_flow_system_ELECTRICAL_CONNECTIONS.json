@@ -1,0 +1,556 @@
+[
+  {
+    "type": "power",
+    "label": "Main 12V DC Input",
+    "source": "main_power_adapter",
+    "target": "dc_female_terminal",
+    "current": "5A",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "label": "12V to Buck Converter",
+    "source": "dc_female_terminal",
+    "target": "buck_converter_12v_to_5v",
+    "current": "5A",
+    "voltage": "12V",
+    "sourcePin": "Screw Terminal +",
+    "targetPin": "Input 12V+"
+  },
+  {
+    "type": "power",
+    "label": "GND to Buck Converter",
+    "source": "dc_female_terminal",
+    "target": "buck_converter_12v_to_5v",
+    "current": "5A",
+    "voltage": "GND",
+    "sourcePin": "Screw Terminal -",
+    "targetPin": "Input GND-"
+  },
+  {
+    "type": "power",
+    "label": "5V to ESP32 Vin",
+    "source": "buck_converter_12v_to_5v",
+    "target": "esp32_nodemcu",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "Output 5V+",
+    "targetPin": "Vin"
+  },
+  {
+    "type": "power",
+    "label": "GND to ESP32",
+    "source": "buck_converter_12v_to_5v",
+    "target": "esp32_nodemcu",
+    "current": "500mA",
+    "voltage": "GND",
+    "sourcePin": "Output GND-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "5V to Relay Board VCC",
+    "source": "buck_converter_12v_to_5v",
+    "target": "relay_board_8_channel",
+    "current": "100mA",
+    "voltage": "5V",
+    "sourcePin": "Output 5V+",
+    "targetPin": "VCC (5V)"
+  },
+  {
+    "type": "power",
+    "label": "GND to Relay Board",
+    "source": "buck_converter_12v_to_5v",
+    "target": "relay_board_8_channel",
+    "current": "100mA",
+    "voltage": "GND",
+    "sourcePin": "Output GND-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "5V to ADS1115 VDD",
+    "source": "buck_converter_12v_to_5v",
+    "target": "ads1115_adc_module",
+    "current": "10mA",
+    "voltage": "5V",
+    "sourcePin": "Output 5V+",
+    "targetPin": "VDD (5V)"
+  },
+  {
+    "type": "power",
+    "label": "GND to ADS1115",
+    "source": "buck_converter_12v_to_5v",
+    "target": "ads1115_adc_module",
+    "current": "10mA",
+    "voltage": "GND",
+    "sourcePin": "Output GND-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "5V to pH Sensor VCC",
+    "source": "buck_converter_12v_to_5v",
+    "target": "ph_sensor_module",
+    "current": "50mA",
+    "voltage": "5V",
+    "sourcePin": "Output 5V+",
+    "targetPin": "VCC (5V)"
+  },
+  {
+    "type": "power",
+    "label": "GND to pH Sensor",
+    "source": "buck_converter_12v_to_5v",
+    "target": "ph_sensor_module",
+    "current": "50mA",
+    "voltage": "GND",
+    "sourcePin": "Output GND-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "5V to TDS Sensor VCC",
+    "source": "buck_converter_12v_to_5v",
+    "target": "tds_sensor_module",
+    "current": "50mA",
+    "voltage": "5V",
+    "sourcePin": "Output 5V+",
+    "targetPin": "VCC (5V)"
+  },
+  {
+    "type": "power",
+    "label": "GND to TDS Sensor",
+    "source": "buck_converter_12v_to_5v",
+    "target": "tds_sensor_module",
+    "current": "50mA",
+    "voltage": "GND",
+    "sourcePin": "Output GND-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "5V to Water Flow Sensor VCC",
+    "source": "buck_converter_12v_to_5v",
+    "target": "water_flow_sensor",
+    "current": "20mA",
+    "voltage": "5V",
+    "sourcePin": "Output 5V+",
+    "targetPin": "VCC (5V)"
+  },
+  {
+    "type": "power",
+    "label": "GND to Water Flow Sensor",
+    "source": "buck_converter_12v_to_5v",
+    "target": "water_flow_sensor",
+    "current": "20mA",
+    "voltage": "GND",
+    "sourcePin": "Output GND-",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Peristaltic Pump 5V Power",
+    "source": "buck_converter_12v_to_5v",
+    "target": "peristaltic_pump",
+    "current": "500mA",
+    "voltage": "5V",
+    "sourcePin": "Output 5V+",
+    "targetPin": "5V+"
+  },
+  {
+    "type": "power",
+    "label": "Peristaltic Pump GND",
+    "source": "buck_converter_12v_to_5v",
+    "target": "peristaltic_pump",
+    "current": "500mA",
+    "voltage": "GND",
+    "sourcePin": "Output GND-",
+    "targetPin": "GND-"
+  },
+  {
+    "type": "data",
+    "label": "Solenoid Valve 1 Control",
+    "source": "esp32_nodemcu",
+    "target": "relay_board_8_channel",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 12",
+    "targetPin": "IN1"
+  },
+  {
+    "type": "data",
+    "label": "Mini Water Pump 1 Control",
+    "source": "esp32_nodemcu",
+    "target": "relay_board_8_channel",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 13",
+    "targetPin": "IN2"
+  },
+  {
+    "type": "data",
+    "label": "Mini Water Pump 2 Control",
+    "source": "esp32_nodemcu",
+    "target": "relay_board_8_channel",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 14",
+    "targetPin": "IN3"
+  },
+  {
+    "type": "data",
+    "label": "Return Pump Control",
+    "source": "esp32_nodemcu",
+    "target": "relay_board_8_channel",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 25",
+    "targetPin": "IN4"
+  },
+  {
+    "type": "data",
+    "label": "Solenoid Valve 2 Control",
+    "source": "esp32_nodemcu",
+    "target": "relay_board_8_channel",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 26",
+    "targetPin": "IN5"
+  },
+  {
+    "type": "data",
+    "label": "Peristaltic Pump Control",
+    "source": "esp32_nodemcu",
+    "target": "relay_board_8_channel",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 27",
+    "targetPin": "IN6"
+  },
+  {
+    "type": "data",
+    "label": "I2C SDA to ADS1115",
+    "source": "esp32_nodemcu",
+    "target": "ads1115_adc_module",
+    "protocol": "i2c",
+    "sourcePin": "GPIO 21 (SDA)",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "label": "I2C SCL to ADS1115",
+    "source": "esp32_nodemcu",
+    "target": "ads1115_adc_module",
+    "protocol": "i2c",
+    "sourcePin": "GPIO 22 (SCL)",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "data",
+    "label": "pH Sensor Analog to A0",
+    "source": "ads1115_adc_module",
+    "target": "ph_sensor_module",
+    "protocol": "analog",
+    "sourcePin": "A0",
+    "targetPin": "Analog Output"
+  },
+  {
+    "type": "data",
+    "label": "TDS Sensor Analog to A1",
+    "source": "ads1115_adc_module",
+    "target": "tds_sensor_module",
+    "protocol": "analog",
+    "sourcePin": "A1",
+    "targetPin": "Analog Output"
+  },
+  {
+    "type": "data",
+    "label": "ADS1115 Address 0x48",
+    "source": "ads1115_adc_module",
+    "target": "ads1115_adc_module",
+    "protocol": "gpio",
+    "sourcePin": "GND",
+    "targetPin": "ADDR"
+  },
+  {
+    "type": "data",
+    "label": "Water Flow Sensor Signal",
+    "source": "esp32_nodemcu",
+    "target": "water_flow_sensor",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 23",
+    "targetPin": "Signal Output"
+  },
+  {
+    "type": "data",
+    "label": "Float Sensor 1 Signal",
+    "source": "esp32_nodemcu",
+    "target": "float_sensor_1_growth_tube",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 17",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "data",
+    "label": "Float Sensor 2 Signal",
+    "source": "esp32_nodemcu",
+    "target": "float_sensor_2_reservoir",
+    "protocol": "gpio",
+    "sourcePin": "GPIO 16",
+    "targetPin": "Signal"
+  },
+  {
+    "type": "power",
+    "label": "Float Sensor 1 GND",
+    "source": "float_sensor_1_growth_tube",
+    "target": "esp32_nodemcu",
+    "current": "10mA",
+    "voltage": "GND",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "Float Sensor 2 GND",
+    "source": "float_sensor_2_reservoir",
+    "target": "esp32_nodemcu",
+    "current": "10mA",
+    "voltage": "GND",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "label": "12V to Solenoid Valve 1 (Common)",
+    "source": "dc_female_terminal",
+    "target": "solenoid_valve_1_freshwater",
+    "current": "500mA",
+    "voltage": "12V",
+    "sourcePin": "Screw Terminal +",
+    "targetPin": "12V+"
+  },
+  {
+    "type": "power",
+    "label": "Solenoid Valve 1 Switched GND",
+    "source": "relay_board_8_channel",
+    "target": "solenoid_valve_1_freshwater",
+    "current": "500mA",
+    "voltage": "GND",
+    "sourcePin": "COM for Channels 1-8",
+    "targetPin": "GND-"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Solenoid 1 (12V+)",
+    "source": "solenoid_valve_1_freshwater",
+    "target": "flyback_diode_solenoid_1",
+    "protocol": "gpio",
+    "sourcePin": "12V+",
+    "targetPin": "Cathode"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Solenoid 1 (GND-)",
+    "source": "solenoid_valve_1_freshwater",
+    "target": "flyback_diode_solenoid_1",
+    "protocol": "gpio",
+    "sourcePin": "GND-",
+    "targetPin": "Anode"
+  },
+  {
+    "type": "power",
+    "label": "12V to Solenoid Valve 2 (Common)",
+    "source": "dc_female_terminal",
+    "target": "solenoid_valve_2_drain",
+    "current": "500mA",
+    "voltage": "12V",
+    "sourcePin": "Screw Terminal +",
+    "targetPin": "12V+"
+  },
+  {
+    "type": "power",
+    "label": "Solenoid Valve 2 Switched GND",
+    "source": "relay_board_8_channel",
+    "target": "solenoid_valve_2_drain",
+    "current": "500mA",
+    "voltage": "GND",
+    "sourcePin": "COM for Channels 1-8",
+    "targetPin": "GND-"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Solenoid 2 (12V+)",
+    "source": "solenoid_valve_2_drain",
+    "target": "flyback_diode_solenoid_2",
+    "protocol": "gpio",
+    "sourcePin": "12V+",
+    "targetPin": "Cathode"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Solenoid 2 (GND-)",
+    "source": "solenoid_valve_2_drain",
+    "target": "flyback_diode_solenoid_2",
+    "protocol": "gpio",
+    "sourcePin": "GND-",
+    "targetPin": "Anode"
+  },
+  {
+    "type": "power",
+    "label": "12V to Solenoid Valve 3 (Common)",
+    "source": "dc_female_terminal",
+    "target": "solenoid_valve_3_spare",
+    "current": "500mA",
+    "voltage": "12V",
+    "sourcePin": "Screw Terminal +",
+    "targetPin": "12V+"
+  },
+  {
+    "type": "power",
+    "label": "Solenoid Valve 3 Switched GND",
+    "source": "relay_board_8_channel",
+    "target": "solenoid_valve_3_spare",
+    "current": "500mA",
+    "voltage": "GND",
+    "sourcePin": "COM for Channels 1-8",
+    "targetPin": "GND-"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Solenoid 3 (12V+)",
+    "source": "solenoid_valve_3_spare",
+    "target": "flyback_diode_solenoid_3",
+    "protocol": "gpio",
+    "sourcePin": "12V+",
+    "targetPin": "Cathode"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Solenoid 3 (GND-)",
+    "source": "solenoid_valve_3_spare",
+    "target": "flyback_diode_solenoid_3",
+    "protocol": "gpio",
+    "sourcePin": "GND-",
+    "targetPin": "Anode"
+  },
+  {
+    "type": "power",
+    "label": "12V to Mini Water Pump 1 (Common)",
+    "source": "dc_female_terminal",
+    "target": "mini_water_pump_1_main_flood",
+    "current": "1A",
+    "voltage": "12V",
+    "sourcePin": "Screw Terminal +",
+    "targetPin": "12V+"
+  },
+  {
+    "type": "power",
+    "label": "Mini Water Pump 1 Switched GND",
+    "source": "relay_board_8_channel",
+    "target": "mini_water_pump_1_main_flood",
+    "current": "1A",
+    "voltage": "GND",
+    "sourcePin": "COM for Channels 1-8",
+    "targetPin": "GND-"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Pump 1 (12V+)",
+    "source": "mini_water_pump_1_main_flood",
+    "target": "flyback_diode_pump_1",
+    "protocol": "gpio",
+    "sourcePin": "12V+",
+    "targetPin": "Cathode"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Pump 1 (GND-)",
+    "source": "mini_water_pump_1_main_flood",
+    "target": "flyback_diode_pump_1",
+    "protocol": "gpio",
+    "sourcePin": "GND-",
+    "targetPin": "Anode"
+  },
+  {
+    "type": "power",
+    "label": "12V to Mini Water Pump 2 (Common)",
+    "source": "dc_female_terminal",
+    "target": "mini_water_pump_2_recirculation",
+    "current": "1A",
+    "voltage": "12V",
+    "sourcePin": "Screw Terminal +",
+    "targetPin": "12V+"
+  },
+  {
+    "type": "power",
+    "label": "Mini Water Pump 2 Switched GND",
+    "source": "relay_board_8_channel",
+    "target": "mini_water_pump_2_recirculation",
+    "current": "1A",
+    "voltage": "GND",
+    "sourcePin": "COM for Channels 1-8",
+    "targetPin": "GND-"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Pump 2 (12V+)",
+    "source": "mini_water_pump_2_recirculation",
+    "target": "flyback_diode_pump_2",
+    "protocol": "gpio",
+    "sourcePin": "12V+",
+    "targetPin": "Cathode"
+  },
+  {
+    "type": "data",
+    "label": "Flyback Diode for Pump 2 (GND-)",
+    "source": "mini_water_pump_2_recirculation",
+    "target": "flyback_diode_pump_2",
+    "protocol": "gpio",
+    "sourcePin": "GND-",
+    "targetPin": "Anode"
+  },
+  {
+    "type": "power",
+    "label": "12V to DC-AC Inverter",
+    "source": "dc_female_terminal",
+    "target": "dc_ac_inverter_220v",
+    "current": "2A",
+    "voltage": "12V",
+    "sourcePin": "Screw Terminal +",
+    "targetPin": "12V Input +"
+  },
+  {
+    "type": "power",
+    "label": "GND to DC-AC Inverter",
+    "source": "dc_female_terminal",
+    "target": "dc_ac_inverter_220v",
+    "current": "2A",
+    "voltage": "GND",
+    "sourcePin": "Screw Terminal -",
+    "targetPin": "12V Input -"
+  },
+  {
+    "type": "power",
+    "label": "220V AC to Return Pump Live",
+    "source": "dc_ac_inverter_220v",
+    "target": "return_pump_220v",
+    "current": "2A",
+    "voltage": "220V AC",
+    "sourcePin": "220V AC Output",
+    "targetPin": "220V AC Live"
+  },
+  {
+    "type": "power",
+    "label": "220V AC to Return Pump Neutral",
+    "source": "dc_ac_inverter_220v",
+    "target": "return_pump_220v",
+    "current": "2A",
+    "voltage": "220V AC",
+    "sourcePin": "220V AC Output",
+    "targetPin": "220V AC Neutral"
+  },
+  {
+    "type": "power",
+    "label": "Peristaltic Pump Switched GND (Via 5V power)",
+    "source": "relay_board_8_channel",
+    "target": "peristaltic_pump",
+    "current": "500mA",
+    "voltage": "GND",
+    "sourcePin": "COM for Channels 1-8",
+    "targetPin": "GND-"
+  }
+]

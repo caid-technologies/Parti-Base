@@ -1,0 +1,72 @@
+[
+  {
+    "type": "power",
+    "source": "battery_pack",
+    "target": "integrated_power_board",
+    "voltage": "3.7V",
+    "sourcePin": "V+",
+    "targetPin": "B+"
+  },
+  {
+    "type": "power",
+    "source": "battery_pack",
+    "target": "integrated_power_board",
+    "voltage": "0V",
+    "sourcePin": "V-",
+    "targetPin": "B-"
+  },
+  {
+    "type": "power",
+    "source": "integrated_power_board",
+    "target": "budget_mcu",
+    "voltage": "5V",
+    "sourcePin": "VOUT",
+    "targetPin": "5V"
+  },
+  {
+    "type": "power",
+    "source": "integrated_power_board",
+    "target": "unified_rf_module",
+    "voltage": "5V",
+    "sourcePin": "VOUT",
+    "targetPin": "VCC"
+  },
+  {
+    "type": "power",
+    "source": "integrated_power_board",
+    "target": "budget_mcu",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "power",
+    "source": "integrated_power_board",
+    "target": "unified_rf_module",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "type": "data",
+    "source": "budget_mcu",
+    "target": "unified_rf_module",
+    "voltage": "5V",
+    "sourcePin": "PB0",
+    "targetPin": "EN"
+  },
+  {
+    "type": "data",
+    "source": "unified_rf_module",
+    "target": "antenna_24",
+    "voltage": "RF",
+    "sourcePin": "ADJ",
+    "targetPin": "SMA_CENTER"
+  },
+  {
+    "type": "data",
+    "source": "unified_rf_module",
+    "target": "antenna_50",
+    "voltage": "RF",
+    "sourcePin": "ADJ",
+    "targetPin": "SMA_CENTER"
+  }
+]

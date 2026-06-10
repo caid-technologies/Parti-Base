@@ -1,0 +1,278 @@
+[
+  {
+    "type": "power",
+    "source": "power_solar_panel",
+    "target": "power_charge_controller",
+    "voltage": "12V-18V (Voc max.)"
+  },
+  {
+    "type": "power",
+    "source": "power_charge_controller",
+    "target": "power_battery",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "power_charge_controller",
+    "target": "module_buck_converter",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "module_buck_converter",
+    "target": "mcu_esp32",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "sensor_rain",
+    "voltage": "3V3"
+  },
+  {
+    "type": "data",
+    "source": "sensor_rain",
+    "target": "mcu_esp32",
+    "protocol": "digital",
+    "sourcePin": "DOUT",
+    "targetPin": "GPIO16"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "sensor_light",
+    "voltage": "3V3"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "sensor_light",
+    "protocol": "I2C",
+    "sourcePin": "SDA",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "sensor_light",
+    "protocol": "I2C",
+    "sourcePin": "SCL",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "sensor_soil_moisture",
+    "voltage": "3V3"
+  },
+  {
+    "type": "data",
+    "source": "sensor_soil_moisture",
+    "target": "mcu_esp32",
+    "protocol": "analog",
+    "sourcePin": "AOUT",
+    "targetPin": "ADC_CH0"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "sensor_temp_humidity",
+    "voltage": "3V3"
+  },
+  {
+    "type": "data",
+    "source": "sensor_temp_humidity",
+    "target": "mcu_esp32",
+    "protocol": "1-wire",
+    "sourcePin": "DATA",
+    "targetPin": "GPIO17"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "module_relay_1",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "module_relay_1",
+    "protocol": "digital",
+    "sourcePin": "GPIO26",
+    "targetPin": "IN"
+  },
+  {
+    "type": "power",
+    "source": "module_relay_1",
+    "target": "actuator_water_pump",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "power_charge_controller",
+    "target": "module_relay_1",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "module_relay_2",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "module_relay_2",
+    "protocol": "digital",
+    "sourcePin": "GPIO27",
+    "targetPin": "IN"
+  },
+  {
+    "type": "power",
+    "source": "module_relay_2",
+    "target": "actuator_fan",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "power_charge_controller",
+    "target": "module_relay_2",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "power_charge_controller",
+    "target": "module_cover_motor_driver",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "module_cover_motor_driver",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "module_cover_motor_driver",
+    "protocol": "digital",
+    "sourcePin": "GPIO18",
+    "targetPin": "IN1"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "module_cover_motor_driver",
+    "protocol": "digital",
+    "sourcePin": "GPIO19",
+    "targetPin": "IN2"
+  },
+  {
+    "type": "power",
+    "source": "module_cover_motor_driver",
+    "target": "actuator_cover_motor",
+    "voltage": "12V"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "display_oled",
+    "voltage": "3V3"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "display_oled",
+    "protocol": "I2C",
+    "sourcePin": "SDA",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "display_oled",
+    "protocol": "I2C",
+    "sourcePin": "SCL",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "sensor_wind",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "sensor_wind",
+    "target": "mcu_esp32",
+    "protocol": "analog",
+    "sourcePin": "OUT",
+    "targetPin": "ADC_CH1"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "sensor_water_level",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "sensor_water_level",
+    "protocol": "ultrasonic",
+    "sourcePin": "GPIO22",
+    "targetPin": "TRIG"
+  },
+  {
+    "type": "data",
+    "source": "sensor_water_level",
+    "target": "mcu_esp32",
+    "protocol": "ultrasonic",
+    "sourcePin": "ECHO",
+    "targetPin": "GPIO23"
+  },
+  {
+    "type": "data",
+    "source": "sensor_limit_switch_open",
+    "target": "mcu_esp32",
+    "protocol": "digital",
+    "sourcePin": "NO",
+    "targetPin": "GPIO21"
+  },
+  {
+    "type": "data",
+    "source": "sensor_limit_switch_closed",
+    "target": "mcu_esp32",
+    "protocol": "digital",
+    "sourcePin": "NO",
+    "targetPin": "GPIO25"
+  },
+  {
+    "type": "power",
+    "source": "mcu_esp32",
+    "target": "module_battery_monitor",
+    "voltage": "3V3"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "module_battery_monitor",
+    "protocol": "I2C",
+    "sourcePin": "SDA",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "source": "mcu_esp32",
+    "target": "module_battery_monitor",
+    "protocol": "I2C",
+    "sourcePin": "SCL",
+    "targetPin": "SCL"
+  },
+  {
+    "type": "power",
+    "source": "power_charge_controller",
+    "target": "module_battery_monitor",
+    "voltage": "12V"
+  }
+]

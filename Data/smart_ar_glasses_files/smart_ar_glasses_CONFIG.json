@@ -1,0 +1,887 @@
+{
+  "plan": "MCU (e.g., ESP32, Raspberry Pi Zero 2 W) for AI processing and control; IMU (accelerometer/gyroscope) for head tracking; GPS module for navigation; Micro-OLED display for augmented reality overlay; High-resolution camera module for first-person view; Microphone and speaker for voice commands/feedback; Small LiPo battery and charging circuit; Custom 3D-printed spectacle frame with integrated electronics bays; Lightweight, durable hinges and adjustable nose pads; Small push buttons or touch sensors for user input.",
+  "nodes": [
+    {
+      "id": "mcu_main",
+      "name": "Main Controller",
+      "pins": [
+        "3V3",
+        "GND",
+        "GPIO2",
+        "GPIO4",
+        "GPIO16",
+        "GPIO17",
+        "GPIO21",
+        "GPIO22",
+        "GPIO23",
+        "GPIO25",
+        "GPIO26",
+        "GPIO34",
+        "GPIO35",
+        "TXD0",
+        "RXD0",
+        "SDA",
+        "SCL",
+        "VSPI_CLK",
+        "VSPI_MOSI",
+        "VSPI_MISO",
+        "HSPI_CLK",
+        "HSPI_MOSI",
+        "HSPI_MISO"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/x_dSEUfn0X4qjdcCY6Q4CPIwcsIoXX1UE_5S4L5gjj0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDE1MEZnVk1yZUwu/anBn",
+      "quantity": 1,
+      "dimensions": "25x18x3mm",
+      "description": "Main microcontroller for AI processing, navigation logic, camera control, and display management. Chosen for compact size and integrated Wi-Fi/Bluetooth.",
+      "productName": "ESP32-WROOM-32D",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=ESP32-WROOM-32D",
+      "estimatedCost": 5.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32D&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "imu_head_tracking",
+      "name": "Head Tracking IMU",
+      "pins": [
+        "VCC",
+        "GND",
+        "SDA",
+        "SCL",
+        "INT"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/LoLCmhtlj0YqP0aoxlDGjgwp1p0hxmMhi3RtmBZgi9w/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLzlVSUFB/T1N3b2paaVFuTHEv/cy1sMTQwLmpwZw",
+      "quantity": 1,
+      "dimensions": "15x20x3mm",
+      "description": "6-axis IMU (accelerometer and gyroscope) for precise head movement and orientation tracking, essential for AR display stability and user interaction.",
+      "productName": "MPU-6050",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=MPU-6050+module",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MPU-6050&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gps_navigation",
+      "name": "Navigation GPS",
+      "pins": [
+        "VCC",
+        "GND",
+        "TX",
+        "RX"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Q4SdtmG63dvGwdJ6ckfmpx1a1HVZvb8x_aXP5ZR5G4w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YmVycnliYXNlLmRl/L21lZGlhLzRkLzdh/L2IxLzE3MjkzOTEw/MDAvdS1ibG94TkVP/LTZNR1BTVFRMRW1w/Zm5nZXJpbmtsQW50/ZW5uZS01MTg2OS53/ZWJwP3RzPTE3NTA3/OTE3NDM",
+      "quantity": 1,
+      "dimensions": "25x25x7mm",
+      "description": "GPS module providing location data for augmented reality navigation features.",
+      "productName": "U-blox NEO-6M",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=NEO-6M+GPS+module",
+      "estimatedCost": 15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=U-blox+NEO-6M&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "display_ar_micro",
+      "name": "AR Micro Display",
+      "pins": [
+        "VCC",
+        "GND",
+        "SDA",
+        "SCL"
+      ],
+      "type": "display",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/wYC5LnqHVmSYEad3BpCGna2LmstXwy68_cMLKMOeQUc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zcHkt/c2hvcC5jb20vY2Ru/L3Nob3AvZmlsZXMv/MC05Ni1pbmNoLW9s/ZWQtZGlzcGxheS1t/b2R1bGUtMTI4eDY0/LWkyYy1zc2QxMzA2/LXllbGxvdy1ibHVl/LTEwcGNzLXNDdS53/ZWJwP3Y9MTc3MTA3/MzU5MyZ3aWR0aD0x/MDAw",
+      "quantity": 1,
+      "dimensions": "27x27x4mm",
+      "description": "Compact micro-OLED display for projecting augmented reality overlays directly into the user's field of view.",
+      "productName": "SSD1306 0.96 inch OLED",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=SSD1306+0.96+oled",
+      "estimatedCost": 8,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SSD1306+0.96+inch+OLED&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "camera_fpv",
+      "name": "First Person Camera",
+      "pins": [
+        "VCC",
+        "GND",
+        "PCLK",
+        "VSYNC",
+        "HREF",
+        "D0",
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "XCLK",
+        "SIOC",
+        "SIOD",
+        "RESET",
+        "PWDN"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/WVGDHnDdBjDtWaLHq23LCbwbxSKJAAJOHeP8C8RufWk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLzZja0FB/T1N3U3daaldOdlIv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "dimensions": "20x15x10mm",
+      "description": "High-resolution camera module for capturing first-person perspective video and images, enabling AI vision applications.",
+      "productName": "OV2640 Camera Module",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=OV2640+camera+module",
+      "estimatedCost": 10,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=OV2640+Camera+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mic_voice_input",
+      "name": "Voice Command Mic",
+      "pins": [
+        "VCC",
+        "GND",
+        "OUT"
+      ],
+      "type": "sensor",
+      "category": "electrical",
+      "quantity": 1,
+      "dimensions": "15x10x5mm",
+      "description": "Electret microphone with amplifier for capturing user voice commands and ambient audio.",
+      "productName": "MAX9814 Electret Microphone Amplifier",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=MAX9814+microphone+module",
+      "estimatedCost": 6,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MAX9814+Electret+Microphone+Amplifier&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "speaker_audio_out",
+      "name": "Audio Feedback Speaker",
+      "pins": [
+        "SPK+",
+        "SPK-"
+      ],
+      "type": "actuator",
+      "category": "electrical",
+      "quantity": 1,
+      "dimensions": "15x15x5mm",
+      "description": "Small 8-ohm speaker for providing audio feedback, navigation cues, and voice assistant responses.",
+      "productName": "Miniature 8 Ohm Speaker",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=mini+speaker+8+ohm",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Miniature+8+Ohm+Speaker&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_lipo_battery",
+      "name": "LiPo Battery 3.7V",
+      "pins": [
+        "BAT+",
+        "BAT-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "quantity": 1,
+      "dimensions": "30x20x5mm",
+      "description": "Rechargeable Lithium Polymer battery, providing portable power for all smart glasses components.",
+      "productName": "500mAh 3.7V LiPo Battery",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=3.7V+LiPo+battery+500mAh",
+      "estimatedCost": 12,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=500mAh+3.7V+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_charging_circuit",
+      "name": "LiPo Charging Circuit",
+      "pins": [
+        "IN+",
+        "IN-",
+        "BAT+",
+        "BAT-",
+        "OUT+",
+        "OUT-"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/W55VFfn___A5oXCcmzqEcK-EP5mZJX1O8SYwcNf70HI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFiVkpKU3JYSkwu/anBn",
+      "quantity": 1,
+      "dimensions": "28x17x5mm",
+      "description": "Module for safe charging of the LiPo battery via USB-C or micro-USB.",
+      "productName": "TP4056 LiPo Charger Module",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=TP4056+charger+module",
+      "estimatedCost": 2.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TP4056+LiPo+Charger+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_buck_converter",
+      "name": "5V Buck Converter",
+      "pins": [
+        "VIN",
+        "GND_IN",
+        "VOUT",
+        "GND_OUT"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/fQS-keoCg-1OODz0WjKU87QNTonfQf1rp3SYVbxfqjs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFOVmpkeXY2bkwu/anBn",
+      "quantity": 1,
+      "dimensions": "15x10x4mm",
+      "description": "Step-down converter to provide stable 5V power from the battery for components requiring 5V.",
+      "productName": "Mini DC-DC Buck Converter 5V",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=mini+buck+converter+5v",
+      "estimatedCost": 1.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+DC-DC+Buck+Converter+5V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "input_button_left",
+      "name": "Left Input Button",
+      "pins": [
+        "SIG",
+        "GND"
+      ],
+      "type": "other",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/P2om6lISCpu-fnXYlq-mLBM0dsFy9fBR2v147qdI5Fs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vTmV5/c2VraS0zMDBQY3Mt/VGFjdGlsZS1QdXNo/LUJ1dHRvbi1Td2l0/Y2gtRWxlY3Ryb25p/Yy1Qcm9kdWN0LUxp/Z2h0LVRvdWNoaW5n/LVBhdGNoLTQteC00/LXgtMS01bW1fYmI4/NjM2ZTMtZmY2MS00/YTM2LWFkNWYtNTg1/YjAxNWI5NGZhLjA0/N2VhOTJlODJjOWNi/NTllZDlmMjhkMzU1/MzIwOTMyLmpwZWc_/b2RuSGVpZ2h0PTU4/MCZvZG5XaWR0aD01/ODAmb2RuQmc9RkZG/RkZG",
+      "quantity": 1,
+      "dimensions": "6x6x5mm",
+      "description": "Small tactile button for user input, located on the left side of the glasses frame.",
+      "productName": "Tactile Push Button",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=tactile+button+small",
+      "estimatedCost": 0.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Push+Button&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "input_button_right",
+      "name": "Right Input Button",
+      "pins": [
+        "SIG",
+        "GND"
+      ],
+      "type": "other",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/P2om6lISCpu-fnXYlq-mLBM0dsFy9fBR2v147qdI5Fs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vTmV5/c2VraS0zMDBQY3Mt/VGFjdGlsZS1QdXNo/LUJ1dHRvbi1Td2l0/Y2gtRWxlY3Ryb25p/Yy1Qcm9kdWN0LUxp/Z2h0LVRvdWNoaW5n/LVBhdGNoLTQteC00/LXgtMS01bW1fYmI4/NjM2ZTMtZmY2MS00/YTM2LWFkNWYtNTg1/YjAxNWI5NGZhLjA0/N2VhOTJlODJjOWNi/NTllZDlmMjhkMzU1/MzIwOTMyLmpwZWc_/b2RuSGVpZ2h0PTU4/MCZvZG5XaWR0aD01/ODAmb2RuQmc9RkZG/RkZG",
+      "quantity": 1,
+      "dimensions": "6x6x5mm",
+      "description": "Small tactile button for user input, located on the right side of the glasses frame.",
+      "productName": "Tactile Push Button",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=tactile+button+small",
+      "estimatedCost": 0.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Tactile+Push+Button&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "spectacle_frame",
+      "name": "Smart Glasses Frame",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "150x50x40mm",
+      "description": "Main frame for smart glasses, integrating bays and mounts for all electronics.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+petg",
+      "estimatedCost": 5,
+      "printSettings": "0.2mm layer height, 20% infill, supports required"
+    },
+    {
+      "id": "left_hinge",
+      "name": "Left Temple Hinge",
+      "type": "mechanism",
+      "category": "mechanical",
+      "quantity": 1,
+      "dimensions": "8x5x3mm",
+      "description": "Small spring hinge for glasses temple, attaches to the left side of the frame.",
+      "productName": "Mini Spring Hinge",
+      "purchaseUrl": "https://www.amazon.com/s?k=small+glasses+hinge",
+      "estimatedCost": 2.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Spring+Hinge&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "right_hinge",
+      "name": "Right Temple Hinge",
+      "type": "mechanism",
+      "category": "mechanical",
+      "quantity": 1,
+      "dimensions": "8x5x3mm",
+      "description": "Small spring hinge for glasses temple, attaches to the right side of the frame.",
+      "productName": "Mini Spring Hinge",
+      "purchaseUrl": "https://www.amazon.com/s?k=small+glasses+hinge",
+      "estimatedCost": 2.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Spring+Hinge&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "nose_pad_set",
+      "name": "Adjustable Nose Pads",
+      "type": "mechanism",
+      "category": "mechanical",
+      "quantity": 1,
+      "dimensions": "20x10x5mm",
+      "description": "Set of two silicone adjustable nose pads for comfortable fit.",
+      "productName": "Silicone Adjustable Nose Pad Set",
+      "purchaseUrl": "https://www.amazon.com/s?k=adjustable+glasses+nose+pads",
+      "estimatedCost": 3,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Silicone+Adjustable+Nose+Pad+Set&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mcu_mount",
+      "name": "MCU Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "30x25x5mm",
+      "description": "Custom mount for the MCU (ESP32/Raspberry Pi Zero 2 W) inside the frame.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+pla",
+      "estimatedCost": 0.5,
+      "printSettings": "0.2mm layer height, 15% infill, no supports"
+    },
+    {
+      "id": "imu_housing",
+      "name": "IMU Housing",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "15x15x5mm",
+      "description": "Small housing for the IMU sensor to be integrated into the frame.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+pla",
+      "estimatedCost": 0.3,
+      "printSettings": "0.2mm layer height, 15% infill, no supports"
+    },
+    {
+      "id": "gps_module_mount",
+      "name": "GPS Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "20x20x5mm",
+      "description": "Mounting bracket for the GPS module within the glasses frame.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+pla",
+      "estimatedCost": 0.4,
+      "printSettings": "0.2mm layer height, 15% infill, no supports"
+    },
+    {
+      "id": "oled_display_bezel",
+      "name": "Micro-OLED Display Bezel",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "25x20x10mm",
+      "description": "Custom bezel and mount for the micro-OLED display, integrated into the frame near the eye.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+petg",
+      "estimatedCost": 0.6,
+      "printSettings": "0.15mm layer height, 25% infill, minimal supports"
+    },
+    {
+      "id": "camera_module_housing",
+      "name": "Camera Module Housing",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "25x25x15mm",
+      "description": "Housing for the high-resolution camera module, positioned for first-person view.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+petg",
+      "estimatedCost": 0.7,
+      "printSettings": "0.15mm layer height, 25% infill, supports required"
+    },
+    {
+      "id": "microphone_grille",
+      "name": "Microphone Grille",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "dimensions": "10x5x2mm",
+      "description": "Small grille for the microphone, integrated into the frame.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+pla",
+      "estimatedCost": 0.2,
+      "printSettings": "0.15mm layer height, 100% infill"
+    },
+    {
+      "id": "speaker_grille",
+      "name": "Speaker Grille",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "dimensions": "12x8x2mm",
+      "description": "Small grille for the speaker, integrated into the temple of the frame.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+pla",
+      "estimatedCost": 0.2,
+      "printSettings": "0.15mm layer height, 100% infill"
+    },
+    {
+      "id": "battery_bay_cover",
+      "name": "Battery Bay Cover",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "dimensions": "40x15x5mm",
+      "description": "Removable cover for the LiPo battery and charging circuit bay.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+petg",
+      "estimatedCost": 0.4,
+      "printSettings": "0.2mm layer height, 20% infill"
+    },
+    {
+      "id": "button_caps",
+      "name": "Push Button Caps",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 2,
+      "dimensions": "5x5x3mm",
+      "description": "Small caps for external push buttons or touch sensors.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+filament+pla",
+      "estimatedCost": 0.1,
+      "printSettings": "0.1mm layer height, 100% infill"
+    },
+    {
+      "id": "m1_7_x_5mm_screws",
+      "name": "Small Frame Screws",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 6,
+      "dimensions": "M1.7x5mm",
+      "description": "Tiny screws for attaching hinges and securing small components to the frame.",
+      "productName": "M1.7x5mm Self-Tapping Micro Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m1.7x5mm+glasses+screws",
+      "estimatedCost": 0.15,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M1.7x5mm+Self-Tapping+Micro+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_x_8mm_screws",
+      "name": "Component Mounting Screws",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 8,
+      "dimensions": "M2x8mm",
+      "description": "Small screws for mounting internal 3D-printed parts and electrical components.",
+      "productName": "M2x8mm Phillips Pan Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2x8mm+small+screws",
+      "estimatedCost": 0.1,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x8mm+Phillips+Pan+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "smart glasses",
+    "navigation",
+    "AI capabilities",
+    "first-person camera"
+  ],
+  "approach": "# Smart AR Glasses Project Guide\n\n## Overview\nThis project outlines the development of \"Smart AR Glasses\" designed for navigation and AI capabilities, featuring a first-person camera. Key subsystems include head tracking, GPS navigation, AR display, voice input/output, and power management, all controlled by a central MCU.\n\n## Assumptions\n* Power Source: Single LiPo Battery 3.7V.\n* Environment: Indoor/outdoor operation, moderate temperatures.\n* Skill Level: Intermediate electrical and mechanical assembly, basic 3D printing knowledge.\n* Software: Firmware development for mcu_main (ESP32-based) handling all peripheral communication.\n\n## Action Items\n- [ ] 3D print all mechanical housings and structural components.\n- [ ] Assemble power management circuit (power_lipo_battery, power_charging_circuit, power_buck_converter).\n- [ ] Mount mcu_main into mcu_mount.\n- [ ] Integrate imu_head_tracking into imu_housing and connect to mcu_main (I2C: SDA, SCL).\n- [ ] Integrate gps_navigation into gps_module_mount and connect to mcu_main (UART: TXD0, RXD0).\n- [ ] Install display_ar_micro into oled_display_bezel and connect to mcu_main (I2C: SDA, SCL).\n- [ ] Mount camera_fpv into camera_module_housing and connect to mcu_main (Parallel DVP, SCCB/I2C).\n- [ ] Connect mic_voice_input (GPIO32) and speaker_audio_out (GPIO18) to mcu_main.\n- [ ] Secure input_button_left (GPIO13) and input_button_right (GPIO14) with button_caps to mcu_main.\n- [ ] Finalize assembly of all components into spectacle_frame, ensuring proper cable management.\n- [ ] Test all electrical connections and component functionality.\n- [ ] Load and verify initial firmware for AR functionality, navigation, and AI processing.\n\n## Assembly Key Points\n\n* `spectacle_frame` * `left_hinge`, `right_hinge`\n    Mounts via `m1_7_x_5mm_screws`\n* `spectacle_frame` * `nose_pad_set`\n    Mounts into frame recess\n* `mcu_mount` * `mcu_main`\n    `mcu_mount` holds `mcu_main` with `m2_x_8mm_screws`\n* `imu_housing` * `imu_head_tracking`\n    `imu_housing` encloses and secures `imu_head_tracking`\n* `gps_module_mount` * `gps_navigation`\n    `gps_module_mount` holds `gps_navigation` with `m2_x_8mm_screws`\n* `oled_display_bezel` * `display_ar_micro`\n    `oled_display_bezel` secures `display_ar_micro` into bezel\n* `camera_module_housing` * `camera_fpv`\n    `camera_module_housing` encloses and positions `camera_fpv`\n* `microphone_grille` * `mic_voice_input`\n    `microphone_grille` integrates over opening, protects `mic_voice_input`\n* `speaker_grille` * `speaker_audio_out`\n    `speaker_grille` integrates over opening, protects `speaker_audio_out`\n* `battery_bay_cover` * `spectacle_frame`\n    `battery_bay_cover` latches onto battery bay\n* `button_caps` * `input_button_left`, `input_button_right`\n    `button_caps` attach to button recess with adhesive, actuate button\n* `power_lipo_battery` * `power_charging_circuit`\n    Connect BAT+ to BAT+ and BAT- to BAT-\n* `power_charging_circuit` * `power_buck_converter`\n    Connect OUT+ to VIN, OUT- to GND_IN (3.7V nominal)\n* `power_buck_converter` * `mcu_main`, `display_ar_micro`, `camera_fpv`, `mic_voice_input`, `gps_navigation`\n    VOUT (5V) and GND_OUT to respective VCC/V+ and GND pins\n* `mcu_main` * `imu_head_tracking`\n    `SDA` to `SDA`, `SCL` to `SCL` (I2C)\n* `mcu_main` * `gps_navigation`\n    `TXD0` to `RX`, `RXD0` to `TX` (UART)\n* `mcu_main` * `display_ar_micro`\n    `SDA` to `SDA`, `SCL` to `SCL` (I2C)\n* `mcu_main` * `camera_fpv`\n    Ensure correct DVP pin mapping (`GPIO2-PCLK`, `GPIO4-VSYNC`, `GPIO16-HREF`, `GPIO17-XCLK`, `GPIO21-D0`, `GPIO22-D1`, `GPIO23-D2`, `GPIO25-D3`, `GPIO26-D4`, `GPIO34-D5`, `GPIO35-D6`, `GPIO36-D7`). SCCB `SDA` to `SIOD`, `SCL` to `SIOC`.\n* `mcu_main` * `mic_voice_input`\n    `GPIO32` to `OUT` (Analog)\n* `mcu_main` * `speaker_audio_out`\n    `GPIO18` to `SPK+` (PWM/DAC)\n* `mcu_main` * `input_button_left`, `input_button_right`\n    `GPIO13` to `SIG` (left), `GPIO14` to `SIG` (right)",
+  "projectName": "Smart AR Glasses",
+  "originalPrompt": "我需要设计一款智能眼镜  需要能导航  能使用ai  能以第一人称视角拍摄",
+  "projectDescription": "This project outlines the development of \"Smart AR Glasses\" designed for navigation and AI capabilities, featuring a first-person camera. Key subsystems include head tracking, GPS navigation, AR display, voice input/output, and power management, all controlled by a central MCU.",
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Battery to Charger",
+      "source": "power_lipo_battery",
+      "target": "power_charging_circuit",
+      "current": "500mA",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "Charger Output to Buck",
+      "source": "power_charging_circuit",
+      "target": "power_buck_converter",
+      "current": "500mA",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "5V Power to MCU",
+      "source": "power_buck_converter",
+      "target": "mcu_main",
+      "current": "300mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "5V Power to Display",
+      "source": "power_buck_converter",
+      "target": "display_ar_micro",
+      "current": "20mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "5V Power to Camera",
+      "source": "power_buck_converter",
+      "target": "camera_fpv",
+      "current": "80mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "5V Power to Microphone",
+      "source": "power_buck_converter",
+      "target": "mic_voice_input",
+      "current": "10mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "5V Power to GPS",
+      "source": "power_buck_converter",
+      "target": "gps_navigation",
+      "current": "50mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "imu_head_tracking",
+      "protocol": "I2C",
+      "sourcePin": "SDA",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "imu_head_tracking",
+      "protocol": "I2C",
+      "sourcePin": "SCL",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "gps_navigation",
+      "protocol": "UART",
+      "sourcePin": "TXD0",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "source": "gps_navigation",
+      "target": "mcu_main",
+      "protocol": "UART",
+      "sourcePin": "TX",
+      "targetPin": "RXD0"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "display_ar_micro",
+      "protocol": "I2C",
+      "sourcePin": "SDA",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "display_ar_micro",
+      "protocol": "I2C",
+      "sourcePin": "SCL",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO2",
+      "targetPin": "PCLK"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO4",
+      "targetPin": "VSYNC"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO16",
+      "targetPin": "HREF"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO17",
+      "targetPin": "XCLK"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO21",
+      "targetPin": "D0"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO22",
+      "targetPin": "D1"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO23",
+      "targetPin": "D2"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO25",
+      "targetPin": "D3"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO26",
+      "targetPin": "D4"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO34",
+      "targetPin": "D5"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO35",
+      "targetPin": "D6"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "Parallel DVP",
+      "sourcePin": "GPIO36",
+      "targetPin": "D7"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "SCCB/I2C",
+      "sourcePin": "SDA",
+      "targetPin": "SIOD"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "camera_fpv",
+      "protocol": "SCCB/I2C",
+      "sourcePin": "SCL",
+      "targetPin": "SIOC"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "mic_voice_input",
+      "protocol": "Analog",
+      "sourcePin": "GPIO32",
+      "targetPin": "OUT"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "speaker_audio_out",
+      "protocol": "PWM/DAC",
+      "sourcePin": "GPIO18",
+      "targetPin": "SPK+"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "input_button_left",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO13",
+      "targetPin": "SIG"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "input_button_right",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO14",
+      "targetPin": "SIG"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mounts_via_m1.7_screws",
+      "source": "spectacle_frame",
+      "target": "left_hinge"
+    },
+    {
+      "label": "mounts_via_m1.7_screws",
+      "source": "spectacle_frame",
+      "target": "right_hinge"
+    },
+    {
+      "label": "mounts_in_frame_recess",
+      "source": "spectacle_frame",
+      "target": "nose_pad_set"
+    },
+    {
+      "label": "integrated_bay_for",
+      "source": "spectacle_frame",
+      "target": "mcu_mount"
+    },
+    {
+      "label": "holds_with_m2_screws",
+      "source": "mcu_mount",
+      "target": "mcu"
+    },
+    {
+      "label": "integrated_mount_for",
+      "source": "spectacle_frame",
+      "target": "imu_housing"
+    },
+    {
+      "label": "encloses_and_secures",
+      "source": "imu_housing",
+      "target": "imu_head_tracking"
+    },
+    {
+      "label": "integrated_bay_for",
+      "source": "spectacle_frame",
+      "target": "gps_module_mount"
+    },
+    {
+      "label": "holds_with_m2_screws",
+      "source": "gps_module_mount",
+      "target": "gps_module"
+    },
+    {
+      "label": "integrated_bezel_for",
+      "source": "spectacle_frame",
+      "target": "oled_display_bezel"
+    },
+    {
+      "label": "secures_display_into_bezel",
+      "source": "oled_display_bezel",
+      "target": "micro_oled_display"
+    },
+    {
+      "label": "integrated_mount_for",
+      "source": "spectacle_frame",
+      "target": "camera_module_housing"
+    },
+    {
+      "label": "encloses_and_positions",
+      "source": "camera_module_housing",
+      "target": "camera_module"
+    },
+    {
+      "label": "integrates_over_microphone_opening",
+      "source": "spectacle_frame",
+      "target": "microphone_grille"
+    },
+    {
+      "label": "protects_microphone",
+      "source": "microphone_grille",
+      "target": "microphone"
+    },
+    {
+      "label": "integrates_over_speaker_opening",
+      "source": "spectacle_frame",
+      "target": "speaker_grille"
+    },
+    {
+      "label": "protects_speaker",
+      "source": "speaker_grille",
+      "target": "speaker_audio_out"
+    },
+    {
+      "label": "covers_battery_bay",
+      "source": "spectacle_frame",
+      "target": "battery_bay_cover"
+    },
+    {
+      "label": "mounts_sensors_for",
+      "source": "spectacle_frame",
+      "target": "small_push_buttons"
+    },
+    {
+      "label": "mounts_over_push_buttons",
+      "source": "spectacle_frame",
+      "target": "button_caps"
+    },
+    {
+      "label": "actuates_button",
+      "source": "button_caps",
+      "target": "small_push_buttons"
+    },
+    {
+      "label": "screws_into_frame_with_m2_screws",
+      "source": "mcu_mount",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "screws_into_frame_with_m1.7_screws",
+      "source": "imu_housing",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "screws_into_frame_with_m2_screws",
+      "source": "gps_module_mount",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "secures_with_m1.7_screws",
+      "source": "oled_display_bezel",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "secures_with_m1.7_screws",
+      "source": "camera_module_housing",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "snaps_into_frame_opening",
+      "source": "microphone_grille",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "snaps_into_frame_opening",
+      "source": "speaker_grille",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "latches_onto_battery_bay",
+      "source": "battery_bay_cover",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "attaches_to_button_recess_with_adhesive",
+      "source": "button_caps",
+      "target": "spectacle_frame"
+    },
+    {
+      "label": "connects_to_left_temple_via_m1.7_screws",
+      "source": "left_hinge",
+      "target": "left_temple_frame"
+    },
+    {
+      "label": "connects_to_right_temple_via_m1.7_screws",
+      "source": "right_hinge",
+      "target": "right_temple_frame"
+    }
+  ],
+  "projectId": "0f0b44be-77a2-48a6-9449-5dcbddc6cc72"
+}

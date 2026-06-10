@@ -1,0 +1,697 @@
+{
+  "plan": "- Design and 3D print the composite bow limbs, ensuring appropriate flex and strength characteristics. - Create a 3D-printed riser/handle with ergonomic grip and attachment points for accessories. - Integrate a 3D-printed cam system for compound bow functionality, including idler wheels and string channels. - Source or 3D print a bowstring and cables suitable for the limb and cam design. - Include attachment points for a sight, arrow rest, and stabilizer on the riser. - Design a fully 3D-printed arrow nock and possibly an arrow rest.",
+  "nodes": [
+    {
+      "id": "bow_riser_handle",
+      "name": "Bow Riser/Handle",
+      "type": "3d_printed",
+      "partId": "99d0404d-31cb-436c-97ec-a6df2c9afa1c",
+      "category": "mechanical",
+      "material": "Carbon Fiber Reinforced PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "300x150x50mm",
+      "description": "Main structural body with ergonomic grip, incorporating attachment points for limbs and accessories.",
+      "productName": "Bow Riser Frame",
+      "purchaseUrl": "https://www.amazon.com/s?k=carbon+fiber+petg+filament",
+      "estimatedCost": 25,
+      "printSettings": "High infill (70-90%), 0.2mm layer height for strength.",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "upper_bow_limb",
+      "name": "Upper Bow Limb",
+      "type": "3d_printed",
+      "partId": "3285df45-f5b8-483a-9d67-75a3148b82d0",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/mlV4zX8m4lo0oOKqYLLcHOZok9Z5CDIvS5SXca5ew7M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFSeEdUejZrakwu/anBn",
+      "material": "Carbon Fiber Reinforced PETG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0921LPFR9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x40x15mm",
+      "description": "Upper flexible limb, designed for composite printing with embedded fiber for strength and flex.",
+      "productName": "Upper Recurve Limb",
+      "purchaseUrl": "https://www.amazon.com/s?k=carbon+fiber+petg+filament",
+      "estimatedCost": 20,
+      "printSettings": "High infill (80-100%), specific layering for fiber embedding, 0.15mm layer height.",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRXl8ksvRh4NXlXTdTakmWxcVPSlYDbf1ECEOwKj8D5C28rVl4R6dfM5Oy6LRmMDBmJZJNFlEWT6bhj6lvlV1ClZhxxHl6VSR3GL3Wm6f1sFPvVWHgOJ6DOPX1hkkiv3gW2H56LzF565Zf0SPWsGasFlTtMv0QuCsJYtAXbabazyDlmVYUG4Q96knmWovTE0yL4IB1OcSzJk7Fo8IOK6eOHQeTDDzUlYCrcUrCvqtIe3tyJGY6bF6cfNYX5VohwEcuxoVPDxcNvcN4m6ySEm3CPKAc7vWyefstSYD7KN8QWGRNKo65JzrHw6YvxSLOJzRp8cW9NAZEL9GrpKshjBCQldfggeV1aWWTvziqrKZ2tgEKWHO71AiAG8pPKWBdLmctpZxipkj03f3dMtppxbwzRYa39g5kWFV2mdRsBmCeMVvc4iBl147HOpC8lZxer4n4eF0hdQFRGevFXXrh34awluShYxWMqiaMYC5wxjciLra5GZ2NIf0KlByFdlCLfwOVzl7gexHLdGIywxBnw3EpjENra56QHDGYNFM9uM1YH85YpsZGISXBiej23Q6yzZTxeTnvI7LFViXV7k8b2MsUiODWywo7t3gohEaQMx9TGo1Aw7n5VkaXRa5GBtqeBoyc3WQR94CVEmBcEUl3SXqk5l"
+    },
+    {
+      "id": "lower_bow_limb",
+      "name": "Lower Bow Limb",
+      "type": "3d_printed",
+      "partId": "d09c0359-6267-40f2-adcd-0bed985f82e0",
+      "category": "mechanical",
+      "material": "Carbon Fiber Reinforced PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "400x40x15mm",
+      "description": "Lower flexible limb, designed for composite printing with embedded fiber for strength and flex.",
+      "productName": "Bow Limb Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=carbon+fiber+petg+filament",
+      "estimatedCost": 20,
+      "printSettings": "High infill (80-100%), specific layering for fiber embedding, 0.15mm layer height.",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "upper_binary_cam",
+      "name": "Upper Binary Cam",
+      "type": "3d_printed",
+      "partId": "89641fd4-95e1-405c-8cf2-fc17b58b1976",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "70x70x20mm",
+      "description": "Upper cam for the binary cam system, includes string channels.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=nylon+filament+3d+printing",
+      "estimatedCost": 10,
+      "printSettings": "High infill (80-100%), smooth surfaces for string channels, 0.1mm layer height.",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "lower_binary_cam",
+      "name": "Lower Binary Cam",
+      "type": "3d_printed",
+      "partId": "9d459f6f-1496-4ceb-a506-b17879ddaf42",
+      "category": "mechanical",
+      "material": "Nylon",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "70x70x20mm",
+      "description": "Lower cam for the binary cam system, includes string channels.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=nylon+filament+3d+printing",
+      "estimatedCost": 10,
+      "printSettings": "High infill (80-100%), smooth surfaces for string channels, 0.1mm layer height.",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "cam_axle_upper",
+      "name": "Upper Cam Axle",
+      "type": "mechanism",
+      "partId": "61a3aa01-e998-48f9-a16e-718c0718180f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/ERZeC_04zjVob9rR2Xb-1QfjJDR9b2_UC6YndvcOuz0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE0NkQtZk9xT0wu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D5D3Q3Q6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5mm diameter x 80mm length",
+      "description": "Shaft for upper cam rotation.",
+      "productName": "5mm Stainless Steel Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=5mm+stainless+steel+rod",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxgmyz2qXnQsbqtPBOKiVlbXKOE9fJmTS1EwZJBY0lGdGHOQl3wr5C6i9BiVkcE2U1taHQwrGbJnUMLSTdFPVyl6LFm9CflwTdt7TubuF3NZv0ET9ycJveDhN3XhyZId1BciTpmVQK6UDFyjy9gZHODULSf6OmnTno7t1uLZgcI9yoUn5Zof5jPZ77ns4jnkbAVIJKlvyedWzkF5puBpEk9TmbbhjGiEgp7KgxfPXyR0mU7xOpQoVQ3s0kXf3HHFMuF9nJdbYRtMcjz10KhIoNuog6JmLHtb3e0BbCyUiEJKXQjEd7Dvz7PSUNod4gKRrhcL7IenUv9pHVZQKqJKaRgnbQmdrJrfN3hVBXuIZbO20UQwOKVl4zA58T1gPnjYXtXFMPDmQ5c0njraKJPqbbWUKWd2gOHAbN2ZWPCzXJ4RXJng6n9C8DteJUMxoMSPs45jzqDQ98VX4Q5f8g6fnjnUhvrgYoxXHMyJtz0fuPtYWnBQCg3UycM3yJXRzbi97pz560TtaUisrb6mTvAd8AGL9U0wvzY34plXTtQIbqZtiAkTcQPwISMSBxtxUKkwRe8Jbf8DgU7ZmR6WrsyADdH1QQ5k67udZZ1we6kt3JOVNK6pubjxfffgSAYAlWoS3C1taOcDESzgcjseCTL8EiH7d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5mm+Stainless+Steel+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cam_axle_lower",
+      "name": "Lower Cam Axle",
+      "type": "mechanism",
+      "partId": "61a3aa01-e998-48f9-a16e-718c0718180f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/ERZeC_04zjVob9rR2Xb-1QfjJDR9b2_UC6YndvcOuz0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE0NkQtZk9xT0wu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D5D3Q3Q6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5mm diameter x 80mm length",
+      "description": "Shaft for lower cam rotation.",
+      "productName": "5mm Stainless Steel Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=5mm+stainless+steel+rod",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxgmyz2qXnQsbqtPBOKiVlbXKOE9fJmTS1EwZJBY0lGdGHOQl3wr5C6i9BiVkcE2U1taHQwrGbJnUMLSTdFPVyl6LFm9CflwTdt7TubuF3NZv0ET9ycJveDhN3XhyZId1BciTpmVQK6UDFyjy9gZHODULSf6OmnTno7t1uLZgcI9yoUn5Zof5jPZ77ns4jnkbAVIJKlvyedWzkF5puBpEk9TmbbhjGiEgp7KgxfPXyR0mU7xOpQoVQ3s0kXf3HHFMuF9nJdbYRtMcjz10KhIoNuog6JmLHtb3e0BbCyUiEJKXQjEd7Dvz7PSUNod4gKRrhcL7IenUv9pHVZQKqJKaRgnbQmdrJrfN3hVBXuIZbO20UQwOKVl4zA58T1gPnjYXtXFMPDmQ5c0njraKJPqbbWUKWd2gOHAbN2ZWPCzXJ4RXJng6n9C8DteJUMxoMSPs45jzqDQ98VX4Q5f8g6fnjnUhvrgYoxXHMyJtz0fuPtYWnBQCg3UycM3yJXRzbi97pz560TtaUisrb6mTvAd8AGL9U0wvzY34plXTtQIbqZtiAkTcQPwISMSBxtxUKkwRe8Jbf8DgU7ZmR6WrsyADdH1QQ5k67udZZ1we6kt3JOVNK6pubjxfffgSAYAlWoS3C1taOcDESzgcjseCTL8EiH7d",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5mm+Stainless+Steel+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cam_bearing_upper_inner",
+      "name": "Upper Cam Inner Bearing",
+      "type": "mechanism",
+      "partId": "eafe2938-995c-49e9-93e5-34ae4a37969b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5uRer6aC265XBmOoRw1nSEdA8uSN9BlZjD48VIQKD_k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3F4VUFB/TVhRekI1UkRnZXYv/cy1sNTAwLndlYnA",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07H83VV6B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x8x7mm",
+      "description": "Ball bearing for smooth rotation of the upper cam.",
+      "productName": "608ZZ Ball Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=608zz+ball+bearing",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHSKSXyK5yYwPM9E9qyWyT2TyvReIhyP38ET7h9xPFw37ycwyBtJPgDkfBzx5PuZp8yeDfUWPGIdfu43heTyU3Hk1UlugIwLiwFY9y8x1fuQCFdJKwGyOTHXQSQYNXaQZGI3lCdGKnnBgF13vgWlFLKGzLEO18WaN04NW1iFgT1ZJeKoVgNvu5b0a6saM0P8gW5CeenFSrAwUzwpZ3hJsoLfM7uDRh28kumIsQYex7ot3U8RZydTt4RTUyktaCKD0vOErz9WSG3hJncqDR1LXAKZoPaev5ukmxWsVRprP7xUq8O19t7lN6gLc02FAE6kbwjKGOfMJ60aKt7C6mWQYZZs9ABq3tqqPDJuqmvwP4NXKJrSGgEftFR9GuMhDx9EoKmz0yIOA7rE6OjZNb5Jo0iJCWZBd4HcAJMwTb4OmUXUrWCQFSZunT14mSal1KBfH4Sj682T6YWc3qubCd1ag8xwTDgfOogcK1fqVcqxMHIREvgwseemAChe3qCkgjghrqk5EmRTgE2xwYOLDMjaSDTdDqKlzxr13BPq5vfTjdDVd2Jhtufb1BM2vgw57B2zevWAWmWLArUlOLcs3POZepH7bi0QvZRcYI2YGpzZdOBJq56tvMEBhjTACeOe3xSOYbzlKVM8tZJioBqxqyMFKLSF",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=608ZZ+Ball+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cam_bearing_upper_outer",
+      "name": "Upper Cam Outer Bearing",
+      "type": "mechanism",
+      "partId": "eafe2938-995c-49e9-93e5-34ae4a37969b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5uRer6aC265XBmOoRw1nSEdA8uSN9BlZjD48VIQKD_k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3F4VUFB/TVhRekI1UkRnZXYv/cy1sNTAwLndlYnA",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07H83VV6B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x8x7mm",
+      "description": "Ball bearing for smooth rotation of the upper cam.",
+      "productName": "608ZZ Ball Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=608zz+ball+bearing",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHSKSXyK5yYwPM9E9qyWyT2TyvReIhyP38ET7h9xPFw37ycwyBtJPgDkfBzx5PuZp8yeDfUWPGIdfu43heTyU3Hk1UlugIwLiwFY9y8x1fuQCFdJKwGyOTHXQSQYNXaQZGI3lCdGKnnBgF13vgWlFLKGzLEO18WaN04NW1iFgT1ZJeKoVgNvu5b0a6saM0P8gW5CeenFSrAwUzwpZ3hJsoLfM7uDRh28kumIsQYex7ot3U8RZydTt4RTUyktaCKD0vOErz9WSG3hJncqDR1LXAKZoPaev5ukmxWsVRprP7xUq8O19t7lN6gLc02FAE6kbwjKGOfMJ60aKt7C6mWQYZZs9ABq3tqqPDJuqmvwP4NXKJrSGgEftFR9GuMhDx9EoKmz0yIOA7rE6OjZNb5Jo0iJCWZBd4HcAJMwTb4OmUXUrWCQFSZunT14mSal1KBfH4Sj682T6YWc3qubCd1ag8xwTDgfOogcK1fqVcqxMHIREvgwseemAChe3qCkgjghrqk5EmRTgE2xwYOLDMjaSDTdDqKlzxr13BPq5vfTjdDVd2Jhtufb1BM2vgw57B2zevWAWmWLArUlOLcs3POZepH7bi0QvZRcYI2YGpzZdOBJq56tvMEBhjTACeOe3xSOYbzlKVM8tZJioBqxqyMFKLSF",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=608ZZ+Ball+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cam_bearing_lower_inner",
+      "name": "Lower Cam Inner Bearing",
+      "type": "mechanism",
+      "partId": "eafe2938-995c-49e9-93e5-34ae4a37969b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5uRer6aC265XBmOoRw1nSEdA8uSN9BlZjD48VIQKD_k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3F4VUFB/TVhRekI1UkRnZXYv/cy1sNTAwLndlYnA",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07H83VV6B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x8x7mm",
+      "description": "Ball bearing for smooth rotation of the lower cam.",
+      "productName": "608ZZ Ball Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=608zz+ball+bearing",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHSKSXyK5yYwPM9E9qyWyT2TyvReIhyP38ET7h9xPFw37ycwyBtJPgDkfBzx5PuZp8yeDfUWPGIdfu43heTyU3Hk1UlugIwLiwFY9y8x1fuQCFdJKwGyOTHXQSQYNXaQZGI3lCdGKnnBgF13vgWlFLKGzLEO18WaN04NW1iFgT1ZJeKoVgNvu5b0a6saM0P8gW5CeenFSrAwUzwpZ3hJsoLfM7uDRh28kumIsQYex7ot3U8RZydTt4RTUyktaCKD0vOErz9WSG3hJncqDR1LXAKZoPaev5ukmxWsVRprP7xUq8O19t7lN6gLc02FAE6kbwjKGOfMJ60aKt7C6mWQYZZs9ABq3tqqPDJuqmvwP4NXKJrSGgEftFR9GuMhDx9EoKmz0yIOA7rE6OjZNb5Jo0iJCWZBd4HcAJMwTb4OmUXUrWCQFSZunT14mSal1KBfH4Sj682T6YWc3qubCd1ag8xwTDgfOogcK1fqVcqxMHIREvgwseemAChe3qCkgjghrqk5EmRTgE2xwYOLDMjaSDTdDqKlzxr13BPq5vfTjdDVd2Jhtufb1BM2vgw57B2zevWAWmWLArUlOLcs3POZepH7bi0QvZRcYI2YGpzZdOBJq56tvMEBhjTACeOe3xSOYbzlKVM8tZJioBqxqyMFKLSF",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=608ZZ+Ball+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cam_bearing_lower_outer",
+      "name": "Lower Cam Outer Bearing",
+      "type": "mechanism",
+      "partId": "eafe2938-995c-49e9-93e5-34ae4a37969b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5uRer6aC265XBmOoRw1nSEdA8uSN9BlZjD48VIQKD_k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3F4VUFB/TVhRekI1UkRnZXYv/cy1sNTAwLndlYnA",
+      "material": "Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07H83VV6B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x8x7mm",
+      "description": "Ball bearing for smooth rotation of the lower cam.",
+      "productName": "608ZZ Ball Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=608zz+ball+bearing",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHSKSXyK5yYwPM9E9qyWyT2TyvReIhyP38ET7h9xPFw37ycwyBtJPgDkfBzx5PuZp8yeDfUWPGIdfu43heTyU3Hk1UlugIwLiwFY9y8x1fuQCFdJKwGyOTHXQSQYNXaQZGI3lCdGKnnBgF13vgWlFLKGzLEO18WaN04NW1iFgT1ZJeKoVgNvu5b0a6saM0P8gW5CeenFSrAwUzwpZ3hJsoLfM7uDRh28kumIsQYex7ot3U8RZydTt4RTUyktaCKD0vOErz9WSG3hJncqDR1LXAKZoPaev5ukmxWsVRprP7xUq8O19t7lN6gLc02FAE6kbwjKGOfMJ60aKt7C6mWQYZZs9ABq3tqqPDJuqmvwP4NXKJrSGgEftFR9GuMhDx9EoKmz0yIOA7rE6OjZNb5Jo0iJCWZBd4HcAJMwTb4OmUXUrWCQFSZunT14mSal1KBfH4Sj682T6YWc3qubCd1ag8xwTDgfOogcK1fqVcqxMHIREvgwseemAChe3qCkgjghrqk5EmRTgE2xwYOLDMjaSDTdDqKlzxr13BPq5vfTjdDVd2Jhtufb1BM2vgw57B2zevWAWmWLArUlOLcs3POZepH7bi0QvZRcYI2YGpzZdOBJq56tvMEBhjTACeOe3xSOYbzlKVM8tZJioBqxqyMFKLSF",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=608ZZ+Ball+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "bowstring",
+      "name": "Bowstring",
+      "type": "mechanism",
+      "partId": "0193a4ab-b0e3-491a-927f-7deacf147097",
+      "category": "mechanical",
+      "material": "Dacron/BCY-X",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0F1QC4P53?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "~1.6m length",
+      "description": "Main string for propelling the arrow.",
+      "productName": "High-Strength Compound Bow String",
+      "purchaseUrl": "https://www.amazon.com/s?k=compound+bow+string",
+      "estimatedCost": 30,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhdFhSrMreD8U6udzv0qrV8QGwbwdvnaRVX2EHVCpy7DqDD5J395nkG0AOUm91kHlu2w1TQQVaSamQtpirkPjRrBCad0tbgUhGI7KISbCb5XZ8PxBGnq0Gj0bJyQLz5Z1e9K19Atq7CZkLDCLPMFHsJSpcKk7uD73FcjKxWacolfvMwYVNc05trIJSzVI5ZDDbNjsMoOOZkZE6og7x0pzn6hz3CNWs44kVftXML3xuefRrTikn5GlrmZ3Cna6OffTadqdV9awZby2BXa0E5uE8W5XVbFz3Y2df4H0rcbHKa4GANHlXFYl3zCQV3hVlzHWmFtYnn0BQOJUorvVAShS0QW0gwwMSf3TRi8NNLHg49Jj7KxN3a1AOM4XCgV49WzWK5N4IxX14GgqExwWlT3tA4Na2QqoHRDJzLitxGfASgFQPQOQZ6pXy6zDqirJVcCPonmTVcYjHO62gRuSnrsPYMaQkGr8xKycKb4FSavY5XqsT8LO8XtnkGr24XxJXBy0yzIQi8XcbcIvUzQHjkyzihzr4T45wtpOEagznVSF78LucbBzToIc0nzuE4ON5n6uabK448Azne37T22ZhwcKoEEPbDu6HqKN8bcn3ZaaAMKfAIHB9WEfD7fqxS0mL4bOYdhgbxPCYn8HFpJgDgTM3Nh",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=High-Strength+Compound+Bow+String&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "control_cable",
+      "name": "Control Cable",
+      "type": "mechanism",
+      "partId": "e9e61988-d117-468a-9e28-4571d31f1777",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5JpzDF_QtyIRdSdt6aliJU4EcR5NPalw_lYmSnei_ok/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly90YXBh/cmNoZXJ5LmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy8yMDIyMDQw/Nl8xMjA4MDNfN2I1/Y2QxNzQtNmY3Yy00/Yzc2LWI0ZTktZjRl/NjgyMzEzODljX2Nv/bXBhY3QuanBnP3Y9/MTY0OTk0NDg4Mw",
+      "material": "Dacron/BCY-X",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B016CJC5NC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "~0.8m length",
+      "description": "Cable connecting cams and regulating draw length/let-off.",
+      "productName": "Compound Bow Control Cable",
+      "purchaseUrl": "https://www.amazon.com/s?k=compound+bow+cable",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2vfON6z",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Compound+Bow+Control+Cable&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "buss_cable",
+      "name": "Buss Cable",
+      "type": "mechanism",
+      "partId": "9902651f-9025-451a-8b41-09a602fd0662",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/bIQlrfLfuprVY_zF0TaRmKukyd_8PRNdn38If5g5PAg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE2YjI3ZWRoNEwu/anBn",
+      "material": "Dacron/BCY-X",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09XBVB1C3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "~0.8m length",
+      "description": "Cable connecting cams and managing limb tension.",
+      "productName": "Compound Bow Buss Cable",
+      "purchaseUrl": "https://www.amazon.com/s?k=compound+bow+cable",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4589AT3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Compound+Bow+Buss+Cable&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "arrow_rest_3d_printed",
+      "name": "3D Printed Arrow Rest",
+      "type": "3d_printed",
+      "partId": "13216e74-d08e-49b1-9bfe-219d5797aa96",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/EN_WfBb_9HbK2_-jhFq6BXDSqFyhGpAUoY8v9aU6XVw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzI1MTk4NjcyL3Iv/aWwvZTU5YzYwLzMx/ODQ3Mjc4MjAvaWxf/MzAweDMwMC4zMTg0/NzI3ODIwXzliYjUu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "50x30x20mm",
+      "description": "Support for the arrow before release.",
+      "productName": "3D Printed BMO Arm",
+      "purchaseUrl": "https://www.amazon.com/s?k=petg+filament",
+      "estimatedCost": 5,
+      "printSettings": "Standard infill (30-50%), smooth upper surface, 0.2mm layer height.",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "nocking_point_3d_printed",
+      "name": "3D Printed Nocking Point",
+      "type": "3d_printed",
+      "partId": "b77c80ac-ca0f-47de-84dd-c0701ea5f562",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/h3b60x5ebmIfWUYGS5bj03Hb8xpN5CtcvVSKDOtFlBE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9mYmku/Y3VsdHMzZC5jb20v/dXBsb2FkZXJzLzE5/ODA1NzQ4L2lsbHVz/dHJhdGlvbi1maWxl/L2Y4M2RhN2YzLWE5/M2ItNGM5ZC1iYjkz/LTE2NmRmYzZiOTUw/Ny9OZXQtUG90LWRl/Y29yLTNELW1vbGQt/cHJpbnRpbmctNS5q/cGc",
+      "material": "PETG",
+      "quantity": 2,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer, 15% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "5x5x5mm",
+      "description": "Small clip-on part to define arrow nock position on the string.",
+      "productName": "3D Printed Net Pot",
+      "purchaseUrl": "https://www.amazon.com/s?k=petg+filament",
+      "estimatedCost": 1,
+      "printSettings": "High infill (80%), snug fit, 0.15mm layer height.",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "limb_attachment_bolt",
+      "name": "Limb Attachment Bolt",
+      "type": "misc",
+      "partId": "64087185-7922-4784-a71d-c505ca43be92",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/R64UqkwAT15USvfrHL6rQcrF2d45aVs_wZ7iIDlDcX4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvZTlm/OGQ5YjktMTdmMC00/NThhLTgyY2YtNGEw/NjQwYWYwNmI3XzEu/ZjNlNTFlZTRkODI1/YTE2ZGVlZjRiM2My/YjVhYmU5MjguanBl/Zz9vZG5IZWlnaHQ9/NDUwJm9kbldpZHRo/PTQ1MCZvZG5CZz1G/RkZGRkY",
+      "material": "Stainless Steel",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0F998V6JP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5x40mm",
+      "description": "Bolt for securing bow limbs to the riser.",
+      "productName": "M5x40mm Hex Head Bolt",
+      "purchaseUrl": "https://www.amazon.com/s?k=m5x40mm+stainless+steel+bolt",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4lQoAVn",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5x40mm+Hex+Head+Bolt&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "limb_attachment_nut",
+      "name": "Limb Attachment Nut",
+      "type": "misc",
+      "partId": "afb7e7ae-e0be-4f83-b6b3-0df65a943393",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/IdkR-pCopl0kCjz-Lzv1wAVhG3rcFB7X02eEvQrmCgg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aXRz/dC10aXRhbml1bS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjUvMTAvTzFDTjAx/Z1k2NzZKMWlyVHRX/TGhuOENfNjkwODY0/NDY2LmpwZ18ud2Vi/cA",
+      "material": "Stainless Steel",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0DFY86HG1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M5",
+      "description": "Locking nut for securing limb attachment bolts.",
+      "productName": "M5 Nylon Lock Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=m5+nylon+lock+nut",
+      "estimatedCost": 0.3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c38DSXAz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+Nylon+Lock+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "accessory_insert_m3",
+      "name": "Accessory Threaded Insert",
+      "type": "misc",
+      "partId": "e7f04cec-c58c-4349-babd-f9678a59f23b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/G0gDRkuHMIP1ErE95vie9Cp2zhk6lXc8TZNySRiAtZQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFDNnVmZFpJMkwu/anBn",
+      "material": "Brass",
+      "quantity": 6,
+      "amazonUrl": "https://www.amazon.com/dp/B0CS6VZYL8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x4mm",
+      "description": "Threaded insert for mounting accessories like arrow rest, sight, stabilizer.",
+      "productName": "M3 Brass Heat-Set Insert",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+brass+heat+set+insert",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgNN69lIIDIECscgtgGU9UYxef4BRiw7YumAEEqwxfnfC3Yg67nOYI4dFlZCGwoomZsjoNu8orcnDAMD7B9ug5ljEl8J2qRKQrspZ0SYqxZIHKBRoDD5m0MTsX2TX0DyPj7M2IMyGVVlZVrhtqSl2m9AbLDTVdocvmpCeVWuVvBJFKYM4sacYEtD8eojrkr2NpnME7qmuSkihHAVtHz4jZgsFb3KMmNny3h04izDBuDzvkEAGHvvJ9NTDeA4lWiBDUflNi4Ndf55aINgRoQHvpLVmL4b5J247pPWEir0qYr0eKzqzP23uzh7AhK7Ivc4N0rOYWSU96P1EqaxXcrZkU851UwWVpSxjyU104B18JoDxWU9re96iVyYF0SjxFq017ie1jJi0ncb7vA0PRSXIbpYEcJphOMEdcgNKnZLUsCRtjmr9mg7bxYpiv875xaT8qD9JGhY0836LoSSQkgvBmh4Yl4LHBmsz7gGcUaKV4Xg0ChX3TnlO9IXD6u8PjEewtSF4EGh3xP7CUBFQOdRK4kN1nJSgNLaRuKPp9XZPlIOuTOYQXOlbPVq2S7UedR2SEThxDd01rivgOUwaaFM2t1DxUnaTP2KyPUTKhBiOYm5DXrLyNgxfOd1uG7vus9bTjHPtTFLu04cQLrBu2cLIPLl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Brass+Heat-Set+Insert&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "arrow_rest_mounting_bolt",
+      "name": "Arrow Rest Mounting Bolt",
+      "type": "misc",
+      "partId": "95fd702a-5099-459b-8209-84da7ec69ddb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/WKObGK9RyFABe1z3qrxSJgpH8FYDs-Cq76nfn5z4Gt0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFINWdnQ2JWK0wu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0DJQHJ8Y1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "Bolt for securing the 3D printed arrow rest to the riser.",
+      "productName": "M3x10mm Hex Head Bolt",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3x10mm+stainless+steel+bolt",
+      "estimatedCost": 0.2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3yRzDRn",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Hex+Head+Bolt&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "全3D打印 (Fully 3D Printed)",
+    "复合弓 (Compound Bow)"
+  ],
+  "projectName": "3D Printed Compound Bow",
+  "originalPrompt": "全3D打印复合弓",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Prepare 3D printer for Carbon Fiber Reinforced PETG filament.",
+          "partIds": []
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D print the Bow Riser/Handle.",
+          "partIds": [
+            "bow_riser_handle"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "3D print the Upper and Lower Bow Limbs with fiber embedding.",
+          "partIds": [
+            "upper_bow_limb",
+            "lower_bow_limb"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Prepare 3D printer for Nylon filament and print the Upper and Lower Binary Cams.",
+          "partIds": [
+            "upper_binary_cam",
+            "lower_binary_cam"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "3D print the 3D Printed Arrow Rest and 3D Printed Nocking Points using PETG.",
+          "partIds": [
+            "arrow_rest_3d_printed",
+            "nocking_point_3d_printed"
+          ]
+        },
+        {
+          "id": "fabricate_6",
+          "title": "Deburr and clean all 3D printed parts, ensuring smooth surfaces and proper fits.",
+          "partIds": [
+            "bow_riser_handle",
+            "upper_bow_limb",
+            "lower_bow_limb",
+            "upper_binary_cam",
+            "lower_binary_cam",
+            "arrow_rest_3d_printed",
+            "nocking_point_3d_printed"
+          ]
+        },
+        {
+          "id": "fabricate_7",
+          "title": "Install Accessory Threaded Inserts into the Bow Riser/Handle using a heat gun or soldering iron.",
+          "partIds": [
+            "bow_riser_handle",
+            "accessory_insert_m3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "No electrical wiring is required for this mechanical project.",
+          "partIds": []
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "No electronic bring-up or firmware testing is required for this project.",
+          "partIds": []
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Insert Upper and Lower Cam Axles into the respective Bow Limbs.",
+          "partIds": [
+            "upper_bow_limb",
+            "lower_bow_limb",
+            "cam_axle_upper",
+            "cam_axle_lower"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Press fit or secure the Upper and Lower Cam Inner and Outer Bearings into the Binary Cams.",
+          "partIds": [
+            "upper_binary_cam",
+            "lower_binary_cam",
+            "cam_bearing_upper_inner",
+            "cam_bearing_upper_outer",
+            "cam_bearing_lower_inner",
+            "cam_bearing_lower_outer"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount the Upper and Lower Binary Cams onto their respective Cam Axles at the limb ends.",
+          "partIds": [
+            "upper_binary_cam",
+            "lower_binary_cam",
+            "cam_axle_upper",
+            "cam_axle_lower"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Attach the Upper and Lower Bow Limbs to the Bow Riser/Handle using Limb Attachment Bolts and Nuts.",
+          "partIds": [
+            "bow_riser_handle",
+            "upper_bow_limb",
+            "lower_bow_limb",
+            "limb_attachment_bolt",
+            "limb_attachment_nut"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Route the Bowstring, Control Cable, and Buss Cable around the Upper and Lower Binary Cams according to a binary cam system configuration.",
+          "partIds": [
+            "bowstring",
+            "control_cable",
+            "buss_cable",
+            "upper_binary_cam",
+            "lower_binary_cam"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount the 3D Printed Arrow Rest to the Bow Riser/Handle using the Arrow Rest Mounting Bolt into the Accessory Threaded Insert.",
+          "partIds": [
+            "bow_riser_handle",
+            "arrow_rest_3d_printed",
+            "arrow_rest_mounting_bolt",
+            "accessory_insert_m3"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Position and secure the 3D Printed Nocking Points on the Bowstring.",
+          "partIds": [
+            "bowstring",
+            "nocking_point_3d_printed"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Perform initial tensioning, alignment, and functional checks of the assembled bow.",
+          "partIds": [
+            "bow_riser_handle",
+            "upper_bow_limb",
+            "lower_bow_limb",
+            "upper_binary_cam",
+            "lower_binary_cam",
+            "bowstring",
+            "control_cable",
+            "buss_cable"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A fully 3D-printed compound bow, featuring a composite riser, flexible limbs, and a binary cam system for efficient arrow propulsion. It integrates a 3D-printed arrow rest and nocking points, using high-strength strings and cables.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (capable of Carbon Fiber Reinforced PETG, Nylon, and PETG)",
+      "Deburring tool or craft knife",
+      "M5 hex key",
+      "M3 hex key",
+      "Heat gun or soldering iron (for heat-set inserts)",
+      "Pliers"
+    ],
+    "assumptions": [
+      "Basic understanding of 3D printing advanced materials",
+      "Familiarity with heat-set insert installation",
+      "Basic knowledge of compound bow mechanics and stringing"
+    ]
+  },
+  "electricalConnections": [],
+  "mechanicalConnections": [
+    {
+      "label": "attached via",
+      "source": "bow_riser_handle",
+      "target": "upper_bow_limb"
+    },
+    {
+      "label": "attached via",
+      "source": "bow_riser_handle",
+      "target": "lower_bow_limb"
+    },
+    {
+      "label": "secured by",
+      "source": "upper_bow_limb",
+      "target": "limb_attachment_bolt"
+    },
+    {
+      "label": "secured by",
+      "source": "lower_bow_limb",
+      "target": "limb_attachment_bolt"
+    },
+    {
+      "label": "fastened with",
+      "source": "limb_attachment_bolt",
+      "target": "limb_attachment_nut"
+    },
+    {
+      "label": "mounts at end with",
+      "source": "upper_bow_limb",
+      "target": "upper_binary_cam"
+    },
+    {
+      "label": "mounts at end with",
+      "source": "lower_bow_limb",
+      "target": "lower_binary_cam"
+    },
+    {
+      "label": "rotates on",
+      "source": "upper_binary_cam",
+      "target": "cam_axle_upper"
+    },
+    {
+      "label": "rotates on",
+      "source": "lower_binary_cam",
+      "target": "cam_axle_lower"
+    },
+    {
+      "label": "supported by",
+      "source": "cam_axle_upper",
+      "target": "cam_bearing_upper_inner"
+    },
+    {
+      "label": "supported by",
+      "source": "cam_axle_upper",
+      "target": "cam_bearing_upper_outer"
+    },
+    {
+      "label": "supported by",
+      "source": "cam_axle_lower",
+      "target": "cam_bearing_lower_inner"
+    },
+    {
+      "label": "supported by",
+      "source": "cam_axle_lower",
+      "target": "cam_bearing_lower_outer"
+    },
+    {
+      "label": "routed around",
+      "source": "bowstring",
+      "target": "upper_binary_cam"
+    },
+    {
+      "label": "routed around",
+      "source": "bowstring",
+      "target": "lower_binary_cam"
+    },
+    {
+      "label": "routed around",
+      "source": "control_cable",
+      "target": "upper_binary_cam"
+    },
+    {
+      "label": "routed around",
+      "source": "control_cable",
+      "target": "lower_binary_cam"
+    },
+    {
+      "label": "routed around",
+      "source": "buss_cable",
+      "target": "upper_binary_cam"
+    },
+    {
+      "label": "routed around",
+      "source": "buss_cable",
+      "target": "lower_binary_cam"
+    },
+    {
+      "label": "contains for mounting",
+      "source": "bow_riser_handle",
+      "target": "accessory_insert_m3"
+    },
+    {
+      "label": "mounts to",
+      "source": "bow_riser_handle",
+      "target": "arrow_rest_3d_printed"
+    },
+    {
+      "label": "secured by",
+      "source": "arrow_rest_3d_printed",
+      "target": "arrow_rest_mounting_bolt"
+    },
+    {
+      "label": "fastens into",
+      "source": "arrow_rest_mounting_bolt",
+      "target": "accessory_insert_m3"
+    },
+    {
+      "label": "has positioned on",
+      "source": "bowstring",
+      "target": "nocking_point_3d_printed"
+    }
+  ],
+  "projectId": "37000a81-8ca0-48ef-96e0-c35b3f91e0a8"
+}

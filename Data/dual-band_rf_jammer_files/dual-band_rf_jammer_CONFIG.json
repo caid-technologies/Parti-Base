@@ -1,0 +1,453 @@
+{
+  "plan": "- RF signal generator module or wideband VCO for the 2.4GHz target spectrum.\n- Power amplifier stage to boost signal output to the desired interference level.\n- ESP32 or similar MCU to manage frequency sweeping and duty cycle logic.\n- High-gain omnidirectional antenna with matching network for effective signal propagation.\n- 2000mAh LiPo battery paired with a 5V boost converter and charging circuit.\n- 3D-printed enclosure with internal EMI shielding paint and active ventilation.",
+  "nodes": [
+    {
+      "id": "antenna_24",
+      "name": "2.4GHz High Gain Antenna",
+      "pins": [
+        "SMA_CENTER",
+        "SMA_SHIELD"
+      ],
+      "type": "actuator",
+      "partId": "01b7bf00-d9e0-4e8f-b9ae-2fe0375d4fe5",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/EC-UuewNLSrljHb0Y-8vdKRf93RjK3xPb6x74I6SO-0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aW52aWN0dXN3aXJl/bGVzcy5jb20vdi92/c3BmaWxlcy9waG90/b3MvMjQtN09ENS0y/VC5qcGc_di1jYWNo/ZT0xNzQwMDczNzAz",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B01KBU61S8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "190x13x13mm",
+      "description": "SMA-connected antenna for 2.4GHz signal propagation.",
+      "productName": "2.4GHz 6dBi Omnidirectional Antenna",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=2.4GHz+Omni+Antenna",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH6hwzKQ5A9FhuDhX4RSDIQ8TZVA9w1zWL5L6LhyENtQky9JAOOEXIq69WpzWHoSgMv1r0sGJztHzQw4akgFqIAy0eykEQOwNkTABRLafVo3eHFjtnQKG1QdWjBGm1Ts5Ruyem98Cjfhywwpiw62vJV70lu5Sz2v7jqxNWjza5gAEPI2KzyfV6hqYswo0Sz6VSWcJs3JPWNQWkqYKdsY2JJNvo88DdkNv6v6vb7b34PHkOTnW92LaatfEatX0UqqXkVQR1EWvOTd3kA37UT2w4K51boe3fgobGAhArpxoqDawsn62xkCMkXUpNB9KrjYk2IzmrFLJxfZyPdkFMePUetfRW9hhhUJ5pnwlQOaeU2ljehQGeDyqjiEqwBW5MnNzGB2JlRSXqrr5rLWivxeXDLWzDiYL3U5Z6Goq3WqzAz71NojEQU0000AeDTBGdHmMhkLjktQROQkLb8BGt4Aru5LtneslU9bwtE1uyEkEkLBMQ16oicPaY8S0YzeHAmCwSBKOvx3omaDEAVvgO1ocreBWXDAp9yNgUt2E2anzsCFLmzXwCJfbayjpgOw5ycbqk2If5UDsnmKkZyFq0GyidDTVopNTAKoohFcwsUcKgvYWL5MYqjgsy1Y2Sy4E3FkvQ5HebgwNIp6yHsjMh2PMf5h",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2.4GHz+6dBi+Omnidirectional+Antenna&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "antenna_50",
+      "name": "5GHz High Gain Antenna",
+      "pins": [
+        "SMA_CENTER",
+        "SMA_SHIELD"
+      ],
+      "type": "actuator",
+      "partId": "13ecb05b-99bb-4e9a-adba-66ae9066c6ac",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ETIfheH8wz0LWzzkJ8nfyVrBZLCHrEI-ARz6SzHahE8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWlyODAyLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxNC8x/MC9wcm9kdWN0cy1B/Tk9NNDkwOE0tMjAx/My1jcm9wcGVkLXNj/YWxlZC0zMDB4MzAw/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07R21LN5P?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "160x13x13mm",
+      "description": "SMA-connected antenna for 5GHz signal propagation.",
+      "productName": "5.8GHz 8dBi Omnidirectional Antenna",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=5.8GHz+Omni+Antenna",
+      "estimatedCost": 9.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZbM5QbmnyOY0Ah1CWSxY2qlGWcB8W8JbbFEkSfZ8ho9iTagWtBK6mJMZh8R4CqQhupLOIzR743gKkp0Zjsi0w3VXJ2lUm4W4PeENjNpvq6L35A7206H4w2kRuRxiRrcI4f3UKj7JpXJL5mk9jXdpNCSFb3ReVMqglDlOpyJXMw0FckyuFHVumZrNtRV7e3lXfUJTqqaFO2yDh5kJGHrlZXkzkriTsf0u3kjwukP1H5nvrznrRogvP47RLJFWqXltgr26M6oIyOo1ckxVsjRgJMudENTep0qyhjIPdmEVEK8dMDyRO6Mr7fhW5xbnCArJNP5Ig9ZM1Y9uobbVcrOLQVeLWUB8vpuWrHOoswmoc7s6LxciXL2QwwSxl3ifpHXx3UWvgRWrazA3uwz7SnkVVdfg8P8ZkXwc9v8C18dsmScGRUFOWDZ2wMO5onzWXhv0zL7TZxot539JJjBjcqkxBzvCnl8e80zkM9lskSA743Hx2BlCl0ADKrZ838THCRAfmvsNkTopwPZpV4APPGJa8npSnz9P5n8synf3zyF7I2eFhgtT03RtDhEOzufjOfQ7UFu76mhkZ3L9UEUIKr3rvB72fRdwhjwco7Xzcwkie0SsGdE3bwf2RcdlwKHOxuVHSViITvGzaFhlxJF9xdVfNzD2gcac2yZJSoRPjbj8NpE1tsuj8yj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5.8GHz+8dBi+Omnidirectional+Antenna&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "battery_pack",
+      "name": "Main Power Source",
+      "pins": [
+        "V+ ",
+        "V-",
+        "V+"
+      ],
+      "type": "power",
+      "partId": "b21f1e5b-81d8-4717-b1c9-cf4424fbea7b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/nxF7jVnQuaB-NHYUDv2ZQL26gXHH_3zlwnKKLPrMklI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGltYXhiYXR0ZXJ5/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNS8xMi9EU0Nf/MDA5OC5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08214DJLJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x36x7mm",
+      "description": "Lithium Polymer battery providing portable power to the system.",
+      "productName": "2000mAh 3.7V LiPo Battery",
+      "purchaseUrl": "https://www.adafruit.com/product/1069",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvJE7a4KO8tcbAQYqHDehkkuESX63RUl0xHzCKkBoBoYRGfnuehgmfvUP4HmW8box1MJ0tUFkEhT5pL8QOlsOX5fqy3bJd3IAcFCDBLh3p5pfbMPUkAVNfvlzUKIfSa4aiLeNyawK9J67EViwBr0XSa2T6Uy1IV4hIDZjisE4EzSN2nilt536SlPmo1PmQbiSZBepkq1wlxlCjWYMY9Z0svJcwVo4dfK9Fpix13G9m3kGyhQFS4oXkk9YGNI7c6XSe7Dnk2N97VjnJyBCyLniYXBI2R5Ej38uHyR2kkB1cEzdO8ZzvdLmKCZAoVt5yIMXV5udHTVWXC4znksmPRrTUzWHaoUI5Dj4CtmsmNmnhqL12JPlM5BQbsOIU6wF2sa0i84FIA7m9FLpIVKbC6nvSAgeMirIORlflEvLEAh219ixtOWluqQ4Tsee44X9B8gQUQyQofUUxpmoYnMhUpgWEsFH8mYE4d3WUw3JEBgWftQNKS4w8GvSXBEZiF5N4oub7onMW0BL4dM1EXHHO7tTYUmNUGEA1W7gUemGYRgi4LYp5fQxf2YwQ4IZ1zZ2j7qojAUJlPkg1G7uSt8x3gsA9qHhZ4uuK4iZGjF7ijn7o0kckgARRA7aF09EYkM6ctZ6T5ZjEMcUIlKQi3RwGIO7MM3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2000mAh+3.7V+LiPo+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mount_battery",
+      "name": "LiPo Battery Cradle",
+      "type": "3d_printed",
+      "partId": "ff0b598b-39a1-4cd3-8e22-3ac80392eea4",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/u-7671fnixNdgS9JDTHbnNiSNkoG583zxszcM6zYqfc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFJekZGZ2RZRkwu/anBn",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "battery_pack",
+      "dimensions": "60x40x15mm",
+      "description": "Protective cradle for the 2000mAh battery pack.",
+      "productName": "3D Printed Battery Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.8,
+      "printSettings": "0.2mm layer height, 15% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "fasteners_main",
+      "name": "Chassis Screws",
+      "type": "misc",
+      "partId": "2ff0cff7-91d7-4dbb-96b5-c189c43b0aba",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/AyBo0AAT2MMUL2fLW3DfDsPlpCCNPMBRsaNWJ9uJjPA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy10M2Vv/OHZ3cDIyL2ltYWdl/cy9zdGVuY2lsLzYw/OHg2MDgvcHJvZHVj/dHMvNzIyLzI4OTQv/TTN4MTBtbV9IZXhf/Q2FwX1NjcmV3c19Q/YWNrX1Bob3RvX0Zy/b21fQnVuZGxlX1No/b3RfXzE4NzkwLjE2/MTQ0NTEyNTkuMTI4/MC4xMjgwX185ODY3/Mi4xNjU0Mjg5NzUw/LnBuZz9jPTI",
+      "material": "Stainless Steel",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B075PR3YWV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "M3 screws for securing the chassis lid and thermal plate.",
+      "productName": "M3x10mm Button Head Hex Screw",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x10mm+button+head+screws",
+      "estimatedCost": 0.1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3wibhjJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Button+Head+Hex+Screw&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "unified_rf_module",
+      "name": "Integrated 2.4G/5.8G RF Jammer Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "EN",
+        "ADJ"
+      ],
+      "type": "module",
+      "category": "electrical",
+      "quantity": 1,
+      "description": "Single PCB containing VCOs and PAs for both bands with internal sweep generator.",
+      "productName": "High Power 1W Dual Band RF Sweep Module",
+      "purchaseUrl": "https://www.aliexpress.com/wholesale?SearchText=dual+band+rf+jammer+module",
+      "estimatedCost": 18.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=High+Power+1W+Dual+Band+RF+Sweep+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "integrated_power_board",
+      "name": "All-in-One Power Module",
+      "pins": [
+        "B+",
+        "B-",
+        "VOUT",
+        "GND"
+      ],
+      "type": "power",
+      "category": "electrical",
+      "quantity": 1,
+      "description": "Single chip solution for battery charging and 5V power output.",
+      "productName": "TP5400 LiPo Charger and 5V 2A Boost Converter Board",
+      "purchaseUrl": "https://www.amazon.com/s?k=TP5400+charger+boost",
+      "estimatedCost": 1.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TP5400+LiPo+Charger+and+5V+2A+Boost+Converter+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "budget_mcu",
+      "name": "ATTiny85 Controller",
+      "pins": [
+        "5V",
+        "GND",
+        "PB0",
+        "PB1"
+      ],
+      "type": "mcu",
+      "category": "electrical",
+      "quantity": 1,
+      "description": "Low-cost logic to enable/disable and modulate the RF module.",
+      "productName": "Digispark ATTiny85 Development Board",
+      "purchaseUrl": "https://www.amazon.com/s?k=attiny85+digispark",
+      "estimatedCost": 2.5,
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Digispark+ATTiny85+Development+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "unibody_chassis",
+      "name": "Budget Unibody Case",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Single piece printed box with snap-on lid and internal PCB slots.",
+      "productName": "3D Printed PLA Enclosure",
+      "purchaseUrl": "https://www.thingiverse.com/search?q=small+project+box",
+      "estimatedCost": 2
+    }
+  ],
+  "notes": [
+    "RF interference project",
+    "2.4GHz band",
+    "Portable power",
+    "Signal generation",
+    "EMI shielded enclosure"
+  ],
+  "projectName": "Dual-Band RF Jammer",
+  "originalPrompt": "Jammed Singal",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print the main enclosure and battery cradle",
+          "partIds": [
+            "unibody_chassis",
+            "mount_battery"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Clean support material and verify PCB slot clearances",
+          "partIds": [
+            "unibody_chassis"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Test fit the SMA antenna ports into the chassis holes",
+          "partIds": [
+            "unibody_chassis",
+            "antenna_24",
+            "antenna_50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder battery leads to power module input",
+          "partIds": [
+            "battery_pack",
+            "integrated_power_board"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect power module output to MCU and RF module",
+          "partIds": [
+            "integrated_power_board",
+            "budget_mcu",
+            "unified_rf_module"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire MCU control pin to RF module enable input",
+          "partIds": [
+            "budget_mcu",
+            "unified_rf_module"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect RF outputs to antenna bulkhead pigtails",
+          "partIds": [
+            "unified_rf_module",
+            "antenna_24",
+            "antenna_50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Verify 5V rail stability on the power module",
+          "partIds": [
+            "integrated_power_board"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Flash sweep frequency firmware to ATTiny85",
+          "partIds": [
+            "budget_mcu"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Check current draw of RF module in standby and active modes",
+          "partIds": [
+            "unified_rf_module",
+            "integrated_power_board"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Secure battery in cradle and mount inside chassis",
+          "partIds": [
+            "battery_pack",
+            "mount_battery",
+            "unibody_chassis"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Slide RF module and power board into internal guide rails",
+          "partIds": [
+            "unified_rf_module",
+            "integrated_power_board",
+            "unibody_chassis"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Fix MCU to internal surface using double-sided tape",
+          "partIds": [
+            "budget_mcu",
+            "unibody_chassis"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Externalize antennas and tighten bulkhead nuts",
+          "partIds": [
+            "antenna_24",
+            "antenna_50",
+            "unibody_chassis"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Seal chassis lid using M3 hardware",
+          "partIds": [
+            "unibody_chassis",
+            "fasteners_main"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "Portable dual-band signal generator utilizing an ATTiny85 controller to drive a unified 1W RF module. It disrupts 2.4GHz and 5.8GHz frequencies using high-gain antennas, powered by an integrated LiPo charging system within a compact 3D-printed unibody enclosure.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer with PLA filament",
+      "Soldering iron with fine tip",
+      "Lead-free solder and flux",
+      "Wire strippers and side cutters",
+      "Multimeter for continuity and voltage checks",
+      "Double-sided foam tape",
+      "Micro-USB cable for programming"
+    ],
+    "assumptions": [
+      "Basic soldering and electronics assembly experience",
+      "Ability to export and print STL files",
+      "Arduino IDE installed with ATTiny core support",
+      "Access to a high-impedance power source for safe initial testing"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "source": "battery_pack",
+      "target": "integrated_power_board",
+      "voltage": "3.7V",
+      "sourcePin": "V+",
+      "targetPin": "B+"
+    },
+    {
+      "type": "power",
+      "source": "battery_pack",
+      "target": "integrated_power_board",
+      "voltage": "0V",
+      "sourcePin": "V-",
+      "targetPin": "B-"
+    },
+    {
+      "type": "power",
+      "source": "integrated_power_board",
+      "target": "budget_mcu",
+      "voltage": "5V",
+      "sourcePin": "VOUT",
+      "targetPin": "5V"
+    },
+    {
+      "type": "power",
+      "source": "integrated_power_board",
+      "target": "unified_rf_module",
+      "voltage": "5V",
+      "sourcePin": "VOUT",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "power",
+      "source": "integrated_power_board",
+      "target": "budget_mcu",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "power",
+      "source": "integrated_power_board",
+      "target": "unified_rf_module",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "type": "data",
+      "source": "budget_mcu",
+      "target": "unified_rf_module",
+      "voltage": "5V",
+      "sourcePin": "PB0",
+      "targetPin": "EN"
+    },
+    {
+      "type": "data",
+      "source": "unified_rf_module",
+      "target": "antenna_24",
+      "voltage": "RF",
+      "sourcePin": "ADJ",
+      "targetPin": "SMA_CENTER"
+    },
+    {
+      "type": "data",
+      "source": "unified_rf_module",
+      "target": "antenna_50",
+      "voltage": "RF",
+      "sourcePin": "ADJ",
+      "targetPin": "SMA_CENTER"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "mount",
+      "source": "mount_battery",
+      "target": "battery_pack"
+    },
+    {
+      "label": "friction fit slots",
+      "source": "unibody_chassis",
+      "target": "unified_rf_module"
+    },
+    {
+      "label": "double-sided tape",
+      "source": "unibody_chassis",
+      "target": "budget_mcu"
+    },
+    {
+      "label": "snap-fit tabs",
+      "source": "unibody_chassis",
+      "target": "integrated_power_board"
+    },
+    {
+      "label": "foam tape",
+      "source": "unibody_chassis",
+      "target": "battery_pack"
+    },
+    {
+      "label": "direct screw-in",
+      "source": "unibody_chassis",
+      "target": "antenna_24"
+    },
+    {
+      "label": "direct screw-in",
+      "source": "unibody_chassis",
+      "target": "antenna_50"
+    }
+  ],
+  "projectId": "27a9ef40-3e3a-4fc4-bd7e-4506f8e1b48a"
+}

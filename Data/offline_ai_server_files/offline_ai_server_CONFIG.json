@@ -1,0 +1,675 @@
+{
+  "plan": "- Select a low-power System-on-Chip (SoC) like Raspberry Pi Zero 2 W or ESP32-S3 for compute, ensuring sufficient RAM for AI models. Consider a Coral Edge TPU for accelerated inference if needed.\n- Flash a minimalist Linux distribution (e.g., Raspbian Lite, Alpine Linux) or a custom RTOS onto a microSD card for the operating system.\n- Integrate an appropriate storage solution (e.g., eMMC or microSD card) to host the AI model files and operating system.\n- Design and 3D print a compact, passive-cooling enclosure with appropriate ventilation and access ports.\n- Implement a power management circuit with a LiPo battery and charging controller for portable operation.\n- Pre-load and configure a pre-trained, quantized, offline AI model (e.g., a small language model or image classifier) for local inference.",
+  "nodes": [
+    {
+      "id": "mcu_main",
+      "name": "Main AI Controller",
+      "pins": [
+        "5V",
+        "3V3",
+        "GND",
+        "GPIO10 (CS)",
+        "GPIO11 (MOSI)",
+        "GPIO12 (SCK)",
+        "GPIO13 (MISO)",
+        "USB-C"
+      ],
+      "type": "mcu",
+      "partId": "2679fa8c-09ff-4ec8-83bb-b6b2852da618",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/_YToLZ12HVSFrE6bxTItcD9Q07siGuyaMhgaTcrXgxU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tY2ll/bGVjdHJvbmljcy5j/bC93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8wNS9pbWFnZTAw/Mi0xLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09MHP42LY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "68x26x10mm",
+      "description": "Low-power System-on-Chip (SoC) for AI inference and control, with integrated Wi-Fi and Bluetooth.",
+      "productName": "ESP32-S3-DevKitC-1",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-DEVKITC-1/16544955",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRywSGe9S9uiq6Wo80h5kTMUZXv7MBrAWPYHpr8wG7khLyUBU0A7FKOvFCqo3enAECwkHZqAbPjOsf2vpyGBa1Aqz1UHZU0OScdiq8IdGUK76DjdO6jp44AY0ka8w2dnjAmsvRqtNinC0IZR8wD765Uybb6M3dqy1bzcQezV1MOeV2ceQwXyS8zoV3g20vaLp8F3rU1EGt2np0H7ngXiaQ03zTCaEn1JLc5xTBntJCjSdQuAqlmLtEHajUL9DtVLOx2uciTbU3NKFgUfogP03PE1y7Io1JBW6PGkJt4Htth2mCQqz84cboKb341apG9habS39YY4Wuso4GSdudDj1Faw6xMPoUZbk1lF1IvNx44qzFcyruXmBKKUvGFulIBqZ6ZHE9DtYYx7nSod47QBYXBasEdswc3UsOfyTnLuWsFmzLIrYa524SqsmJ7H4TUcsZrQqC8aSmg14rb92nU9B3axHLstgNhVXgBT1wgJGysyaQRta5ba0DLAnc8ghaVC9Z21VUbaQhh7bTQFa5cbTNvDW120IPCFeZuwzK7uQBmyye8kesoPkGsI7HRauMEKWM33vSIcObKyJ95YhDaLY8KiV1oWVFyOZv6EB3NIjMt0LIR6dFyKThXODBWj1wCmrRCY21mYSccipAwjPjJilSqP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-S3-DevKitC-1&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "storage_sd",
+      "name": "MicroSD Card Module",
+      "pins": [
+        "VCC",
+        "GND",
+        "MOSI",
+        "MISO",
+        "SCK",
+        "CS"
+      ],
+      "type": "module",
+      "partId": "1912ca87-bd1f-421a-9033-c03173cb255a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/-M5VbRtEA1XAX5KZXTa4GTuYflcYaP0qPrVd46cm1AU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFLa1RxZ3F4UUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0B779R5TZ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x5mm",
+      "description": "Provides external storage for the operating system and AI model files via SPI interface.",
+      "productName": "MicroSD Card Adapter Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=microsd+card+module+spi",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxImx0pD39MOEtFs9c8uDcIjapyFgyqFTycX28CwAS4kVP3khFQtpEkSQ9If8W4RWky5hmfS27AZCdNvturKx2y7oR1W1WSNkpFnT8rdR7c9Dw2XW12wpvWMQt2QwzOXmMk6fpyByPZCYKv0sQgvXe5BeMau802TLy4x71F3tCVZWDCCfikIpvZsRyNzymCbLNk3mtcBzHwFAdKzIsHoI76u8Mm8coos2pnLvhoEzlTXl9kattMXIO0HQWXYkD0fa8W9kt7BAErJ88jWGf1Nl3PsFUyoECEZs0ItERgNPkqZ6P7bir8JuwQuSF6Bj7rqH9PZKRMYNw0ITxqnAc2pmf7rIolfgna6tK5QxhTF589yNC48H98A6ui5W34ocW2D4uOwqupm3KUiLNBhha5I7NvHx6BATAg6QIxGeaAudc952qx4UFYJmdRbW42bBMCs2DYgTjru5ETQYEbfrKxj1YreOV0XkROodUuAiqf9p4S2mhqczvujOzDa8xvz723h7VeewptA2uvDVw3vLpUxiKRXOMOLJ433tVxEBIagqZL1h4BOA8NMIBSgXsF5HFVJFbSZVgGfkJU9bCRnAw6bWQbOni7afObhzPSyaqRp2VlvyNIuZZ3GeKeoG3VUOMjF1SALivaBHFkN4SMG8BajcpZwF",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MicroSD+Card+Adapter+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_wall_adapter",
+      "name": "USB-C Wall Adapter",
+      "pins": [
+        "USB-C Output"
+      ],
+      "type": "power",
+      "partId": "eaa54150-8401-4430-89b1-11b618a09cee",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/TOlZ7aYCU_fmA97g2o8Bicj7dLrFqbvYIb5gZsJnqPg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vQVZB/UE9XLVVTQi1DLVdh/bGwtQ2hhcmdlci0x/OFctM0EtNVYtRmFz/dC1DaGFyZ2VyLUJs/b2NrLWZvci1BVkFQ/T1ctU2VyaWVzLWFu/ZC1PdGhlcnMtQmxh/Y2tfMzJlYzY0NTYt/OWZjMy00NDhiLTli/NzQtMmU5NTFlMzlm/ODRiLmY0YmE3MDU0/ODgyZDkyYjZkNjRj/MDZhYmEyOTRkYzI5/LmpwZWc_b2RuSGVp/Z2h0PTU3NiZvZG5X/aWR0aD01NzYmb2Ru/Qmc9RkZGRkZG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "5V,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DQ43LMRH?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x40x25mm",
+      "description": "Provides regulated 5V DC power from a wall outlet to the main controller.",
+      "productName": "5V 2A USB-C Power Adapter",
+      "purchaseUrl": "https://www.amazon.com/s?k=5v+2a+usb-c+power+adapter",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw0FoK8UURSgcVEs2EI5TwdSnz6MWbMyQtJ6X611ytUZcdglk6hOy20qHRqKOZXcVXgmJKRvsz69kfcnskZWswolTWSUYldNg7R8IRJJWOAMfMA9N8WKPOMuP2KOtHIdcsSUCYR5Rm9V9RjguBAfTTJyjkNIZKReIrIego3lBb6MfBr7fWu7FpfEU3C3FwhrDE2wqHDjXlUL3xdPOX0U7jDSYNbdz5EVAyPDQ5C48Nwosaiw4DSzMmOC4cMVrYPECmi46EcTgJW74vGTnycoXERpUzKlzmAUfbj2jjzUP8UHqxEVYsP2r6cFbYS9oRUngFj10GxqOgExhNHQwtBiTv1LThMBiKZ7dJ3bDJURTjVX1fICm6vVeVTIyx2AN14X9VBg7x5tdOWBmvTnPNnVpAxLmPAm824DfTMGo9FUzWXN6nSTGuUkOfIjGSHx5mTICREI3YuFGXkGl9VOnMoXtWcePjf5db4Wg8LG3u3NAf1flW6pkypsH2YZEKjdGs4X4aZ5vFtyA5v8zM9LTLy2dfhGKiHGDEUONg6rzza8nkVuSNw1nyHBzBTNIgDoJKFeqY9ZM1jSZtY1Jj4vcKocAif4k40zzze1wKfQqhxPGMEGAvBOzAjEGCZzJpanYWGm9JGUmVYKZlZovBsidghfdPKT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5V+2A+USB-C+Power+Adapter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "enclosure_base",
+      "name": "Server Enclosure Base",
+      "type": "3d_printed",
+      "partId": "bce04f0e-8f05-48ac-8155-088cbb194363",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/YCoQi0xRHfom62uSwAxT5RrC4r5tAe58jxEQGPG_Q18/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGVzc2NvLmNvbS9f/dWkvcmVzcG9uc2l2/ZS90aGVtZS10ZXNz/Y28vaW1hZ2VzL21p/c3NpbmdfcHJvZHVj/dF9FTl8zMDB4MzAw/LmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "80x40x30mm",
+      "description": "3D-printed bottom housing for the server, integrating mounts for the ESP32-S3 and a slot for the MicroSD module. Includes cutouts for USB-C power and ventilation.",
+      "productName": "Enclosure Base",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 2,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "enclosure_lid",
+      "name": "Server Enclosure Lid",
+      "type": "3d_printed",
+      "partId": "31ea3089-adb1-453a-b87e-78a79b5c5c16",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/e186D0QhKQjILuuPXHMTyLOmcW8eeweLqK7m5iujtrY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZWttbWV0ZXJpbmcu/Y29tL2Nkbi9zaG9w/L3Byb2R1Y3RzL3dh/dGVydGlnaHQtZW5j/bG9zdXJlLXdpdGgt/aGluZ2VkLWFuZC1s/YXRjaGluZy1saWQt/dWwtbGlzdGVkLTUz/Mi14LTcyOC14LTMz/NS02NDA3MjRfMTAy/NHgxMDI0LmpwZz92/PTE1ODA2ODIyMTQ",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "80x40x5mm",
+      "description": "3D-printed top cover for the server enclosure, designed with passive cooling vents.",
+      "productName": "Enclosure Lid",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printing+service",
+      "estimatedCost": 1,
+      "printSettings": "0.2mm layer height, 20% infill",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "m2_standoffs",
+      "name": "M2 PCB Standoffs",
+      "type": "misc",
+      "partId": "d993782a-5f15-4286-9995-937a259be9d2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/VzWx2QN7Mx-Yt9GXRscm0yBfHcFWGHcTpUk669bpfuM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/Lzcxcmh6MzJFbVBM/LmpwZw",
+      "material": "Brass",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0BP6MT7RP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x6mm",
+      "description": "Used to mount the main AI controller PCB to the enclosure base.",
+      "productName": "M2 Brass Standoffs",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2+brass+standoffs",
+      "estimatedCost": 0.25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvzN9qEWRZ4yUTJrR25PJiYkXUqF0GlaosO41WpAC5yntX34DCzNUsB1orURKHHogZPI2BtE8ZhPNWwSmx6ClitGRr2WPVdE5RreIPdGCiGUDnhzMwgq5kCcCD6dNBVCb0QtNGAt97mJnAgY5drbQMunsnVdXcbtX86DAZ2Y4xWwIaMQAK69jOI48wepFu8030mwCjobiKRKdU4fsgm5FXXNwUX5CFMAfzwvQjGtPfew66E69gpNf0JihJHxrqHUk3KZEumYgwP3j03S02TdDf4WpGH3FlnM2MOjYUDi6AVnTOxmriihL1eTF6djIv6wWy8QCmevHgH3El5Rd5QNO3rLHwdBYohCxP0jXa7MlQGl1xmx5EZlCNMZ8PBssoPKvipGWFXgvq2Oo44sO8PjWXDLHERcQqzM7MHJfycRUEXbkPNIZGR4cQKRcecMODQP4D1g65mxHg6phvxH2FtKnoN1ewJdYqVEmAgkyUqzENmVQNpcJh9K94L285jyvWc086CcbCrd5O0NWOAK6IKNft0ILYq18HJzZjTgDOLPcTGrsIeYPZTlAFjfnwkogtmiJYCCUxpwEbLpZ97MyT8hLOMmOtgInM3VdjdWYrckUGNMq7EAyPgXLIgCwSKsrHmSt3RAoj83f6wHHXXI7tYOUVzv",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Brass+Standoffs&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_screws_pcb",
+      "name": "M2 Screws for PCB",
+      "type": "misc",
+      "partId": "61d6022f-9cf9-4c56-b3ef-3e842015e8d0",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/2P6tzN4XPSXvxHJtlVFvW6cp01pjYH6rl6yCsKFbB9M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxiYW55Y291bnR5/ZmFzdGVuZXJzLmNv/bS9tZWRpYS9ncmFw/aGljcy8wMDAwMDAw/MS9QaGlsbGlwcy1Q/YW4tSGVhZC1NYWNo/aW5lLVNjcmV3cy0x/OC04U1MtUHJvZHVj/dC00LShSRVNJWkUp/LW1pbi5qcGc_dHM9/MTc1NTkwOTE5OQ",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0FG2DQYY7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x4mm",
+      "description": "Secure the ESP32-S3 PCB to the M2 standoffs.",
+      "productName": "M2 Pan Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m2+screws",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4cXXna5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2+Pan+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_heat_inserts",
+      "name": "M3 Heat Set Inserts",
+      "type": "misc",
+      "partId": "a218c217-5ff2-453c-bf9b-0cb77fe40758",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/96m5thzHQdreCwyfr2goWQ3mUkr7bMyKUcjbCmO0Fms/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFvYmZGcU9acEwu/anBn",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0CS6VZYL8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x4mm",
+      "description": "Provide strong, reusable screw threads in the 3D-printed enclosure base for attaching the lid.",
+      "productName": "M3 Brass Heat Set Inserts",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+brass+heat+set+inserts",
+      "estimatedCost": 0.15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRpTpv62RXR9sVfC98GmMLkJmXC4qpbJhcQvkbxptOmgDfhTbS0PHwVgmr0VhydRzMgIoquzg3yg5D05i1x7FPxzxIl3P5mtn3X76qprXJgmg8InDgseeFkYRIIwB95RGJoFep43tAYGEBIRAZZ6LvWcRuoiSpUrlsk0dOnD41f9DJE08hfuSws15ysCxPxduPqEdOBJqzG04NUdFJ3bWrfijdWCN43CSC9mYDkrFhwwBbQVz82VhOIzQnJDGqhjn3119Vw7ZBsbw5zNsuKCnHfhCbxRPNLdII35nubRaiPuAYxgMIty1KMm8HZY6F24WzUNGNr5Ay28BHTyNjrjgt37wwssKrFvlAkOc5eRVIfTsSPf00gPtpAnzrYCtO6pa4kt7Oim5FLl2fo9qzTlncqIyd0FnXRaj8FR9jadMKDscIUwEZtfGnXX3P4fbw1kDhD2QSSJMAn5RvUfmbQoftnN7hwclCo2YteNbSFQAlUTLnDvyAuTFcIVw4tUUdoYhbRuWVI1mNuQLwgrpJQ8M1sDLKul4ZypKQqK0WzxjP33EG9LwNWvX48ub96mvj0CpIbLhMAbjsoKwt5GdKy2tzmAgkWEcWjNuBrzPdW6qbqkvKztM8k9TpouDclbRaxH4aTLDpxLZe7KN7MOAMFYQW5H",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Brass+Heat+Set+Inserts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screws_enclosure",
+      "name": "M3 Screws for Enclosure",
+      "type": "misc",
+      "partId": "2bc24878-e8e8-4763-9e8c-5ad4fcd72822",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/2P6tzN4XPSXvxHJtlVFvW6cp01pjYH6rl6yCsKFbB9M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxiYW55Y291bnR5/ZmFzdGVuZXJzLmNv/bS9tZWRpYS9ncmFw/aGljcy8wMDAwMDAw/MS9QaGlsbGlwcy1Q/YW4tSGVhZC1NYWNo/aW5lLVNjcmV3cy0x/OC04U1MtUHJvZHVj/dC00LShSRVNJWkUp/LW1pbi5qcGc_dHM9/MTc1NTkwOTE5OQ",
+      "material": "Steel",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0BMQGV4SW?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x8mm",
+      "description": "Secure the enclosure lid to the enclosure base via M3 heat set inserts.",
+      "productName": "M3 Pan Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+screws",
+      "estimatedCost": 0.08,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxwZhSl6K1dzF13ulYUKxmAWDQbdMkYz5OXlT0ANtVpSByQR5DEXpMPne6figgajTirMicP3khJWdn7MEUJrihNgdZUIZ85KAUwY8kutChkNF3Te1ATjCNJSQExmwKXGwz2Z07Pqvvzciuay05oaJZ8nv8ohkBBqPPYL65i6yfLw1hPmQV7i0zTRbChbTHTmxy7ueh0ZatT5MVlD9PrU02xjYwp0YLKCtSKDz9ULabGpMhju3fhqoRBmz1zU5BMlUsAJ2nqpFB2FrTArXzR7kSRquxlNx372w02kp2I46F3u8sNwrTqrWYwuFvy4fvOjqQzsGDSd5zMfPd7P8lbqNPyW181bKgzdRrkRce4aatgZR99BBCWx10IlykIPoZUgl0zsgGhvoZ7XOeI30MZHNigMkzGEDis3AgGw8rNClF0zeeKBDoNBBqmeMc2Tfzxw9vZ65NTJeTmBK5MrQUJ196IcMvG8vkqEcb8vBTt2LlmeH5mFPCLL0bW0rTn5XL8s6dzN48mCGjNjta9oOc9IOHnfFC9gwPHQaFkUrLlfGAKFQfhfMoAdHoL21yYXpgReveBnBX5vczuxyQmaemQEDh2vWwkIycXeoYvJT722zYmM2M8xEMhIkpuVmpKY3jBrRCSUGXpKe4ZjGqB94lg5D9uAB",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Pan+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "no internet",
+    "offline AI",
+    "tiny server"
+  ],
+  "projectName": "Offline AI Server",
+  "originalPrompt": "a simple no internet offline ai tiny server",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print the server enclosure base",
+          "detail": {
+            "tip": "Proper bed adhesion is crucial when printing PETG to prevent warping on the relatively large flat surface of the enclosure base.",
+            "steps": [
+              "Load PETG filament into your 3D printer.",
+              "Prepare the 3D model for the Server Enclosure Base, ensuring proper orientation for stability.",
+              "Set print parameters: 0.2mm layer height, 20% infill.",
+              "Initiate the 3D printing process for the Server Enclosure Base.",
+              "Once cooled, carefully remove the printed part from the build plate.",
+              "Clean any remaining support structures and deburr sharp edges."
+            ],
+            "summary": "3D print the Server Enclosure Base."
+          },
+          "partIds": [
+            "enclosure_base"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D print the server enclosure lid",
+          "detail": {
+            "tip": "Orienting the lid with the top surface facing the build plate (if possible and without requiring excessive supports) can yield a smoother exterior finish for the enclosure.",
+            "steps": [
+              "Load PETG filament into your 3D printer.",
+              "Prepare the 3D model for the Server Enclosure Lid, ensuring optimal orientation for aesthetic finish.",
+              "Set print parameters: 0.2mm layer height, 20% infill.",
+              "Initiate the 3D printing process for the Server Enclosure Lid.",
+              "Once cooled, carefully remove the printed part from the build plate.",
+              "Clean any remaining support structures and deburr sharp edges."
+            ],
+            "summary": "3D print the Server Enclosure Lid."
+          },
+          "partIds": [
+            "enclosure_lid"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Install M3 heat set inserts into the enclosure base",
+          "detail": {
+            "tip": "Ensure each M3 Heat Set Insert is inserted straight and fully, as an uneven or partially inserted insert can cause difficulty when attaching the lid.",
+            "steps": [
+              "Heat your soldering iron to approximately 200-220°C (suitable for PETG and brass).",
+              "Place one M3 Heat Set Insert into a designated mounting hole on the Server Enclosure Base.",
+              "Carefully align the hot soldering iron tip with the insert and apply gentle, steady downward pressure.",
+              "Allow the insert to melt into the PETG plastic until it is flush or slightly recessed with the surface.",
+              "Remove the soldering iron and let the plastic cool and set around the insert for a few seconds.",
+              "Repeat for the remaining three M3 Heat Set Inserts."
+            ],
+            "summary": "Install four M3 brass heat set inserts into the Server Enclosure Base."
+          },
+          "partIds": [
+            "enclosure_base",
+            "m3_heat_inserts"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test fit the ESP32-S3 and MicroSD module into the base to ensure clearances",
+          "detail": {
+            "steps": [
+              "Carefully place the Main AI Controller (ESP32-S3-DevKitC-1) into its mounting location within the Server Enclosure Base.",
+              "Verify that the USB-C port of the Main AI Controller aligns correctly with the enclosure's cutout.",
+              "Slide the MicroSD Card Module into its dedicated slot within the Server Enclosure Base.",
+              "Ensure both components fit without significant force or obstruction, checking for proper clearances."
+            ],
+            "summary": "Test fit the Main AI Controller and MicroSD Card Module into the enclosure base."
+          },
+          "partIds": [
+            "mcu_main",
+            "storage_sd",
+            "enclosure_base"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Solder header pins to the MicroSD Card Module if not pre-assembled",
+          "detail": {
+            "tip": "Use a breadboard or a helping hands tool to hold the header pins straight while soldering for cleaner, more reliable connections.",
+            "steps": [
+              "Tin the six pads on the MicroSD Card Module (VCC, GND, MOSI, MISO, SCK, CS).",
+              "Place a 6-pin male header into the tinned holes, ensuring it sits straight.",
+              "Solder each pin securely to its corresponding pad on the MicroSD Card Module, using a soldering iron set to approximately 350°C.",
+              "Inspect all solder joints for good electrical connection and to ensure there are no short circuits or bridges between pins."
+            ],
+            "summary": "Solder header pins onto the MicroSD Card Module."
+          },
+          "partIds": [
+            "storage_sd"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Mount the ESP32-S3 onto the enclosure base using M2 standoffs and screws",
+          "detail": {
+            "tip": "Ensure the M2 standoffs are fully seated in the enclosure base before mounting the PCB to provide a stable and level platform for the Main AI Controller.",
+            "steps": [
+              "Screw four M2x6mm brass M2 PCB Standoffs into the designated mounting points on the Server Enclosure Base.",
+              "Carefully align the Main AI Controller (ESP32-S3-DevKitC-1) over the installed M2 PCB Standoffs.",
+              "Secure the Main AI Controller to the M2 PCB Standoffs using four M2x4mm M2 Screws for PCB.",
+              "Gently tighten each M2 screw until the board is held firmly, but avoid over-tightening to prevent damage."
+            ],
+            "summary": "Mount the Main AI Controller to the Server Enclosure Base."
+          },
+          "partIds": [
+            "mcu_main",
+            "m2_standoffs",
+            "m2_screws_pcb",
+            "enclosure_base"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire the MicroSD Card Module to the ESP32-S3 for power (3.3V, GND)",
+          "detail": {
+            "tip": "Double-check that you are connecting to the 3.3V power rail on the Main AI Controller, not the 5V, as the MicroSD Card Module typically operates at 3.3V.",
+            "steps": [
+              "Connect a jumper wire from the \"3V3\" pin on the Main AI Controller (ESP32-S3-DevKitC-1) to the \"VCC\" pin on the MicroSD Card Module.",
+              "Connect a jumper wire from the \"GND\" pin on the Main AI Controller (ESP32-S3-DevKitC-1) to the \"GND\" pin on the MicroSD Card Module.",
+              "Verify that both power connections are secure and correctly polarized."
+            ],
+            "summary": "Wire the MicroSD Card Module to the Main AI Controller for power."
+          },
+          "partIds": [
+            "storage_sd",
+            "mcu_main"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Wire the MicroSD Card Module to the ESP32-S3 for SPI data (MOSI, MISO, SCK, CS)",
+          "detail": {
+            "tip": "For reliable high-speed data transfer, keep SPI data lines as short as possible and bundled together to minimize interference.",
+            "steps": [
+              "Connect a jumper wire from GPIO11 (MOSI) on the Main AI Controller to the MOSI pin on the MicroSD Card Module.",
+              "Connect a jumper wire from GPIO13 (MISO) on the Main AI Controller to the MISO pin on the MicroSD Card Module.",
+              "Connect a jumper wire from GPIO12 (SCK) on the Main AI Controller to the SCK pin on the MicroSD Card Module.",
+              "Connect a jumper wire from GPIO10 (CS) on the Main AI Controller to the CS pin on the MicroSD Card Module.",
+              "Verify all four SPI data connections are secure and correctly matched."
+            ],
+            "summary": "Wire MicroSD Card Module to Main AI Controller via SPI."
+          },
+          "partIds": [
+            "storage_sd",
+            "mcu_main"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Perform continuity checks on all wired connections to prevent shorts",
+          "detail": {
+            "tip": "Always perform continuity checks *before* applying power to prevent potential damage from miswires or shorts.",
+            "steps": [
+              "Set your multimeter to continuity mode.",
+              "Verify continuity between the 3V3 pin on the Main AI Controller and the VCC pin on the MicroSD Card Module.",
+              "Verify continuity between the GND pin on the Main AI Controller and the GND pin on the MicroSD Card Module.",
+              "Check for shorts between 3V3 and GND on both the Main AI Controller and MicroSD Card Module.",
+              "Verify continuity for each SPI data line: GPIO11 (MOSI) to MOSI, GPIO13 (MISO) to MISO, GPIO12 (SCK) to SCK, and GPIO10 (CS) to CS.",
+              "Check for shorts between adjacent data lines and between data lines and power/ground on both modules."
+            ],
+            "summary": "Perform continuity and short circuit checks on all electrical connections."
+          },
+          "partIds": [
+            "mcu_main",
+            "storage_sd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect the USB-C Wall Adapter to the ESP32-S3",
+          "detail": {
+            "tip": "Ensure the USB-C Wall Adapter provides 5V DC output, which is standard for USB-C powered development boards like the ESP32-S3.",
+            "steps": [
+              "Plug the USB-C Wall Adapter into a standard wall outlet.",
+              "Insert the USB-C cable from the USB-C Wall Adapter into the USB-C port on the Main AI Controller (ESP32-S3-DevKitC-1).",
+              "Observe the power indicator LED(s) on the Main AI Controller to confirm it is receiving power."
+            ],
+            "summary": "Connect the USB-C Wall Adapter to the Main AI Controller."
+          },
+          "partIds": [
+            "power_wall_adapter",
+            "mcu_main"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Verify ESP32-S3 powers on and is recognized by your computer",
+          "detail": {
+            "tip": "If the device is not recognized, you may need to install the appropriate USB-to-serial drivers for your ESP32-S3 board model.",
+            "steps": [
+              "Ensure the Main AI Controller (ESP32-S3-DevKitC-1) is connected to your computer via its USB-C port.",
+              "Observe if the power indicator LED on the Main AI Controller illuminates, confirming it is powered.",
+              "Open your computer's device manager (Windows) or use terminal commands like `ls /dev/tty*` (Linux/macOS).",
+              "Verify that a new USB-to-serial device (e.g., CP210x or CH340, depending on the specific ESP32-S3 variant) appears."
+            ],
+            "summary": "Verify Main AI Controller powers on and is recognized by computer."
+          },
+          "partIds": [
+            "mcu_main"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Flash the operating system (e.g., RTOS) and necessary firmware onto the ESP32-S3",
+          "detail": {
+            "tip": "Ensure you have the necessary ESP32-S3 toolchain and drivers installed on your computer before attempting to flash firmware.",
+            "steps": [
+              "Open your preferred development environment (e.g., ESP-IDF, Arduino IDE) on your computer.",
+              "Load the operating system (RTOS) and AI firmware project for the ESP32-S3-DevKitC-1.",
+              "Select the correct board model and the identified serial port for the Main AI Controller.",
+              "Compile the firmware project.",
+              "Initiate the flashing process, ensuring the Main AI Controller is in bootloader mode if required (typically by holding the BOOT button while briefly pressing and releasing the RESET button).",
+              "Monitor the console output for successful flashing and verification."
+            ],
+            "summary": "Flash the operating system and firmware onto the Main AI Controller."
+          },
+          "partIds": [
+            "mcu_main"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Insert a formatted MicroSD card and load the offline AI model files onto it",
+          "detail": {
+            "tip": "For optimal performance and compatibility with embedded systems, ensure your MicroSD card is formatted with a standard filesystem like FAT32 and not NTFS.",
+            "steps": [
+              "Insert a blank MicroSD card into your computer's card reader.",
+              "Format the MicroSD card to FAT32 or exFAT filesystem.",
+              "Copy your pre-trained offline AI model files to the root directory of the formatted MicroSD card.",
+              "Safely eject the MicroSD card from your computer.",
+              "Insert the prepared MicroSD card into the slot on the MicroSD Card Module, ensuring it clicks into place."
+            ],
+            "summary": "Insert and load offline AI model files onto a formatted MicroSD card."
+          },
+          "partIds": [
+            "storage_sd"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test MicroSD card detection and verify AI model files are accessible by the ESP32-S3",
+          "detail": {
+            "tip": "If the MicroSD card is not detected, double-check your SPI wiring (MOSI, MISO, SCK, CS, VCC, GND) and ensure the card is properly formatted and seated.",
+            "steps": [
+              "Ensure the Main AI Controller is connected to your computer via USB-C and the MicroSD card is inserted into its module.",
+              "Open a serial monitor (e.g., in Arduino IDE or PlatformIO) connected to the Main AI Controller at the correct baud rate.",
+              "Reset the Main AI Controller to initiate the firmware's SD card detection routine.",
+              "Observe the serial monitor for messages indicating successful MicroSD card initialization.",
+              "Look for messages confirming the Main AI Controller can list and access the AI model files stored on the MicroSD card."
+            ],
+            "summary": "Test MicroSD card detection and AI model file accessibility."
+          },
+          "partIds": [
+            "mcu_main",
+            "storage_sd"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Run preliminary tests to confirm basic AI model inference functionality",
+          "detail": {
+            "tip": "If inference fails, check the console for error messages related to model loading, memory allocation, or processing, which can indicate issues with the model file or firmware configuration.",
+            "steps": [
+              "Ensure the Main AI Controller is powered and connected to your computer's serial monitor.",
+              "Reset the Main AI Controller to start the firmware, which should initiate AI model loading and a test inference.",
+              "Observe the serial monitor for output confirming the AI model is loaded from the MicroSD Card Module.",
+              "Look for messages indicating successful inference, such as confidence scores or classification results for a predefined test input.",
+              "Verify that the output reflects expected behavior for a basic AI model test run."
+            ],
+            "summary": "Test basic AI model inference functionality on the ESP32-S3."
+          },
+          "partIds": [
+            "mcu_main",
+            "storage_sd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Gently place the MicroSD Card Module into its designated slot in the enclosure base",
+          "detail": {
+            "tip": "Ensure all wired connections to the MicroSD Card Module are routed neatly before placing it, to prevent pinching or strain.",
+            "steps": [
+              "Locate the integrated slot designed for the MicroSD Card Module within the Server Enclosure Base.",
+              "Carefully align the MicroSD Card Module with the slot, ensuring the header pins face the Main AI Controller.",
+              "Gently slide the MicroSD Card Module into the slot until it is fully seated and stable.",
+              "Confirm that the module fits snugly without excessive force and that its orientation is correct."
+            ],
+            "summary": "Place the MicroSD Card Module into its designated slot."
+          },
+          "partIds": [
+            "storage_sd",
+            "enclosure_base"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Ensure all internal wiring is neatly routed and secured, avoiding pinch points",
+          "detail": {
+            "tip": "Proper cable management prevents electrical shorts, improves airflow for cooling, and makes future maintenance easier within the tiny server enclosure.",
+            "steps": [
+              "Visually inspect all jumper wires connecting the Main AI Controller and the MicroSD Card Module.",
+              "Gently route wires to avoid interfering with component placement or enclosure closure.",
+              "Ensure wires are not stretched or pulled taut, providing adequate slack.",
+              "Confirm no wires are in the path of where the Server Enclosure Lid will seat, preventing pinching.",
+              "Use small cable ties or adhesive mounts if necessary to secure loose wires, improving airflow and preventing snags."
+            ],
+            "summary": "Neatly route and secure all internal wiring, avoiding pinch points."
+          },
+          "partIds": [
+            "mcu_main",
+            "storage_sd"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Align the enclosure lid with the base and secure it using M3 screws",
+          "detail": {
+            "tip": "Tightening screws diagonally helps distribute pressure evenly, preventing warping of the 3D-printed lid or base.",
+            "steps": [
+              "Carefully align the Server Enclosure Lid with the Server Enclosure Base, ensuring all edges are flush.",
+              "Verify that the screw holes in the lid line up precisely with the M3 Heat Set Inserts embedded in the base.",
+              "Insert four M3x8mm M3 Screws for Enclosure through the lid's holes and into the M3 Heat Set Inserts.",
+              "Using a screwdriver, gently tighten each M3 screw in an opposing pattern (e.g., diagonally) until the lid is securely fastened.",
+              "Ensure the lid is tightly closed, but avoid over-tightening the screws to prevent stripping the heat set inserts."
+            ],
+            "summary": "Align the enclosure lid with the base and secure it with M3 screws."
+          },
+          "partIds": [
+            "enclosure_lid",
+            "enclosure_base",
+            "m3_screws_enclosure",
+            "m3_heat_inserts"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Perform a final power-on test with the fully assembled enclosure",
+          "detail": {
+            "tip": "If no power is detected or the system doesn't appear to boot, double-check that the USB-C power connection is solid and consider reopening the enclosure to re-verify internal connections.",
+            "steps": [
+              "Plug the USB-C Wall Adapter into a wall outlet and connect it to the USB-C port of the fully assembled Offline AI Server.",
+              "Observe the power indicator LED on the Main AI Controller through any enclosure cutouts, ensuring it illuminates.",
+              "Allow a few moments for the Main AI Controller to boot up and load the AI model from the MicroSD Card Module.",
+              "Verify any external indicators (e.g., LED patterns configured in firmware) or listen for internal signs of the offline AI processing initiating normally."
+            ],
+            "summary": "Perform final power-on and functional test of the assembled server."
+          },
+          "partIds": [
+            "mcu_main",
+            "power_wall_adapter"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "An offline AI server leveraging an ESP32-S3 microcontroller and a MicroSD card for local model storage. Housed in a compact, passively cooled 3D-printed enclosure, it performs small language model inference without internet connectivity, powered by a USB-C wall adapter.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG capable)",
+      "Soldering iron with fine tip",
+      "Screwdriver set (Phillips head for M2/M3)",
+      "Wire strippers/cutters",
+      "Multimeter",
+      "Tweezers or small pliers"
+    ],
+    "assumptions": [
+      "Basic 3D printing knowledge",
+      "Basic soldering skills for electronics",
+      "Familiarity with ESP32-S3 development environment (e.g., ESP-IDF, PlatformIO)",
+      "Access to a computer for flashing firmware and model deployment"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main Power Input",
+      "source": "power_wall_adapter",
+      "target": "mcu_main",
+      "current": "2A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "SD Card Module Power",
+      "source": "mcu_main",
+      "target": "storage_sd",
+      "current": "50mA",
+      "voltage": "3.3V",
+      "protocol": "",
+      "sourcePin": "3V3",
+      "targetPin": "VCC"
+    },
+    {
+      "type": "data",
+      "source": "mcu_main",
+      "target": "storage_sd",
+      "voltage": "",
+      "protocol": "SPI",
+      "sourcePin": "GPIO11 (MOSI), GPIO13 (MISO), GPIO12 (SCK), GPIO10 (CS)",
+      "targetPin": "MOSI, MISO, SCK, CS"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "Mounting points for standoffs",
+      "source": "enclosure_base",
+      "target": "m2_standoffs"
+    },
+    {
+      "label": "Mounting PCB to standoffs",
+      "source": "m2_standoffs",
+      "target": "mcu_main"
+    },
+    {
+      "label": "Fastening PCB to standoffs",
+      "source": "m2_screws_pcb",
+      "target": "mcu_main"
+    },
+    {
+      "label": "Inserting heat inserts into base",
+      "source": "enclosure_base",
+      "target": "m3_heat_inserts"
+    },
+    {
+      "label": "Securing lid with screws",
+      "source": "enclosure_lid",
+      "target": "m3_screws_enclosure"
+    },
+    {
+      "label": "Screwing into heat inserts",
+      "source": "m3_screws_enclosure",
+      "target": "m3_heat_inserts"
+    },
+    {
+      "label": "Integrated slot for module",
+      "source": "enclosure_base",
+      "target": "storage_sd"
+    }
+  ],
+  "projectId": "9dbebaf4-a95c-402d-848f-478ac0a3315d"
+}

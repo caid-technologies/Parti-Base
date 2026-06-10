@@ -1,0 +1,182 @@
+[
+  {
+    "label": "M3 bolts",
+    "source": "main_enclosure_top",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "Secured via adhesive/snap fit",
+    "source": "circular_display_bezel",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Secured via adhesive/snap fit",
+    "source": "rectangular_display_bezel",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Press fit/seated",
+    "source": "rotary_ring_outer",
+    "target": "rotary_encoder_bearing"
+  },
+  {
+    "label": "Press fit/retained",
+    "source": "rotary_encoder_bearing",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Coaxial engagement",
+    "source": "rotary_ring_inner_gear",
+    "target": "rotary_ring_outer"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "mcu_mount",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "Guided/retained",
+    "source": "button_back_home_cap",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Guided/retained",
+    "source": "button_snooze_cap",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Guided/retained",
+    "source": "button_dismiss_cap",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Guided/retained",
+    "source": "button_focus_toggle_cap",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Guided/retained",
+    "source": "button_mute_privacy_cap",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Snap fit/adhesive",
+    "source": "speaker_grille",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "M2 screws",
+    "source": "microphone_mount",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "M2 screws",
+    "source": "mic_mute_switch_housing",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "M2 screws",
+    "source": "usb_c_port_mount",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "Adhesive",
+    "source": "friction_pads",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "Adhesive/M2 screw",
+    "source": "internal_cable_clips",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "Adhesive/M2 screw",
+    "source": "internal_cable_clips",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "M2 screws",
+    "source": "i2s_dac_audio_mount",
+    "target": "main_enclosure_bottom"
+  },
+  {
+    "label": "mount",
+    "source": "circular_display_bezel",
+    "target": "circular_display"
+  },
+  {
+    "label": "mount",
+    "source": "rectangular_display_bezel",
+    "target": "rectangular_display"
+  },
+  {
+    "label": "mount",
+    "source": "rotary_ring_inner_gear",
+    "target": "rotary_encoder_main"
+  },
+  {
+    "label": "mount",
+    "source": "mcu_mount",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "button_back_home_cap",
+    "target": "button_back_home"
+  },
+  {
+    "label": "mount",
+    "source": "button_snooze_cap",
+    "target": "button_snooze"
+  },
+  {
+    "label": "mount",
+    "source": "button_dismiss_cap",
+    "target": "button_dismiss"
+  },
+  {
+    "label": "mount",
+    "source": "button_focus_toggle_cap",
+    "target": "button_focus_toggle"
+  },
+  {
+    "label": "mount",
+    "source": "button_mute_privacy_cap",
+    "target": "button_mute_privacy"
+  },
+  {
+    "label": "mount",
+    "source": "speaker_grille",
+    "target": "speaker_audio_output"
+  },
+  {
+    "label": "mount",
+    "source": "microphone_mount",
+    "target": "microphone_module"
+  },
+  {
+    "label": "mount",
+    "source": "mic_mute_switch_housing",
+    "target": "microphone_mute_switch"
+  },
+  {
+    "label": "mount",
+    "source": "usb_c_port_mount",
+    "target": "usb_c_power_input"
+  },
+  {
+    "label": "mount",
+    "source": "i2s_dac_audio_mount",
+    "target": "i2s_dac_audio"
+  },
+  {
+    "label": "M2 screws",
+    "source": "magsafe_charger_mount",
+    "target": "main_enclosure_top"
+  },
+  {
+    "label": "Press fit/retained",
+    "source": "magsafe_charger_mount",
+    "target": "apple_magsafe_charger"
+  }
+]

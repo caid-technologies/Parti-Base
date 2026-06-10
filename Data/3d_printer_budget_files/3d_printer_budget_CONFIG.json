@@ -1,0 +1,2837 @@
+{
+  "plan": "- Electrical: Arduino Mega 2560/RAMPS 1.4 board, 4x NEMA 17 stepper motors, A4988/DRV8825 drivers, hotend assembly (heater cartridge, thermistor, nozzle), 3x endstop switches, 12V/24V power supply unit.\n- Mechanical: Aluminum extrusion frame (e.g., 2020 profile), linear smooth rods, LM8UU linear bearings, GT2 timing belts and pulleys, lead screw for Z-axis.\n- Extrusion System: MK8 or E3D V6 type hotend, Bowden or direct drive extruder mechanism, PTFE tubing for Bowden setup.\n- Build Platform: Heated print bed (aluminum plate + silicone heater or PCB heatbed) with glass or PEI sheet, bed leveling springs.\n- Hardware: Various M3/M4 screws, nuts, washers, T-nuts for extrusions, couplings for Z-axis, wiring harnesses, fans for hotend/part cooling.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Controller MCU",
+      "pins": [
+        "Digital Pins 0-53",
+        "Analog Pins 0-15",
+        "SPI",
+        "I2C",
+        "UART",
+        "Power"
+      ],
+      "type": "mcu",
+      "partId": "42d7f501-18f6-49ab-a055-73e7afb1cb2c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/dRY4Z4DVq5Tp4-ag1ufff1HoRZ3CU0IQ2TUOXFeHSrM/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy1lYmxp/bDNxMm5kL2ltYWdl/cy9zdGVuY2lsLzEy/NXgxMjUvcHJvZHVj/dHMvMzU5LzE2NTM4/L3MxMzY3MTQxNTI4/MTg4NzIyMjJfcDMx/NV9pNV93MTYwMF9f/MjAzODJfXzczNTE1/LjE2NjUyNTQ5Njku/anBnP2M9Mg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "5V,GND,Vin,TX1,RX1"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0046AMGW0?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "101.52x53.3mm",
+      "description": "Microcontroller board based on the ATmega2560, suitable for projects requiring many I/O pins.",
+      "productName": "Arduino Mega 2560 R3",
+      "purchaseUrl": "https://www.amazon.com/s?k=arduino+mega+2560",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxwok09LMxrO353eAciRTapAi82psay9gAOyRWdfjjT5VE6tdxUJFo4vyx49fRxW4Bc3zpl8TW4j6QpGVyB8Z11DtI8AiNfCphhxYUH2OXZCdcOx2NRPgQ3d7Zm5O9iRkQCBaXsLjW3FW9RWulZiigrBKD0G98CcQ2IGfrvL2MTHHFoGgvUGjZTpiVPUq6FYQ5EakKIAavac26wu7kbLuUPFilF9G0OctgKF2XjMdzfRzpobGaDfezs8vh9cqLPTiayaeoyZktjRkfg5Lii7aDccNxkRtW6TFjv6L04kYrAu3uEFZMfLfvbXfGllP3LQpiOn7xOa3O3DyHBz1OXrDbn4IkAXe6KfXioW6pQTJ3hyzm4WtGEOZpdfdUANYIupgQucJPgcQLYnVJW5ol4rBFLXWHNKvri90snNX3toSAKczd4VxHsJUtgTGbNF4yIVCpikxkjq713pDfr8HNU0uKtWjfgiYw87x5ee7qydWyM91g3XG04lPXeuaClHO4qsWaVOMvqq4nFbeqqynSn92SRmHYZLy7GVEc91AfvyRgvcZMK71NQGQyEKYSyLC8nWhZr2k2lYVAFwVkZyYdiuyhwyYLZu3lid7vwXY5odnr5EL8BmzcUhMDwVYf9TDv5l1YVhGcPfv16dfQvT5a2JoaM15",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Arduino+Mega+2560+R3&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ramps_shield",
+      "name": "RAMPS 1.4 Motor Driver Shield",
+      "pins": [
+        "Motor Driver Sockets",
+        "Heater Outputs (D8, D9, D10)",
+        "Thermistor Inputs",
+        "Endstop Inputs",
+        "Power Input"
+      ],
+      "type": "module",
+      "partId": "1eeb3481-19b4-4506-bbb7-4eac6814f52b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/lSWuxYwefCh4yiIUnTK1Bt4F2wUCO-I-d2qwHxrzflk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yZWVz/NTIuY29tL2Nkbi9z/aG9wL2ZpbGVzL05l/d1Byb2plY3QtMjAy/NC0wOS0wOVQxMjQ2/MDAuODcyLmpwZz92/PTE3MjU4NjYxODkm/d2lkdGg9MTQ0NQ",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B06XZ46PDJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "115x60x30mm",
+      "description": "Interface board for stepper drivers, heaters, and sensors.",
+      "productName": "RAMPS 1.4 Control Board",
+      "purchaseUrl": "https://www.amazon.com/s?k=ramps+1.4+board",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgSNBTtAYOlVA5o0qkbx1cbjzHhyGL3CInp29a0mZz8pi636Hu6UHM8WPySqOmNEENtmMqTsAmp1LCXDnSUzwnLQIE5GVgX7FsqMJFjJvw0zny3eDIeAgIerslXAmORcPkoBgNS4Dh47fTXAuV6qtU7Qm8WB7Tx5gE2e4Vxb2fv5QieK8OUQ6E5SfOihlWkhtK6Kro1IFCeoBXD7SurzeFqGFN4SwFD6Cs8FUOTV59Q4oK2Jw4l82wwkyxA6cqyW82xoJsmCtWLKmvKMxkairQ6QPAh9PpQVyKxQLTEBUDClqtNI6NJRsZoz3JFp6f1RPKQrP8ydqVYKXhbytUuFu4L7Y1c2p5jIClpAM5TPGR2R5fjpzFR3TdmOtFg2iLHUzsK3PfQV63Bq3EsMGYplDX7cNQ8nmPkGg1fNIYpD3WLDwcp8t4ECNSpSRktFHBvt9rlafYJYc5d34ERGYNfhuHtO5Qke5norJRPvi6sw1agWuPKokusbitFi4OYvC5sYs0I899S0XE0BuZwyYXr9klTEu64QNJYStZ9C2sHDamoWbS9He6zyXYlNTMxzGTSF616buiIsbXrc1vf5RYkaWUq0bJWnaPJSBb9i5XcSKdVb7YrtxIgFr8dHkGNGzrW6k5Gu6bKJmIDXlEb75fXd6HbV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RAMPS+1.4+Control+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_axis_stepper",
+      "name": "X-Axis Stepper Motor",
+      "pins": [
+        "4-Wire Stepper"
+      ],
+      "type": "actuator",
+      "partId": "6d4a3148-e1cc-4de0-920f-a197a5e2dc28",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/e2W1EHnSaMO7Iww5dtN1SiuhoAQTmefD6-AQxLaC_Yg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxbTlNUXlMOXlM/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "A+,A-,B+,B-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B097JKJ9VV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x40mm",
+      "description": "NEMA 17 stepper motor for X-axis motion, GT2 belt driven.",
+      "productName": "NEMA 17 Stepper Motor 17HS4401",
+      "purchaseUrl": "https://www.amazon.com/s?k=nema+17+stepper+motor",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRZXwMXina90ZI2BuorIYvLK5tNqJOeUu72Hw3KfZyhOwLQUkjRZgskvFBsdBuJdATMKTVbcSKMaBGsCsozDEw740KN74pThZETQCHb5O5Q3m36yT3H9d3UslNMK3e7qlG8Lojiv0oK3TvKUsYEI1nOuzeY5H4tLzxzLm6Kh2HB3z4aRiVaUwSO4CIPhRff9dIFxAr9mpQz7V9Jzw7Cfv8LsPx6zn2NfNnGimYKp6kGZyzzHhV2JHcivJeJKZ5OetzT7mhyZ5qAUi7vBPCuEa74aGSOgdxtKXq9pEgAWYhOn0TloEqprgVfyfDGPAqIxjhvhtl3O0vwRcAVNEZ6CtWPHaUwjZbtxJZC2JBqXhzQ1HK4XR3cnCnYXfcguepumIEmGkzFhFeVBr7sHBzLJPDo590rY5MIvT11nJzNBRV1Jd7O1tGGdbQ3RIiNIwosYX29hVQ5E47WaDnq99PlOGbF6gmZyi9vja83bQCUOnprGU6Y0sg70wqOllTaxUau4IYpFkjiKTmt0ydyJ92cLeUtLyxShBnqDbVrOm6GvxLiYlgSB8mCMWtFikbWCfQNLj609r1auQsClcK566dcspcITq6h5rim24f3Ahqh1YxCIqOtaYFq69jgkBJ2uKybkGYm8CXm6WSsFuUGGyHRuZkwR",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+17+Stepper+Motor+17HS4401&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_axis_stepper",
+      "name": "Y-Axis Stepper Motor",
+      "pins": [
+        "4-Wire Stepper"
+      ],
+      "type": "actuator",
+      "partId": "6d4a3148-e1cc-4de0-920f-a197a5e2dc28",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/e2W1EHnSaMO7Iww5dtN1SiuhoAQTmefD6-AQxLaC_Yg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxbTlNUXlMOXlM/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "A+,A-,B+,B-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B097JKJ9VV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x40mm",
+      "description": "NEMA 17 stepper motor for X-axis motion, GT2 belt driven.",
+      "productName": "NEMA 17 Stepper Motor 17HS4401",
+      "purchaseUrl": "https://www.amazon.com/s?k=nema+17+stepper+motor",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRZXwMXina90ZI2BuorIYvLK5tNqJOeUu72Hw3KfZyhOwLQUkjRZgskvFBsdBuJdATMKTVbcSKMaBGsCsozDEw740KN74pThZETQCHb5O5Q3m36yT3H9d3UslNMK3e7qlG8Lojiv0oK3TvKUsYEI1nOuzeY5H4tLzxzLm6Kh2HB3z4aRiVaUwSO4CIPhRff9dIFxAr9mpQz7V9Jzw7Cfv8LsPx6zn2NfNnGimYKp6kGZyzzHhV2JHcivJeJKZ5OetzT7mhyZ5qAUi7vBPCuEa74aGSOgdxtKXq9pEgAWYhOn0TloEqprgVfyfDGPAqIxjhvhtl3O0vwRcAVNEZ6CtWPHaUwjZbtxJZC2JBqXhzQ1HK4XR3cnCnYXfcguepumIEmGkzFhFeVBr7sHBzLJPDo590rY5MIvT11nJzNBRV1Jd7O1tGGdbQ3RIiNIwosYX29hVQ5E47WaDnq99PlOGbF6gmZyi9vja83bQCUOnprGU6Y0sg70wqOllTaxUau4IYpFkjiKTmt0ydyJ92cLeUtLyxShBnqDbVrOm6GvxLiYlgSB8mCMWtFikbWCfQNLj609r1auQsClcK566dcspcITq6h5rim24f3Ahqh1YxCIqOtaYFq69jgkBJ2uKybkGYm8CXm6WSsFuUGGyHRuZkwR",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+17+Stepper+Motor+17HS4401&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_axis_stepper",
+      "name": "Z-Axis Stepper Motor",
+      "pins": [
+        "4-Wire Stepper"
+      ],
+      "type": "actuator",
+      "partId": "6d4a3148-e1cc-4de0-920f-a197a5e2dc28",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/e2W1EHnSaMO7Iww5dtN1SiuhoAQTmefD6-AQxLaC_Yg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxbTlNUXlMOXlM/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "A+,A-,B+,B-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B097JKJ9VV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x40mm",
+      "description": "NEMA 17 stepper motor for X-axis motion, GT2 belt driven.",
+      "productName": "NEMA 17 Stepper Motor 17HS4401",
+      "purchaseUrl": "https://www.amazon.com/s?k=nema+17+stepper+motor",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRZXwMXina90ZI2BuorIYvLK5tNqJOeUu72Hw3KfZyhOwLQUkjRZgskvFBsdBuJdATMKTVbcSKMaBGsCsozDEw740KN74pThZETQCHb5O5Q3m36yT3H9d3UslNMK3e7qlG8Lojiv0oK3TvKUsYEI1nOuzeY5H4tLzxzLm6Kh2HB3z4aRiVaUwSO4CIPhRff9dIFxAr9mpQz7V9Jzw7Cfv8LsPx6zn2NfNnGimYKp6kGZyzzHhV2JHcivJeJKZ5OetzT7mhyZ5qAUi7vBPCuEa74aGSOgdxtKXq9pEgAWYhOn0TloEqprgVfyfDGPAqIxjhvhtl3O0vwRcAVNEZ6CtWPHaUwjZbtxJZC2JBqXhzQ1HK4XR3cnCnYXfcguepumIEmGkzFhFeVBr7sHBzLJPDo590rY5MIvT11nJzNBRV1Jd7O1tGGdbQ3RIiNIwosYX29hVQ5E47WaDnq99PlOGbF6gmZyi9vja83bQCUOnprGU6Y0sg70wqOllTaxUau4IYpFkjiKTmt0ydyJ92cLeUtLyxShBnqDbVrOm6GvxLiYlgSB8mCMWtFikbWCfQNLj609r1auQsClcK566dcspcITq6h5rim24f3Ahqh1YxCIqOtaYFq69jgkBJ2uKybkGYm8CXm6WSsFuUGGyHRuZkwR",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+17+Stepper+Motor+17HS4401&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "extruder_stepper",
+      "name": "Extruder Stepper Motor",
+      "pins": [
+        "4-Wire Stepper"
+      ],
+      "type": "actuator",
+      "partId": "6d4a3148-e1cc-4de0-920f-a197a5e2dc28",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/e2W1EHnSaMO7Iww5dtN1SiuhoAQTmefD6-AQxLaC_Yg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxbTlNUXlMOXlM/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "A+,A-,B+,B-"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B097JKJ9VV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "42x42x40mm",
+      "description": "NEMA 17 stepper motor for X-axis motion, GT2 belt driven.",
+      "productName": "NEMA 17 Stepper Motor 17HS4401",
+      "purchaseUrl": "https://www.amazon.com/s?k=nema+17+stepper+motor",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRZXwMXina90ZI2BuorIYvLK5tNqJOeUu72Hw3KfZyhOwLQUkjRZgskvFBsdBuJdATMKTVbcSKMaBGsCsozDEw740KN74pThZETQCHb5O5Q3m36yT3H9d3UslNMK3e7qlG8Lojiv0oK3TvKUsYEI1nOuzeY5H4tLzxzLm6Kh2HB3z4aRiVaUwSO4CIPhRff9dIFxAr9mpQz7V9Jzw7Cfv8LsPx6zn2NfNnGimYKp6kGZyzzHhV2JHcivJeJKZ5OetzT7mhyZ5qAUi7vBPCuEa74aGSOgdxtKXq9pEgAWYhOn0TloEqprgVfyfDGPAqIxjhvhtl3O0vwRcAVNEZ6CtWPHaUwjZbtxJZC2JBqXhzQ1HK4XR3cnCnYXfcguepumIEmGkzFhFeVBr7sHBzLJPDo590rY5MIvT11nJzNBRV1Jd7O1tGGdbQ3RIiNIwosYX29hVQ5E47WaDnq99PlOGbF6gmZyi9vja83bQCUOnprGU6Y0sg70wqOllTaxUau4IYpFkjiKTmt0ydyJ92cLeUtLyxShBnqDbVrOm6GvxLiYlgSB8mCMWtFikbWCfQNLj609r1auQsClcK566dcspcITq6h5rim24f3Ahqh1YxCIqOtaYFq69jgkBJ2uKybkGYm8CXm6WSsFuUGGyHRuZkwR",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NEMA+17+Stepper+Motor+17HS4401&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_axis_driver",
+      "name": "X-Axis Stepper Driver",
+      "pins": [
+        "VDD",
+        "GND",
+        "VMOT",
+        "DIR",
+        "STEP",
+        "ENABLE",
+        "MS1",
+        "MS2",
+        "MS3"
+      ],
+      "type": "module",
+      "partId": "9260acf6-4613-49e8-8471-7d19377e988c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/r9zVZOZJa_kxpDuojUl18yjnOGULHvj2Wn_46Yxa5N4/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/b21jLXN0ZXBwZXJv/bmxpbmUuY29tL2lt/YWdlL2NhY2hlL2Nh/dGFsb2cvc3RlcHBl/ci1kcml2ZXIvQTQ5/ODglMjA0LTgweDgw/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "DIR,STEP,ENABLE,MS1,MS2,MS3,VMOT,GND,VDD,1A,1B,2A,2B"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07BND65C8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x5mm",
+      "description": "Driver for the NEMA 17 stepper motor on the X-axis.",
+      "productName": "A4988 Stepper Motor Driver",
+      "purchaseUrl": "https://www.amazon.com/s?k=a4988+stepper+driver",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHppJWY5IMln8pNBX7wwbhBEDwaDu31PPj4maXZ742deAzRrwQEScXMMws9Mtbg1NjwFlltzEg2J2i3yVfth3VjywguhjH3o2oyKSFPL67Gj0B0xJZG5EGa3F9S7vgVsqxuX3MHaA4YLBBtsa1GLKMSBhMPWjqaUvEfyxVGbINzI5SWzl0FltXT8tAlksHbnh0i0TTbU6HFheZH044INtJBd3lBg4OBFWtDR4DbvVGt3h0yjcVdcvqAPD2CLchSyeOGSN5StUFWyVkgQnlSJyv9XJEHIgNazRc3y1AosAKV64RU5JV3Qb2VW4GKuXAZSXf8E8vh1o481l2VPQvtLmQnpC855GWjOlZU8ehGf1V0oOOTDFzBM6upzE4DlEmB5sG8VpJBt8voOvM5I7DQ6BVwkOPOFrdlIHnDiE25E1cbKCugBo8B3DeXcFN7ltzwvrU8B6bxRezH86cQvqfuMKko4Z00vv7AJwCBrWckDho4dvUJPIBuzg2o1OeQqk3QK9Zihs6HxfafRRcEtIPQOMMEO95LZWNz8ysAqij6pNqO8qaM0h3m1NsGjfLzE3Owhzo4CNFOdBMcCYkBp0nLIu49syKhhS2BXv4Ot96uKpXwLBUirHFWalVqtCYlrmaSSyOuWMv0lzHqhMC27BFFA39Qj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=A4988+Stepper+Motor+Driver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_axis_driver",
+      "name": "Y-Axis Stepper Driver",
+      "pins": [
+        "VDD",
+        "GND",
+        "VMOT",
+        "DIR",
+        "STEP",
+        "ENABLE",
+        "MS1",
+        "MS2",
+        "MS3"
+      ],
+      "type": "module",
+      "partId": "9260acf6-4613-49e8-8471-7d19377e988c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/r9zVZOZJa_kxpDuojUl18yjnOGULHvj2Wn_46Yxa5N4/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/b21jLXN0ZXBwZXJv/bmxpbmUuY29tL2lt/YWdlL2NhY2hlL2Nh/dGFsb2cvc3RlcHBl/ci1kcml2ZXIvQTQ5/ODglMjA0LTgweDgw/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "DIR,STEP,ENABLE,MS1,MS2,MS3,VMOT,GND,VDD,1A,1B,2A,2B"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07BND65C8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x5mm",
+      "description": "Driver for the NEMA 17 stepper motor on the X-axis.",
+      "productName": "A4988 Stepper Motor Driver",
+      "purchaseUrl": "https://www.amazon.com/s?k=a4988+stepper+driver",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHppJWY5IMln8pNBX7wwbhBEDwaDu31PPj4maXZ742deAzRrwQEScXMMws9Mtbg1NjwFlltzEg2J2i3yVfth3VjywguhjH3o2oyKSFPL67Gj0B0xJZG5EGa3F9S7vgVsqxuX3MHaA4YLBBtsa1GLKMSBhMPWjqaUvEfyxVGbINzI5SWzl0FltXT8tAlksHbnh0i0TTbU6HFheZH044INtJBd3lBg4OBFWtDR4DbvVGt3h0yjcVdcvqAPD2CLchSyeOGSN5StUFWyVkgQnlSJyv9XJEHIgNazRc3y1AosAKV64RU5JV3Qb2VW4GKuXAZSXf8E8vh1o481l2VPQvtLmQnpC855GWjOlZU8ehGf1V0oOOTDFzBM6upzE4DlEmB5sG8VpJBt8voOvM5I7DQ6BVwkOPOFrdlIHnDiE25E1cbKCugBo8B3DeXcFN7ltzwvrU8B6bxRezH86cQvqfuMKko4Z00vv7AJwCBrWckDho4dvUJPIBuzg2o1OeQqk3QK9Zihs6HxfafRRcEtIPQOMMEO95LZWNz8ysAqij6pNqO8qaM0h3m1NsGjfLzE3Owhzo4CNFOdBMcCYkBp0nLIu49syKhhS2BXv4Ot96uKpXwLBUirHFWalVqtCYlrmaSSyOuWMv0lzHqhMC27BFFA39Qj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=A4988+Stepper+Motor+Driver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_axis_driver",
+      "name": "Z-Axis Stepper Driver",
+      "pins": [
+        "VDD",
+        "GND",
+        "VMOT",
+        "DIR",
+        "STEP",
+        "ENABLE",
+        "MS1",
+        "MS2",
+        "MS3"
+      ],
+      "type": "module",
+      "partId": "9260acf6-4613-49e8-8471-7d19377e988c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/r9zVZOZJa_kxpDuojUl18yjnOGULHvj2Wn_46Yxa5N4/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/b21jLXN0ZXBwZXJv/bmxpbmUuY29tL2lt/YWdlL2NhY2hlL2Nh/dGFsb2cvc3RlcHBl/ci1kcml2ZXIvQTQ5/ODglMjA0LTgweDgw/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "DIR,STEP,ENABLE,MS1,MS2,MS3,VMOT,GND,VDD,1A,1B,2A,2B"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07BND65C8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x5mm",
+      "description": "Driver for the NEMA 17 stepper motor on the X-axis.",
+      "productName": "A4988 Stepper Motor Driver",
+      "purchaseUrl": "https://www.amazon.com/s?k=a4988+stepper+driver",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHppJWY5IMln8pNBX7wwbhBEDwaDu31PPj4maXZ742deAzRrwQEScXMMws9Mtbg1NjwFlltzEg2J2i3yVfth3VjywguhjH3o2oyKSFPL67Gj0B0xJZG5EGa3F9S7vgVsqxuX3MHaA4YLBBtsa1GLKMSBhMPWjqaUvEfyxVGbINzI5SWzl0FltXT8tAlksHbnh0i0TTbU6HFheZH044INtJBd3lBg4OBFWtDR4DbvVGt3h0yjcVdcvqAPD2CLchSyeOGSN5StUFWyVkgQnlSJyv9XJEHIgNazRc3y1AosAKV64RU5JV3Qb2VW4GKuXAZSXf8E8vh1o481l2VPQvtLmQnpC855GWjOlZU8ehGf1V0oOOTDFzBM6upzE4DlEmB5sG8VpJBt8voOvM5I7DQ6BVwkOPOFrdlIHnDiE25E1cbKCugBo8B3DeXcFN7ltzwvrU8B6bxRezH86cQvqfuMKko4Z00vv7AJwCBrWckDho4dvUJPIBuzg2o1OeQqk3QK9Zihs6HxfafRRcEtIPQOMMEO95LZWNz8ysAqij6pNqO8qaM0h3m1NsGjfLzE3Owhzo4CNFOdBMcCYkBp0nLIu49syKhhS2BXv4Ot96uKpXwLBUirHFWalVqtCYlrmaSSyOuWMv0lzHqhMC27BFFA39Qj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=A4988+Stepper+Motor+Driver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "extruder_driver",
+      "name": "Extruder Stepper Driver",
+      "pins": [
+        "VDD",
+        "GND",
+        "VMOT",
+        "DIR",
+        "STEP",
+        "ENABLE",
+        "MS1",
+        "MS2",
+        "MS3"
+      ],
+      "type": "module",
+      "partId": "9260acf6-4613-49e8-8471-7d19377e988c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/r9zVZOZJa_kxpDuojUl18yjnOGULHvj2Wn_46Yxa5N4/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/b21jLXN0ZXBwZXJv/bmxpbmUuY29tL2lt/YWdlL2NhY2hlL2Nh/dGFsb2cvc3RlcHBl/ci1kcml2ZXIvQTQ5/ODglMjA0LTgweDgw/LmpwZw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "DIR,STEP,ENABLE,MS1,MS2,MS3,VMOT,GND,VDD,1A,1B,2A,2B"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07BND65C8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x5mm",
+      "description": "Driver for the NEMA 17 stepper motor on the X-axis.",
+      "productName": "A4988 Stepper Motor Driver",
+      "purchaseUrl": "https://www.amazon.com/s?k=a4988+stepper+driver",
+      "estimatedCost": 2,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHppJWY5IMln8pNBX7wwbhBEDwaDu31PPj4maXZ742deAzRrwQEScXMMws9Mtbg1NjwFlltzEg2J2i3yVfth3VjywguhjH3o2oyKSFPL67Gj0B0xJZG5EGa3F9S7vgVsqxuX3MHaA4YLBBtsa1GLKMSBhMPWjqaUvEfyxVGbINzI5SWzl0FltXT8tAlksHbnh0i0TTbU6HFheZH044INtJBd3lBg4OBFWtDR4DbvVGt3h0yjcVdcvqAPD2CLchSyeOGSN5StUFWyVkgQnlSJyv9XJEHIgNazRc3y1AosAKV64RU5JV3Qb2VW4GKuXAZSXf8E8vh1o481l2VPQvtLmQnpC855GWjOlZU8ehGf1V0oOOTDFzBM6upzE4DlEmB5sG8VpJBt8voOvM5I7DQ6BVwkOPOFrdlIHnDiE25E1cbKCugBo8B3DeXcFN7ltzwvrU8B6bxRezH86cQvqfuMKko4Z00vv7AJwCBrWckDho4dvUJPIBuzg2o1OeQqk3QK9Zihs6HxfafRRcEtIPQOMMEO95LZWNz8ysAqij6pNqO8qaM0h3m1NsGjfLzE3Owhzo4CNFOdBMcCYkBp0nLIu49syKhhS2BXv4Ot96uKpXwLBUirHFWalVqtCYlrmaSSyOuWMv0lzHqhMC27BFFA39Qj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=A4988+Stepper+Motor+Driver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "hotend_heater_cartridge",
+      "name": "Hotend Heater Cartridge",
+      "pins": [
+        "2-wire power"
+      ],
+      "type": "actuator",
+      "partId": "8f8d4b0a-b991-44c8-b398-7dd5a9924925",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/kV9gqBf_6Y93aRaTJ3Qa8irmx_D4zBveoQ772ttvwzk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly81Lmlt/aW1nLmNvbS9kYXRh/NS9FQ09NL0RlZmF1/bHQvMjAyMy8xMS8z/NTc5MzE0NjEvSFkv/REovQ1AvMTIzMzM1/NzkyL2NlcmFtaWMt/Y2FydHJpZGdlLWhl/YXRlci0xMnYtNDB3/LTAxLTUwMHg1MDAu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "POWER_IN"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0B7QW7KHR?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x6x6mm",
+      "description": "Heats the hotend to melt ABS filament.",
+      "productName": "12V 40W Heater Cartridge",
+      "purchaseUrl": "https://www.amazon.com/s?k=12v+40w+heater+cartridge",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3CHIMkz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+40W+Heater+Cartridge&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "hotend_thermistor",
+      "name": "Hotend Thermistor",
+      "pins": [
+        "2-wire signal"
+      ],
+      "type": "sensor",
+      "partId": "b532f53a-271e-4096-9057-e4d88213dc05",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/89k-W5HMrN8TC_IzAI9YzjlPWLfsDGUluoGXaOziFgE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzF5Y0VZM3lya0wu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0714MR5BC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x5mm",
+      "description": "Measures the temperature of the hotend.",
+      "productName": "NTC 3950 100K Thermistor",
+      "purchaseUrl": "https://www.amazon.com/s?k=NTC+3950+100K+thermistor",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgY2Aulraz595mO7SADKwAaEv7rt3zWvFET65AVnCEk4Rf2PFEgvX7m73jlzoSbbAnIKcGkemLT0mqOliLzvwNGVA8NAbA3vWKymr4sQfUAL4HAn4bpNQ05MACRUoLtkLSR9UADWtjHMkpGz68Uamd5X4Xscj9m6aYbTR9mYNfJrg0rZPI7JsIKzNhLffFHG4xPZVBqlOAcf2muKZ3EFewxFAUoxanjugpUKN7n5dvr1DQAvSnbyKZmbH98IOjhKjj4xc39HcZWLMKcBrpNRwsaN0PBWHQJpYnLkzbZ74Jtj84kTLiiANcQOL2nTY0bhwQ5Qf39nnccDc6j63jhdNoILaM0XG4W1B8x2ZWrque0tJ2m2Me5aFwgN0PNmiJYd2QIM1z0Tgg00m8RdkhfnYupImGI9t4MEL7XupiunsLd6M6DcFriV8MHKPq4Pa4rn0pK45RtzltXpK3AaHyZ43HWvZmIYosMbNP1dH9lYdBdOarqnCxLfn4fmYMQMfyfmJoYp0ro7rWTvgj6ppIkihXz7FlzkDK7WBzH40xLwZWnHGazzQhzkZc8lpR3HrMV4Sa3vErbakxrzlHbRkPrx5rJJIg2CHK1D9e8hG4QLcHwI28JjRMPBZJwJA0EZMlWXr6WVuZwMpLajnIBkrxwfGG9l",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NTC+3950+100K+Thermistor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_min_endstop",
+      "name": "X-Axis Min Endstop Switch",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "sensor",
+      "partId": "5c3e9a0d-33e1-4001-a124-a32e322e22c4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/5BQJzaVtiuu5KJY_IVzbu4ZPRF12HsPMzGstcbpzsZI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFONEJLQ0hndFMu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "SIGNAL,GND,VCC"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07PCN6T6F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x5mm",
+      "description": "Mechanical limit switch for X-axis homing.",
+      "productName": "Mechanical Endstop Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+mechanical+endstop",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3E2d6a1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mechanical+Endstop+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_min_endstop",
+      "name": "Y-Axis Min Endstop Switch",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "sensor",
+      "partId": "5c3e9a0d-33e1-4001-a124-a32e322e22c4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/5BQJzaVtiuu5KJY_IVzbu4ZPRF12HsPMzGstcbpzsZI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFONEJLQ0hndFMu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "SIGNAL,GND,VCC"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07PCN6T6F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x5mm",
+      "description": "Mechanical limit switch for X-axis homing.",
+      "productName": "Mechanical Endstop Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+mechanical+endstop",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3E2d6a1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mechanical+Endstop+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_min_endstop",
+      "name": "Z-Axis Min Endstop Switch",
+      "pins": [
+        "VCC",
+        "GND",
+        "SIGNAL"
+      ],
+      "type": "sensor",
+      "partId": "5c3e9a0d-33e1-4001-a124-a32e322e22c4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/5BQJzaVtiuu5KJY_IVzbu4ZPRF12HsPMzGstcbpzsZI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFONEJLQ0hndFMu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "SIGNAL,GND,VCC"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07PCN6T6F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x15x5mm",
+      "description": "Mechanical limit switch for X-axis homing.",
+      "productName": "Mechanical Endstop Switch",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+mechanical+endstop",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3E2d6a1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mechanical+Endstop+Switch&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_supply",
+      "name": "Main Power Supply Unit",
+      "pins": [
+        "AC Input",
+        "DC 12V Output"
+      ],
+      "type": "power",
+      "partId": "580083f8-fa89-48b6-9cc1-726ba0b9355d",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/BJs5g0OzAzF5pk9UHZ7zNyrhB9KeAEyydIyZEWUztvU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmlyZ2VsbGlhdXRv/LmNvbS9jZG4vc2hv/cC9maWxlcy9GQS1Q/QS0xMlYtMzBBLUlQ/NjZfUG93ZXJfU3Vw/cGx5XzJfMzAyNHgu/anBnP3Y9MTcwMTcx/NzcxNg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B06XJVYDDW?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "200x110x50mm",
+      "description": "Provides stable 12V power to all components of the 3D printer.",
+      "productName": "12V 30A Switching Power Supply",
+      "purchaseUrl": "https://www.amazon.com/s?k=12v+30a+power+supply",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRLnzGNSQYJr0eC25nbiEU3gndPmoNzcNUqtQIdd5KeEBkCBgr0y3XwOqUtz5aWVm4gedaV2Rtz1sEMv7rcU8U559voh5B5BywEiEAMDMWL6edsw49fDz1GFN6Co2A7rm7eq9D6IcWTmj3M1MM0ygWvuD5agzXvVWtkpTUaWOomi7BJakWnOYnZeDLOxBMSgq0v4wmcfZo0rTU4dSSuEoNdxdRC5GwYbDrIS502PvHlf1rRsRCH6d5SxWdAdxqcTNtt9Tj9vqgjLRm5f0fWjXxrS8e3nGK082kEHfa57Wu0oeQwmReBcXb6uynJxRRGYSGMKxXXieV88GzmdnID0cWDic85dICgB2XaBecueJMEZsdGVJEwX5Nsk7xrOY19lo2vEDxwyJI0vUKCL7etIdKkifValJrhuPTDuMNzJr4ts4CvxNdqTga8GfHfmGfnGcTkSyrkJbeZrpyAD56OgvdYUyNa4TGirQFeNsM41BPNGRgXSIlyr37YWRAcLAgYlchsLFyqVS9bF21Nkcuj4GPEY1PAphJJR8nnePHxddSJA74FZzKnfDeaJMcvMFYqPn3uEUi6d97gHfVrkWLxj48pYaRLusNyvh7qpjr2F5bBK5Pxtl4Cl4JXIHdYxYqBEnPbGcW6aPmm7iDvaYOslLkJt",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+30A+Switching+Power+Supply&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "heated_bed",
+      "name": "Heated Print Bed",
+      "pins": [
+        "12V Power Input"
+      ],
+      "type": "actuator",
+      "partId": "45ca25fb-62e7-4e2a-a1ec-afb8773cb33e",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/43xoCRbVmQ7jcG-pcOzOk43Q4mPkk6lQNScwGt_pGrA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFUWjMxNVVKd0wu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09QWBSD3B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "220x220x3mm",
+      "description": "Heats the build surface for part adhesion.",
+      "productName": "MK3 Aluminum Heated Bed 12V",
+      "purchaseUrl": "https://www.amazon.com/s?k=mk3+heated+bed+12v",
+      "estimatedCost": 20,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jya37ooGvvNqoaRa9m2amMidwhPDJMwbuVsSwMctvYBRKMBZHas5rHj7OI4MDwq5wPaE85qa4VrSuTLk6QLdyO2LeaW6E44jCzFCheh3ySQAaWUkoxA7nBKbrULWC41mm70vfTovb6RuwnWkxQn8YxKHnD1YDeJOOwvHCwgjlPInI19VSia4zILh1lnMxXbop0PGXvHAxpKKYEukeqB8H8WLci9fGIQ90AvvMT0chRZ55JmDorNLXKWy1ZzvHcHXY4k4vEAcqK3JpzEHQqTK0vxiC2u60hUbuVoHyVw8byO3VhbJqw7nx5AwG0E5hATDXEtcHtOdKj1BksinNrcsEmGnyhKSSUUN0wgo0Fzt1e1XrdFdMoNmdz9qMIRlXPr9oUW0khU04Uqn9aCWUWyoAYAM4VQBEdJIIJ0jEnnXiFGR5rL2a7eqmS3ToWPKj5cwGBGLUC0BvD9OpGamTe6C2Iwu8fkcar5rybU9A7kd0rdXNh3PZgAXNiS0RWcctDkBZMT2ucorHxizpZCVUegLv2W2Wx3y0ggRyatyqrjVDFhFLqH4MSCvfiXWEJA8VuzGEKlMJrZaN2kOx9Rr0OCIZ1JuCSBXQBhQXBwburwkmqpv1ClASLDOxgHzaklTyOPmqjbDMaOIF3iP70Dp0b4cUj8gL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MK3+Aluminum+Heated+Bed+12V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "bed_thermistor",
+      "name": "Heated Bed Thermistor",
+      "pins": [
+        "2-wire signal"
+      ],
+      "type": "sensor",
+      "partId": "b532f53a-271e-4096-9057-e4d88213dc05",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/89k-W5HMrN8TC_IzAI9YzjlPWLfsDGUluoGXaOziFgE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzF5Y0VZM3lya0wu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0714MR5BC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x5mm",
+      "description": "Measures the temperature of the hotend.",
+      "productName": "NTC 3950 100K Thermistor",
+      "purchaseUrl": "https://www.amazon.com/s?k=NTC+3950+100K+thermistor",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgY2Aulraz595mO7SADKwAaEv7rt3zWvFET65AVnCEk4Rf2PFEgvX7m73jlzoSbbAnIKcGkemLT0mqOliLzvwNGVA8NAbA3vWKymr4sQfUAL4HAn4bpNQ05MACRUoLtkLSR9UADWtjHMkpGz68Uamd5X4Xscj9m6aYbTR9mYNfJrg0rZPI7JsIKzNhLffFHG4xPZVBqlOAcf2muKZ3EFewxFAUoxanjugpUKN7n5dvr1DQAvSnbyKZmbH98IOjhKjj4xc39HcZWLMKcBrpNRwsaN0PBWHQJpYnLkzbZ74Jtj84kTLiiANcQOL2nTY0bhwQ5Qf39nnccDc6j63jhdNoILaM0XG4W1B8x2ZWrque0tJ2m2Me5aFwgN0PNmiJYd2QIM1z0Tgg00m8RdkhfnYupImGI9t4MEL7XupiunsLd6M6DcFriV8MHKPq4Pa4rn0pK45RtzltXpK3AaHyZ43HWvZmIYosMbNP1dH9lYdBdOarqnCxLfn4fmYMQMfyfmJoYp0ro7rWTvgj6ppIkihXz7FlzkDK7WBzH40xLwZWnHGazzQhzkZc8lpR3HrMV4Sa3vErbakxrzlHbRkPrx5rJJIg2CHK1D9e8hG4QLcHwI28JjRMPBZJwJA0EZMlWXr6WVuZwMpLajnIBkrxwfGG9l",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=NTC+3950+100K+Thermistor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_y_frame_extrusion_front",
+      "name": "X/Y Frame Extrusion (Front)",
+      "type": "structural",
+      "partId": "d7c64375-fe6c-4511-82a2-d4343d0c686a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HBpLNt7U8seeZZU_Ljqy0h6Et31bF48y10eKbIwUo1E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/dmV2b3JzdGF0aWMu/Y29tL3VzLzIwMjBP/QkxYQzEwSjdGRFpH/MDAxVjAvb3JpZ2lu/YWxfaW1nLXYyL2V4/dHJ1c2lvbi1saW5l/YXItcmFpbC1tMTAw/LTEuMi5qcGc_dGlt/ZXN0YW1wPTE3NDEy/MjcwMTQwMDAmZm9y/bWF0PXdlYnAmZm9y/bWF0PXdlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x20x20mm",
+      "description": "Front horizontal aluminum extrusion forming part of the main frame for X and Y axes.",
+      "productName": "2020 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+extrusion+300mm",
+      "estimatedCost": 4.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLkDB6gB8oJrbpmJyaw75E2dohZn6ruj2eU7ti7sgEabzWMPRuhlmRyDeJE4NAKsFdr7FieZZDsX4ZXvtvA7eFy09QUUAVPzJCplPWGe9PtekFMrTlKzfuu3up2UCTxL3H1N7hc8nzWxfVnrhGr1FbgGbdpXhc3VeBKunhCLSSuUol9hw0vzjXstBsiIGC7taXJPhLrEE5p14RvOFG05BF96IHbBjbjdLJfh1uQ0feb1X1vbBm96gFKLZwVBPJnhJd8Rpzgm0w7Y99ybAYu2goYhhpoEQsVo4JbXPFRMfxBeL6F0Y4Et22mpCR9x4x1XU0Q5K3yEk1oonWtPhGRsHSPGhLiSvBQBGYsfBhsFr0aMxJ642bMxznQO1lY8dX1HH1vvvSOQKPQln9eN5NzANkggImOLLYCj5cLq3qNIg4O0Ru5xh6bR5Y1AaMiTsndCa28aRL3Iel66k12WP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_y_frame_extrusion_back",
+      "name": "X/Y Frame Extrusion (Back)",
+      "type": "structural",
+      "partId": "d7c64375-fe6c-4511-82a2-d4343d0c686a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HBpLNt7U8seeZZU_Ljqy0h6Et31bF48y10eKbIwUo1E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/dmV2b3JzdGF0aWMu/Y29tL3VzLzIwMjBP/QkxYQzEwSjdGRFpH/MDAxVjAvb3JpZ2lu/YWxfaW1nLXYyL2V4/dHJ1c2lvbi1saW5l/YXItcmFpbC1tMTAw/LTEuMi5qcGc_dGlt/ZXN0YW1wPTE3NDEy/MjcwMTQwMDAmZm9y/bWF0PXdlYnAmZm9y/bWF0PXdlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x20x20mm",
+      "description": "Rear horizontal aluminum extrusion forming part of the main frame for X and Y axes.",
+      "productName": "2020 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+extrusion+300mm",
+      "estimatedCost": 4.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLkDB6gB8oJrbpmJyaw75E2dohZn6ruj2eU7ti7sgEabzWMPRuhlmRyDeJE4NAKsFdr7FieZZDsX4ZXvtvA7eFy09QUUAVPzJCplPWGe9PtekFMrTlKzfuu3up2UCTxL3H1N7hc8nzWxfVnrhGr1FbgGbdpXhc3VeBKunhCLSSuUol9hw0vzjXstBsiIGC7taXJPhLrEE5p14RvOFG05BF96IHbBjbjdLJfh1uQ0feb1X1vbBm96gFKLZwVBPJnhJd8Rpzgm0w7Y99ybAYu2goYhhpoEQsVo4JbXPFRMfxBeL6F0Y4Et22mpCR9x4x1XU0Q5K3yEk1oonWtPhGRsHSPGhLiSvBQBGYsfBhsFr0aMxJ642bMxznQO1lY8dX1HH1vvvSOQKPQln9eN5NzANkggImOLLYCj5cLq3qNIg4O0Ru5xh6bR5Y1AaMiTsndCa28aRL3Iel66k12WP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_y_frame_extrusion_left",
+      "name": "X/Y Frame Extrusion (Left)",
+      "type": "structural",
+      "partId": "d7c64375-fe6c-4511-82a2-d4343d0c686a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HBpLNt7U8seeZZU_Ljqy0h6Et31bF48y10eKbIwUo1E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/dmV2b3JzdGF0aWMu/Y29tL3VzLzIwMjBP/QkxYQzEwSjdGRFpH/MDAxVjAvb3JpZ2lu/YWxfaW1nLXYyL2V4/dHJ1c2lvbi1saW5l/YXItcmFpbC1tMTAw/LTEuMi5qcGc_dGlt/ZXN0YW1wPTE3NDEy/MjcwMTQwMDAmZm9y/bWF0PXdlYnAmZm9y/bWF0PXdlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x20x20mm",
+      "description": "Left vertical aluminum extrusion connecting front and back frames, supporting the X/Y axes.",
+      "productName": "2020 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+extrusion+300mm",
+      "estimatedCost": 4.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLkDB6gB8oJrbpmJyaw75E2dohZn6ruj2eU7ti7sgEabzWMPRuhlmRyDeJE4NAKsFdr7FieZZDsX4ZXvtvA7eFy09QUUAVPzJCplPWGe9PtekFMrTlKzfuu3up2UCTxL3H1N7hc8nzWxfVnrhGr1FbgGbdpXhc3VeBKunhCLSSuUol9hw0vzjXstBsiIGC7taXJPhLrEE5p14RvOFG05BF96IHbBjbjdLJfh1uQ0feb1X1vbBm96gFKLZwVBPJnhJd8Rpzgm0w7Y99ybAYu2goYhhpoEQsVo4JbXPFRMfxBeL6F0Y4Et22mpCR9x4x1XU0Q5K3yEk1oonWtPhGRsHSPGhLiSvBQBGYsfBhsFr0aMxJ642bMxznQO1lY8dX1HH1vvvSOQKPQln9eN5NzANkggImOLLYCj5cLq3qNIg4O0Ru5xh6bR5Y1AaMiTsndCa28aRL3Iel66k12WP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_y_frame_extrusion_right",
+      "name": "X/Y Frame Extrusion (Right)",
+      "type": "structural",
+      "partId": "d7c64375-fe6c-4511-82a2-d4343d0c686a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HBpLNt7U8seeZZU_Ljqy0h6Et31bF48y10eKbIwUo1E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/dmV2b3JzdGF0aWMu/Y29tL3VzLzIwMjBP/QkxYQzEwSjdGRFpH/MDAxVjAvb3JpZ2lu/YWxfaW1nLXYyL2V4/dHJ1c2lvbi1saW5l/YXItcmFpbC1tMTAw/LTEuMi5qcGc_dGlt/ZXN0YW1wPTE3NDEy/MjcwMTQwMDAmZm9y/bWF0PXdlYnAmZm9y/bWF0PXdlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x20x20mm",
+      "description": "Right vertical aluminum extrusion connecting front and back frames, supporting the X/Y axes.",
+      "productName": "2020 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+extrusion+300mm",
+      "estimatedCost": 4.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLkDB6gB8oJrbpmJyaw75E2dohZn6ruj2eU7ti7sgEabzWMPRuhlmRyDeJE4NAKsFdr7FieZZDsX4ZXvtvA7eFy09QUUAVPzJCplPWGe9PtekFMrTlKzfuu3up2UCTxL3H1N7hc8nzWxfVnrhGr1FbgGbdpXhc3VeBKunhCLSSuUol9hw0vzjXstBsiIGC7taXJPhLrEE5p14RvOFG05BF96IHbBjbjdLJfh1uQ0feb1X1vbBm96gFKLZwVBPJnhJd8Rpzgm0w7Y99ybAYu2goYhhpoEQsVo4JbXPFRMfxBeL6F0Y4Et22mpCR9x4x1XU0Q5K3yEk1oonWtPhGRsHSPGhLiSvBQBGYsfBhsFr0aMxJ642bMxznQO1lY8dX1HH1vvvSOQKPQln9eN5NzANkggImOLLYCj5cLq3qNIg4O0Ru5xh6bR5Y1AaMiTsndCa28aRL3Iel66k12WP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_axis_extrusion_left",
+      "name": "Z-Axis Extrusion (Left)",
+      "type": "structural",
+      "partId": "d7c64375-fe6c-4511-82a2-d4343d0c686a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HBpLNt7U8seeZZU_Ljqy0h6Et31bF48y10eKbIwUo1E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/dmV2b3JzdGF0aWMu/Y29tL3VzLzIwMjBP/QkxYQzEwSjdGRFpH/MDAxVjAvb3JpZ2lu/YWxfaW1nLXYyL2V4/dHJ1c2lvbi1saW5l/YXItcmFpbC1tMTAw/LTEuMi5qcGc_dGlt/ZXN0YW1wPTE3NDEy/MjcwMTQwMDAmZm9y/bWF0PXdlYnAmZm9y/bWF0PXdlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "350x20x20mm",
+      "description": "Left vertical aluminum extrusion supporting the Z-axis linear motion system.",
+      "productName": "2020 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+extrusion+350mm",
+      "estimatedCost": 5.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLkDB6gB8oJrbpmJyaw75E2dohZn6ruj2eU7ti7sgEabzWMPRuhlmRyDeJE4NAKsFdr7FieZZDsX4ZXvtvA7eFy09QUUAVPzJCplPWGe9PtekFMrTlKzfuu3up2UCTxL3H1N7hc8nzWxfVnrhGr1FbgGbdpXhc3VeBKunhCLSSuUol9hw0vzjXstBsiIGC7taXJPhLrEE5p14RvOFG05BF96IHbBjbjdLJfh1uQ0feb1X1vbBm96gFKLZwVBPJnhJd8Rpzgm0w7Y99ybAYu2goYhhpoEQsVo4JbXPFRMfxBeL6F0Y4Et22mpCR9x4x1XU0Q5K3yEk1oonWtPhGRsHSPGhLiSvBQBGYsfBhsFr0aMxJ642bMxznQO1lY8dX1HH1vvvSOQKPQln9eN5NzANkggImOLLYCj5cLq3qNIg4O0Ru5xh6bR5Y1AaMiTsndCa28aRL3Iel66k12WP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_axis_extrusion_right",
+      "name": "Z-Axis Extrusion (Right)",
+      "type": "structural",
+      "partId": "d7c64375-fe6c-4511-82a2-d4343d0c686a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HBpLNt7U8seeZZU_Ljqy0h6Et31bF48y10eKbIwUo1E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/dmV2b3JzdGF0aWMu/Y29tL3VzLzIwMjBP/QkxYQzEwSjdGRFpH/MDAxVjAvb3JpZ2lu/YWxfaW1nLXYyL2V4/dHJ1c2lvbi1saW5l/YXItcmFpbC1tMTAw/LTEuMi5qcGc_dGlt/ZXN0YW1wPTE3NDEy/MjcwMTQwMDAmZm9y/bWF0PXdlYnAmZm9y/bWF0PXdlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "350x20x20mm",
+      "description": "Right vertical aluminum extrusion supporting the Z-axis linear motion system.",
+      "productName": "2020 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+extrusion+350mm",
+      "estimatedCost": 5.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLkDB6gB8oJrbpmJyaw75E2dohZn6ruj2eU7ti7sgEabzWMPRuhlmRyDeJE4NAKsFdr7FieZZDsX4ZXvtvA7eFy09QUUAVPzJCplPWGe9PtekFMrTlKzfuu3up2UCTxL3H1N7hc8nzWxfVnrhGr1FbgGbdpXhc3VeBKunhCLSSuUol9hw0vzjXstBsiIGC7taXJPhLrEE5p14RvOFG05BF96IHbBjbjdLJfh1uQ0feb1X1vbBm96gFKLZwVBPJnhJd8Rpzgm0w7Y99ybAYu2goYhhpoEQsVo4JbXPFRMfxBeL6F0Y4Et22mpCR9x4x1XU0Q5K3yEk1oonWtPhGRsHSPGhLiSvBQBGYsfBhsFr0aMxJ642bMxznQO1lY8dX1HH1vvvSOQKPQln9eN5NzANkggImOLLYCj5cLq3qNIg4O0Ru5xh6bR5Y1AaMiTsndCa28aRL3Iel66k12WP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "top_cross_extrusion",
+      "name": "Top Cross Extrusion",
+      "type": "structural",
+      "partId": "d7c64375-fe6c-4511-82a2-d4343d0c686a",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HBpLNt7U8seeZZU_Ljqy0h6Et31bF48y10eKbIwUo1E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/dmV2b3JzdGF0aWMu/Y29tL3VzLzIwMjBP/QkxYQzEwSjdGRFpH/MDAxVjAvb3JpZ2lu/YWxfaW1nLXYyL2V4/dHJ1c2lvbi1saW5l/YXItcmFpbC1tMTAw/LTEuMi5qcGc_dGlt/ZXN0YW1wPTE3NDEy/MjcwMTQwMDAmZm9y/bWF0PXdlYnAmZm9y/bWF0PXdlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09KZR37KG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x20x20mm",
+      "description": "Top horizontal aluminum extrusion connecting the Z-axis vertical extrusions for stability.",
+      "productName": "2020 Aluminum Extrusion",
+      "purchaseUrl": "https://www.amazon.com/s?k=2020+aluminum+extrusion+300mm",
+      "estimatedCost": 4.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLkDB6gB8oJrbpmJyaw75E2dohZn6ruj2eU7ti7sgEabzWMPRuhlmRyDeJE4NAKsFdr7FieZZDsX4ZXvtvA7eFy09QUUAVPzJCplPWGe9PtekFMrTlKzfuu3up2UCTxL3H1N7hc8nzWxfVnrhGr1FbgGbdpXhc3VeBKunhCLSSuUol9hw0vzjXstBsiIGC7taXJPhLrEE5p14RvOFG05BF96IHbBjbjdLJfh1uQ0feb1X1vbBm96gFKLZwVBPJnhJd8Rpzgm0w7Y99ybAYu2goYhhpoEQsVo4JbXPFRMfxBeL6F0Y4Et22mpCR9x4x1XU0Q5K3yEk1oonWtPhGRsHSPGhLiSvBQBGYsfBhsFr0aMxJ642bMxznQO1lY8dX1HH1vvvSOQKPQln9eN5NzANkggImOLLYCj5cLq3qNIg4O0Ru5xh6bR5Y1AaMiTsndCa28aRL3Iel66k12WP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=2020+Aluminum+Extrusion&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_axis_smooth_rod_left",
+      "name": "Y-Axis Smooth Rod (Left)",
+      "type": "mechanism",
+      "partId": "ab09160e-cc38-458c-8e9b-7343aef4ae90",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/tcisvWOU7O1a5K-SWu2_E1Oqw9e_V7w4W4I9LQ4Y1BM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWxr/bWFuM2QuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE5LzA0/LzEtNS0xNi5qcGc",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "300x8mm",
+      "description": "Left smooth rod for linear motion of the Y-axis (print bed).",
+      "productName": "8mm Smooth Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=8mm+smooth+rod+300mm",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdaxc1J66ZU75jZO5kVRz3ZYgkcBaA54plQrpPV6GFGKY1Sj5pI0U2Y0rq66D5JH3VQGN9cozScaEAEgyKpuesgZh8Jiy4bhC8Mz1SzSaim6MDuwfAnpL7MzgpFYD3QljezqG36Q8Y1Sw2wHFSMulttoPnN7FmG58qUpKY6AIugZ3pDJ2jq8Wyi5TePavjjgdobEOn9ZJqZo6TpQENEHQVVBZJ3gCcT76XfQyAuyWHEpZaeYthcV01s7YRd7unMPhsn3HxNcUDUKdVScziyHsNvKa2jeiwCjJI708bmG7tai0mjx2HiedaxJP9PViq5r09pzuzkHw8v26YAOSq93V3SlA3y37yX8EW8gz8dEO8YpJA929AAonY6WY20WQke856hfxBYleTX7piqfJMhdR6KcjkdnuLK2qKRuYTMNmIcqkevlbRDbmCoSZkPMLGldzapHbxjz2bCcNsn3laGKF54AElQ6Cl97tNCRtBYviVE3GeHeuJFSwegcfdONQSrCwW1kXjVD1zIlGHyX4sH7rftjDbPehtWNLoeNsdhxaYaKYUJpkcvUJpt9BXmUUNDf2qgaAUem4EKplyLPW1mQyfT21AQ7ns1NjuKxTOladqIyqT4wf3p83cdsZAm5ZqqIR4f8gHha3M1ioC0qeFQhB",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8mm+Smooth+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "y_axis_smooth_rod_right",
+      "name": "Y-Axis Smooth Rod (Right)",
+      "type": "mechanism",
+      "partId": "ab09160e-cc38-458c-8e9b-7343aef4ae90",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/tcisvWOU7O1a5K-SWu2_E1Oqw9e_V7w4W4I9LQ4Y1BM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWxr/bWFuM2QuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE5LzA0/LzEtNS0xNi5qcGc",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "300x8mm",
+      "description": "Right smooth rod for linear motion of the Y-axis (print bed).",
+      "productName": "8mm Smooth Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=8mm+smooth+rod+300mm",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdaxc1J66ZU75jZO5kVRz3ZYgkcBaA54plQrpPV6GFGKY1Sj5pI0U2Y0rq66D5JH3VQGN9cozScaEAEgyKpuesgZh8Jiy4bhC8Mz1SzSaim6MDuwfAnpL7MzgpFYD3QljezqG36Q8Y1Sw2wHFSMulttoPnN7FmG58qUpKY6AIugZ3pDJ2jq8Wyi5TePavjjgdobEOn9ZJqZo6TpQENEHQVVBZJ3gCcT76XfQyAuyWHEpZaeYthcV01s7YRd7unMPhsn3HxNcUDUKdVScziyHsNvKa2jeiwCjJI708bmG7tai0mjx2HiedaxJP9PViq5r09pzuzkHw8v26YAOSq93V3SlA3y37yX8EW8gz8dEO8YpJA929AAonY6WY20WQke856hfxBYleTX7piqfJMhdR6KcjkdnuLK2qKRuYTMNmIcqkevlbRDbmCoSZkPMLGldzapHbxjz2bCcNsn3laGKF54AElQ6Cl97tNCRtBYviVE3GeHeuJFSwegcfdONQSrCwW1kXjVD1zIlGHyX4sH7rftjDbPehtWNLoeNsdhxaYaKYUJpkcvUJpt9BXmUUNDf2qgaAUem4EKplyLPW1mQyfT21AQ7ns1NjuKxTOladqIyqT4wf3p83cdsZAm5ZqqIR4f8gHha3M1ioC0qeFQhB",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8mm+Smooth+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_axis_smooth_rod_top",
+      "name": "X-Axis Smooth Rod (Top)",
+      "type": "mechanism",
+      "partId": "ab09160e-cc38-458c-8e9b-7343aef4ae90",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/tcisvWOU7O1a5K-SWu2_E1Oqw9e_V7w4W4I9LQ4Y1BM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWxr/bWFuM2QuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE5LzA0/LzEtNS0xNi5qcGc",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "300x8mm",
+      "description": "Top smooth rod for linear motion of the X-axis (hotend carriage).",
+      "productName": "8mm Smooth Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=8mm+smooth+rod+300mm",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdaxc1J66ZU75jZO5kVRz3ZYgkcBaA54plQrpPV6GFGKY1Sj5pI0U2Y0rq66D5JH3VQGN9cozScaEAEgyKpuesgZh8Jiy4bhC8Mz1SzSaim6MDuwfAnpL7MzgpFYD3QljezqG36Q8Y1Sw2wHFSMulttoPnN7FmG58qUpKY6AIugZ3pDJ2jq8Wyi5TePavjjgdobEOn9ZJqZo6TpQENEHQVVBZJ3gCcT76XfQyAuyWHEpZaeYthcV01s7YRd7unMPhsn3HxNcUDUKdVScziyHsNvKa2jeiwCjJI708bmG7tai0mjx2HiedaxJP9PViq5r09pzuzkHw8v26YAOSq93V3SlA3y37yX8EW8gz8dEO8YpJA929AAonY6WY20WQke856hfxBYleTX7piqfJMhdR6KcjkdnuLK2qKRuYTMNmIcqkevlbRDbmCoSZkPMLGldzapHbxjz2bCcNsn3laGKF54AElQ6Cl97tNCRtBYviVE3GeHeuJFSwegcfdONQSrCwW1kXjVD1zIlGHyX4sH7rftjDbPehtWNLoeNsdhxaYaKYUJpkcvUJpt9BXmUUNDf2qgaAUem4EKplyLPW1mQyfT21AQ7ns1NjuKxTOladqIyqT4wf3p83cdsZAm5ZqqIR4f8gHha3M1ioC0qeFQhB",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8mm+Smooth+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "x_axis_smooth_rod_bottom",
+      "name": "X-Axis Smooth Rod (Bottom)",
+      "type": "mechanism",
+      "partId": "ab09160e-cc38-458c-8e9b-7343aef4ae90",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/tcisvWOU7O1a5K-SWu2_E1Oqw9e_V7w4W4I9LQ4Y1BM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9idWxr/bWFuM2QuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE5LzA0/LzEtNS0xNi5qcGc",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "300x8mm",
+      "description": "Bottom smooth rod for linear motion of the X-axis (hotend carriage).",
+      "productName": "8mm Smooth Rod",
+      "purchaseUrl": "https://www.amazon.com/s?k=8mm+smooth+rod+300mm",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdaxc1J66ZU75jZO5kVRz3ZYgkcBaA54plQrpPV6GFGKY1Sj5pI0U2Y0rq66D5JH3VQGN9cozScaEAEgyKpuesgZh8Jiy4bhC8Mz1SzSaim6MDuwfAnpL7MzgpFYD3QljezqG36Q8Y1Sw2wHFSMulttoPnN7FmG58qUpKY6AIugZ3pDJ2jq8Wyi5TePavjjgdobEOn9ZJqZo6TpQENEHQVVBZJ3gCcT76XfQyAuyWHEpZaeYthcV01s7YRd7unMPhsn3HxNcUDUKdVScziyHsNvKa2jeiwCjJI708bmG7tai0mjx2HiedaxJP9PViq5r09pzuzkHw8v26YAOSq93V3SlA3y37yX8EW8gz8dEO8YpJA929AAonY6WY20WQke856hfxBYleTX7piqfJMhdR6KcjkdnuLK2qKRuYTMNmIcqkevlbRDbmCoSZkPMLGldzapHbxjz2bCcNsn3laGKF54AElQ6Cl97tNCRtBYviVE3GeHeuJFSwegcfdONQSrCwW1kXjVD1zIlGHyX4sH7rftjDbPehtWNLoeNsdhxaYaKYUJpkcvUJpt9BXmUUNDf2qgaAUem4EKplyLPW1mQyfT21AQ7ns1NjuKxTOladqIyqT4wf3p83cdsZAm5ZqqIR4f8gHha3M1ioC0qeFQhB",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=8mm+Smooth+Rod&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_axis_lead_screw",
+      "name": "Z-Axis Lead Screw",
+      "type": "mechanism",
+      "partId": "e3e19576-ff30-436d-a890-65719b5c4857",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/HUOU2_-hULrAsNaYSZYwV5P11APn2bGIUuhX5owSAm0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF2OUgxNW5hY0wu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B079HQ386R?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x8mm",
+      "description": "T8 lead screw for precise vertical movement of the X-axis gantry.",
+      "productName": "T8 Lead Screw with Nut",
+      "purchaseUrl": "https://www.amazon.com/s?k=T8+lead+screw+300mm",
+      "estimatedCost": 6,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3PnGBzT",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=T8+Lead+Screw+with+Nut&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lm8uu_y_axis_left_front",
+      "name": "LM8UU Bearing (Y-Axis Left Front)",
+      "type": "mechanism",
+      "partId": "d3171d0b-73b5-4a19-9f27-6f14f5e4c49e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/xwdYT_g5pPQNchArxvlLbjke9yhpnj1mRo2VEUn7EK4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFheTRMd2pOaUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B087WPGQ8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x24x8mm",
+      "description": "LM8UU linear bearing for smooth motion on the Y-axis smooth rods.",
+      "productName": "LM8UU Linear Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=LM8UU+linear+bearing",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvztvqRqPpoIY4yfHXrzLcDLi6FmtlJ0UWE1sqf2y8BQt6wO1Y6SpDOKxCfGdVFUmWx5LzYeS9uUZT7I1WLpx5sRkOGDmIXaVqyX13p8JuSf4iQJ2tCySvBbYa0wmUCQ7rmsQFWfrfQsVdcVGXPmtpaGTjXcp13pBQzmfk8ORRiJ0w1on6PhFAMOU1KUm27I8KRWdrOjLXks05DJT1C5mPdZ9Su2944oATzeKe3m7t7i6LEw7DJ6JkPn6vMu8txNfRdLPmgH6cljIeBIGhIFDdZTy8yeksMcQtSMvsjNXpHyCLydKUU4BoeKeWQmJsK2PaywZMUtNxkWfTT72bXOeXNTSAoRWQcvq2NdXSsKNkgZHcWfSLdz9nlwJZdAdawzuEa9oDjEWH1D9pj2Fo7fDuONJuqihU5eqdSmng6viwlKVlHohAb2RUE4l3YXxs6uW2HDquUwW1toRNMNptcT36F6r3K96sG59XWDiP7v6OBsl5MlhGMBaumZLwxWRQWt6GCM9n9A9wq6fUqR6Eod42ecjhYXyYXlozwq3yWdQvvieBthRYSXTuKs863RRo2R30Sofmtd21O5ogSmWrFyPUQ1nN5MBhKas47RdjYiKfWYX9NiRySpi6NgI89kZc0pUuAxeIhwucqbG4u4zEFyfMUb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM8UU+Linear+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lm8uu_y_axis_left_back",
+      "name": "LM8UU Bearing (Y-Axis Left Back)",
+      "type": "mechanism",
+      "partId": "d3171d0b-73b5-4a19-9f27-6f14f5e4c49e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/xwdYT_g5pPQNchArxvlLbjke9yhpnj1mRo2VEUn7EK4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFheTRMd2pOaUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B087WPGQ8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x24x8mm",
+      "description": "LM8UU linear bearing for smooth motion on the Y-axis smooth rods.",
+      "productName": "LM8UU Linear Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=LM8UU+linear+bearing",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvztvqRqPpoIY4yfHXrzLcDLi6FmtlJ0UWE1sqf2y8BQt6wO1Y6SpDOKxCfGdVFUmWx5LzYeS9uUZT7I1WLpx5sRkOGDmIXaVqyX13p8JuSf4iQJ2tCySvBbYa0wmUCQ7rmsQFWfrfQsVdcVGXPmtpaGTjXcp13pBQzmfk8ORRiJ0w1on6PhFAMOU1KUm27I8KRWdrOjLXks05DJT1C5mPdZ9Su2944oATzeKe3m7t7i6LEw7DJ6JkPn6vMu8txNfRdLPmgH6cljIeBIGhIFDdZTy8yeksMcQtSMvsjNXpHyCLydKUU4BoeKeWQmJsK2PaywZMUtNxkWfTT72bXOeXNTSAoRWQcvq2NdXSsKNkgZHcWfSLdz9nlwJZdAdawzuEa9oDjEWH1D9pj2Fo7fDuONJuqihU5eqdSmng6viwlKVlHohAb2RUE4l3YXxs6uW2HDquUwW1toRNMNptcT36F6r3K96sG59XWDiP7v6OBsl5MlhGMBaumZLwxWRQWt6GCM9n9A9wq6fUqR6Eod42ecjhYXyYXlozwq3yWdQvvieBthRYSXTuKs863RRo2R30Sofmtd21O5ogSmWrFyPUQ1nN5MBhKas47RdjYiKfWYX9NiRySpi6NgI89kZc0pUuAxeIhwucqbG4u4zEFyfMUb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM8UU+Linear+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lm8uu_y_axis_right_front",
+      "name": "LM8UU Bearing (Y-Axis Right Front)",
+      "type": "mechanism",
+      "partId": "d3171d0b-73b5-4a19-9f27-6f14f5e4c49e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/xwdYT_g5pPQNchArxvlLbjke9yhpnj1mRo2VEUn7EK4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFheTRMd2pOaUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B087WPGQ8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x24x8mm",
+      "description": "LM8UU linear bearing for smooth motion on the Y-axis smooth rods.",
+      "productName": "LM8UU Linear Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=LM8UU+linear+bearing",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvztvqRqPpoIY4yfHXrzLcDLi6FmtlJ0UWE1sqf2y8BQt6wO1Y6SpDOKxCfGdVFUmWx5LzYeS9uUZT7I1WLpx5sRkOGDmIXaVqyX13p8JuSf4iQJ2tCySvBbYa0wmUCQ7rmsQFWfrfQsVdcVGXPmtpaGTjXcp13pBQzmfk8ORRiJ0w1on6PhFAMOU1KUm27I8KRWdrOjLXks05DJT1C5mPdZ9Su2944oATzeKe3m7t7i6LEw7DJ6JkPn6vMu8txNfRdLPmgH6cljIeBIGhIFDdZTy8yeksMcQtSMvsjNXpHyCLydKUU4BoeKeWQmJsK2PaywZMUtNxkWfTT72bXOeXNTSAoRWQcvq2NdXSsKNkgZHcWfSLdz9nlwJZdAdawzuEa9oDjEWH1D9pj2Fo7fDuONJuqihU5eqdSmng6viwlKVlHohAb2RUE4l3YXxs6uW2HDquUwW1toRNMNptcT36F6r3K96sG59XWDiP7v6OBsl5MlhGMBaumZLwxWRQWt6GCM9n9A9wq6fUqR6Eod42ecjhYXyYXlozwq3yWdQvvieBthRYSXTuKs863RRo2R30Sofmtd21O5ogSmWrFyPUQ1nN5MBhKas47RdjYiKfWYX9NiRySpi6NgI89kZc0pUuAxeIhwucqbG4u4zEFyfMUb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM8UU+Linear+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lm8uu_y_axis_right_back",
+      "name": "LM8UU Bearing (Y-Axis Right Back)",
+      "type": "mechanism",
+      "partId": "d3171d0b-73b5-4a19-9f27-6f14f5e4c49e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/xwdYT_g5pPQNchArxvlLbjke9yhpnj1mRo2VEUn7EK4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFheTRMd2pOaUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B087WPGQ8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x24x8mm",
+      "description": "LM8UU linear bearing for smooth motion on the Y-axis smooth rods.",
+      "productName": "LM8UU Linear Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=LM8UU+linear+bearing",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvztvqRqPpoIY4yfHXrzLcDLi6FmtlJ0UWE1sqf2y8BQt6wO1Y6SpDOKxCfGdVFUmWx5LzYeS9uUZT7I1WLpx5sRkOGDmIXaVqyX13p8JuSf4iQJ2tCySvBbYa0wmUCQ7rmsQFWfrfQsVdcVGXPmtpaGTjXcp13pBQzmfk8ORRiJ0w1on6PhFAMOU1KUm27I8KRWdrOjLXks05DJT1C5mPdZ9Su2944oATzeKe3m7t7i6LEw7DJ6JkPn6vMu8txNfRdLPmgH6cljIeBIGhIFDdZTy8yeksMcQtSMvsjNXpHyCLydKUU4BoeKeWQmJsK2PaywZMUtNxkWfTT72bXOeXNTSAoRWQcvq2NdXSsKNkgZHcWfSLdz9nlwJZdAdawzuEa9oDjEWH1D9pj2Fo7fDuONJuqihU5eqdSmng6viwlKVlHohAb2RUE4l3YXxs6uW2HDquUwW1toRNMNptcT36F6r3K96sG59XWDiP7v6OBsl5MlhGMBaumZLwxWRQWt6GCM9n9A9wq6fUqR6Eod42ecjhYXyYXlozwq3yWdQvvieBthRYSXTuKs863RRo2R30Sofmtd21O5ogSmWrFyPUQ1nN5MBhKas47RdjYiKfWYX9NiRySpi6NgI89kZc0pUuAxeIhwucqbG4u4zEFyfMUb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM8UU+Linear+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lm8uu_x_axis_top",
+      "name": "LM8UU Bearing (X-Axis Top)",
+      "type": "mechanism",
+      "partId": "d3171d0b-73b5-4a19-9f27-6f14f5e4c49e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/xwdYT_g5pPQNchArxvlLbjke9yhpnj1mRo2VEUn7EK4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFheTRMd2pOaUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B087WPGQ8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x24x8mm",
+      "description": "LM8UU linear bearing for smooth motion on the X-axis smooth rods (top).",
+      "productName": "LM8UU Linear Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=LM8UU+linear+bearing",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvztvqRqPpoIY4yfHXrzLcDLi6FmtlJ0UWE1sqf2y8BQt6wO1Y6SpDOKxCfGdVFUmWx5LzYeS9uUZT7I1WLpx5sRkOGDmIXaVqyX13p8JuSf4iQJ2tCySvBbYa0wmUCQ7rmsQFWfrfQsVdcVGXPmtpaGTjXcp13pBQzmfk8ORRiJ0w1on6PhFAMOU1KUm27I8KRWdrOjLXks05DJT1C5mPdZ9Su2944oATzeKe3m7t7i6LEw7DJ6JkPn6vMu8txNfRdLPmgH6cljIeBIGhIFDdZTy8yeksMcQtSMvsjNXpHyCLydKUU4BoeKeWQmJsK2PaywZMUtNxkWfTT72bXOeXNTSAoRWQcvq2NdXSsKNkgZHcWfSLdz9nlwJZdAdawzuEa9oDjEWH1D9pj2Fo7fDuONJuqihU5eqdSmng6viwlKVlHohAb2RUE4l3YXxs6uW2HDquUwW1toRNMNptcT36F6r3K96sG59XWDiP7v6OBsl5MlhGMBaumZLwxWRQWt6GCM9n9A9wq6fUqR6Eod42ecjhYXyYXlozwq3yWdQvvieBthRYSXTuKs863RRo2R30Sofmtd21O5ogSmWrFyPUQ1nN5MBhKas47RdjYiKfWYX9NiRySpi6NgI89kZc0pUuAxeIhwucqbG4u4zEFyfMUb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM8UU+Linear+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "lm8uu_x_axis_bottom",
+      "name": "LM8UU Bearing (X-Axis Bottom)",
+      "type": "mechanism",
+      "partId": "d3171d0b-73b5-4a19-9f27-6f14f5e4c49e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/xwdYT_g5pPQNchArxvlLbjke9yhpnj1mRo2VEUn7EK4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFheTRMd2pOaUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B087WPGQ8T?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x24x8mm",
+      "description": "LM8UU linear bearing for smooth motion on the X-axis smooth rods (bottom).",
+      "productName": "LM8UU Linear Bearing",
+      "purchaseUrl": "https://www.amazon.com/s?k=LM8UU+linear+bearing",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvztvqRqPpoIY4yfHXrzLcDLi6FmtlJ0UWE1sqf2y8BQt6wO1Y6SpDOKxCfGdVFUmWx5LzYeS9uUZT7I1WLpx5sRkOGDmIXaVqyX13p8JuSf4iQJ2tCySvBbYa0wmUCQ7rmsQFWfrfQsVdcVGXPmtpaGTjXcp13pBQzmfk8ORRiJ0w1on6PhFAMOU1KUm27I8KRWdrOjLXks05DJT1C5mPdZ9Su2944oATzeKe3m7t7i6LEw7DJ6JkPn6vMu8txNfRdLPmgH6cljIeBIGhIFDdZTy8yeksMcQtSMvsjNXpHyCLydKUU4BoeKeWQmJsK2PaywZMUtNxkWfTT72bXOeXNTSAoRWQcvq2NdXSsKNkgZHcWfSLdz9nlwJZdAdawzuEa9oDjEWH1D9pj2Fo7fDuONJuqihU5eqdSmng6viwlKVlHohAb2RUE4l3YXxs6uW2HDquUwW1toRNMNptcT36F6r3K96sG59XWDiP7v6OBsl5MlhGMBaumZLwxWRQWt6GCM9n9A9wq6fUqR6Eod42ecjhYXyYXlozwq3yWdQvvieBthRYSXTuKs863RRo2R30Sofmtd21O5ogSmWrFyPUQ1nN5MBhKas47RdjYiKfWYX9NiRySpi6NgI89kZc0pUuAxeIhwucqbG4u4zEFyfMUb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=LM8UU+Linear+Bearing&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gt2_belt",
+      "name": "GT2 Timing Belt",
+      "type": "mechanism",
+      "partId": "4cb6ecfb-fda3-435e-be68-ad879d1e5a61",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/sh9jUmAGrHo-ITTTTm_EMSYnRbynjjx0DjG_XB_DigY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFJc0oxWWVpS0wu/anBn",
+      "material": "Rubber",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08R93QQ8Z?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5000x6x1.5mm",
+      "description": "GT2 timing belt used for X and Y axis motion transmission.",
+      "productName": "GT2 6mm Timing Belt (5m)",
+      "purchaseUrl": "https://www.amazon.com/s?k=gt2+6mm+timing+belt+5m",
+      "estimatedCost": 6,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhbwqYhNrKxdjTa2pp4iyAaRsgasyKlcAqz4rU3ifGRAKd6t1pQab8Qf4btTxpTl9ZSuMAMeEhJWqXpL8pN8IjuGOj1q4xGony3MGxsrnrHrU1Wi6HJfZau8iveG0hf3Wg4GzccRZXXG74pOiAFWCMmpXT3vmSX7iacWdFRPpDNozwyc59tgoeuNfkhAQrOEqEoD0CdaRQ63BFi4GcsOMrfYazSopH3MuCpUJGzvlpj6luDMRLrkALe399fsMcBMuRps8Vvpoq8SQPSIGKwDwhzFf6CQrsSKCgsG0gtyozAlS6nfCo3hBBQ3SPx7FPGbDUPaDUlw95zKcO7DuYVWeU8I5lxlsIFI2HVA9GLIcvMtsGzTh5q2Yep4TbDy39HEkh20jAcmGmyYsy7aHt8W6QpRQx42ddbJXKj0eBfMnGVuYzmt6K8x07G5FRxZ8igKUpu7eVoq09sygsD1SFlZVt2xphSBM0B64VO96FKA48FEAzlC0UHNhmAZaUQIJoq1nS6G7xrcU9CW5DAYFO6B9v1j1JZiMsDUTXgr1w2ALSCExhh5DlBgiWlqtI0iAv9BALgDpekCgOP4R8WMLvXL2So6qxm7Ag3j1S1iOSyn3na16amyXN5CABQKoJmyS7nJ1MQfmnGVxYIaCn5xePH37FBz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GT2+6mm+Timing+Belt+%285m%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gt2_pulley_x_motor",
+      "name": "GT2 Pulley (X Motor)",
+      "type": "mechanism",
+      "partId": "90608bfb-5e18-4d75-a780-6383c309ec25",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/YaV9KZotq3zW3f1vEtijfhstDooiMeDt2Z5j9ioWx4E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly92eGIu/Y29tL2Nkbi9zaG9w/L2ZpbGVzL2d0Mi0y/MC10b290aC01bW0t/Ym9yZS1hbHVtaW51/bS10aW1pbmctcHVs/bGV5LXNldC5qcGc_/dj0xNzcxNjk5OTgz/JndpZHRoPTQ4MA",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B077GNZK3J?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "16x16x16mm",
+      "description": "GT2 20-tooth pulley for the X-axis stepper motor.",
+      "productName": "GT2 20-Tooth Pulley 5mm bore",
+      "purchaseUrl": "https://www.amazon.com/s?k=gt2+20t+pulley+5mm+bore",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdW0g44dzekw056SMCWWsNIxQB5fvR4m0XNSK42PhTVl3FFES8pgyKj9ZTMEvqjARks92OTpinATjOuoh3p7azm33SNU1WKJfQG5OdktYsQPJ9ft4TXxboqxPJIkagyn5MmCU10DI543Ll0RR2OHlJnLL01llx1ADw46AkvZ5tzi4IxJgbxRKmS13g6BWWjecxxiOaSbPCNfSdsmgy4CIxwTsWvgs7pKHCYn1ybb6SWnU8ilhBnsJl5GmcLqo9FCtv95Fl1ORrchwNFGlWP4JzaK0STjIjRbsf4ZZfnDfiYe8AHKDTqEc7YFgkjSktIe1Yf7JYjmIgkCyye9Vk2RJJ2aakqur4nlYXl1Nkz0XmoYfMsDMQtgoJbIFNM6hbKJZsu60s8mdSZ1i4EBDyuf0jLHf3zPuciAurubLHKnq6aaRG0GJOdkLCTwsiVmRqZr2ps8vXQtnvjkI9pc8H0qhAbbtvf25UBKqCZw7WXLcG20tUukNVmCTkyeiVYFydPG5mGdzBvuOn5b8SUJ6wuM9GyNJYG9x0hQd3anAla8S3tLzd4paFjI1nfD48B1REndPV1v61xWVTPzW9c3M8arhZ0PSTJsDMjsJ7vKWMLdo6y3VG6BJrJTQX2VMPfpkERZS44oo68ze46DIMsNS8HA0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GT2+20-Tooth+Pulley+5mm+bore&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gt2_pulley_y_motor",
+      "name": "GT2 Pulley (Y Motor)",
+      "type": "mechanism",
+      "partId": "90608bfb-5e18-4d75-a780-6383c309ec25",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/YaV9KZotq3zW3f1vEtijfhstDooiMeDt2Z5j9ioWx4E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly92eGIu/Y29tL2Nkbi9zaG9w/L2ZpbGVzL2d0Mi0y/MC10b290aC01bW0t/Ym9yZS1hbHVtaW51/bS10aW1pbmctcHVs/bGV5LXNldC5qcGc_/dj0xNzcxNjk5OTgz/JndpZHRoPTQ4MA",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B077GNZK3J?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "16x16x16mm",
+      "description": "GT2 20-tooth pulley for the Y-axis stepper motor.",
+      "productName": "GT2 20-Tooth Pulley 5mm bore",
+      "purchaseUrl": "https://www.amazon.com/s?k=gt2+20t+pulley+5mm+bore",
+      "estimatedCost": 1.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdW0g44dzekw056SMCWWsNIxQB5fvR4m0XNSK42PhTVl3FFES8pgyKj9ZTMEvqjARks92OTpinATjOuoh3p7azm33SNU1WKJfQG5OdktYsQPJ9ft4TXxboqxPJIkagyn5MmCU10DI543Ll0RR2OHlJnLL01llx1ADw46AkvZ5tzi4IxJgbxRKmS13g6BWWjecxxiOaSbPCNfSdsmgy4CIxwTsWvgs7pKHCYn1ybb6SWnU8ilhBnsJl5GmcLqo9FCtv95Fl1ORrchwNFGlWP4JzaK0STjIjRbsf4ZZfnDfiYe8AHKDTqEc7YFgkjSktIe1Yf7JYjmIgkCyye9Vk2RJJ2aakqur4nlYXl1Nkz0XmoYfMsDMQtgoJbIFNM6hbKJZsu60s8mdSZ1i4EBDyuf0jLHf3zPuciAurubLHKnq6aaRG0GJOdkLCTwsiVmRqZr2ps8vXQtnvjkI9pc8H0qhAbbtvf25UBKqCZw7WXLcG20tUukNVmCTkyeiVYFydPG5mGdzBvuOn5b8SUJ6wuM9GyNJYG9x0hQd3anAla8S3tLzd4paFjI1nfD48B1REndPV1v61xWVTPzW9c3M8arhZ0PSTJsDMjsJ7vKWMLdo6y3VG6BJrJTQX2VMPfpkERZS44oo68ze46DIMsNS8HA0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GT2+20-Tooth+Pulley+5mm+bore&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gt2_idler_x_left",
+      "name": "GT2 Idler Pulley (X Left)",
+      "type": "mechanism",
+      "partId": "c99c29db-8403-4040-9751-2e46e74cbad1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Tj5hrx15NQPl-smtPMQnNpLiDX8muhFBrs3O1nby2ew/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTF4K3BDU2w2SUwu/anBn",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07BPGYX3G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "16x16x16mm",
+      "description": "Smooth idler pulley for X-axis belt tensioning and routing.",
+      "productName": "GT2 Idler Pulley 20-Tooth",
+      "purchaseUrl": "https://www.amazon.com/s?k=gt2+idler+pulley+smooth",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxI4HGXacFnCxGwsMmJguOeswhD6Ajpbo5sYulDz5rVC6ROwDSN6SatZnApkQT2o7rcmwYUOedS7B8FqEPiVckPDXTuRbirQpRVtOSh6e09BOiqA3BYbICaZsXKSe840yDuUff1Hesyd8GigbWl2yIcZZx8aRvFCT3QygpJLhlD17CYFpWjidKeWYiRCD8gEU7Avpv54p0w3CQGMbRNc5duGzOt9Al1E9sqmrf7x48eHCB83MMu8C5BNOZn3A0g1G2kSeTzOvBencDqvquLPWjdht9RSasOMQayey3v7JfTZiKHUT1REzMmUJb2n5R4BiDzzCJ9Y2hQYw1Z6UwT6Xp3bAlVt2DqIWrI23R3kADXfmzocYTKD38R71NdWmyau6r88kOf4Cd0XOZTxnK4FgyYSA7C0LnPMWDdmES0lQLQQyad5pb5uMwnVf8L3oB0GoRhAxC4VRoUx2n9E6IiWNtoLshzeArQebx2qQBwgjuSGky4LEq3Ftm8ovgmDYrc1MYtWrH1qZ3e9saRFoXLTOuOACH7eNludgG59nv7RofrT7l3WmCvHlBbMpZJOcDr0KqNk1wAl7oNvGN1kIwwtQKbAEwK2ArOSBe13C3UsZSczM7f1Ka2h5HQw8l6eKz0IcblYw7IziW1STPAI7o3jNhQRh",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GT2+Idler+Pulley+20-Tooth&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gt2_idler_x_right",
+      "name": "GT2 Idler Pulley (X Right)",
+      "type": "mechanism",
+      "partId": "c99c29db-8403-4040-9751-2e46e74cbad1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Tj5hrx15NQPl-smtPMQnNpLiDX8muhFBrs3O1nby2ew/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTF4K3BDU2w2SUwu/anBn",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07BPGYX3G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "16x16x16mm",
+      "description": "Smooth idler pulley for X-axis belt tensioning and routing.",
+      "productName": "GT2 Idler Pulley 20-Tooth",
+      "purchaseUrl": "https://www.amazon.com/s?k=gt2+idler+pulley+smooth",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxI4HGXacFnCxGwsMmJguOeswhD6Ajpbo5sYulDz5rVC6ROwDSN6SatZnApkQT2o7rcmwYUOedS7B8FqEPiVckPDXTuRbirQpRVtOSh6e09BOiqA3BYbICaZsXKSe840yDuUff1Hesyd8GigbWl2yIcZZx8aRvFCT3QygpJLhlD17CYFpWjidKeWYiRCD8gEU7Avpv54p0w3CQGMbRNc5duGzOt9Al1E9sqmrf7x48eHCB83MMu8C5BNOZn3A0g1G2kSeTzOvBencDqvquLPWjdht9RSasOMQayey3v7JfTZiKHUT1REzMmUJb2n5R4BiDzzCJ9Y2hQYw1Z6UwT6Xp3bAlVt2DqIWrI23R3kADXfmzocYTKD38R71NdWmyau6r88kOf4Cd0XOZTxnK4FgyYSA7C0LnPMWDdmES0lQLQQyad5pb5uMwnVf8L3oB0GoRhAxC4VRoUx2n9E6IiWNtoLshzeArQebx2qQBwgjuSGky4LEq3Ftm8ovgmDYrc1MYtWrH1qZ3e9saRFoXLTOuOACH7eNludgG59nv7RofrT7l3WmCvHlBbMpZJOcDr0KqNk1wAl7oNvGN1kIwwtQKbAEwK2ArOSBe13C3UsZSczM7f1Ka2h5HQw8l6eKz0IcblYw7IziW1STPAI7o3jNhQRh",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GT2+Idler+Pulley+20-Tooth&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gt2_idler_y_front",
+      "name": "GT2 Idler Pulley (Y Front)",
+      "type": "mechanism",
+      "partId": "c99c29db-8403-4040-9751-2e46e74cbad1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Tj5hrx15NQPl-smtPMQnNpLiDX8muhFBrs3O1nby2ew/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTF4K3BDU2w2SUwu/anBn",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07BPGYX3G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "16x16x16mm",
+      "description": "Smooth idler pulley for Y-axis belt tensioning and routing.",
+      "productName": "GT2 Idler Pulley 20-Tooth",
+      "purchaseUrl": "https://www.amazon.com/s?k=gt2+idler+pulley+smooth",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxI4HGXacFnCxGwsMmJguOeswhD6Ajpbo5sYulDz5rVC6ROwDSN6SatZnApkQT2o7rcmwYUOedS7B8FqEPiVckPDXTuRbirQpRVtOSh6e09BOiqA3BYbICaZsXKSe840yDuUff1Hesyd8GigbWl2yIcZZx8aRvFCT3QygpJLhlD17CYFpWjidKeWYiRCD8gEU7Avpv54p0w3CQGMbRNc5duGzOt9Al1E9sqmrf7x48eHCB83MMu8C5BNOZn3A0g1G2kSeTzOvBencDqvquLPWjdht9RSasOMQayey3v7JfTZiKHUT1REzMmUJb2n5R4BiDzzCJ9Y2hQYw1Z6UwT6Xp3bAlVt2DqIWrI23R3kADXfmzocYTKD38R71NdWmyau6r88kOf4Cd0XOZTxnK4FgyYSA7C0LnPMWDdmES0lQLQQyad5pb5uMwnVf8L3oB0GoRhAxC4VRoUx2n9E6IiWNtoLshzeArQebx2qQBwgjuSGky4LEq3Ftm8ovgmDYrc1MYtWrH1qZ3e9saRFoXLTOuOACH7eNludgG59nv7RofrT7l3WmCvHlBbMpZJOcDr0KqNk1wAl7oNvGN1kIwwtQKbAEwK2ArOSBe13C3UsZSczM7f1Ka2h5HQw8l6eKz0IcblYw7IziW1STPAI7o3jNhQRh",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GT2+Idler+Pulley+20-Tooth&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gt2_idler_y_back",
+      "name": "GT2 Idler Pulley (Y Back)",
+      "type": "mechanism",
+      "partId": "c99c29db-8403-4040-9751-2e46e74cbad1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Tj5hrx15NQPl-smtPMQnNpLiDX8muhFBrs3O1nby2ew/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTF4K3BDU2w2SUwu/anBn",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07BPGYX3G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "16x16x16mm",
+      "description": "Smooth idler pulley for Y-axis belt tensioning and routing.",
+      "productName": "GT2 Idler Pulley 20-Tooth",
+      "purchaseUrl": "https://www.amazon.com/s?k=gt2+idler+pulley+smooth",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxI4HGXacFnCxGwsMmJguOeswhD6Ajpbo5sYulDz5rVC6ROwDSN6SatZnApkQT2o7rcmwYUOedS7B8FqEPiVckPDXTuRbirQpRVtOSh6e09BOiqA3BYbICaZsXKSe840yDuUff1Hesyd8GigbWl2yIcZZx8aRvFCT3QygpJLhlD17CYFpWjidKeWYiRCD8gEU7Avpv54p0w3CQGMbRNc5duGzOt9Al1E9sqmrf7x48eHCB83MMu8C5BNOZn3A0g1G2kSeTzOvBencDqvquLPWjdht9RSasOMQayey3v7JfTZiKHUT1REzMmUJb2n5R4BiDzzCJ9Y2hQYw1Z6UwT6Xp3bAlVt2DqIWrI23R3kADXfmzocYTKD38R71NdWmyau6r88kOf4Cd0XOZTxnK4FgyYSA7C0LnPMWDdmES0lQLQQyad5pb5uMwnVf8L3oB0GoRhAxC4VRoUx2n9E6IiWNtoLshzeArQebx2qQBwgjuSGky4LEq3Ftm8ovgmDYrc1MYtWrH1qZ3e9saRFoXLTOuOACH7eNludgG59nv7RofrT7l3WmCvHlBbMpZJOcDr0KqNk1wAl7oNvGN1kIwwtQKbAEwK2ArOSBe13C3UsZSczM7f1Ka2h5HQw8l6eKz0IcblYw7IziW1STPAI7o3jNhQRh",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=GT2+Idler+Pulley+20-Tooth&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "mk8_hotend_assembly",
+      "name": "MK8 Hotend Assembly",
+      "type": "mechanism",
+      "partId": "07427513-5d88-43fa-b088-81def0595425",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07WNQP916?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x20x20mm",
+      "description": "Complete MK8 hotend assembly including nozzle, heater block, and heat sink.",
+      "productName": "MK8 Extruder Hotend",
+      "purchaseUrl": "https://www.amazon.com/s?k=mk8+hotend+assembly",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfiOmFqtGOi883BYEsohlxMxJ5yEWjX7NBCVmg1NiOXX2RsEZ2TPC5j6c0MjAUJYmI2I9w4jV7CVb01wxzAPDjSinuGmnU7dg7wryvZlW1lcp81gmgrC9EoKgBb83xTFBsDLXXPq4AUJou0bojB7dBBb4XoXMOXQMp8ZOyAYTjB0Tqt9NNMFhwTTiBMrIBjGYBPH9pmIzLp0ij5RBJXbTbxyEMvuyCyzAkit6HesRjwBdejebICCC8hN6ItXnu4IFIYFXYVYkUSV6cSNzSz0kZZL25hUmKoOJKmMy7WbQ7YBVBgIlpWo7aCZ4KCAeddl2L6J9E2iF3uYgNR88oA7cHxZfkUJmK9ycpI6VA0x5EXLyiVgqkBdTeBmDwKriH3C41aeEShg5UifBbL3jnHgQ8pdVL5oVNqib0K02DcMq5xpaKmytLjdBfWddXyyc77ZJpt6EH1ahbF7eQNTstgD56BTAZTF8SVbYGm5cc3JIFNiSepLCGWfHWpkciTMnHPdPh6QCDkn6ZYMycGaVBmabJw8TDYAFVnXwuFkrix7qzb1BI4j2cmZb7zWXc6bCRBs7P45m5TrMqqymZoNDngWehR3KvWT41iqvUJZlHbKNQMmbDsDtJOgvTlUHnNKJOOVpA92awVW7HZvYIKzPQvISezd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MK8+Extruder+Hotend&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "bowden_extruder",
+      "name": "Bowden Extruder",
+      "type": "mechanism",
+      "partId": "0316ed76-7705-4e67-a521-031b653eb39c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/VvkE7dBoKtTzXUbsey1v7CZT6cjGMoNIOYWAhD6Hx_M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE2RHE3ZXM0V0wu/anBn",
+      "material": "Aluminum/Plastic",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07WHYBVJ5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x40x30mm",
+      "description": "Bowden type extruder mechanism for feeding filament to the hotend.",
+      "productName": "MK8 Bowden Extruder",
+      "purchaseUrl": "https://www.amazon.com/s?k=mk8+bowden+extruder",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4ShdG85",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=MK8+Bowden+Extruder&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ptfe_tubing",
+      "name": "PTFE Tubing",
+      "type": "misc",
+      "partId": "28098263-834d-4ff8-97b6-c4e21016526a",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B092CWPBH3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "1000x4mm",
+      "description": "PTFE tubing for guiding filament from the extruder to the hotend in a Bowden setup.",
+      "productName": "PTFE Bowden Tubing 2x4mm (1m)",
+      "purchaseUrl": "https://www.amazon.com/s?k=ptfe+bowden+tubing+2x4mm",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4cZzlPr",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PTFE+Bowden+Tubing+2x4mm+%281m%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "print_bed_aluminum_plate",
+      "name": "Print Bed Aluminum Plate",
+      "type": "structural",
+      "partId": "54a2f462-4dfc-4caf-bb93-5792ca7703fb",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/_jnbsiWiC4HjDBfqPjdpkbq6RjyfeYJtCFsEL7gylVc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFjR1ppbGRIOEwu/anBn",
+      "material": "Aluminum Alloy",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CCZQYZG6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "220x220x3mm",
+      "description": "Aluminum plate serving as the base for the heated print bed.",
+      "productName": "Aluminum Heated Bed Plate",
+      "purchaseUrl": "https://www.amazon.com/s?k=220x220mm+aluminum+heated+bed+plate",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxfznno21FBW9AqQ1VQ5NgqsJed909UIHiPvppL0e2j7yic7YDf9dEuTOqK0YtGU9cDK1Q8mfBW1TDMHib01n343Gt3fqxq16jFYP5psLwg8t6aqTSP5vDXQHiPnJT97eEsMPs887W5nciTddcHNOFtqzWwXfeWkdW93zL3ef5T5UClmbgON3NLC8ld3gRYGe355YYvsYJFXmGTdAgpbfNpx3jkwfju828KXO0UDXSndZkUGswkhBnA6iXUZ81ZgS3fDMNUu5FHvh5kwmpqepE2uYueUTIPLX3mHOiMNrOj688afhaBAYdwontl0E6dJwbg9wgyrivXloPDpjYAbu4VyXqc8AvTlOXtoep0n2MP23LCRCzMhzPTdtb0YVlCZAYEfC0DVyimq6VuSlgwNqb2ZLln8ot3gVlnwZIT1gHrtMqbyMdIY0ymddELezTEB0e1v7ixXyDqvjDw4VE1eKjmDoVjpk4o0ziC8FVE9E5BHYpF4C82OVEljF6sBV8dkewCR1oEo8oVxDNyU2s4j7bf9n29utKmXyiyrQYbPFtcR5ZACKDj4IbGDgII0AmbsigEokNYakwTbTB08vei9MT3FSYLJcGKair3sE7tCgrwEyXVv138Qcu7XXwkGGWLnEZnvLuNO50NK4Im1jKa4wJYqJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+Heated+Bed+Plate&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "glass_build_surface",
+      "name": "Glass Build Surface",
+      "type": "misc",
+      "partId": "5089e5e9-f0f4-430e-84e1-3a3add5b45c6",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/A5BKufv_5eEBEtvWQWQQ5J2i_he8ytHjYlq6ZZKLSIM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy00Nm93/OGQ4c2IwL2ltYWdl/cy9zdGVuY2lsLzUw/MHg2NTkvcHJvZHVj/dHMvMTk1Mi83MDEz/L0lNR18wNzY5X181/MjU5Ni4xNTIzMDMw/Mjc5LmpwZz9jPTI",
+      "material": "Borosilicate Glass",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07VV2T4XG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "220x220x3mm",
+      "description": "Borosilicate glass plate providing a flat and smooth printing surface.",
+      "productName": "Borosilicate Glass Plate 220x220mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=220x220mm+borosilicate+glass",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2w0sYtB",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Borosilicate+Glass+Plate+220x220mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "bed_leveling_springs",
+      "name": "Bed Leveling Springs",
+      "type": "misc",
+      "partId": "33212c43-bb2e-44f6-b1ec-2cb3aabfc8d2",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Lf4fa5bJyY4W5bK7bzZtjdnJ05zjCsJawgaE4JRqtPI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFqNWY5MTc5Z0wu/anBn",
+      "material": "Steel",
+      "quantity": 4,
+      "amazonUrl": "https://www.amazon.com/dp/B0CMT5GQG1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x8x8mm",
+      "description": "Springs used for manual bed leveling and maintaining consistent bed height.",
+      "productName": "3D Printer Bed Springs",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+bed+springs",
+      "estimatedCost": 0.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c38NsMkl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3D+Printer+Bed+Springs&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_screws_assortment",
+      "name": "M3 Screws Assortment",
+      "type": "misc",
+      "partId": "d9cb0657-a187-4316-80f9-7a52718c8459",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/b4eIvTFHa9TzG1ADAMP9W04d9ltHv6uIskSsK44lSoA/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9kZmlt/Zy5kZnJvYm90LmNv/bS9lbnNob3AvaW1h/Z2UvZGF0YS9GSVQw/Mjc0L0ZJVDAyNzRf/TWFpbl8wMV8xNTB4/MTAwLmpwZy53ZWJw",
+      "quantity": 50,
+      "amazonUrl": "https://www.amazon.com/dp/B0FGX859K8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "Assortment of M3 screws (various lengths) for general assembly.",
+      "productName": "M3 Hex Socket Head Cap Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+hex+socket+screws+assortment",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9d9uZBgEo7jjoRDkXgG8znPt9rYtuoGlBgEz6pruv4kd0CsyScZj97MaWFMOVfl07kUtXeSv5JGWNIpPq5GNkQcD3Qc5zG3MV0jmHvpNbITEanE0k15iw8KQ95olSFsilctt09adEvFQCVPnlxn1tm0NXiR38oc5HweWyAIa8B7H2i7Bt9ISSk9eNMMOJWMZE61ungD98AUKnDaklC08IAiqYtE31iO4rsW1yQwY3TkziRAEahBTXLKNYSAlwUSKdGXdzeOEbhHlVUJHhRZWnjbptc2a39b0FH2k2eHXWajRIdpoDFYo8Ka7roMrflAJmYM91N4DqZ4vpujqX6AyavLVmVUa7caatp91FRQv5O4lkwoxsBegp26WOfYRmPLkcsIp0wZcyVLiRTgkpQVK15usgS36rEqBwXFsVaFF38TAGSI2Q9wODhcW8Vf0KW2ywJSR5G3yXmZk12ra1mrxavyfbzWYyCgvI9EMe33COyzdONO5O6c4aguOtdSaGoYTMU9ksDxqL7s4T60o11tEbtoB5vmXEVJfzzccfY3pZ5stzyYd6knFfN8AIkeuTYJrFW0GaQKh53h7LQjGraNU0RRG5m68dSqhzlv5dNrgpqvFDGCGKzOdQPM56ZeQglpMqUGC0rz6zvJpRS9rw93ZKh0xp",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Socket+Head+Cap+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_nuts_assortment",
+      "name": "M3 Nuts Assortment",
+      "type": "misc",
+      "partId": "c3dca189-2353-43a1-b760-66b6cefe0032",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/vg1gs-21zLYE55jjgSzVvS2M2zNf5sIsOioavDODdsY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzF3LVNkcmlRdkwu/anBn",
+      "quantity": 50,
+      "research": {
+        "specs": [
+          {
+            "label": "Material",
+            "value": "18-8 Stainless Steel"
+          },
+          {
+            "label": "Standard",
+            "value": "DIN 934"
+          },
+          {
+            "label": "Thread Size",
+            "value": "M3"
+          },
+          {
+            "label": "Thickness_mm",
+            "value": "2.4"
+          },
+          {
+            "label": "mcmaster_url",
+            "value": "https://www.mcmaster.com/90591A121"
+          },
+          {
+            "label": "Thread Pitch_mm",
+            "value": "0.5"
+          },
+          {
+            "label": "mcmaster_part_number",
+            "value": "90591A121"
+          },
+          {
+            "label": "Width Across Flats_mm",
+            "value": "5.5"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/binifiMux-M1-6-Stainless-Steel-200pcs/dp/B08N68W9SP",
+            "note": "binifiMux 150 pcs M3 Hex Nuts, Stainless Steel. Thickness 2mm, fits 6mm hex spanner (slight variations from specified dimensions).",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.mcmaster.com/90591A121",
+            "note": "Part number confirmed via eBay listings referencing McMaster-Carr.",
+            "vendor": "McMaster-Carr"
+          },
+          {
+            "url": "https://accu-components.com/us/hexagon-nuts/7888-HPN-M3-A2",
+            "note": "M3 Hex Nuts (DIN 934) - Stainless Steel (18-8 / 304) with matching specifications.",
+            "vendor": "Accu"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "MonsterBolts M3 Hex Nuts (A4/316 Stainless Steel)",
+            "reason": "Uses A4 (316) marine-grade stainless steel, which offers higher corrosion resistance than 18-8 (304) stainless steel, but is not the specified material."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F9FC4563?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "Assortment of M3 nuts for general assembly.",
+      "productName": "M3 Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+hex+nuts+assortment",
+      "estimatedCost": 0.02,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxheLVocLOesSj3YW9HVKSsjAuk0dhY8YT34rvUc5SPCcgI4QR7M5m7vL2CF1qaBN4YJaX2QCpde3asIqUTPZ7VH9jKyimAosVWo9rG6TlCDaJUGpnvxlaPEscouM2pHiy6Zxvpv1xT7pzOx6Fyo1keQHGdNb57GbSrrLl71Nratjl21Ld7kva7BOr6PkrmoRWaWh55AYomtd8Z3yTq04PvrqlY5YBlai14Zqqm1nwp3TV2K5uxs0EGrCrPfu4GYI7jNaPISs01eXJf41jhf0QpknTJxW8qBL9GcWbb9hfTnLyftpwrbKqPnF8dvx4RHQkb8ZP8BSR81V5Fu45b5wJbrDhRnyjz0RXWL5BXkBaEs3ZSp7WOwJEtZ1t3tvABpapsuJRrQbLqHwt6h8T28IiiGvsb55OJKTAhaiBPwnBWGJ74IpYm6mf32wB3kuuhALc6jRTSWG3Df4XHqSsoXkfwwzvcYwbVm6PDdgzJw7MEBaWEkQwFos1EuzSOsU3IDiG7r2kJf7eV9aInWlTwQ977gk6Q27AfFEY984k1lgT40XJlTIWPlMvK7GlvY7giUmMRlsr4ETykxB2EQ9k6wlIDNTUesgVotiHHythHgqnxfbJyf5h6w0WqBMIGaF0R88Tm1iWPDGAkRtRFuY5ke41QIn",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m4_screws_assortment",
+      "name": "M4 Screws Assortment",
+      "type": "misc",
+      "partId": "d4e0b532-46ff-4414-9645-110483262fc6",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/k5IQM7qnkTTZq0_lx71DMGvdZ2VcPlCY_xCqSmN4Sd4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/Lzkxc3lPYWlYYlZM/LmpwZw",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/dp/B0FGV8F6G7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M4",
+      "description": "Assortment of M4 screws (various lengths) for general assembly.",
+      "productName": "M4 Hex Socket Head Cap Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=m4+hex+socket+screws+assortment",
+      "estimatedCost": 0.07,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3xpjK0z5F4tXx7la8qLVQd4zJbXyg9d9uZBgEo7jjoRDkXgG8znPt9rYtuoGlBgEz6pruv4kd0CsyScZj97MaWFMOVfl07kUtXeSv5JGWNIpPq5GNkQcD3Qc5zG3MV0jmHvpNbITEanE0k15iw8KQ95olSFsilctt09adEvFQCVPnlxn1tm0NXiR38oc5HweWyAIa8B7H2if0FuYs5HBQ50lfskKLHblzAvvI6Qs7bk1HGjsRwmKrk7zWZ1Filn4HvsAmj8YjOswa1piox5oj0fdIgxkzSegBM1V7xDeQm1qW6qRI0y6Z5nb4C2zZymCJCQCrPICojvSIUeoeBeLj7HoAmdo2i6B8J32eoduFuFPnphnjSlMQCqrq38WPlvZxbVOiLPTuia4mpeKW0fpH82IWwwy81cDUELKWMKyymP2wu6cW5B9udPF1kFXBLdsFD02E4iKtBE89co4VjBUM27m6p2ILjzYoucGA0GgsWgvh2BvZfScaWZ18lM7YhrJMM748p7S8dys0uyq5Fog787h1I1tWvn0OHSr0A8L3W160905cIEWeFRvaHRjhgWLadjJui3aVj332iE1QD61ZQWAjSUsFFKbfcebJbxuzCF2rk6om0bgaWDM68ak7Qh19j3w2Pnwh1Zj6Y4JOAv1d6woG3nMA8flhtoNXLpQkTdiXSXsj5Ixmb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M4+Hex+Socket+Head+Cap+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m4_nuts_assortment",
+      "name": "M4 Nuts Assortment",
+      "type": "misc",
+      "partId": "838fabc7-ef80-448f-9732-d2c1b83de712",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/9jhDV9tgeV0YexEFsyw1OhCe0PKezn5w7rALU9cyesM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZnVzaW9uZml4aW5n/cy5jby51ay9jZG4v/c2hvcC9maWxlcy9G/dWxsXzIwTnV0XzIw/TWV0cmljXzIwQTJf/Nzk3YjU5ZTktYjMy/OS00MWVkLWFkZjct/YjkzYzY0NGRiMWEy/XzYzMXg2MzEucG5n/P3Y9MTY5NzgxMDQy/NA",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/dp/B0CMC61C9D?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M4",
+      "description": "Assortment of M4 nuts for general assembly.",
+      "productName": "M4 Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/s?k=m4+hex+nuts+assortment",
+      "estimatedCost": 0.03,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgHVkbCYs69msxlWKUlLxdYRTDE0AGfXbSMyQPA2XB3GNnqhdEARWXbYrc85aggzEYzaBQKkWyJtW4dxkAxoUSlyPblBCc47coTKBsZfH541c7l0APqbakL98vzesX8sfD934j0uq3vBLtetvVbWnVeXcdM1PJPIz1bK7uqGhVD5bEoVyX4kR27CLidInxPa3SUTtXI2Whoi2qiF5mp9OZnBUOcjleISv4eoYmd8OI3IvLUSiJOYjlWwPp1KtvflzAgq9GHHXeqZh0bBdHJjmHzWg2mCKZydpdwHRpmHP03S7TlrMnxceFhk5Xh36zRl1hOHoIZfIPtuiWwafOuJoOt1rHMNWEryt65SnrHrJSOWEZNUZgnn2dfgI6aMMDXg475hVWw4P0RAeiUbLIVugJtYtV0mo56ghPDx06lKsQIZJQYQabsZiS3yjBImvhZSEwqPXWxw3g4G9j0uMjVy2wat1FV6AqCr5tNeEiYct2UxO9k0B9ndrFD277y6IckZnB4JLXfUiGmsCfAz9Roll80cbSrxA7mwkjUi90gCDY7UnzjSOVfTlKq5WaKvBvPWEx5Hm9ZwxNBDHg7cdu1tqD5JPzsA6HgXBJwV9j6G83zH5pJtoH18lrGgN8C4xMreJuUGYPu4Re4Nu8pkN4w9VKyx",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M4+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_washers",
+      "name": "M3 Washers",
+      "type": "misc",
+      "partId": "0d5079ee-030d-4385-94c0-845802d9871f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/896k3_3jXyHVYGb8unDsp7IhEtad3qB4FhKT-d2cIQQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFvK1NLbVVkMEwu/anBn",
+      "quantity": 50,
+      "amazonUrl": "https://www.amazon.com/dp/B015A39NCC?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3.2x7x0.5mm",
+      "description": "M3 flat washers for distributing load and preventing loosening.",
+      "productName": "M3 Flat Washers",
+      "purchaseUrl": "https://www.amazon.com/s?k=m3+flat+washers",
+      "estimatedCost": 0.01,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgsSyU8f4Wc26ZDUZ5yudnChsZ2CTwEWJXAHd2s1I2NoeqCdTrB6JiayOgGw2j0zsFiIzGNnUyrtw8njLSvsZ9s8WVt1MzZ1CMnexMYnC55OB8wq7fIcTQLs88xcc5Enyz78ID9JnXcPlmmdV6Q7BOf1DahnFq0I7gwYaiVrZjn5rno9R6thHAdvozw40C1J1DaowrPG6rZBofW3h67QqnVuevHbncP16HDMLU4w7ZdwWGWcf6Rg3hp2iFJXCxHOYp3tL4vv3e6FNCzamotWlj9hWxiMjUE4H3Hh0iBIILTMqH2JiHd2rnh8r0trn3Le5rra9cyUsQRgPc4D5ueSnfDpQvmDcArvlO44wDd8yJrkZdbL8mANUB9RJKBoNV1svy7C71Df0iaBBMDfnNM61YihDSkwbYvThUaegPQAqZxfLjaT2iqpmJktHjisfnRLKZTXwz6UCrOb1Qlf039enC2BLeQHzBTgoNQMY4w98VoVB17wS7NRF4VtgYY6K8CFC73brorbLmijSnwZVr3QczUoenDOc95PeeTUKdUf76L3w9KsdQba2T0NIEsnPsLWx2LBgLCWfviTzuoTPdNbJPwn54imOc2iEKOYXJEX4Xom1pVTJxdAy8djJ6oP5Z2cxzx3tWXOOg4FlYsa66YUh42f",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Flat+Washers&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "t_nuts_m5",
+      "name": "M5 T-Nuts",
+      "type": "misc",
+      "partId": "f3125de0-d495-481c-87b7-cf17188ce339",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Amp_Pe6b_73r3apIt4O7lUMEf6W3OfcvOWG7xktnXac/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFtZllwUHEtQkwu/anBn",
+      "quantity": 50,
+      "amazonUrl": "https://www.amazon.com/dp/B0BK75LJNF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x5mm",
+      "description": "M5 T-nuts for attaching components to 2020 aluminum extrusions.",
+      "productName": "M5 2020 Series T-Nuts",
+      "purchaseUrl": "https://www.amazon.com/s?k=m5+2020+t-nuts",
+      "estimatedCost": 0.08,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqFVjHhN7BMa8V4600PsYXXFaO58iUrUpszTZvwONHt2Vv9OY6dMIZNOoSso6r0N9iYIQiKxAobhiYArMzUto21vOJjIa85zlZeEKGEreHzOVDyPVLIbQLcwH1BiijViCrsGBWEkITFR7I36kKQxANRmHqkX0MZuxeV67v4Gw80r98aO6iyqQxiqAHaVDlkOTcqg55PLFf5iepuoPgkiStxQxNZPbuEAOKN2jXfhCdUg3k5a3AgPb20ANpD76feqGQ4aXwpblFQZnq8PagaUTzmPNu5N5Tf0v33OSRZsGuwkJoiFkNSa9DYGsRmX57ezc8iaYuFbLZxwJYryhBmi5idtwp7X66QzMrxzRgHkemc0zdh9cO32VckYW0BiMeaKgZytBkkUT0qLFnZdQD0pcXuYVcnFVDlagFwoivO54cXsyfhJxmtzNLMeAqRTIxEpKHOZYks0Ayy32PEgeaSb7LTj8W7OcwQVfueu7sBOuegwPVtHiGzblUyazwuohg1ss8qVepi1vySq241kIBzITcpNjJfYbfDHEqpiNgAfuem8u0CrxooF19WcA3u3UUJQLHa9FuFl1WUUfuRnBiL4bk5FZ7yaILPzlwm3KEmrIeeS9q0hQn0ncsdjMVa6NmxBE0mtisFPISmfAMOS2W6Mv35",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M5+2020+Series+T-Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "z_axis_coupler",
+      "name": "Z-Axis Coupler",
+      "type": "mechanism",
+      "partId": "9c29c73f-e61a-4e6f-ac63-6b24d57bab08",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CZd5_YoHdbkMlBks9kYmAvI5AjJd-wP1wzcN-ehoVis/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxUHJUMm1heHRM/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07JL1QYLS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x19x19mm",
+      "description": "Flexible coupler to connect Z-axis stepper motor to the lead screw.",
+      "productName": "5x8mm Flexible Shaft Coupler",
+      "purchaseUrl": "https://www.amazon.com/s?k=5x8mm+flexible+shaft+coupler",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIBN0Pu6D4FeuTqFDMy9ZPIdexnRKKM6zVVbl21LAHPAAyG2lwMZyZmBvWcuhiVCaXNsQkVHhFZY253GFxYxAAhialzsPvja4WTQgivvkw32TVlyTmJONCujbLDGXebnjixGfEZ5imbjBPzMunKGLT6k7ZuHL1oRL5sXB3CgGCwTHiT1YET2fh4B053eel7ttFzJBsoKDaV9iTQddyTRs8opmoNFzgCSf1Y5h5Xa9YpTif92WBt0tobvKs1MZdBJFKGAAgXQL98Iq9iWH6dSxhSKResbrjNhi4iVgqO1SQDuCSjlQd07OqbCe1RDDPhOpfs7U7vOPhxJIAVzfDzbphJbjae7haAGyRWpIzF4Yn3PUxefbG9uapwGBLIOo0foDMB4hlynxghk8bUqVKfHJk6ij2Ydc4N0mwTwKX4ESOeao4k7hztjcdUzXHHhsxM3gYhC6UsFgvcMNgJuIBpYiq6OFQWHZ2zMXiyV6VidG831cGgbRUBlmpKUOQmIkmbyjFS33W5dobIMUZgltjdna51SFapMffGH9vxYkCmcXoEG7ZABdAudOPrhexW9iHJz9kSSlmdqiuxzcaaDDOlt7hmvmOG9SUoFm1kPdZr0gHjJP35fqwvgOT25HDaYMEFiemdqxyDneT5X2ArcuQYq73p1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5x8mm+Flexible+Shaft+Coupler&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "hotend_cooling_fan",
+      "name": "Hotend Cooling Fan",
+      "type": "misc",
+      "partId": "45ec32b0-4bd4-4086-9e45-d029f5ecdc2b",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08ML7KD39?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "30x30x10mm",
+      "description": "30x30x10mm 12V fan for cooling the hotend heatsink.",
+      "productName": "3010 Blower Fan 12V",
+      "purchaseUrl": "https://www.amazon.com/s?k=3010+blower+fan+12v",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIcxNyr42NYvFa2XA8PbM3F8vK8oxt0IeLFgDA0UgxKL2xSWn1ffh8R7Wa8mRu6mBwrIKbDquTRssXFxCIzPUeMFjFhw4eZp0LMtv9LWu6Cuxz4XOiYi0bvTZNRBFU8SPseIH67MdyEFCMySKYO41ARw8ZpaWER3RYqDneW2MGYKOOWGvdecZwARsH7YKhGBwJHghn911Wtq2BgAn1wrNMiDr90pjMRhHvR2YH1kod8W4RVgSBCgvad5rrR5zQOM4ox2aHoMXKVOzsh2adtTKAPv2udplqdIgxDqwigPZHgHRnGpeL39a5eiGJdYyCv9MTkIBVaeUkbi443zbJpxJLh5qKdDFFIyqhnalNPdJFCgZ2ZW8bDvNxtcvsZMAxN2m0YNrpXgrV7l6sWetXR4iYZwsQ4yAjvpXphFZyV6eE5Fct9ct4jAsHJYgJHzBo7plrec9w65gkjjto36F2WliRQ5XHwiuguA7CmFR8kUgYDn3kOqTxwFiwfjXhxb9CsCRwYyvRikJDcVcN99S1DpoSSnkwo5AJ8edZR3mf2HjHtyNZIxo0o5yDNXOead12zBc98h6OFX6tvX0k9oiVBjw4joXJQ47zE9nDKyDzlXgyqkPAUjtFMdSD6BU1TIpwSLRbxAe06ShAWQNfGjgCrpStPl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3010+Blower+Fan+12V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "part_cooling_fan",
+      "name": "Part Cooling Fan",
+      "type": "misc",
+      "partId": "82d87aa5-056b-4695-82d4-b461a5263fb3",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/8JMhO_Lw5aaFEdZ7Sg6d3iMXMavYUe3Ul8IGp9kpnYc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGgzZHN0dWRpby5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDkvMjAxOTEw/MzFfMTU0NjQzLmpw/Zw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07RNZF97F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x40x10mm",
+      "description": "40x40x10mm 12V fan for cooling printed parts during extrusion.",
+      "productName": "4010 Blower Fan 12V",
+      "purchaseUrl": "https://www.amazon.com/s?k=4010+blower+fan+12v",
+      "estimatedCost": 4,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c345dDEz",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=4010+Blower+Fan+12V&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "ramps_controller_mount",
+      "name": "RAMPS Controller Mount",
+      "type": "3d_printed",
+      "partId": "d931ef93-dddd-4fb5-a5ae-5312d36b6039",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "ramps_shield",
+      "dimensions": "120x60x30mm",
+      "description": "3D-printed bracket to mount the Arduino Mega and RAMPS 1.4 board to the frame.",
+      "productName": "RAMPS Controller Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+ramps+mount+stl",
+      "estimatedCost": 1.5,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "x_stepper_motor_mount",
+      "name": "X-Axis Stepper Motor Mount",
+      "type": "3d_printed",
+      "partId": "9313a06f-66e7-488d-8a1d-521e09daeb44",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/JmFSKcLXQEMH0-oMdnajcFH5sZvyua4LulepDy2phUw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFPRjVpZVVUUUwu/anBn",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "x_axis_stepper",
+      "dimensions": "50x50x20mm",
+      "description": "3D-printed mount for securing the X-axis NEMA 17 stepper motor to the frame.",
+      "productName": "X-Axis Stepper Motor Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+nema+17+mount+stl",
+      "estimatedCost": 0.5,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_stepper_motor_mount",
+      "name": "Y-Axis Stepper Motor Mount",
+      "type": "3d_printed",
+      "partId": "4b3e9eb1-f08e-45c9-89be-f1b2aca3d2df",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Y1Ts2AS3Bk0Aap3g0xM74AhcR1dJ8LeAcxmvYEpfahM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jMS5u/ZXdlZ2dpbWFnZXMu/Y29tL3Byb2R1Y3Rp/bWFnZS9uYjY0MC9C/NEpIRDIyMDExNzBO/RUdFNzgzLmpwZw",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "y_axis_stepper",
+      "dimensions": "50x50x20mm",
+      "description": "3D-printed mount for securing the Y-axis NEMA 17 stepper motor to the frame.",
+      "productName": "Y-Axis Stepper Motor Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+nema+17+mount+stl",
+      "estimatedCost": 0.5,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "z_stepper_motor_mount",
+      "name": "Z-Axis Stepper Motor Mount",
+      "type": "3d_printed",
+      "partId": "31dbf8b7-24a1-4d40-a25a-34db36dd529d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/uo12DTSspO-iMsrg1cUu9gA-RSQa5eCYVEVJkoFIJ1o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxT0Y1aWVVVFFM/LmpwZw",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "z_axis_stepper",
+      "dimensions": "50x50x20mm",
+      "description": "3D-printed mount for securing the Z-axis NEMA 17 stepper motor to the frame.",
+      "productName": "Z-Axis Stepper Motor Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+nema+17+mount+stl",
+      "estimatedCost": 0.5,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "extruder_stepper_motor_mount",
+      "name": "Extruder Stepper Motor Mount",
+      "type": "3d_printed",
+      "partId": "73c0fd61-04a7-450a-bf27-adf765efe811",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/F4Vm_hKkCvxBZdTWJMz2Pa9D-mLIQRI5LzsQeC0S2lE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLzN2TUFB/T1N3VVd0Y0lZc1Yv/cy1sMzAwLmpwZw",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "extruder_stepper",
+      "dimensions": "50x50x20mm",
+      "description": "3D-printed mount for securing the extruder NEMA 17 stepper motor.",
+      "productName": "Extruder Stepper Motor Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+nema+17+mount+stl",
+      "estimatedCost": 0.5,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "x_endstop_mount",
+      "name": "X-Axis Endstop Mount",
+      "type": "3d_printed",
+      "partId": "a7257eb9-618d-48c3-b7bc-786d8e0b823c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/vd_z1eHK_Egu9oWLkhrrYSD1oHwlJSbF4HfroXSJtqg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kbC5t/eW1pbmlmYWN0b3J5/LmNvbS9vYmplY3Qt/YXNzZXRzLzU5OTNm/NTNlODVjYTgvaW1h/Z2VzLzcyMFg3MjAt/ZHNjMDA5NzEuanBn",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill, no supports"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "x_min_endstop",
+      "dimensions": "20x15x10mm",
+      "description": "3D-printed mount for the X-axis endstop switch.",
+      "productName": "X-Axis Endstop Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+endstop+mount+stl",
+      "estimatedCost": 0.1,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_endstop_mount",
+      "name": "Y-Axis Endstop Mount",
+      "type": "3d_printed",
+      "partId": "0969c2ad-d3e0-4585-81f5-7bc5537f28c4",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/p4-bMCURmV4NXlixD0a8GJOmZwCkYNP5TZVpW9oe7KM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kb2Nz/LnZ6Ym90Lm9yZy9h/c3NldHMvaW1hZ2Vz/L21hbnVhbC92ejIz/NV9wcmludGVkL2dh/bnRyeS9lbmRzdG9w/X3lfc2NyZXdzLnBu/Zw",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill, no supports"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "y_min_endstop",
+      "dimensions": "20x15x10mm",
+      "description": "3D-printed mount for the Y-axis endstop switch.",
+      "productName": "Y-Axis Endstop Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+endstop+mount+stl",
+      "estimatedCost": 0.1,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "z_endstop_mount",
+      "name": "Z-Axis Endstop Mount",
+      "type": "3d_printed",
+      "partId": "4b45b6bd-acab-4486-949e-0ac02f26f5dd",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/7CfW9Mp-JRQ11m8WnHsdahy9KspClISoEyy4702wS4E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/dGhpbmdpdmVyc2Uu/Y29tL3JlbmRlcnMv/OTIvMjMvMmUvNDIv/MzUvZGI3ZWY2ZjMx/YWYzMTYwMzE0ZmMw/YzFlNzFjNWIzMmJf/cHJldmlld19jYXJk/LmpwZw",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 15% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "z_min_endstop",
+      "dimensions": "20x15x10mm",
+      "description": "3D-printed mount for the Z-axis endstop switch.",
+      "productName": "Z-Axis Endstop Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+endstop+mount+stl",
+      "estimatedCost": 0.1,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "power_supply_mount",
+      "name": "Power Supply Mount",
+      "type": "3d_printed",
+      "partId": "c1e41892-4af4-4eb1-8968-6026ecd4f4c9",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/3t95s_LbIaAXrQmw3Dm6Ossww3KZ4StBCxL6x2HWZgQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGVsd2VnZGVzaWdu/LmNvbS9jZG4vc2hv/cC9maWxlcy9Qcm9k/dWN0cGFnZTJfMjAw/MHguanBnP3Y9MTY5/NDEyMjQ4Mg",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 25% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "power_supply",
+      "dimensions": "150x80x50mm",
+      "description": "3D-printed bracket to securely mount the power supply unit to the printer frame.",
+      "productName": "Power Supply Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+power+supply+mount+stl",
+      "estimatedCost": 2,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "x_carriage",
+      "name": "X-Axis Hotend Carriage",
+      "type": "3d_printed",
+      "partId": "0a16d88d-aa26-4cbe-ae8c-d63a3897a5bd",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/0lAAYRXaHut-Wsf9fQ1_mn3PP9GBG6ycuzdphJJFl6g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFsUlV2LTRVVEwu/anBn",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "mk8_hotend_assembly",
+      "dimensions": "70x50x30mm",
+      "description": "3D-printed carriage for mounting the hotend and running on X-axis smooth rods.",
+      "productName": "X-Axis Hotend Carriage",
+      "purchaseUrl": "https://www.amazon.com/s?k=prusa+i3+x+carriage+stl",
+      "estimatedCost": 1,
+      "printSettings": "30% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_belt_holder",
+      "name": "Y-Axis Belt Holder",
+      "type": "3d_printed",
+      "partId": "04426a9a-c785-413c-a9c9-a6d80f916ee3",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "gt2_belt",
+      "dimensions": "40x20x15mm",
+      "description": "3D-printed part to clamp the Y-axis timing belt to the print bed carriage.",
+      "productName": "Y-Axis Belt Holder",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+y+belt+holder+stl",
+      "estimatedCost": 0.2,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_bed_frame_left",
+      "name": "Y-Axis Bed Frame (Left)",
+      "type": "3d_printed",
+      "partId": "8445d60b-87c8-4cfe-8640-805e41ada823",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x40x20mm",
+      "description": "3D-printed frame component for the left side of the Y-axis print bed assembly.",
+      "purchaseUrl": "https://www.amazon.com/s?k=prusa+i3+y+bed+frame+stl",
+      "estimatedCost": 1,
+      "printSettings": "30% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_bed_frame_right",
+      "name": "Y-Axis Bed Frame (Right)",
+      "type": "3d_printed",
+      "partId": "bdc9ecdf-e0fc-474c-b512-3030d6e64304",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x40x20mm",
+      "description": "3D-printed frame component for the right side of the Y-axis print bed assembly.",
+      "purchaseUrl": "https://www.amazon.com/s?k=prusa+i3+y+bed+frame+stl",
+      "estimatedCost": 1,
+      "printSettings": "30% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "z_axis_leadscrew_nut_mount",
+      "name": "Z-Axis Leadscrew Nut Mount",
+      "type": "3d_printed",
+      "partId": "8f983054-8998-447f-beca-36945317712d",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "30x30x20mm",
+      "description": "3D-printed mount for securing the T8 leadscrew nut to the X-axis gantry.",
+      "productName": "Z-Axis Leadscrew Nut Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=t8+leadscrew+nut+mount+stl",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "hotend_fan_shroud",
+      "name": "Hotend Fan Shroud",
+      "type": "3d_printed",
+      "partId": "461152f4-ad11-4e81-8505-71cbb943d15d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/wtOQl7B9yrXe1jO_QCYCnC8TxB-ssjKHVdGQ5BDYbbQ/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3VsdHMzZC5j/b20vZjRSeTg0Snoy/UUh6dU5JMmM2TEU2/X0FGRHJBPS8xMTN4/MTEzL3RvcC9odHRw/czovL2ZiaS5jdWx0/czNkLmNvbS91cGxv/YWRlcnMvMjMyMzY3/NjMvcGhvdG8tZmls/ZS9jMmRhM2E4MS0x/OGNlLTQwYWQtYTRl/Yi01MTRkYmUwODA4/YjQvMjAyMjEyMjFf/MjI1ODI1LmpwZw",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "hotend_cooling_fan",
+      "dimensions": "30x30x10mm",
+      "description": "3D-printed duct for directing airflow from the hotend fan to the heatsink.",
+      "productName": "Hotend Fan Shroud",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+hotend+fan+shroud+stl",
+      "estimatedCost": 0.2,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "part_cooling_duct",
+      "name": "Part Cooling Duct",
+      "type": "3d_printed",
+      "partId": "08f513bc-c82f-477a-9d31-9dc58379c807",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/5LqmNkZdl0VFEyfHqSxkHYyaHrlNgZAKnJfxp4t8eRA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzF0MmNIZFN4ZEwu/anBn",
+      "material": "PLA",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "ABS, 0.2mm layer height, 20% infill, 3 walls"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "part_cooling_fan",
+      "dimensions": "40x40x20mm",
+      "description": "3D-printed duct for directing airflow from the part cooling fan onto the printed object.",
+      "productName": "Part Cooling Duct",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+part+cooling+duct+stl",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "spool_holder",
+      "name": "Filament Spool Holder",
+      "type": "3d_printed",
+      "partId": "2f424ab2-a088-402f-8fe4-d2e4e2649a57",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/L9f7-pABZmhe6j19_NPX2Ago6DivKILItl1SQYQm9Ek/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL25WSUFB/T1N3NX50aFd2dC0v/cy1sNDAwLndlYnA",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0C7CF73SX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x50x50mm",
+      "description": "3D-printed holder for mounting a filament spool on the printer frame.",
+      "productName": "Filament Spool Holder",
+      "purchaseUrl": "https://www.amazon.com/s?k=3d+printer+spool+holder+stl",
+      "estimatedCost": 1,
+      "printSettings": "20% infill, 0.2mm layer",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRqqe8491K4I7n47yruUxpOWAFkLTnyhf40OzQldD9dCoaS1JHPVvhcwu5WtWYv3WxwbY4W3lYZky2YMzRJR1XqzxAVR30ZTdrx3SbboAdpfjvlz1D7u4DQoiOSo3qviPH1xgTxQ5FeMscBeLhtS4o87bR83V4jqE3ZLgwgvEI9FFLrkkbS4PaVXn4Ry5ZwB1QJLHDFPg2mK9NJRQtDvE8sKcI94sQJ5aOwh092huxOJrgPDw43CNMeptlXPUuxKzAI67lXCq6pBRDDmQTEUB0fV2p1JxZLTFaMkmt4Jfjl0g7BjuQvS07tpxclLduAsW2CBEqVtaQ7pXu5N5wHHeT3KioOPKMBuNDwhW3dXpGpH6bdUPmqLLEwq1jfO03pPyWrZAsLLJHc7Eit8b2i3nhA07KBH6hVhJ6MpBBrLAvhHckjjXF9syMMVjx4oZktQa78svf2COj1rJpfn2nQTTz5gPzkia3o5I5JH4RHnJX7YzvGuqfixhqmBz59bELhoffnVgztTf6HFwVqpMC5JX2M5Gs4I848i1GnlkHpm8dcxonpii3mBNWbAK43mOOxjDclypXOyGqIMsFSy4SOGW1QYCopT4ieLGTmDbrGr50rR7hfeMp8XUHj7TVxSkNjvBnNdElo32wayFvLgTp3Pg3Mf"
+    },
+    {
+      "id": "main_mcu_mount",
+      "name": "Main Controller MCU Mount",
+      "type": "3d_printed",
+      "partId": "d2869298-7b0f-49ef-b607-7a6aff35255d",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/SXzaqWwDzxVc5ESLzw66ujyvcAXdfN4XCCKItrSqRWc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93cmVr/ZC5jb20vY2RuL3No/b3AvcHJvZHVjdHMv/ZGppLWZwdi1yZW1v/dGUtY29udHJvbGxl/ci0yLW1jdS1tYWlu/LWJvYXJkLXMxLXJm/LWJvYXJkLWZsZXhp/YmxlLWZsYXQtY2Fi/bGUtOTYxOTMxLnBu/Zz92PTE3MzQ1MjMy/NzUmd2lkdGg9MTA4/MA",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "main_mcu",
+      "dimensions": "60x40x12mm",
+      "description": "Standoff bracket sized to the Main Controller MCU's mounting hole pattern. M2.5 holes for board fasteners; vented underside for airflow.",
+      "productName": "Main Controller MCU Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "x_axis_driver_mount",
+      "name": "X-Axis Stepper Driver Mount",
+      "type": "3d_printed",
+      "partId": "5545989e-5d6b-42ac-acdf-8063ca274ca7",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/JmFSKcLXQEMH0-oMdnajcFH5sZvyua4LulepDy2phUw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFPRjVpZVVUUUwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "x_axis_driver",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the X-Axis Stepper Driver that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "productName": "X-Axis Stepper Driver Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "y_axis_driver_mount",
+      "name": "Y-Axis Stepper Driver Mount",
+      "type": "3d_printed",
+      "partId": "9300933a-50f6-4a07-a8f0-046c5b83f8b5",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/I4ebyiDYsUvVZjSXugsFpdrpOxqSJrm5X92pX0JFrcU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jMS5u/ZXdlZ2dpbWFnZXMu/Y29tL3Byb2R1Y3Rp/bWFnZS9uYjY0MC9C/NEpIRDIyMDExNzBO/RUcyU0I4LmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "y_axis_driver",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the Y-Axis Stepper Driver that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "productName": "Y-Axis Stepper Driver Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "z_axis_driver_mount",
+      "name": "Z-Axis Stepper Driver Mount",
+      "type": "3d_printed",
+      "partId": "b9e0f94a-5a8a-4737-a811-c2ade4248332",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/XXWQdVZ1yYCflxm-pYPy4VRfFjoY5C8CxNy03U1DJ8g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL05-UUFB/T1N3dy1oamtjVUov/cy1sMTYwMC5qcGc",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "z_axis_driver",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the Z-Axis Stepper Driver that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "productName": "Z-Axis Stepper Driver Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "extruder_driver_mount",
+      "name": "Extruder Stepper Driver Mount",
+      "type": "3d_printed",
+      "partId": "fdfcff91-f0a1-4fc3-83df-d3816b867b3b",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/nB_fOjFs5qjkqrzQ68prHluXzrtR7dB3WothCF3nb88/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFjUHZTT2dER0wu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "extruder_driver",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the Extruder Stepper Driver that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "productName": "Extruder Stepper Driver Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "hotend_heater_cartridge_mount",
+      "name": "Hotend Heater Cartridge Mount",
+      "type": "3d_printed",
+      "partId": "727835be-098f-43d3-8575-6d31e1d1a292",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CXlJbWeW3uwtQIzTgoV6hNXARtAhbQmx_SzuZfmV75M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFnS0FiSmd5NEwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "hotend_heater_cartridge",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the Hotend Heater Cartridge with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "productName": "Hotend Heater Cartridge Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "hotend_thermistor_mount",
+      "name": "Hotend Thermistor Mount",
+      "type": "3d_printed",
+      "partId": "ec38db9a-d72d-4f9c-af8d-5c4383189308",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Ep2UarmqSVpjfA1LmJGTB2VDRbQSUzA5DT6GeTJfsDY/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/c2VlbWVjbmMuY29t/L2Nkbi9zaG9wL3By/b2R1Y3RzLzIwMjAw/NTE3XzE2MDMxNl8x/NjB4MTYwLmpwZz92/PTE1ODk3NTA5MzQ",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "hotend_thermistor",
+      "dimensions": "30x30x15mm",
+      "description": "Form-fitting cradle for the Hotend Thermistor that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "productName": "Hotend Thermistor Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "heated_bed_mount",
+      "name": "Heated Print Bed Mount",
+      "type": "3d_printed",
+      "partId": "6fa16341-2ec5-420e-ad49-4adfeb42d76e",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/hjXO2VLo8tWFtSmryobDmnCZPWUYad1MWQCNNbcYg9c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZnlzZXRjLmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy82MS00S0gz/XzJCTnpMLl9TTDE1/MDBfNjVkMzQ1NDkt/NDEwOS00NTZkLTll/MDAtMDg1YjI0MDk0/YTliLmpwZz92PTE2/MDI1ODQ5ODE",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "heated_bed",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the Heated Print Bed with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "productName": "Heated Print Bed Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "bed_thermistor_mount",
+      "name": "Heated Bed Thermistor Mount",
+      "type": "3d_printed",
+      "partId": "74fd9eb8-d35b-4e39-be63-a127fcff5418",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/nh11A9N2CPorlXbZ6_6VRTRIY7y0tkKLGbofpQnoKSM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFnejV5TzhwOEwu/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "bed_thermistor",
+      "dimensions": "30x30x15mm",
+      "description": "Form-fitting cradle for the Heated Bed Thermistor that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "productName": "Heated Bed Thermistor Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters",
+      "aliexpressUrl": null
+    }
+  ],
+  "notes": [
+    "Maximum 1000 RON",
+    "DIY 3D printer"
+  ],
+  "projectName": "3D Printer Budget",
+  "originalPrompt": "crazami cum sa fac o imprimanta 3d in maxim 1000 de lei",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print all PLA mechanical mounts and components",
+          "partIds": [
+            "ramps_controller_mount",
+            "x_stepper_motor_mount",
+            "y_stepper_motor_mount",
+            "z_stepper_motor_mount",
+            "extruder_stepper_motor_mount",
+            "x_endstop_mount",
+            "y_endstop_mount",
+            "z_endstop_mount",
+            "power_supply_mount",
+            "x_carriage",
+            "y_belt_holder",
+            "y_bed_frame_left",
+            "y_bed_frame_right",
+            "z_axis_leadscrew_nut_mount",
+            "hotend_fan_shroud",
+            "part_cooling_duct",
+            "spool_holder"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "3D print all PETG electrical component mounts",
+          "partIds": [
+            "main_mcu_mount",
+            "x_axis_driver_mount",
+            "y_axis_driver_mount",
+            "z_axis_driver_mount",
+            "extruder_driver_mount",
+            "hotend_heater_cartridge_mount",
+            "hotend_thermistor_mount",
+            "heated_bed_mount",
+            "bed_thermistor_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Deburr and clean all 3D printed parts, ensure proper fit for bearings and fasteners",
+          "partIds": [
+            "ramps_controller_mount",
+            "x_stepper_motor_mount",
+            "y_stepper_motor_mount",
+            "z_stepper_motor_mount",
+            "extruder_stepper_motor_mount",
+            "x_endstop_mount",
+            "y_endstop_mount",
+            "z_endstop_mount",
+            "power_supply_mount",
+            "x_carriage",
+            "y_belt_holder",
+            "y_bed_frame_left",
+            "y_bed_frame_right",
+            "z_axis_leadscrew_nut_mount",
+            "hotend_fan_shroud",
+            "part_cooling_duct",
+            "spool_holder",
+            "main_mcu_mount",
+            "x_axis_driver_mount",
+            "y_axis_driver_mount",
+            "z_axis_driver_mount",
+            "extruder_driver_mount",
+            "hotend_heater_cartridge_mount",
+            "hotend_thermistor_mount",
+            "heated_bed_mount",
+            "bed_thermistor_mount",
+            "lm8uu_y_axis_left_front",
+            "lm8uu_y_axis_left_back",
+            "lm8uu_y_axis_right_front",
+            "lm8uu_y_axis_right_back",
+            "lm8uu_x_axis_top",
+            "lm8uu_x_axis_bottom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Install stepper drivers onto RAMPS 1.4 shield and attach RAMPS shield to Main Controller MCU",
+          "partIds": [
+            "x_axis_driver",
+            "y_axis_driver",
+            "z_axis_driver",
+            "extruder_driver",
+            "ramps_shield",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire Main Power Supply Unit to RAMPS shield 12V input",
+          "partIds": [
+            "power_supply",
+            "ramps_shield"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect Stepper Motors to their respective drivers on the RAMPS shield",
+          "partIds": [
+            "x_axis_stepper",
+            "y_axis_stepper",
+            "z_axis_stepper",
+            "extruder_stepper",
+            "ramps_shield"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect Hotend Heater Cartridge, Hotend Thermistor, Heated Bed, and Heated Bed Thermistor to RAMPS shield",
+          "partIds": [
+            "hotend_heater_cartridge",
+            "hotend_thermistor",
+            "heated_bed",
+            "bed_thermistor",
+            "ramps_shield"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect X, Y, and Z-Axis Min Endstop Switches to RAMPS shield",
+          "partIds": [
+            "x_min_endstop",
+            "y_min_endstop",
+            "z_min_endstop",
+            "ramps_shield"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Route and organize all electrical wiring, ensure strain relief",
+          "partIds": [
+            "x_axis_stepper",
+            "y_axis_stepper",
+            "z_axis_stepper",
+            "extruder_stepper",
+            "hotend_heater_cartridge",
+            "hotend_thermistor",
+            "x_min_endstop",
+            "y_min_endstop",
+            "z_min_endstop",
+            "heated_bed",
+            "bed_thermistor",
+            "power_supply",
+            "ramps_shield",
+            "main_mcu",
+            "hotend_cooling_fan",
+            "part_cooling_fan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Flash 3D printer firmware (e.g., Marlin) to the Main Controller MCU",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Configure firmware settings for stepper drivers, endstops, thermistors, and heaters",
+          "partIds": [
+            "main_mcu",
+            "ramps_shield",
+            "x_axis_driver",
+            "y_axis_driver",
+            "z_axis_driver",
+            "extruder_driver",
+            "x_min_endstop",
+            "y_min_endstop",
+            "z_min_endstop",
+            "hotend_thermistor",
+            "bed_thermistor",
+            "hotend_heater_cartridge",
+            "heated_bed"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Verify power supply output voltage with multimeter",
+          "partIds": [
+            "power_supply"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test endstop functionality (M119 command) and adjust if necessary",
+          "partIds": [
+            "x_min_endstop",
+            "y_min_endstop",
+            "z_min_endstop",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test thermistor readings for hotend and heated bed (M105 command)",
+          "partIds": [
+            "hotend_thermistor",
+            "bed_thermistor",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Perform initial motor movement tests for X, Y, Z axes and Extruder (G1 commands)",
+          "partIds": [
+            "x_axis_stepper",
+            "y_axis_stepper",
+            "z_axis_stepper",
+            "extruder_stepper",
+            "main_mcu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Assemble the main frame structure using extrusions and M5 T-nuts/screws",
+          "partIds": [
+            "x_y_frame_extrusion_front",
+            "x_y_frame_extrusion_back",
+            "x_y_frame_extrusion_left",
+            "x_y_frame_extrusion_right",
+            "z_axis_extrusion_left",
+            "z_axis_extrusion_right",
+            "top_cross_extrusion",
+            "t_nuts_m5",
+            "m5_screws_assortment"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Install Y-axis smooth rods and assemble Y-bed frame with LM8UU bearings",
+          "partIds": [
+            "y_axis_smooth_rod_left",
+            "y_axis_smooth_rod_right",
+            "y_bed_frame_left",
+            "y_bed_frame_right",
+            "lm8uu_y_axis_left_front",
+            "lm8uu_y_axis_left_back",
+            "lm8uu_y_axis_right_front",
+            "lm8uu_y_axis_right_back",
+            "m3_screws_assortment"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount the heated print bed, print bed aluminum plate, glass build surface, and bed leveling springs to the Y-axis bed frame",
+          "partIds": [
+            "heated_bed",
+            "print_bed_aluminum_plate",
+            "glass_build_surface",
+            "bed_leveling_springs",
+            "y_bed_frame_left",
+            "y_bed_frame_right",
+            "m3_screws_assortment",
+            "m4_screws_assortment"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Assemble X-axis carriage with hotend, fans, and LM8UU bearings; install X-axis smooth rods",
+          "partIds": [
+            "x_carriage",
+            "mk8_hotend_assembly",
+            "hotend_cooling_fan",
+            "part_cooling_fan",
+            "hotend_fan_shroud",
+            "part_cooling_duct",
+            "lm8uu_x_axis_top",
+            "lm8uu_x_axis_bottom",
+            "x_axis_smooth_rod_top",
+            "x_axis_smooth_rod_bottom",
+            "m3_screws_assortment"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Install Z-axis lead screw, Z-axis coupler, Z-axis leadscrew nut mount, and Z-axis stepper motor",
+          "partIds": [
+            "z_axis_lead_screw",
+            "z_axis_coupler",
+            "z_axis_leadscrew_nut_mount",
+            "z_axis_stepper",
+            "z_stepper_motor_mount",
+            "x_carriage",
+            "m3_screws_assortment",
+            "m5_screws_assortment",
+            "t_nuts_m5"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Install GT2 timing belts, pulleys, and idlers for X and Y axes; mount X and Y stepper motors",
+          "partIds": [
+            "gt2_belt",
+            "gt2_pulley_x_motor",
+            "gt2_pulley_y_motor",
+            "gt2_idler_x_left",
+            "gt2_idler_x_right",
+            "gt2_idler_y_front",
+            "gt2_idler_y_back",
+            "x_axis_stepper",
+            "y_axis_stepper",
+            "x_stepper_motor_mount",
+            "y_stepper_motor_mount",
+            "y_belt_holder",
+            "m3_screws_assortment",
+            "m5_screws_assortment",
+            "t_nuts_m5"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Mount Main Controller MCU, RAMPS shield, Power Supply, and Bowden Extruder with PTFE tubing",
+          "partIds": [
+            "main_mcu",
+            "ramps_shield",
+            "main_mcu_mount",
+            "ramps_controller_mount",
+            "power_supply",
+            "power_supply_mount",
+            "bowden_extruder",
+            "extruder_stepper",
+            "extruder_stepper_motor_mount",
+            "ptfe_tubing",
+            "spool_holder",
+            "m3_screws_assortment",
+            "m5_screws_assortment",
+            "t_nuts_m5"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Perform final cable management, zip-tying, and ensure smooth mechanical movement of all axes",
+          "partIds": [
+            "x_y_frame_extrusion_front",
+            "x_y_frame_extrusion_back",
+            "x_y_frame_extrusion_left",
+            "x_y_frame_extrusion_right",
+            "z_axis_extrusion_left",
+            "z_axis_extrusion_right",
+            "top_cross_extrusion",
+            "x_axis_stepper",
+            "y_axis_stepper",
+            "z_axis_stepper",
+            "extruder_stepper",
+            "hotend_heater_cartridge",
+            "hotend_thermistor",
+            "x_min_endstop",
+            "y_min_endstop",
+            "z_min_endstop",
+            "heated_bed",
+            "bed_thermistor",
+            "hotend_cooling_fan",
+            "part_cooling_fan"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A budget-friendly, DIY 3D",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PLA and PETG capable)",
+      "Hex key set (M3, M4, M5)",
+      "Screwdriver set (Phillips, Flathead)",
+      "Wire strippers",
+      "Crimping tool (optional, for custom connectors)",
+      "Multimeter",
+      "Utility knife (for GT2 belt)",
+      "Pliers (needle-nose, cutting)",
+      "Soldering iron (for general electrical work, if needed)"
+    ],
+    "assumptions": [
+      "Basic mechanical assembly skills",
+      "Familiarity with 3D printer firmware configuration (e.g., Marlin)",
+      "Access to a computer with Arduino IDE or similar for firmware flashing",
+      "Basic electrical wiring knowledge and safety practices"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Main 12V Power",
+      "source": "power_supply",
+      "target": "ramps_shield",
+      "current": "10A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "MCU 5V Power",
+      "source": "ramps_shield",
+      "target": "main_mcu",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "RAMPS to MCU Control",
+      "source": "ramps_shield",
+      "target": "main_mcu",
+      "protocol": "gpio",
+      "sourcePin": "Various",
+      "targetPin": "Various"
+    },
+    {
+      "type": "data",
+      "label": "X Driver Control",
+      "source": "ramps_shield",
+      "target": "x_axis_driver",
+      "protocol": "gpio",
+      "sourcePin": "X-STEP/DIR/EN",
+      "targetPin": "STEP/DIR/ENABLE"
+    },
+    {
+      "type": "power",
+      "label": "X Driver VMOT Power",
+      "source": "ramps_shield",
+      "target": "x_axis_driver",
+      "current": "1.5A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "X Driver VDD Power",
+      "source": "ramps_shield",
+      "target": "x_axis_driver",
+      "current": "50mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "X Stepper Power",
+      "source": "x_axis_driver",
+      "target": "x_axis_stepper",
+      "current": "1A",
+      "voltage": "12V"
+    },
+    {
+      "type": "data",
+      "label": "Y Driver Control",
+      "source": "ramps_shield",
+      "target": "y_axis_driver",
+      "protocol": "gpio",
+      "sourcePin": "Y-STEP/DIR/EN",
+      "targetPin": "STEP/DIR/ENABLE"
+    },
+    {
+      "type": "power",
+      "label": "Y Driver VMOT Power",
+      "source": "ramps_shield",
+      "target": "y_axis_driver",
+      "current": "1.5A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Y Driver VDD Power",
+      "source": "ramps_shield",
+      "target": "y_axis_driver",
+      "current": "50mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Y Stepper Power",
+      "source": "y_axis_driver",
+      "target": "y_axis_stepper",
+      "current": "1A",
+      "voltage": "12V"
+    },
+    {
+      "type": "data",
+      "label": "Z Driver Control",
+      "source": "ramps_shield",
+      "target": "z_axis_driver",
+      "protocol": "gpio",
+      "sourcePin": "Z-STEP/DIR/EN",
+      "targetPin": "STEP/DIR/ENABLE"
+    },
+    {
+      "type": "power",
+      "label": "Z Driver VMOT Power",
+      "source": "ramps_shield",
+      "target": "z_axis_driver",
+      "current": "1.5A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Z Driver VDD Power",
+      "source": "ramps_shield",
+      "target": "z_axis_driver",
+      "current": "50mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Z Stepper Power",
+      "source": "z_axis_driver",
+      "target": "z_axis_stepper",
+      "current": "1A",
+      "voltage": "12V"
+    },
+    {
+      "type": "data",
+      "label": "Extruder Driver Control",
+      "source": "ramps_shield",
+      "target": "extruder_driver",
+      "protocol": "gpio",
+      "sourcePin": "E0-STEP/DIR/EN",
+      "targetPin": "STEP/DIR/ENABLE"
+    },
+    {
+      "type": "power",
+      "label": "Extruder Driver VMOT Power",
+      "source": "ramps_shield",
+      "target": "extruder_driver",
+      "current": "1.5A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Extruder Driver VDD Power",
+      "source": "ramps_shield",
+      "target": "extruder_driver",
+      "current": "50mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Extruder Stepper Power",
+      "source": "extruder_driver",
+      "target": "extruder_stepper",
+      "current": "1A",
+      "voltage": "12V"
+    },
+    {
+      "type": "power",
+      "label": "Hotend Heater D10",
+      "source": "ramps_shield",
+      "target": "hotend_heater_cartridge",
+      "current": "5A",
+      "voltage": "12V"
+    },
+    {
+      "type": "data",
+      "label": "Hotend Thermistor Input",
+      "source": "ramps_shield",
+      "target": "hotend_thermistor",
+      "protocol": "analog",
+      "sourcePin": "T0",
+      "targetPin": "2-wire signal"
+    },
+    {
+      "type": "data",
+      "label": "X Min Endstop Signal",
+      "source": "ramps_shield",
+      "target": "x_min_endstop",
+      "protocol": "gpio",
+      "sourcePin": "X-MIN",
+      "targetPin": "SIGNAL"
+    },
+    {
+      "type": "power",
+      "label": "X Min Endstop VCC",
+      "source": "ramps_shield",
+      "target": "x_min_endstop",
+      "current": "10mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "Y Min Endstop Signal",
+      "source": "ramps_shield",
+      "target": "y_min_endstop",
+      "protocol": "gpio",
+      "sourcePin": "Y-MIN",
+      "targetPin": "SIGNAL"
+    },
+    {
+      "type": "power",
+      "label": "Y Min Endstop VCC",
+      "source": "ramps_shield",
+      "target": "y_min_endstop",
+      "current": "10mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "Z Min Endstop Signal",
+      "source": "ramps_shield",
+      "target": "z_min_endstop",
+      "protocol": "gpio",
+      "sourcePin": "Z-MIN",
+      "targetPin": "SIGNAL"
+    },
+    {
+      "type": "power",
+      "label": "Z Min Endstop VCC",
+      "source": "ramps_shield",
+      "target": "z_min_endstop",
+      "current": "10mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Heated Bed D8",
+      "source": "ramps_shield",
+      "target": "heated_bed",
+      "current": "10A",
+      "voltage": "12V"
+    },
+    {
+      "type": "data",
+      "label": "Bed Thermistor Input",
+      "source": "ramps_shield",
+      "target": "bed_thermistor",
+      "protocol": "analog",
+      "sourcePin": "T1",
+      "targetPin": "2-wire signal"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M5 T-nuts and screws",
+      "source": "x_y_frame_extrusion_front",
+      "target": "x_y_frame_extrusion_left"
+    },
+    {
+      "label": "M5 T-nuts and screws",
+      "source": "x_y_frame_extrusion_front",
+      "target": "x_y_frame_extrusion_right"
+    },
+    {
+      "label": "M5 T-nuts and screws",
+      "source": "x_y_frame_extrusion_back",
+      "target": "x_y_frame_extrusion_left"
+    },
+    {
+      "label": "M5 T-nuts and screws",
+      "source": "x_y_frame_extrusion_back",
+      "target": "x_y_frame_extrusion_right"
+    },
+    {
+      "label": "M5 T-nuts and screws",
+      "source": "x_y_frame_extrusion_left",
+      "target": "z_axis_extrusion_left"
+    },
+    {
+      "label": "M5 T-nuts and screws",
+      "source": "x_y_frame_extrusion_right",
+      "target": "z_axis_extrusion_right"
+    },
+    {
+      "label": "M5 T-nuts and screws",
+      "source": "z_axis_extrusion_left",
+      "target": "top_cross_extrusion"
+    },
+    {
+      "label": "M5 T-nuts and screws",
+      "source": "z_axis_extrusion_right",
+      "target": "top_cross_extrusion"
+    },
+    {
+      "label": "rod clamp (part of frame or printed mount)",
+      "source": "x_y_frame_extrusion_front",
+      "target": "y_axis_smooth_rod_left"
+    },
+    {
+      "label": "rod clamp (part of frame or printed mount)",
+      "source": "x_y_frame_extrusion_front",
+      "target": "y_axis_smooth_rod_right"
+    },
+    {
+      "label": "rod clamp (part of frame or printed mount)",
+      "source": "x_y_frame_extrusion_back",
+      "target": "y_axis_smooth_rod_left"
+    },
+    {
+      "label": "rod clamp (part of frame or printed mount)",
+      "source": "x_y_frame_extrusion_back",
+      "target": "y_axis_smooth_rod_right"
+    },
+    {
+      "label": "LM8UU bearings",
+      "source": "y_bed_frame_left",
+      "target": "y_axis_smooth_rod_left"
+    },
+    {
+      "label": "LM8UU bearings",
+      "source": "y_bed_frame_right",
+      "target": "y_axis_smooth_rod_right"
+    },
+    {
+      "label": "press fit or M3 bolts",
+      "source": "y_bed_frame_left",
+      "target": "lm8uu_y_axis_left_front"
+    },
+    {
+      "label": "press fit or M3 bolts",
+      "source": "y_bed_frame_left",
+      "target": "lm8uu_y_axis_left_back"
+    },
+    {
+      "label": "press fit or M3 bolts",
+      "source": "y_bed_frame_right",
+      "target": "lm8uu_y_axis_right_front"
+    },
+    {
+      "label": "press fit or M3 bolts",
+      "source": "y_bed_frame_right",
+      "target": "lm8uu_y_axis_right_back"
+    },
+    {
+      "label": "M3/M4 screws with springs",
+      "source": "y_bed_frame_left",
+      "target": "print_bed_aluminum_plate"
+    },
+    {
+      "label": "M3/M4 screws with springs",
+      "source": "y_bed_frame_right",
+      "target": "print_bed_aluminum_plate"
+    },
+    {
+      "label": "binder clips",
+      "source": "print_bed_aluminum_plate",
+      "target": "glass_build_surface"
+    },
+    {
+      "label": "M3/M4 screws",
+      "source": "print_bed_aluminum_plate",
+      "target": "bed_leveling_springs"
+    },
+    {
+      "label": "M3/M4 screws",
+      "source": "y_bed_frame_left",
+      "target": "bed_leveling_springs"
+    },
+    {
+      "label": "M3/M4 screws",
+      "source": "y_bed_frame_right",
+      "target": "bed_leveling_springs"
+    },
+    {
+      "label": "M3 screws",
+      "source": "y_bed_frame_left",
+      "target": "y_belt_holder"
+    },
+    {
+      "label": "clamping mechanism",
+      "source": "y_belt_holder",
+      "target": "gt2_belt"
+    },
+    {
+      "label": "LM8UU bearings",
+      "source": "x_carriage",
+      "target": "x_axis_smooth_rod_top"
+    },
+    {
+      "label": "LM8UU bearings",
+      "source": "x_carriage",
+      "target": "x_axis_smooth_rod_bottom"
+    },
+    {
+      "label": "press fit or M3 bolts",
+      "source": "x_carriage",
+      "target": "lm8uu_x_axis_top"
+    },
+    {
+      "label": "press fit or M3 bolts",
+      "source": "x_carriage",
+      "target": "lm8uu_x_axis_bottom"
+    },
+    {
+      "label": "M3 screws",
+      "source": "x_carriage",
+      "target": "mk8_hotend_assembly"
+    },
+    {
+      "label": "M3 screws",
+      "source": "x_carriage",
+      "target": "hotend_fan_shroud"
+    },
+    {
+      "label": "M3 screws",
+      "source": "hotend_fan_shroud",
+      "target": "part_cooling_duct"
+    },
+    {
+      "label": "push-fit connector",
+      "source": "bowden_extruder",
+      "target": "ptfe_tubing"
+    },
+    {
+      "label": "push-fit connector",
+      "source": "mk8_hotend_assembly",
+      "target": "ptfe_tubing"
+    },
+    {
+      "label": "top/bottom bearings",
+      "source": "z_axis_extrusion_left",
+      "target": "z_axis_lead_screw"
+    },
+    {
+      "label": "top/bottom bearings",
+      "source": "z_axis_extrusion_right",
+      "target": "z_axis_lead_screw"
+    },
+    {
+      "label": "M3 screws",
+      "source": "z_axis_leadscrew_nut_mount",
+      "target": "x_carriage"
+    },
+    {
+      "label": "threaded nut (integrated or separate)",
+      "source": "z_axis_leadscrew_nut_mount",
+      "target": "z_axis_lead_screw"
+    },
+    {
+      "label": "grub screws",
+      "source": "z_axis_coupler",
+      "target": "z_axis_lead_screw"
+    },
+    {
+      "label": "rod clamp (part of printed mount)",
+      "source": "x_y_frame_extrusion_left",
+      "target": "x_axis_smooth_rod_top"
+    },
+    {
+      "label": "rod clamp (part of printed mount)",
+      "source": "x_y_frame_extrusion_left",
+      "target": "x_axis_smooth_rod_bottom"
+    },
+    {
+      "label": "rod clamp (part of printed mount)",
+      "source": "x_y_frame_extrusion_right",
+      "target": "x_axis_smooth_rod_top"
+    },
+    {
+      "label": "rod clamp (part of printed mount)",
+      "source": "x_y_frame_extrusion_right",
+      "target": "x_axis_smooth_rod_bottom"
+    },
+    {
+      "label": "M5 T-nuts and M3 screws",
+      "source": "x_y_frame_extrusion_left",
+      "target": "x_stepper_motor_mount"
+    },
+    {
+      "label": "M5 T-nuts and M3 screws",
+      "source": "x_y_frame_extrusion_right",
+      "target": "gt2_idler_x_right"
+    },
+    {
+      "label": "M5 T-nuts and M3 screws",
+      "source": "x_y_frame_extrusion_back",
+      "target": "y_stepper_motor_mount"
+    },
+    {
+      "label": "M5 T-nuts and M3 screws",
+      "source": "x_y_frame_extrusion_front",
+      "target": "gt2_idler_y_front"
+    },
+    {
+      "label": "M5 T-nuts and M3 screws",
+      "source": "x_y_frame_extrusion_left",
+      "target": "z_stepper_motor_mount"
+    },
+    {
+      "label": "clamping mechanism",
+      "source": "x_carriage",
+      "target": "gt2_belt"
+    },
+    {
+      "label": "wrapped around pulley",
+      "source": "gt2_belt",
+      "target": "gt2_pulley_x_motor"
+    },
+    {
+      "label": "wrapped around pulley",
+      "source": "gt2_belt",
+      "target": "gt2_idler_x_left"
+    },
+    {
+      "label": "wrapped around pulley",
+      "source": "gt2_belt",
+      "target": "gt2_idler_x_right"
+    },
+    {
+      "label": "wrapped around pulley",
+      "source": "gt2_belt",
+      "target": "gt2_pulley_y_motor"
+    },
+    {
+      "label": "wrapped around pulley",
+      "source": "gt2_belt",
+      "target": "gt2_idler_y_front"
+    },
+    {
+      "label": "wrapped around pulley",
+      "source": "gt2_belt",
+      "target": "gt2_idler_y_back"
+    },
+    {
+      "label": "M3 screws",
+      "source": "bowden_extruder",
+      "target": "extruder_stepper_motor_mount"
+    },
+    {
+      "label": "M5 T-nuts and M3 screws",
+      "source": "extruder_stepper_motor_mount",
+      "target": "top_cross_extrusion"
+    },
+    {
+      "label": "M5 T-nuts and M3 screws",
+      "source": "spool_holder",
+      "target": "top_cross_extrusion"
+    },
+    {
+      "label": "M3 screws",
+      "source": "heated_bed_mount",
+      "target": "print_bed_aluminum_plate"
+    },
+    {
+      "label": "mount",
+      "source": "ramps_controller_mount",
+      "target": "ramps_shield"
+    },
+    {
+      "label": "mount",
+      "source": "x_stepper_motor_mount",
+      "target": "x_axis_stepper"
+    },
+    {
+      "label": "mount",
+      "source": "y_stepper_motor_mount",
+      "target": "y_axis_stepper"
+    },
+    {
+      "label": "mount",
+      "source": "z_stepper_motor_mount",
+      "target": "z_axis_stepper"
+    },
+    {
+      "label": "mount",
+      "source": "extruder_stepper_motor_mount",
+      "target": "extruder_stepper"
+    },
+    {
+      "label": "mount",
+      "source": "x_endstop_mount",
+      "target": "x_min_endstop"
+    },
+    {
+      "label": "mount",
+      "source": "y_endstop_mount",
+      "target": "y_min_endstop"
+    },
+    {
+      "label": "mount",
+      "source": "z_endstop_mount",
+      "target": "z_min_endstop"
+    },
+    {
+      "label": "mount",
+      "source": "power_supply_mount",
+      "target": "power_supply"
+    },
+    {
+      "label": "mount",
+      "source": "main_mcu_mount",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "x_axis_driver_mount",
+      "target": "x_axis_driver"
+    },
+    {
+      "label": "mount",
+      "source": "y_axis_driver_mount",
+      "target": "y_axis_driver"
+    },
+    {
+      "label": "mount",
+      "source": "z_axis_driver_mount",
+      "target": "z_axis_driver"
+    },
+    {
+      "label": "mount",
+      "source": "extruder_driver_mount",
+      "target": "extruder_driver"
+    },
+    {
+      "label": "mount",
+      "source": "hotend_heater_cartridge_mount",
+      "target": "hotend_heater_cartridge"
+    },
+    {
+      "label": "mount",
+      "source": "hotend_thermistor_mount",
+      "target": "hotend_thermistor"
+    },
+    {
+      "label": "mount",
+      "source": "heated_bed_mount",
+      "target": "heated_bed"
+    },
+    {
+      "label": "mount",
+      "source": "bed_thermistor_mount",
+      "target": "bed_thermistor"
+    }
+  ],
+  "projectId": "f4234319-26d9-4d90-8581-25e64287f681"
+}

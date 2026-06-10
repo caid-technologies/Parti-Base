@@ -1,0 +1,2394 @@
+{
+  "plan": "- Microcontroller: Raspberry Pi 4 B or equivalent for primary processing and display output, with dedicated drivers for all screens (IPS, E-Ink, round LCD).\n- Power System: Custom PCB for power management, 50,000 mAh Li-Po battery pack, charge controller, DC-DC converters, and heavy-duty 5V input port. Status LED panel for charge indication.\n- Mechanical Chassis: Weather-resistant Pelican-style case or custom 3D-printed modular chassis (carbon fiber composite or matte olive drab/black texture). Custom mounts for displays, radio, sensors, and control elements.\n- Display & Control: 7-inch IPS LCD, 4.2-inch E-Ink display, 1.28-inch round LCD. Rotary encoder, waterproof toggle switches with safety covers.\n- Sensors & Radios: Baofeng UV-5R radio integration, Beitian GPS antenna, BME280/BNO055 environmental/IMU sensors. RTL-SDR dongle with external antenna, integrated USB ports.\n- Lighting & Peripherals: 3x high-power LEDs (White, UV, IR) with heatsink, various small indicator LEDs, robust wiring throughout.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Processor",
+      "pins": [
+        "HDMI0",
+        "HDMI1",
+        "USB 3.0 (x2)",
+        "USB 2.0 (x2)",
+        "GPIO (40-pin)",
+        "CSI",
+        "DSI",
+        "Audio Jack",
+        "USB-C (Power)"
+      ],
+      "type": "mcu",
+      "partId": "89901909-c0d6-4faa-b2c0-8df3dd72bcda",
+      "category": "electrical",
+      "imageUrl": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/1034/RASPBERRY-PI-3.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "USB",
+            "value": "USB (4)"
+          },
+          {
+            "label": "pins",
+            "value": "GPIO2,GPIO3,GPIO14,GPIO15,GPIO17,GPIO18,GPIO22,GPIO23,GPIO24,GPIO25,GPIO27,PWM0,PWM1,SPI_MOSI,SPI_MISO,SPI_SCLK,USB3_0_0,USB3_0_1,5V,3V3,GND"
+          },
+          {
+            "label": "Speed",
+            "value": "1.2GHz"
+          },
+          {
+            "label": "Contents",
+            "value": "-"
+          },
+          {
+            "label": "Ethernet",
+            "value": "100 Mbps"
+          },
+          {
+            "label": "Cooling Type",
+            "value": "-"
+          },
+          {
+            "label": "Power (Watts)",
+            "value": "-"
+          },
+          {
+            "label": "Video Outputs",
+            "value": "CSI, DSI, HDMI"
+          },
+          {
+            "label": "Core Processor",
+            "value": "Broadcom BCM2837 ARM Cortex-A53"
+          },
+          {
+            "label": "Watchdog Timer",
+            "value": "-"
+          },
+          {
+            "label": "Number of Cores",
+            "value": "4"
+          },
+          {
+            "label": "Size / Dimension",
+            "value": "3.370\" x 2.224\" (85.60mm x 56.50mm)"
+          },
+          {
+            "label": "Digital I/O Lines",
+            "value": "40"
+          },
+          {
+            "label": "Storage Interface",
+            "value": "MicroSD"
+          },
+          {
+            "label": "Expansion Site/Bus",
+            "value": "Wi-Fi"
+          },
+          {
+            "label": "Analog Input:Output",
+            "value": "-"
+          },
+          {
+            "label": "Operating Temperature",
+            "value": "-"
+          },
+          {
+            "label": "RAM Capacity/Installed",
+            "value": "1GB/1GB"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.adafruit.com/product/4027",
+            "price": "$25",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=DxMrcVekD-RgmG2qGj9jfwS73zRyISvd8VLcmHOuXX46mRNp3qcR9AFkEbynmLQ5lPsoBukyrY8CjUqvSGOAZ1VGHLI2u3ECom0_mlDgdu7HqmYrGKsFnY7CheT8Ucuyues6tPGQxI2v9MNq1FF5Ior2X65eGa0Ssqebcp-ZpttrsaofBhpDgixVVxj_v-QZCEELIAyX1Wgr9viUSB_OFW7JxJBoOe1KrGs6L73gtVt0Cw4YiVnEyRpuZ2iQWpXlH5JGl2GeCu0REdrcBMybjavnxzVdIYA",
+            "price": "$159.5088",
+            "vendor": "Chipsmall Limited"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=mFQexNo-hYBd9tXcpK4h77hXSdPMKBpAV_UcO1eV114ecf2DJ-MN_R_P0BspTrykOo5CxwwfdBZkabhGID_UWJEzgi_lQF3gNlUN-_z1BSL5jRyWEs6fMaQL4y-QCf3rNu52UVhsrK3IuyjvKhRttXmKAY9dFMw_lSslrz2tR27K2s9mTAw49pafW1KKHN6OmKFU1drInJ79PXKg5SuTwyUJbWn5d5oCgXS9qFCytewE990_IrqGj4diQfyltwDETdDCREamXqM6utDvTEg9BSB9FzPKIlg",
+            "price": "$121.5328",
+            "vendor": "ODG (Origin Data Global)"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/raspberry-pi/SC0022/6152799",
+            "price": "$35",
+            "vendor": "DigiKey"
+          }
+        ],
+        "datasheetUrl": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/1026/Raspberrypi_PI_3_Model_B_Web.pdf"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07V5JTMV9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "85x56x17mm",
+      "position3d": {
+        "x": -55,
+        "y": 36.5,
+        "z": 35
+      },
+      "boundingBox": {
+        "depth": 56,
+        "width": 85,
+        "height": 17
+      },
+      "description": "Primary computing platform for display management, data processing, and sensor interfaces.",
+      "productName": "Raspberry Pi 4 Model B",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/raspberry-pi/RASPBERRY-PI-4B-4GB/11171731",
+      "estimatedCost": 55,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQJsoVpZPC3qe9cSQgqfZdNjneXxU6dINg4PtGw0ibASIz6KZoBBDW1reEPwDCCoFLz9u981iHqBVN8Ny4WmafEe97N1Ad1josnG1kYPRvKsc0NrHKNZ1dzecQIfoPliBThmUsEM5UmvIyY17GrBS5XHan8e4xRJu1w6y8goYj8TWT9LFYGnAbAmMMf9qYwjsM7ulq4HJRRcWms72uE7shS2AD08lHFZEETzB2Yoj50wOs7NfEcs7JnwF4wML61vl26zkGqntfefnLjLzCE2FU43NbaSwDGgC5RzSZni4LOT4fJJHAQDULdyklUmIthD9Q6qjvKql86w7CSHvxrQOOUsO7g8YK0KszhIF7mJqmdznxeiMplPbEqfL9tsWJblXCGSTIWoTBSNgTkvi9912z50y1tPGaId2sEqiZXSlIVurzE3beugmn8USJkAsjsUj8SUQ3iHswhcXJJkvEvSYAMRDhU71egbk2xabMLUcuO5jgNp31bgA9X3tOpm3G2Z170HANkgBYYTnwPbSXc6S9IHjcBI9S5k3N3rveMViU37Krq4QHvw2puD91VK2wcyikKfLaH2MvUs5LI9h8lsxqxuLu7sQeZc4C7AC7KUAdrvIdODHq1bQP8yHZB8guklkEd6ibNIv5PLdGlGvx805gQJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Raspberry+Pi+4+Model+B&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "primary_display",
+      "name": "Main IPS LCD Display",
+      "pins": [
+        "HDMI Input",
+        "Micro USB (Touch/Power)",
+        "GPIO (Backlight)"
+      ],
+      "type": "display",
+      "partId": "52c9aba0-1f64-4db6-899f-603b1b9946bd",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Ah192n-rAxYB7fCZ6K1wxVsPGGroc5e9Y-CPw9pwsc4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZGlyZW5jLm5ldC83/LWluY2gtaGRtaS1s/Y2QtaC1pcHMta2Fw/YXNpdGlmLWRva3Vu/bWF0aWstZWtyYW4t/ZW4tZW4td2F2ZXNo/YXJlLXJhc3BiZXJy/eS1waS1sY2Qtd2F2/ZXNoYXJlLTM5NTY3/LTE0LUsuanBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B083V7WK15?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "165x104x15mm",
+      "position3d": {
+        "x": 0,
+        "y": 60,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 104,
+        "width": 165,
+        "height": 15
+      },
+      "description": "7-inch primary display for maps and SDR waterfall. Connects via HDMI.",
+      "productName": "7-inch HDMI IPS LCD (e.g., Waveshare 7inch HDMI LCD (H))",
+      "purchaseUrl": "https://www.waveshare.com/7inch-hdmi-lcd-h.htm",
+      "estimatedCost": 70,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4d2XadP",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=7-inch+HDMI+IPS+LCD+%28e.g.%2C+Waveshare+7inch+HDMI+LCD+%28H%29%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "secondary_display",
+      "name": "E-Ink Data Display",
+      "pins": [
+        "SPI (MOSI, MISO, SCLK, CS)",
+        "DC",
+        "RST",
+        "BUSY",
+        "VCC",
+        "GND"
+      ],
+      "type": "display",
+      "partId": "a59d6da4-431c-443d-9f34-7d2b324242e4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8ZLqKzgT853QE6TNLeRIs7APrA59Mu2wKrSBSTWjxx4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0RNQUFB/T1N3OEROWmxyakwv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0751J99PS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "103x78x1.5mm",
+      "position3d": {
+        "x": 60,
+        "y": 28,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 78,
+        "width": 103,
+        "height": 1.5
+      },
+      "description": "Secondary E-Ink display for GPS, altimeter, and breadcrumbs. High contrast, low power.",
+      "productName": "4.2-inch E-Paper SPI Display (e.g., Waveshare 4.2inch e-Paper Module)",
+      "purchaseUrl": "https://www.waveshare.com/4.2inch-e-paper-module.htm",
+      "estimatedCost": 35,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4nvF38t",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=4.2-inch+E-Paper+SPI+Display+%28e.g.%2C+Waveshare+4.2inch+e-Paper+Module%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "tertiary_display",
+      "name": "Round HUD LCD",
+      "pins": [
+        "SPI (SCK, MOSI, CS)",
+        "DC",
+        "RST",
+        "BL",
+        "VCC",
+        "GND"
+      ],
+      "type": "display",
+      "partId": "9dcd8392-30d7-4a20-b35d-dd2cef7b5b03",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/oTZ6ElAxHis7syvxqOzVqeVx8bCqhZb6SPoSXqGHius/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL1BTMEFB/T1N3Y1lSand3WXAv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FLTDK9XX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x40x5mm",
+      "position3d": {
+        "x": -80,
+        "y": 65,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 40,
+        "height": 5
+      },
+      "description": "Small round display for compass and weather arrows.",
+      "productName": "1.28-inch Round LCD (GC9A01 driver, SPI)",
+      "purchaseUrl": "https://www.amazon.com/s?k=1.28+round+lcd+GC9A01",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxxmihBWmItwZy8eg9LOqR8ctgjKY4ZALYhd1iqmE5hsd3bAHQY62GqhPPT9QGA26dBfU16i39jDEK1jDj5gTOaAQUq2XBoYjxL58nuVN22ruTDJUkFa65pvRtf5hC52AfGpNrxp9awgmGQyKj7z00JbGABAwPUZGnTT367Iy1kBYpAve9xC4qNpsjo5iKUePvjRmklMmWjoQ0kNyHuqEvcwTjrxWbaWpDJ92exZSYPglD4jXtLUr5nQzZfX2678nh75BW79I9etYIMvKSlEYLwQfO5EEbZUhn36CCY3yhCdcrkouhiJXpquoJRlKgKIXQGvbyKlOk45YEJTea4x5Z2BT7CuQ6WUIxrFSkrldlxbjBZ0tyWvDbVGSglb3lqrGF60geK245cmR1Tq0u9rZFCijxrQOeWyl7L5r2Ez2IazIducNU1jnLICGa3Lpihc8Eez8emqz9811xwrBIOENFogMHXUVluixq4MRak0DNOeB0uxs95dlSv2ZGvHrz8FXoILFuenAe2IS4nV0rg22ifTvwtGqej8yS1fY4DJm88m2gwV3LPtbGbRI2xTaakzIWMF48AYmkt8go1xpGZSx4JOzp8dCB4M9oWs4UB7G6Ji99WvGMT3pbCLuq0yC1Jpc3meUgXqPdWCoyx0jMKu92Ogx",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=1.28-inch+Round+LCD+%28GC9A01+driver%2C+SPI%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rotary_encoder",
+      "name": "Tactile Rotary Encoder",
+      "pins": [
+        "A",
+        "B",
+        "SW",
+        "GND",
+        "VCC"
+      ],
+      "type": "actuator",
+      "partId": "6cd22385-1e8a-4bc2-bfd7-a1df4d32865f",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Nn3tXiiXokIZwMw7v5qc3ZFVIoWpMFgRZysWdEMOuS4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sZWN0/cm9uei1pbWFnZXMu/Yi1jZG4ubmV0L2xl/Y3Ryb256L2FjdGl2/ZV9zdG9yYWdlL3Jl/cHJlc2VudGF0aW9u/cy9wcm94eS9leUpm/Y21GcGJITWlPbnNp/WkdGMFlTSTZNalU1/TVN3aWNIVnlJam9p/WW14dllsOXBaQ0o5/ZlE9PS0tYjJjOWM0/ZWY4NGY3MTBiMWFj/OTNiOThkMmU4M2Uy/YzE3YTY4OTJlOC9l/eUpmY21GcGJITWlP/bnNpWkdGMFlTSTZl/eUptYjNKdFlYUWlP/aUpLVUVWSElpd2lj/bVZ6YVhwbFgzUnZY/MnhwYldsMElqcGJP/VFl3TERZME1GMHNJ/bk5oZG1WeUlqcDdJ/bk4wY21sd0lqcDBj/blZsZlgwc0luQjFj/aUk2SW5aaGNtbGhk/R2x2YmlKOWZRPT0t/LTUzMGY3YWYyY2Iy/MzFiZjc4NTcxNGRk/ZmNlYTRmZTU2NmJl/ZDc0NzEvSU1HXzA1/OTMlMjAoMikuSlBF/Rw",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "CLK,DT,SW,GND,VCC"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0G528SYTB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x30mm",
+      "position3d": {
+        "x": -85,
+        "y": 50,
+        "z": 60
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 30
+      },
+      "description": "Machined aluminum knob, provides tactile input and push-button functionality for navigation.",
+      "productName": "EC11 Rotary Encoder with Push Button",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/c-k/EC11E15204A4/2358899",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH3h4RzMgO3wLjryeWu2Ea6oLp6hoOgOW6c0QECpBizR5nrFB9gI69yH0bniTHSVLAfCK1xxHO41PeqTFOqpLQmJT4caRjC2IevxGSfHqbDP0HpaMVwyMvImqcw3ldei9xxvveIj9ex6UApIekNnaU4G2qm8XZlozCdzoQZZv8TwqUZRIWB1gUCFjucmtghOcYCJiBW9ojuPC5NcPSXfRXwO4n1ZCvkO4pPsiSJ7TPEWxoTwmio0iQkAAmBFO3g0gknOoTc2emgK8XczYzg3Ral4PDqnKLHoDWUR5KFmiA34EMuBgHhuQPd4GX4tiiW0AmTXK75fTxlXMfd1wIFi0mZdkKGo8Ttkk99pjDspIGfmsxmj5CbseKXWZI0RDUEQPo8hpSYz44ZEWeoQuK9MhSI6bhlDE12rIElyZGVq9HSE2NpLscKdXbmBl0DmM48gu2tzHCIudQ74wAQR0K7G1qS8XxGYQ91DwnhhxHVFEVpVdYLyw4f37gnU0Aj4KXctUoHMxikoDJGK6tgexOGpuDZhded3GyRCqtISj45Kd8aXZoF6D93BNhtZNt1t4v9qxJsOzfgRNblUanBpga1EHxhNbIQqAL7P3Ti86cyBVnpSPLQCMd0XkKI1jTIk77HQegeRTjcpXwH4JZ1BjUmXYU7Z",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=EC11+Rotary+Encoder+with+Push+Button&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_toggle_main",
+      "name": "Main System Power Toggle",
+      "pins": [
+        "Input",
+        "Output"
+      ],
+      "type": "actuator",
+      "partId": "db1fc735-6bbe-4cfa-92e2-4a5a76e5780a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/4WjUv2pPBMxXyk46RJ_QqVFzOx5K2N1bd_axzf5f2jk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjE2Z2FlTmVBUkwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B01MU2RTX6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "49x25x49mm",
+      "position3d": {
+        "x": -45,
+        "y": 50,
+        "z": 60
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 49,
+        "height": 49
+      },
+      "description": "Main power switch with safety cover, controls primary power to the system.",
+      "productName": "Heavy-Duty Waterproof Toggle Switch (e.g., Carling Contura II)",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/carling-technologies/VLD2S00B-AEC00-000/1033280",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c42GW0pJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Heavy-Duty+Waterproof+Toggle+Switch+%28e.g.%2C+Carling+Contura+II%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "power_toggle_leds",
+      "name": "LED Array Power Toggle",
+      "pins": [
+        "Input",
+        "Output"
+      ],
+      "type": "actuator",
+      "partId": "db1fc735-6bbe-4cfa-92e2-4a5a76e5780a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/4WjUv2pPBMxXyk46RJ_QqVFzOx5K2N1bd_axzf5f2jk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjE2Z2FlTmVBUkwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B01MU2RTX6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "49x25x49mm",
+      "position3d": {
+        "x": -5,
+        "y": 50,
+        "z": 60
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 49,
+        "height": 49
+      },
+      "description": "Secondary power switch with safety cover, controls power to the high-power LED array.",
+      "productName": "Heavy-Duty Waterproof Toggle Switch (e.g., Carling Contura II)",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/carling-technologies/VLD2S00B-AEC00-000/1033280",
+      "estimatedCost": 12,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c42GW0pJ",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Heavy-Duty+Waterproof+Toggle+Switch+%28e.g.%2C+Carling+Contura+II%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "baofeng_radio",
+      "name": "Integrated Baofeng Radio",
+      "pins": [
+        "Antenna Port",
+        "K-Type Audio/Mic Jack",
+        "Power Input"
+      ],
+      "type": "module",
+      "partId": "cb9c4f60-7bda-4998-bc62-6462b022a0ba",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/wx9BCZWO9YGqtdec79Snoo8qwGPgEzcGF1yEQf7F0HA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YmFvZmVuZ3JhZGlv/LmNvbS9jZG4vc2hv/cC9maWxlcy9VVi01/Ui1QTFVTLTVXLUR1/YWwtQmFuZC1SYWRp/by1CYW9mZW5nLTQ3/OTkuanBnP3Y9MTY5/NjQyMjAwNSZ3aWR0/aD0zODQw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B074XPB313?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "100x52x32mm",
+      "position3d": {
+        "x": 100,
+        "y": 25,
+        "z": -30
+      },
+      "boundingBox": {
+        "depth": 52,
+        "width": 100,
+        "height": 32
+      },
+      "description": "UHF/VHF handheld radio, main body integrated into chassis, exposed controls.",
+      "productName": "Baofeng UV-5R Handheld Transceiver",
+      "purchaseUrl": "https://www.amazon.com/s?k=Baofeng+UV-5R",
+      "estimatedCost": 30,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgNsYejhWeOkNZKsEkUe5g12K3r9UfAbNq2uj1b1Taihb97c8AiooDzo6RqGINNldN9kp5Kxfu8Q4ZyfkJHbPg7CI0dhjkg6P2n2NXhdpAiJyG470Rd87PhNxJAaZ0YIZ37DVOcR0wiqnJJj2ot8nQLl15fHeiCulMfywehXiPsJGz7FMbdG8KoRWFcyHJ2SAOOcWgp5mtQHUcQZ6laFoA2GD9MIQoCkvGJ9gLlAxsQHsAZjqjnx9u7UDzSWCLNf4VC4Y7eEq394qHIqsCaTZ4vHpwBo6O6Oa1rmYBCLYrIySw9UQKWnS4EULfnRFKahDgobFH2IrI8L8Gi2d3C9XpTUZPPrWEYmq7jpTsKlPuBHRqkqRWBYqCxweBU0hh2kSSOe2EwzB4CGYIqjDdcm5ZmNgAYJxZ2kTFNOxUomfw7xchdkYyn06HGtBw0fhHZyRr9pjYHS9qNKc6rTuU9K8Zh5mwKaBAfoQVCIA0LY4NSFxPwBUwgiGbE7WMvnu0KItlpoPLWXuXmy5AKYrTsVSmkzo8z05btucew8xRIFT78XzjiooVs8DQeddFCIn5BR6StLwaELMUno5jq5Qjg7IBwJXabW0jCOGDBTeRyMbZSBmhSpOxfNT365bv1rwvYE7sHZzmg8GEF5w4wTlTj8zetH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Baofeng+UV-5R+Handheld+Transceiver&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "gps_module",
+      "name": "Domed GPS Module",
+      "pins": [
+        "TX",
+        "RX",
+        "VCC",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "3bfd3b54-11b2-47f1-a547-6efdd688e39e",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/usIb8V_YwjGekEbUjJOZjYTzM81F1o8ImpfTcCbrpDg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YXJpZXNyYy5nci8z/MjU0OS1sYXJnZV9k/ZWZhdWx0L2JlaXRp/YW4tYm4tMjIwLWZs/aWdodC1jb250cm9s/LWdwcy1tb2R1bGUt/ZHVsZS1tb2R1bGUt/d2l0aG91dC1jb21w/YXNzLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07PRDY6DS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "22x22x8mm",
+      "position3d": {
+        "x": 0,
+        "y": 70,
+        "z": -60
+      },
+      "boundingBox": {
+        "depth": 22,
+        "width": 22,
+        "height": 8
+      },
+      "description": "External GPS antenna module for location data.",
+      "productName": "Beitian BN-220 GPS Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=Beitian+BN-220",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRrXvvjlrxqZoxduVdLIddqKNQ7XNItc8W5clOrJwqBJ5kTu1d5MCgrhCn0RgLRGAGs1mc0Cc5GpK99ZCZjCnKUmTRLIIa4rTmWRF8vU01raMGAzzwBFlFYhgCHVADzF2J0WcoKqwV0zlYlWhAvxOfN8wUrjKxjOz4nfUBgV7Fnd4WmSrQunIMM7ssq2PU4pKlfOPLMR2Lrj6EnjLHzRYH3ewGj7YTTnMSKFBIwudIGrpIJgVZDEqGZyqoZAx8PcNxHrpQAjJmVXQrnoK8HVhcDaF7KSq8PFfYUXM4PySFfQaN7Gr5BTRHI1XtFL4MWmNXirCrKFfhoNXib8BbzY5y6vDpXLQGuUeoua1Djf6uxKpR7KoudObHql1exNBt1i5Jr6whnkhAXTJWYCZsqAhCtc4hVqK74K5411w77ExGRICugSwMu2wMowbVUF0B2CaoMuJ74cROo7NYmpO7FsucQ5uOnPiFQvvmqSgKJlDSqtsWkQmfdx4BWgpJ14ywT6NOeWtpMUJnJEvqhbR6yJDL9QU1OoEEtCbShV9qLQptvDXZ8IoZNtEFa14NTLF6YuG5vH90HQ56ryabsVYD24JvWMfNxvwrGGe5UXNRHznwaVdTCzlIzJ3VTUPRHpD5MfZ4qc4Apk9BfJkThEbr280NgR",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Beitian+BN-220+GPS+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "environmental_sensor",
+      "name": "BME280 Environmental Sensor",
+      "pins": [
+        "SDA",
+        "SCL",
+        "VCC",
+        "GND"
+      ],
+      "type": "sensor",
+      "partId": "93a4e837-c0a2-4969-9d6e-f8c7b6d9b33c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/bP6jlkNgV1Zc5ne37rMqrGz89484LQued64UPpzAS5c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zcnRh/Y2h6b25lLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNS8x/MS9QaG90by1vZi1h/LUJNRTI4MC1DaGlw/LTEwMjR4NjYyLmpw/Zw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0DHPCFJD6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x11x2.5mm",
+      "position3d": {
+        "x": -80,
+        "y": 30,
+        "z": -5
+      },
+      "boundingBox": {
+        "depth": 11,
+        "width": 15,
+        "height": 2.5
+      },
+      "description": "Measures temperature, humidity, and atmospheric pressure.",
+      "productName": "Bosch BME280 Breakout Board",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/sparkfun-electronics/SEN-13676/6575916",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3jRGtQl",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Bosch+BME280+Breakout+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "imu_sensor",
+      "name": "BNO055 IMU Sensor",
+      "pins": [
+        "SDA",
+        "SCL",
+        "VCC",
+        "GND",
+        "RST"
+      ],
+      "type": "sensor",
+      "partId": "db55048b-53ea-48b2-8ab0-388306fe94ed",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/I_yyjF1NNdF9DqWgKlfpvgj_BPttXh2daezCQebuN_M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZWxlY3Ryb21ha2Vy/LmlvL3VwbG9hZHMv/bWVkaWEtbGlicmFy/eS85MDg1MDUvQWRh/ZnJ1aXQtOS1ET0Yt/QWJzb2x1dGUtT3Jp/ZW50YXRpb24tSU1V/LUZ1c2lvbi1CcmVh/a291dC0tLUJOTzA1/NS1SLUxhbmRzY2Fw/ZS5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B017PEIGIG?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x13x3mm",
+      "position3d": {
+        "x": -80,
+        "y": 35,
+        "z": -5
+      },
+      "boundingBox": {
+        "depth": 13,
+        "width": 20,
+        "height": 3
+      },
+      "description": "9-DOF Inertial Measurement Unit (accelerometer, gyroscope, magnetometer).",
+      "productName": "Bosch BNO055 IMU 9-DOF Breakout Board",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/adafruit-industries/2472/5162235",
+      "estimatedCost": 25,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4El2xw9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Bosch+BNO055+IMU+9-DOF+Breakout+Board&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "high_power_led_array",
+      "name": "Multi-Spectrum LED Array",
+      "pins": [
+        "Power Input",
+        "Control (PWM/On-Off)"
+      ],
+      "type": "actuator",
+      "partId": "21edc9db-ce76-4676-b6d8-dc3c1a1ec50c",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/SQsT0pe2EnhjUsrPl_n5nkjPFilpPgKDV2UYRgJ0L9I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaG9w/LmJvc2VsZWMuY29t/L2Nkbi9zaG9wL2Zp/bGVzL2RyaXZlcndp/dGhkaW1tZXJfM2Fm/NDQyODUtOGUyNy00/MTg2LTg3MmMtN2Zj/MThlNGZkNTVkXzEy/MDB4LmpwZz92PTE3/Mzk3MTkyODY",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B089CR7BRP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x20x15mm",
+      "position3d": {
+        "x": -100,
+        "y": 25,
+        "z": -5
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 40,
+        "height": 15
+      },
+      "description": "Cluster of high-power White, UV, and IR LEDs acting as a directional flashlight, with integrated heat sink.",
+      "productName": "3x High Power LEDs (White, UV, IR) with Drivers",
+      "purchaseUrl": "https://www.amazon.com/s?k=high+power+led+white+uv+ir+drivers",
+      "estimatedCost": 20,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3l034PF",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=3x+High+Power+LEDs+%28White%2C+UV%2C+IR%29+with+Drivers&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_battery_pack",
+      "name": "High-Capacity LiPo Battery",
+      "pins": [
+        "XT60 Output",
+        "Balance Port"
+      ],
+      "type": "power",
+      "partId": "6b32d14b-baf8-40d3-b529-483883c7e675",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/37Udgku_oUTDu63zFaII5sJA1Z0Tj6qQ7s5e1iSL_jo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0k3SUFB/T1N3NkpoY1Nqclgv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CDLLLXM1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "180x80x60mm",
+      "position3d": {
+        "x": 0,
+        "y": 35,
+        "z": -30
+      },
+      "boundingBox": {
+        "depth": 80,
+        "width": 180,
+        "height": 60
+      },
+      "description": "Massive internal battery for extended off-grid use, 3.7V/cell (11.1V nominal).",
+      "productName": "50,000 mAh 3S LiPo Battery Pack",
+      "purchaseUrl": "https://www.amazon.com/s?k=50000mAh+3S+lipo+battery+pack",
+      "estimatedCost": 150,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4olrQud",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=50%2C000+mAh+3S+LiPo+Battery+Pack&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "battery_charger_module",
+      "name": "LiPo Charge Controller",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "BAT+",
+        "BAT-"
+      ],
+      "type": "power",
+      "partId": "5d362913-a3eb-42f6-922f-cf35a533f0ac",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/T209MCKk-lUbWhkWXgrWMHLrB1g0xYsC4xoqel3HkBo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFDdSt4MkQtWEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BXDKLDFT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x17x5mm",
+      "position3d": {
+        "x": -87.5,
+        "y": 31,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 17,
+        "width": 25,
+        "height": 5
+      },
+      "description": "Manages charging of the 50,000 mAh LiPo battery pack from external 5V input.",
+      "productName": "Multi-cell LiPo Battery Charger Module (e.g., TP5100 based)",
+      "purchaseUrl": "https://www.amazon.com/s?k=TP5100+lipo+charger+module",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c34JFjzx",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Multi-cell+LiPo+Battery+Charger+Module+%28e.g.%2C+TP5100+based%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "main_5v_buck",
+      "name": "Main 5V DC-DC Converter",
+      "pins": [
+        "VIN+",
+        "VIN-",
+        "VOUT+",
+        "VOUT-"
+      ],
+      "type": "power",
+      "partId": "1e08a947-d729-487d-8f38-34dc42ee3c78",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/9sdHBM-aHjzMc86SgmeAzlbn__keQyz8IXjcdShc5Vo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbGVj/dHJvYmVzLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/Ni9YbDQwMTUtNUEt/ZGMtZGMtYm9vc3Qt/c3RlcC11cC12b2x0/YWdlLWNvbnZlcnRl/ci1tb2R1bGUtYm9h/cmQtYXQtYmVzdC1w/cmljZS1pbi1QYWtp/c3Rhbi5qcGc_dj0x/Njk3ODA5Nzgw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D1G4C28P?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "52x26x14mm",
+      "position3d": {
+        "x": -75,
+        "y": 34,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 26,
+        "width": 52,
+        "height": 14
+      },
+      "description": "Steps down the battery voltage (11.1V nominal) to a stable 5V for the Raspberry Pi and 5V peripherals.",
+      "productName": "XL4015 DC-DC Step-Down Buck Converter Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=XL4015+buck+converter",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxhoazposPDOPhZLlBl2huB3s1VKopGXMHkbOi1H0Mpf8JWH6mkIsHBb0bEEFvJOQniErddGaDrBQ9vNhOVGv7zVcidOwRAGdXUs2A7nYPNozvPr9LONxXHoIJ7eLoNePPFc0tK6Tm7yn19QZvsVuJqiRn6ohhZwGLAQVx1NzFx0r4XMO9gUtaicG30LF34aKANnqCi9XL7b9oNckJx5WBFYLlVFUT0YFrvRbPDkzwhdjWEfrFs8DRiDY2WYyuOTw4LiM5pwzDyRD8YV7whWDQXPMNr6SyNg46xCutF6ASlSJr8AFpq4XZyTGOHFajLnJammTemgBBnLaccj5VZLJcRaVw2ALcbYrRBpDTsRbOImy7NmqU4YkzMRPlwxMXSbK0DMyM34XCdzrD1ZZRXlfeMPVIRhfkkEjbbiOYTRIVnTwJWdDc0Iljf1MJI0oho0yFIZoNes1rIDI7XUozGftVjYL4bX2GyDZahCrJ0s9eBxmltAJUBRl1asjaHTX4YGKwQFeGQTLG7yBZPJv69IcKSMh5JMqw3XJWsD4srQNe39HNxgGdnkQGvnCTImQ8DwM6DBzK8sUNMyJIP4zLruG3Oyui1zotxwCpHqTbhumgdmILmYT6on7b0xs2POOzZBluPiXl99TFOKlo0YePjhsJk4T",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=XL4015+DC-DC+Step-Down+Buck+Converter+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "charge_status_leds",
+      "name": "Battery Charge Status Panel",
+      "pins": [
+        "Input V+",
+        "Input V-"
+      ],
+      "type": "display",
+      "partId": "827e4bee-fa77-462a-864b-c3213f482f03",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/bXEqZtv_RQwa_TkpAxQF0LVW7jwL_7d2MAMmmZgO2u8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLzhiTUFB/T1N3NmxaaGtsREIv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0C93NHLR8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "45x20x5mm",
+      "position3d": {
+        "x": 30,
+        "y": 28,
+        "z": 60
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 45,
+        "height": 5
+      },
+      "description": "LED panel indicating the charge level of the internal battery.",
+      "productName": "Voltmeter Battery Capacity Indicator (e.g., 1S-8S LiPo Battery Level Indicator)",
+      "purchaseUrl": "https://www.amazon.com/s?k=lipo+battery+level+indicator+panel",
+      "estimatedCost": 7,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3RsOeGd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Voltmeter+Battery+Capacity+Indicator+%28e.g.%2C+1S-8S+LiPo+Battery+Level+Indicator%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "external_power_input",
+      "name": "Rugged 5V Power Input",
+      "pins": [
+        "Center Pin",
+        "Outer Barrel"
+      ],
+      "type": "power",
+      "partId": "4fceb39b-33da-4cee-bc6e-0df6b31271d6",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/s_C8O8nxk-5EmJNOjlHdlqLC6Hy6qVDb6qIyOLvdEsg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2Nwa0FB/T1N3dDZaV1VkRnUv/cy1sOTYwLndlYnA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D9B7WR23?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x25mm",
+      "position3d": {
+        "x": -100,
+        "y": 25,
+        "z": 50
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 25
+      },
+      "description": "Exposed, ruggedized port for external 5V power input to charge the battery.",
+      "productName": "Heavy-Duty Panel Mount 5.5x2.1mm DC Power Jack",
+      "purchaseUrl": "https://www.amazon.com/s?k=rugged+panel+mount+dc+jack",
+      "estimatedCost": 4,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3Ok4Mrb",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Heavy-Duty+Panel+Mount+5.5x2.1mm+DC+Power+Jack&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rugged_usb_hub",
+      "name": "Ruggedized USB Hub",
+      "pins": [
+        "USB Input (Type A/B)",
+        "USB Output (x4)",
+        "Power Input"
+      ],
+      "type": "module",
+      "partId": "0078e93e-8fb4-447b-a08c-40774e1d665a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/1iwzX9ww7ELiSpAIuiUpbAYxet1NJRBGcbcXXPn_gNI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Y29tbWZyb250LmNv/bS9jZG4vc2hvcC9w/cm9kdWN0cy91c2Iz/LjAtNHBvcnQtaHVi/XzBfbGFyZ2UucG5n/P3Y9MTY2NjI1MDA2/OA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07G7GP15C?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x40x10mm",
+      "position3d": {
+        "x": -100,
+        "y": 25,
+        "z": 25
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 60,
+        "height": 10
+      },
+      "description": "Internal USB hub to provide multiple ruggedized external USB ports for peripherals like the RTL-SDR.",
+      "productName": "Industrial 4-Port USB 2.0/3.0 Hub Module",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=industrial+usb+hub+module",
+      "estimatedCost": 20,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3IbQ4BL",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Industrial+4-Port+USB+2.0%2F3.0+Hub+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rtl_sdr_dongle",
+      "name": "RTL-SDR Receiver",
+      "pins": [
+        "USB Type A",
+        "SMA Antenna Port"
+      ],
+      "type": "module",
+      "partId": "5f0b1861-6b26-478c-9ec1-de7b169e1eed",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/nIxTYlUWNLMJakUW08bDWUoISnv-v148aLuoH6c3mt8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFMbG43V0tsSEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BMKB3L47?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "90x25x15mm",
+      "position3d": {
+        "x": -100,
+        "y": 40,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 90,
+        "height": 15
+      },
+      "description": "Software Defined Radio dongle for receiving radio signals, plugs into ruggedized USB port.",
+      "productName": "RTL-SDR v3 Dongle",
+      "purchaseUrl": "https://www.amazon.com/s?k=rtl-sdr+v3+dongle",
+      "estimatedCost": 35,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR1nWgc01egbg0nR74lwBc4BFMGHAijcRQOl8VnnUj1T2OfXqgDRQND3hjEJPggoq12eETNFfAdXDKqpmaRs62fhW2TCnqFflINKFc465luM3kqXbfEoHGMOaZKBh7QpMgAkzOuv7r3WkQ2dkwgQB0jRv9ENu91wvUB60X9pfjLiNZ2W5Vz5U4YCNFkjced7Degoc0edBEVVRE3P68l3xEd2PXO3BSMniubj32H0RvmkFrPe6iPwSKL7bQZ6kz84tHpqbgJzk60yCR3DtaonFCNHMysDfv1rVibBaGKYL978bw9Br4RuKUnLpwiCeEfV4vAAY9AFscx1uWPymsEJEUwujQCXtU1yhxai7OSdJFTv0Y8xylZkoPFuYu12vwgwPvH2vTaKhq7SCNp3NDRcwkHT6TdBPLKgK6GVKnYx9PCdowLLsfAicJ9HrGbjjArPIC2KmPALOzAWa50o05pOA5NV8HBqjE9yKaC68TMiL9gO0qxo6D1DO7Nv17ymSFdieifeuYLwVsDYo3D1Rd6Py1jMEzaGGxbuPGcwuWhvNhaRI0wgSrOFjh5VZrT6as4UN4Hwy1JN0pO3L68Z2DmvhpsNQSgWXEpwJqhhsCrWI7Xy3GH8Lq2JINsyw980Qj4xIId5aPmxSGUzGH9px1m6NfTV",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RTL-SDR+v3+Dongle&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "audio_interface",
+      "name": "USB Audio Interface",
+      "pins": [
+        "USB Type A",
+        "3.5mm Mic In",
+        "3.5mm Audio Out"
+      ],
+      "type": "module",
+      "partId": "bf207020-c08a-4214-87ac-b2c10a2b45d8",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Uw759tw5-hwACeF14yp2F23gTBNf4ozZ33jmYDFo7K8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dW5pdGVrLXByb2R1/Y3RzLmNvbS9jZG4v/c2hvcC9maWxlcy9V/TklURUtfWS0yNDdB/X1VTQjIuMF9FeHRl/cm5hbF9Tb3VuZF9D/YXJkX0FkYXB0ZXJf/Zm9yX1N0ZXJlb19B/dWRpb19wcm9kdWN0/X3NpZGUuanBnP3Y9/MTc1MTAwODI0NSZ3/aWR0aD0xMDAw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09874Q33W?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x15x10mm",
+      "position3d": {
+        "x": -60,
+        "y": 38,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 25,
+        "height": 10
+      },
+      "description": "Provides audio input/output for interfacing with the Baofeng radio via USB.",
+      "productName": "Mini USB Audio Adapter",
+      "purchaseUrl": "https://www.amazon.com/s?k=mini+usb+audio+adapter",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQzpyihrVF6migrBcW6uUB2262ot2QM5xmRYTrXNVkzYA4Hm9jAmdHWE8Y2KMQB4J17Ow2Ezfp8uoVEuuthNqZi4n3qCIoDHFvoOZ6qaUeH13nIZ278Fco2LNMBJPdhi4OsW2jtksKyy8hpJjiAjKqhA1Bv6liKnle8DgMJRcKl5tFqu5tMOZIpL83dPhVvR4fRMiNDBwZ7iZn6X5MVPMFN1UQaMmR1vEF6AFlqlFduWbZO1MT9SqNNhwKlvYPwPyVGy0pUOeLknQ2MqYEjzsIAJOJWtKlq5IGjaUanNsqPOcXGSZCgohWe7S8ukQZ1tYQtBqyxiWIpZwH8q3MA4giiguo9jlY9B2d4SJOiRw1NO39gQC7hXAMCQTEDJdCgppgX0NVzq6qILat07pN3rK1OE2qUBSWXwmvpaaNHboLOmdwfJlCTNysjPUBl63aIwXTurOSuUJuxm9UmugaXNG4h5bU7ejMv4IxZJ1UgGiiiNzVhOhdlQ1dnb3O4gsWdhVI1hDmqkYmHJbZkbf1LicslclhISVulgVdE2FIL9HErqZGXBrszC0KPLmCq7XIHomBJ43laeGrRHivKPT3ZRPtkBdIxWh2vUf5d1LCvVDpkPUSkrpRlmpJvV0dYwvgG4wk63qV0QYxJZaezh4HSpzebt",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+USB+Audio+Adapter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "cyberdeck_base_chassis",
+      "name": "Custom Modular Chassis Base",
+      "type": "3d_printed",
+      "partId": "524d3b11-c6fc-4af5-a034-ad1898076ad4",
+      "category": "mechanical",
+      "material": "Carbon Fiber PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "220x150x50mm",
+      "position3d": {
+        "x": 0,
+        "y": 25,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 220,
+        "height": 50
+      },
+      "description": "Main lower enclosure, custom 3D-printed modular chassis component. Houses the Raspberry Pi, battery, power boards, E-Ink display, controls, USB hub, and internal sensors. Designed for ruggedness and weather resistance.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=carbon+fiber+PLA+filament",
+      "estimatedCost": 40,
+      "printSettings": "High infill, waterproof layer lines",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "cyberdeck_lid_chassis",
+      "name": "Custom Modular Chassis Lid",
+      "type": "3d_printed",
+      "partId": "125053b5-fa5b-4e84-abf2-d6629f2ba9ec",
+      "category": "mechanical",
+      "material": "Carbon Fiber PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "220x150x25mm",
+      "position3d": {
+        "x": 0,
+        "y": 62.5,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 220,
+        "height": 25
+      },
+      "description": "Upper lid enclosure, custom 3D-printed modular chassis component. Houses the 7-inch IPS primary display and the small round HUD display.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=carbon+fiber+PLA+filament",
+      "estimatedCost": 30,
+      "printSettings": "High infill, waterproof layer lines",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "radio_bay_insert",
+      "name": "Baofeng Radio Bay Insert",
+      "type": "3d_printed",
+      "partId": "52283d33-d4a9-4d96-bc05-66c88274f6fc",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "105x55x35mm",
+      "position3d": {
+        "x": 100,
+        "y": 25,
+        "z": -30
+      },
+      "boundingBox": {
+        "depth": 55,
+        "width": 105,
+        "height": 35
+      },
+      "description": "Custom 3D-printed modular insert for the side of the chassis, designed to snugly hold the main body of the Baofeng UV-5R radio with controls exposed.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=matte+olive+drab+filament",
+      "estimatedCost": 8,
+      "printSettings": "Medium infill, strong walls",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "port_panel_insert",
+      "name": "External Port Panel Insert",
+      "type": "3d_printed",
+      "partId": "7856f14a-6cd2-4f75-87c2-eaff3878393d",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "100x50x20mm",
+      "position3d": {
+        "x": -100,
+        "y": 25,
+        "z": 30
+      },
+      "boundingBox": {
+        "depth": 50,
+        "width": 100,
+        "height": 20
+      },
+      "description": "Custom 3D-printed modular insert for the side of the chassis, integrating the heavy-duty 5V power input, ruggedized USB ports, and the multi-spectrum LED array.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=matte+olive+drab+filament",
+      "estimatedCost": 7,
+      "printSettings": "Medium infill, strong walls",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "rpi_mount",
+      "name": "Raspberry Pi Mount",
+      "type": "3d_printed",
+      "partId": "032181de-be69-47b3-b421-ed3005a8293c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/xLSP1qrkY3RnVOggKQodJqD2EEwEahiBVZOsn7Cqsic/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kZXNr/cGkuY29tL2Nkbi9z/aG9wL2ZpbGVzL0RQ/LTAwNDYtMTFfM2Q2/ODc1MDItYWE2Mi00/YWJlLTliMGYtMjVl/NGU1ODJlNDljLmpw/Zz92PTE3NTA4MzE3/NzYmd2lkdGg9MTQ0/NQ",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "90x60x10mm",
+      "position3d": {
+        "x": -55,
+        "y": 28,
+        "z": 35
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 90,
+        "height": 10
+      },
+      "description": "Internal mount for securing the Raspberry Pi 4B within the main chassis base.",
+      "productName": "Raspberry Pi Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 2,
+      "printSettings": "Standard",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "battery_tray",
+      "name": "LiPo Battery Tray",
+      "type": "3d_printed",
+      "partId": "249589e2-6ff6-4b3c-a3e2-f4572f25dc65",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/DtKdt5L3DhxQILMuUVSpJHB7diKHj4Rh9B2_tAVUoO8/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2FkWUFB/T1N3dDIxZ3Q4am0v/cy1sMTQwLndlYnA",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "Layer height: 0.15mm, Infill: 80%, Process: SLS"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "dimensions": "185x85x65mm",
+      "position3d": {
+        "x": 0,
+        "y": 32.5,
+        "z": -30
+      },
+      "boundingBox": {
+        "depth": 85,
+        "width": 185,
+        "height": 65
+      },
+      "description": "Custom tray to securely hold the 50,000 mAh LiPo battery pack inside the chassis base.",
+      "productName": "LiPo Battery Tray",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 5,
+      "printSettings": "Medium infill, strong walls",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "power_board_mount_plate",
+      "name": "Power Module Mount Plate",
+      "type": "3d_printed",
+      "partId": "8410df1a-809a-4978-a329-04bdd4ec9c5b",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "60x40x5mm",
+      "position3d": {
+        "x": -80,
+        "y": 27.5,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 60,
+        "height": 5
+      },
+      "description": "Mounting plate for the LiPo charge controller and main 5V DC-DC converter.",
+      "productName": "Power Module Mount Plate",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 3,
+      "printSettings": "Standard",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "primary_display_frame",
+      "name": "7-inch LCD Bezel/Frame",
+      "type": "3d_printed",
+      "partId": "68ba017d-f717-41cd-a5a8-a156f257637e",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "170x110x5mm",
+      "position3d": {
+        "x": 0,
+        "y": 63,
+        "z": 0
+      },
+      "boundingBox": {
+        "depth": 110,
+        "width": 170,
+        "height": 5
+      },
+      "description": "Bezel to secure and frame the 7-inch IPS LCD screen in the chassis lid.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 4,
+      "printSettings": "Standard",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "secondary_display_frame",
+      "name": "E-Ink Display Bezel/Frame",
+      "type": "3d_printed",
+      "partId": "711ac905-ec69-4a88-9cfe-9e99c2955d4d",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "108x83x3mm",
+      "position3d": {
+        "x": 60,
+        "y": 27,
+        "z": 40
+      },
+      "boundingBox": {
+        "depth": 83,
+        "width": 108,
+        "height": 3
+      },
+      "description": "Bezel to secure and frame the 4.2-inch E-Ink display on the chassis bottom panel.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 2.5,
+      "printSettings": "Standard",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "tertiary_display_mount",
+      "name": "Round HUD Display Mount",
+      "type": "3d_printed",
+      "partId": "1dc7fba3-7c3a-457e-897f-452757ae762c",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "45x45x8mm",
+      "position3d": {
+        "x": -80,
+        "y": 63,
+        "z": -20
+      },
+      "boundingBox": {
+        "depth": 45,
+        "width": 45,
+        "height": 8
+      },
+      "description": "Small mount for the 1.28-inch round LCD screen near the top edge of the lid.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "Standard",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "control_panel",
+      "name": "Control Deck Panel",
+      "type": "3d_printed",
+      "partId": "ddfd238f-b21b-4fc2-9a25-652d10781b49",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "120x60x10mm",
+      "position3d": {
+        "x": -50,
+        "y": 45,
+        "z": 60
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 120,
+        "height": 10
+      },
+      "description": "Front panel section on the chassis base for mounting the rotary encoder and toggle switches.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=matte+olive+drab+filament",
+      "estimatedCost": 6,
+      "printSettings": "High infill, sturdy",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "gps_dome_shroud",
+      "name": "GPS Antenna Dome Shroud",
+      "type": "3d_printed",
+      "partId": "b1bd66d8-d3df-4461-9d8b-61b66b3b8763",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "30x30x20mm",
+      "position3d": {
+        "x": 0,
+        "y": 70,
+        "z": -60
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 30,
+        "height": 20
+      },
+      "description": "Protruding, domed cover for the Beitian GPS antenna module, designed for outdoor exposure.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 3,
+      "printSettings": "Waterproof, UV resistant",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "sensor_window_mount",
+      "name": "Sensor Window Frame",
+      "type": "3d_printed",
+      "partId": "41062451-f649-458c-b136-66a67af4a7f4",
+      "category": "mechanical",
+      "material": "Clear PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "20x15x5mm",
+      "position3d": {
+        "x": -80,
+        "y": 30,
+        "z": -5
+      },
+      "boundingBox": {
+        "depth": 15,
+        "width": 20,
+        "height": 5
+      },
+      "description": "Small frame to hold a clear protective window over the BME280/BNO055 sensors.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=clear+PETG+filament",
+      "estimatedCost": 1,
+      "printSettings": "Standard",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "led_array_housing",
+      "name": "LED Array Housing",
+      "type": "3d_printed",
+      "partId": "e62358f3-e66a-4778-8de9-5a384e52351e",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "45x25x20mm",
+      "position3d": {
+        "x": -100,
+        "y": 25,
+        "z": -5
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 45,
+        "height": 20
+      },
+      "description": "Housing for the cluster of high-power White, UV, IR LEDs, integrating with the heatsink and port panel.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 4,
+      "printSettings": "High infill, heat resistant",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "status_led_panel_frame",
+      "name": "Charge Status LED Panel Frame",
+      "type": "3d_printed",
+      "partId": "4765e091-83d9-4dbf-a189-8ff302ae8bed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "50x25x3mm",
+      "position3d": {
+        "x": 30,
+        "y": 27.5,
+        "z": 60
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 50,
+        "height": 3
+      },
+      "description": "Frame for flush mounting the battery charge status LED panel.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 1,
+      "printSettings": "Standard",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "rtl_sdr_antenna_port",
+      "name": "RTL-SDR Antenna Mount",
+      "type": "3d_printed",
+      "partId": "988d0585-55af-4fc9-badd-01e2623461e1",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "20x20x15mm",
+      "position3d": {
+        "x": -100,
+        "y": 40,
+        "z": 15
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 20,
+        "height": 15
+      },
+      "description": "External mount point for the RTL-SDR telescopic antenna, providing a secure connection.",
+      "productName": "",
+      "purchaseUrl": "https://www.amazon.com/s?k=black+PETG+filament",
+      "estimatedCost": 1.5,
+      "printSettings": "Standard",
+      "aliexpressUrl": null
+    },
+    {
+      "id": "rugged_hinge_set",
+      "name": "Heavy-Duty Waterproof Hinges",
+      "type": "structural",
+      "partId": "10beec53-bf23-47e1-a971-bde461c13868",
+      "category": "mechanical",
+      "material": "Stainless Steel",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0CG19CFC1?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "50x30x8mm",
+      "position3d": {
+        "x": -70,
+        "y": 50,
+        "z": -72
+      },
+      "boundingBox": {
+        "depth": 30,
+        "width": 50,
+        "height": 8
+      },
+      "description": "Robust, waterproof hinges for connecting the chassis base and lid.",
+      "productName": "Stainless Steel Marine Grade Hinges",
+      "purchaseUrl": "https://www.amazon.com/s?k=heavy+duty+waterproof+stainless+steel+hinges",
+      "estimatedCost": 15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxw3IroTc8ahJ6cQcxuwPUMOn2ph2ZWbrryU1c7ICQwj2u8lmvwIpg0oEFTIYH87kOvPWCYKPIIwk8EQCHZ0zM1TsJMNc6NL8usDfbty4rFdLx9bL6uH5mex6gdZdpPcfWL3HAYhJXE2DL1XbshHylNCgemLeMB607UWMN1tsIvvhI1I96RpZlc8ENIvyhSEnwPXlvO4qm4xbJmeMprXB5SohWzS2gO8dOWfmj8EGLz7L7hKPZGOy5NAV9BvSs5zbthoAlp4OkZCBAAcQ4iWyS1SsEgF5kkSlpK3dX69KZs8c3iiM2YNefUDH3vut4nrxDaKlMyl2xs0jkyLXt96W7RN825QjHn8mmKFl8Pn04HaKFWZ9Mtyzisyd4ycjVEVX8RrnJMJIhxH1jGT2wOMqfDPPEg58mrFU3tEDWKEx27yNfRsleCdaToSvPQnTnTnzBCRuNPcY8Zhi5FwfWPU6dIujxCsku0Nv0zpFVUz1oUKmH13sk0sVQduxWkc7z8dZ2NhL5L3HgCWC4iLufqzPusakMVHeDkeM5DFPubGy31k1o3XdBWzL5olklg61cOnCEbKBSMW8rnPdIBYibpfqw0LG4Tv3GN2daYP3bCunBgGzRnJElf9filkZcMwI8vASxcMfFm3Qgthq8Pc6AXxjgC0T",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Stainless+Steel+Marine+Grade+Hinges&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rugged_latch_set",
+      "name": "Heavy-Duty Waterproof Latches",
+      "type": "mechanism",
+      "partId": "fce665a2-308c-44c0-bf04-f7fa7d4c1c26",
+      "category": "mechanical",
+      "material": "Stainless Steel",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B0DBVVT4C8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "60x25x15mm",
+      "position3d": {
+        "x": -70,
+        "y": 50,
+        "z": 72
+      },
+      "boundingBox": {
+        "depth": 25,
+        "width": 60,
+        "height": 15
+      },
+      "description": "Secure, waterproof latches for firmly closing the chassis lid.",
+      "productName": "Stainless Steel Toggle Latches with Hasp",
+      "purchaseUrl": "https://www.amazon.com/s?k=heavy+duty+waterproof+toggle+latches",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHtuoHXlixa3Ydhrr9UecW8ubGElScbt9FR3EWkVYCWwdgABkjhCtbL4MsGHf8vJj0QgGShsk2gAKn8Snr3jntQbDGN9aoMSmuzHYlAtlRCkIbNrwzlrHDPmzWikkwUFNQB2i6SRIjwdakHFo6eHX9f4MIqNRJUutPXscFQ4wLeeTi6f5Z4vREZQ3H5l8NY6xgSSSC6rhu5U36Lg1EBpQSEWIFqYMGNyW0dFiAlxYJhkZO5Q9FdPAvVS3KgWGqOB6vcPiUtCQp7d8Vp4REsA1AvoCyPvuj54opjq1EpAK19OaITfT1vLEVsqVkS3bV4gbf1MHe4LRIzpyJBdxTS2a8IHxYQLlS2plsifb40xiGXbpDgoj3gqvqU8VcTTzz9WSiznwlScKttz9eIlXMJRnxreMj1pS0ZXA2C2F5VpxYoGa7NBnyp9UdFcJuNxaXC9FGXvwa2oCTDYEmhoCWinMkj5I5dJjKdnHqLSkvvwBsU1SuVYGuRMHx1n7lDYSvApX7JiFifZPG9lk6S5x1jjWlqSYKewrkXYzg0tc3QDl02BTgGXodG70mio4KGDydwPJk10qz3XQItH9rYg4BwSTeyqYHiWZ7gUGxb91bXM6kXEK9cusULjNjZ75OKbZrQBbcKjQBB2l9VjSqQVEUcSIj67",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Stainless+Steel+Toggle+Latches+with+Hasp&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "chassis_sealing_gasket",
+      "name": "Chassis Sealing Gasket",
+      "type": "misc",
+      "partId": "87e6b252-4ff4-4170-a6bd-d57a9605c6f3",
+      "category": "mechanical",
+      "material": "EPDM Rubber Foam",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FPLB3ZSJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "600x10x3mm",
+      "description": "Custom-cut gasket to ensure a waterproof seal between the chassis base and lid.",
+      "productName": "Custom Cut EPDM Foam Gasket",
+      "purchaseUrl": "https://www.amazon.com/s?k=EPDM+foam+gasket+sheet",
+      "estimatedCost": 5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3vpKIIt",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Custom+Cut+EPDM+Foam+Gasket&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_stainless_bolt",
+      "name": "M3 Stainless Steel Bolt",
+      "type": "misc",
+      "partId": "c37d3327-d2f3-45b5-b4f7-18ebbeb2ca53",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/K3GSjdghr5ggOnsXPtwKc7AAElzU1H-fI5pA-9a9Py8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFWelFmcHhaVkwu/anBn",
+      "material": "Stainless Steel",
+      "quantity": 30,
+      "amazonUrl": "https://www.amazon.com/dp/B0FKLRP6P4?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "General purpose fasteners for assembling chassis modules and mounting components.",
+      "productName": "M3x10mm Stainless Steel Hex Socket Cap Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x10mm+stainless+steel+socket+cap+screws",
+      "estimatedCost": 0.15,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3WSBoyH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Stainless+Steel+Hex+Socket+Cap+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m3_stainless_nut",
+      "name": "M3 Stainless Steel Nut",
+      "type": "misc",
+      "partId": "d2d0f821-8876-46bb-9ba1-98cdd29f81e5",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/deaOdD7Twa6bcRx_E-fhus0PFnznF4SDYyrhMoUiGaI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c3MtYm9sdC5jb20v/cGhvdG8vcGMzMzA3/NTAxMy1tMl9tM19t/NF9tNV9oZXhfaGVh/ZF9udXRzX3N0YWlu/bGVzc19zdGVlbF9z/dGFtcGluZ19yZWN0/YW5ndWxhcl90aGlu/X251dC5qcGc",
+      "material": "Stainless Steel",
+      "quantity": 30,
+      "amazonUrl": "https://www.amazon.com/dp/B08N68W9SP?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "For use with M3 bolts.",
+      "productName": "M3 Stainless Steel Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+stainless+steel+hex+nuts",
+      "estimatedCost": 0.05,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxGJmOrxlMpDubYQYtLNRkBdFEJOK3mI6BO6T0MS7MxRIrPQPAly6lJw0dyItkwyiVNyfC4J6d9ViNmKebAbKFlGeqJaV5C3fT2oSvowjAJGp9au12oHRy0biKjpP6LiBBikjM65l3S5hL1RpBDwYCT2abZJqgsLQYPyZjdBQV1k9or8XqGxmugXqSl4NrMhUf8QCflFv2ksQXuSgW507PfTJu8iGdBzuPy4mKblM9FUNDHdMjSMPoewUKrbAkD3G0EIVfkGJrWm65PFBlHiT3XK7jj2eEayMpJdiWd9XnXHUZGo9GPq9iKtEtee4ABjVZkvuTBF7VjEE9MAZPfmWvEXfb8ud1vHaEpQBDS574qkI4JwvigBFnwcBOjYC8tXip7CWf7h1TVLAnu8HTWhG4UmfYLS6rniI7MuY04bLp1Be4340bL9OxcFdhgmIX4CDMaCoysGqpwqqVCdw6ilk9Edy94rlyYGMl3shVTURNjtZjxNlFhu0p0jtjC3Ob35aK2cFsX5ZUFiI06Qzta3Y6wQT8ciNj5R7tVy1C5gAXfHs0qAleazxnDk6we953KCYKw9TtoUJf1PXI8KRcjXASOLZeFFhF98fFrcooiIzlleA8NNyouNEYwBNyn2yvYzrRWXfHQnaHvf7J5pgW3FYa9jH",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Stainless+Steel+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "m2_brass_standoff",
+      "name": "M2 Brass Standoff",
+      "type": "misc",
+      "partId": "f3a87412-0e5e-41ca-933d-060529607084",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/9Yh416S5L-GWudbmB71wLQTS7SxUUQ-Y4GxQduuhfuc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzEtMy1ESyt5cUwu/anBn",
+      "material": "Brass",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B0FLH1V4V6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M2x10mm",
+      "description": "For mounting PCBs (Raspberry Pi, power boards) within the chassis.",
+      "productName": "M2x10mm Brass Standoffs",
+      "purchaseUrl": "https://www.amazon.com/s?k=M2x10mm+brass+standoffs",
+      "estimatedCost": 0.3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3WOfYy5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M2x10mm+Brass+Standoffs&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "rotary_encoder_knob_machined",
+      "name": "Machined Aluminum Rotary Knob",
+      "type": "misc",
+      "partId": "0333b816-305f-4398-8656-09c65bd2d39b",
+      "category": "mechanical",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B07FVLVB55?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "20x20x15mm",
+      "description": "High-quality, tactile machined aluminum knob for the rotary encoder.",
+      "productName": "Machined Aluminum Rotary Encoder Knob",
+      "purchaseUrl": "https://www.amazon.com/s?k=machined+aluminum+rotary+encoder+knob",
+      "estimatedCost": 10,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHQqNFGnhkgnKhKsqGamtrmunbxWvJsfaq2KgMdQfRbNFDDVpd26IxQig5jaqpPaonSnVYKc0k2mOViBlwtij9tEUsNVFWLC01SY3AYhMJ0dVXkJPstV0s01lq2pmBCHRSAIKjorzDCmrew1aDhvimhH9b962BJ9WaUIZwD8HmBugs5JGcIcAuJ254uPuWGynpwXEhqhOqNr1qXh227FXem5jWbjEqG55zHdmvPpJQ8rzt6YCQBisHD8WwsQxVXKeWVipbuo3veJkC8zg3HWGFQVEFRkKuNLDLM1n4xdyj9irBM7KRxYPK2fbf25geNyenDIJruj4emkMwHIgjMzdydDSEw29kHHFr7PbqFiTYpybLaVdun6Znh7UesTZAyjflFQwF1jdORjA1fVZbXNbk5PfwVH7bNvjwIC6QGwiyAopin8gnMYX88NMZbQHc6QX0RnRbwHCgOSu2JHixL1lGmFzIZ60dI2oIFVUVntMCzaZaJUKKwxyHNsyTJ3zftHa5ULdjBaBJbBKt2VxlvoOPWY2fOXwTKEG63xWKsyWs7Tkxf2Scm0XqiYOAKleQyE1syHrEI67YeBhoJAzs8qncmiAvrfZ6QkSRNr2nWTskNHJ24Tfqj06BWa9mgzD2Y9mmPLlhmWoQ4Ap7a1cRUrxXEj",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Machined+Aluminum+Rotary+Encoder+Knob&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "toggle_switch_safety_cover",
+      "name": "Toggle Switch Safety Cover",
+      "type": "misc",
+      "partId": "93a91110-1d48-4ac5-9667-4ae008c9c408",
+      "category": "mechanical",
+      "material": "Plastic/Rubber",
+      "quantity": 2,
+      "amazonUrl": "https://www.amazon.com/dp/B07T6YNRZS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "25x15x20mm",
+      "description": "Protective covers for the heavy-duty toggle switches.",
+      "productName": "Waterproof Toggle Switch Safety Cover",
+      "purchaseUrl": "https://www.amazon.com/s?k=waterproof+toggle+switch+safety+cover",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRNXSLZZdlkUEQbHQU1CzVjfZvyJktuWoSxRHmKwlZIHcTDhkGxLw1b9XhLhS1gGxIosxPnPF4Tpa1bK9dpJ0Z4D4SzVt5MuCHNQ6F4SG7qQbaQaTRRLOFW1iQ5JA6ZWRwyiBvAPMVVB5TMOVQGLHstoMQwq6XMTARvXP5ZeJuaok6lwOeQRbbAnvmdJpIDERWAU7HfmXLt7MDasEN1EfSXI0X1AyjQh116LarasfrI9Pk0hrHxGZ5JKm5NQaU22ZSODPhwBYqEJoPkhAmtBYCuZ7O0iw3yKR5Vs9Acb6Sw1aAl4WlldJL9amwmf9fjIwtw6tFLnZD9Apey4ByscwLC6JN5ANTZMddhvLmhRxJnEc4ghwxJ5lIek84xgD9KtChQDn4KW3I091X2iJRuFDzW1VpzgVJ9iofs72Fp7VhjPwbwsdVFzWHfEnPC0xXPY0rIxBqkqYq95NSPjPITF3iW4oMoOAmGyqBvxisRuYSzMN864POEDA2YtQ2Z44S1mGOpY6GVHD36FCDFASWakDLPgAU17TDRTvWWabEWgJxDVc4JSLFQ5axoXbwTW4H2z7hbTQPrLO0MKiD7bsii7fr31gFPKQHpNtOe2Wug8Um8lMaeBborRKbwTMY6ArfOmaSlO4BaMvRndTpvS9CkP8FO3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Waterproof+Toggle+Switch+Safety+Cover&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "led_array_heatsink",
+      "name": "LED Array Heatsink",
+      "type": "misc",
+      "partId": "6052b53f-c36b-4e0d-b96d-1bbc73b66d68",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/CxDw04YwHY9B2EHoEQ1x4RmwshotUFHlKRRFbmCg7QM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFuNzRWckxqQUwu/anBn",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09M5XJC1S?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "40x20x10mm",
+      "description": "Aluminum heatsink to dissipate heat from the high-power LED array.",
+      "productName": "Aluminum LED Heatsink",
+      "purchaseUrl": "https://www.amazon.com/s?k=led+array+heatsink",
+      "estimatedCost": 8,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/2YgDK2cRCyl9WNkj7vsiSgwQncOI32ZVsrEzbicWkRKbFTNMQbqbkcFOG1OBsMpz0QZ56yDUfJ22csduZdiHbgpEF7Ex3UKlAchlGNBsOXNNF88rwsDtIBwGctERXF9F8Kr7I88X0k96g6ZMhkO3P6ToLVxDdHRMGJpxZpIjxnmHAvyJtyadmk38EGe6i2o8G7iaV7tYZArmhfSTEi2pVyWdpS5Ka22Bg1szqfWcQUeNEjawjvRvXvFLTCW8qblr7wOZUa4C5MI6y0qLQDHLWOVtAJdfQPdNZVN5NXMyndb7vp2IqLBSyXOclU7pGSyOcqLKY2UAJAAgj2bJi0SPoTa4Yj1xNmKkMIrXwfRMGmbf1kOjoMPMyCmo3pk8T1IPqYkTvr416R4usdZdcEwbgM6KRsNOy7eekerd8hR9v6ggVpKqYVUefe2dFpXykwnTwcSBCQS55rcjqMLWcUOPIrB3nIVEsFwciDZnb1DARoODa4wCOT8TTu1O5ve1IEDqXhbIZ6j6OEfVKVfsQiedwtuGwd652ssv46Ax3YfH5oz6dLvZ6juw0tfXVpYUnLcbrwZ9GLFuMuozYpDWNpodOM0nsGBylKgPLSpCMH2ynm9nuf0eki8sxbaLgXM9lfzHVnfBpNvMIwd8D832U4q9eXO0JcmPxYHF41xLQBa5uGjb0aDnrsFh3GfbCdxDTnKTMRbeCOYiqKSrVg87ohdWJVeBQuLPmfHDnW5lmzk6EizV4woQNcRrQY5CLbsDFb7TGLBZo7sUcppPBTtwqwFC7i1m4iasPS1SUnYtfcO8th2XohV1EuI4NINGUass2bfy748uJQctqPSoMltxx7v4CBpa6FEx6Rq184kEQHrUnZpkoejw1Oj1CzvIa8OBpBguvHR2Hwx16GSw6zT8ksBlignCAUoZ0FUrgV9BLOCrCvgNA6a3Gh",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Aluminum+LED+Heatsink&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    },
+    {
+      "id": "waterproof_clear_window",
+      "name": "Sensor Protective Window",
+      "type": "misc",
+      "partId": "45e03fb9-076d-41db-b2af-795ff727073c",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/MSJZbuyI2bx3RUcwMG4Pf9LHygCfmLKK15fxcMMd88k/rs:fit:500:0:1:0/g:ce/aHR0cDovL3d3dy53/ZXByb2ZhYi5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MDUvMm1tLUFjcnls/aWMtU2hlZXQtYy5q/cGc",
+      "material": "Acrylic",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BM4RVYX6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "15x10x2mm",
+      "description": "Small, clear acrylic pane to protect the environmental and IMU sensors.",
+      "productName": "Acrylic Sheet 2mm",
+      "purchaseUrl": "https://www.amazon.com/s?k=acrylic+sheet+2mm+clear",
+      "estimatedCost": 1,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR1cAW3QCruR9WzG2PIV8ckmEWQL6fuebBDSMFfpsfWIGmd2fY3FuavV7CyeuO3uWVmwZlKvBOTt1CFoFXbcU8MKKVWZo5m6p6YqtDoSxyejKOOK8ZwgKUwNDC0YEn5oV4DvPcahvRb2Hj9jbFazPbhqbpYBIxe5w5wGFmDM3Yi5otEt8jkBqmweJpQlucQdYOPQNP2ICHuhGA8ZU44CtRWmbgMJXKC1TTWrSwcEc0YObAf3OQkITkJGMxHGdvdRrmQF7gjlDPTCirJGp7Byw5yoolBeY8e5McPGVEvbDjHLz583GzxvV1UisB0grvYJW0Bt7hOlsI1NxKTB9tYMn5oLyfi5CRW5lpOZkmLubDowY7SNhvageW5MBsydxh9Tt1LgNBipCkVPBmibn1nPs5aQ2BM2Co4Z2KmBqeF9hwn4enPlgPuNHz41YRYe0019zAbM1N07REDfIYICllHdkLFO6m3CBcWHQoCSF9T7Ou9mKn7ERBzSRswPohESw9NFLz3sTVxHXoPLS2iIA90qdy6Y37AHBRVtcDx2SP1OMeW3PVOp48s05Wb0kb81q4gLq8AnuOVbwLLLIFhOfp3XzT3NOFrWwsU5ra5cXplbhltmH8IPCA53oYyfNHmHjNpBKRaGpa8c35spZqIZ6iU548r1",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Acrylic+Sheet+2mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1"
+    }
+  ],
+  "notes": [
+    "rugged tactical survival",
+    "mountain off-grid use",
+    "Pelican-style case",
+    "military-grade field equipment",
+    "carbon fiber chassis",
+    "matte olive drab/black",
+    "thick tablet size",
+    "weather-resistant",
+    "tactile rotary encoder",
+    "waterproof toggle switches",
+    "dramatic utilitarian lighting",
+    "high photorealism",
+    "glowing screens",
+    "heavy-duty cabling"
+  ],
+  "projectName": "Tactical Cyberdeck",
+  "originalPrompt": "Subject: A rugged, portable tactical survival computer (\"Cyberdeck\" style), designed for mountain and off-grid use.\n\nForm Factor & Material: A hard-shell, weather-resistant pelican-style case or a custom 3D-printed modular chassis (carbon fiber or matte olive drab/black texture). It should look like military-grade field equipment. Dimensions are roughly the size of a thick tablet or a small netbook.\n\nPrimary Display (Inner Lid/Top Panel): A 7-inch IPS LCD screen (for Raspberry Pi), displaying a topographical map or an SDR (Software Defined Radio) waterfall interface.\n\nSecondary Display (Bottom Panel/Control Deck): A 4.2-inch E-Ink (e-paper) screen, displaying clear, high-contrast GPS coordinates, altimeter data, and breadcrumb trails.\n\nTertiary Display (HUD): A small, round 1.28-inch LCD screen mounted near the top edge, displaying a digital compass rose and weather arrows.\n\nControl Interface (Bottom Panel): A prominent, tactile rotary encoder knob (machined aluminum) with push-button functionality. A set of heavy-duty, waterproof toggle switches with safety covers (for power management).\n\nRadio Integration: On the side or physically slotted into the chassis, the main body of a Baofeng UV-5R radio (antenna protruding from the top). Short, coiled patch cables connecting the radio's side jacks into the main chassis.\n\nSensors & Emitters: A protruding, domed GPS antenna module (Beitian). A small, protected window for BME280/BNO055 sensors. A cluster of 3 high-power LEDs (White, UV, IR) mounted on the front or side edge like a directional flashlight array, covered by a heat sink.\n\nPower & Ports: Visible heavy-duty 5V power input ports. A status LED panel showing the charge of a massive 50,000 mAh internal battery. Exposed, ruggedized USB ports for plugging in the RTL-SDR dongle (with its small telescopic antenna attached).\n\nLighting/Atmosphere: Dramatic, utilitarian lighting. Rendered with high photorealism, emphasizing the varied textures: matte plastic, brushed metal knobs, glowing screens, and heavy-duty cabling. The E-ink screen must look distinctly like electronic paper (matte, no backlight), while the 7-inch screen is bright and vivid.",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Print core chassis components (base and lid)",
+          "detail": {
+            "tip": "To ensure maximum weather resistance and strength, consider drying your Carbon Fiber PETG filament before printing to prevent moisture-related print defects and choose a print orientation that minimizes visible layer lines on critical sealing surfaces.",
+            "steps": [
+              "Prepare your 3D printer with a clean, leveled bed and load Carbon Fiber PETG filament (matte black or olive drab).",
+              "Print the Custom Modular Chassis Base (220x150x50mm) using Carbon Fiber PETG, ensuring high infill (>60%) and settings optimized for waterproof layer lines.",
+              "Print the Custom Modular Chassis Lid (220x150x25mm) with the same Carbon Fiber PETG material and high infill/waterproof settings.",
+              "After cooling, carefully remove both chassis components and thoroughly inspect for dimensional accuracy, layer adhesion, and any defects that could compromise weather resistance or structural integrity."
+            ],
+            "summary": "3D print the robust cyberdeck chassis base and lid."
+          },
+          "partIds": [
+            "cyberdeck_base_chassis",
+            "cyberdeck_lid_chassis"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Print modular chassis inserts (radio bay, port panel, control panel)",
+          "detail": {
+            "tip": "For a truly tactical look, ensure your PETG filament is a matte finish and consider matching the color to the Carbon Fiber PETG chassis, or using a contrasting dark color.",
+            "steps": [
+              "Load PETG filament (matte olive drab recommended) into your 3D printer.",
+              "Print the Baofeng Radio Bay Insert (105x55x35mm) with medium infill and strong walls (e.g., 3-4 perimeters).",
+              "Print the External Port Panel Insert (100x50x20mm) using the same PETG settings.",
+              "Print the Control Deck Panel (120x60x10mm) with high infill (>60%) for extra sturdiness.",
+              "Inspect all printed inserts for fit, finish, and ensure all mounting points and cutouts are clear and accurate."
+            ],
+            "summary": "Print all modular chassis inserts for controls and peripherals."
+          },
+          "partIds": [
+            "radio_bay_insert",
+            "port_panel_insert",
+            "control_panel"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Print internal mounts and trays (RPI, battery, power boards)",
+          "detail": {
+            "tip": "For the battery tray, consider reinforcing critical stress points in your slicer software to ensure it can withstand the weight and potential vibrations of the large LiPo pack during rugged use.",
+            "steps": [
+              "Load black PETG filament into your 3D printer.",
+              "Print the Raspberry Pi Mount (90x60x10mm) and Power Module Mount Plate (60x40x5mm) using standard PETG settings.",
+              "Print the LiPo Battery Tray (185x85x65mm) with medium infill (e.g., 40%) and strong walls (e.g., 3-4 perimeters) for robust battery retention.",
+              "Carefully remove all printed parts and verify their dimensions and fit against the corresponding electrical components."
+            ],
+            "summary": "Print internal mounts and trays for the RPi, battery, and power modules."
+          },
+          "partIds": [
+            "rpi_mount",
+            "battery_tray",
+            "power_board_mount_plate"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Print display bezels and mounts",
+          "detail": {
+            "tip": "Ensure that the visible surfaces of the bezels are printed with a high-quality finish, as they will be prominent components of the cyberdeck's aesthetic.",
+            "steps": [
+              "Load PETG filament (matte black or olive drab recommended) into your 3D printer.",
+              "Print the 7-inch LCD Bezel/Frame (170x110x5mm) with standard PETG settings.",
+              "Print the E-Ink Display Bezel/Frame (108x83x3mm) with standard PETG settings.",
+              "Print the Round HUD Display Mount (45x45x8mm) with standard PETG settings.",
+              "Inspect all printed bezels and mounts to ensure clean edges and accurate dimensions for optimal display fit and aesthetic integration."
+            ],
+            "summary": "Print bezels and mounts for all three displays."
+          },
+          "partIds": [
+            "primary_display_frame",
+            "secondary_display_frame",
+            "tertiary_display_mount"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Print sensor and LED housings/shrouds",
+          "detail": {
+            "tip": "For optimal UV resistance and waterproofing on the GPS dome, consider applying a clear UV-resistant sealant or paint after printing.",
+            "steps": [
+              "Load PETG filament (matte black or olive drab recommended) into your 3D printer.",
+              "Print the GPS Antenna Dome Shroud (30x30x20mm) with waterproof and UV-resistant settings to withstand outdoor exposure.",
+              "Print the LED Array Housing (45x25x20mm) with high infill and heat-resistant settings to support the multi-spectrum LED array and heatsink.",
+              "Print the RTL-SDR Antenna Mount (20x20x15mm) and Charge Status LED Panel Frame (50x25x3mm) using standard PETG settings.",
+              "Switch to Clear PETG filament and print the Sensor Window Frame (20x15x5mm) with standard settings.",
+              "Carefully inspect all printed parts for smooth finishes and accurate dimensions, especially the clear frame and heat-resistant housing."
+            ],
+            "summary": "Print all remaining sensor, LED, and status indicator housings."
+          },
+          "partIds": [
+            "gps_dome_shroud",
+            "sensor_window_mount",
+            "led_array_housing",
+            "rtl_sdr_antenna_port",
+            "status_led_panel_frame"
+          ]
+        },
+        {
+          "id": "fabricate_6",
+          "title": "Cut and fit the chassis sealing gasket",
+          "detail": {
+            "tip": "Pre-fitting the gasket without adhesive can help identify any areas that require trimming or adjustment for a perfect seal. Use a contact adhesive or marine-grade sealant for best waterproof results.",
+            "steps": [
+              "Measure the perimeter of the Custom Modular Chassis Base's sealing channel.",
+              "Carefully cut the EPDM Foam Gasket (600x10x3mm) to the measured length, ensuring clean, straight cuts for optimal sealing.",
+              "Apply a thin, even bead of high-strength, waterproof adhesive along the sealing channel of the chassis base.",
+              "Press the custom-cut EPDM Foam Gasket firmly into the adhesive-lined channel, ensuring no gaps or overlaps at the corners.",
+              "Allow the adhesive to fully cure according to the manufacturer's instructions, ensuring a robust and weather-resistant seal."
+            ],
+            "summary": "Cut and fit the custom EPDM foam gasket for chassis sealing."
+          },
+          "partIds": [
+            "chassis_sealing_gasket"
+          ]
+        },
+        {
+          "id": "fabricate_7",
+          "title": "Cut and fit the sensor protective window",
+          "detail": {
+            "tip": "When working with acrylic, use masking tape along your cut lines to prevent chipping and ensure a cleaner break. For optimal clarity, clean the window with a microfiber cloth before final adhesive application.",
+            "steps": [
+              "Carefully measure the internal dimensions of the Sensor Window Frame (20x15x5mm) opening.",
+              "Using a sharp acrylic cutting tool or a fine-tooth saw, cut a piece of 2mm thick Acrylic Sheet to the measured dimensions (approximately 15x10mm).",
+              "Deburr and smooth all edges of the cut acrylic piece with fine-grit sandpaper to ensure a clean finish and prevent snags.",
+              "Test fit the cut acrylic window into the Sensor Window Frame to ensure a snug, flush fit. Trim as necessary for a perfect seal.",
+              "Apply a small bead of clear, waterproof adhesive (e.g., silicone or epoxy) around the inner perimeter of the frame and carefully press the acrylic window into place."
+            ],
+            "summary": "Cut and fit the acrylic protective window for the environmental sensors."
+          },
+          "partIds": [
+            "waterproof_clear_window"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Wire the external power input, charge controller, and main battery pack",
+          "partIds": [
+            "external_power_input",
+            "battery_charger_module",
+            "main_battery_pack"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire main power toggle and 5V DC-DC converter from battery",
+          "partIds": [
+            "main_battery_pack",
+            "power_toggle_main",
+            "main_5v_buck"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect 5V power bus to Raspberry Pi and ruggedized USB hub",
+          "partIds": [
+            "main_5v_buck",
+            "main_mcu",
+            "rugged_usb_hub"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Wire Raspberry Pi GPIO to E-Ink display, round LCD, and rotary encoder",
+          "partIds": [
+            "main_mcu",
+            "secondary_display",
+            "tertiary_display",
+            "rotary_encoder"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect Raspberry Pi to GPS, environmental, and IMU sensors via UART/I2C",
+          "partIds": [
+            "main_mcu",
+            "gps_module",
+            "environmental_sensor",
+            "imu_sensor"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Wire LED array power toggle and connect to multi-spectrum LED array",
+          "partIds": [
+            "main_5v_buck",
+            "power_toggle_leds",
+            "high_power_led_array"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Connect USB hub to Raspberry Pi and prepare external USB connections",
+          "partIds": [
+            "main_mcu",
+            "rugged_usb_hub"
+          ]
+        },
+        {
+          "id": "wire_8",
+          "title": "Prepare audio interface for Baofeng radio integration",
+          "partIds": [
+            "audio_interface",
+            "baofeng_radio"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Install Raspberry Pi OS and basic drivers",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Test 7-inch IPS LCD display via HDMI",
+          "partIds": [
+            "main_mcu",
+            "primary_display"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Verify E-Ink and round LCD functionality with SPI drivers",
+          "partIds": [
+            "main_mcu",
+            "secondary_display",
+            "tertiary_display"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test rotary encoder and switch input responsiveness",
+          "partIds": [
+            "main_mcu",
+            "rotary_encoder",
+            "power_toggle_main",
+            "power_toggle_leds"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Confirm GPS, BME280, and BNO055 sensor data acquisition",
+          "partIds": [
+            "main_mcu",
+            "gps_module",
+            "environmental_sensor",
+            "imu_sensor"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Test high-power LED array illumination and control",
+          "partIds": [
+            "high_power_led_array"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Verify battery charge status panel and charging input",
+          "partIds": [
+            "main_battery_pack",
+            "battery_charger_module",
+            "charge_status_leds",
+            "external_power_input"
+          ]
+        },
+        {
+          "id": "bringup_8",
+          "title": "Test RTL-SDR dongle and Baofeng audio interface connectivity",
+          "partIds": [
+            "rugged_usb_hub",
+            "rtl_sdr_dongle",
+            "audio_interface",
+            "baofeng_radio"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the Raspberry Pi and internal power boards",
+          "partIds": [
+            "main_mcu",
+            "rpi_mount",
+            "battery_charger_module",
+            "main_5v_buck",
+            "power_board_mount_plate",
+            "m2_brass_standoff"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Install the main LiPo battery pack into its tray",
+          "partIds": [
+            "main_battery_pack",
+            "battery_tray"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount primary 7-inch LCD into lid chassis with bezel",
+          "partIds": [
+            "primary_display",
+            "primary_display_frame",
+            "cyberdeck_lid_chassis"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Integrate E-Ink and round HUD displays into chassis base and lid",
+          "partIds": [
+            "secondary_display",
+            "secondary_display_frame",
+            "tertiary_display",
+            "tertiary_display_mount",
+            "cyberdeck_base_chassis",
+            "cyberdeck_lid_chassis"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Install rotary encoder, knob, toggle switches, and safety covers onto control panel",
+          "partIds": [
+            "rotary_encoder",
+            "rotary_encoder_knob_machined",
+            "power_toggle_main",
+            "power_toggle_leds",
+            "toggle_switch_safety_cover",
+            "control_panel"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Mount Baofeng radio into its bay insert",
+          "partIds": [
+            "baofeng_radio",
+            "radio_bay_insert"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Install external port panel with power input, USB hub, and LED array",
+          "partIds": [
+            "external_power_input",
+            "rugged_usb_hub",
+            "high_power_led_array",
+            "led_array_housing",
+            "led_array_heatsink",
+            "port_panel_insert"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Mount GPS module, environmental/IMU sensors, and status LED panel",
+          "partIds": [
+            "gps_module",
+            "gps_dome_shroud",
+            "environmental_sensor",
+            "imu_sensor",
+            "sensor_window_mount",
+            "waterproof_clear_window",
+            "charge_status_leds",
+            "status_led_panel_frame",
+            "cyberdeck_lid_chassis",
+            "cyberdeck_base_chassis"
+          ]
+        },
+        {
+          "id": "assemble_9",
+          "title": "Route all internal wiring, secure with cable ties, and fasten chassis lid",
+          "partIds": [
+            "cyberdeck_base_chassis",
+            "cyberdeck_lid_chassis",
+            "rugged_hinge_set",
+            "rugged_latch_set",
+            "chassis_sealing_gasket",
+            "m3_stainless_bolt",
+            "m3_stainless_nut"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A rugged, thick tablet-sized cyberdeck for off-grid survival, featuring a Raspberry Pi, 7-inch IPS and 4.2-inch E-Ink displays for maps and sensor data. It integrates a Baofeng radio, GPS, environmental sensors, and multi-spectrum LED array within a weather-resistant, custom 3D-printed chassis, all powered by a high-capacity LiPo battery.",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (PETG and Carbon Fiber PETG capable)",
+      "Soldering iron with fine tip",
+      "Wire strippers and flush cutters",
+      "Multimeter",
+      "M2 and M3 hex key set",
+      "Small Phillips and flathead screwdrivers",
+      "Needle-nose pliers",
+      "Heat gun (for heat shrink tubing)",
+      "Adhesive or hot glue gun (for securing wires)"
+    ],
+    "assumptions": [
+      "Basic knowledge of 3D printing and post-processing techniques.",
+      "Familiarity with Raspberry Pi OS installation and basic configuration.",
+      "Basic electronics knowledge including GPIO, SPI, I2C, and UART protocols.",
+      "Competency in basic soldering techniques for PCBs and wire connections."
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "primary_display",
+      "protocol": "HDMI",
+      "sourcePin": "HDMI0",
+      "targetPin": "HDMI Input"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "primary_display",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "secondary_display",
+      "protocol": "SPI",
+      "sourcePin": "SPI0_MOSI",
+      "targetPin": "MOSI"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "secondary_display",
+      "protocol": "SPI",
+      "sourcePin": "SPI0_SCLK",
+      "targetPin": "SCLK"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "secondary_display",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO_CE0",
+      "targetPin": "CS"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "secondary_display",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO25",
+      "targetPin": "DC"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "secondary_display",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO24",
+      "targetPin": "RST"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "secondary_display",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO23",
+      "targetPin": "BUSY"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "secondary_display",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "tertiary_display",
+      "protocol": "SPI",
+      "sourcePin": "SPI0_MOSI",
+      "targetPin": "MOSI"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "tertiary_display",
+      "protocol": "SPI",
+      "sourcePin": "SPI0_SCLK",
+      "targetPin": "SCK"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "tertiary_display",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO_CE1",
+      "targetPin": "CS"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "tertiary_display",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO22",
+      "targetPin": "DC"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "tertiary_display",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO27",
+      "targetPin": "RST"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "tertiary_display",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "rotary_encoder",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO17",
+      "targetPin": "A"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "rotary_encoder",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO18",
+      "targetPin": "B"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "rotary_encoder",
+      "protocol": "GPIO",
+      "sourcePin": "GPIO20",
+      "targetPin": "SW"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "gps_module",
+      "protocol": "UART",
+      "sourcePin": "GPIO14 (TXD)",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "gps_module",
+      "protocol": "UART",
+      "sourcePin": "GPIO15 (RXD)",
+      "targetPin": "TX"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "gps_module",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "environmental_sensor",
+      "protocol": "I2C",
+      "sourcePin": "SDA1",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "environmental_sensor",
+      "protocol": "I2C",
+      "sourcePin": "SCL1",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "environmental_sensor",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "imu_sensor",
+      "protocol": "I2C",
+      "sourcePin": "SDA1",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "imu_sensor",
+      "protocol": "I2C",
+      "sourcePin": "SCL1",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "imu_sensor",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "rugged_usb_hub",
+      "protocol": "USB 3.0",
+      "sourcePin": "USB 3.0",
+      "targetPin": "USB Input (Type A/B)"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "rugged_usb_hub",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "rugged_usb_hub",
+      "target": "rtl_sdr_dongle",
+      "protocol": "USB 2.0",
+      "sourcePin": "USB Output",
+      "targetPin": "USB Type A"
+    },
+    {
+      "type": "power",
+      "source": "rugged_usb_hub",
+      "target": "rtl_sdr_dongle",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "source": "rugged_usb_hub",
+      "target": "audio_interface",
+      "protocol": "USB 2.0",
+      "sourcePin": "USB Output",
+      "targetPin": "USB Type A"
+    },
+    {
+      "type": "power",
+      "source": "rugged_usb_hub",
+      "target": "audio_interface",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "Audio Out to Baofeng Mic",
+      "source": "audio_interface",
+      "target": "baofeng_radio",
+      "protocol": "Analog Audio",
+      "sourcePin": "3.5mm Audio Out",
+      "targetPin": "K-Type Audio/Mic Jack"
+    },
+    {
+      "type": "data",
+      "label": "Mic In from Baofeng Speaker",
+      "source": "audio_interface",
+      "target": "baofeng_radio",
+      "protocol": "Analog Audio",
+      "sourcePin": "3.5mm Mic In",
+      "targetPin": "K-Type Audio/Mic Jack"
+    },
+    {
+      "type": "power",
+      "source": "external_power_input",
+      "target": "battery_charger_module",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "battery_charger_module",
+      "target": "main_battery_pack",
+      "voltage": "11.1V"
+    },
+    {
+      "type": "power",
+      "source": "main_battery_pack",
+      "target": "power_toggle_main",
+      "voltage": "11.1V"
+    },
+    {
+      "type": "power",
+      "source": "power_toggle_main",
+      "target": "main_5v_buck",
+      "voltage": "11.1V"
+    },
+    {
+      "type": "power",
+      "source": "main_5v_buck",
+      "target": "main_mcu",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "main_5v_buck",
+      "target": "rugged_usb_hub",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "main_5v_buck",
+      "target": "power_toggle_leds",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "power_toggle_leds",
+      "target": "high_power_led_array",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "source": "main_5v_buck",
+      "target": "charge_status_leds",
+      "voltage": "5V"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "connected by",
+      "source": "cyberdeck_base_chassis",
+      "target": "cyberdeck_lid_chassis"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "rugged_hinge_set"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_lid_chassis",
+      "target": "rugged_hinge_set"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "rugged_latch_set"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_lid_chassis",
+      "target": "rugged_latch_set"
+    },
+    {
+      "label": "seals against",
+      "source": "cyberdeck_base_chassis",
+      "target": "chassis_sealing_gasket"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "rpi_mount"
+    },
+    {
+      "label": "holds with M2 standoffs",
+      "source": "rpi_mount",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "battery_tray"
+    },
+    {
+      "label": "holds",
+      "source": "battery_tray",
+      "target": "main_battery_pack"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "power_board_mount_plate"
+    },
+    {
+      "label": "holds with M2 standoffs",
+      "source": "power_board_mount_plate",
+      "target": "battery_charger_module"
+    },
+    {
+      "label": "holds with M2 standoffs",
+      "source": "power_board_mount_plate",
+      "target": "main_5v_buck"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_lid_chassis",
+      "target": "primary_display_frame"
+    },
+    {
+      "label": "frames and secures",
+      "source": "primary_display_frame",
+      "target": "primary_display"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "secondary_display_frame"
+    },
+    {
+      "label": "frames and secures",
+      "source": "secondary_display_frame",
+      "target": "secondary_display"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_lid_chassis",
+      "target": "tertiary_display_mount"
+    },
+    {
+      "label": "holds",
+      "source": "tertiary_display_mount",
+      "target": "tertiary_display"
+    },
+    {
+      "label": "integrates",
+      "source": "cyberdeck_base_chassis",
+      "target": "control_panel"
+    },
+    {
+      "label": "mounts",
+      "source": "control_panel",
+      "target": "rotary_encoder"
+    },
+    {
+      "label": "attaches to shaft of",
+      "source": "rotary_encoder_knob_machined",
+      "target": "rotary_encoder"
+    },
+    {
+      "label": "mounts",
+      "source": "control_panel",
+      "target": "power_toggle_main"
+    },
+    {
+      "label": "mounts",
+      "source": "control_panel",
+      "target": "power_toggle_leds"
+    },
+    {
+      "label": "receives",
+      "source": "power_toggle_main",
+      "target": "toggle_switch_safety_cover"
+    },
+    {
+      "label": "receives",
+      "source": "power_toggle_leds",
+      "target": "toggle_switch_safety_cover"
+    },
+    {
+      "label": "integrates",
+      "source": "cyberdeck_base_chassis",
+      "target": "radio_bay_insert"
+    },
+    {
+      "label": "holds",
+      "source": "radio_bay_insert",
+      "target": "baofeng_radio"
+    },
+    {
+      "label": "integrates",
+      "source": "cyberdeck_base_chassis",
+      "target": "port_panel_insert"
+    },
+    {
+      "label": "mounts",
+      "source": "port_panel_insert",
+      "target": "external_power_input"
+    },
+    {
+      "label": "mounts (internal to ruggedized ports)",
+      "source": "port_panel_insert",
+      "target": "rugged_usb_hub"
+    },
+    {
+      "label": "mounts",
+      "source": "port_panel_insert",
+      "target": "led_array_housing"
+    },
+    {
+      "label": "houses",
+      "source": "led_array_housing",
+      "target": "high_power_led_array"
+    },
+    {
+      "label": "attaches to",
+      "source": "led_array_housing",
+      "target": "led_array_heatsink"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_lid_chassis",
+      "target": "gps_dome_shroud"
+    },
+    {
+      "label": "protects and houses",
+      "source": "gps_dome_shroud",
+      "target": "gps_module"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "sensor_window_mount"
+    },
+    {
+      "label": "holds",
+      "source": "sensor_window_mount",
+      "target": "waterproof_clear_window"
+    },
+    {
+      "label": "positions behind window",
+      "source": "sensor_window_mount",
+      "target": "environmental_sensor"
+    },
+    {
+      "label": "positions behind window",
+      "source": "sensor_window_mount",
+      "target": "imu_sensor"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "status_led_panel_frame"
+    },
+    {
+      "label": "frames and secures",
+      "source": "status_led_panel_frame",
+      "target": "charge_status_leds"
+    },
+    {
+      "label": "mounts",
+      "source": "cyberdeck_base_chassis",
+      "target": "rtl_sdr_antenna_port"
+    },
+    {
+      "label": "provides external access for",
+      "source": "rtl_sdr_antenna_port",
+      "target": "rtl_sdr_dongle"
+    }
+  ],
+  "projectId": "6a4cf6c7-0266-4d78-afa8-33dcb5851c1a"
+}

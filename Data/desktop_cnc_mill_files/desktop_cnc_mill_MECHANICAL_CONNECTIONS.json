@@ -1,0 +1,222 @@
+[
+  {
+    "label": "Assembled with corner_brackets and m5_screws_various",
+    "source": "base_frame_x_front_back",
+    "target": "base_frame_y_side"
+  },
+  {
+    "label": "Fastens with m5_t_nuts and m5_screws_various",
+    "source": "base_frame_x_front_back",
+    "target": "corner_brackets"
+  },
+  {
+    "label": "Fastens with m5_t_nuts and m5_screws_various",
+    "source": "base_frame_y_side",
+    "target": "corner_brackets"
+  },
+  {
+    "label": "Mounts to",
+    "source": "y_gantry_beam",
+    "target": "y_gantry_plates"
+  },
+  {
+    "label": "Slides along via lm8uu_bearings and y_linear_rods",
+    "source": "y_gantry_plates",
+    "target": "base_frame_y_side"
+  },
+  {
+    "label": "Fixed at ends to",
+    "source": "y_linear_rods",
+    "target": "base_frame_x_front_back"
+  },
+  {
+    "label": "Connected via y_lead_screw_nut_block",
+    "source": "y_gantry_plates",
+    "target": "y_axis_lead_screw"
+  },
+  {
+    "label": "Supported by",
+    "source": "y_axis_lead_screw",
+    "target": "kp08_pillow_block_bearings"
+  },
+  {
+    "label": "Mounts to",
+    "source": "kp08_pillow_block_bearings",
+    "target": "base_frame_x_front_back"
+  },
+  {
+    "label": "Mounts to with m3_screws_various",
+    "source": "y_stepper_motor",
+    "target": "y_motor_mount"
+  },
+  {
+    "label": "Mounts to with m5_t_nuts and m5_screws_various",
+    "source": "y_motor_mount",
+    "target": "base_frame_x_front_back"
+  },
+  {
+    "label": "Connects via shaft_couplers",
+    "source": "y_stepper_motor",
+    "target": "y_axis_lead_screw"
+  },
+  {
+    "label": "Slides along via lm8uu_bearings",
+    "source": "x_carriage_plate",
+    "target": "x_linear_rods"
+  },
+  {
+    "label": "Fixed at ends to",
+    "source": "x_linear_rods",
+    "target": "y_gantry_beam"
+  },
+  {
+    "label": "Connected via x_lead_screw_nut_block",
+    "source": "x_carriage_plate",
+    "target": "x_axis_lead_screw"
+  },
+  {
+    "label": "Supported by",
+    "source": "x_axis_lead_screw",
+    "target": "kp08_pillow_block_bearings"
+  },
+  {
+    "label": "Mounts to",
+    "source": "kp08_pillow_block_bearings",
+    "target": "y_gantry_beam"
+  },
+  {
+    "label": "Mounts to with m3_screws_various",
+    "source": "x_stepper_motor",
+    "target": "x_motor_mount"
+  },
+  {
+    "label": "Mounts to with m5_t_nuts and m5_screws_various",
+    "source": "x_motor_mount",
+    "target": "y_gantry_beam"
+  },
+  {
+    "label": "Connects via shaft_couplers",
+    "source": "x_stepper_motor",
+    "target": "x_axis_lead_screw"
+  },
+  {
+    "label": "Mounts to with m5_t_nuts and m5_screws_various",
+    "source": "z_axis_vertical_extrusions",
+    "target": "x_carriage_plate"
+  },
+  {
+    "label": "Slides along via lm8uu_bearings",
+    "source": "z_carriage_plate",
+    "target": "z_linear_rods"
+  },
+  {
+    "label": "Fixed at ends to",
+    "source": "z_linear_rods",
+    "target": "z_axis_vertical_extrusions"
+  },
+  {
+    "label": "Connected via z_lead_screw_nut_block",
+    "source": "z_carriage_plate",
+    "target": "z_axis_lead_screw"
+  },
+  {
+    "label": "Supported by",
+    "source": "z_axis_lead_screw",
+    "target": "kp08_pillow_block_bearings"
+  },
+  {
+    "label": "Mounts to",
+    "source": "kp08_pillow_block_bearings",
+    "target": "z_axis_vertical_extrusions"
+  },
+  {
+    "label": "Mounts to with m3_screws_various",
+    "source": "z_stepper_motor",
+    "target": "z_motor_mount"
+  },
+  {
+    "label": "Mounts to with m5_t_nuts and m5_screws_various",
+    "source": "z_motor_mount",
+    "target": "z_axis_vertical_extrusions"
+  },
+  {
+    "label": "Connects via shaft_couplers",
+    "source": "z_stepper_motor",
+    "target": "z_axis_lead_screw"
+  },
+  {
+    "label": "Clamps into",
+    "source": "spindle_motor",
+    "target": "spindle_mount"
+  },
+  {
+    "label": "Mounts to with m3_screws_various",
+    "source": "spindle_mount",
+    "target": "z_carriage_plate"
+  },
+  {
+    "label": "Mounts to with m5_t_nuts and m5_screws_various",
+    "source": "spoilboard",
+    "target": "base_frame_y_side"
+  },
+  {
+    "label": "Mounts to with m3_screws_various",
+    "source": "x_end_stop",
+    "target": "x_end_stop_mount"
+  },
+  {
+    "label": "Mounts to with m5_t_nuts and m5_screws_various",
+    "source": "x_end_stop_mount",
+    "target": "base_frame_x_front_back"
+  },
+  {
+    "label": "Mounts to with m3_screws_various",
+    "source": "y_end_stop",
+    "target": "y_end_stop_mount"
+  },
+  {
+    "label": "Mounts to with m5_t_nuts and m5_screws_various",
+    "source": "y_end_stop_mount",
+    "target": "base_frame_y_side"
+  },
+  {
+    "label": "Mounts to with m3_screws_various",
+    "source": "z_end_stop",
+    "target": "z_end_stop_mount"
+  },
+  {
+    "label": "Mounts to with m5_t_nuts and m5_screws_various",
+    "source": "z_end_stop_mount",
+    "target": "z_axis_vertical_extrusions"
+  },
+  {
+    "label": "Housed within",
+    "source": "esp32_mcu",
+    "target": "controller_enclosure"
+  },
+  {
+    "label": "Housed within",
+    "source": "x_stepper_driver",
+    "target": "controller_enclosure"
+  },
+  {
+    "label": "Housed within",
+    "source": "y_stepper_driver",
+    "target": "controller_enclosure"
+  },
+  {
+    "label": "Housed within",
+    "source": "z_stepper_driver",
+    "target": "controller_enclosure"
+  },
+  {
+    "label": "Housed within",
+    "source": "spindle_motor_driver",
+    "target": "controller_enclosure"
+  },
+  {
+    "label": "Housed within",
+    "source": "buck_converter_5v",
+    "target": "controller_enclosure"
+  }
+]

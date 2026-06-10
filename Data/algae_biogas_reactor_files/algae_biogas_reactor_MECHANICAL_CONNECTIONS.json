@@ -1,0 +1,232 @@
+[
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "main_frame_vertical_front",
+    "target": "main_frame_base"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "main_frame_vertical_back",
+    "target": "main_frame_base"
+  },
+  {
+    "label": "Mounted to frame with brackets (not listed)",
+    "source": "bioreactor_vessel",
+    "target": "main_frame_base"
+  },
+  {
+    "label": "Gasket and clamps/screws",
+    "source": "bioreactor_lid_main",
+    "target": "bioreactor_vessel"
+  },
+  {
+    "label": "Mounted to frame with brackets (not listed)",
+    "source": "nutrient_reservoir",
+    "target": "main_frame_base"
+  },
+  {
+    "label": "Mounted to frame with straps/brackets",
+    "source": "gas_storage_tank",
+    "target": "main_frame_base"
+  },
+  {
+    "label": "Mounted to frame with brackets (not listed)",
+    "source": "water_scrubber_vessel",
+    "target": "main_frame_base"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "air_pump",
+    "target": "main_frame_base"
+  },
+  {
+    "label": "Gasket and M3 bolts",
+    "source": "gas_collection_manifold",
+    "target": "bioreactor_lid_main"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "ph_sensor_mount",
+    "target": "bioreactor_lid_main"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "temp_sensor_mount",
+    "target": "bioreactor_lid_main"
+  },
+  {
+    "label": "Threaded connection",
+    "source": "gas_manifold_connector",
+    "target": "gas_collection_manifold"
+  },
+  {
+    "label": "Gasket and M3 bolts",
+    "source": "gas_manifold_connector",
+    "target": "bioreactor_lid_main"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "nutrient_pump_enclosure",
+    "target": "main_frame_vertical_front"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "algae_pump_enclosure",
+    "target": "main_frame_vertical_back"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "mcu_housing",
+    "target": "main_frame_vertical_front"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "ch4_sensor_housing",
+    "target": "main_frame_vertical_front"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "co2_sensor_housing",
+    "target": "main_frame_vertical_front"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "gas_flow_sensor_mount",
+    "target": "main_frame_vertical_front"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "relay_module_mount",
+    "target": "main_frame_vertical_back"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "power_supply_mount",
+    "target": "main_frame_vertical_back"
+  },
+  {
+    "label": "M5 bolts via M5 T-Nuts",
+    "source": "dc_dc_buck_converter_mount",
+    "target": "main_frame_vertical_back"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "cooling_fan_mount",
+    "target": "mcu_housing"
+  },
+  {
+    "label": "Barbed fitting, hose clamp",
+    "source": "air_diffuser",
+    "target": "silicone_tubing_6mm"
+  },
+  {
+    "label": "Barbed fitting, hose clamp",
+    "source": "water_scrubber_diffuser",
+    "target": "silicone_tubing_6mm"
+  },
+  {
+    "label": "Barbed fitting, hose clamp",
+    "source": "ball_valve_6mm",
+    "target": "silicone_tubing_6mm"
+  },
+  {
+    "label": "Barbed fitting, hose clamp",
+    "source": "check_valve_6mm",
+    "target": "silicone_tubing_6mm"
+  },
+  {
+    "label": "Barbed fitting, hose clamp",
+    "source": "tubing_connector_t_6mm",
+    "target": "silicone_tubing_6mm"
+  },
+  {
+    "label": "Barbed fitting, hose clamp",
+    "source": "tubing_connector_straight_6mm",
+    "target": "silicone_tubing_6mm"
+  },
+  {
+    "label": "Barbed fitting, hose clamp",
+    "source": "relief_valve_biogas",
+    "target": "silicone_tubing_10mm"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "gas_level_sensor_mount",
+    "target": "gas_storage_tank"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "heating_element_mount",
+    "target": "bioreactor_vessel"
+  },
+  {
+    "label": "mount",
+    "source": "ph_sensor_mount",
+    "target": "ph_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "temp_sensor_mount",
+    "target": "temp_sensor_bioreactor"
+  },
+  {
+    "label": "mount",
+    "source": "nutrient_pump_enclosure",
+    "target": "nutrient_pump"
+  },
+  {
+    "label": "mount",
+    "source": "algae_pump_enclosure",
+    "target": "algae_circulation_pump"
+  },
+  {
+    "label": "mount",
+    "source": "mcu_housing",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "ch4_sensor_housing",
+    "target": "ch4_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "co2_sensor_housing",
+    "target": "co2_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "gas_flow_sensor_mount",
+    "target": "gas_flow_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "relay_module_mount",
+    "target": "4_channel_relay"
+  },
+  {
+    "label": "mount",
+    "source": "power_supply_mount",
+    "target": "power_supply"
+  },
+  {
+    "label": "mount",
+    "source": "dc_dc_buck_converter_mount",
+    "target": "dc_dc_buck_converter"
+  },
+  {
+    "label": "mount",
+    "source": "cooling_fan_mount",
+    "target": "cooling_fan"
+  },
+  {
+    "label": "mount",
+    "source": "gas_level_sensor_mount",
+    "target": "gas_level_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "heating_element_mount",
+    "target": "heating_element"
+  }
+]

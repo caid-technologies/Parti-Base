@@ -1,0 +1,392 @@
+[
+  {
+    "label": "M5 T-nuts and screws",
+    "source": "x_y_frame_extrusion_front",
+    "target": "x_y_frame_extrusion_left"
+  },
+  {
+    "label": "M5 T-nuts and screws",
+    "source": "x_y_frame_extrusion_front",
+    "target": "x_y_frame_extrusion_right"
+  },
+  {
+    "label": "M5 T-nuts and screws",
+    "source": "x_y_frame_extrusion_back",
+    "target": "x_y_frame_extrusion_left"
+  },
+  {
+    "label": "M5 T-nuts and screws",
+    "source": "x_y_frame_extrusion_back",
+    "target": "x_y_frame_extrusion_right"
+  },
+  {
+    "label": "M5 T-nuts and screws",
+    "source": "x_y_frame_extrusion_left",
+    "target": "z_axis_extrusion_left"
+  },
+  {
+    "label": "M5 T-nuts and screws",
+    "source": "x_y_frame_extrusion_right",
+    "target": "z_axis_extrusion_right"
+  },
+  {
+    "label": "M5 T-nuts and screws",
+    "source": "z_axis_extrusion_left",
+    "target": "top_cross_extrusion"
+  },
+  {
+    "label": "M5 T-nuts and screws",
+    "source": "z_axis_extrusion_right",
+    "target": "top_cross_extrusion"
+  },
+  {
+    "label": "rod clamp (part of frame or printed mount)",
+    "source": "x_y_frame_extrusion_front",
+    "target": "y_axis_smooth_rod_left"
+  },
+  {
+    "label": "rod clamp (part of frame or printed mount)",
+    "source": "x_y_frame_extrusion_front",
+    "target": "y_axis_smooth_rod_right"
+  },
+  {
+    "label": "rod clamp (part of frame or printed mount)",
+    "source": "x_y_frame_extrusion_back",
+    "target": "y_axis_smooth_rod_left"
+  },
+  {
+    "label": "rod clamp (part of frame or printed mount)",
+    "source": "x_y_frame_extrusion_back",
+    "target": "y_axis_smooth_rod_right"
+  },
+  {
+    "label": "LM8UU bearings",
+    "source": "y_bed_frame_left",
+    "target": "y_axis_smooth_rod_left"
+  },
+  {
+    "label": "LM8UU bearings",
+    "source": "y_bed_frame_right",
+    "target": "y_axis_smooth_rod_right"
+  },
+  {
+    "label": "press fit or M3 bolts",
+    "source": "y_bed_frame_left",
+    "target": "lm8uu_y_axis_left_front"
+  },
+  {
+    "label": "press fit or M3 bolts",
+    "source": "y_bed_frame_left",
+    "target": "lm8uu_y_axis_left_back"
+  },
+  {
+    "label": "press fit or M3 bolts",
+    "source": "y_bed_frame_right",
+    "target": "lm8uu_y_axis_right_front"
+  },
+  {
+    "label": "press fit or M3 bolts",
+    "source": "y_bed_frame_right",
+    "target": "lm8uu_y_axis_right_back"
+  },
+  {
+    "label": "M3/M4 screws with springs",
+    "source": "y_bed_frame_left",
+    "target": "print_bed_aluminum_plate"
+  },
+  {
+    "label": "M3/M4 screws with springs",
+    "source": "y_bed_frame_right",
+    "target": "print_bed_aluminum_plate"
+  },
+  {
+    "label": "binder clips",
+    "source": "print_bed_aluminum_plate",
+    "target": "glass_build_surface"
+  },
+  {
+    "label": "M3/M4 screws",
+    "source": "print_bed_aluminum_plate",
+    "target": "bed_leveling_springs"
+  },
+  {
+    "label": "M3/M4 screws",
+    "source": "y_bed_frame_left",
+    "target": "bed_leveling_springs"
+  },
+  {
+    "label": "M3/M4 screws",
+    "source": "y_bed_frame_right",
+    "target": "bed_leveling_springs"
+  },
+  {
+    "label": "M3 screws",
+    "source": "y_bed_frame_left",
+    "target": "y_belt_holder"
+  },
+  {
+    "label": "clamping mechanism",
+    "source": "y_belt_holder",
+    "target": "gt2_belt"
+  },
+  {
+    "label": "LM8UU bearings",
+    "source": "x_carriage",
+    "target": "x_axis_smooth_rod_top"
+  },
+  {
+    "label": "LM8UU bearings",
+    "source": "x_carriage",
+    "target": "x_axis_smooth_rod_bottom"
+  },
+  {
+    "label": "press fit or M3 bolts",
+    "source": "x_carriage",
+    "target": "lm8uu_x_axis_top"
+  },
+  {
+    "label": "press fit or M3 bolts",
+    "source": "x_carriage",
+    "target": "lm8uu_x_axis_bottom"
+  },
+  {
+    "label": "M3 screws",
+    "source": "x_carriage",
+    "target": "mk8_hotend_assembly"
+  },
+  {
+    "label": "M3 screws",
+    "source": "x_carriage",
+    "target": "hotend_fan_shroud"
+  },
+  {
+    "label": "M3 screws",
+    "source": "hotend_fan_shroud",
+    "target": "part_cooling_duct"
+  },
+  {
+    "label": "push-fit connector",
+    "source": "bowden_extruder",
+    "target": "ptfe_tubing"
+  },
+  {
+    "label": "push-fit connector",
+    "source": "mk8_hotend_assembly",
+    "target": "ptfe_tubing"
+  },
+  {
+    "label": "top/bottom bearings",
+    "source": "z_axis_extrusion_left",
+    "target": "z_axis_lead_screw"
+  },
+  {
+    "label": "top/bottom bearings",
+    "source": "z_axis_extrusion_right",
+    "target": "z_axis_lead_screw"
+  },
+  {
+    "label": "M3 screws",
+    "source": "z_axis_leadscrew_nut_mount",
+    "target": "x_carriage"
+  },
+  {
+    "label": "threaded nut (integrated or separate)",
+    "source": "z_axis_leadscrew_nut_mount",
+    "target": "z_axis_lead_screw"
+  },
+  {
+    "label": "grub screws",
+    "source": "z_axis_coupler",
+    "target": "z_axis_lead_screw"
+  },
+  {
+    "label": "rod clamp (part of printed mount)",
+    "source": "x_y_frame_extrusion_left",
+    "target": "x_axis_smooth_rod_top"
+  },
+  {
+    "label": "rod clamp (part of printed mount)",
+    "source": "x_y_frame_extrusion_left",
+    "target": "x_axis_smooth_rod_bottom"
+  },
+  {
+    "label": "rod clamp (part of printed mount)",
+    "source": "x_y_frame_extrusion_right",
+    "target": "x_axis_smooth_rod_top"
+  },
+  {
+    "label": "rod clamp (part of printed mount)",
+    "source": "x_y_frame_extrusion_right",
+    "target": "x_axis_smooth_rod_bottom"
+  },
+  {
+    "label": "M5 T-nuts and M3 screws",
+    "source": "x_y_frame_extrusion_left",
+    "target": "x_stepper_motor_mount"
+  },
+  {
+    "label": "M5 T-nuts and M3 screws",
+    "source": "x_y_frame_extrusion_right",
+    "target": "gt2_idler_x_right"
+  },
+  {
+    "label": "M5 T-nuts and M3 screws",
+    "source": "x_y_frame_extrusion_back",
+    "target": "y_stepper_motor_mount"
+  },
+  {
+    "label": "M5 T-nuts and M3 screws",
+    "source": "x_y_frame_extrusion_front",
+    "target": "gt2_idler_y_front"
+  },
+  {
+    "label": "M5 T-nuts and M3 screws",
+    "source": "x_y_frame_extrusion_left",
+    "target": "z_stepper_motor_mount"
+  },
+  {
+    "label": "clamping mechanism",
+    "source": "x_carriage",
+    "target": "gt2_belt"
+  },
+  {
+    "label": "wrapped around pulley",
+    "source": "gt2_belt",
+    "target": "gt2_pulley_x_motor"
+  },
+  {
+    "label": "wrapped around pulley",
+    "source": "gt2_belt",
+    "target": "gt2_idler_x_left"
+  },
+  {
+    "label": "wrapped around pulley",
+    "source": "gt2_belt",
+    "target": "gt2_idler_x_right"
+  },
+  {
+    "label": "wrapped around pulley",
+    "source": "gt2_belt",
+    "target": "gt2_pulley_y_motor"
+  },
+  {
+    "label": "wrapped around pulley",
+    "source": "gt2_belt",
+    "target": "gt2_idler_y_front"
+  },
+  {
+    "label": "wrapped around pulley",
+    "source": "gt2_belt",
+    "target": "gt2_idler_y_back"
+  },
+  {
+    "label": "M3 screws",
+    "source": "bowden_extruder",
+    "target": "extruder_stepper_motor_mount"
+  },
+  {
+    "label": "M5 T-nuts and M3 screws",
+    "source": "extruder_stepper_motor_mount",
+    "target": "top_cross_extrusion"
+  },
+  {
+    "label": "M5 T-nuts and M3 screws",
+    "source": "spool_holder",
+    "target": "top_cross_extrusion"
+  },
+  {
+    "label": "M3 screws",
+    "source": "heated_bed_mount",
+    "target": "print_bed_aluminum_plate"
+  },
+  {
+    "label": "mount",
+    "source": "ramps_controller_mount",
+    "target": "ramps_shield"
+  },
+  {
+    "label": "mount",
+    "source": "x_stepper_motor_mount",
+    "target": "x_axis_stepper"
+  },
+  {
+    "label": "mount",
+    "source": "y_stepper_motor_mount",
+    "target": "y_axis_stepper"
+  },
+  {
+    "label": "mount",
+    "source": "z_stepper_motor_mount",
+    "target": "z_axis_stepper"
+  },
+  {
+    "label": "mount",
+    "source": "extruder_stepper_motor_mount",
+    "target": "extruder_stepper"
+  },
+  {
+    "label": "mount",
+    "source": "x_endstop_mount",
+    "target": "x_min_endstop"
+  },
+  {
+    "label": "mount",
+    "source": "y_endstop_mount",
+    "target": "y_min_endstop"
+  },
+  {
+    "label": "mount",
+    "source": "z_endstop_mount",
+    "target": "z_min_endstop"
+  },
+  {
+    "label": "mount",
+    "source": "power_supply_mount",
+    "target": "power_supply"
+  },
+  {
+    "label": "mount",
+    "source": "main_mcu_mount",
+    "target": "main_mcu"
+  },
+  {
+    "label": "mount",
+    "source": "x_axis_driver_mount",
+    "target": "x_axis_driver"
+  },
+  {
+    "label": "mount",
+    "source": "y_axis_driver_mount",
+    "target": "y_axis_driver"
+  },
+  {
+    "label": "mount",
+    "source": "z_axis_driver_mount",
+    "target": "z_axis_driver"
+  },
+  {
+    "label": "mount",
+    "source": "extruder_driver_mount",
+    "target": "extruder_driver"
+  },
+  {
+    "label": "mount",
+    "source": "hotend_heater_cartridge_mount",
+    "target": "hotend_heater_cartridge"
+  },
+  {
+    "label": "mount",
+    "source": "hotend_thermistor_mount",
+    "target": "hotend_thermistor"
+  },
+  {
+    "label": "mount",
+    "source": "heated_bed_mount",
+    "target": "heated_bed"
+  },
+  {
+    "label": "mount",
+    "source": "bed_thermistor_mount",
+    "target": "bed_thermistor"
+  }
+]

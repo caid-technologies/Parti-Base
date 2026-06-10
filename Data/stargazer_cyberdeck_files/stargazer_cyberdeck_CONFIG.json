@@ -1,0 +1,795 @@
+{
+  "plan": "- Integrate Raspberry Pi 3 Model B, Elecrow RC070 IPS Touch Screen, and Hoopond mechanical keyboard.- Design custom enclosure for all components, integrating display and keyboard.- Plan power delivery: USB power bank for Pi and display, considering voltage requirements.- Fabricate custom mounts and brackets for secure component fitting within the enclosure.- Implement cable management for USB and HDMI connections between components.",
+  "nodes": [
+    {
+      "id": "rpi_main_controller",
+      "name": "Main Cyberdeck Controller",
+      "pins": [
+        "GPIO",
+        "HDMI",
+        "USB 2.0",
+        "Micro USB (Power)",
+        "DSI",
+        "CSI",
+        "Audio Jack"
+      ],
+      "type": "mcu",
+      "partId": "ce2dc5d8-b898-43bc-934b-6bd2dd1e7c88",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Raspberry+Pi+3+Model+B+1GB+SC0022&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51PRLuKqT4L._SL500_.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0BNJPL4MW?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "85x56x17mm",
+      "position3d": {
+        "x": 70,
+        "y": 25.5,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 56,
+        "width": 85,
+        "height": 17
+      },
+      "productName": "Raspberry Pi 3 Model B 1GB SC0022",
+      "purchaseUrl": "https://www.amazon.com/s?k=Raspberry+Pi+3+Model+B",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2xX7LT7",
+      "estimatedCost": 35
+    },
+    {
+      "id": "elecrow_main_display",
+      "name": "Primary Touch Display",
+      "pins": [
+        "HDMI (Input)",
+        "Micro USB (Touch)",
+        "Micro USB (Power)"
+      ],
+      "type": "display",
+      "partId": "5d9554b1-88b5-4068-b45f-114c102d8c70",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Elecrow+RC070+7inch+1024x600+IPS+Touch+Display&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41hKnOetyUL._SL500_.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0G5YL9Z66?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "165x125x13mm",
+      "position3d": {
+        "x": 175,
+        "y": 70,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 125,
+        "width": 165,
+        "height": 13
+      },
+      "productName": "Elecrow RC070 7inch 1024x600 IPS Touch Display",
+      "purchaseUrl": "https://www.amazon.com/s?k=Elecrow+RC070+7inch+1024x600",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3aJ7P4z",
+      "estimatedCost": 79.99
+    },
+    {
+      "id": "hoopond_keyboard",
+      "name": "Input Keyboard",
+      "pins": [
+        "USB (Data/Power)"
+      ],
+      "type": "module",
+      "partId": "5eda46a2-75e6-499b-b7df-33760ee2be40",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Hoopond+AK33+Mechanical+Keyboard+%28Blue+Switch%2C+Black%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51-ELZmK6OL._SL500_.jpg",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0GFSWS45J?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "310x120x37mm",
+      "position3d": {
+        "x": 175,
+        "y": 45.5,
+        "z": 60
+      },
+      "boundingBox": {
+        "depth": 120,
+        "width": 310,
+        "height": 37
+      },
+      "productName": "Hoopond AK33 Mechanical Keyboard (Blue Switch, Black)",
+      "purchaseUrl": "https://www.amazon.com/s?k=Hoopond+AK33+Mechanical+Keyboard",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3YVxyg1",
+      "estimatedCost": 45
+    },
+    {
+      "id": "power_bank_usb_c",
+      "name": "External Power Source",
+      "pins": [
+        "USB-C (Output)",
+        "USB-A (Output)"
+      ],
+      "type": "power",
+      "partId": "a41c1f3b-ab27-467d-85fc-92e5e807e3e6",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=USB-C+Power+Bank+%28generic%2C+20000mAh%2B%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31CXgItzozL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005002740514937.html?pdp_npi=6%40dis%21USD%2199.99%2156.69%21%21%2199.99%2156.69%21%402101611117794551011774966e106e%2112000029769798040%21affd%21%21%21%211%210%21",
+            "price": "$56.69",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0C3GTMX5M?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$56.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0C3GTMX5M?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x75x25mm",
+      "position3d": {
+        "x": 230,
+        "y": 27.5,
+        "z": 130
+      },
+      "boundingBox": {
+        "depth": 75,
+        "width": 150,
+        "height": 25
+      },
+      "productName": "USB-C Power Bank (generic, 20000mAh+)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRJEEW5ZlLIzbpikoHsRRgnu55sBNqU1sIIoqh1P17xfGIpFgALxcf1IxRUq0KA1nyjsM78VQTooDNDS6iWiLR3DfmK6WoQQy4De7g0cS5ndDtQ96KB3H9Smb85ptgWE0AhKR6K8TUau18W2UUfpUZi8yTqjsHhUSffuZIEwZBgEAUroRU71HKBQh1wvmLUbNfHkSCen6yGnWRfKdXmAUXgYAtEV8JhAybJDaH5E2gDHFmxDaifbec2UYWngUr6VfJqCMrY71ZOnws5ic8T1JNS9OkjK3uFqSlfhueO1BvPPQV8JxxchPipnt9wGggaUAFbVGCKN7e1ddTDr5pCfxmsi3C7L5YgIz5jFQJvTj4EdXvBLFq3wsT8jepJEfPEiTr927UlBMsBXrSZCfLBBwKEDPbjbZTK85si1zoievEbg3Y2gjkHwGYC2OngiyEW6pUTbQQIdPBWgaQK0GI55igvshS6kdINK96EhyuwwLbQD8oICcPjlwwr898IhnaZ4cpGy36oB96KA5pmi4yyKnsAXsu4Lh3gKKlFcoVM7oG1CYYt1DBBdlvSCl10lzcBODTkbCNCJ33GO4dZ5y79HWTXGSPXGe1kUGUvSTVoNdiwz4YMQMVU9wLAMMGG0MA8dI42EbMDHWo3YGblBKPvGbGqX",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRJEEW5ZlLIzbpikoHsRRgnu55sBNqU1sIIoqh1P17xfGIpFgALxcf1IxRUq0KA1nyjsM78VQTooDNDS6iWiLR3DfmK6WoQQy4De7g0cS5ndDtQ96KB3H9Smb85ptgWE0AhKR6K8TUau18W2UUfpUZi8yTqjsHhUSffuZIEwZBgEAUroRU71HKBQh1wvmLUbNfHkSCen6yGnWRfKdXmAUXgYAtEV8JhAybJDaH5E2gDHFmxDaifbec2UYWngUr6VfJqCMrY71ZOnws5ic8T1JNS9OkjK3uFqSlfhueO1BvPPQV8JxxchPipnt9wGggaUAFbVGCKN7e1ddTDr5pCfxmsi3C7L5YgIz5jFQJvTj4EdXvBLFq3wsT8jepJEfPEiTr927UlBMsBXrSZCfLBBwKEDPbjbZTK85si1zoievEbg3Y2gjkHwGYC2OngiyEW6pUTbQQIdPBWgaQK0GI55igvshS6kdINK96EhyuwwLbQD8oICcPjlwwr898IhnaZ4cpGy36oB96KA5pmi4yyKnsAXsu4Lh3gKKlFcoVM7oG1CYYt1DBBdlvSCl10lzcBODTkbCNCJ33GO4dZ5y79HWTXGSPXGe1kUGUvSTVoNdiwz4YMQMVU9wLAMMGG0MA8dI42EbMDHWo3YGblBKPvGbGqX",
+      "estimatedCost": 40
+    },
+    {
+      "id": "usb_a_to_micro_usb_cable_pi",
+      "name": "Pi Power Cable",
+      "pins": [
+        "USB-A",
+        "Micro USB"
+      ],
+      "type": "module",
+      "partId": "ed06c32a-2c93-498e-945e-852b00f9f2d9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=USB+A+to+Micro+USB+Cable+%28Data%2FPower%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41Bf06-KwDL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07KC5169G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.56",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007938141311.html?pdp_npi=6%40dis%21USD%217.59%213.57%21%21%2151.36%2124.14%21%40212a7b8d17794568209887677e1121%2112000042938171131%21affd%21%21%21%211%210%21",
+            "price": "$3.57",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07KC5169G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "1000x5x5mm",
+      "productName": "USB A to Micro USB Cable (Data/Power)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxxa6FipedLYv0sRxzaTCBp7sgOW28BAv1HcwnLrCLVUAfXGhCxJ6aFnJaItIYJX0kS5HirmVhWJQZLRV9PcrBcGMzhlr3RXCkK3KBaxieQv0gxQTmINd8hoY7YW2OfiF8wmvCahoLXX5iH6XLvwr5Qd8Cu6K3lTAiewqXdPixBqejTVtW9twwyrfhk6QIZTEAJY3HbvirH8l0bwioqQYyUOTvq031QzzmtWxnnOTeiYqNy9miWL0ImTlDJkAwjfzzRotExBxpPlSo3jTIIBflWVhTPs92bciPoiBZvtaa8XxzMdWnvNKDRvdXxglYCa4BMR7zYZxh1aW5t2s3BIJqyRQ7uKJjgHm9kRQOF550oCCKSUCN0wVU6hti9EMfpGzFe7FLym1y8ZczHx3k70Ma7HznUALp6UTVwp5IkJHasHEB8nEIftj7Xhj0woEcZxEz48w5qH8L8hJIrfSwSuCBmJM70wjjrzAol8JlKw2EVFUu6yj3BRtFrgTgmRnLdrHSJ6SsxIcTKuQKAYTG4qtz2XncQZbqn4ygCck26rD98l1jc6DkpwlyKkhxkZReAe3H1ncU2OwDWsaIyzhid9jt6n00l4NvOPCTb3belg0ajTuFZR59aEVVVDeeYQLyuoLmGACDa5UiICKczFSt6uvNR23",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxxa6FipedLYv0sRxzaTCBp7sgOW28BAv1HcwnLrCLVUAfXGhCxJ6aFnJaItIYJX0kS5HirmVhWJQZLRV9PcrBcGMzhlr3RXCkK3KBaxieQv0gxQTmINd8hoY7YW2OfiF8wmvCahoLXX5iH6XLvwr5Qd8Cu6K3lTAiewqXdPixBqejTVtW9twwyrfhk6QIZTEAJY3HbvirH8l0bwioqQYyUOTvq031QzzmtWxnnOTeiYqNy9miWL0ImTlDJkAwjfzzRotExBxpPlSo3jTIIBflWVhTPs92bciPoiBZvtaa8XxzMdWnvNKDRvdXxglYCa4BMR7zYZxh1aW5t2s3BIJqyRQ7uKJjgHm9kRQOF550oCCKSUCN0wVU6hti9EMfpGzFe7FLym1y8ZczHx3k70Ma7HznUALp6UTVwp5IkJHasHEB8nEIftj7Xhj0woEcZxEz48w5qH8L8hJIrfSwSuCBmJM70wjjrzAol8JlKw2EVFUu6yj3BRtFrgTgmRnLdrHSJ6SsxIcTKuQKAYTG4qtz2XncQZbqn4ygCck26rD98l1jc6DkpwlyKkhxkZReAe3H1ncU2OwDWsaIyzhid9jt6n00l4NvOPCTb3belg0ajTuFZR59aEVVVDeeYQLyuoLmGACDa5UiICKczFSt6uvNR23",
+      "estimatedCost": 5
+    },
+    {
+      "id": "usb_a_to_micro_usb_cable_display_power",
+      "name": "Display Power Cable",
+      "pins": [
+        "USB-A",
+        "Micro USB"
+      ],
+      "type": "module",
+      "partId": "ed06c32a-2c93-498e-945e-852b00f9f2d9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=USB+A+to+Micro+USB+Cable+%28Data%2FPower%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41Bf06-KwDL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07KC5169G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.56",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007938141311.html?pdp_npi=6%40dis%21USD%217.59%213.57%21%21%2151.36%2124.14%21%40212a7b8d17794568209887677e1121%2112000042938171131%21affd%21%21%21%211%210%21",
+            "price": "$3.57",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07KC5169G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "1000x5x5mm",
+      "productName": "USB A to Micro USB Cable (Data/Power)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxxa6FipedLYv0sRxzaTCBp7sgOW28BAv1HcwnLrCLVUAfXGhCxJ6aFnJaItIYJX0kS5HirmVhWJQZLRV9PcrBcGMzhlr3RXCkK3KBaxieQv0gxQTmINd8hoY7YW2OfiF8wmvCahoLXX5iH6XLvwr5Qd8Cu6K3lTAiewqXdPixBqejTVtW9twwyrfhk6QIZTEAJY3HbvirH8l0bwioqQYyUOTvq031QzzmtWxnnOTeiYqNy9miWL0ImTlDJkAwjfzzRotExBxpPlSo3jTIIBflWVhTPs92bciPoiBZvtaa8XxzMdWnvNKDRvdXxglYCa4BMR7zYZxh1aW5t2s3BIJqyRQ7uKJjgHm9kRQOF550oCCKSUCN0wVU6hti9EMfpGzFe7FLym1y8ZczHx3k70Ma7HznUALp6UTVwp5IkJHasHEB8nEIftj7Xhj0woEcZxEz48w5qH8L8hJIrfSwSuCBmJM70wjjrzAol8JlKw2EVFUu6yj3BRtFrgTgmRnLdrHSJ6SsxIcTKuQKAYTG4qtz2XncQZbqn4ygCck26rD98l1jc6DkpwlyKkhxkZReAe3H1ncU2OwDWsaIyzhid9jt6n00l4NvOPCTb3belg0ajTuFZR59aEVVVDeeYQLyuoLmGACDa5UiICKczFSt6uvNR23",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxxa6FipedLYv0sRxzaTCBp7sgOW28BAv1HcwnLrCLVUAfXGhCxJ6aFnJaItIYJX0kS5HirmVhWJQZLRV9PcrBcGMzhlr3RXCkK3KBaxieQv0gxQTmINd8hoY7YW2OfiF8wmvCahoLXX5iH6XLvwr5Qd8Cu6K3lTAiewqXdPixBqejTVtW9twwyrfhk6QIZTEAJY3HbvirH8l0bwioqQYyUOTvq031QzzmtWxnnOTeiYqNy9miWL0ImTlDJkAwjfzzRotExBxpPlSo3jTIIBflWVhTPs92bciPoiBZvtaa8XxzMdWnvNKDRvdXxglYCa4BMR7zYZxh1aW5t2s3BIJqyRQ7uKJjgHm9kRQOF550oCCKSUCN0wVU6hti9EMfpGzFe7FLym1y8ZczHx3k70Ma7HznUALp6UTVwp5IkJHasHEB8nEIftj7Xhj0woEcZxEz48w5qH8L8hJIrfSwSuCBmJM70wjjrzAol8JlKw2EVFUu6yj3BRtFrgTgmRnLdrHSJ6SsxIcTKuQKAYTG4qtz2XncQZbqn4ygCck26rD98l1jc6DkpwlyKkhxkZReAe3H1ncU2OwDWsaIyzhid9jt6n00l4NvOPCTb3belg0ajTuFZR59aEVVVDeeYQLyuoLmGACDa5UiICKczFSt6uvNR23",
+      "estimatedCost": 5
+    },
+    {
+      "id": "usb_a_to_micro_usb_cable_display_touch",
+      "name": "Display Touch Data Cable",
+      "pins": [
+        "USB-A",
+        "Micro USB"
+      ],
+      "type": "module",
+      "partId": "ed06c32a-2c93-498e-945e-852b00f9f2d9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=USB+A+to+Micro+USB+Cable+%28Data%2FPower%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41Bf06-KwDL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07KC5169G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.56",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007938141311.html?pdp_npi=6%40dis%21USD%217.59%213.57%21%21%2151.36%2124.14%21%40212a7b8d17794568209887677e1121%2112000042938171131%21affd%21%21%21%211%210%21",
+            "price": "$3.57",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07KC5169G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x5x5mm",
+      "productName": "USB A to Micro USB Cable (Data/Power)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxxa6FipedLYv0sRxzaTCBp7sgOW28BAv1HcwnLrCLVUAfXGhCxJ6aFnJaItIYJX0kS5HirmVhWJQZLRV9PcrBcGMzhlr3RXCkK3KBaxieQv0gxQTmINd8hoY7YW2OfiF8wmvCahoLXX5iH6XLvwr5Qd8Cu6K3lTAiewqXdPixBqejTVtW9twwyrfhk6QIZTEAJY3HbvirH8l0bwioqQYyUOTvq031QzzmtWxnnOTeiYqNy9miWL0ImTlDJkAwjfzzRotExBxpPlSo3jTIIBflWVhTPs92bciPoiBZvtaa8XxzMdWnvNKDRvdXxglYCa4BMR7zYZxh1aW5t2s3BIJqyRQ7uKJjgHm9kRQOF550oCCKSUCN0wVU6hti9EMfpGzFe7FLym1y8ZczHx3k70Ma7HznUALp6UTVwp5IkJHasHEB8nEIftj7Xhj0woEcZxEz48w5qH8L8hJIrfSwSuCBmJM70wjjrzAol8JlKw2EVFUu6yj3BRtFrgTgmRnLdrHSJ6SsxIcTKuQKAYTG4qtz2XncQZbqn4ygCck26rD98l1jc6DkpwlyKkhxkZReAe3H1ncU2OwDWsaIyzhid9jt6n00l4NvOPCTb3belg0ajTuFZR59aEVVVDeeYQLyuoLmGACDa5UiICKczFSt6uvNR23",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxxa6FipedLYv0sRxzaTCBp7sgOW28BAv1HcwnLrCLVUAfXGhCxJ6aFnJaItIYJX0kS5HirmVhWJQZLRV9PcrBcGMzhlr3RXCkK3KBaxieQv0gxQTmINd8hoY7YW2OfiF8wmvCahoLXX5iH6XLvwr5Qd8Cu6K3lTAiewqXdPixBqejTVtW9twwyrfhk6QIZTEAJY3HbvirH8l0bwioqQYyUOTvq031QzzmtWxnnOTeiYqNy9miWL0ImTlDJkAwjfzzRotExBxpPlSo3jTIIBflWVhTPs92bciPoiBZvtaa8XxzMdWnvNKDRvdXxglYCa4BMR7zYZxh1aW5t2s3BIJqyRQ7uKJjgHm9kRQOF550oCCKSUCN0wVU6hti9EMfpGzFe7FLym1y8ZczHx3k70Ma7HznUALp6UTVwp5IkJHasHEB8nEIftj7Xhj0woEcZxEz48w5qH8L8hJIrfSwSuCBmJM70wjjrzAol8JlKw2EVFUu6yj3BRtFrgTgmRnLdrHSJ6SsxIcTKuQKAYTG4qtz2XncQZbqn4ygCck26rD98l1jc6DkpwlyKkhxkZReAe3H1ncU2OwDWsaIyzhid9jt6n00l4NvOPCTb3belg0ajTuFZR59aEVVVDeeYQLyuoLmGACDa5UiICKczFSt6uvNR23",
+      "estimatedCost": 5
+    },
+    {
+      "id": "hdmi_to_hdmi_cable",
+      "name": "Display Video Cable",
+      "pins": [
+        "HDMI Type A"
+      ],
+      "type": "module",
+      "partId": "8c314e11-0f6f-414c-84f8-d9d5ffa4cb3e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=HDMI+to+HDMI+Cable&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ozAn2t-N35gtkmcka5YGEbepeFPxEEy4a9jK5D1aaic/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jMS5u/ZXdlZ2dpbWFnZXMu/Y29tL3Byb2R1Y3Rp/bWFnZS9uYjMwMC84/Ni04MTYtMDQ4LTE1/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B08M9HND4F?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x15x8mm",
+      "productName": "HDMI to HDMI Cable",
+      "purchaseUrl": "https://www.amazon.com/s?k=hdmi+to+hdmi+cable+short",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxg3igWmNwblDFiN0H8DSHrph0F20LOAUH6aHBjlYjJXm6kdH9EldbiHkb1ho1EAsNEfaD8zOwBSOGl0p9663wFEKxvZhFM8CtnypaDpnbkt0eU8UILPorIvJIwz0YPIsU4sjtjlE3seQXAZnaUVbfyUy1OLgWs8P97AR1PBmnPPPRn0rC61Hln77dovsCzPQcr41F8nEaG7uGgtbB4H4uh26SzCZUGtRK52jxwDC2b5JnMqx48l6tgbaA9R8oVaoEzeQy5mMZF9wY8wIVWFClFMeJKxFjHRotvMHLgqaQAaFiuJ967b7ceo9bep3cHSMAlWfxpA9ackva027TyN13D01y0rOzcfBx9mHuIOBXzLI9ZyrHuWnTRflalKmBQxdlJzvxzpCgU1u3q7oPOrOrhuH7vn8xruQyJdpwLO6ZNUtXsvEeFKDOMOUQy1kiIAc6u8grsjO1Y3a3bBuUueALOLM3TQ9OaEAoFVuyqnzfUFobPjIuFvHQxTBEJwesAmwTjy9jDZlVOCJnl3nm996b0AionazALcBf4KBLN6WFJjpyRYsujCBFz0oFEWgDNMcy1HJI4dYwdvOgfoFJ4qTR3hb7VsQUvVvPFyoLy5sYMbXWdbtUDZVTjhDNixPq8rs0uMoCpgzJSn3lI1XDt25wA6f",
+      "estimatedCost": 7
+    },
+    {
+      "id": "case_lid_structural_panel",
+      "name": "Case Lid Structural Panel",
+      "type": "structural",
+      "partId": "e6fa7dda-e1ad-477d-b8ed-c11bee823ede",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Case+Lid+Structural+Panel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0FM26KCVT?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "330x230x3mm",
+      "position3d": {
+        "x": 175,
+        "y": 85,
+        "z": 125
+      },
+      "boundingBox": {
+        "depth": 230,
+        "width": 330,
+        "height": 3
+      },
+      "description": "Acrylic or thin aluminum panel mounted to the inside of the case lid for additional rigidity and mounting points.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3mm+acrylic+sheet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2yZgx1n",
+      "estimatedCost": 10
+    },
+    {
+      "id": "main_base_structural_panel",
+      "name": "Main Base Structural Panel",
+      "type": "structural",
+      "partId": "5a891044-91c3-4aae-b9c9-66db7c44c25f",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Main+Base+Structural+Panel&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CT6CT5Q9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "330x230x3mm",
+      "position3d": {
+        "x": 175,
+        "y": 15,
+        "z": 125
+      },
+      "boundingBox": {
+        "depth": 230,
+        "width": 330,
+        "height": 3
+      },
+      "description": "Acrylic or thin aluminum panel mounted to the bottom of the case for component mounting and organization.",
+      "purchaseUrl": "https://www.amazon.com/s?k=3mm+acrylic+sheet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4CLNoel",
+      "estimatedCost": 10
+    },
+    {
+      "id": "m3_screws_general_mount",
+      "name": "M3 Mounting Screws General",
+      "type": "misc",
+      "partId": "9f342883-91f1-4444-9e8e-1899e7c30de7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+x+10mm+Pan+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/313i8J8nZxL._SL500_.jpg",
+      "quantity": 8,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0GC3CD86G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010780612616.html?pdp_npi=6%40dis%21USD%211.89%211.70%21%21%211.89%211.70%21%402101611117795564147994312e10f2%2112000053489164712%21affd%21%21%21%211%210%21",
+            "price": "$1.7",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0GC3CD86G?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "General purpose M3 screws for attaching 3D-printed mounts to structural panels or the case itself.",
+      "productName": "M3 x 10mm Pan Head Screws",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgOv6vjneM9a0XPoLyr6DieX86EGBS9yoJsDQLBw4R7dI0HTHDOzIkMoTIoLsme3kVY2ZObHM1sJiXwqEzxThtnBgbGyY2RMlouNDSKSbPt3aHw9e5wpSwHiDMNRROSAwrlTVjLOUpiR2UrZuKRxhER5x3ZJFiT26cwYepeFxSQ1OQBCaqQhVxntR5LGOuDsmMFQbUr5YytYExtj6cuV6miI4wqHaZGj8qCYxmpLraXMoq4oCgeDIbrIa8wiMZnLYOuJDZyZVf4aqIYg9fvF1Egecyf9LzimN9f1ucw0e4qM2e6ERzOI8n0pzGq13KwTy2H0tDxiRdxWGtO2O45gLjy3fj7is1WeXxXmL5QL7SoMacaARbP1Yr9gkyKBU37YgeeQ0t23qhSf3bpYDMpPeGit39HRWntudf4ItyruYzzpUzFpRW42sYzKa6DFYFAQ6dwFY6cZwOqW5z0RVNhp5E6z87T8fuPU5utBHUspJbj2h1VGXU1qnfdl2i3ZYxLF5KizWWRqeNMFDqzOplVT4oDEJygxNy3lxMMZ5V4EDRszhiHhDgnGiDdB6XYVSxnVKEk969NlGMNgJMkEeMv830oBBC4PAeoOKUhXz62qnkXkeACTy2QTCZi3dbaHhahKoBNbSQX9d3xbnNmfTJrKXEQP",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgOv6vjneM9a0XPoLyr6DieX86EGBS9yoJsDQLBw4R7dI0HTHDOzIkMoTIoLsme3kVY2ZObHM1sJiXwqEzxThtnBgbGyY2RMlouNDSKSbPt3aHw9e5wpSwHiDMNRROSAwrlTVjLOUpiR2UrZuKRxhER5x3ZJFiT26cwYepeFxSQ1OQBCaqQhVxntR5LGOuDsmMFQbUr5YytYExtj6cuV6miI4wqHaZGj8qCYxmpLraXMoq4oCgeDIbrIa8wiMZnLYOuJDZyZVf4aqIYg9fvF1Egecyf9LzimN9f1ucw0e4qM2e6ERzOI8n0pzGq13KwTy2H0tDxiRdxWGtO2O45gLjy3fj7is1WeXxXmL5QL7SoMacaARbP1Yr9gkyKBU37YgeeQ0t23qhSf3bpYDMpPeGit39HRWntudf4ItyruYzzpUzFpRW42sYzKa6DFYFAQ6dwFY6cZwOqW5z0RVNhp5E6z87T8fuPU5utBHUspJbj2h1VGXU1qnfdl2i3ZYxLF5KizWWRqeNMFDqzOplVT4oDEJygxNy3lxMMZ5V4EDRszhiHhDgnGiDdB6XYVSxnVKEk969NlGMNgJMkEeMv830oBBC4PAeoOKUhXz62qnkXkeACTy2QTCZi3dbaHhahKoBNbSQX9d3xbnNmfTJrKXEQP",
+      "estimatedCost": 0.07
+    },
+    {
+      "id": "mj_comfy_life_case",
+      "name": "Main Enclosure Case",
+      "pins": [],
+      "type": "enclosure",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M-J+COMFY+LIFE+Portable+Waterproof+Protective+Hard+Case&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 175,
+        "y": 50,
+        "z": 125
+      },
+      "boundingBox": {
+        "depth": 250,
+        "width": 350,
+        "height": 100
+      },
+      "description": "Hard case to house all cyberdeck components.",
+      "productName": "M-J COMFY LIFE Portable Waterproof Protective Hard Case",
+      "purchaseUrl": "https://www.amazon.co.uk/M-J-COMFY-LIFE-Portable-Waterproof-Protective/dp/B0DZBPBZN7/ref=asc_df_B0DZBPBZN7?mcid=0fb5d0934a7234f08e4ceb30bc832845&tag=googshopuk-21&linkCode=df0&hvadid=755542119057&hvpos=&hvnetw=g&hvrand=3056855292378784112&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9045540&hvtargid=pla-2427857077175&hvocijid=3056855292378784112-B0DZBPBZN7-&hvexpln=0&gad_source=1&th=1",
+      "estimatedCost": 30
+    },
+    {
+      "id": "rpi_standoff_mount_kit",
+      "name": "Raspberry Pi Mounting Kit",
+      "type": "misc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Raspberry+Pi+Standoff+and+Screw+Set&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Standard standoffs and screws for mounting the Raspberry Pi directly to a flat surface.",
+      "productName": "Raspberry Pi Standoff and Screw Set",
+      "purchaseUrl": "https://www.amazon.com/s?k=raspberry+pi+standoff+kit",
+      "estimatedCost": 5
+    },
+    {
+      "id": "universal_7inch_display_stand",
+      "name": "Universal 7-inch Display Stand",
+      "type": "mechanism",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Adjustable+Tablet+Stand+for+7-10+inch+Displays&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 175,
+        "y": 45,
+        "z": 200
+      },
+      "boundingBox": {
+        "depth": 80,
+        "width": 100,
+        "height": 80
+      },
+      "description": "Adjustable stand to hold the 7-inch display at an ergonomic angle, secured to the case lid.",
+      "productName": "Adjustable Tablet Stand for 7-10 inch Displays",
+      "purchaseUrl": "https://www.amazon.com/s?k=adjustable+tablet+stand+7+inch",
+      "estimatedCost": 15
+    },
+    {
+      "id": "adhesive_velcro_strips",
+      "name": "Adhesive Velcro Strips",
+      "type": "misc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Heavy+Duty+Self-Adhesive+Hook+and+Loop+Fastener+Tape&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Self-adhesive velcro for securing the keyboard and power bank in place.",
+      "productName": "Heavy Duty Self-Adhesive Hook and Loop Fastener Tape",
+      "purchaseUrl": "https://www.amazon.com/s?k=heavy+duty+adhesive+velcro",
+      "estimatedCost": 8
+    },
+    {
+      "id": "adhesive_cable_clips_pack",
+      "name": "Adhesive Cable Management Clips",
+      "type": "misc",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Self-Adhesive+Cable+Clips+%28Small%2C+Pack+of+50%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "description": "Small adhesive clips for routing and securing internal cables.",
+      "productName": "Self-Adhesive Cable Clips (Small, Pack of 50)",
+      "purchaseUrl": "https://www.amazon.com/s?k=adhesive+cable+clips",
+      "estimatedCost": 7
+    }
+  ],
+  "notes": [
+    "mobile cyberdeck",
+    "writing focus",
+    "star gazing",
+    "compact keyboard",
+    "7-inch display"
+  ],
+  "projectName": "Stargazer Cyberdeck",
+  "originalPrompt": "i want to create a mobile cyberdeck mainly for writing and looking at stars using the following parts: Keyboard: Hoopond Mechanical Keyboard, AK33 Green LED Backlit USB Cable Gaming Mechanical Keyboard, 82 key Compact Mechanical Gaming Keyboard with Anti-ghosting Keys for Gamers, Typists (Blue switch, Black)\nDisplay: Elecrow RC070 7inch 1024*600 LCD Display with IPS Touch Screen| Compatible with Windows/Raspberry Pi\nComputer: Raspberry Pi 3 Model B 1GB SC0022 64-bit Quad-Core Single Board Computer",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Prepare Raspberry Pi Mounting Kit standoffs",
+          "partIds": [
+            "rpi_standoff_mount_kit"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Prepare display stand for mounting to structural panel",
+          "partIds": [
+            "universal_7inch_display_stand",
+            "m3_screws_general_mount"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Cut adhesive velcro strips to size for keyboard and power bank",
+          "partIds": [
+            "adhesive_velcro_strips",
+            "hoopond_keyboard",
+            "power_bank_usb_c"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Connect Display Video Cable from rpi_main_controller to elecrow_main_display",
+          "partIds": [
+            "rpi_main_controller",
+            "hdmi_to_hdmi_cable",
+            "elecrow_main_display"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Connect Display Touch Data Cable from rpi_main_controller to elecrow_main_display",
+          "partIds": [
+            "rpi_main_controller",
+            "usb_a_to_micro_usb_cable_display_touch",
+            "elecrow_main_display"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect Pi Power Cable from power_bank_usb_c to rpi_main_controller",
+          "partIds": [
+            "power_bank_usb_c",
+            "usb_a_to_micro_usb_cable_pi",
+            "rpi_main_controller"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect Display Power Cable from power_bank_usb_c to elecrow_main_display",
+          "partIds": [
+            "power_bank_usb_c",
+            "usb_a_to_micro_usb_cable_display_power",
+            "elecrow_main_display"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect Input Keyboard to rpi_main_controller",
+          "partIds": [
+            "rpi_main_controller",
+            "hoopond_keyboard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Power on rpi_main_controller and elecrow_main_display from power_bank_usb_c",
+          "partIds": [
+            "rpi_main_controller",
+            "elecrow_main_display",
+            "power_bank_usb_c"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Verify elecrow_main_display receives video signal and powers on correctly",
+          "partIds": [
+            "elecrow_main_display"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test elecrow_main_display touch functionality with rpi_main_controller",
+          "partIds": [
+            "rpi_main_controller",
+            "elecrow_main_display",
+            "usb_a_to_micro_usb_cable_display_touch"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Test hoopond_keyboard functionality with rpi_main_controller",
+          "partIds": [
+            "rpi_main_controller",
+            "hoopond_keyboard"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Perform initial software configuration on rpi_main_controller",
+          "partIds": [
+            "rpi_main_controller"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount rpi_main_controller to main_base_structural_panel using rpi_standoff_mount_kit",
+          "partIds": [
+            "rpi_main_controller",
+            "main_base_structural_panel",
+            "rpi_standoff_mount_kit"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Affix universal_7inch_display_stand to case_lid_structural_panel with m3_screws_general_mount",
+          "partIds": [
+            "universal_7inch_display_stand",
+            "case_lid_structural_panel",
+            "m3_screws_general_mount"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Mount elecrow_main_display onto universal_7inch_display_stand",
+          "partIds": [
+            "universal_7inch_display_stand",
+            "elecrow_main_display"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Secure hoopond_keyboard to case_lid_structural_panel using adhesive_velcro_strips",
+          "partIds": [
+            "hoopond_keyboard",
+            "case_lid_structural_panel",
+            "adhesive_velcro_strips"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Secure power_bank_usb_c to main_base_structural_panel using adhesive_velcro_strips",
+          "partIds": [
+            "power_bank_usb_c",
+            "main_base_structural_panel",
+            "adhesive_velcro_strips"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Route and secure cables using adhesive_cable_clips_pack on both structural panels",
+          "partIds": [
+            "adhesive_cable_clips_pack",
+            "main_base_structural_panel",
+            "case_lid_structural_panel",
+            "usb_a_to_micro_usb_cable_pi",
+            "usb_a_to_micro_usb_cable_display_power",
+            "usb_a_to_micro_usb_cable_display_touch",
+            "hdmi_to_hdmi_cable"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Affix main_base_structural_panel and case_lid_structural_panel into mj_comfy_life_case",
+          "partIds": [
+            "main_base_structural_panel",
+            "case_lid_structural_panel",
+            "mj_comfy_life_case"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Perform final system test within the assembled mj_comfy_life_case",
+          "partIds": [
+            "mj_comfy_life_case",
+            "rpi_main_controller",
+            "elecrow_main_display",
+            "hoopond_keyboard",
+            "power_bank_usb_c"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "The Stargazer Cyberdeck is a mobile writing station built around a Raspberry Pi controller, a compact keyboard, and a 7-inch touch display. Powered by an external source, this portable unit is ideal for focused work, especially during stargazing sessions.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "mobile cyberdeck",
+      "writing focus",
+      "star gazing",
+      "compact keyboard",
+      "7-inch display"
+    ],
+    "description": "Project idea: i want to create a mobile cyberdeck mainly for writing and looking at stars using the following parts: Keyboard: Hoopond Mechanical Keyboard, AK33 Green LED Backlit USB Cable Gaming Mechanical Keyboard, 82 key Compact Mechanical Gaming Keyboard with Anti-ghosting Keys for Gamers, Typists (Blue switch, Black)\nDisplay: Elecrow RC070 7inch 1024*600 LCD Display with IPS Touch Screen| Compatible with Windows/Raspberry Pi\nComputer: Raspberry Pi 3 Model B 1GB SC0022 64-bit Quad-Core Single Board Computer\n\nDesign notes: mobile cyberdeck, writing focus, star gazing, compact keyboard, 7-inch display\n\nElectrical components (current): Main Cyberdeck Controller (mcu, 85x56x17mm); Primary Touch Display (display, 165x125x13mm); 5x module: Input Keyboard, Pi Power Cable, Display Power Cable, Display Touch Data Cable +1 more; External Power Source (power, 150x75x25mm)\n\nMechanical/structural parts (current): 8x 3d_printed: Raspberry Pi Base Mount, Display Fixed Angle Bezel, Keyboard Recessed Tray, Pi USB Cable Clip +4 more; 2x structural: Case Lid Structural Panel, Main Base Structural Panel; 6x misc: M2.5 Mounting Screws for RPi, M3 Mounting Screws for Display, M3 Mounting Screws General, M3 Nuts +2 more\n\nAssembly: Main Base Structural Panel → Main Enclosure Case (affixed to base interior); Case Lid Structural Panel → Main Enclosure Case (affixed to lid interior); Raspberry Pi Base Mount → Main Base Structural Panel (M3 bolts and M3 nuts); Power Bank Retaining Tray → Main Base Structural Panel (M3 bolts and M3 nuts); Display Fixed Angle Bezel → Case Lid Structural Panel (M3 screws_general_mount into heat_set_inserts_m3); Keyboard Recessed Tray → Case Lid Structural Panel (M3 screws_general_mount into heat_set_inserts_m3); Pi USB Cable Clip → Main Base Structural Panel (adhesive or small screws); Display Power Cable Clip → Case Lid Structural Panel (adhesive or small screws); Display Touch Cable Clip → Case Lid Structural Panel (adhesive or small screws); HDMI Cable Clip → Case Lid Structural Panel (adhesive or small screws); Raspberry Pi Base Mount → Main Cyberdeck Controller (mount); Display Fixed Angle Bezel → Primary Touch Display (mount); Keyboard Recessed Tray → Input Keyboard (mount); Pi USB Cable Clip → Pi Power Cable (mount); Display Power Cable Clip → Display Power Cable (mount) (+3 more connections)"
+  },
+  "instructionPreamble": {
+    "tools": [
+      "Small Phillips head screwdriver",
+      "M3 Hex Key (if M3 screws are hex)",
+      "Utility knife (for adhesive backing)",
+      "Multimeter (for continuity/power checks)"
+    ],
+    "assumptions": [
+      "Basic understanding of Raspberry Pi OS setup and configuration",
+      "Raspberry Pi OS is pre-installed on the rpi_main_controller's SD card",
+      "Familiarity with basic electronic assembly practices",
+      "Access to a power source for charging the power_bank_usb_c"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Power Bank to Pi Cable (USB-A)",
+      "source": "power_bank_usb_c",
+      "target": "usb_a_to_micro_usb_cable_pi",
+      "current": "2.5A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Pi Cable to Pi (Micro USB)",
+      "source": "usb_a_to_micro_usb_cable_pi",
+      "target": "rpi_main_controller",
+      "current": "2.5A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Power Bank to Display Power Cable (USB-A)",
+      "source": "power_bank_usb_c",
+      "target": "usb_a_to_micro_usb_cable_display_power",
+      "current": "2A",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Display Power Cable to Display (Micro USB)",
+      "source": "usb_a_to_micro_usb_cable_display_power",
+      "target": "elecrow_main_display",
+      "current": "2A",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "Pi to HDMI Cable",
+      "source": "rpi_main_controller",
+      "target": "hdmi_to_hdmi_cable",
+      "protocol": "hdmi",
+      "sourcePin": "HDMI",
+      "targetPin": "HDMI Type A"
+    },
+    {
+      "type": "data",
+      "label": "HDMI Cable to Display",
+      "source": "hdmi_to_hdmi_cable",
+      "target": "elecrow_main_display",
+      "protocol": "hdmi",
+      "sourcePin": "HDMI Type A",
+      "targetPin": "HDMI (Input)"
+    },
+    {
+      "type": "data",
+      "label": "Pi to Keyboard (USB)",
+      "source": "rpi_main_controller",
+      "target": "hoopond_keyboard",
+      "protocol": "usb",
+      "sourcePin": "USB 2.0",
+      "targetPin": "USB (Data/Power)"
+    },
+    {
+      "type": "data",
+      "label": "Pi to Display Touch Cable (USB-A)",
+      "source": "rpi_main_controller",
+      "target": "usb_a_to_micro_usb_cable_display_touch",
+      "protocol": "usb",
+      "sourcePin": "USB 2.0",
+      "targetPin": "USB-A"
+    },
+    {
+      "type": "data",
+      "label": "Display Touch Cable to Display",
+      "source": "usb_a_to_micro_usb_cable_display_touch",
+      "target": "elecrow_main_display",
+      "protocol": "usb",
+      "sourcePin": "Micro USB",
+      "targetPin": "Micro USB (Touch)"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "affixed to base interior",
+      "source": "main_base_structural_panel",
+      "target": "mj_comfy_life_case"
+    },
+    {
+      "label": "affixed to lid interior",
+      "source": "case_lid_structural_panel",
+      "target": "mj_comfy_life_case"
+    },
+    {
+      "label": "mounted with rpi_standoff_mount_kit",
+      "source": "rpi_main_controller",
+      "target": "main_base_structural_panel"
+    },
+    {
+      "label": "affixed with m3_screws_general_mount",
+      "source": "universal_7inch_display_stand",
+      "target": "case_lid_structural_panel"
+    },
+    {
+      "label": "holds display with clamps/adhesive pads",
+      "source": "universal_7inch_display_stand",
+      "target": "elecrow_main_display"
+    },
+    {
+      "label": "secured with adhesive_velcro_strips",
+      "source": "hoopond_keyboard",
+      "target": "case_lid_structural_panel"
+    },
+    {
+      "label": "secured with adhesive_velcro_strips",
+      "source": "power_bank_usb_c",
+      "target": "main_base_structural_panel"
+    },
+    {
+      "label": "adhesive attachment to manage cables",
+      "source": "adhesive_cable_clips_pack",
+      "target": "main_base_structural_panel"
+    },
+    {
+      "label": "adhesive attachment to manage cables",
+      "source": "adhesive_cable_clips_pack",
+      "target": "case_lid_structural_panel"
+    }
+  ],
+  "projectId": "9c9b4af0-a76f-42d0-81a3-daeeae854293"
+}

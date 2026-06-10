@@ -1,0 +1,227 @@
+[
+  {
+    "label": "mounts two track_motor_mounts with M3x12mm bolts",
+    "source": "chassis",
+    "target": "track_motor_mount"
+  },
+  {
+    "label": "secures track_motor_left with M2x8mm bolts",
+    "source": "track_motor_mount",
+    "target": "left_track_motor"
+  },
+  {
+    "label": "secures track_motor_right with M2x8mm bolts",
+    "source": "track_motor_mount",
+    "target": "right_track_motor"
+  },
+  {
+    "label": "shaft mounts to drive_sprocket",
+    "source": "left_track_motor",
+    "target": "drive_sprocket"
+  },
+  {
+    "label": "shaft mounts to drive_sprocket",
+    "source": "right_track_motor",
+    "target": "drive_sprocket"
+  },
+  {
+    "label": "drives left_track",
+    "source": "drive_sprocket",
+    "target": "left_track_motor"
+  },
+  {
+    "label": "drives right_track",
+    "source": "drive_sprocket",
+    "target": "right_track_motor"
+  },
+  {
+    "label": "mounts two idler_mounts with M3x12mm bolts",
+    "source": "chassis",
+    "target": "idler_mount"
+  },
+  {
+    "label": "secures idler_wheel",
+    "source": "idler_mount",
+    "target": "idler_wheel"
+  },
+  {
+    "label": "guides left_track",
+    "source": "idler_wheel",
+    "target": "left_track_motor"
+  },
+  {
+    "label": "guides right_track",
+    "source": "idler_wheel",
+    "target": "right_track_motor"
+  },
+  {
+    "label": "mounts head_pan_servo_mount with M3x6mm bolts",
+    "source": "chassis",
+    "target": "head_pan_servo"
+  },
+  {
+    "label": "secures servo_mg90s_head_pan with included servo screws",
+    "source": "head_pan_servo",
+    "target": "head_pan_servo"
+  },
+  {
+    "label": "servo horn attaches to head_tilt_servo_mount",
+    "source": "head_pan_servo",
+    "target": "head_tilt_servo"
+  },
+  {
+    "label": "secures servo_mg90s_head_tilt with included servo screws",
+    "source": "head_tilt_servo",
+    "target": "head_tilt_servo"
+  },
+  {
+    "label": "servo horn attaches to head_assembly",
+    "source": "head_tilt_servo",
+    "target": "head_assembly"
+  },
+  {
+    "label": "mounts two arm_servo_mounts with M3x6mm bolts",
+    "source": "chassis",
+    "target": "arm_servo_mount"
+  },
+  {
+    "label": "secures servo_mg90s_arm_left with included servo screws",
+    "source": "arm_servo_mount",
+    "target": "left_arm_servo"
+  },
+  {
+    "label": "secures servo_mg90s_arm_right with included servo screws",
+    "source": "arm_servo_mount",
+    "target": "right_arm_servo"
+  },
+  {
+    "label": "servo horn attaches to left_arm_assembly",
+    "source": "left_arm_servo",
+    "target": "left_arm_assembly"
+  },
+  {
+    "label": "servo horn attaches to right_arm_assembly",
+    "source": "right_arm_servo",
+    "target": "right_arm_assembly"
+  },
+  {
+    "label": "secures camera_mipi_mount with M3x6mm bolts",
+    "source": "head_assembly",
+    "target": "camera_mipi_mount"
+  },
+  {
+    "label": "mounts ultrasonic_sensor_mount with M3x6mm bolts",
+    "source": "chassis",
+    "target": "ultrasonic_sensor_mount"
+  },
+  {
+    "label": "mounts ultrasonic sensor with M2x8mm bolts and M2 nuts",
+    "source": "ultrasonic_sensor_mount",
+    "target": "ultrasonic_sensors"
+  },
+  {
+    "label": "mounts two ir_sensor_mounts with M3x6mm bolts",
+    "source": "chassis",
+    "target": "ir_sensor_mount"
+  },
+  {
+    "label": "mounts IR sensor with M2x8mm bolts and M2 nuts",
+    "source": "ir_sensor_mount",
+    "target": "ir_sensors"
+  },
+  {
+    "label": "mounts mic_module_mount with M3x6mm bolts",
+    "source": "head_assembly",
+    "target": "mic_module_mount"
+  },
+  {
+    "label": "mounts microphone module with M2x8mm bolts and M2 nuts",
+    "source": "mic_module_mount",
+    "target": "mic_module"
+  },
+  {
+    "label": "mounts speaker_mount with M3x6mm bolts",
+    "source": "head_assembly",
+    "target": "speaker_mount"
+  },
+  {
+    "label": "mounts speaker",
+    "source": "speaker_mount",
+    "target": "speaker_module_amp"
+  },
+  {
+    "label": "mounts lipo_battery_tray with M3x12mm bolts",
+    "source": "chassis",
+    "target": "lipo_battery_tray"
+  },
+  {
+    "label": "holds LiPo battery with strap or adhesive",
+    "source": "lipo_battery_tray",
+    "target": "lipo_battery"
+  },
+  {
+    "label": "mounts bms_module_mount with M3x6mm bolts",
+    "source": "chassis",
+    "target": "bms_module_mount"
+  },
+  {
+    "label": "mounts BMS module with M2x8mm bolts and M2 nuts",
+    "source": "bms_module_mount",
+    "target": "bms_module"
+  },
+  {
+    "label": "mounts buck_5v_mount with M3x6mm bolts",
+    "source": "chassis",
+    "target": "buck_5v_mount"
+  },
+  {
+    "label": "mounts 5V buck converter with M2x8mm bolts and M2 nuts",
+    "source": "buck_5v_mount",
+    "target": "buck_5v"
+  },
+  {
+    "label": "M2x8mm Bolt",
+    "source": "display_mount",
+    "target": "display_st7789"
+  },
+  {
+    "label": "M3x6mm Bolt",
+    "source": "head_assembly",
+    "target": "display_mount"
+  },
+  {
+    "label": "M3x6mm Bolt",
+    "source": "chassis",
+    "target": "watchdog_mount"
+  },
+  {
+    "label": "M2x8mm Bolt",
+    "source": "watchdog_mount",
+    "target": "watchdog_timer"
+  },
+  {
+    "label": "Mounts with M3 bolts",
+    "source": "combined_controller_mount",
+    "target": "chassis"
+  },
+  {
+    "label": "Secured with M2 bolts",
+    "source": "licheerv_nano_main",
+    "target": "combined_controller_mount"
+  },
+  {
+    "label": "Secured with M2 bolts",
+    "source": "esp32_controller",
+    "target": "combined_controller_mount"
+  },
+  {
+    "label": "Secured with M2 bolts",
+    "source": "motor_driver_tracks",
+    "target": "combined_controller_mount"
+  },
+  {
+    "label": "Mounted to camera bracket",
+    "source": "camera_mipi_csi_ov5647",
+    "target": "camera_mipi_mount"
+  }
+]

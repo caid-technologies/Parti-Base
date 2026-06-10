@@ -1,0 +1,47 @@
+[
+  {
+    "label": "affixed to base interior",
+    "source": "main_base_structural_panel",
+    "target": "mj_comfy_life_case"
+  },
+  {
+    "label": "affixed to lid interior",
+    "source": "case_lid_structural_panel",
+    "target": "mj_comfy_life_case"
+  },
+  {
+    "label": "mounted with rpi_standoff_mount_kit",
+    "source": "rpi_main_controller",
+    "target": "main_base_structural_panel"
+  },
+  {
+    "label": "affixed with m3_screws_general_mount",
+    "source": "universal_7inch_display_stand",
+    "target": "case_lid_structural_panel"
+  },
+  {
+    "label": "holds display with clamps/adhesive pads",
+    "source": "universal_7inch_display_stand",
+    "target": "elecrow_main_display"
+  },
+  {
+    "label": "secured with adhesive_velcro_strips",
+    "source": "hoopond_keyboard",
+    "target": "case_lid_structural_panel"
+  },
+  {
+    "label": "secured with adhesive_velcro_strips",
+    "source": "power_bank_usb_c",
+    "target": "main_base_structural_panel"
+  },
+  {
+    "label": "adhesive attachment to manage cables",
+    "source": "adhesive_cable_clips_pack",
+    "target": "main_base_structural_panel"
+  },
+  {
+    "label": "adhesive attachment to manage cables",
+    "source": "adhesive_cable_clips_pack",
+    "target": "case_lid_structural_panel"
+  }
+]

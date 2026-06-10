@@ -1,0 +1,1328 @@
+{
+  "plan": "- Satellite transceiver module (e.g., Iridium, Globalstar) for long-range communication. - High-capacity lithium-ion battery pack and power management circuitry for extended operation. - Microcontroller (e.g., STM32, ESP32) for UI, audio processing, and module control. - Audio codec, microphone, speaker, and OLED display for user interaction. - Custom PCB design for component integration and robust signal integrity. - Durable, weather-resistant enclosure with integrated satellite antenna mount.",
+  "nodes": [
+    {
+      "id": "iridium_sbd_module",
+      "name": "Iridium Satellite Transceiver",
+      "pins": [
+        "UART TX",
+        "UART RX",
+        "GND",
+        "VCC",
+        "On/Off",
+        "Reset",
+        "Antenna"
+      ],
+      "type": "module",
+      "partId": "611212a2-f880-478b-b9ed-ce1570932d50",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=RockBLOCK+9603&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/coTkVyyC52EPToLNV_0DO9C7EuNpD56UWZoAqR7Wp7I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Z3JvdW5kY29udHJv/bC5jb20vdXMvd3At/Y29udGVudC91cGxv/YWRzL3NpdGVzLzQv/MjAyMi8wMi9Sb2Nr/QkxPQ0stOTYwMy1v/bi1jdXR0aW5nLW1h/dC5qcGc",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "32x29x11mm",
+      "description": "Iridium SBD modem for global command, control, and telemetry communication.",
+      "productName": "RockBLOCK 9603",
+      "purchaseUrl": "https://rockblock.rock7.com/products/rockblock-9603",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c4Kx6zHL",
+      "estimatedCost": 250
+    },
+    {
+      "id": "main_mcu",
+      "name": "Main Microcontroller",
+      "pins": [
+        "GPIO",
+        "UART",
+        "SPI",
+        "I2C",
+        "ADC",
+        "DAC",
+        "PWM",
+        "VCC",
+        "GND",
+        "EN"
+      ],
+      "type": "mcu",
+      "partId": "9f99fc0a-1925-40d4-a944-1fb58b25997e",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32U&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/wvpFOZZ7FrTbDPLdBdLHb80tZ77aQ1rPm3hpBfiIIjs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFJR1o4WGVUREwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "3V3,GND,EN,GPIO18,GPIO19,GPIO21,GPIO22,GPIO25,GPIO26,GPIO27,ADC1_CH6,ADC1_CH3"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://app.ultralibrarian.com/details/8d10e00d-b0b7-11ec-9033-0a34d6323d74/Espressif-Systems/ESP32-WROOM-32U-N16",
+            "label": "3D STEP Model (Espressif Systems ESP32-WROOM-32U-N16)"
+          },
+          {
+            "url": "https://www.snapeda.com/parts/ESP32-WROOM-32U/Espressif%20Systems/view-part/",
+            "label": "STEP/3D Model (SnapEDA)"
+          },
+          {
+            "url": "https://grabcad.com/library/esp32-wroom-32u-1",
+            "label": "3D CAD Model Library (GrabCAD)"
+          },
+          {
+            "url": "https://github.com/espressif/kicad-libraries",
+            "label": "3D Models (GitHub - Espressif KiCad Libraries)"
+          },
+          {
+            "url": "https://www.stlfinder.com/3dmodels/esp32-wroom-32u/",
+            "label": "STL 3D Models (STLFinder)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B089F6LRBS?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "18x25.5x3.1mm",
+      "description": "High-performance SoC with integrated Wi-Fi and Bluetooth, serving as the main controller for the watch.",
+      "productName": "ESP32-WROOM-32U",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32U/13184650",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR6vbyXY2ppL9ObRmYh4w4AK032f6bBm9NDrp62dnlrDQlnlop8wQc5bP4qXfeJ276Yek60BQaZDYxId5Ukphk7sJJODgS1isRhZwKXDxwwiDFyENTPU35PqQK8lkODm1HaTad4RY4cP1wl45WTeh4RlPsVUHy4VlZIc1wB2PtjlQuLRD9hen7MaRbZW4t6zXUfC9bGHFbYPdNqsR4Swfxvxbkjmmppmd3J0DHLS6WbyeLCqhGrkful3IqodZE6Ym43o4lySI9DynEGfzAC0V04RrKdHdkM9l7Pj5CHJOrVHqcwOU1jHHGRWoW5p32KJ5OUiTiAvI0mv9xwQaDkdn9FA8HWbSs3AIgLeEMGi5R016vie39avQAoClplroYquoy9dbFawP31JlY90V4zTkK23o0MO6UtutYLQpf22wyEMzjMnh1RMnwR5eiT2GcfD4Z15yLpWqzW6Txjeuuro6nCHhyfQrqVcHCerYFuPcHa232cyBaQ6JB2tfzPp0Pkh5IYFns501H5JbMW1Otuy5O0VglVelwnjIzsReBjoSpFYOuBYb9O66NlKWdy5cIRMzbmJmK4i0IDsNvIRfOeDFuoBZtudN5nVpedSFsSYpcpRU0raQJV45HzPvp0MxFZzhzIY0rakynGimMRY348INtw7",
+      "estimatedCost": 5
+    },
+    {
+      "id": "li_ion_charger",
+      "name": "Li-ion Battery Charger",
+      "pins": [
+        "VBAT",
+        "VBUS",
+        "SYS",
+        "I2C SDA",
+        "I2C SCL",
+        "GND",
+        "STAT",
+        "INT"
+      ],
+      "type": "power",
+      "partId": "095053e0-9fc0-4d24-9d69-3248a9d816bd",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BQ24195L&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/pSIf7badxUqF4OFImDZ7EqfU48LPiGMGkyHFUYdtEt4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zbGlkZXNoYXJl/Y2RuLmNvbS9icTI0/MTk1bC0yMDEyMTkx/MzA4NTkvODUvQnEy/NDE5NWwtMjQtMzIw/LmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B091325TPZ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "4x4x0.75mm",
+      "description": "Li-Ion battery charger with power path management for single-cell battery.",
+      "productName": "BQ24195L",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/texas-instruments/BQ24195L/4320294",
+      "estimatedCost": 3.5,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c309HyPr"
+    },
+    {
+      "id": "power_management_ic",
+      "name": "Power Management IC (PMIC)",
+      "pins": [
+        "VIN",
+        "VOUT",
+        "GND",
+        "EN",
+        "FB"
+      ],
+      "type": "power",
+      "partId": "50857bae-a1ab-4975-a166-22ce3ce285e9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=TPS63020&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/_B1MJVRwbWn81Cy9FL-h2emi7TiNcmF_8O6Vlz2Yn_E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDEyTFZzMHhtd0wu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D8T3J8QZ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "3x3x1mm",
+      "description": "High-efficiency buck-boost converter for 3.3V digital logic.",
+      "productName": "TPS63020",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/texas-instruments/TPS63020DSJR/2085792",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvQsTTGPoTTHeTnzSgJbCAkOweSXdK4GOWQf4zARKxl5ZUeGYV8HsLnk2dpikNH2dNpusmLQWqve2SUJVHzWQSpgwKjOolAN4hwQSUWVeMfKViCP8UXBs6wIAh6K64bmnxXo5Bj9WVMBechC7fV6QOfJtXXGhDeNyG8JcB8KfRxZErONhP0x2rO3JTtbSwoN9dHezHOk9qjq5kMVSnG6uFgSQ5gIpgcK0HycpuWv96f5tl7IslFjvAkVAO5hj5fHV4ROGfjumGIewUyEtZRkUOaslRTlramKHLq6F4IB9Dlg8ODdbdez5ZoFql2zuP7LwOhXvUacwdn0CHkDg78husoNKXYZBadjYb15NeJdb3PWDI0bCRozZyysij6pDJ66bYvhb4tQHZXegYJC2Qxf1d8UEhW5tsklUSiy9QRI4Hkrg5AROoWTjUOyGJVWKymXAO4JdRVgOrqqBRF9KGqAdgw0umjDslLonWCX8Vf3Vh4jOOchLmZuAp3MQWEihbc6FkcXbrXN3w3oRLE1vTTe2Cj0mxxuuMOQw2TZ4Ofv1UWlOFaMNnt2YnJbOejPoVGnUmgFtaTJfQkRwrb0uRgk7tVyZnwxN4c6EScgj3glRs7xbmGsHZ0QKUHvCAtRpHfDTfp6f0JxQdFsjUutMy0Efo3p",
+      "estimatedCost": 4
+    },
+    {
+      "id": "audio_codec",
+      "name": "Audio Codec",
+      "pins": [
+        "I2S MCLK",
+        "I2S BCLK",
+        "I2S LRCLK",
+        "I2S SDATAIN",
+        "I2S SDATAOUT",
+        "I2C SDA",
+        "I2C SCL",
+        "VDD",
+        "GND",
+        "MICIN",
+        "LOUT",
+        "ROUT"
+      ],
+      "type": "module",
+      "partId": "f84cc9f8-a858-47c8-8faa-6cd12935e1f8",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=PCM3168A&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/pO3CMHL9Xwm5vFtZQYgVYUID1UadGs9lnBAaiuUhYLk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zbmFw/ZWRhLnMzLmFtYXpv/bmF3cy5jb20vcGFy/dGltYWdlL1RleGFz/X0luc3RydW1lbnRz/L1BDTTMxNjhBUEFQ/LUZvb3RwcmludC5w/bmc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B09C5QX228?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "8x8x1mm",
+      "description": "High-performance multi-channel audio codec for digital input and 4-channel analog output.",
+      "productName": "PCM3168A",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/texas-instruments/PCM3168APFB/2091942",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQzO5tEshJMwuVk6qlGyIZBAVNmWtjditTIEfxU2LMcNeFm6YfvODxjmzluIX04A6rUKLOeQXHTv50J1NLZmfxOxwmRJgIMOFjkXNZMbGDoVJk4a1qxy5CFHRwgvfVW9ATopR0WFXF7rQTYJHsg0kPR53458JOhlV64tXga1UJy93kUoC8yOautBDiYRfbQ25kuyIjKW5ouyZlJHoVv9Er38o2rHlfS8KxSZnL1wgzxmHgTRW2VxNR82UHrp0SF7nQgVJR7DF4ZVLevMbBuumWmVbKCl5P91o6SU4z3WoLMjscEhGUAaM2tgnQemI4gsRHYeZwONecTmY8WxPqHYUlktlOe6183kbLxaq1wpe567ouOdRUtsQ0nE9BcUiKIfaNDD1pX4eLF1TYvwTnq9VDTnosXuB63P0pBblhP36anrbnaZjpqzFy5VHtP5KbO8DM1pEVegIgNuZsY1kbMz6hEWqAAeOSHivEx1QS7EzKVrlL9cukhnDH696r2LLFxoo5kS1WIr4ZDY6kflANJP0I0Qadx5hbVx2GdHEWyCg7UFpJRX1ytRmNiZQHiTjQzfCsaFC5Mk6GZiXK92oaGLw7kHbtdXk5JMvw3RPHnFTpUUtsBfOcdD59vSksURqa2DmVHQmh7quUT3XHG3DrGK2FcP",
+      "estimatedCost": 10
+    },
+    {
+      "id": "microphone",
+      "name": "MEMS Microphone",
+      "pins": [
+        "VDD",
+        "GND",
+        "DOUT",
+        "CLK"
+      ],
+      "type": "sensor",
+      "partId": "011164da-5827-4821-bd34-4b756b67295a",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SPM1423HM4R-B&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/cdUzDB1T4vw0bh85DjGVTiwn3WubUabeueZCK_JJ-Z0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudWx0cmFsaWJy/YXJpYW4uY29tL3Bh/cnQtcHJldmlld3Mv/Zm9vdHByaW50cy8y/ODM5OTYwL2RldGFp/bGVkLVNQTTE0MjNI/TTRILkJfS05PLnN2/Zw",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "3.35x2.65x0.98mm",
+      "productName": "SPM1423HM4R-B",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/knowles/SPM1423HM4R-B/10495863",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3LoD6XJ",
+      "estimatedCost": 2
+    },
+    {
+      "id": "speaker",
+      "name": "Miniature Speaker",
+      "pins": [
+        "SPK+",
+        "SPK-"
+      ],
+      "type": "actuator",
+      "partId": "6edc31b9-b596-4a83-a46f-8856f4641980",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=CUI+Devices+CMS-151120-078SP&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/8TLmR0wkA1xdEJfv3fto2EzApWzeUdEZv3TFOfUugdY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YXMuZGlnaS1lbGVj/dHJvbmljcy5jb20v/cHJvZHVjdHMvNTYw/L0NNUzE1MTEzNTA3/OFNQNjcuanBn",
+      "quantity": 1,
+      "dimensions": "15x11x2mm",
+      "description": "Small, general-purpose speaker for audio output.",
+      "productName": "CUI Devices CMS-151120-078SP",
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/cui-devices/CMS-151120-078SP/10207578",
+      "estimatedCost": 3,
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3Vye0Mv",
+      "amazonUrl": null
+    },
+    {
+      "id": "oled_display",
+      "name": "OLED Display",
+      "pins": [
+        "VCC",
+        "GND",
+        "SCL",
+        "SDA",
+        "RES",
+        "DC"
+      ],
+      "type": "display",
+      "partId": "378cfbf8-be4d-4e73-bd55-09d3ccb87640",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=SSD1306+0.96+inch+OLED&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/QAGP2hHnMpDom7eq-wc106r_9qHHdOMJdjuIbd5l6bE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFScVAwVHd4QUwu/anBn",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "SDA,SCL,VCC,GND"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B09T6SJBV5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "27x27x4.1mm",
+      "description": "Small OLED display for system status and feedback. Located on the handheld head.",
+      "productName": "SSD1306 0.96 inch OLED",
+      "purchaseUrl": "https://www.adafruit.com/product/326",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRyxAvUSPUSjPHUTr77M9a5gaHAkY8zttMepDjVK7dGrvo244ugf65QsqLKk6RaFpQv6ezSmVyecQADFvedRg8da83RnzVs7HhpmvfCXSv5kZ7bX8JFCWLERS0GJKWeODyHS2IzBn3tOQfIMW7SYq83njneQ3Ptptor4abF2sWF5sU7TypilOLtBlemsbwsuskEW2iBQisP0qtVMZgzdnYXblXW3b4nPRMPf6DUhz03GmhO5MGEPjHVeNTtM86r0MWHjQnXTGNrbQziesJPQqR3RqwHfjrwFaM2jFcUthtLV7I7kUtiBU2UDgZ0HSW24E2Y8rVrRI9rwBoTwhfHZSlGy4YoonC8OVfl2G36sMKYRJ2bOeRbTAVjcqTq0obz6x28hfTVHLbitupFUMNjBZYsb1EdK957r8Em33oVViz8y24MsE20T6rzxo1TrfcEzaQkViSkjLmV9FwAJqYyYAx4ll8yUzhoVbmWe9WJqJV0lHhp9dfgLqzgPkbUI7QigdXBegnJyykjCPO0NBT4bnHNkZ075JuyfpV8iNbvCwFla4ILhMYvybiFHZpwYZII016KZvwE0H7RfnHJK0am0cnjQAkPs3ENFJVGkcGXvItPVVUiu9jsXJlzdFQicHcxk8mp6vKGeZbeFusWMELgSmjYX",
+      "estimatedCost": 7
+    },
+    {
+      "id": "li_ion_battery_pack",
+      "name": "Li-ion Battery Pack",
+      "pins": [
+        "B+",
+        "B-"
+      ],
+      "type": "power",
+      "partId": "d03972ce-640a-4a07-bcb5-936254955b70",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=18650+Li-ion+3S2P+Battery+Pack&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/ZM-R2OMUWrkmb-D6UVNlOyynoFvEJO-I0BKz0rMepsI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91ZWVz/aG9wLmx5MjAwLWNk/bi5jb20vdV9maWxl/L1VQQVcvVVBBVzgy/OC8yMjEyL3Byb2R1/Y3RzLzMxL2QzM2Vh/NTIyMDkuanBnP3gt/b3NzLXByb2Nlc3M9/aW1hZ2UvcmVzaXpl/LG1fbGZpdCxoXzI0/MCx3XzI0MA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0CHY872T5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "67x38x38mm",
+      "productName": "18650 Li-ion 3S2P Battery Pack",
+      "purchaseUrl": "https://www.amazon.com/Battery-Pack-18650-3S2P-7200mAh/dp/B08DFCRK6Y",
+      "estimatedCost": 40,
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jyaaucu7tNM4F1fl8R7lUXL2CnXyNk2nxMesgiEOKjzF4xptyEAZ3pakgEGDKVP3tmh6B2dKLwcUp8YKr1mVvAqEigB3W0ClOyJydOrQixyTI59YjQA0yNO45gkN8JhiL7DujUvoe9d5784ml1k2Rw8gRQqeORdSdryQuP9ys8JhApncULLfPynnRDOzjVlW03i9PfzINpJbiR446r21UkoZvxgARfZBkEX3zEETmU9YwVWawPUTpBYdi2tPpRts9QOqp97kBhaqz1cXUOSwu5hFfXwps8VBe8YzriOVlLj3pCrBrGxwv2yjBFeAVIxmyH98nKfyYC9SrrphcHqMswf2rdIW313C2fGYQ62dUJntEPJamohrTmlsYfScdw4o7sqplya87IQNK6w7ym9dnYKMy9Dq5MV7o9eUEQabU4GKCoZdYd4RVnpPzzylOSPyxW8a8P1of4ZVnu760t5jw2Re0C6XyHciYqMggGMWFRJxnnfUjwpUheIMZd8REeuobmmkFiZPT2lRfXcAPzwwMbIRTyDozD4T4CX6VzNDnUZktFjLWcRz0cuS8HD0eAJJ9GWp9yZw1tsFg4bWhu8pLREYuowRw7JmAbzFv91zBPprOkR7f5Za3Yfz39zXfWNHm1h1sM53qlnV6cg8ue0SH4wUb"
+    },
+    {
+      "id": "main_enclosure_front",
+      "name": "Main Enclosure (Front Shell)",
+      "type": "3d_printed",
+      "partId": "b865d4c9-1049-4511-be2b-3f4818c7c124",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/fmRhzzllZrDQ7llhFaPzpf8KU-MNjpJZhXXBP9Q95IM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdG9y/bXNoZWxsdHYuY29t/L2Nkbi9zaG9wL2Zp/bGVzLzAxLmpwZz92/PTE2OTY5NjY0NzEm/d2lkdGg9MTk0Ng",
+      "material": "ABS",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "180x80x30mm",
+      "description": "Ergonomic front shell of the walkie-talkie enclosure, designed for grip and housing the display and controls.",
+      "productName": "Main Enclosure Front Shell",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 15,
+      "printSettings": "100% infill, 0.15mm layer"
+    },
+    {
+      "id": "main_enclosure_rear",
+      "name": "Main Enclosure (Rear Shell)",
+      "type": "3d_printed",
+      "partId": "a8b7093d-736f-45aa-b506-57b675b6a086",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/PyMuoYK7Dwv5tZKubJY8Ieh264zDYtO3SfHp9gddiQE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9vZmZy/b2FkdGVudHMuY29t/L2Nkbi9zaG9wL2Zp/bGVzL3NvZnRvcHBl/ci1mb3JkLW1hdmVy/aWNrLXJlYXItdmll/d18xMDI0eDEwMjQu/anBn",
+      "material": "ABS",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "180x80x30mm",
+      "description": "Rear shell of the walkie-talkie enclosure, designed for battery compartment and satellite antenna mounting point.",
+      "productName": "Main Enclosure Rear Shell",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 15,
+      "printSettings": "100% infill, 0.15mm layer"
+    },
+    {
+      "id": "enclosure_gasket",
+      "name": "Enclosure Sealing Gasket",
+      "type": "enclosure",
+      "partId": "503c19c7-7eb7-41e2-b557-32c12afad175",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Silicone+Rubber+Gasket+Sheet&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/EFwXUJT1n9QWjndzWbCVur357m4Jez6Zl1ubEkruf0A/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFPMlo2aWxFQUwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B0D2VV95BQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "400x10x2mm",
+      "description": "Custom-cut silicone gasket for weather-sealing the main enclosure halves against water and dust ingress.",
+      "productName": "Silicone Rubber Gasket Sheet",
+      "purchaseUrl": "https://www.amazon.com/s?k=silicone+rubber+gasket+sheet",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvRiaqxP4ML8AlqchzLKQW2ZpeB9xTU3ybe647jkzjhbpRDjMzNRi7OlNXzmif62BqUpxvyg9Z7XjRKDyO4FeB4xxzyUlmThz78F6c0G2CIix7VbLMHLzU2sKuksyUOIHF5foDw5DRD8gfVqbiGt56Stubzxw5dCIre1OoiE2iSLMH1G5sY7XatGP1ZiFjYpEMu71Y1jZtHSIntuKyQPq2G5XW4x0aAcfC1P18DBwBGSpPTYoPo0ycQLMqdz3F8aaDOXtwb2m8vcJwv721WsBByrXAgTxEllBMfBrObxxxLK5VovvZHWu0E7P5hin0P1Ru0gHLeYJ4dg1ahZ9IvATD59pm79Omu5yN6Qq7ukW4xzHOgJPiyq7g3afbQFGZGbHycdLTd003NyRndQClEfyIO8gleaN4Vg0aENZuWcqJAmQbMedh70pte42iV19LH1KCxOkVwmvAR8PkFqPSM9R0ZKHAVNudf7YCFu4YiTUoPM32MfVfSC38Bw9lcbHX9YIEZXZpfX2vyrgnDcRdzRC1vN4mtlU3digmjcwqLfpflvc7gwv2kVKzd5qWjZ216EurHRoBlbBZn7943wSo5DE8zLanIbciZxnNMN9kN4LvfSOWUMnf2yWM50hBE5L7KLsdnI1iXdIwqGLVosLuZXwMaX",
+      "estimatedCost": 5
+    },
+    {
+      "id": "pcb_mounting_plate",
+      "name": "Main PCB Mounting Plate",
+      "type": "3d_printed",
+      "partId": "19d00b33-005c-44d6-82d5-90116b223d61",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/7Si1SbNRpLGpPRt8PzExXDmTcykF17-SKh2LhsOGSOQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zd2l0/Y2hhbmRjbGljay5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDcvNS1waW4t/c3dpdGNoLWFuZC0z/LXBpbi1zd2l0Y2gt/MTAyNHg1NzYucG5n",
+      "material": "ABS",
+      "quantity": 1,
+      "amazonUrl": null,
+      "dimensions": "150x70x5mm",
+      "description": "Internal structural plate to securely mount the custom PCB within the enclosure.",
+      "productName": "Main PCB Mounting Plate",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 8,
+      "printSettings": "40% infill, 0.2mm layer"
+    },
+    {
+      "id": "iridium_module_mount",
+      "name": "Iridium Module Mount",
+      "type": "3d_printed",
+      "partId": "5a1f8019-7696-40af-9f59-25abdb9852d6",
+      "category": "mechanical",
+      "material": "ABS",
+      "quantity": 1,
+      "mountsFor": "iridium_sbd_module",
+      "dimensions": "50x30x10mm",
+      "description": "Custom bracket to securely mount the Iridium satellite transceiver module to the main PCB mounting plate.",
+      "productName": "Iridium Module Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 2,
+      "printSettings": "60% infill, 0.15mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "battery_holder",
+      "name": "Li-ion Battery Pack Holder",
+      "type": "3d_printed",
+      "partId": "547651cd-31c9-4907-8d95-a1abf8feccef",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/jGIpOG2ZTl2FfsIgTNPMj5SB1VVfUPlnwbKpaqI4TGY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxNUJHM0Y5SktM/LmpwZw",
+      "material": "ABS",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "li_ion_battery_pack",
+      "dimensions": "80x40x25mm",
+      "description": "Custom holder designed to securely cradle the high-capacity Li-ion battery pack within the enclosure, preventing movement.",
+      "productName": "Li-ion Battery Pack Holder",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 3,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "oled_display_bezel",
+      "name": "OLED Display Bezel",
+      "type": "3d_printed",
+      "partId": "aa07e6e4-fa4b-421d-bf4c-79f80752c2a9",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/wR9TQ-2guCw8uPdxBEDLBh2zKT6_qcvvJu8GtFb_jiM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YmV6ZWxzYW5kZGlz/cGxheXMuY28udWsv/d3AtY29udGVudC91/cGxvYWRzLzIwMjEv/MDUvcGljMi5qcGc",
+      "material": "ABS",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.15mm layer height, 100% infill"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0D77JVQ9H?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "mountsFor": "oled_display",
+      "dimensions": "35x25x3mm",
+      "description": "Bezel to secure and frame the OLED display within the front enclosure, providing a clean appearance.",
+      "productName": "OLED Display Bezel",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHLlmX39ppMQ6dKEoesnQRHzGCapVRX00pF1JNSOcqW26ttdddHLR2hcjVXzgmGD9F84x2JbJS1OyrWRxZ1uMlXxBthdqgKm7llmmrwuJJFfWjOMYGTMaMlrwVOxxCKKLG1Kgjoflo80Rbm2qJWcMyM5yU5kxqO6ja9vw97onwwRyw146xhwSTIfzKtiQu8QOFPokXS9bTG58ibCG2XPdoFvdFFxNm4ioRbX42RuGQLPGzqhQxhLcPazF14cKtPXyZgsUk4FJZYxd9jRXOdIoLowiQIA4AvuqaILnr8yjMzPan2ihMxIYIHTeXmzsSuWWYyauOt0KoVK4KQL0xDilh6wTsROvmGTH9tUdLaBW6aDjbrKF9POt154nCdGaIqIuEL6sUuYqsqkEbnyiu8AQQ3Q5zISvY9aSr3Xsnd9VJ3rom0ZQWmFywkj5o3kkQr1cX2HGdZO4W0UjcrCBiXk6hlPAOdQiTSL1rkI0AT38nqdVA28rxGdkhGpAr6jH5QS0uqCh3eWseysFsLE53koEEQs0TlTyGtQcQ9gTquHe0Va7RShcUc5XtV9Y39gTUJzQLD21XmffEORqwBMT3wQJL9S88Ovmjhe2Lnj0BGU2rD9FIWa9Ah4c4Oj7dwBaEyc6WC6BpgLjSzFvhEYw3EZ5qIR",
+      "estimatedCost": 1,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "speaker_grille",
+      "name": "Speaker Grille",
+      "type": "3d_printed",
+      "partId": "56026d91-da54-48c9-887e-26afc81b8e79",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/IMaEjJflQhd3BZbW_HNVhPl-oRB1TWQWStgRLbQijEE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/Lzcxd2k5Rk5YNUdT/LmpwZw",
+      "material": "ABS",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 100% infill for rigidity"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "speaker",
+      "dimensions": "25x25x2mm",
+      "description": "Protective grille for the miniature speaker, integrated into the front enclosure for sound output.",
+      "productName": "Speaker Grille",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 0.5,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "microphone_mount",
+      "name": "Microphone Mount",
+      "type": "3d_printed",
+      "partId": "ce9f6b77-f6fc-41d7-b9f7-18d13a3199fa",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/MZv7yQtGSgRzlZKq2HU8VnvDQTp2Z6YehGc1tU-_KdM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjE0Um51RVBmdkwu/anBn",
+      "material": "ABS",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill"
+          }
+        ]
+      },
+      "amazonUrl": null,
+      "mountsFor": "microphone",
+      "dimensions": "10x10x5mm",
+      "description": "Small mount to position and secure the MEMS microphone optimally in the enclosure.",
+      "productName": "Microphone Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "aliexpressUrl": null,
+      "estimatedCost": 0.25,
+      "printSettings": "100% infill, 0.1mm layer"
+    },
+    {
+      "id": "satellite_antenna_mount_adapter",
+      "name": "Satellite Antenna Mount Adapter",
+      "type": "3d_printed",
+      "partId": "74a1d259-c868-48a1-bdba-4dc0218bf02f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/gegi-rMj4R4mBykjoUT7emLB_cuQYZnOELkMNi6ahFI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy1ibHBz/YzAybS9pbWFnZXMv/c3RlbmNpbC9vcmln/aW5hbC9yL3BvbGUt/YW50ZW5uYS1tb3Vu/dHNfXzk3ODMxLm9y/aWdpbmFsLmpwZw",
+      "material": "ABS",
+      "quantity": 1,
+      "dimensions": "40x40x20mm",
+      "description": "Rugged adapter for securely attaching an external Iridium satellite antenna to the rear of the enclosure.",
+      "productName": "Satellite Antenna Mount",
+      "purchaseUrl": "https://www.amazon.com/s?k=ABS+filament",
+      "estimatedCost": 4,
+      "printSettings": "80% infill, 0.15mm layer",
+      "aliexpressUrl": null,
+      "amazonUrl": null
+    },
+    {
+      "id": "m3_button_head_screws",
+      "name": "M3 Button Head Screws",
+      "type": "misc",
+      "partId": "8fe9fafc-7cbc-4934-ad72-d5b09e32db78",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Button+Head+Socket+Cap+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/AyBo0AAT2MMUL2fLW3DfDsPlpCCNPMBRsaNWJ9uJjPA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy10M2Vv/OHZ3cDIyL2ltYWdl/cy9zdGVuY2lsLzYw/OHg2MDgvcHJvZHVj/dHMvNzIyLzI4OTQv/TTN4MTBtbV9IZXhf/Q2FwX1NjcmV3c19Q/YWNrX1Bob3RvX0Zy/b21fQnVuZGxlX1No/b3RfXzE4NzkwLjE2/MTQ0NTEyNTkuMTI4/MC4xMjgwX185ODY3/Mi4xNjU0Mjg5NzUw/LnBuZz9jPTI",
+      "material": "Stainless Steel",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B075PR3YWV?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "Fasteners for securing the enclosure halves, internal PCB, and mounting brackets.",
+      "productName": "M3x10mm Button Head Socket Cap Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3x10mm+button+head+screws",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c2yLFNSl",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "m3_heat_set_inserts",
+      "name": "M3 Heat-Set Inserts",
+      "type": "misc",
+      "partId": "e360c15f-1acd-42c8-8ce7-96ea4c29f7b7",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Brass+Threaded+Heat+Set+Inserts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/o7borV1tZ4RuH0EZMYsTPOifvsrRuiNtvynLhiB6fzI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFXUjJNU3RoSUwu/anBn",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/dp/B0CS6VZYL8?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x5.7mm",
+      "description": "Brass inserts to provide robust threaded points for M3 screws in 3D-printed parts.",
+      "productName": "M3 Brass Threaded Heat Set Inserts",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+heat+set+inserts",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgNN69lIIDIECscgtgGU9UYxef4BRiw7YumAEEqwxfnfC3Yg67nOYI4dFlZCGwoomZsjoNu8orcnDAMD7B9ug5ljEl8J2qRKQrspZ0SYqxZIHKBRoDD5m0MTsX2TX0DyPj7M2IMyGVVlZVrhtqSl2m9AbLDTVdocvmpCeVWuVvBJFKYM4sacYEtD8eojrkr2NpnME7qmuSCRMiIgGrNCQEOP94PATioqAkCQ1GnYLBj4LzqBMzl6cigSS1amrvBPovhHStjY2ekMNool55yXlTlQeRwQgVMXlXWIOFhdjBnZxalEvJHYW7CJQP2rUBZ95q6RH1lKaW15lQW4DQaQLaDdOHJamlhNDd0zTBdazMof7j5RvBVug4AkzTM4d72VmUFNDnrRa4M22zw3Ei85gB8uxExFXFR0o6OUJ0EebGMsII0ZnE0SDRKGTXyEouEVD1VVmkvW5qMfmjUhw8wdQJuedbCBmiuVz5ICNpZdEyB43tWDc3bL9deJYXP4esd0bO2FG8eHqJTkn897Tbmm6cF2Rm5AGQBo7Oea0mD9NKCSuq4HxvtjcrNqXCJugRo5zXHwta26RC5htFhQJdAAKoUdDxlRH19TwnZRrrPukQGvm0wLw4QqqEwxO4ZmMoQP9zChkSjNSK5qniJr1mU60Zxd",
+      "estimatedCost": 0.15
+    },
+    {
+      "id": "control_buttons",
+      "name": "Tactile Buttons (Set)",
+      "type": "enclosure",
+      "partId": "1474cc24-4873-4b5e-ba33-8f917ebf3283",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Waterproof+Tactile+Push+Buttons&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/NxAm5M_Mw47CC07TQ4hWi0k10a84qU_kxHqF5FH-F_o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzQxOG8yclhGbEhM/LmpwZw",
+      "quantity": 5,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "NO,C"
+          }
+        ]
+      },
+      "dimensions": "6x6x7mm",
+      "description": "Rugged, waterproof tactile push buttons for user input (PTT, menu navigation).",
+      "productName": "Waterproof Tactile Push Buttons",
+      "purchaseUrl": "https://www.amazon.com/s?k=waterproof+tactile+push+buttons",
+      "estimatedCost": 1.5,
+      "amazonUrl": "https://www.amazon.com/dp/B07F24Y1TB?tag=blueprintam-20&linkCode=osi&th=1&psc=1"
+    },
+    {
+      "id": "main_mcu_mount",
+      "name": "Main Microcontroller Mount",
+      "type": "3d_printed",
+      "partId": "947f8714-eb74-4464-9f06-a1b2bf902c80",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/0xoGqrPDSILAIiuL7P2JuY3MHKA9SyAe88azP0-LAZw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9iZW5y/eXZlcy5jb20vYmlu/L3oxODAvMjAxMC4w/OC4wOS4xMC5WREMu/SW4uUG9zaXRpb24u/anBn",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "main_mcu",
+      "dimensions": "60x40x12mm",
+      "description": "Standoff bracket sized to the Main Microcontroller's mounting hole pattern. M2.5 holes for board fasteners; vented underside for airflow.",
+      "productName": "Main Microcontroller Mount",
+      "purchaseUrl": "",
+      "aliexpressUrl": null,
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "audio_codec_mount",
+      "name": "Audio Codec Mount",
+      "type": "3d_printed",
+      "partId": "bd8fa4cd-4f65-4abe-9822-21654027e403",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/XfiiLTXcPlPr6hiB-1-5Nac9GEHCMaBVbhIp_AlSxjE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL08yQUFB/T1N3eDZwWXRGZXov/cy1sMzAwLmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": null,
+      "mountsFor": "audio_codec",
+      "dimensions": "50x40x12mm",
+      "description": "Adapter plate for the Audio Codec that bolts to the main chassis with M3 hardware. Includes wire-routing channels.",
+      "productName": "Audio Codec Mount",
+      "purchaseUrl": "",
+      "aliexpressUrl": null,
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    }
+  ],
+  "notes": [
+    "500km range",
+    "long range",
+    "walkie talkie"
+  ],
+  "projectName": "Satcom Walkie Talkie",
+  "originalPrompt": "500km long range walkie talkie",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D Print all mechanical enclosure and mounting components",
+          "partIds": [
+            "main_enclosure_front",
+            "main_enclosure_rear",
+            "pcb_mounting_plate",
+            "iridium_module_mount",
+            "battery_holder",
+            "oled_display_bezel",
+            "speaker_grille",
+            "microphone_mount",
+            "satellite_antenna_mount_adapter",
+            "main_mcu_mount",
+            "audio_codec_mount"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Install M3 heat-set inserts into PCB mounting plate and main enclosure rear",
+          "partIds": [
+            "m3_heat_set_inserts",
+            "pcb_mounting_plate",
+            "main_enclosure_rear"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Clean and deburr all 3D printed parts, test-fit main enclosure halves",
+          "partIds": [
+            "main_enclosure_front",
+            "main_enclosure_rear",
+            "enclosure_gasket"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Test fit the OLED display, speaker, microphone, and tactile buttons into the front enclosure",
+          "partIds": [
+            "oled_display",
+            "speaker",
+            "microphone",
+            "control_buttons",
+            "main_enclosure_front",
+            "oled_display_bezel",
+            "speaker_grille",
+            "microphone_mount"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Prepare and tin wire leads for all electrical components",
+          "partIds": [
+            "iridium_sbd_module",
+            "main_mcu",
+            "li_ion_charger",
+            "power_management_ic",
+            "audio_codec",
+            "microphone",
+            "speaker",
+            "oled_display",
+            "li_ion_battery_pack"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder power management IC, Li-ion charger, and Li-ion battery pack power connections",
+          "partIds": [
+            "li_ion_battery_pack",
+            "li_ion_charger",
+            "power_management_ic"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Solder all power (VCC/VDD, GND) connections from PMIC to main MCU, Iridium module, audio codec, microphone, and OLED display",
+          "partIds": [
+            "power_management_ic",
+            "main_mcu",
+            "iridium_sbd_module",
+            "audio_codec",
+            "microphone",
+            "oled_display"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Solder UART connections between main MCU and Iridium module",
+          "partIds": [
+            "main_mcu",
+            "iridium_sbd_module"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Solder I2S/PDM audio connections between main MCU, audio codec, microphone, and speaker",
+          "partIds": [
+            "main_mcu",
+            "audio_codec",
+            "microphone",
+            "speaker"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Solder I2C and GPIO control connections between main MCU, OLED display, and Li-ion charger",
+          "partIds": [
+            "main_mcu",
+            "oled_display",
+            "li_ion_charger"
+          ]
+        },
+        {
+          "id": "wire_7",
+          "title": "Perform continuity checks on all soldered power and data lines to prevent short circuits",
+          "partIds": [
+            "main_mcu",
+            "iridium_sbd_module",
+            "li_ion_charger",
+            "power_management_ic",
+            "audio_codec",
+            "microphone",
+            "speaker",
+            "oled_display",
+            "li_ion_battery_pack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Connect main MCU to computer via programming interface and flash initial firmware",
+          "partIds": [
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Apply power (via charger USB or battery) and verify stable voltage rails (3.3V) at all power consumers",
+          "partIds": [
+            "li_ion_charger",
+            "power_management_ic",
+            "main_mcu",
+            "iridium_sbd_module",
+            "audio_codec",
+            "microphone",
+            "oled_display"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test I2C communication with OLED display, audio codec, and Li-ion charger",
+          "partIds": [
+            "main_mcu",
+            "oled_display",
+            "audio_codec",
+            "li_ion_charger"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Verify UART communication with Iridium Satellite Transceiver module",
+          "partIds": [
+            "main_mcu",
+            "iridium_sbd_module"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Test audio path: record from microphone and play sound through speaker via audio codec",
+          "partIds": [
+            "main_mcu",
+            "audio_codec",
+            "microphone",
+            "speaker"
+          ]
+        },
+        {
+          "id": "bringup_6",
+          "title": "Verify Li-ion charger functionality and battery status reporting",
+          "partIds": [
+            "li_ion_charger",
+            "li_ion_battery_pack"
+          ]
+        },
+        {
+          "id": "bringup_7",
+          "title": "Perform basic functional test of Iridium module (e.g., network registration check)",
+          "partIds": [
+            "iridium_sbd_module"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount the Main Microcontroller onto its mount, and the Audio Codec onto its mount",
+          "partIds": [
+            "main_mcu",
+            "main_mcu_mount",
+            "audio_codec",
+            "audio_codec_mount"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Mount the Iridium SBD Module into its mount and the Li-ion Battery Pack into its holder",
+          "partIds": [
+            "iridium_sbd_module",
+            "iridium_module_mount",
+            "li_ion_battery_pack",
+            "battery_holder"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Secure all mounted components (MCU, Audio Codec, Iridium Module, Battery Holder) onto the PCB mounting plate using M3 screws",
+          "partIds": [
+            "main_mcu_mount",
+            "audio_codec_mount",
+            "iridium_module_mount",
+            "battery_holder",
+            "pcb_mounting_plate",
+            "m3_button_head_screws"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount the PCB mounting plate assembly into the Main Enclosure Rear using M3 screws",
+          "partIds": [
+            "pcb_mounting_plate",
+            "main_enclosure_rear",
+            "m3_button_head_screws"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Install OLED Display into its bezel, Microphone into its mount, and Speaker into its grille, then secure these into the Main Enclosure Front",
+          "partIds": [
+            "oled_display",
+            "oled_display_bezel",
+            "microphone",
+            "microphone_mount",
+            "speaker",
+            "speaker_grille",
+            "main_enclosure_front",
+            "control_buttons",
+            "m3_button_head_screws"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Route all internal wires neatly, ensuring strain relief and avoiding interference with moving parts or enclosure closing",
+          "partIds": [
+            "main_mcu",
+            "iridium_sbd_module",
+            "li_ion_charger",
+            "power_management_ic",
+            "audio_codec",
+            "microphone",
+            "speaker",
+            "oled_display",
+            "li_ion_battery_pack"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Place the enclosure sealing gasket, then carefully close the Main Enclosure Front and Rear shells using M3 screws",
+          "partIds": [
+            "main_enclosure_front",
+            "main_enclosure_rear",
+            "enclosure_gasket",
+            "m3_button_head_screws"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Mount the Satellite Antenna Mount Adapter to the Main Enclosure Rear",
+          "partIds": [
+            "satellite_antenna_mount_adapter",
+            "main_enclosure_rear",
+            "m3_button_head_screws"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "A robust, 500km long-range",
+  "instructionPreamble": {
+    "tools": [
+      "3D printer (ABS and PETG capable)",
+      "Soldering iron with fine tip",
+      "Solder (fine gauge, lead-free recommended)",
+      "Wire strippers/cutters",
+      "Heat gun (for heat shrink)",
+      "Multimeter",
+      "M3 hex key",
+      "Tweezers",
+      "Small Phillips screwdriver",
+      "Heat-set insert soldering tip or specialized tool",
+      "USB-to-UART converter (if main_mcu lacks onboard debugger)"
+    ],
+    "assumptions": [
+      "Basic soldering and electronics assembly experience",
+      "Familiarity with microcontroller firmware development (e.g., Arduino IDE, PlatformIO, or vendor-specific toolchain)",
+      "Understanding of I2C, UART, and SPI communication protocols",
+      "Access to a computer for firmware flashing and testing",
+      "A stable 5V USB power supply for charging and initial testing"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Battery to Charger",
+      "source": "li_ion_battery_pack",
+      "target": "li_ion_charger",
+      "current": "2A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "Battery GND",
+      "source": "li_ion_battery_pack",
+      "target": "li_ion_charger",
+      "current": "0A",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "Charger SYS to PMIC VIN",
+      "source": "li_ion_charger",
+      "target": "power_management_ic",
+      "current": "1A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "Charger GND",
+      "source": "li_ion_charger",
+      "target": "power_management_ic",
+      "current": "0A",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "PMIC VOUT to MCU VCC",
+      "source": "power_management_ic",
+      "target": "main_mcu",
+      "current": "500mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "PMIC VOUT to Iridium VCC",
+      "source": "power_management_ic",
+      "target": "iridium_sbd_module",
+      "current": "1A",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "PMIC VOUT to Audio Codec VDD",
+      "source": "power_management_ic",
+      "target": "audio_codec",
+      "current": "200mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "PMIC VOUT to Mic VDD",
+      "source": "power_management_ic",
+      "target": "microphone",
+      "current": "1mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "PMIC VOUT to OLED VCC",
+      "source": "power_management_ic",
+      "target": "oled_display",
+      "current": "50mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "PMIC GND to MCU GND",
+      "source": "power_management_ic",
+      "target": "main_mcu",
+      "current": "0A",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "PMIC GND to Iridium GND",
+      "source": "power_management_ic",
+      "target": "iridium_sbd_module",
+      "current": "0A",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "PMIC GND to Audio Codec GND",
+      "source": "power_management_ic",
+      "target": "audio_codec",
+      "current": "0A",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "PMIC GND to Mic GND",
+      "source": "power_management_ic",
+      "target": "microphone",
+      "current": "0A",
+      "voltage": "GND"
+    },
+    {
+      "type": "power",
+      "label": "PMIC GND to OLED GND",
+      "source": "power_management_ic",
+      "target": "oled_display",
+      "current": "0A",
+      "voltage": "GND"
+    },
+    {
+      "type": "data",
+      "label": "MCU TX to Iridium RX",
+      "source": "main_mcu",
+      "target": "iridium_sbd_module",
+      "protocol": "uart",
+      "sourcePin": "UART TX",
+      "targetPin": "UART RX"
+    },
+    {
+      "type": "data",
+      "label": "Iridium TX to MCU RX",
+      "source": "iridium_sbd_module",
+      "target": "main_mcu",
+      "protocol": "uart",
+      "sourcePin": "UART TX",
+      "targetPin": "UART RX"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Iridium On/Off",
+      "source": "main_mcu",
+      "target": "iridium_sbd_module",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "On/Off"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Iridium Reset",
+      "source": "main_mcu",
+      "target": "iridium_sbd_module",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "Reset"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Audio Codec MCLK",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "PWM",
+      "targetPin": "I2S MCLK"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Audio Codec BCLK",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "SPI",
+      "targetPin": "I2S BCLK"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Audio Codec LRCLK",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "GPIO",
+      "targetPin": "I2S LRCLK"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Audio Codec SDATAIN",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2s",
+      "sourcePin": "SPI",
+      "targetPin": "I2S SDATAIN"
+    },
+    {
+      "type": "data",
+      "label": "Audio Codec SDATAOUT to MCU",
+      "source": "audio_codec",
+      "target": "main_mcu",
+      "protocol": "i2s",
+      "sourcePin": "I2S SDATAOUT",
+      "targetPin": "SPI"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Audio Codec I2C SDA",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2c",
+      "sourcePin": "I2C SDA",
+      "targetPin": "I2C SDA"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Audio Codec I2C SCL",
+      "source": "main_mcu",
+      "target": "audio_codec",
+      "protocol": "i2c",
+      "sourcePin": "I2C SCL",
+      "targetPin": "I2C SCL"
+    },
+    {
+      "type": "data",
+      "label": "Mic DOUT to Audio Codec MICIN",
+      "source": "microphone",
+      "target": "audio_codec",
+      "protocol": "pdm",
+      "sourcePin": "DOUT",
+      "targetPin": "MICIN"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Mic CLK",
+      "source": "main_mcu",
+      "target": "microphone",
+      "protocol": "pdm",
+      "sourcePin": "PWM",
+      "targetPin": "CLK"
+    },
+    {
+      "type": "data",
+      "label": "Audio Codec LOUT to Speaker",
+      "source": "audio_codec",
+      "target": "speaker",
+      "protocol": "analog",
+      "sourcePin": "LOUT",
+      "targetPin": "SPK+"
+    },
+    {
+      "type": "data",
+      "label": "Audio Codec ROUT to Speaker",
+      "source": "audio_codec",
+      "target": "speaker",
+      "protocol": "analog",
+      "sourcePin": "ROUT",
+      "targetPin": "SPK-"
+    },
+    {
+      "type": "data",
+      "label": "MCU to OLED SDA",
+      "source": "main_mcu",
+      "target": "oled_display",
+      "protocol": "i2c",
+      "sourcePin": "I2C SDA",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "label": "MCU to OLED SCL",
+      "source": "main_mcu",
+      "target": "oled_display",
+      "protocol": "i2c",
+      "sourcePin": "I2C SCL",
+      "targetPin": "SCL"
+    },
+    {
+      "type": "data",
+      "label": "MCU to OLED Reset",
+      "source": "main_mcu",
+      "target": "oled_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "RES"
+    },
+    {
+      "type": "data",
+      "label": "MCU to OLED Data/Command",
+      "source": "main_mcu",
+      "target": "oled_display",
+      "protocol": "gpio",
+      "sourcePin": "GPIO",
+      "targetPin": "DC"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Charger I2C SDA",
+      "source": "main_mcu",
+      "target": "li_ion_charger",
+      "protocol": "i2c",
+      "sourcePin": "I2C SDA",
+      "targetPin": "I2C SDA"
+    },
+    {
+      "type": "data",
+      "label": "MCU to Charger I2C SCL",
+      "source": "main_mcu",
+      "target": "li_ion_charger",
+      "protocol": "i2c",
+      "sourcePin": "I2C SCL",
+      "targetPin": "I2C SCL"
+    },
+    {
+      "type": "data",
+      "label": "Charger Status to MCU",
+      "source": "li_ion_charger",
+      "target": "main_mcu",
+      "protocol": "gpio",
+      "sourcePin": "STAT",
+      "targetPin": "GPIO"
+    },
+    {
+      "type": "data",
+      "label": "Charger Interrupt to MCU",
+      "source": "li_ion_charger",
+      "target": "main_mcu",
+      "protocol": "gpio",
+      "sourcePin": "INT",
+      "targetPin": "GPIO"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M3 screws with gasket",
+      "source": "main_enclosure_front",
+      "target": "main_enclosure_rear"
+    },
+    {
+      "label": "sandwiches",
+      "source": "main_enclosure_front",
+      "target": "enclosure_gasket"
+    },
+    {
+      "label": "sandwiches",
+      "source": "main_enclosure_rear",
+      "target": "enclosure_gasket"
+    },
+    {
+      "label": "interlocks",
+      "source": "main_enclosure_front",
+      "target": "oled_display_bezel"
+    },
+    {
+      "label": "snaps into",
+      "source": "main_enclosure_front",
+      "target": "speaker_grille"
+    },
+    {
+      "label": "press-fit through",
+      "source": "main_enclosure_front",
+      "target": "control_buttons"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "main_enclosure_rear",
+      "target": "satellite_antenna_mount_adapter"
+    },
+    {
+      "label": "M3 heat-set inserts",
+      "source": "pcb_mounting_plate",
+      "target": "main_enclosure_rear"
+    },
+    {
+      "label": "M3 screws",
+      "source": "iridium_module_mount",
+      "target": "pcb_mounting_plate"
+    },
+    {
+      "label": "M3 screws",
+      "source": "battery_holder",
+      "target": "pcb_mounting_plate"
+    },
+    {
+      "label": "M3 screws",
+      "source": "microphone_mount",
+      "target": "main_enclosure_front"
+    },
+    {
+      "label": "M3 screws",
+      "source": "main_mcu_mount",
+      "target": "pcb_mounting_plate"
+    },
+    {
+      "label": "M3 screws",
+      "source": "audio_codec_mount",
+      "target": "pcb_mounting_plate"
+    },
+    {
+      "label": "mount",
+      "source": "iridium_module_mount",
+      "target": "iridium_sbd_module"
+    },
+    {
+      "label": "mount",
+      "source": "battery_holder",
+      "target": "li_ion_battery_pack"
+    },
+    {
+      "label": "mount",
+      "source": "oled_display_bezel",
+      "target": "oled_display"
+    },
+    {
+      "label": "mount",
+      "source": "speaker_grille",
+      "target": "speaker"
+    },
+    {
+      "label": "mount",
+      "source": "microphone_mount",
+      "target": "microphone"
+    },
+    {
+      "label": "mount",
+      "source": "main_mcu_mount",
+      "target": "main_mcu"
+    },
+    {
+      "label": "mount",
+      "source": "audio_codec_mount",
+      "target": "audio_codec"
+    }
+  ],
+  "projectId": "bd58c1b8-49a5-494e-b1c0-4695527b17bb"
+}
