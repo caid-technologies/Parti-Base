@@ -38,6 +38,7 @@ for _stream in ("stdout", "stderr"):
             pass
 
 from synth.assemble import write_jsonl
+from synth.assembly_check import coverage_summary_lines, filter_compliant
 from synth.config import MODEL_ID, NORMALIZED_DIR, OLLAMA_BASE_URL, OUT_DIR
 from synth.corpus import iter_configs
 from synth.fixup import fixup_record
@@ -214,6 +215,14 @@ def main() -> int:
     variants = _load_variants()
     all_records = seeds + variants   # `+` concatenates the two lists
     print(f"Available for assembly: {len(seeds)} seeds + {len(variants)} variants = {len(all_records)}")
+    print()
+
+    # --- Assembly-instruction gate: only emit objects with COMPLETE detailed
+    # assembly instructions. Non-compliant objects are skipped + logged (never
+    # repaired here). The rule lives in synth/assembly_check.py. ---
+    all_records, coverage = filter_compliant(all_records, log=print)
+    for line in coverage_summary_lines(coverage):
+        print(line)
     print()
 
     # Preview how many rows each mode will yield before doing the real work.

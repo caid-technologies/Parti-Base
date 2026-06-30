@@ -28,6 +28,7 @@ import shutil        # used to copy PNG files
 import sys
 from pathlib import Path
 
+from synth.assembly_check import coverage_summary_lines, filter_compliant
 from synth.config import DATA_DIR, OUT_DIR
 from synth.denormalize import denormalize   # canonical record → 5 file contents
 from synth.normalize import to_snake_id
@@ -80,6 +81,13 @@ def main() -> int:
     data_folder_map = _build_data_folder_map()
     print(f"Loaded {len(records)} records "
           f"({'seeds only' if args.seeds_only else 'seeds + variants'}).")
+
+    # Assembly-instruction gate: only write folders for objects whose assembly
+    # instructions are COMPLETE and detailed (shared rule in
+    # synth/assembly_check.py). Skipped object_ids are logged + summarized.
+    records, coverage = filter_compliant(records, log=print)
+    for line in coverage_summary_lines(coverage):
+        print(line)
     print(f"Writing to {args.out}")
     print()
 

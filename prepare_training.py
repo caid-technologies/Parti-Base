@@ -30,6 +30,7 @@ from pathlib import Path
 
 from synth.config import OUT_DIR
 from synth.assemble import to_chatml
+from synth.assembly_check import coverage_summary_lines, filter_compliant
 from synth.staged import iter_rows
 
 CHARS_PER_TOKEN = 4.0  # rough estimate; confirm with the real tokenizer.
@@ -80,6 +81,16 @@ def main() -> int:
         return 1
     print(f"Loaded {len(records)} source records "
           f"({sum(1 for r in records if r['project'].get('variant_type') == 'seed')} seeds)")
+
+    # Assembly-instruction gate: drop objects without COMPLETE detailed assembly
+    # instructions before building any training rows (shared rule, see
+    # synth/assembly_check.py). Skipped object_ids are logged + summarized.
+    records, coverage = filter_compliant(records, log=print)
+    for line in coverage_summary_lines(coverage):
+        print(line)
+    if not records:
+        print("No compliant records remain — regenerate the skipped objects.")
+        return 1
 
     # Build ChatML rows grouped by base project, deduped by (system+user).
     grouped: dict[str, list[dict]] = defaultdict(list)

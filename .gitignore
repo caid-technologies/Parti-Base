@@ -42,6 +42,9 @@ docs/
 # Generated artifacts (normalized records, variants, pilot.jsonl, LoRA/GGUF, etc.)
 out/
 
+# Unsloth compiled kernel cache (generated at train time, not source)
+unsloth_compiled_cache/
+
 # OS
 .DS_Store
 Thumbs.db
