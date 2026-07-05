@@ -27,8 +27,28 @@ import argparse
 import json
 import re
 import sys
+import warnings
 from collections import defaultdict
 from pathlib import Path
+
+# Force UTF-8 stdout/stderr so the ✓/✗ progress marks can't crash a Windows
+# cp1252 console or a piped/teed run (same guard as run.py / generate_detail.py).
+for _stream in ("stdout", "stderr"):
+    _s = getattr(sys, _stream)
+    if hasattr(_s, "reconfigure"):
+        try:
+            _s.reconfigure(encoding="utf-8", errors="replace")
+        except (ValueError, OSError):
+            pass
+
+# Silence two benign-but-noisy per-row warnings that flood the log:
+#  - "Both max_new_tokens and max_length seem to have been set" (we always pass
+#    max_new_tokens; the model's generation_config carries a max_length default)
+#  - transformers' deprecated AttentionMaskConverter FutureWarning (fires twice
+#    per eval pass inside the library; nothing we can act on here)
+warnings.filterwarnings("ignore", message=".*max_new_tokens.*max_length.*")
+warnings.filterwarnings("ignore", category=FutureWarning,
+                        module="transformers.modeling_attn_mask_utils")
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
@@ -283,8 +303,30 @@ def main() -> int:
     ap.add_argument("--split", choices=["test", "val"], default="test")
     ap.add_argument("--adapter", type=Path, default=ADAPTER)
     ap.add_argument("--max-seq", type=int, default=MAX_SEQ,
-                    help="eval context window (>train window is fine)")
-    ap.add_argument("--max-new-tokens", type=int, default=4096)
+                    help="eval context window; rows whose prompt exceeds it are "
+                         "SKIPPED (not truncated) and reported separately")
+    ap.add_argument("--max-new-tokens", type=int, default=4096,
+                    help="CEILING on generated tokens; the real per-row budget is "
+                         "sized to the gold answer (+50%%) so short modes finish fast")
+    ap.add_argument("--per-mode", type=int, default=0,
+                    help="evaluate at most N rows per mode (seeded stratified "
+                         "sample); 0 = all rows")
+    ap.add_argument("--tf-modes", type=str, default="AB",
+                    help="modes scored TEACHER-FORCED (one forward pass, no slow "
+                         "autoregression) instead of by generation. These modes "
+                         "have huge outputs (A/B ~9k tok); default 'AB'. Empty to "
+                         "generate everything.")
+    ap.add_argument("--tf-chunk", type=int, default=512,
+                    help="teacher-forcing cross-entropy chunk size (bounds the "
+                         "fp32 logit upcast)")
+    ap.add_argument("--tf-max-seq", type=int, default=12288,
+                    help="max prompt+gold length for teacher-forcing; longer rows "
+                         "are skipped (one full forward materializes [seq x vocab] "
+                         "logits, so keep this ~12k on a 12 GB card)")
+    ap.add_argument("--gen-sample", type=int, default=0,
+                    help="for teacher-forced modes, ALSO free-generate this many "
+                         "rows/mode as a JSON-validity spot check (slow; needs a "
+                         "high --max-new-tokens to complete A/B)")
     ap.add_argument("--limit", type=int, default=0, help="0 = all rows")
     ap.add_argument("--dump", type=Path, default=None,
                     help="write failing cases to this JSONL for inspection")
@@ -294,31 +336,150 @@ def main() -> int:
     if not rows_path.exists():
         print(f"No {rows_path} — run 'python prepare_training.py' first.")
         return 1
-    rows = [json.loads(l) for l in rows_path.open(encoding="utf-8")]
+    # Fail early with a clear message if the default adapter isn't trained yet.
+    # (A non-default --adapter may be a HF hub id, so only check the default.)
+    if str(args.adapter) == str(ADAPTER) and not ADAPTER.exists():
+        print(f"No adapter at {ADAPTER} — run 'python train_local.py' first, "
+              f"or pass --adapter <path-or-hub-id>.")
+        return 1
+    with rows_path.open(encoding="utf-8") as f:
+        rows = [json.loads(l) for l in f]
+    if args.per_mode:
+        # Stratified, seeded sample: at most N rows per mode. A held-out estimate
+        # doesn't need all rows, and this keeps every mode represented.
+        import random
+        buckets: dict[str, list] = defaultdict(list)
+        for r in rows:
+            sysmsg = next((m["content"] for m in r.get("messages", [])
+                           if m.get("role") == "system"), "")
+            buckets[detect_mode(sysmsg)].append(r)
+        rng = random.Random(0)
+        picked: list = []
+        for mode in sorted(buckets):
+            rs = buckets[mode][:]
+            rng.shuffle(rs)
+            picked.extend(rs[: args.per_mode])
+        rows = picked
     if args.limit:
         rows = rows[:args.limit]
-    print(f"Evaluating {len(rows)} rows from {rows_path.name}\n")
+    if not rows:
+        print("No rows to evaluate — check the split file / --per-mode / --limit.")
+        return 1
+
+    tf_modes = set(args.tf_modes.upper().strip())
+    gen_modes = sorted(set("ABCDEF") - tf_modes)
+    print(f"Evaluating {len(rows)} rows from {rows_path.name}")
+    print(f"  teacher-forced: {' '.join(sorted(tf_modes)) or '(none)'}"
+          f"   generated: {' '.join(gen_modes) or '(none)'}\n")
+
+    # The model must be loaded with a window that covers BOTH paths: generation
+    # rows are bounded by --max-seq, but teacher-forcing runs one forward over
+    # prompt+gold up to --tf-max-seq. Loading with the smaller value makes
+    # Unsloth truncate longer TF inputs (silently corrupting the scores).
+    model_ctx = max(args.max_seq, args.tf_max_seq if tf_modes else 0)
 
     # Import torch/unsloth lazily so --help works without a GPU env.
     import torch
     from unsloth import FastLanguageModel
 
     model, tokenizer = FastLanguageModel.from_pretrained(
-        model_name=str(args.adapter), max_seq_length=args.max_seq, load_in_4bit=True,
+        model_name=str(args.adapter), max_seq_length=model_ctx, load_in_4bit=True,
     )
     FastLanguageModel.for_inference(model)
+    # Qwen's generation_config ships max_length=32768. We always pass
+    # max_new_tokens (which takes precedence), but transformers logs a noisy
+    # "Both max_new_tokens and max_length seem to be set" line on EVERY generate
+    # call while both are non-default. Reset to the library default (20) so the
+    # warning never fires; it has no effect since max_new_tokens always wins.
+    model.generation_config.max_length = 20
+
+    import math
+    import torch.nn.functional as F
 
     # stats[mode] = dict of running counters
     def _new() -> dict:
         return {"n": 0, "parse": 0, "valid": 0, "em": 0,
-                "tp": 0, "fp": 0, "fn": 0}
+                "tp": 0, "fp": 0, "fn": 0, "skipped_long": 0}
     stats: dict[str, dict] = defaultdict(_new)
+
+    def _tf_new() -> dict:
+        return {"n": 0, "tok_correct": 0, "tok_total": 0, "loss_sum": 0.0,
+                "gen_n": 0, "gen_parse": 0, "gen_valid": 0, "skipped_long": 0}
+    tf_stats: dict[str, dict] = defaultdict(_tf_new)
     fails = []
 
+    def _tf_score(system: str, user: str, gold_text: str):
+        """Teacher-forced next-token accuracy + loss on the gold answer.
+
+        ONE full forward over prompt+gold with NO KV cache — Unsloth's cached
+        decode path only accepts a single token at a time (`assert q_len == 1`),
+        so we can't feed multi-token chunks with past_key_values. The full
+        forward handles q_len>1 fine; we then compute the cross-entropy/argmax
+        over the assistant slice in CHUNKS so the fp32 upcast never covers the
+        whole [gold x vocab] block. Returns (correct, total, loss_sum), or None
+        if prompt+gold exceeds --tf-max-seq.
+        """
+        prompt_ids = tokenizer.apply_chat_template(
+            [{"role": "system", "content": system},
+             {"role": "user", "content": user}],
+            add_generation_prompt=True, return_tensors="pt").to("cuda")
+        full_ids = tokenizer.apply_chat_template(
+            [{"role": "system", "content": system},
+             {"role": "user", "content": user},
+             {"role": "assistant", "content": gold_text}],
+            add_generation_prompt=False, return_tensors="pt").to("cuda")
+        P, T = prompt_ids.shape[1], full_ids.shape[1]
+        if T > args.tf_max_seq:
+            return None
+        # BPE can merge tokens across the prompt/gold boundary, so full_ids is
+        # not guaranteed to start with prompt_ids verbatim. Verify, and on a
+        # mismatch score from the first diverging position — otherwise every
+        # "gold" label would be off by one and tok_acc/ppl silently wrong.
+        L = min(P, T)
+        eq = full_ids[0, :L] == prompt_ids[0, :L]
+        if not bool(eq.all()):
+            P = int((~eq).nonzero()[0].item())
+        if P < 1:
+            return 0, 0, 0.0
+        G = T - P
+        if G <= 0:
+            return 0, 0, 0.0
+        correct = total = 0
+        loss_sum = 0.0
+        with torch.no_grad():
+            out = model(input_ids=full_ids, use_cache=False)
+            logits = out.logits[0]                 # [T, V]
+            tgt = full_ids[0, P:]                  # [G]  the gold tokens
+            pred = logits[P - 1:T - 1]             # [G, V]  predictions for them
+            for s in range(0, G, args.tf_chunk):
+                pl = pred[s:s + args.tf_chunk].float()
+                lb = tgt[s:s + args.tf_chunk]
+                loss_sum += F.cross_entropy(pl, lb, reduction="sum").item()
+                correct += int((pl.argmax(-1) == lb).sum().item())
+                total += int(lb.numel())
+                del pl
+            del logits, out
+        return correct, total, loss_sum
+
+    def _generate(system: str, user: str, budget: int) -> str:
+        inp = tokenizer.apply_chat_template(
+            [{"role": "system", "content": system},
+             {"role": "user", "content": user}],
+            add_generation_prompt=True, return_tensors="pt", return_dict=True,
+        ).to("cuda")
+        with torch.no_grad():
+            o = model.generate(**inp, max_new_tokens=budget, do_sample=False,
+                               pad_token_id=tokenizer.eos_token_id)
+        return tokenizer.decode(o[0][inp["input_ids"].shape[1]:],
+                                skip_special_tokens=True)
+
     for idx, row in enumerate(rows):
-        msgs = row["messages"]
-        system = next(m["content"] for m in msgs if m["role"] == "system")
-        user = next(m["content"] for m in msgs if m["role"] == "user")
+        msgs = row.get("messages", [])
+        system = next((m["content"] for m in msgs if m.get("role") == "system"), "")
+        user = next((m["content"] for m in msgs if m.get("role") == "user"), "")
+        if not msgs or not user:
+            print(f"[{idx:>3}] ?  ~ skipped (malformed row: missing messages/user)")
+            continue
         gold_text = msgs[-1]["content"]
         try:
             gold = extract_json(gold_text)
@@ -327,20 +488,77 @@ def main() -> int:
         mode = detect_mode(system)
         gold_keys = keyset(mode, gold) if gold is not None else set()
 
+        # Teacher-forced path for long-output modes: score the gold in one pass
+        # instead of generating thousands of tokens per row.
+        if mode in tf_modes:
+            ts = tf_stats[mode]
+            r = _tf_score(system, user, gold_text)
+            if r is None:
+                ts["skipped_long"] += 1
+                print(f"[{idx:>3}] {mode}  ~ skipped (seq > {args.tf_max_seq})")
+                continue
+            correct, total, loss_sum = r
+            ts["n"] += 1
+            ts["tok_correct"] += correct
+            ts["tok_total"] += total
+            ts["loss_sum"] += loss_sum
+            acc = 100 * correct / total if total else 0.0
+            print(f"[{idx:>3}] {mode}  · tok-acc {acc:.0f}% ({total} tok)")
+            # Optional slow spot-check: free-generate a few rows to test validity.
+            if ts["gen_n"] < args.gen_sample:
+                ts["gen_n"] += 1
+                gtext = _generate(system, user, args.max_new_tokens)
+                try:
+                    gobj = extract_json(gtext)
+                    ts["gen_parse"] += 1
+                    if not SCORERS[mode](gobj, user):
+                        ts["gen_valid"] += 1
+                except json.JSONDecodeError:
+                    pass
+            continue
+
         inputs = tokenizer.apply_chat_template(
             [{"role": "system", "content": system},
              {"role": "user", "content": user}],
             add_generation_prompt=True, return_tensors="pt", return_dict=True,
         ).to("cuda")
+
+        st = stats[mode]
+        # Skip prompts that don't fit the window instead of silently truncating
+        # them: a chopped prompt guarantees broken output AND wastes prefill time.
+        input_len = inputs["input_ids"].shape[1]
+        remaining = args.max_seq - input_len
+        if remaining <= 0:
+            st["skipped_long"] += 1
+            print(f"[{idx:>3}] {mode}  ~ skipped (input {input_len} >= {args.max_seq})")
+            continue
+        # Likewise skip rows whose gold answer cannot fit in what's left of the
+        # window — generating there guarantees a truncated/garbage output that
+        # would be scored as a model failure when it's a window artifact.
+        if gold is not None:
+            gold_tok = len(tokenizer(gold_text).input_ids)
+            if gold_tok + 8 > remaining:
+                st["skipped_long"] += 1
+                print(f"[{idx:>3}] {mode}  ~ skipped (answer ~{gold_tok} tok > "
+                      f"{remaining} left in window)")
+                continue
+
+        # Size the generation budget to the gold answer (+50% margin), capped by
+        # --max-new-tokens AND by the remaining window. Short-output modes
+        # (F ~44 tok) stop early instead of grinding to 4096 — the main speedup.
+        if gold is not None:
+            gen_budget = min(args.max_new_tokens, int(gold_tok * 1.5) + 64, remaining)
+        else:
+            gen_budget = min(args.max_new_tokens, remaining)
+
         with torch.no_grad():
             out = model.generate(
-                **inputs, max_new_tokens=args.max_new_tokens,
+                **inputs, max_new_tokens=gen_budget,
                 do_sample=False, pad_token_id=tokenizer.eos_token_id,
             )
         text = tokenizer.decode(out[0][inputs["input_ids"].shape[1]:],
                                 skip_special_tokens=True)
 
-        st = stats[mode]
         st["n"] += 1
         try:
             obj = extract_json(text)
@@ -371,26 +589,49 @@ def main() -> int:
 
     # --- report ---
     print("\n=== Results by mode ===")
-    hdr = f"{'mode':<6}{'n':>5}{'parse%':>8}{'valid%':>8}{'EM%':>7}{'F1':>7}"
+    hdr = f"{'mode':<6}{'n':>5}{'skip':>6}{'parse%':>8}{'valid%':>8}{'EM%':>7}{'F1':>7}"
     print(hdr)
     agg = _new()
+
+    def _row(label: str, s: dict) -> str:
+        n = s["n"]
+        if n == 0:  # every row for this mode was skipped (prompt too long)
+            return (f"{label:<6}{n:>5}{s['skipped_long']:>6}"
+                    f"{'--':>8}{'--':>8}{'--':>7}{'--':>7}")
+        f1 = f1_from_counts(s["tp"], s["fp"], s["fn"])
+        return (f"{label:<6}{n:>5}{s['skipped_long']:>6}"
+                f"{100*s['parse']/n:>7.0f}%{100*s['valid']/n:>7.0f}%"
+                f"{100*s['em']/n:>6.0f}%{f1:>7.2f}")
+
     for mode in sorted(stats):
         s = stats[mode]
         for k in agg:
             agg[k] += s[k]
-        n = s["n"]
-        f1 = f1_from_counts(s["tp"], s["fp"], s["fn"])
-        print(f"{mode:<6}{n:>5}{100*s['parse']/n:>7.0f}%{100*s['valid']/n:>7.0f}%"
-              f"{100*s['em']/n:>6.0f}%{f1:>7.2f}")
-    n = agg["n"]
-    f1 = f1_from_counts(agg["tp"], agg["fp"], agg["fn"])
-    print(f"{'ALL':<6}{n:>5}{100*agg['parse']/n:>7.0f}%{100*agg['valid']/n:>7.0f}%"
-          f"{100*agg['em']/n:>6.0f}%{f1:>7.2f}")
-    print("\nparse%  = produced valid JSON")
+        print(_row(mode, s))
+    print(_row("ALL", agg))
+    print("\nskip    = row doesn't fit the --max-seq window (prompt too long, or "
+          "gold answer too big for what's left) — raise --max-seq to include")
+    print("parse%  = produced valid JSON")
     print("valid%  = passed mode-specific schema/reference checks")
     print("EM%     = output exactly equals the gold answer (strict)")
     print("F1      = micro-F1 of structural atoms vs gold "
           "(components / relationship triples / steps / validation flags)")
+
+    if tf_stats:
+        print("\n=== Teacher-forced modes (scored on the gold, no generation) ===")
+        print(f"{'mode':<6}{'n':>5}{'skip':>6}{'tok_acc%':>10}{'ppl':>9}"
+              f"{'gen':>5}{'gen_valid%':>12}")
+        for mode in sorted(tf_stats):
+            t = tf_stats[mode]
+            tot = t["tok_total"]
+            acc = 100 * t["tok_correct"] / tot if tot else 0.0
+            ppl = math.exp(t["loss_sum"] / tot) if tot else float("nan")
+            gv = f"{100*t['gen_valid']/t['gen_n']:.0f}%" if t["gen_n"] else "-"
+            print(f"{mode:<6}{t['n']:>5}{t['skipped_long']:>6}{acc:>9.0f}%"
+                  f"{ppl:>9.1f}{t['gen_n']:>5}{gv:>12}")
+        print("\ntok_acc% = next-token accuracy on the gold answer (teacher-forced)")
+        print("ppl      = perplexity of the gold answer (lower is better)")
+        print("gen      = rows also free-generated for a JSON-validity spot check")
 
     if args.dump and fails:
         args.dump.parent.mkdir(parents=True, exist_ok=True)
