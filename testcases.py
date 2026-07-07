@@ -5,11 +5,13 @@ our core use case — turn a project document into the full canonical record —
 from the 42 seed projects under Data/. Default media (the product test):
 
   txt    the project's original free-text prompt, written to files/<slug>.txt
-  image  a HAND-DRAWN SKETCH of the product, dropped by a human into
-         Data/sketches/<slug>.png (.jpg/.jpeg/.webp also accepted), sent as
-         an OpenAI-style vision content part (needs a vision-capable model).
-         Data/sketches/PRODUCTS.md lists the 42 products to draw; projects
-         without a sketch simply get no image case.
+  image  an image of the product, sent as an OpenAI-style vision content
+         part (needs a vision-capable model). Source priority per project:
+         a HAND-DRAWN SKETCH at Data/sketches/<slug>.png (.jpg/.jpeg/.webp
+         also accepted) wins when present; otherwise the VISUAL.png render
+         from the project folder is used. Data/sketches/PRODUCTS.md lists
+         the 42 products to draw — drop sketches in as they're drawn and
+         rebuild; each case records image_source: sketch|render.
 
 Extra media, off by default (pass --types to include them):
 
@@ -176,8 +178,9 @@ def build_cases(out_dir: Path = CASES_DIR, data_dir: Path = DATA_DIR,
     Each case: {case_id, slug, input_type, input_path, gold_path}. Paths are
     stored relative to the repo ROOT (posix separators) so the manifest is
     portable; missing source files skip that one case, never the project.
-    Image cases use the human-drawn sketch from Data/sketches/<slug>.<ext>;
-    a project without a sketch gets no image case.
+    Image cases prefer the human-drawn sketch from Data/sketches/<slug>.<ext>
+    and fall back to the project's VISUAL.png render; the chosen source is
+    recorded as image_source ("sketch" | "render") on the case.
     """
     if sketch_dir is None:
         sketch_dir = data_dir / "sketches"
@@ -205,13 +208,14 @@ def build_cases(out_dir: Path = CASES_DIR, data_dir: Path = DATA_DIR,
         folder = data_dir / f"{slug}_files"
         guide = folder / f"{slug}_GUIDE.md"
 
-        def add(input_type: str, input_path: Path) -> None:
+        def add(input_type: str, input_path: Path, **extra) -> None:
             cases.append({
                 "case_id": f"{slug}__{input_type}",
                 "slug": slug,
                 "input_type": input_type,
                 "input_path": rel(input_path),
                 "gold_path": rel(gold_path),
+                **extra,
             })
 
         prompt = (gold.get("project") or {}).get("original_prompt", "")
@@ -227,8 +231,11 @@ def build_cases(out_dir: Path = CASES_DIR, data_dir: Path = DATA_DIR,
             add("pdf", pdf_path)
         if "image" in types:
             sketch = find_sketch(slug, sketch_dir)
+            render = folder / f"{slug}_VISUAL.png"
             if sketch is not None:
-                add("image", sketch)
+                add("image", sketch, image_source="sketch")
+            elif render.exists():
+                add("image", render, image_source="render")
 
     manifest = out_dir / "cases.jsonl"
     with manifest.open("w", encoding="utf-8") as f:
@@ -263,10 +270,12 @@ def user_content(case: dict):
     path = _resolve(case["input_path"])
     kind = case["input_type"]
     if kind == "image":
-        text = ("Design the hobbyist hardware project shown in this "
-                "hand-drawn sketch. Infer the components, relationships, "
-                "fabrication, instructions, sourcing, and validation from "
-                "what you see.")
+        medium = ("hand-drawn sketch" if case.get("image_source") == "sketch"
+                  else "image")
+        text = (f"Design the hobbyist hardware project shown in this "
+                f"{medium}. Infer the components, relationships, "
+                f"fabrication, instructions, sourcing, and validation from "
+                f"what you see.")
         return [
             {"type": "text", "text": text},
             {"type": "image_url", "image_url": {"url": image_data_uri(path)}},
@@ -470,12 +479,13 @@ def main() -> int:
         print(f"Built {len(cases)} cases -> {args.out / 'cases.jsonl'}")
         print("  " + "  ".join(f"{t}: {by_type[t]}" for t in types))
         if "image" in types:
-            slugs = {c["slug"] for c in cases}
-            missing = [s for s in slugs
-                       if find_sketch(s) is None]
-            if missing:
-                print(f"  {len(missing)} project(s) have no sketch yet — see "
-                      f"{SKETCH_DIR / 'PRODUCTS.md'} for the list to draw")
+            n_sketch = sum(1 for c in cases
+                           if c.get("image_source") == "sketch")
+            n_render = sum(1 for c in cases
+                           if c.get("image_source") == "render")
+            print(f"  image sources: {n_sketch} sketch, {n_render} render "
+                  f"(sketches in {SKETCH_DIR} win as they're drawn — see "
+                  f"PRODUCTS.md there)")
         return 0
     return run_eval(args)
 

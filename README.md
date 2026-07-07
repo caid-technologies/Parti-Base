@@ -176,10 +176,12 @@ running the rest of the pipeline.
 
 `testcases.py` measures how an UNTRAINED base model handles the core use case
 (document → full canonical record). Default media per seed project: the
-original prompt as `.txt`, and a HAND-DRAWN SKETCH of the product dropped
-into `Data/sketches/<slug>.png` (`.jpg`/`.jpeg`/`.webp` also work), sent as a
-vision content part. `Data/sketches/PRODUCTS.md` lists the 42 products to
-draw; projects without a sketch get no image case. `--types` can add `md`
+original prompt as `.txt`, and an image of the product sent as a vision
+content part. Image source priority: a hand-drawn sketch dropped into
+`Data/sketches/<slug>.png` (`.jpg`/`.jpeg`/`.webp` also work) wins when
+present; otherwise the project's `VISUAL.png` render is used, and each case
+records `image_source: sketch|render`. `Data/sketches/PRODUCTS.md` lists the
+42 products to draw for the sketch transition. `--types` can add `md`
 (GUIDE.md verbatim) and `pdf` (guide rendered to PDF, text re-extracted with
 pypdf at run time). Gold is `out/normalized/<slug>.json`; scoring reuses
 `eval_local.py` (parse rate, strict-schema valid rate, structural F1). This

@@ -123,13 +123,16 @@ def test_build_cases_all_types_with_sketch():
     try:
         cases = build_cases(out_dir=tmp, limit=2, types=INPUT_TYPES,
                             sketch_dir=sketches)
-        # 2 projects x (txt+md+pdf) + 1 image (only one sketch drawn)
-        assert len(cases) == 7
+        # 2 projects x (txt+md+pdf+image); slug0's image is the drawn sketch,
+        # slug1 falls back to its VISUAL.png render
+        assert len(cases) == 8
         by_type = {}
         for c in cases:
             by_type.setdefault(c["input_type"], []).append(c)
-        assert len(by_type["image"]) == 1
-        assert by_type["image"][0]["slug"] == slugs[0]
+        img_by_slug = {c["slug"]: c for c in by_type["image"]}
+        assert img_by_slug[slugs[0]]["image_source"] == "sketch"
+        assert img_by_slug[slugs[1]]["image_source"] == "render"
+        assert img_by_slug[slugs[1]]["input_path"].endswith("_VISUAL.png")
         for c in cases:
             p = Path(c["input_path"])
             p = p if p.is_absolute() else ROOT / p
@@ -162,12 +165,17 @@ def test_build_default_types_txt_and_sketch_image():
         shutil.rmtree(sketches, ignore_errors=True)
 
 
-def test_build_without_sketches_yields_txt_only():
+def test_build_without_sketches_falls_back_to_renders():
     tmp = _tmpdir()
     empty = _tmpdir()
     try:
         cases = build_cases(out_dir=tmp, limit=2, sketch_dir=empty)
-        assert {c["input_type"] for c in cases} == {"txt"}
+        imgs = [c for c in cases if c["input_type"] == "image"]
+        assert len(imgs) == 2
+        assert all(c["image_source"] == "render" for c in imgs)
+        # render-sourced cases are framed as "image", not "sketch"
+        content = user_content(imgs[0])
+        assert "sketch" not in content[0]["text"]
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
         shutil.rmtree(empty, ignore_errors=True)
