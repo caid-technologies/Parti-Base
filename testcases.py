@@ -2,14 +2,20 @@
 
 Measures how well an UNTRAINED base model (e.g. qwen3.5 via Ollama) handles
 our core use case — turn a project document into the full canonical record —
-across four input media derived from the 42 seed projects under Data/:
+from the 42 seed projects under Data/. Default media (the product test):
 
   txt    the project's original free-text prompt, written to files/<slug>.txt
+  image  a HAND-DRAWN SKETCH of the product, dropped by a human into
+         Data/sketches/<slug>.png (.jpg/.jpeg/.webp also accepted), sent as
+         an OpenAI-style vision content part (needs a vision-capable model).
+         Data/sketches/PRODUCTS.md lists the 42 products to draw; projects
+         without a sketch simply get no image case.
+
+Extra media, off by default (pass --types to include them):
+
   md     the project's GUIDE.md, used verbatim from Data/
   pdf    GUIDE.md rendered to files/<slug>.pdf at build time; at run time the
          text is re-extracted with pypdf (exercises the PDF ingestion path)
-  image  the project's VISUAL.png, sent as an OpenAI-style vision content
-         part (requires a vision-capable model tag, e.g. a -vl variant)
 
 Gold = out/normalized/<slug>.json (Stage 1 output). Scoring reuses
 eval_local.py: JSON-parse rate, strict-schema valid rate (score_ab), and
@@ -18,10 +24,10 @@ This is the no-training baseline the fine-tuned adapter must beat.
 
 Two subcommands:
     python testcases.py build                    # deterministic, no LLM
-    python testcases.py build --limit 3          # smoke: first 3 projects
+    python testcases.py build --types txt,md,pdf,image --limit 3
 
     python testcases.py run --model qwen3.5      # zero-shot eval via Ollama
-    python testcases.py run --types txt,md --per-type 5
+    python testcases.py run --types txt --per-type 5
     python testcases.py run --dump out/testcases/fails.jsonl --min-valid 20
 
 `build` writes out/testcases/cases.jsonl (+ generated txt/pdf inputs under
@@ -56,9 +62,12 @@ from eval_local import (  # noqa: E402
 from synth.staged import MODE_SYSTEM_PROMPTS  # noqa: E402
 
 DATA_DIR = ROOT / "Data"
+SKETCH_DIR = DATA_DIR / "sketches"
 GOLD_DIR = ROOT / "out" / "normalized"
 CASES_DIR = ROOT / "out" / "testcases"
 INPUT_TYPES = ("txt", "md", "pdf", "image")
+DEFAULT_TYPES = ("txt", "image")
+IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".webp")
 
 # The task contract is identical to Mode B (request → full canonical record);
 # only the input medium changes, and the user turn states which one it is.
@@ -132,9 +141,23 @@ def pdf_text(path: Path) -> str:
                      for page in PdfReader(str(path)).pages)
 
 
+_MIME = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+         ".webp": "image/webp"}
+
+
 def image_data_uri(path: Path) -> str:
+    mime = _MIME.get(path.suffix.lower(), "image/png")
     b64 = base64.b64encode(path.read_bytes()).decode("ascii")
-    return f"data:image/png;base64,{b64}"
+    return f"data:{mime};base64,{b64}"
+
+
+def find_sketch(slug: str, sketch_dir: Path = SKETCH_DIR) -> Path | None:
+    """The human-drawn sketch for a project, if one has been dropped in."""
+    for ext in IMAGE_EXTS:
+        p = sketch_dir / f"{slug}{ext}"
+        if p.exists():
+            return p
+    return None
 
 
 # --- build ------------------------------------------------------------------
@@ -145,13 +168,19 @@ def project_slugs(data_dir: Path = DATA_DIR) -> list[str]:
 
 
 def build_cases(out_dir: Path = CASES_DIR, data_dir: Path = DATA_DIR,
-                gold_dir: Path = GOLD_DIR, limit: int = 0) -> list[dict]:
+                gold_dir: Path = GOLD_DIR, limit: int = 0,
+                types: tuple[str, ...] = DEFAULT_TYPES,
+                sketch_dir: Path | None = None) -> list[dict]:
     """Write the case manifest + generated txt/pdf inputs. Deterministic.
 
     Each case: {case_id, slug, input_type, input_path, gold_path}. Paths are
     stored relative to the repo ROOT (posix separators) so the manifest is
     portable; missing source files skip that one case, never the project.
+    Image cases use the human-drawn sketch from Data/sketches/<slug>.<ext>;
+    a project without a sketch gets no image case.
     """
+    if sketch_dir is None:
+        sketch_dir = data_dir / "sketches"
     files_dir = out_dir / "files"
     files_dir.mkdir(parents=True, exist_ok=True)
 
@@ -175,7 +204,6 @@ def build_cases(out_dir: Path = CASES_DIR, data_dir: Path = DATA_DIR,
         gold = json.loads(gold_path.read_text(encoding="utf-8"))
         folder = data_dir / f"{slug}_files"
         guide = folder / f"{slug}_GUIDE.md"
-        png = folder / f"{slug}_VISUAL.png"
 
         def add(input_type: str, input_path: Path) -> None:
             cases.append({
@@ -187,17 +215,20 @@ def build_cases(out_dir: Path = CASES_DIR, data_dir: Path = DATA_DIR,
             })
 
         prompt = (gold.get("project") or {}).get("original_prompt", "")
-        if prompt:
+        if "txt" in types and prompt:
             txt_path = files_dir / f"{slug}.txt"
             txt_path.write_text(prompt, encoding="utf-8")
             add("txt", txt_path)
-        if guide.exists():
+        if "md" in types and guide.exists():
             add("md", guide)
+        if "pdf" in types and guide.exists():
             pdf_path = files_dir / f"{slug}.pdf"
             render_pdf(guide.read_text(encoding="utf-8"), pdf_path)
             add("pdf", pdf_path)
-        if png.exists():
-            add("image", png)
+        if "image" in types:
+            sketch = find_sketch(slug, sketch_dir)
+            if sketch is not None:
+                add("image", sketch)
 
     manifest = out_dir / "cases.jsonl"
     with manifest.open("w", encoding="utf-8") as f:
@@ -232,9 +263,10 @@ def user_content(case: dict):
     path = _resolve(case["input_path"])
     kind = case["input_type"]
     if kind == "image":
-        text = ("Design the hobbyist hardware project shown in this image. "
-                "Infer the components, relationships, fabrication, "
-                "instructions, sourcing, and validation from what you see.")
+        text = ("Design the hobbyist hardware project shown in this "
+                "hand-drawn sketch. Infer the components, relationships, "
+                "fabrication, instructions, sourcing, and validation from "
+                "what you see.")
         return [
             {"type": "text", "text": text},
             {"type": "image_url", "image_url": {"url": image_data_uri(path)}},
@@ -399,6 +431,10 @@ def main() -> int:
 
     b = sub.add_parser("build", help="write out/testcases/ manifest + inputs")
     b.add_argument("--out", type=Path, default=CASES_DIR)
+    b.add_argument("--types", default=",".join(DEFAULT_TYPES),
+                   help="comma list of input types to build "
+                        f"(default {','.join(DEFAULT_TYPES)}; "
+                        f"also available: md, pdf)")
     b.add_argument("--limit", type=int, default=0,
                    help="only the first N projects (0 = all)")
 
@@ -408,7 +444,7 @@ def main() -> int:
                         "tag (default: qwen3.5)")
     r.add_argument("--cases-dir", type=Path, default=CASES_DIR)
     r.add_argument("--types", default=",".join(INPUT_TYPES),
-                   help="comma list of input types to run")
+                   help="comma list of input types to run (of those built)")
     r.add_argument("--per-type", type=int, default=0,
                    help="at most N cases per input type (0 = all)")
     r.add_argument("--limit", type=int, default=0, help="total case cap")
@@ -422,12 +458,24 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.cmd == "build":
-        cases = build_cases(args.out, limit=args.limit)
+        types = tuple(t.strip() for t in args.types.split(",") if t.strip())
+        unknown = set(types) - set(INPUT_TYPES)
+        if unknown:
+            print(f"Unknown --types {sorted(unknown)}; pick from {INPUT_TYPES}")
+            return 1
+        cases = build_cases(args.out, limit=args.limit, types=types)
         by_type = defaultdict(int)
         for c in cases:
             by_type[c["input_type"]] += 1
         print(f"Built {len(cases)} cases -> {args.out / 'cases.jsonl'}")
-        print("  " + "  ".join(f"{t}: {by_type[t]}" for t in INPUT_TYPES))
+        print("  " + "  ".join(f"{t}: {by_type[t]}" for t in types))
+        if "image" in types:
+            slugs = {c["slug"] for c in cases}
+            missing = [s for s in slugs
+                       if find_sketch(s) is None]
+            if missing:
+                print(f"  {len(missing)} project(s) have no sketch yet — see "
+                      f"{SKETCH_DIR / 'PRODUCTS.md'} for the list to draw")
         return 0
     return run_eval(args)
 

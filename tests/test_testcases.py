@@ -16,9 +16,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from testcases import (  # noqa: E402
+    DEFAULT_TYPES,
     INPUT_TYPES,
     SYSTEM_PROMPT,
     build_cases,
+    find_sketch,
     image_data_uri,
     latin1_safe,
     pdf_text,
@@ -31,9 +33,19 @@ from testcases import (  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 GOLD_DIR = ROOT / "out" / "normalized"
 
+# a tiny but real PNG header + payload; enough for base64/data-uri plumbing
+_FAKE_PNG = b"\x89PNG\r\n\x1a\nfakebody"
+
 
 def _tmpdir() -> Path:
     return Path(tempfile.mkdtemp(prefix="testcases_"))
+
+
+def _sketch_dir_for(slugs: list[str], ext: str = ".png") -> Path:
+    d = _tmpdir()
+    for s in slugs:
+        (d / f"{s}{ext}").write_bytes(_FAKE_PNG)
+    return d
 
 
 def test_project_slugs_sorted_and_complete():
@@ -104,18 +116,26 @@ def test_image_data_uri_is_decodable():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
-def test_build_cases_smoke_two_projects():
+def test_build_cases_all_types_with_sketch():
+    slugs = project_slugs()[:2]
+    sketches = _sketch_dir_for(slugs[:1])   # sketch for the first slug only
     tmp = _tmpdir()
     try:
-        cases = build_cases(out_dir=tmp, limit=2)
-        # 2 projects x 4 media (all seeds have prompt+guide+png)
-        assert len(cases) == 8
-        assert {c["input_type"] for c in cases} == set(INPUT_TYPES)
+        cases = build_cases(out_dir=tmp, limit=2, types=INPUT_TYPES,
+                            sketch_dir=sketches)
+        # 2 projects x (txt+md+pdf) + 1 image (only one sketch drawn)
+        assert len(cases) == 7
+        by_type = {}
         for c in cases:
-            assert (ROOT / c["input_path"]).exists(), c["case_id"]
-            assert (ROOT / c["gold_path"]).exists(), c["case_id"]
+            by_type.setdefault(c["input_type"], []).append(c)
+        assert len(by_type["image"]) == 1
+        assert by_type["image"][0]["slug"] == slugs[0]
+        for c in cases:
+            p = Path(c["input_path"])
+            p = p if p.is_absolute() else ROOT / p
+            assert p.exists(), c["case_id"]
         # txt case content == the gold record's original_prompt
-        txt = next(c for c in cases if c["input_type"] == "txt")
+        txt = by_type["txt"][0]
         gold = json.loads((ROOT / txt["gold_path"]).read_text(encoding="utf-8"))
         body = (ROOT / txt["input_path"]).read_text(encoding="utf-8")
         assert body == gold["project"]["original_prompt"]
@@ -124,6 +144,44 @@ def test_build_cases_smoke_two_projects():
         assert [json.loads(l) for l in lines] == cases
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
+        shutil.rmtree(sketches, ignore_errors=True)
+
+
+def test_build_default_types_txt_and_sketch_image():
+    slugs = project_slugs()[:2]
+    sketches = _sketch_dir_for(slugs, ext=".jpg")   # jpg sketches for both
+    tmp = _tmpdir()
+    try:
+        assert DEFAULT_TYPES == ("txt", "image")
+        cases = build_cases(out_dir=tmp, limit=2, sketch_dir=sketches)
+        assert [c["input_type"] for c in cases] == ["txt", "image"] * 2
+        img = next(c for c in cases if c["input_type"] == "image")
+        assert img["input_path"].endswith(".jpg")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+        shutil.rmtree(sketches, ignore_errors=True)
+
+
+def test_build_without_sketches_yields_txt_only():
+    tmp = _tmpdir()
+    empty = _tmpdir()
+    try:
+        cases = build_cases(out_dir=tmp, limit=2, sketch_dir=empty)
+        assert {c["input_type"] for c in cases} == {"txt"}
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+        shutil.rmtree(empty, ignore_errors=True)
+
+
+def test_find_sketch_ext_priority_and_miss():
+    d = _tmpdir()
+    try:
+        assert find_sketch("nope", d) is None
+        (d / "clock.webp").write_bytes(_FAKE_PNG)
+        (d / "clock.png").write_bytes(_FAKE_PNG)
+        assert find_sketch("clock", d).suffix == ".png"  # png wins over webp
+    finally:
+        shutil.rmtree(d, ignore_errors=True)
 
 
 def test_build_cases_deterministic():
@@ -158,8 +216,10 @@ def test_build_skips_project_without_gold():
 
 def test_user_content_shapes():
     tmp = _tmpdir()
+    sketches = _sketch_dir_for(project_slugs()[:1])
     try:
-        cases = build_cases(out_dir=tmp, limit=1)
+        cases = build_cases(out_dir=tmp, limit=1, types=INPUT_TYPES,
+                            sketch_dir=sketches)
         by_type = {c["input_type"]: c for c in cases}
         # text media -> plain string mentioning the medium + the doc body
         txt = user_content(by_type["txt"])
@@ -170,12 +230,14 @@ def test_user_content_shapes():
         assert isinstance(pdf, str) and "PDF" in pdf
         # pdf content actually comes from the rendered file
         assert "Tools" in pdf or "1." in pdf
-        # image -> OpenAI vision content parts
+        # image -> OpenAI vision content parts, framed as a hand-drawn sketch
         img = user_content(by_type["image"])
         assert isinstance(img, list) and img[0]["type"] == "text"
+        assert "sketch" in img[0]["text"]
         assert img[1]["image_url"]["url"].startswith("data:image/png;base64,")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
+        shutil.rmtree(sketches, ignore_errors=True)
 
 
 def test_score_case_gold_scores_perfect():
