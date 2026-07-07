@@ -29,9 +29,10 @@ def chat_text(
     temperature: float = TEMPERATURE,
     top_p: float = TOP_P,
     max_tokens: int = MAX_TOKENS,
+    model: str | None = None,
 ) -> str:
     resp = _client.chat.completions.create(
-        model=MODEL_ID,
+        model=model or MODEL_ID,
         messages=messages,
         temperature=temperature,
         top_p=top_p,
@@ -47,13 +48,14 @@ def chat_json(
     temperature: float = TEMPERATURE,
     top_p: float = TOP_P,
     max_tokens: int = MAX_TOKENS,
+    model: str | None = None,
 ) -> Any:
     extra_body: dict[str, Any] = {}
     if schema is not None:
         extra_body["format"] = schema
 
     resp = _client.chat.completions.create(
-        model=MODEL_ID,
+        model=model or MODEL_ID,
         messages=messages,
         temperature=temperature,
         top_p=top_p,

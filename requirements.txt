@@ -3,3 +3,5 @@ jsonschema>=4.21.0
 python-dotenv>=1.0.1
 tqdm>=4.66.0
 tenacity>=8.2.3
+fpdf2>=2.8.0
+pypdf>=5.0.0
