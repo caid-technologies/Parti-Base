@@ -115,11 +115,14 @@ def main() -> int:
     if not args.skip_smoke:
         print("smoke: 20 tokens on CPU (takes ~a minute)...")
         msgs = [{"role": "user", "content": "Design a small LED desk lamp."}]
-        ids = tok.apply_chat_template(msgs, add_generation_prompt=True,
-                                      return_tensors="pt")
-        out = model.generate(ids, max_new_tokens=20, do_sample=False,
+        # return_dict=True explicitly: transformers 5.x flipped the default,
+        # and the dict form also carries the attention mask into generate().
+        inp = tok.apply_chat_template(msgs, add_generation_prompt=True,
+                                      return_tensors="pt", return_dict=True)
+        out = model.generate(**inp, max_new_tokens=20, do_sample=False,
                              pad_token_id=tok.eos_token_id)
-        text = tok.decode(out[0][ids.shape[1]:], skip_special_tokens=True)
+        text = tok.decode(out[0][inp["input_ids"].shape[1]:],
+                          skip_special_tokens=True)
         print(f"smoke output: {text!r}")
         if not text.strip():
             print("FAIL: empty generation from merged model")
