@@ -5,8 +5,8 @@ our core use case — turn a project document into the full canonical record —
 from the 42 seed projects under Data/. Default media (the product test):
 
   txt    the project's original free-text prompt, written to files/<slug>.txt
-  image  an image of the product, sent as an OpenAI-style vision content
-         part (needs a vision-capable model). Source priority per project:
+  image  an image of the product, sent as base64 on Ollama's native
+         /api/chat (needs a vision-capable model). Source priority per project:
          a HAND-DRAWN SKETCH at Data/sketches/<slug>.png (.jpg/.jpeg/.webp
          also accepted) wins when present; otherwise the VISUAL.png render
          from the project folder is used. Data/sketches/PRODUCTS.md lists
@@ -33,9 +33,10 @@ Two subcommands:
     python testcases.py run --dump out/testcases/fails.jsonl --min-valid 20
 
 `build` writes out/testcases/cases.jsonl (+ generated txt/pdf inputs under
-out/testcases/files/). `run` reads that manifest, calls Ollama zero-shot
-(temperature 0), prints a per-input-type table, and writes
-out/testcases/report_<model>.json as the traceable result.
+out/testcases/files/). `run` reads that manifest, calls Ollama's native
+/api/chat zero-shot (temperature 0, thinking disabled — see ollama_chat),
+prints a per-input-type table, and writes out/testcases/report_<model>.json
+as the traceable result.
 """
 from __future__ import annotations
 import argparse
@@ -141,16 +142,6 @@ def pdf_text(path: Path) -> str:
 
     return "\n".join((page.extract_text() or "")
                      for page in PdfReader(str(path)).pages)
-
-
-_MIME = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
-         ".webp": "image/webp"}
-
-
-def image_data_uri(path: Path) -> str:
-    mime = _MIME.get(path.suffix.lower(), "image/png")
-    b64 = base64.b64encode(path.read_bytes()).decode("ascii")
-    return f"data:{mime};base64,{b64}"
 
 
 def find_sketch(slug: str, sketch_dir: Path = SKETCH_DIR) -> Path | None:
@@ -260,13 +251,8 @@ def _resolve(rel_or_abs: str) -> Path:
     return p if p.is_absolute() else ROOT / p
 
 
-def user_content(case: dict):
-    """Build the user-turn content for a case.
-
-    Text media return a plain string; images return OpenAI-style content
-    parts (text + image_url data URI), which Ollama's /v1 layer accepts for
-    vision-capable models.
-    """
+def user_payload(case: dict) -> tuple[str, list[str]]:
+    """(user_text, base64_images) for a case, ready for Ollama's /api/chat."""
     path = _resolve(case["input_path"])
     kind = case["input_type"]
     if kind == "image":
@@ -276,13 +262,66 @@ def user_content(case: dict):
                 f"{medium}. Infer the components, relationships, "
                 f"fabrication, instructions, sourcing, and validation from "
                 f"what you see.")
-        return [
-            {"type": "text", "text": text},
-            {"type": "image_url", "image_url": {"url": image_data_uri(path)}},
-        ]
+        return text, [base64.b64encode(path.read_bytes()).decode("ascii")]
     doc = pdf_text(path) if kind == "pdf" else path.read_text(encoding="utf-8")
     return (f"Design the hobbyist hardware project described in this "
-            f"{_DOC_LABEL[kind]}:\n\n{doc}")
+            f"{_DOC_LABEL[kind]}:\n\n{doc}"), []
+
+
+# --- Ollama native chat (thinking OFF) ---------------------------------------
+# We call /api/chat instead of the OpenAI-compat /v1 endpoint for one reason:
+# `think: false`. Thinking models (qwen3.5) otherwise burn the ENTIRE token
+# budget on reasoning and return EMPTY content (observed: 12288 tokens of
+# thinking, finish_reason=length, content=""). The /v1 layer silently ignores
+# `think`, so it cannot express this. Images ride along as base64 strings.
+
+def build_chat_payload(model: str, system: str, text: str,
+                       images: list[str], max_tokens: int,
+                       think: bool | None = False) -> dict:
+    """Pure payload builder for /api/chat (unit-testable, no network)."""
+    user_msg: dict = {"role": "user", "content": text}
+    if images:
+        user_msg["images"] = images
+    payload = {
+        "model": model,
+        "messages": [{"role": "system", "content": system}, user_msg],
+        "stream": False,
+        "options": {"temperature": 0, "num_predict": max_tokens},
+    }
+    if think is not None:
+        payload["think"] = think
+    return payload
+
+
+def _native_base_url() -> str:
+    from synth.config import OLLAMA_BASE_URL
+    base = OLLAMA_BASE_URL.rstrip("/")
+    return base[:-3] if base.endswith("/v1") else base
+
+
+def _post_chat(payload: dict, base_url: str, timeout: int = 1800) -> str:
+    import urllib.request
+    req = urllib.request.Request(
+        f"{base_url}/api/chat", json.dumps(payload).encode(),
+        {"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        data = json.loads(r.read())
+    return (data.get("message") or {}).get("content") or ""
+
+
+def ollama_chat(payload: dict, base_url: str | None = None) -> str:
+    """POST to /api/chat; if the model rejects the `think` option (non-
+    thinking models like qwen3-coder), retry once without it."""
+    import urllib.error
+    base_url = base_url or _native_base_url()
+    try:
+        return _post_chat(payload, base_url)
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        if "think" in payload and "think" in body.lower():
+            retry = {k: v for k, v in payload.items() if k != "think"}
+            return _post_chat(retry, base_url)
+        raise RuntimeError(f"HTTP {e.code}: {body[:200]}") from None
 
 
 def score_case(output_text: str, gold: dict) -> dict:
@@ -326,11 +365,18 @@ def run_eval(args) -> int:
         print("No cases match — check --types / --per-type / --limit.")
         return 1
 
-    from synth.ollama_client import chat_text
+    from tenacity import retry, stop_after_attempt, wait_exponential
+
+    @retry(wait=wait_exponential(min=2, max=30), stop=stop_after_attempt(3),
+           reraise=True)
+    def _call(payload: dict) -> str:
+        return ollama_chat(payload)
 
     model = args.model
+    think = True if args.think else False
     print(f"Zero-shot eval: {len(cases)} cases, model={model}, "
-          f"types={','.join(types)}\n")
+          f"types={','.join(types)}, thinking={'on' if think else 'off'}\n",
+          flush=True)
 
     def _new() -> dict:
         return {"n": 0, "err": 0, "parse": 0, "valid": 0,
@@ -344,16 +390,16 @@ def run_eval(args) -> int:
         gold = json.loads(_resolve(case["gold_path"]).read_text(encoding="utf-8"))
         t0 = time.time()
         try:
-            text = chat_text(
-                [{"role": "system", "content": SYSTEM_PROMPT},
-                 {"role": "user", "content": user_content(case)}],
-                temperature=0.0, max_tokens=args.max_tokens, model=model,
-            )
+            text_in, images = user_payload(case)
+            text = _call(build_chat_payload(
+                model, SYSTEM_PROMPT, text_in, images,
+                args.max_tokens, think=think))
         except Exception as e:  # transport/model errors (e.g. no vision support)
             st["err"] += 1
             st["fn"] += len(keyset("B", gold))
             fails.append({"case_id": case["case_id"], "reason": f"call: {e}"})
-            print(f"[{idx:>3}] {case['case_id']:<44} ✗ call failed: {e}")
+            print(f"[{idx:>3}] {case['case_id']:<44} ✗ call failed: {e}",
+                  flush=True)
             continue
         secs = time.time() - t0
         st["secs"] += secs
@@ -364,14 +410,16 @@ def run_eval(args) -> int:
         for k in ("tp", "fp", "fn"):
             st[k] += r[k]
         f1 = f1_from_counts(r["tp"], r["fp"], r["fn"])
+        done = f"{idx + 1}/{len(cases)}"
         if r["valid"]:
-            print(f"[{idx:>3}] {case['case_id']:<44} ✓ F1 {f1:.2f} ({secs:.0f}s)")
+            print(f"[{done:>7}] {case['case_id']:<44} ✓ F1 {f1:.2f} "
+                  f"({secs:.0f}s)", flush=True)
         else:
             reason = r["errors"][0] if r["errors"] else "?"
             fails.append({"case_id": case["case_id"], "reason": r["errors"][:5],
                           "output_tail": text[-300:]})
-            print(f"[{idx:>3}] {case['case_id']:<44} ✗ {len(r['errors'])} "
-                  f"issue(s): {reason} — F1 {f1:.2f} ({secs:.0f}s)")
+            print(f"[{done:>7}] {case['case_id']:<44} ✗ {len(r['errors'])} "
+                  f"issue(s): {reason} — F1 {f1:.2f} ({secs:.0f}s)", flush=True)
 
     # --- report ---
     print("\n=== Zero-shot results by input type ===")
@@ -459,6 +507,10 @@ def main() -> int:
     r.add_argument("--limit", type=int, default=0, help="total case cap")
     r.add_argument("--max-tokens", type=int, default=12288,
                    help="generation budget; full records run ~9k tokens")
+    r.add_argument("--think", action="store_true",
+                   help="leave the model's thinking mode ON (default: off — "
+                        "thinking models otherwise spend the whole budget "
+                        "reasoning and return empty content)")
     r.add_argument("--dump", type=Path, default=None,
                    help="write failing cases to this JSONL")
     r.add_argument("--min-valid", type=float, default=0.0,

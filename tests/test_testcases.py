@@ -20,14 +20,14 @@ from testcases import (  # noqa: E402
     INPUT_TYPES,
     SYSTEM_PROMPT,
     build_cases,
+    build_chat_payload,
     find_sketch,
-    image_data_uri,
     latin1_safe,
     pdf_text,
     project_slugs,
     render_pdf,
     score_case,
-    user_content,
+    user_payload,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -104,16 +104,17 @@ def test_pdf_wraps_unbreakable_token_and_real_guide():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
-def test_image_data_uri_is_decodable():
-    tmp = _tmpdir()
-    try:
-        png = tmp / "p.png"
-        png.write_bytes(b"\x89PNG\r\n\x1a\nfakebody")
-        uri = image_data_uri(png)
-        assert uri.startswith("data:image/png;base64,")
-        assert base64.b64decode(uri.split(",", 1)[1]) == png.read_bytes()
-    finally:
-        shutil.rmtree(tmp, ignore_errors=True)
+def test_build_chat_payload_shapes():
+    p = build_chat_payload("m", "sys", "hello", [], 100)
+    assert p["think"] is False                      # thinking off by default
+    assert p["options"] == {"temperature": 0, "num_predict": 100}
+    assert [m["role"] for m in p["messages"]] == ["system", "user"]
+    assert "images" not in p["messages"][1]
+    p2 = build_chat_payload("m", "sys", "look", ["QUJD"], 50, think=True)
+    assert p2["think"] is True
+    assert p2["messages"][1]["images"] == ["QUJD"]
+    p3 = build_chat_payload("m", "sys", "x", [], 10, think=None)
+    assert "think" not in p3                        # omit entirely if None
 
 
 def test_build_cases_all_types_with_sketch():
@@ -174,8 +175,8 @@ def test_build_without_sketches_falls_back_to_renders():
         assert len(imgs) == 2
         assert all(c["image_source"] == "render" for c in imgs)
         # render-sourced cases are framed as "image", not "sketch"
-        content = user_content(imgs[0])
-        assert "sketch" not in content[0]["text"]
+        text, _ = user_payload(imgs[0])
+        assert "sketch" not in text
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
         shutil.rmtree(empty, ignore_errors=True)
@@ -222,27 +223,27 @@ def test_build_skips_project_without_gold():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
-def test_user_content_shapes():
+def test_user_payload_shapes():
     tmp = _tmpdir()
     sketches = _sketch_dir_for(project_slugs()[:1])
     try:
         cases = build_cases(out_dir=tmp, limit=1, types=INPUT_TYPES,
                             sketch_dir=sketches)
         by_type = {c["input_type"]: c for c in cases}
-        # text media -> plain string mentioning the medium + the doc body
-        txt = user_content(by_type["txt"])
-        assert isinstance(txt, str) and "plain-text" in txt
-        md = user_content(by_type["md"])
-        assert isinstance(md, str) and "markdown" in md
-        pdf = user_content(by_type["pdf"])
-        assert isinstance(pdf, str) and "PDF" in pdf
+        # text media -> (prompt string, no images)
+        txt, imgs = user_payload(by_type["txt"])
+        assert "plain-text" in txt and imgs == []
+        md, _ = user_payload(by_type["md"])
+        assert "markdown" in md
+        pdf, _ = user_payload(by_type["pdf"])
+        assert "PDF" in pdf
         # pdf content actually comes from the rendered file
         assert "Tools" in pdf or "1." in pdf
-        # image -> OpenAI vision content parts, framed as a hand-drawn sketch
-        img = user_content(by_type["image"])
-        assert isinstance(img, list) and img[0]["type"] == "text"
-        assert "sketch" in img[0]["text"]
-        assert img[1]["image_url"]["url"].startswith("data:image/png;base64,")
+        # image -> sketch-framed text + one decodable base64 payload
+        itext, iimgs = user_payload(by_type["image"])
+        assert "sketch" in itext
+        assert len(iimgs) == 1
+        assert base64.b64decode(iimgs[0]) == _FAKE_PNG
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
         shutil.rmtree(sketches, ignore_errors=True)
