@@ -161,11 +161,15 @@ def to_config_json(rec: dict) -> dict:
     by_phase: dict[str, list[dict]] = {}
     for step in rec.get("instructions", []):
         src_phase = _PHASE_MAP_REVERSE.get(step["phase"], step["phase"])
-        by_phase.setdefault(src_phase, []).append({
+        sub: dict[str, Any] = {
             "id": step["step_id"],
             "title": step["title"],
             "partIds": step.get("component_ids", []),
-        })
+        }
+        # Round-trip the detailed body so the rebuilt CONFIG matches the source.
+        if step.get("detail"):
+            sub["detail"] = step["detail"]
+        by_phase.setdefault(src_phase, []).append(sub)
     instruction_steps = [{"id": ph, "subSteps": subs} for ph, subs in by_phase.items()]
 
     out = {
@@ -211,6 +215,33 @@ def to_parts_csv(rec: dict) -> str:
     return buf.getvalue()
 
 
+def _detail_to_md(detail: Any) -> list[str]:
+    """Render a step's detailed body to markdown lines, or [] if there's none.
+
+    Mirrors the source `detail` shape: a {summary, steps, tip} dict becomes a
+    summary paragraph, a numbered step list, and an italicized tip; a plain
+    string is emitted as-is.
+    """
+    lines: list[str] = []
+    if isinstance(detail, dict):
+        summary = detail.get("summary")
+        if summary:
+            lines.append(str(summary))
+        steps = [str(s) for s in (detail.get("steps") or []) if str(s).strip()]
+        if steps:
+            if summary:
+                lines.append("")
+            for i, s in enumerate(steps, start=1):
+                lines.append(f"{i}. {s}")
+        tip = detail.get("tip")
+        if tip:
+            lines.append("")
+            lines.append(f"*Tip:* {tip}")
+    elif isinstance(detail, str) and detail.strip():
+        lines.append(detail.strip())
+    return lines
+
+
 def to_guide_md(rec: dict) -> str:
     req = rec.get("requirements", {})
     tools = req.get("tools", []) or []
@@ -248,8 +279,13 @@ def to_guide_md(rec: dict) -> str:
         lines.append(f"## {section_num}. {phase_titles[phase]}")
         for i, step in enumerate(steps, start=1):
             lines.append(f"### {section_num}.{i} {step.get('title', '')}")
+            # Prefer the real detailed body; fall back to expected_result; only
+            # emit the placeholder when the step genuinely has no body at all.
+            detail_lines = _detail_to_md(step.get("detail"))
             er = step.get("expected_result", "")
-            if er and er != "unknown":
+            if detail_lines:
+                lines.extend(detail_lines)
+            elif er and er != "unknown":
                 lines.append(f"*Expected result:* {er}")
             else:
                 lines.append("*(not yet generated)*")

@@ -172,6 +172,33 @@ running the rest of the pipeline.
 - `--out path` — write somewhere else
 - `--dry-run` — project counts only
 
+### Zero-shot base-model test cases (txt + hand-drawn sketch inputs)
+
+`testcases.py` measures how an UNTRAINED base model handles the core use case
+(document → full canonical record). Default media per seed project: the
+original prompt as `.txt`, and an image of the product sent as a vision
+content part. Image source priority: a hand-drawn sketch dropped into
+`Data/sketches/<slug>.png` (`.jpg`/`.jpeg`/`.webp` also work) wins when
+present; otherwise the project's `VISUAL.png` render is used, and each case
+records `image_source: sketch|render`. `Data/sketches/PRODUCTS.md` lists the
+42 products to draw for the sketch transition. `--types` can add `md`
+(GUIDE.md verbatim) and `pdf` (guide rendered to PDF, text re-extracted with
+pypdf at run time). Gold is `out/normalized/<slug>.json`; scoring reuses
+`eval_local.py` (parse rate, strict-schema valid rate, structural F1). This
+is the no-training baseline the fine-tuned adapter must beat.
+
+```powershell
+python testcases.py build                    # deterministic, no LLM — writes out/testcases/
+python testcases.py run --model qwen3.5      # zero-shot eval via Ollama
+python testcases.py run --types txt --per-type 5          # cheap smoke
+python testcases.py build --types txt,md,pdf,image        # include the doc media
+```
+
+`run` prints a per-input-type table and writes
+`out/testcases/report_<model>.json`. Image cases require a vision-capable
+Ollama tag; on a text-only model they are recorded as call errors, not
+crashes. Gate tests: `pytest tests/test_testcases.py` (no LLM calls).
+
 ### Inspect ChatML output
 
 ```powershell

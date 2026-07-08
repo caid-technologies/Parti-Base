@@ -680,7 +680,7 @@ def _normalize_instructions(
                         "message": f"instruction step {step_id!r} references missing part {pid!r}",
                         "refs": [pid],
                     })
-            out.append({
+            step = {
                 "step_id": step_id,
                 "phase": phase_id if isinstance(phase_id, str) else "unknown",
                 "title": sub.get("title", ""),
@@ -688,7 +688,18 @@ def _normalize_instructions(
                 # Each step depends on the one before it → a simple linear order.
                 "dependencies": [last_step_id] if last_step_id else [],
                 "expected_result": "unknown",
-            })
+            }
+            # Carry over the source step's detailed body verbatim when present.
+            # The source `detail` is the real assembly instruction text ({summary,
+            # steps, tip} or a plain string); the assembly-completeness gate keys
+            # off it. We never invent it — steps without source detail stay
+            # body-less and get skipped downstream rather than fabricated.
+            detail = sub.get("detail")
+            if isinstance(detail, dict) and (detail.get("steps") or detail.get("summary")):
+                step["detail"] = detail
+            elif isinstance(detail, str) and detail.strip():
+                step["detail"] = detail
+            out.append(step)
             last_step_id = step_id  # this step becomes the next step's dependency
     return out
 
