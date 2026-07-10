@@ -58,6 +58,7 @@ from synth.validate import (  # noqa: E402  (after sys.path tweak)
     COMPONENT_TYPES, COMPONENT_CATEGORIES, RELATION_TYPES, INSTRUCTION_PHASES,
     _SNAKE_RE,
 )
+from synth.repair import repair_record  # noqa: E402
 
 # Eval context can exceed the 4096 training window — the base model supports
 # 32k and LoRA doesn't cap it. Mode F inputs (a full record) run 5–6k tokens,
@@ -398,8 +399,8 @@ def main() -> int:
 
     # stats[mode] = dict of running counters
     def _new() -> dict:
-        return {"n": 0, "parse": 0, "valid": 0, "em": 0,
-                "tp": 0, "fp": 0, "fn": 0, "skipped_long": 0}
+        return {"n": 0, "parse": 0, "valid": 0, "rparse": 0, "rvalid": 0,
+                "em": 0, "tp": 0, "fp": 0, "fn": 0, "skipped_long": 0}
     stats: dict[str, dict] = defaultdict(_new)
 
     def _tf_new() -> dict:
@@ -560,6 +561,14 @@ def main() -> int:
                                 skip_special_tokens=True)
 
         st["n"] += 1
+        # What a consumer gets BEHIND the deterministic repair gate
+        # (synth/repair.py): syntax salvage + snake_case id rewrite. Scored
+        # alongside the raw output so both realities stay visible.
+        robj, _rnotes = repair_record(text)
+        if robj is not None:
+            st["rparse"] += 1
+            if not SCORERS.get(mode, lambda o, u: ["unknown mode"])(robj, user):
+                st["rvalid"] += 1
         try:
             obj = extract_json(text)
         except json.JSONDecodeError as e:
@@ -589,7 +598,8 @@ def main() -> int:
 
     # --- report ---
     print("\n=== Results by mode ===")
-    hdr = f"{'mode':<6}{'n':>5}{'skip':>6}{'parse%':>8}{'valid%':>8}{'EM%':>7}{'F1':>7}"
+    hdr = (f"{'mode':<6}{'n':>5}{'skip':>6}{'parse%':>8}{'valid%':>8}"
+           f"{'rprs%':>8}{'rvld%':>8}{'EM%':>7}{'F1':>7}")
     print(hdr)
     agg = _new()
 
@@ -597,10 +607,11 @@ def main() -> int:
         n = s["n"]
         if n == 0:  # every row for this mode was skipped (prompt too long)
             return (f"{label:<6}{n:>5}{s['skipped_long']:>6}"
-                    f"{'--':>8}{'--':>8}{'--':>7}{'--':>7}")
+                    f"{'--':>8}{'--':>8}{'--':>8}{'--':>8}{'--':>7}{'--':>7}")
         f1 = f1_from_counts(s["tp"], s["fp"], s["fn"])
         return (f"{label:<6}{n:>5}{s['skipped_long']:>6}"
                 f"{100*s['parse']/n:>7.0f}%{100*s['valid']/n:>7.0f}%"
+                f"{100*s['rparse']/n:>7.0f}%{100*s['rvalid']/n:>7.0f}%"
                 f"{100*s['em']/n:>6.0f}%{f1:>7.2f}")
 
     for mode in sorted(stats):
@@ -613,6 +624,8 @@ def main() -> int:
           "gold answer too big for what's left) — raise --max-seq to include")
     print("parse%  = produced valid JSON")
     print("valid%  = passed mode-specific schema/reference checks")
+    print("rprs%   = parses AFTER the deterministic repair gate (synth/repair.py)")
+    print("rvld%   = valid AFTER repair — what a consumer behind the gate gets")
     print("EM%     = output exactly equals the gold answer (strict)")
     print("F1      = micro-F1 of structural atoms vs gold "
           "(components / relationship triples / steps / validation flags)")
