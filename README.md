@@ -199,6 +199,24 @@ python testcases.py build --types txt,md,pdf,image        # include the doc medi
 Ollama tag; on a text-only model they are recorded as call errors, not
 crashes. Gate tests: `pytest tests/test_testcases.py` (no LLM calls).
 
+### Gate a Space response before rendering
+
+`space_contract.py` is the deterministic deployment boundary for a full Mode B
+response. It accepts plain, fenced, or prose-wrapped JSON, ranks multiple JSON
+snippets so reasoning examples cannot hide the complete record, ignores the
+model's own validation verdict, and exits nonzero when the canonical schema or
+integrity checks fail:
+
+```powershell
+python space_contract.py response.json
+Get-Content response.json | python space_contract.py
+pytest tests/test_space_contract.py
+```
+
+This regression gate includes the malformed legacy shape observed in the Parti
+Space, where `requirements` was an array and the canonical `components`,
+`relationships`, and `instructions` sections were absent.
+
 ### Inspect ChatML output
 
 ```powershell
@@ -238,6 +256,7 @@ synth/
 run.py                         end-to-end orchestrator (Stages 1 + 3 + 4)
 build_dataset.py               canonical records → out/dataset/ folders
 normalize_all.py               standalone Stage 1 with issue analytics
+space_contract.py              pre-render inference gate for Mode B responses
 out/
   normalized/<slug>.json       Stage 1 output
   variants/<id>.json           Stage 3 output
