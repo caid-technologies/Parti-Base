@@ -202,9 +202,10 @@ crashes. Gate tests: `pytest tests/test_testcases.py` (no LLM calls).
 ### Gate a Space response before rendering
 
 `space_contract.py` is the deterministic deployment boundary for a full Mode B
-response. It accepts plain, fenced, or prose-wrapped JSON, ignores the model's
-own validation verdict, and exits nonzero when the canonical schema or integrity
-checks fail:
+response. It accepts plain, fenced, or prose-wrapped JSON, ranks multiple JSON
+snippets so reasoning examples cannot hide the complete record, ignores the
+model's own validation verdict, and exits nonzero when the canonical schema or
+integrity checks fail:
 
 ```powershell
 python space_contract.py response.json

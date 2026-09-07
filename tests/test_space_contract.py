@@ -90,6 +90,13 @@ class SpaceContractTests(unittest.TestCase):
         self.assertTrue(report["accepted"])
         self.assertIn("json_fence_removed", {i["code"] for i in report["issues"]})
 
+    def test_reasoning_snippet_does_not_hide_complete_record(self):
+        wrapped = '<think>{"example": true}</think>\n' + json.dumps(_valid_record())
+        report = audit_space_output(wrapped)
+
+        self.assertTrue(report["accepted"])
+        self.assertIn("json_wrapper_removed", {i["code"] for i in report["issues"]})
+
     def test_observed_legacy_space_shape_is_blocked(self):
         malformed = {
             "project": {"name": "Air monitor", "summary": "Measures PM2.5"},
